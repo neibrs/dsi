@@ -35,6 +35,9 @@ echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
 
 echo Set site to the product mode
 vendor/bin/drupal site:mode prod
+vendor/bin/drush then -y barrio
+vendor/bin/drush cset system.theme admin -y barrio && \
+vendor/bin/drush cset system.theme default -y barrio
 
 # Enable modules
 vendor/bin/drupal moi -y \
