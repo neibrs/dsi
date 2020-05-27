@@ -1,0 +1,7 @@
+name: 'Views plus'
+type: module
+description: 'The plus of core views.'
+core: 8.x
+package: 'Ds'
+dependencies:
+  - drupal:views

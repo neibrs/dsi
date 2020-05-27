@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains views_plus.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function views_plus_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the views_plus module.
+    case 'help.page.views_plus':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The plus of core views.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function views_plus_form_views_form_content_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#prefix'] = '<div class=" views-form col-12">';
+}

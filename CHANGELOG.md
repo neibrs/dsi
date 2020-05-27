@@ -1,6 +1,6 @@
 
 ==================
 Added modules: 
-  1. core: translation
+  1. core: translation, views_plus
   2. cbos:
   3. industry:
