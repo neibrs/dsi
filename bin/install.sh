@@ -25,13 +25,13 @@ echo "ini_set('memory_limit', -1);" >> sites/default/settings.php
 echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
 
 # Enable memcache modules
-#vendor/bin/drupal moi -y \
-#  memcache \
-#  memcache_admin
+vendor/bin/drupal moi -y \
+  memcache \
+  memcache_admin
+#
+cp modules/ds/bin/settings.memcache.php sites/default/settings.memcache.php
 
-#cp modules/dsi/bin/settings.memcache.php sites/default/settings.memcache.php
-
-#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
+echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
 
 echo Set site to the product mode
 vendor/bin/drupal site:mode prod
@@ -45,6 +45,7 @@ vendor/bin/drupal moi -y \
   drush_language
 #  translation
 #
+vendor/bin/drush en -y adminimal_admin_toolbar
 ## install multilingual
 #source $SCRIPTPATH/install-zh.sh
 #
