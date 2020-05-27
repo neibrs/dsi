@@ -1,0 +1,636 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/rules/rules.module: n/a
+#  modules/contrib/rules/rules.links.task.yml: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/RulesComponentActionDeriver.php: n/a
+#  modules/contrib/rules/rules.info.yml: n/a
+#  modules/contrib/rules/rules.links.menu.yml: n/a
+#  modules/contrib/rules/rules.routing.yml: n/a
+#  modules/contrib/rules/rules_ban/rules_ban.info.yml: n/a
+#  modules/contrib/rules/rules.links.action.yml: n/a
+#  modules/contrib/rules/src/Form/RulesComponentFormBase.php: n/a
+#  modules/contrib/rules/rules.permissions.yml: n/a
+#  modules/contrib/rules/config/schema/rules.schema.yml: n/a
+#  modules/contrib/rules/src/Entity/RulesComponentConfig.php: n/a
+#  modules/contrib/rules/config/schema/rules.action.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.condition.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.context.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.expression.schema.yml: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php: n/a
+#  modules/contrib/rules/src/Controller/RulesComponentListBuilder.php: n/a
+#  modules/contrib/rules/src/Controller/RulesReactionListBuilder.php: n/a
+#  modules/contrib/rules/config/schema/rules.data_types.schema.yml: n/a
+#  modules/contrib/rules/src/Form/Expression/ConditionForm.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ActionSetExpression.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ActionContainerForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/RuleExpression.php: n/a
+#  modules/contrib/rules/src/Form/RulesSettingsForm.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php: n/a
+#  modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php: n/a
+#  modules/contrib/rules/src/Core/ConditionManager.php: n/a
+#  modules/contrib/rules/src/Core/Annotation/Condition.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserHasRole.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserIsBlocked.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserBlock.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserRoleAdd.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserRoleRemove.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php: n/a
+#  modules/contrib/rules/src/Entity/ReactionRuleConfig.php: n/a
+#  modules/contrib/rules/src/Form/AddExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/BreakLockForm.php: n/a
+#  modules/contrib/rules/src/Form/DeleteExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/EditExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/ReactionRuleAddForm.php: n/a
+#  modules/contrib/rules/src/Form/ReactionRuleEditForm.php: n/a
+#  modules/contrib/rules/src/Form/RulesComponentAddForm.php: n/a
+#  modules/contrib/rules/src/Form/RulesComponentEditForm.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ActionForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ContextFormTrait.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataSet.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataComparison.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataListContains.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/TextComparison.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityHasField.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsNew.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsPromoted.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsPublished.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsSticky.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityCreateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesDataProcessor/NumericOffset.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesDataProcessor/TokenProcessor.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityDeleteDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityInsertDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityPresaveDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityUpdateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityViewDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/AndExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/OrExpression.php: n/a
+#  modules/contrib/rules/src/Ui/TempStoreTrait.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-05-09 22:11+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/rules/rules.module:24
+msgid "Reaction rules, listed below, react on selected events on the site. Each reaction rule may fire any number of <em>actions</em>, and may have any number of <em>conditions</em> that must be met for the actions to be executed. You can also set up <a href=\":url1\">components</a> – stand-alone sets of Rules configuration that can be used in Rules and other parts of your site. See <a href=\":url2\">the online documentation</a> for an introduction on how to use Rules."
+msgstr "下面列出的规则会对系统的特定事件做出响应。每个规则可以触发任意数量的<em>动作</em>，并且可以设置执行动作必须满足的<em>条件</em>。还可以设置<a href=\":url1\">组件</a>-可以在规则和系统其他地方使用的独立的规则配置集。"
+
+#: modules/contrib/rules/rules.module:40 modules/contrib/rules/rules.links.task.yml:0
+msgid "Reaction rules"
+msgstr "规则"
+
+#: modules/contrib/rules/rules.module:42 modules/contrib/rules/rules.links.task.yml:0 modules/contrib/rules/src/Plugin/RulesAction/RulesComponentActionDeriver.php:67
+msgid "Components"
+msgstr "组件"
+
+#: rules.info.yml:0; rules.links.menu.yml:0; rules.routing.yml:0
+msgid "Rules"
+msgstr "规则"
+
+#: modules/contrib/rules/rules.links.action.yml:0 modules/contrib/rules/rules.routing.yml:0
+msgid "Add reaction rule"
+msgstr "添加规则"
+
+#: rules.links.action.yml:0; rules.routing.yml:0
+msgid "Add rule"
+msgstr "添加规则"
+
+#: config/schema/rules.expression.schema.yml:0; src/Form/Expression/ConditionContainerForm.php:43
+msgid "Conditions"
+msgstr "条件"
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0 modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:43
+msgid "Actions"
+msgstr "动作"
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0 modules/contrib/rules/src/Plugin/RulesExpression/Rule.php:19
+msgid "Rule"
+msgstr "规则"
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:27 modules/contrib/rules/src/Form/RulesComponentFormBase.php:72
+msgid "Tags"
+msgstr "标签"
+
+#: config/schema/rules.schema.yml:0
+msgid "Events"
+msgstr "事件"
+
+#: config/schema/rules.schema.yml:0; src/Form/RulesSettingsForm.php:44,69
+msgid "Log level"
+msgstr "日志级别"
+
+#: src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Variable"
+msgstr "变量"
+
+#: modules/contrib/rules/src/Controller/RulesComponentListBuilder.php:25 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:25 modules/contrib/rules/src/Form/RulesComponentFormBase.php:51
+msgid "Label"
+msgstr "标签"
+
+#: modules/contrib/rules/src/Form/AddExpressionForm.php:101
+msgid "Add @expression"
+msgstr "添加@expression"
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:47 modules/contrib/rules/src/Form/ReactionRuleEditForm.php:101 modules/contrib/rules/src/Form/RulesComponentAddForm.php:36 modules/contrib/rules/src/Form/RulesComponentEditForm.php:60 modules/contrib/rules/src/Form/Expression/ActionForm.php:97 modules/contrib/rules/src/Form/Expression/ConditionForm.php:111
+msgid "Save"
+msgstr "保存"
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:66
+msgid "React on event"
+msgstr "响应事件"
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:77
+msgid "Events:"
+msgstr "事件:"
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:139
+msgid "Edit reaction rule \"@label\""
+msgstr "编辑反应规则\"@label\""
+
+#: src/Form/Expression/ActionContainerForm.php:45; src/Form/Expression/ConditionContainerForm.php:45
+msgid "None"
+msgstr "无"
+
+#: src/Form/Expression/ActionContainerForm.php:79
+msgid "Add action"
+msgstr "增加动作"
+
+#: modules/contrib/rules/src/Form/Expression/ActionForm.php:71 modules/contrib/rules/src/Form/Expression/ConditionForm.php:72
+msgid "Continue"
+msgstr "继续"
+
+#: modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:79
+msgid "Add condition"
+msgstr "添加条件"
+
+#: modules/contrib/rules/src/Form/Expression/ConditionForm.php:66 modules/contrib/rules/src/Plugin/RulesExpression/RulesCondition.php:17
+msgid "Condition"
+msgstr "条件"
+
+#: src/Form/Expression/ContextFormTrait.php:43
+msgid "Data selector"
+msgstr "数据选择器"
+
+#: src/Form/Expression/ContextFormTrait.php:84
+msgid "Switch to the direct input mode"
+msgstr "切换至直接输入模式"
+
+#: src/Form/Expression/ContextFormTrait.php:84
+msgid "Switch to data selection"
+msgstr "切换至数据选择器"
+
+#: src/Plugin/Condition/DataComparison.php:7
+msgid "Data comparison"
+msgstr "数据比较"
+
+#: src/Plugin/RulesAction/SystemMessage.php:9; src/Plugin/RulesAction/SystemPageRedirect.php:12; src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "System"
+msgstr "系统"
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7 modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7 modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Operator"
+msgstr "操作符"
+
+#: src/Plugin/Condition/DataComparison.php:7
+msgid "Data value"
+msgstr "数据值"
+
+#: src/Plugin/Condition/DataIsEmpty.php:12
+msgid "Data to check"
+msgstr "检查的数据"
+
+#: src/Plugin/Condition/DataListCountIs.php:7
+msgid "The comparison operator."
+msgstr "比较运算符。"
+
+#: src/Plugin/Condition/DataListCountIs.php:7
+msgid "Count"
+msgstr "计数"
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8
+msgid "Bundle"
+msgstr "包"
+
+#: config/schema/rules.expression.schema.yml:0; src/Form/Expression/ConditionForm.php:99
+msgid "Negate"
+msgstr "否定"
+
+#: src/Plugin/RulesAction/PathAliasCreate.php:11; src/Plugin/RulesAction/PathAliasDeleteByPath.php:10
+msgid "Existing system path"
+msgstr "现有的系统路径"
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11 modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:69 modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "Path alias"
+msgstr "路径别名"
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9
+msgid "User has role(s)"
+msgstr "用户的角色"
+
+#: src/Plugin/Condition/UserHasRole.php:9
+msgid "Match roles"
+msgstr "匹配角色"
+
+#: src/Plugin/Condition/UserHasRole.php:9
+msgid "If matching against all selected roles, the user must have <em>all</em> the roles selected."
+msgstr "如果匹配所有选择的角色，用户必须拥有所有选择的角色。"
+
+#: src/Plugin/Condition/UserIsBlocked.php:8
+msgid "User is blocked"
+msgstr "用户被阻止"
+
+#: src/Plugin/RulesAction/UserRoleAdd.php:9
+msgid "Add user role"
+msgstr "添加用户角色"
+
+#: src/Plugin/RulesAction/UserRoleRemove.php:9
+msgid "Remove user role"
+msgstr "移除用户角色"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/BanIP.php:11
+msgid "Ban"
+msgstr "屏蔽"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Input value 1"
+msgstr "输入值 1"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "The first input value for the calculation."
+msgstr "计算使用的第一个输入值"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "The calculation operator."
+msgstr "计算的操作符。"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Input value 2"
+msgstr "输入值 2"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8
+msgid "Target type"
+msgstr "目标类型"
+
+#: src/Plugin/RulesAction/DataConvert.php:8
+msgid "Rounding behavior"
+msgstr "四舍五入行为"
+
+#: src/Plugin/RulesAction/DataConvert.php:8
+msgid "Conversion result"
+msgstr "转换结果"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Add list item"
+msgstr "添加列表项目"
+
+#: src/Plugin/Condition/DataComparison.php:7; src/Plugin/Condition/DataIsEmpty.php:12; src/Plugin/Condition/DataListContains.php:8; src/Plugin/Condition/DataListCountIs.php:7; src/Plugin/Condition/TextComparison.php:7; src/Plugin/RulesAction/DataCalculateValue.php:7; src/Plugin/RulesAction/DataConvert.php:8; src/Plugin/RulesAction/DataListItemAdd.php:7; src/Plugin/RulesAction/DataListItemRemove.php:7; src/Plugin/RulesAction/DataSet.php:7
+msgid "Data"
+msgstr "数据"
+
+#: src/Plugin/RulesAction/SystemSendEmail.php:124
+msgid "Successfully sent email to %recipient"
+msgstr "成功发布邮件到 %recipient"
+
+#: src/Plugin/RulesAction/UserBlock.php:11
+msgid "Block a user"
+msgstr "阻止用户"
+
+#: src/Form/BreakLockForm.php:96
+msgid "Break lock"
+msgstr "解除锁定"
+
+#: config/schema/rules.schema.yml:0
+msgid "Administrative description"
+msgstr "管理描述"
+
+#: src/Plugin/RulesExpression/RulesAnd.php:8
+msgid "Condition set (AND)"
+msgstr "条件集（与）"
+
+#: config/schema/rules.expression.schema.yml:0; src/Plugin/RulesExpression/ActionSet.php:8
+msgid "Action set"
+msgstr "动作集"
+
+#: rules.info.yml:0
+msgid "React on events and conditionally evaluate actions."
+msgstr "根据事件与条件做出反应并执行求值动作。"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7
+msgid "Set a data value"
+msgstr "设置数据值"
+
+#: src/Plugin/RulesAction/EntityDelete.php:8
+msgid "Delete entity"
+msgstr "删除实体"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php:8
+msgid "Specifies the entity, which should be deleted permanently."
+msgstr "指定要永久删除的实体。"
+
+#: src/Plugin/RulesAction/EntityFetchByField.php:10; src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Fetched entity"
+msgstr "提取的实体"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Specifies the type of the entity that should be fetched."
+msgstr "指定要提取的实体的类型。"
+
+#: src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Limit"
+msgstr "限制"
+
+#: src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Limit the maximum number of fetched entities."
+msgstr "限定提取的实体数量。"
+
+#: src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Fetch entity by id"
+msgstr "按ID提取实体"
+
+#: src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Identifier"
+msgstr "标识符"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Save entity"
+msgstr "保存实体"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Specifies the entity, which should be saved permanently."
+msgstr "指定要永久保存的实体。"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Force saving immediately"
+msgstr "强制立即保存"
+
+#: src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "The data list, to which an item is to be added."
+msgstr "要往里添加项目的数据列表。"
+
+#: src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Insert position"
+msgstr "插入位置"
+
+#: src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "The data list for which an item is to be removed."
+msgstr "要移除项目的数据列表。"
+
+#: src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Add a variable"
+msgstr "添加变量"
+
+#: src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Added variable"
+msgstr "添加的变量"
+
+#: src/Plugin/Condition/DataComparison.php:7
+msgid "Data to compare"
+msgstr "比较的数据"
+
+#: src/Plugin/Condition/DataComparison.php:7
+msgid "The value to compare the data with."
+msgstr "用来比较的数据的值"
+
+#: src/Plugin/Condition/EntityIsNew.php:8
+msgid "Entity is new"
+msgstr "新的实体"
+
+#: src/Plugin/Condition/EntityHasField.php:8; src/Plugin/Condition/EntityIsNew.php:8; src/Plugin/Condition/EntityIsOfBundle.php:8; src/Plugin/Condition/EntityIsOfType.php:8
+msgid "Specifies the entity for which to evaluate the condition."
+msgstr "指定评估条件的实体。"
+
+#: src/Plugin/Condition/EntityHasField.php:8
+msgid "Entity has field"
+msgstr "实体有字段"
+
+#: src/Plugin/Condition/EntityHasField.php:8
+msgid "The name of the field to check for."
+msgstr "要检查的字段的名称。"
+
+#: src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid ""
+"Specifies the existing path you wish to alias. For example: node/28, "
+"forum/1, taxonomy/term/1+2."
+msgstr ""
+"指定你想添加别名的已有路径，比如：node/28, forum/1, "
+"taxonomy/term/1+2 。"
+
+#: src/Plugin/Condition/PathAliasExists.php:11; src/Plugin/Condition/PathHasAlias.php:11
+msgid "If specified, the language for which the URL alias applies."
+msgstr "如果指定，应用 URL 别名的语言。"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:9
+msgid "Show a message on the site"
+msgstr "在网站中显示信息"
+
+#: src/Plugin/RulesAction/SystemMessage.php:9; src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Message"
+msgstr "消息"
+
+#: src/Plugin/RulesAction/SystemMessage.php:9
+msgid "Message type"
+msgstr "消息类型"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:9
+msgid "Repeat message"
+msgstr "重复信息"
+
+#: src/Plugin/RulesAction/SystemPageRedirect.php:12
+msgid "Page redirect"
+msgstr "页面重定向"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Send email"
+msgstr "发送电子邮件"
+
+#: src/Plugin/RulesAction/SystemMessage.php:9
+msgid ""
+"If disabled and the message has been already shown, then the message "
+"won't be repeated."
+msgstr "如果禁用并且信息已经显示过了，这样信息就不会再重复显示了。"
+
+#: src/Form/Expression/ConditionForm.php:106
+msgid ""
+"If checked, the condition result is negated such that it returns TRUE "
+"if it evaluates to FALSE."
+msgstr ""
+"如果勾选此处，则条件结果是否定的，即当它的计算结果为假的时候 "
+"，返回真。"
+
+#: src/Form/RulesComponentFormBase.php:58
+msgid ""
+"A unique machine-readable name. Can only contain lowercase letters, "
+"numbers, and underscores."
+msgstr "一个唯一的机器可读名字。仅能包含小写字母、数字和下划线。"
+
+#: src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "Send account e-mail"
+msgstr "发布帐户e-mail"
+
+#: src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "E-mail type"
+msgstr "E-mail 类型"
+
+#: src/Plugin/Condition/EntityIsOfType.php:8
+msgid "Entity is of type"
+msgstr "实体属于类型"
+
+#: src/Plugin/Condition/DataIsEmpty.php:12
+msgid "Data value is empty"
+msgstr "数据值为空"
+
+#: src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Enforce uniqueness"
+msgstr "强制唯一"
+
+#: src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Only add the item to the list if it is not yet contained."
+msgstr "只有在未包含这个项目的时候才添加这个项目到列表。"
+
+#: src/Plugin/Condition/DataListContains.php:8
+msgid "List contains item"
+msgstr "列表包含项目"
+
+#: src/Plugin/Condition/DataListContains.php:8
+msgid "The item to check for."
+msgstr "要检查的项目。"
+
+#: config/schema/rules.schema.yml:0; src/Entity/RulesComponentConfig.php:12
+msgid "Rules component"
+msgstr "规则组件"
+
+#: rules.permissions.yml:0
+msgid "Bypass Rules access control"
+msgstr "忽略规则权限控制"
+
+#: src/Plugin/Condition/TextComparison.php:7
+msgid "Text comparison"
+msgstr "文本比较"
+
+#: src/Plugin/Condition/TextComparison.php:7
+msgid "Matching text"
+msgstr "匹配的文本"
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php:8
+msgid "Unblock a user"
+msgstr "解禁用户"
+
+#: rules.permissions.yml:0
+msgid ""
+"Control all configurations regardless of permission restrictions of "
+"events, conditions or actions."
+msgstr "控制所有配置不管事件，条件或动作的权限。"
+
+#: src/Form/RulesSettingsForm.php:46,71
+msgid "Log all warnings and errors"
+msgstr "记录所有警告和错误"
+
+#: src/Form/RulesSettingsForm.php:47,72
+msgid "Log errors only"
+msgstr "仅仅记录错误"
+
+#: src/Form/ReactionRuleAddForm.php:71
+msgid "Whenever the event occurs, rule evaluation is triggered."
+msgstr "当这个事件发生时，规则赋值将会触发。"
+
+#: src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid ""
+"If specified, the language used for getting the mail message and "
+"subject."
+msgstr "如果语言被指定，那么邮件的内容及标题都将使用指定语言。"
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityDeleteDeriver.php:57
+msgid "After deleting a @entity_type"
+msgstr "删除 @entity_type 后"
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityInsertDeriver.php:57
+msgid "After saving a new @entity_type"
+msgstr "保存新的 %entity_type 后"
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityUpdateDeriver.php:57
+msgid "After updating a @entity_type"
+msgstr "@entity_type 更新后"
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityViewDeriver.php:57
+msgid "@entity_type is viewed"
+msgstr "@entity_type 查看"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:112
+msgid "Action: @label"
+msgstr "动作: @label"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:137
+msgid "Action plugin %plugin_id does not exist"
+msgstr "动作插件 %plugin_id 不存在"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/RulesCondition.php:143
+msgid "Condition: @label"
+msgstr "条件: @label"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/RulesCondition.php:168
+msgid "Condition plugin %plugin_id does not exist"
+msgstr "条件插件 %plugin_id 不存在"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/RulesLoop.php:12
+msgid "Loop"
+msgstr "循环"
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/RulesOr.php:8
+msgid "Condition set (OR)"
+msgstr "条件集（或）"
+
+#: modules/contrib/rules/src/Ui/TempStoreTrait.php:241
+msgid "You have unsaved changes."
+msgstr "你有未保存的更改。"
+
+#: config/schema/rules.expression.schema.yml:0
+msgid "Plugin ID"
+msgstr "插件 ID"
+
+#: src/Form/BreakLockForm.php:80
+msgid "By breaking this lock, any unsaved changes made by @user will be lost."
+msgstr "通过破解这个锁，@user所做的任何未保存的更改都将丢失。"
+

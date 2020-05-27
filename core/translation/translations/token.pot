@@ -1,0 +1,731 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/token/token.pages.inc: n/a
+#  modules/contrib/token/token.tokens.inc: n/a
+#  modules/contrib/token/src/Element/TokenTreeTable.php: n/a
+#  modules/contrib/token/token.module: n/a
+#  modules/contrib/token/token.install: n/a
+#  modules/contrib/token/token.info.yml: n/a
+#  modules/contrib/token/js/token.js: n/a
+#  modules/contrib/token/src/TreeBuilder.php: n/a
+#  modules/contrib/token/src/Controller/TokenCacheController.php: n/a
+#  modules/contrib/token/src/Controller/TokenDevelController.php: n/a
+#  modules/contrib/token/src/Controller/TokenTreeController.php: n/a
+#  modules/contrib/token/src/Plugin/Derivative/DevelLocalTask.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-05-14 17:39+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/token/token.pages.inc:17
+msgid "Browse available tokens."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:38
+msgid "Current date"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:39
+msgid "Tokens related to the current date and time."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:49
+msgid "The size of the file."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:92;257;287;303;420
+msgid "URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:93
+msgid "The URL of the @entity."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:102
+msgid "Original @entity"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:103
+msgid "The original @entity data if the @entity is being updated or saved."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:118
+msgid "A date in '@type' format. (%date)"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:131
+msgid "Translation source node"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:132
+msgid "The source node for this current node's translation set."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:136
+msgid "Revision log message"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:137
+msgid "The explanation of the most recent changes made to the node."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:140
+msgid "Content type"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:141
+msgid "The content type of the node."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:147
+msgid "Content types"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:148
+msgid "Tokens related to content types."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:152;1178 modules/contrib/token/src/Element/TokenTreeTable.php:91
+msgid "Name"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:153
+msgid "The name of the content type."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:156;192;1182
+msgid "Machine-readable name"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:157
+msgid "The unique machine-readable name of the content type."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:160;1186 modules/contrib/token/src/Element/TokenTreeTable.php:94
+msgid "Description"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:161
+msgid "The optional description of the content type."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:164
+msgid "Node count"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:165
+msgid "The number of nodes belonging to the content type."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:168;176;196;1194;1204
+msgid "Edit URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:169
+msgid "The URL of the content type's edit page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:177
+msgid "The URL of the taxonomy term's edit page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:181;267;1088
+msgid "Parents"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:182
+msgid "An array of all the term's parents, starting with the root."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:186
+msgid "Root term"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:187
+msgid "The root term of the taxonomy term."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:193
+msgid "The unique machine-readable name of the vocabulary."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:197
+msgid "The URL of the vocabulary's edit page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:204
+msgid "Base name"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:205
+msgid "The base name of the file."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:208
+msgid "Extension"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:209
+msgid "The extension of the file."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:212
+msgid "File byte size"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:213
+msgid "The size of the file, in bytes."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:219
+msgid "Account cancellation URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:220
+msgid "The URL of the confirm delete page for the user account."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:225
+msgid "One-time login URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:226
+msgid "The URL of the one-time login page for the user account."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:231
+msgid "Roles"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:232
+msgid "The user roles associated with the user account."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:238
+msgid "IP address"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:239
+msgid "The IP address of the current user."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:244
+msgid "Menu links"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:245
+msgid "Tokens related to menu links."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:249
+msgid "Link ID"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:250
+msgid "The unique ID of the menu link."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:253;283;1069
+msgid "Title"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:254
+msgid "The title of the menu link."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:258
+msgid "The URL of the menu link."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:262;1083
+msgid "Parent"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:263
+msgid "The menu link's parent."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:268
+msgid "An array of all the menu link's parents, starting with the root."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:272;1078
+msgid "Root"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:273
+msgid "The menu link's root."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:279
+msgid "Current page"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:280
+msgid "Tokens related to the current page request."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:284
+msgid "The title of the current page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:288
+msgid "The URL of the current page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:292
+msgid "Page number"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:293
+msgid "The page number of the current page when viewing paged lists."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:296
+msgid "Query string value"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:297
+msgid "The value of a specific query string field of the current page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:304
+msgid "Tokens related to URLs."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:308
+msgid "Path"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:309
+msgid "The path component of the URL."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:312
+msgid "Relative URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:313
+msgid "The relative URL."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:316
+msgid "Absolute URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:317
+msgid "The absolute URL."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:320
+msgid "Brief URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:321
+msgid "The URL without the protocol and trailing backslash."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:324
+msgid "Unaliased URL"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:325
+msgid "The unaliased URL."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:329
+msgid "Arguments"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:330
+msgid "The specific argument of the current page (e.g. 'arg:1' on the page 'node/1' returns '1')."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:336
+msgid "Array"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:337
+msgid "Tokens related to arrays of strings."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:342
+msgid "First"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:343
+msgid "The first element of the array."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:346
+msgid "Last"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:347
+msgid "The last element of the array."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:350
+msgid "Count"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:351
+msgid "The number of elements in the array."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:354
+msgid "Reversed"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:355
+msgid "The array reversed."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:359
+msgid "Keys"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:360
+msgid "The array of keys of the array."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:364
+msgid "Imploded"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:365
+msgid "The values of the array joined together with a custom string in-between each value."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:369 modules/contrib/token/src/Element/TokenTreeTable.php:93
+msgid "Value"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:370
+msgid "The specific value of the array."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:376
+msgid "Random"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:377
+msgid "Tokens related to random data."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:380
+msgid "Number"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:381
+msgid "A random number from 0 to @max."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:384
+msgid "Hash"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:385
+msgid "A random hash. The possible hashing algorithms are: @hash-algos."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:392
+msgid "Image with image style"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:400
+msgid "MIME type"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:401
+msgid "The MIME type (image/png, image/bmp, etc.) of the image."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:404
+msgid "File size"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:405
+msgid "The file size of the image."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:408
+msgid "Height"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:409
+msgid "The height the image, in pixels."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:412
+msgid "Width"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:413
+msgid "The width of the image, in pixels."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:416
+msgid "URI"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:417
+msgid "The URI to the image."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:421
+msgid "The URL to the image."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1051
+msgid "Attempting to perform token replacement for token type %type without required data"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1063;1094
+msgid "Book"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1064
+msgid "Tokens related to books."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1070
+msgid "Title of the book."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1073
+msgid "Author"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1074
+msgid "The author of the book."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1079
+msgid "Top level of the book."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1084
+msgid "Parent of the current page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1089
+msgid "An array of all the node's parents, starting with the root."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1095
+msgid "The book page associated with the node."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1173
+msgid "Menus"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1174
+msgid "Tokens related to menus."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1179
+msgid "The name of the menu."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1183
+msgid "The unique machine-readable name of the menu."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1187
+msgid "The optional description of the menu."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1190
+msgid "Menu link count"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1191
+msgid "The number of menu links belonging to the menu."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1195
+msgid "The URL of the menu's edit page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1199
+msgid "Menu"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1200
+msgid "The menu of the menu link."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1205
+msgid "The URL of the menu link's edit page."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1208 modules/contrib/token/token.module:676
+msgid "Menu link"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1209
+msgid "The menu link for this node."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1424
+msgid "@type field. Also known as %labels."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1427
+msgid "@type field."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1444
+msgid "@label tokens."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1451
+msgid "List of @type values"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1452
+msgid "Tokens for lists of @type values."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1462
+msgid "@type type with delta @delta"
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1495
+msgid "Represents the image in the given image style."
+msgstr ""
+
+#: modules/contrib/token/token.tokens.inc:1503;1508;1511
+msgid "format"
+msgstr ""
+
+#: modules/contrib/token/token.module:33
+msgid "About"
+msgstr ""
+
+#: modules/contrib/token/token.module:34
+msgid "The <a href=\":project\">Token</a> module provides a user interface for the site token system. It also adds some additional tokens that are used extensively during site development. Tokens are specially formatted chunks of text that serve as placeholders for a dynamically generated value. For more information, covering both the token system and the additional tools provided by the Token module, see the <a href=\":online\">online documentation</a>."
+msgstr ""
+
+#: modules/contrib/token/token.module:35
+msgid "Uses"
+msgstr ""
+
+#: modules/contrib/token/token.module:36
+msgid "Your website uses a shared token system for exposing and using placeholder tokens and their appropriate replacement values. This allows for any module to provide placeholder tokens for strings without having to reinvent the wheel. It also ensures consistency in the syntax used for tokens, making the system as a whole easier for end users to use."
+msgstr ""
+
+#: modules/contrib/token/token.module:38
+msgid "The list of the currently available tokens on this site are shown below."
+msgstr ""
+
+#: modules/contrib/token/token.module:99
+msgid "This field supports tokens. @browse_tokens_link"
+msgstr ""
+
+#: modules/contrib/token/token.module:299
+msgid "%name is using the following invalid tokens: @invalid-tokens."
+msgstr ""
+
+#: modules/contrib/token/token.module:323
+msgid "This field supports tokens."
+msgstr ""
+
+#: modules/contrib/token/token.module:368
+msgid "Available variables are: [site:name], [site:url], [user:display-name], [user:account-name], [user:mail], [site:login-url], [site:url-brief], [user:edit-url], [user:one-time-login-url], [user:cancel-url]."
+msgstr ""
+
+#: modules/contrib/token/token.module:375
+msgid "The list of available tokens that can be used in e-mails is provided below."
+msgstr ""
+
+#: modules/contrib/token/token.module:677
+msgid "Computed menu link for the node (only available during node saving)."
+msgstr ""
+
+#: modules/contrib/token/token.module:285
+msgid "%name must contain at least one token."
+msgid_plural "%name must contain at least @count tokens."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/contrib/token/token.module:291
+msgid "%name must contain at most one token."
+msgid_plural "%name must contain at most @count tokens."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/contrib/token/token.install:58 modules/contrib/token/token.info.yml:0 modules/contrib/token/src/Element/TokenTreeTable.php:92
+msgid "Token"
+msgstr ""
+
+#: modules/contrib/token/token.install:251
+msgid "Tokens or token types not defined as arrays"
+msgstr ""
+
+#: modules/contrib/token/token.install:255
+msgid "Tokens or token types missing name property"
+msgstr ""
+
+#: modules/contrib/token/token.install:259
+msgid "Token types do not have any tokens defined"
+msgstr ""
+
+#: modules/contrib/token/token.install:263
+msgid "Token types are not defined but have tokens"
+msgstr ""
+
+#: modules/contrib/token/token.install:267
+msgid "Token or token types are defined by multiple modules"
+msgstr ""
+
+#: modules/contrib/token/token.info.yml:0
+msgid "Provides a user interface for the Token API and some missing core tokens."
+msgstr ""
+
+#: modules/contrib/token/js/token.js:0
+msgid "Insert this token into your form"
+msgstr ""
+
+#: modules/contrib/token/js/token.js:0
+msgid "First click a text field to insert your tokens into."
+msgstr ""
+
+#: modules/contrib/token/src/TreeBuilder.php:100
+msgid "No tokens available"
+msgstr ""
+
+#: modules/contrib/token/src/Controller/TokenCacheController.php:17
+msgid "Token registry caches cleared."
+msgstr ""
+
+#: modules/contrib/token/src/Controller/TokenDevelController.php:104
+msgid "No tokens available."
+msgstr ""
+
+#: modules/contrib/token/src/Controller/TokenTreeController.php:51
+msgid "Available tokens"
+msgstr ""
+
+#: modules/contrib/token/src/Element/TokenTreeTable.php:104
+msgid "Click a token to insert it into the field you've last clicked."
+msgstr ""
+
+#: modules/contrib/token/src/Plugin/Derivative/DevelLocalTask.php:44
+msgid "Tokens"
+msgstr ""
+

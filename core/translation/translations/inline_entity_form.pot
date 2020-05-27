@@ -1,0 +1,283 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/inline_entity_form/inline_entity_form.module: n/a
+#  modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php: n/a
+#  modules/contrib/inline_entity_form/inline_entity_form.info.yml: n/a
+#  modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml: n/a
+#  modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php: n/a
+#  modules/contrib/inline_entity_form/src/Form/EntityInlineForm.php: n/a
+#  modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php: n/a
+#  modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormSimple.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-12-17 14:43+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:79 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:500
+msgid "Add existing @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:86
+msgid "@label"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:100
+msgid "Add @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:112 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:655;762
+msgid "Cancel"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:155
+msgid "The selected @label has already been added."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:339
+msgid "Sort order"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:352
+msgid "Operations"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.module:395
+msgid "N/A"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.info.yml:0
+msgid "Inline Entity Form"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.info.yml:0
+msgid "Provides a widget for inline management (creation, modification, removal) of referenced entities. "
+msgstr ""
+
+#: modules/contrib/inline_entity_form/inline_entity_form.info.yml:0
+msgid "Fields"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Inline entity reference display format settings"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:210
+msgid "Form mode"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:217
+msgid "Override labels"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Label (singular)"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Label (plural)"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Allow new"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Allow existing"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0
+msgid "Match operator"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:242
+msgid "Collapsible"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0;0 modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:247
+msgid "Collapsed by default"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/config/schema/inline_entity_form.schema.yml:0
+msgid "Allow duplicate"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/EntityInlineForm.php:96
+msgid "@entity_type entities"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/EntityInlineForm.php:113
+msgid "Label"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/EntityInlineForm.php:118
+msgid "Type"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php:20
+msgid "node"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php:21
+msgid "nodes"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php:34
+msgid "Status"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php:39
+msgid "Unpublished"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Form/NodeInlineForm.php:40
+msgid "Published"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:222
+msgid "Singular label"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:232
+msgid "Plural label"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:268
+msgid "Default"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:270
+msgid "Form mode: @mode"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:272
+msgid "Overriden labels are used: %singular and %plural"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormBase.php:278
+msgid "Default labels are used."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:108
+msgid "Allow users to add new @label."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:113
+msgid "Allow users to add existing @label."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:118
+msgid "Autocomplete matching"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:121
+msgid "Select the method used to collect autocomplete suggestions. Note that <em>Contains</em> can cause performance issues on sites with thousands of nodes."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:130
+msgid "Allow users to duplicate @label."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:145
+msgid "New @label can be added."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:148
+msgid "New @label can not be created."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:153
+msgid "Existing @label can be referenced and are matched with the %operator operator."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:159
+msgid "Existing @label can not be referenced."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:163
+msgid "@label can be duplicated."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:166
+msgid "@label can not be duplicated."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:180
+msgid "Starts with"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:181
+msgid "Contains"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:344
+msgid "Edit"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:361
+msgid "Duplicate"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:380;749
+msgid "Remove"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:408
+msgid "You have added @entities_count out of @cardinality_count allowed @label."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:485
+msgid "Add new @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:627
+msgid "Create @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:630
+msgid "Duplicate @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:634
+msgid "Update @type_singular"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:721
+msgid "Are you sure you want to remove %label?"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:724
+msgid "Are you sure you want to remove this %entity_type?"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:735
+msgid "Delete this @type_singular from the system."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:887
+msgid "@name field is required."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormComplex.php:18
+msgid "Inline entity form - Complex"
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormSimple.php:51
+msgid "Unable to load the referenced entity."
+msgstr ""
+
+#: modules/contrib/inline_entity_form/src/Plugin/Field/FieldWidget/InlineEntityFormSimple.php:14
+msgid "Inline entity form - Simple"
+msgstr ""
+
