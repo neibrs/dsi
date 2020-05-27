@@ -29,12 +29,13 @@ vendor/bin/drupal moi -y \
   memcache \
   memcache_admin
 #
-cp modules/ds/bin/settings.memcache.php sites/default/settings.memcache.php
+cp modules/ds/settings.memcache.php sites/default/settings.memcache.php
 
 echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
 
 echo Set site to the product mode
-vendor/bin/drupal site:mode prod
+# Set site mode to dev mode
+vendor/bin/drupal site:mode dev
 vendor/bin/drush then -y barrio
 vendor/bin/drush cset system.theme admin -y barrio && \
 vendor/bin/drush cset system.theme default -y barrio
