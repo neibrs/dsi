@@ -1,0 +1,20 @@
+name: Core plus
+type: module
+description: Enhancements to Drupal core
+core: 8.x
+interface translation project: eabax_core
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: Eabax core
+dependencies:
+  - block_style_plugins
+  - config
+  - custom_formatters
+  - entity_log
+  - entity_permission
+  - file
+  - locale
+  - role_frontpage
+  - role_menu
+  - rules
+  - translation
+  - workflows

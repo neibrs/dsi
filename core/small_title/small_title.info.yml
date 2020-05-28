@@ -1,0 +1,9 @@
+name: 'Small title'
+type: module
+description: 'Small title'
+core: 8.x
+interface translation project: small_title
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - block

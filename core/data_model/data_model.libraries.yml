@@ -1,0 +1,8 @@
+data_model:
+  css:
+    base:
+      css/data_model.css: {}
+  js:
+    js/data_model.js: {}
+  dependencies:
+    - charts_c3/d3

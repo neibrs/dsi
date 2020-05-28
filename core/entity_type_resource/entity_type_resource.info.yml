@@ -1,0 +1,13 @@
+name: Entity type resource
+type: module
+description: REST resource for entity types.
+core: 8.x
+interface translation project: entity_type_resource
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: Eabax core
+dependencies:
+  - basic_auth
+  - hal
+  - rest
+  - serialization
+  - user

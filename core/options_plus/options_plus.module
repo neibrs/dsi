@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function options_plus_field_formatter_info_alter(array &$info) {
+  $info['string']['field_types'][] = 'string_options';
+}

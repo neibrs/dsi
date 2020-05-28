@@ -1,0 +1,19 @@
+entity.report.add_page:
+  route_name: entity.report.add_page
+  title: 'Add'
+  appears_on:
+    - entity.report.collection
+
+entity.report.cols_form:
+  route_name: entity.report.columns_form
+  title: 'Columns'
+  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+  appears_on:
+    - entity.report.canonical
+
+entity.report.rows_form:
+  route_name: entity.report.rows_form
+  title: 'Rows'
+  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+  appears_on:
+    - entity.report.canonical

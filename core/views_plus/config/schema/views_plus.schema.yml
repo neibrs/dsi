@@ -1,0 +1,15 @@
+views.field.bundle_fields:
+  type: views.field.prerender_list
+  label: 'Bundle fields'
+
+views.filter.entity_reference_in_operator:
+  type: views.filter.in_operator
+  label: 'Entity reference in operator'
+
+views.style.table_tree:
+  type: views.style.table
+  label: 'Table tree'
+  mapping:
+    tree_column:
+      type: string
+      label: 'Tree column'

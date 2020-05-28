@@ -1,0 +1,28 @@
+.item-list ul.category,
+ul.category ul {
+  margin: 0;
+}
+.item-list ul.category li {
+  list-style: none;
+  margin: 0;
+}
+ul.category > li .item-list:before {
+  content: '>';
+}
+ul.category ul {
+  display: inline-block;
+}
+ul.category li div,
+ul.category li li {
+  display: inline-block;
+}
+.item-list ul.category li li {
+  margin: 0 0.15em;
+}
+ul.category li li:after {
+  content: '|';
+  margin-left: 0.15em;
+}
+ul.category li li:last-child:after {
+  content: '';
+}

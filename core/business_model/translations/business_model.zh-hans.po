@@ -1,0 +1,33 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/business_model/business_model.info.yml: n/a
+#  modules/ds/core/business_model/business_model.routing.yml: n/a
+#  modules/ds/core/business_model/src/Controller/BusinessModelController.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-12-27 08:57+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/business_model/src/Controller/BusinessModelController.php:18
+msgid "Config"
+msgstr "配置"
+
+#: modules/ds/core/business_model/src/Controller/BusinessModelController.php:67
+msgid "Reference entity"
+msgstr "引用的实体"
+
+#: modules/ds/core/business_model/src/Controller/BusinessModelController.php:74
+msgid "Referenced by"
+msgstr "被引用的实体"

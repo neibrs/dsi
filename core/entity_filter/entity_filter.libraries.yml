@@ -1,0 +1,16 @@
+filters_form:
+  css:
+    theme:
+      css/filters_form.css: {}
+    layout:
+      css/filters_form.css: {}
+  js:
+    js/filters_form.js: {}
+  dependencies:
+    - core/drupalSettings
+
+entity_filter_form:
+  js:
+    js/entity_filter_form.js: {}
+  dependencies:
+    - entity_filter/filters_form

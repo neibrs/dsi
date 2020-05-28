@@ -1,0 +1,9 @@
+name: 'Eabax search'
+type: module
+description: 'Eabax search'
+core: 8.x
+interface translation project: eabax_search
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - search

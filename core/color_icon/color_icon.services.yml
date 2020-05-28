@@ -1,0 +1,3 @@
+services:
+  color_icon.manager:
+    class: Drupal\color_icon\ColorIconManager

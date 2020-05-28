@@ -1,0 +1,64 @@
+report.report.*:
+  type: config_entity
+  label: 'Report config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    category:
+      type: string
+      label: 'Category'
+    plugin:
+      type: string
+      label: 'Plugin'
+    settings:
+      type: report.settings.[%parent.plugin]
+
+report_settings:
+  type: map
+  label: 'Report settings'
+  mapping:
+    base_table:
+      type: string
+      label: 'Base table'
+    style:
+      type: string
+      label: 'Style'
+    arguments:
+      type: sequence
+      label: 'Arguments'
+      sequence:
+        type: views.argument.[plugin_id]
+    filters:
+      type: sequence
+      label: 'Filters'
+      sequence:
+        type: views.filter.[plugin_id]
+
+report.settings.simple_chart:
+  type: report_settings
+  mapping:
+    columns:
+      type: sequence
+      label: 'Columns'
+      sequence:
+        type: views.filter.[plugin_id]
+
+report.settings.cross_table:
+  type: report_settings
+  mapping:
+    columns:
+      type: sequence
+      label: 'Columns'
+      sequence:
+        type: views.filter.[plugin_id]
+    rows:
+      type: sequence
+      label: 'Rows'
+      sequence:
+        type: views.filter.[plugin_id]

@@ -1,0 +1,29 @@
+excel_export.template.*:
+  type: config_entity
+  label: 'Excel export config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    parameters:
+      type: mapping
+      label: 'Parameters'
+    sheets:
+      type: sequence
+      label: 'Sheets'
+      sequence:
+        type: excel_export.sheet
+
+excel_export.sheet:
+  type: mapping
+  mapping:
+    title:
+      type: string
+      label: 'Title'
+    cells:
+      type: mapping

@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.dropdown_menu
+    - field.field.user.user.user_picture
+    - image.style.x160
+  module:
+    - image
+    - user
+id: user.user.dropdown_menu
+targetEntityType: user
+bundle: user
+mode: dropdown_menu
+content:
+  logout:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  member_for:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  password_link:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: x160
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  dropdown_menu: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  person: true

@@ -1,0 +1,61 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function role_frontpage_theme($existing, $type, $theme, $path) {
+  $theme = [];
+
+  $theme['workbench'] = [
+    'render element' => 'elements',
+    'file' => 'role_frontpage.page.inc',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for user_role_form.
+ */
+function role_frontpage_form_user_role_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\user\RoleInterface $role */
+  $role = $form_state->getFormObject()->getEntity();
+
+  $request_context = \Drupal::service('router.request_context');
+  $form['frontpage'] = [
+    '#type' => 'textfield',
+    '#title' => t('Role front page'),
+    '#default_value' => $role->getThirdPartySetting('role_frontpage', 'frontpage', ''),
+    '#description' => t('Optionally, specify a relative URL to display as the front page.'),
+    '#field_prefix' => $request_context->getCompleteBaseUrl(),
+  ];
+
+  $form['#entity_builders'][] = 'role_frontpage_form_user_role_form_entity_builder';
+}
+
+/**
+ * Entity builder for frontpage on the user role form.
+ *
+ * @see role_frontpage_form_user_role_form_alter()
+ */
+function role_frontpage_form_user_role_form_entity_builder($entity_type_id, RoleInterface $role, &$form, FormStateInterface $form_state) {
+  $new_value = $form_state->getValue('frontpage', '');
+  $role->setThirdPartySetting('role_frontpage', 'frontpage', $new_value);
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function role_frontpage_user_login($account) {
+  $current_request = \Drupal::service('request_stack')->getCurrentRequest();
+  if (!empty($current_request->query->get('destination'))) {
+    return;
+  }
+
+  if ($path = \Drupal::service('role_frontpage.manager')->getFrontpage()) {
+    $current_request->query->set('destination', $path);
+  }
+}

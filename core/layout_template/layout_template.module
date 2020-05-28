@@ -1,0 +1,166 @@
+<?php
+
+/**
+ * @file
+ * Contains layout_template.module.
+ */
+
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function layout_template_theme() {
+  $theme = [];
+  $theme['layout_template'] = [
+    'render element' => 'elements',
+    'file' => 'layout_template.page.inc',
+    'template' => 'layout_template',
+  ];
+  $theme['layout_template_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'layout_template.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function layout_template_theme_suggestions_layout_template(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#layout_template'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'layout_template__' . $sanitized_view_mode;
+  $suggestions[] = 'layout_template__' . $entity->bundle();
+  $suggestions[] = 'layout_template__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'layout_template__' . $entity->id();
+  $suggestions[] = 'layout_template__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function layout_template_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+  /** @var \Drupal\layout_template\LayoutTemplateManagerInterface $layout_template_manager */
+  $layout_template_manager = \Drupal::service('layout_template.manager');
+  if (!$outer_form_display = $layout_template_manager->getEntityFormDisplayFromRoute()) {
+    // $outer_form_display exist only when route defaults is _entity_form.
+    $outer_form_display = $form_display;
+  }
+  $layout_template = $layout_template_manager->currentLayoutTemplate('entity_form_display', $outer_form_display->id());
+  if (!$layout_template) {
+    return;
+  }
+
+  $configuration = $layout_template->getConfiguration();
+  if ($outer_form_display->getEntityTypeId() == $form_display->getEntityTypeId()) {
+    layout_template_alter_entity_form_display($form_display, $configuration);
+  }
+  else {
+    if (isset($configuration['entity_form_displays'][$form_display->id()])) {
+      $configuration = $configuration['entity_form_displays'][$form_display->id()];
+      layout_template_alter_entity_form_display($form_display, $configuration);
+    }
+  }
+}
+
+/**
+ * Used by layout_template_entity_form_display_alter().
+ *
+ * @see layout_template_entity_form_display_alter()
+ */
+function layout_template_alter_entity_form_display(EntityFormDisplayInterface $form_display, $configuration) {
+  if (isset($configuration['components'])) {
+    foreach ($configuration['components'] as $name => $setting) {
+      if (!$form_display->getComponent($name)) {
+        continue;
+      }
+
+      if (!$setting['visible']) {
+        /*$form_display->setComponent($name, [
+        'region' => 'hidden',
+        ]);*/
+        $form_display->removeComponent($name);
+      }
+      else {
+        // TODO: label text
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function layout_template_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  //  $object = $form_state->getFormObject();
+  //  if ($object instanceof ContentEntityFormInterface) {
+  //    $form['#attributes']['class'][] = 'layout-template';
+  //    $form['#theme_wrappers'] = ['form__layout_template'];
+  //    $form['#attached']['library'][] = 'layout_template/entity_form_display';
+  //    /** @var \Drupal\layout_template\LayoutTemplateManagerInterface $layout_template_manager */
+  //    $layout_template_manager = \Drupal::service('layout_template.manager');
+  //    $form_display = $form_state->getStorage()['form_display'];
+  //    if ($layout_template = $layout_template_manager->currentLayoutTemplate('entity_form_display', $form_display->id())) {
+  //      // Using settings from layout template.
+  //      $configuration = $layout_template->getConfiguration();
+  //      $columns = $configuration['columns'];
+  //      foreach ($configuration['components'] as $name => $component) {
+  //        if ($component['visible']) {
+  //          $component_columns = isset($component['columns']) ? $component['columns'] : 1;
+  //          // remove the class by third_party set.
+  //          if (!empty($form[$name])) {
+  //            if($classes = $form[$name]['#attributes']['class']) {
+  //              foreach ($classes as $key => $class) {
+  //                if (strstr($class,'col-md')) {
+  //                  unset($form[$name]['#attributes']['class'][$key]);
+  //                }
+  //              }
+  //            };
+  //          }
+  //
+  //          $form[$name]['#attributes']['class'][] = 'col-md-' . (12 / $columns * $component_columns);
+  //        }
+  //      }
+  //    }
+  //  }
+}
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ */
+function layout_template_field_widget_third_party_settings_form(WidgetInterface $plugin, FieldDefinitionInterface $field_definition, $form_mode, $form, FormStateInterface $form_state) {
+  $element = [];
+
+  $element['column_span'] = [
+    '#type' => 'select',
+    '#title' => t('Column span'),
+    '#options' => [1 => '1', 2 => '2', 3 => '3'],
+    '#default_value' => $plugin->getThirdPartySetting('layout_template', 'column_span', 1),
+  ];
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ */
+function layout_template_field_widget_settings_summary_alter(&$summary, $context) {
+  $column_span = $context['widget']->getThirdPartySetting('layout_template', 'column_span');
+  $summary[] = t('Column span') . ':' . $column_span;
+}
+
+/**
+ * Implements hook_field_widget_form_container_alter().
+ */
+function layout_template_field_widget_form_container_alter(&$element, FormStateInterface $form_state, $context) {
+  //  $column_span = $context['widget']->getThirdPartySetting('layout_template', 'column_span', 1);
+  //  $element['#attributes']['class'][] = 'col-md-' . (12 / 3 * $column_span);
+}

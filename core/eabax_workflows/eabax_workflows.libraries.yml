@@ -1,0 +1,8 @@
+workflow_model:
+  css:
+    theme:
+      css/workflows.css: {}
+  js:
+    js/workflow_model.js: {}
+  dependencies:
+    - charts_c3/d3

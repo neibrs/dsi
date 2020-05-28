@@ -1,0 +1,14 @@
+name: 'Eabax workflows'
+type: module
+description: 'Eabax workflows'
+core: 8.x
+interface translation project: eabax_workflows
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - charts_c3
+  - drupal:rest
+  - drupal:serialization
+  - drupal:views
+  - drupal:workflows
+  - eabax_core

@@ -1,0 +1,13 @@
+field.formatter.settings.image:
+  type: field.formatter.settings.image
+  label: 'Image field display format settings'
+  mapping:
+    image_link:
+      type: string
+      label: 'Link image to'
+    image_style:
+      type: string
+      label: 'Image style'
+    only_first:
+      type: boolean
+      label: 'Only first'

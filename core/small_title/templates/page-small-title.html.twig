@@ -1,0 +1,10 @@
+{{ title_prefix }}
+{% if title %}
+  <h1{{ title_attributes }}>
+    {{ title }}
+    {% if small_title %}
+      <small>{{ small_title }}</small>
+    {% endif %}
+  </h1>
+{% endif %}
+{{ title_suffix }}

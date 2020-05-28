@@ -1,0 +1,208 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/eabax_core/eabax_core.info.yml: n/a
+#  modules/ds/core/eabax_core/eabax_core.links.menu.yml: n/a
+#  modules/ds/core/eabax_core/eabax_core.routing.yml: n/a
+#  modules/ds/core/eabax_core/js/autocomplete.js: n/a
+#  modules/ds/core/eabax_core/src/EabaxCoreManager.php: n/a
+#  modules/ds/core/eabax_core/src/Controller/EabaxCoreController.php: n/a
+#  modules/ds/core/eabax_core/src/Form/BundleDeleteForm.php: n/a
+#  modules/ds/core/eabax_core/src/Plugin/BlockStyle/Box.php: n/a
+#  modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.phpl.php: n/a
+#  modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php: n/a
+#  modules/ds/core/eabax_core/templates/avatar-toggle.html.twig: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-21 13:29+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/eabax_core/eabax_core.info.yml:0;0;0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Business modeling"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0 modules/ds/core/eabax_core/eabax_core.routing.yml:0;0
+msgid "Implementation"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Implementor tools"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define pages"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define rules"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define Workflows"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define reports"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Custom formatters"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "User interface translation"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Configuration synchronization"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0 modules/ds/core/eabax_core/eabax_core.routing.yml:0
+msgid "System administration"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define roles"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define menus"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "User Management"
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Administer custom formatters."
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Import and export your configuration."
+msgstr ""
+
+#: modules/ds/core/eabax_core/eabax_core.routing.yml:0
+msgid "Implementation tools"
+msgstr ""
+
+#: modules/ds/core/eabax_core/js/autocomplete.js:0
+msgid "Add"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/EabaxCoreManager.php:46
+msgid "You do not have any menu items."
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Controller/EabaxCoreController.php:69
+msgid "%updated has been updated."
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Form/BundleDeleteForm.php:22
+msgid "%type is used by 1 piece of %entity on your site. You can not remove %type until you have removed all of the %type %entity."
+msgid_plural "%type is used by @count pieces of %entity on your site. You can not remove %type until you have removed all of the %type %entity."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/ds/core/eabax_core/src/Plugin/BlockStyle/Box.php:34
+msgid "- None -"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/BlockStyle/Box.php:8
+msgid "Box"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:79
+msgid "View mode"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:85
+msgid "Prefix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:90
+msgid "Suffix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:95
+msgid "Field prefix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:100
+msgid "Field suffix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:105
+msgid "Label prefix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:110
+msgid "Label suffix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:115
+msgid "Value prefix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:120
+msgid "Value suffix"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:17
+msgid "Custom"
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustom.php:17
+msgid "Display the referenced entity."
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php:27
+msgid "This field has percent bar."
+msgstr ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php:8
+msgid "Percent Bar"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:12
+msgid "Welcome to @content.name"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:13
+msgid "Since from @content.since ."
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:20
+msgid "Followers"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:23
+msgid "Sales"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:26
+msgid "Friends"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:34
+msgid "Profile"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:37
+msgid "Sign out"
+msgstr ""
+

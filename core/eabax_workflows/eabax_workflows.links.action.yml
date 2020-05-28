@@ -1,0 +1,3 @@
+eabax_workflows.transition_apply:
+  class: \Drupal\eabax_workflows\Plugin\Menu\LocalAction\TransitionApplyLocalAction
+  deriver: \Drupal\eabax_workflows\Plugin\Derivative\TransitionApplyLocalActionDeriver

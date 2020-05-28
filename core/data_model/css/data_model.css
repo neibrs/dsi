@@ -1,0 +1,6 @@
+#data-model text {
+  cursor: pointer;
+}
+#data-model text:hover {
+  text-decoration: underline;
+}

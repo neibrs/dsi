@@ -1,0 +1,7 @@
+workbench:
+  path: '/workbench'
+  defaults:
+    _controller: '\Drupal\role_frontpage\Controller\RoleFrontpageController::workbench'
+    _title: 'Workbench'
+  requirements:
+    _access: 'TRUE'

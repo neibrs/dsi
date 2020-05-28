@@ -1,0 +1,7 @@
+name: 'Views table multi header'
+type: module
+description: 'Multi table for views table style.'
+core: 8.x
+interface translation project: views_table_multi_header
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax Core'

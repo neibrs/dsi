@@ -1,0 +1,41 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/views_template/views_template.views.inc: n/a
+#  modules/ds/core/views_template/views_template.info.yml: n/a
+#  modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-08-26 22:26+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:24
+msgid "Conditions: @conditions"
+msgstr "条件：@conditions"
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:60
+msgid "Conditions setting"
+msgstr "条件设置"
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:73
+msgid "Fields setting"
+msgstr "栏目设置"
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:86
+msgid "View template save as"
+msgstr "保存方案"
+
+#: modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:27
+msgid "Total rows: @total_rows &emsp;"
+msgstr "总行数: @total_rows &emsp;"

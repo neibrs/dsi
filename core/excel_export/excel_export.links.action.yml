@@ -1,0 +1,5 @@
+entity.excel_export.add_form:
+  route_name: entity.excel_export.add_form
+  title: 'Add Excel export'
+  appears_on:
+    - entity.excel_export.collection

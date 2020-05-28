@@ -1,0 +1,9 @@
+name: 'Entity filter'
+type: module
+description: 'Entity filter'
+core: 8.x
+interface translation project: entity_filter
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - drupal:views

@@ -1,0 +1,9 @@
+name: 'LanguageChinese'
+type: module
+description: '提供中文环境.'
+core: 8.x
+package: 'Eabax'
+dependencies:
+  - drupal:config_translation
+  - locale_plus
+  - translation

@@ -1,0 +1,13 @@
+entity_filter.edit_form:
+  path: '/entity_filter/edit/{entity_type_id}/{entity_id}/{field_name}'
+  defaults:
+    _form: '\Drupal\entity_filter\Form\EntityFilterForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'  # TODO
+
+entity_filter.views_handler_config:
+  path: '/entity_filter/views_handler_config/{base_table}/{handler_type}/{key}'
+  defaults:
+    _controller: '\Drupal\entity_filter\Controller\EntityFilterController::viewsHandlerConfig'
+  requirements:
+    _user_is_logged_in: 'TRUE'  # TODO

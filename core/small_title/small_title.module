@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_TYPE_alter() for block.
+ *
+ * @see \Drupal\Core\Plugin\DefaultPluginManager::alterDefinitions()
+ */
+function small_title_block_alter(array &$definitions) {
+  $definitions['page_title_block']['class'] = 'Drupal\small_title\Plugin\Block\SmallTitleBlock';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function small_title_theme($existing, $type, $theme, $path) {
+  return [
+    'page_small_title' => [
+      'variables' => ['title' => NULL, 'small_title' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_views_plugins_display_alter().
+ */
+function small_title_views_plugins_display_alter(array &$plugins) {
+  $plugins['page']['class'] = 'Drupal\small_title\Plugin\views\display\Page';
+}

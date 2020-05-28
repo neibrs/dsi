@@ -1,0 +1,37 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/data_model/data_model.info.yml: n/a
+#  modules/ds/core/data_model/src/Plugin/Block/DataModelBlock.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-21 13:29+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/data_model/data_model.info.yml:0;0
+msgid "Data model"
+msgstr ""
+
+#: modules/ds/core/data_model/data_model.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/data_model/src/Plugin/Block/DataModelBlock.php:33
+msgid "Entity types"
+msgstr ""
+
+#: modules/ds/core/data_model/src/Plugin/Block/DataModelBlock.php:8
+msgid "Data model block"
+msgstr ""
+

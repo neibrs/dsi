@@ -1,0 +1,7 @@
+name: 'Entity log'
+type: module
+description: 'Entity log'
+core: 8.x
+interface translation project: entity_log
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'

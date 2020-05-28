@@ -1,0 +1,56 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\field\FieldConfigInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for field_config.
+ */
+function field_plus_field_config_insert(EntityInterface $entity) {
+  field_plus_configure_entity_form_display($entity);
+  field_plus_configure_entity_view_display($entity);
+}
+
+/**
+ * Configures the field for the default form mode.
+ *
+ * @see \Drupal\field_ui\Form\FieldStorageAddForm::configureEntityFormDisplay()
+ */
+function field_plus_configure_entity_form_display(FieldConfigInterface $field_config, $widget_id = NULL, array $widget_settings = []) {
+  $options = [];
+  if ($widget_id) {
+    $options['type'] = $widget_id;
+    if (!empty($widget_settings)) {
+      $options['settings'] = $widget_settings;
+    }
+  }
+  // Make sure the field is displayed in the 'default' form mode (using
+  // default widget and settings). It stays hidden for other form modes
+  // until it is explicitly configured.
+  entity_get_form_display($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
+    ->setComponent($field_config->getName(), $options)
+    ->save();
+}
+
+function field_plus_configure_entity_view_display(FieldConfigInterface $field_config, $formatter_id = NULL, array $formatter_settings = []) {
+  $options = [];
+  if ($formatter_id) {
+    $options['type'] = $formatter_id;
+    if (!empty($formatter_settings)) {
+      $options['settings'] = $formatter_settings;
+    }
+  }
+  // Make sure the field is displayed in the 'default' view mode (using
+  // default formatter and settings). It stays hidden for other view
+  // modes until it is explicitly configured.
+  entity_get_display($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
+    ->setComponent($field_config->getName(), $options)
+    ->save();
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function field_plus_field_formatter_info_alter(array &$info) {
+  $info['image']['class'] = '\Drupal\field_plus\Plugin\Field\FieldFormatter\ImageFormatter';
+}

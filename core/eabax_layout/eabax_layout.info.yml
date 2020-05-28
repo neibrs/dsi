@@ -1,0 +1,7 @@
+name: Eabax layout
+type: module
+description: Eabax layout
+core: 8.x
+interface translation project: eabax_layout
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: Eabax core

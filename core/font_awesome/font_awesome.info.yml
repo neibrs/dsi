@@ -1,0 +1,5 @@
+name: 'Font awesome'
+type: module
+description: 'Font awesome support.'
+core: 8.x
+package: 'Eabax core'

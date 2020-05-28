@@ -1,0 +1,5 @@
+name: 'Options plus'
+type: module
+description: 'Options plus'
+core: 8.x
+package: 'Eabax core'

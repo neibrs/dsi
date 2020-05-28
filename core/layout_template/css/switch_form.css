@@ -1,0 +1,12 @@
+#layout-template-switch .form-item {
+  display: inline-block;
+}
+#layout-template-switch ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#layout-template-switch ul li {
+  display: inline-block;
+  margin: 0 0.1em;
+}

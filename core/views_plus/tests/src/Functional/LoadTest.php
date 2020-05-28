@@ -3,21 +3,13 @@
 namespace Drupal\Tests\views_plus\Functional;
 
 use Drupal\Core\Url;
-use Drupal\Tests\BrowserTestBase;
 
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
  * @group views_plus
  */
-class LoadTest extends BrowserTestBase {
-
-  /**
-   * Modules to enable.
-   *
-   * @var array
-   */
-  public static $modules = ['views_plus'];
+class LoadTest extends ViewsPlusTestBase {
 
   /**
    * A user with permission to administer site configuration.

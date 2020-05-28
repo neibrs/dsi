@@ -2,7 +2,7 @@
 #
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: modules/eabax/core/translation/translation.info.yml: n/a
+# Generated from file: modules/ds/core/translation/translation.info.yml: n/a
 #
 #, fuzzy
 msgid ""
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/eabax/core/translation/translation.info.yml:0;0
+#: modules/ds/core/translation/translation.info.yml:0;0
 msgid "Translation"
 msgstr ""
 
-#: modules/eabax/core/translation/translation.info.yml:0
+#: modules/ds/core/translation/translation.info.yml:0
 msgid "Eabax core"
 msgstr ""
 

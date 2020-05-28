@@ -1,0 +1,9 @@
+name: 'Entity permission'
+type: module
+description: 'Entity permission'
+core: 8.x
+interface translation project: entity_permission
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - user

@@ -1,0 +1,4 @@
+twocol_flex:
+  css:
+    theme:
+      layouts/twocol_flex/twocol_flex.css: {}

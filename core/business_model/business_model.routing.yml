@@ -1,0 +1,20 @@
+business_model.entity_type.collection:
+  path: '/business_model/entity_type'
+  defaults:
+    _title: 'Entity type'
+    _controller: '\Drupal\business_model\Controller\BusinessModelController::entityTypeCollection'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+business_model.entity_type.views:
+  path: '/business_model/{entity_type_id}/views'
+  requrements:
+    _user_is_logged_in: 'TRUE'
+
+business_model.module.collection:
+  path: '/business_model/module'
+  defaults:
+    _title: 'Modules'
+    _controller: '\Drupal\business_model\Controller\BusinessModelController::moduleCollection'
+  requirements:
+    _user_is_logged_in: 'TRUE'

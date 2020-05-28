@@ -1,0 +1,7 @@
+name: 'Layout template'
+type: module
+description: 'Layout template'
+core: 8.x
+interface translation project: layout_template
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'

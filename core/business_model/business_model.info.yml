@@ -1,0 +1,10 @@
+name: 'Business model'
+type: module
+description: 'Business model'
+core: 8.x
+interface translation project: business_model
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - data_model
+  - eabax_core

@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_views_plugins_style_alter().
+ */
+function views_table_multi_header_views_plugins_style_alter(array &$plugins) {
+  $plugins['table']['class'] = 'Drupal\views_table_multi_header\MultiHeaderTable';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views_ui_style_plugin_table.
+ */
+function views_table_multi_header_preprocess_views_ui_style_plugin_table(&$variables) {
+  $form = $variables['form'];
+
+  $form['columns'] = $form['multi_header']['columns'];
+  $form['info'] = $form['multi_header']['info'];
+  unset($form['multi_header']);
+
+  $variables['table']['#header'][] = t('Group');
+
+  $row = 0;
+  foreach (Element::children($form['columns']) as $id) {
+    $item = $form['info'][$id]['group'];
+    $item['#name'] = "style_options[info][" . $id . "][group]";
+    $variables['table']['#rows'][$row][]['data'] = $item;
+    $row++;
+  }
+
+  unset($form['columns']);
+  unset($form['info']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view_table.
+ */
+function views_table_multi_header_preprocess_views_view_table(&$variables) {
+  $view = $variables['view'];
+
+  $options = $view->style_plugin->options;
+  $handler = $view->style_plugin;
+
+  $fields = &$view->field;
+  $columns = $handler->sanitizeColumns($options['columns'], $fields);
+
+  $active = !empty($handler->active) ? $handler->active : '';
+  $order = !empty($handler->order) ? $handler->order : 'asc';
+
+  $route_name = !empty($view->live_preview) ? '<current>' : '<none>';
+
+  $headers = [];
+  $max_deep = 0;
+  foreach ($columns as $field => $column) {
+    $group = $options['info'][$field]['group'];
+    if (!empty($group)) {
+      $splits = explode(',', $group);
+      $headers[$field] = $splits;
+      $deep = count($splits);
+      $max_deep = $deep < $max_deep ? $max_deep : $deep;
+    }
+  }
+
+  $groups = [];
+  foreach ($columns as $field => $column) {
+    if ($field == $column && empty($fields[$field]->options['exclude'])) {
+      $splits = $headers[$field];
+
+      for ($row = $max_deep; $row < $max_deep; $row--) {
+        if ($row == $max_deep) {
+          $label = !empty($fields[$field]) ? $fields[$field]->label() : '';
+          if (empty($options['info'][$field]['sortable']) || !$fields[$field]->clickSortable()) {
+            $cell['content'] = $label;
+          }
+          else {
+            $initial = !empty($options['info'][$field]['default_sort_order']) ? $options['info'][$field]['default_sort_order'] : 'asc';
+
+            if ($active == $field) {
+              $initial = ($order == 'asc') ? 'desc' : 'asc';
+            }
+
+            $title = t('sort by @s', ['@s' => $label]);
+            if ($active == $field) {
+              $variables['header'][$field]['sort_indicator'] = [
+                '#theme' => 'tablesort_indicator',
+                '#style' => $initial,
+              ];
+            }
+
+            $query['order'] = $field;
+            $query['sort'] = $initial;
+            $link_options = [
+              'query' => $query,
+            ];
+            $url = new Url($route_name, [], $link_options);
+            $cell['url'] = $url->toString();
+            $cell['content'] = $label;
+            $cell['title'] = $title;
+          }
+          $groups[$row][$field] = $cell;
+        }
+        else {
+          if ($split = array_pop($splits)) {
+            $cell['content'] = $split;
+          }
+          else {
+            $cell['content'] = '';
+          }
+          $groups[$row][$field . '_' . $row] = $cell;
+        }
+      }
+    }
+  }
+
+  // TODO merge cells
+
+  $variables['groups'] = $groups;
+}

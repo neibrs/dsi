@@ -1,0 +1,5 @@
+services:
+  small_title.page_display_variant_subscriber:
+    class: Drupal\small_title\EventSubscriber\SmallTitlePageDisplayVariantSubscriber
+    tags:
+      - { name: event_subscriber }

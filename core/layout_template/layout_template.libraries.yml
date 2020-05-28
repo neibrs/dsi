@@ -1,0 +1,9 @@
+entity_form_display:
+  css:
+    theme:
+      css/entity_form_display.css: {}
+
+switch_form:
+  css:
+    theme:
+      css/switch_form.css: {}

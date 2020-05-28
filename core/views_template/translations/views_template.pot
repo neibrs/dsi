@@ -1,0 +1,182 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/views_template/views_template.views.inc: n/a
+#  modules/ds/core/views_template/views_template.info.yml: n/a
+#  modules/ds/core/views_template/views_template.links.action.yml: n/a
+#  modules/ds/core/views_template/views_template.links.menu.yml: n/a
+#  modules/ds/core/views_template/src/ViewTemplateListBuilder.php: n/a
+#  modules/ds/core/views_template/src/Entity/ViewTemplate.php: n/a
+#  modules/ds/core/views_template/views_template.routing.yml: n/a
+#  modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php: n/a
+#  modules/ds/core/views_template/config/schema/view_template.schema.yml: n/a
+#  modules/ds/core/views_template/src/Form/ViewTemplateDeleteForm.php: n/a
+#  modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php: n/a
+#  modules/ds/core/views_template/src/Form/ViewTemplateForm.php: n/a
+#  modules/ds/core/views_template/src/Form/ViewTemplateSaveAsForm.php: n/a
+#  modules/ds/core/views_template/src/Plugin/Block/ViewTemplateBlock.php: n/a
+#  modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-05-09 16:14+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/views_template/views_template.views.inc:8
+msgid "Views conditions"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.info.yml:0
+msgid "Views template"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.info.yml:0
+msgid "Provides views template."
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.links.action.yml:0
+msgid "Add View template"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.links.menu.yml:0 modules/ds/core/views_template/src/ViewTemplateListBuilder.php:17 modules/ds/core/views_template/src/Entity/ViewTemplate.php:7
+msgid "View template"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.links.menu.yml:0
+msgid "List View template (bundles)"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.routing.yml:0
+msgid "条件设置"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.routing.yml:0
+msgid "栏目设置"
+msgstr ""
+
+#: modules/ds/core/views_template/views_template.routing.yml:0 modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:64
+msgid "View template save as"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "View template config"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "ID"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "View id"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "View filters"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "Views fields"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "Public"
+msgstr ""
+
+#: modules/ds/core/views_template/config/schema/view_template.schema.yml:0
+msgid "User id"
+msgstr ""
+
+#: modules/ds/core/views_template/src/ViewTemplateListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateDeleteForm.php:32 modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php:136
+msgid "Delete"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateForm.php:25 modules/ds/core/views_template/src/Form/ViewTemplateSaveAsForm.php:34
+msgid "Label for the View template."
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateForm.php:52
+msgid "Created the %label View template."
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateForm.php:58
+msgid "Saved the %label View template."
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSaveAsForm.php:32
+msgid "Name"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSaveAsForm.php:48
+msgid "Save"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:38
+msgid "Conditions setting"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:51
+msgid "Fields setting"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewTemplateSwitchForm.php:95
+msgid "Submit"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php:59
+msgid "Save configuration"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php:110
+msgid "Field"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php:111
+msgid "Operations"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Form/ViewsFieldsOverrideForm.php:112
+msgid "Weight"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Plugin/Block/ViewTemplateBlock.php:7
+msgid "View template block"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:23
+msgid "Conditions: @conditions"
+msgstr ""
+
+#: modules/ds/core/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:27
+msgid "Total rows: @total_rows &emsp;"
+msgstr ""
+

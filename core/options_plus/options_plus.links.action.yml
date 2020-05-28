@@ -1,0 +1,6 @@
+entity.string_options.add_form:
+  route_name: entity.string_options.add_form
+  title: 'Add String options'
+  appears_on:
+    - entity.string_options.collection
+

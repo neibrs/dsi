@@ -1,0 +1,7 @@
+field.formatter.settings.entity_reference_color_square:
+  type: mapping
+  label: 'Color square settings'
+  mapping:
+    label:
+      type: boolean
+      label: 'Display label'

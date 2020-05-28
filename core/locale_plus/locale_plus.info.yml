@@ -1,0 +1,7 @@
+name: Locale plus
+type: module
+description: '对核心的locale模块进行增强'
+package: 'Eabax core'
+core: 8.x
+dependencies:
+  - drupal:locale

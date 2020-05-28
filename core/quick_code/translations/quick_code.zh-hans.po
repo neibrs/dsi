@@ -1,0 +1,221 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/quick_code/quick_code.info.yml: n/a
+#  modules/ds/core/quick_code/quick_code.links.menu.yml: n/a
+#  modules/ds/core/quick_code/src/QuickCodeBreadcrumbBuilder.php: n/a
+#  modules/ds/core/quick_code/src/Entity/QuickCode.php: n/a
+#  modules/ds/core/quick_code/quick_code.links.action.yml: n/a
+#  modules/ds/core/quick_code/src/QuickCodeTypeForm.php: n/a
+#  modules/ds/core/quick_code/quick_code.links.task.yml: n/a
+#  modules/ds/core/quick_code/src/QuickCodeForm.php: n/a
+#  modules/ds/core/quick_code/quick_code.permissions.yml: n/a
+#  modules/ds/core/quick_code/config/schema/quick_code.schema.yml: n/a
+#  modules/ds/core/quick_code/config/schema/quick_code.views.schema.yml: n/a
+#  modules/ds/core/quick_code/src/Entity/QuickCodeType.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/views/area/QuickCodeFilter.php: n/a
+#  modules/ds/core/quick_code/src/QuickCodeTypeListBuilder.php: n/a
+#  modules/ds/core/quick_code/src/QuickCodeViewsData.php: n/a
+#  modules/ds/core/quick_code/src/QuickCodePermissions.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/views/filter/Effective.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/Action/DisableQuickCode.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/Action/EnableQuickCode.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/EntityReferenceSelection/QuickCodeSelection.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/Menu/LocalAction/QuickCodeAddForm.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/views/argument/QuickCode.php: n/a
+#  modules/ds/core/quick_code/src/Plugin/views/argument/QuickCodeType.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-07-16 15:33+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/quick_code/quick_code.info.yml:0 modules/ds/core/quick_code/quick_code.links.menu.yml:0 modules/ds/core/quick_code/src/QuickCodeBreadcrumbBuilder.php:30
+msgid "Quick code"
+msgstr "基础编码"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:103
+msgctxt "Short code"
+msgid "Quick code"
+msgstr "基础编码"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:13
+msgctxt "Entity"
+msgid "Quick code"
+msgstr "基础编码"
+
+#: modules/ds/core/quick_code/quick_code.info.yml:0
+msgid "Define and maintain QuickCodes for business object."
+msgstr "定义和维护业务对象的基础编码"
+
+#: modules/ds/core/quick_code/quick_code.info.yml:0
+msgid "Eabax core"
+msgstr "eAbax核心"
+
+#: modules/ds/core/quick_code/quick_code.links.action.yml:0 modules/ds/core/quick_code/src/QuickCodeTypeForm.php:21
+msgid "Add quick code type"
+msgstr "添加基础编码类型"
+
+#: modules/ds/core/quick_code/quick_code.links.action.yml:0
+msgid "Add quick code"
+msgstr "添加基础编码"
+
+#: modules/ds/core/quick_code/quick_code.links.menu.yml:0
+msgid "Providing lists of valid values."
+msgstr "提供有效值列表。"
+
+#: modules/ds/core/quick_code/quick_code.permissions.yml:0
+msgid "Administer quick codes"
+msgstr "管理基础编码"
+
+#: modules/ds/core/quick_code/quick_code.permissions.yml:0
+msgid "View quick code"
+msgstr "查看基础编码"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0 modules/ds/core/quick_code/config/schema/quick_code.views.schema.yml:0 modules/ds/core/quick_code/src/Entity/QuickCode.php:13 modules/ds/core/quick_code/src/Entity/QuickCodeType.php:8 modules/ds/core/quick_code/src/Plugin/views/area/QuickCodeFilter.php:42
+msgid "Quick code type"
+msgstr "基础编码类型"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0
+msgid "Machine-readable name"
+msgstr "机读名称"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0 modules/ds/core/quick_code/src/QuickCodeTypeForm.php:51
+msgid "Hierarchy"
+msgstr "层次结构"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0 modules/ds/core/quick_code/src/QuickCodeTypeForm.php:67
+msgid "Encoding rules"
+msgstr "编码规则"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0
+msgid "Enable selected quick code configuration"
+msgstr "启用已选择的基础编码设置"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.schema.yml:0
+msgid "Disable selected quick code configuration"
+msgstr "禁用已选择的基础编码设置"
+
+#: modules/ds/core/quick_code/config/schema/quick_code.views.schema.yml:0 modules/ds/core/quick_code/src/QuickCodeViewsData.php:37
+msgid "Quick code filter"
+msgstr "基础编码过滤器"
+
+#: modules/ds/core/quick_code/src/QuickCodeForm.php:45;46
+msgid "Created new %type %entity."
+msgstr "已添加%type %entity。"
+
+#: modules/ds/core/quick_code/src/QuickCodeForm.php:49;50
+msgid "Updated %type %entity."
+msgstr "已修改%type %entity。"
+
+#: modules/ds/core/quick_code/src/QuickCodePermissions.php:48
+msgid "Edit %type quick code"
+msgstr "编辑%type基础编码"
+
+#: modules/ds/core/quick_code/src/QuickCodePermissions.php:53
+msgid "Delete %type quick code"
+msgstr "删除%type基础编码"
+
+#: modules/ds/core/quick_code/src/QuickCodeTypeForm.php:24
+msgid "Edit quick code type"
+msgstr "编辑基础编码类型"
+
+#: modules/ds/core/quick_code/src/QuickCodeTypeForm.php:94;95
+msgid "Created new quick code type %label."
+msgstr "已添加基础编码类型%label。"
+
+#: modules/ds/core/quick_code/src/QuickCodeTypeForm.php:99;100
+msgid "Updated new quick code type %label."
+msgstr "已更新基础编码类型%label。"
+
+#: modules/ds/core/quick_code/src/QuickCodeViewsData.php:21
+msgid "Operations bulk form"
+msgstr "批量操作表单"
+
+#: modules/ds/core/quick_code/src/QuickCodeViewsData.php:29 modules/ds/core/quick_code/src/Plugin/views/filter/Effective.php:53
+msgid "Effective"
+msgstr "有效的"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:74
+msgctxt "QuickCode"
+msgid "Label"
+msgstr "名称"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:112
+msgid "Effective Dates"
+msgstr "有效日期"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:141
+msgid "Parent"
+msgstr "上级"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:142
+msgid "The parent quick code."
+msgstr "父级基础编码。"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:157
+msgid "The weight of this quick code in relation to other quick codes."
+msgstr "当前基础编码在其他基础编码关系中的权重。"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:161
+msgid "Authored on"
+msgstr "作者"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:162
+msgid "The time that the quick code was created."
+msgstr "基础编码创建时间。"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:165
+msgid "Changed"
+msgstr "变更"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:166
+msgid "The time that the quick code was last edited."
+msgstr "最近一次基础编码变更时间。"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCode.php:13
+msgid "Quick codes"
+msgstr "基础编码"
+
+#: modules/ds/core/quick_code/src/Entity/QuickCodeType.php:8
+msgid "Quick code types"
+msgstr "基础编码类型"
+
+#: modules/ds/core/quick_code/src/Plugin/Action/DisableQuickCode.php:9
+msgid "Disable selected quick codes"
+msgstr "禁用所选的基础编码"
+
+#: modules/ds/core/quick_code/src/Plugin/Action/EnableQuickCode.php:9
+msgid "Enable selected quick codes"
+msgstr "启用所选的基础编码"
+
+#: modules/ds/core/quick_code/src/Plugin/EntityReferenceSelection/QuickCodeSelection.php:8
+msgid "Quick code selection"
+msgstr "基础编码选择"
+
+#: modules/ds/core/quick_code/src/Plugin/Menu/LocalAction/QuickCodeAddForm.php:18 modules/ds/core/quick_code/src/Plugin/views/area/QuickCodeFilter.php:62
+msgid "Add %type"
+msgstr "添加%type"
+
+#: modules/ds/core/quick_code/src/Plugin/views/area/QuickCodeFilter.php:44
+msgid "The quick code type."
+msgstr "基础编码类型。"
+
+#: modules/ds/core/quick_code/src/Plugin/views/argument/QuickCode.php:56 modules/ds/core/quick_code/src/Plugin/views/argument/QuickCodeType.php:56
+msgid "No name"
+msgstr "无名称"
+
+#: modules/ds/core/quick_code/src/Plugin/views/filter/Effective.php:53
+msgid "All"
+msgstr "所有"
+

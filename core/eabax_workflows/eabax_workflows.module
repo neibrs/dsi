@@ -1,0 +1,271 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\ContentEntityTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\eabax_workflows\EntityState;
+use Drupal\eabax_workflows\Plugin\WorkflowType\EntityWorkflowBase;
+use Drupal\system\Entity\Action;
+use Drupal\workflows\Form\WorkflowEditForm;
+
+/**
+ * Implements hook_entity_access().
+ */
+function eabax_workflows_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if (!$entity instanceof FieldableEntityInterface) {
+    return AccessResult::neutral();
+  }
+
+  if ($entity->hasField('status')) {
+    $field = $entity->getFieldDefinition('status');
+    if ($field->getType() == 'entity_status') {
+      /** @var \Drupal\workflows\WorkflowInterface $workflow */
+      $workflow = \Drupal::entityTypeManager()->getStorage('workflow')
+        ->load($field->getSetting('workflow'));
+      $state = $entity->get($field->getName())->value;
+      if (!$state) {
+        return AccessResult::neutral();
+      }
+      $state = $workflow->getTypePlugin()->getState($state);
+
+      if ($state instanceof EntityState) {
+        $entity_control = $state->getEntityControl();
+        if (isset($entity_control[$operation])) {
+          if ($entity_control[$operation]) {
+            return AccessResult::allowed();
+          }
+          else {
+            return AccessResult::forbidden();
+          }
+        }
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function eabax_workflows_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  // $items is NULL if access is checked for the field definition.
+  if (!$items) {
+    return AccessResult::neutral();
+  }
+
+  // 如果该实体有 workflow 字段，通过 fields_control 定义判断字段的访问权限.
+  $entity = $items->getEntity();
+  if ($entity->hasField('status')) {
+    $field = $entity->getFieldDefinition('status');
+    if ($field->getType() == 'entity_status') {
+      /** @var \Drupal\workflows\WorkflowInterface $workflow */
+      $workflow = \Drupal::entityTypeManager()->getStorage('workflow')
+        ->load($field->getSetting('workflow'));
+      $state = $entity->get($field->getName())->value;
+      if (!$state) {
+        return AccessResult::neutral();
+      }
+      $state = $workflow->getTypePlugin()->getState($state);
+
+      if ($state instanceof EntityState) {
+        $fields_control = $state->getFieldsControl();
+        $field_name = $items->getFieldDefinition()->getName();
+        if (isset($fields_control[$field_name])) {
+          $field_access = $fields_control[$field_name];
+          if (isset($field_access[$operation])) {
+            if ($field_access[$operation]) {
+              return AccessResult::allowed();
+            }
+            else {
+              return AccessResult::forbidden();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function eabax_workflows_field_formatter_info_alter(array &$info) {
+  $info['list_default']['field_types'][] = 'entity_status';
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function eabax_workflows_field_widget_info_alter(array &$info) {
+  $info['options_select']['field_types'][] = 'entity_status';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for workflow.
+ */
+function eabax_workflows_workflow_insert(EntityInterface $entity) {
+  eabax_workflows_workflow_update($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for workflow.
+ */
+function eabax_workflows_workflow_update(EntityInterface $entity) {
+  $fields = \Drupal::service('workflows_plus.manager')->getWorkflowFields($entity->id());
+  if (!$fields) {
+    return;
+  }
+
+  /** @var \Drupal\workflows\WorkflowInterface $entity */
+  $transitions = $entity->getTypePlugin()->getTransitions();
+  foreach ($fields as $entity_type_id => $field) {
+    foreach ($transitions as $transition) {
+      $id = $entity_type_id . '_wst_' . $transition->id();
+      if (!$action = Action::load($id)) {
+        $action = Action::create([
+          'id' => $id,
+          'type' => $entity_type_id,
+          'label' => $transition->label(),
+          'configuration' => [
+            'workflow' => $field->getSetting('workflow'),
+            'field' => $field->getName(),
+            'transition' => $transition->id(),
+          ],
+          'plugin' => 'entity:wst:' . $entity_type_id,
+        ]);
+        $action->trustData()->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_load().
+ */
+function eabax_workflows_entity_load(array $entities, $entity_type_id) {
+  foreach ($entities as $entity) {
+    if (!$entity instanceof ContentEntityTypeInterface) {
+      continue;
+    }
+
+    $fieldDefinitions = $entity->getFieldDefinitions();
+    foreach ($fieldDefinitions as $fieldDefinition) {
+      /** @var \Drupal\Core\Field\BaseFieldDefinition $fieldDefinition */
+      if ($fieldDefinition->getType() != 'entity_status') {
+        continue;
+      }
+
+      /** $entity_state entity workflow state */
+      $entity_state = $entity->{$fieldDefinition->getName()}->value;
+
+      /** @var \Drupal\workflows\WorkflowInterface $workflow */
+      $workflow = \Drupal::entityTypeManager()
+        ->getStorage('workflow')
+        ->load($fieldDefinition->getSetting('workflow'));
+      $workflow_type = $workflow->getTypePlugin();
+      if (!$workflow_type instanceof EntityWorkflowBase) {
+        continue;
+      }
+
+      /** @var \Drupal\eabax_workflows\EntityState $state */
+      $state = $workflow_type->getState($entity_state);
+      $states_fields_control = $state->getFieldsControl();
+
+      foreach ($states_fields_control as $field_name => $field_control) {
+        if ($field_control['status_setting'] == 'default_value') {
+          if (!$entity->get($field_name)->value) {
+            $entity->set($field_name, $field_control['value']);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function eabax_workflows_entity_update(EntityInterface $entity) {
+  if (!$entity instanceof ContentEntityTypeInterface) {
+    return;
+  }
+
+  $fieldDefinitions = $entity->getFieldDefinitions();
+  foreach ($fieldDefinitions as $fieldDefinition) {
+    /** @var \Drupal\Core\Field\BaseFieldDefinition $fieldDefinition */
+    if ($fieldDefinition->getType() == 'entity_status') {
+      /** $entity_state entity workflow state */
+      $entity_state = $entity->{$fieldDefinition->getName()}->value;
+      $original_entity_state = $entity->original->{$fieldDefinition->getName()}->value;
+      if ($entity_state == $original_entity_state) {
+        continue;
+      }
+
+      /** @var \Drupal\workflows\WorkflowInterface $workflow */
+      $workflow = \Drupal::entityTypeManager()
+        ->getStorage('workflow')
+        ->load($fieldDefinition->getSetting('workflow'));
+      $workflow_type = $workflow->getTypePlugin();
+      if (!$workflow_type instanceof EntityWorkflowBase) {
+        continue;
+      }
+
+      /** @var \Drupal\eabax_workflows\EntityState $state */
+      $state = $workflow_type->getState($entity_state);
+      $states_fields_control = $state->getFieldsControl();
+
+      foreach ($states_fields_control as $field_name => $field_control) {
+        if ($field_control['status_setting'] == 'sets_value') {
+          $entity->set($field_name, $field_control['value']);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for workflow_edit_form.
+ */
+function eabax_workflows_form_workflow_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\workflows\Form\WorkflowEditForm $form_object */
+  $form_object = $form_state->getFormObject();
+  if (!$form_object instanceof WorkflowEditForm) {
+    return;
+  }
+  $form_object->getEntity();
+
+  $form['workflow_model'] = [
+    '#weight' => -1,
+    '#markup' => '<div class="workflow-model" data-workflow-id="' . $form_object->getEntity()->id() . '"></div>',
+  ];
+  $form['label']['#weight'] = -2;
+
+  $form['#attached']['library'][] = 'eabax_workflows/workflow_model';
+
+  $form['states_container']['#open'] = FALSE;
+  $form['transitions_container']['#open'] = FALSE;
+}
+
+/**
+ * Implements hook_workflow_type_info_alter() for workflow_type.
+ * @see \Drupal\workflows\WorkflowTypeManager
+ */
+function eabax_workflows_workflow_type_info_alter(&$definitions) {
+  foreach ($definitions as $id => $definition) {
+    $definition['forms']['state'] = '\Drupal\eabax_workflows\Plugin\EntityStateForm';
+    $definition['forms']['transition'] = '\Drupal\eabax_workflows\Plugin\EntityTransitionForm';
+    $definitions[$id] = $definition;
+  }
+}

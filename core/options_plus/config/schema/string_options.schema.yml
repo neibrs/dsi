@@ -1,0 +1,18 @@
+options_plus.string_options.*:
+  type: config_entity
+  label: 'String options config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    allowed_values:
+      type: sequence
+      label: 'Allowed values'
+      sequence:
+        type: string
+        label: 'Allowed value'

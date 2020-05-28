@@ -1,7 +1,13 @@
 name: 'Views plus'
 type: module
-description: 'The plus of core views.'
+description: '对 views 模块进行扩展。'
 core: 8.x
-package: 'Ds'
+interface translation project: views_plus
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
 dependencies:
+  - ajax_links_api
+  - drupal:config
+  - drupal:rest
   - drupal:views
+  - drupal:views_ui

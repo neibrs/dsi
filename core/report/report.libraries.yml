@@ -1,0 +1,5 @@
+report_filters_form:
+  js:
+    js/report_filters_form.js: {}
+  dependencies:
+    - entity_filter/filters_form

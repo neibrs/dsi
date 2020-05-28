@@ -1,0 +1,3 @@
+services:
+  layout_template.manager:
+    class: Drupal\layout_template\LayoutTemplateManager

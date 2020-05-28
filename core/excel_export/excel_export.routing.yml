@@ -1,0 +1,6 @@
+entity.excel_export.export:
+  path: '/excel_export/{excel_export}/export.csv'
+  defaults:
+    _controller: '\Drupal\excel_export\Controller\ExcelExportController::export'
+  requirements:
+    _user_is_logged_in: 'TRUE'

@@ -1,0 +1,46 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/eabax_search/eabax_search.info.yml: n/a
+#  modules/ds/core/eabax_search/src/Form/SearchForm.php: n/a
+#  modules/ds/core/eabax_search/src/Plugin/Block/SearchBlock.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-21 13:29+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/eabax_search/eabax_search.info.yml:0;0
+msgid "Eabax search"
+msgstr ""
+
+#: modules/ds/core/eabax_search/eabax_search.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/eabax_search/src/Form/SearchForm.php:52
+msgid "Search is currently disabled"
+msgstr ""
+
+#: modules/ds/core/eabax_search/src/Form/SearchForm.php:69
+msgid "Enter your keywords"
+msgstr ""
+
+#: modules/ds/core/eabax_search/src/Form/SearchForm.php:77
+msgid "Search"
+msgstr ""
+
+#: modules/ds/core/eabax_search/src/Plugin/Block/SearchBlock.php:12
+msgid "Search block"
+msgstr ""
+

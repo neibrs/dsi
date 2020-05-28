@@ -1,0 +1,10 @@
+name: 'Reports'
+type: module
+description: 'Reports'
+core: 8.x
+interface translation project: report
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - eabax_core
+  - entity_filter

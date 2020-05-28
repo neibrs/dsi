@@ -1,0 +1,11 @@
+business_model.entity_type.collection:
+  title: Entity type
+  route_name: business_model.entity_type.collection
+  parent: eabax_core.implementor.data_modeling
+  weight: 0
+
+business_model.module.collection:
+  title: Modules
+  route_name: business_model.module.collection
+  parent: eabax_core.implementor.data_modeling
+  weight: 1

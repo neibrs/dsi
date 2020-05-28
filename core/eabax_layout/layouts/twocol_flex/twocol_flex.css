@@ -1,0 +1,28 @@
+.layout--twocol-flex,
+.layout--twocol-flex > .section-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.layout--twocol-flex > .layout__region--left {
+  flex: 0 1 25%;
+  overflow: hidden;
+}
+
+.layout--twocol-flex > .section-right {
+  flex: 0 1 75%;
+  overflow: hidden;
+}
+
+.layout--twocol-flex > .section-right > .layout__region {
+  flex: 0 1 100%;
+  overflow: auto;
+}
+
+@media screen and (min-width: 40em) {
+  .layout--twocol-flex > .section-right > .layout__region--first,
+  .layout--twocol-flex > .section-right > .layout__region--second {
+    flex: 0 1 50%;
+  }
+}

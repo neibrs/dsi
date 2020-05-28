@@ -1,0 +1,7 @@
+services:
+  excel_export.manager:
+    class: Drupal\excel_export\ExcelExportManager
+    arguments: ['@plugin.manager.excel_export']
+  plugin.manager.excel_export:
+    class: Drupal\excel_export\Plugin\ExcelExportPluginManager
+    arguments: ['@container.namespaces', '@module_handler']

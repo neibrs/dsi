@@ -1,0 +1,42 @@
+#add_custom_condition {
+  background-color: #0a6fb4;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 3px;
+}
+
+#custom_condition_step2 {
+  display: none;
+  height: 400px;
+  overflow: auto;
+}
+
+#custom_condition_step3{
+  padding: 10px;
+}
+
+#custom_condition_step3_title {
+  background-color: dimgrey;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+}
+
+#custom_condition_step3_save,#custom_condition_step3_return ,#custom_condition_step3_cancel {
+  background-color: #0a6fb4;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+#custom_condition_step3_return {
+  background-color: orangered;
+}
+
+#custom_condition_step3_cancel {
+  background-color: red;
+}

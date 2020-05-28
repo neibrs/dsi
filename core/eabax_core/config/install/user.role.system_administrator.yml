@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - eabax_core
+  module:
+    - role_menu
+id: system_administrator
+label: 'System Administrator'
+weight: 90
+is_admin: false
+third_party_settings:
+  role_menu:
+    menu: role-menu-system-administrator
+permissions:
+  - 'administer menu'
+  - 'administer permissions'

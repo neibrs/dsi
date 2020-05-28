@@ -1,0 +1,22 @@
+{#
+/**
+ * @file layout_template.html.twig
+ * Default theme implementation to present Layout template data.
+ *
+ * This template is used when viewing Layout template pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_layout_template()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('layout_template') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

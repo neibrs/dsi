@@ -1,0 +1,13 @@
+data_model.reference:
+  path: '/data_model/{entity_type_id}/reference'
+  defaults:
+    _controller: '\Drupal\data_model\Controller\DataModelController::reference'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+data_model.referenced_by:
+  path: '/data_model/{entity_type_id}/referenced_by'
+  defaults:
+    _controller: '\Drupal\data_model\Controller\DataModelController::referencedBy'
+  requirements:
+    _user_is_logged_in: 'TRUE'

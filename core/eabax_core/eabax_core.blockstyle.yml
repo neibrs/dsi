@@ -1,0 +1,7 @@
+simple_class:
+  label: 'Simple class'
+  form:
+    simple_class:
+      '#type': 'textfield'
+      '#title': 'CSS class'
+      '#default_value': ''

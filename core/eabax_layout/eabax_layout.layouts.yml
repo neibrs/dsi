@@ -1,0 +1,22 @@
+twocol_flex:
+  label: 'Two column flex'
+  path: layouts/twocol_flex
+  template: layout--twocol-flex
+  library: eabax_layout/twocol_flex
+  category: 'Columns: 2'
+  default_region: top
+  icon_map:
+    - [left, top]
+    - [left, first, second]
+    - [left, bottom]
+  regions:
+    left:
+      label: Left
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    bottom:
+      label: Bottom

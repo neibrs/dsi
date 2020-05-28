@@ -1,0 +1,191 @@
+<?php
+
+/**
+ * @file
+ * The core module for eabax applications.
+ */
+
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implement hook_theme().
+ */
+function eabax_core_theme() {
+  return [
+    'avatar_toggle' => [
+      'variables' => ['content' => NULL],
+    ],
+    'info_box' => [
+      'variables' => ['background' => 'bg-aqua', 'icon' => 'ion ion-ios-gear-outline', 'text' => '', 'number' => ''],
+    ],
+    'percent_bar' => [
+      'render element' => 'elements',
+      'variables' => ['percent' => NULL],
+    ],
+    'tree' => [
+      'variables' => ['items' => [], 'attributes' => []],
+    ],
+    'dropdown_toggle' => [
+      'variables' => ['items' => [], 'icon_pre' => [], 'icon' => [], 'title' => '', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'more_link' => NULL],
+    ],
+    'box' => [
+      'variables' => ['title' => NULL, 'icon' => NULL, 'tools' => NULL, 'body' => NULL, 'footer' => NULL, 'attributes' => []],
+      'file' => 'eabax_core.page.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter() for page_title_block.
+ */
+function eabax_core_block_view_page_title_block_alter(array &$build, BlockPluginInterface $block) {
+  $parameters = \Drupal::routeMatch()->getParameters()->getIterator()->getArrayCopy();
+  if (!empty($parameters)) {
+    $title_switches = [];
+    \Drupal::moduleHandler()->alter('title_switch', $title_switches, $parameters);
+    $build = ['title' => $build];
+    foreach ($title_switches as $switch) {
+      $switch['#attributes']['class'][] = 'd-inline-block';
+      $build[] = $switch;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function eabax_core_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  // Provide container layout for entity view display.
+  $build['#attached']['library'][] = 'eabax_core/container_layout';
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function eabax_core_field_widget_info_alter(array &$info) {
+  // Decrease the default size.
+  $info['string_textfield']['class'] = 'Drupal\eabax_core\Plugin\Field\FieldWidget\StringTextfieldWidget';
+  $info['email_default']['class'] = 'Drupal\eabax_core\Plugin\Field\FieldWidget\EmailDefaultWidget';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function eabax_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Provide container layout for entity form display.
+  $form['#attached']['library'][] = 'eabax_core/container_layout';
+
+  $form['#attached']['library'][] = 'eabax_core/select_submit';
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function eabax_core_library_info_alter(&$libraries, $extension) {
+  // Autocomplete
+  /*if ($extension == 'core' && isset($libraries['drupal.autocomplete'])) {
+    $old_path = 'misc';
+    $new_path = '/' . drupal_get_path('module', 'eabax_core') . '/js';
+    $new_js = [];
+    $replacements = [
+      $old_path . '/autocomplete.js' => $new_path . '/autocomplete.js',
+    ];
+    foreach ($libraries['drupal.autocomplete']['js'] as $source => $options) {
+      if (isset($replacements[$source])) {
+        $new_js[$replacements[$source]] = $options;
+      }
+      else {
+        $new_js[$source] = $options;
+      }
+    }
+    $libraries['drupal.autocomplete']['js'] = $new_js;
+  }*/
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function eabax_core_page_attachments_alter(array &$attachments) {
+  // Remove generator meta tag
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for links__dropbutton__operations.
+ */
+function eabax_core_preprocess_links__dropbutton__operations(&$variables) {
+  $colors = [
+    'edit' => 'text-primary',
+    'delete' => 'text-danger',
+    'terminate' => 'text-purple',
+    'manage-fields' => 'text-aqua',
+    'manage-form-display' => 'text-blue',
+    'manage-display' => 'text-fuchsia',
+    'translate' => 'text-maroon',
+    'export' => 'text-warning',
+    'disable' => 'text-danger',
+    'enable' => 'text-olive',
+  ];
+  foreach ($variables['links'] as $key => $item) {
+    if (isset($colors[$key])) {
+      $variables['links'][$key]['link']['#attributes']['class'][] = $colors[$key];
+    }
+    else {
+      $variables['links'][$key]['link']['#attributes']['class'][] = 'text-muted';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for links__wizard.
+ */
+function eabax_core_preprocess_links__wizard(&$variables) {
+  $variables['attributes']['class'][] = 'wizard';
+
+  $current_url = \Drupal::request()->getPathInfo();
+
+  foreach ($variables['links'] as $key => $link) {
+    if (isset($link['link'])) {
+      $url = $link['link']['#url']->toString();
+      if ($url == $current_url) {
+        // $variables['links'][$key]['link']['#options']['attributes']['class'][] = 'active';
+        $variables['links'][$key]['attributes']->addClass('active');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu__role_menu.
+ */
+function eabax_core_preprocess_menu__role_menu(&$variables) {
+  $icons = [
+    'eabax_core.implementor.data_modeling' => 'fa fa-cubes',
+    'eabax_core.implementor.implementation' => 'fa fa-compass',
+    'eabax_core.implementor.tools' => 'fa fa-cogs',
+    'eabax_core.system_administrator.system_administration' => 'fa fa-foursquare',
+    'quote_data.price_manager.quote_data' => 'fa fa-tasks',
+  ];
+  _eabax_core_set_menu_items_icon($variables['items'], $icons);
+}
+
+/**
+ * @description Add and append icons to menu item in *.theme.
+ */
+function _eabax_core_set_menu_items_icon(&$items, $icons) {
+  foreach ($items as $key => $item) {
+    if (isset($icons[$key])) {
+      $items[$key]['icon'] = $icons[$key];
+    }
+    if (!empty($item['below'])) {
+      _eabax_core_set_menu_items_icon($item['below'], $icons);
+    }
+  }
+}

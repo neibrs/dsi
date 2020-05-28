@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_file_download().
+ */
+function excel_export_file_download($uri) {
+  return [
+    'Content-Type' => mime_content_type($uri),
+  ];
+}

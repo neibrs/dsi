@@ -1,0 +1,206 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/layout_template/layout_template.module: n/a
+#  modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php: n/a
+#  modules/ds/core/layout_template/layout_template.info.yml: n/a
+#  modules/ds/core/layout_template/src/Entity/LayoutTemplate.php: n/a
+#  modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php: n/a
+#  modules/ds/core/layout_template/src/Plugin/Block/LayoutTemplateBlock.php: n/a
+#  modules/ds/core/layout_template/layout_template.links.action.yml: n/a
+#  modules/ds/core/layout_template/layout_template.permissions.yml: n/a
+#  modules/ds/core/layout_template/layout_template.routing.yml: n/a
+#  modules/ds/core/layout_template/config/schema/layout_template_type.schema.yml: n/a
+#  modules/ds/core/layout_template/src/LayoutTemplateListBuilder.php: n/a
+#  modules/ds/core/layout_template/src/LayoutTemplateTypeListBuilder.php: n/a
+#  modules/ds/core/layout_template/src/Entity/LayoutTemplateType.php: n/a
+#  modules/ds/core/layout_template/src/Form/LayoutTemplateTypeForm.php: n/a
+#  modules/ds/core/layout_template/src/Form/LayoutTemplateTypeDeleteForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-21 13:29+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/layout_template/layout_template.module:145;158 modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:111
+msgid "Column span"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.info.yml:0;0 modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:12 modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php:43 modules/ds/core/layout_template/src/Plugin/Block/LayoutTemplateBlock.php:9
+msgid "Layout template"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.links.action.yml:0
+msgid "Add Layout template type"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.permissions.yml:0
+msgid "Administer own Layout templates"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.permissions.yml:0
+msgid "Administer Layout template entities"
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.permissions.yml:0
+msgid "Allow to access the administration form to configure Layout template entities."
+msgstr ""
+
+#: modules/ds/core/layout_template/layout_template.routing.yml:0
+msgid "Add layout template"
+msgstr ""
+
+#: modules/ds/core/layout_template/config/schema/layout_template_type.schema.yml:0
+msgid "Layout template type config"
+msgstr ""
+
+#: modules/ds/core/layout_template/config/schema/layout_template_type.schema.yml:0
+msgid "ID"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/LayoutTemplateListBuilder.php:21
+msgid "Layout template ID"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/LayoutTemplateListBuilder.php:22
+msgid "Name"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/LayoutTemplateTypeListBuilder.php:17 modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:12 modules/ds/core/layout_template/src/Entity/LayoutTemplateType.php:7
+msgid "Layout template type"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/LayoutTemplateTypeListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:137
+msgid "Authored by"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:138
+msgid "The user ID of author of the Layout template entity."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:150
+msgid "Layout template name"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:169
+msgid "Config ID"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:176
+msgid "Configuration"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:179
+msgid "Is public"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:193
+msgid "Created"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:194
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:197
+msgid "Changed"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Entity/LayoutTemplate.php:198
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:49;57;103
+msgid "Columns"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:57;111
+msgid "Component"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:57;111;143;162
+msgid "Visible"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:142
+msgid "Data items setting"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:143
+msgid "Field"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:143 modules/ds/core/layout_template/src/Form/LayoutTemplateTypeForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:161
+msgid "Filters setting"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:162
+msgid "Filter"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:203
+msgid "Created the %label Layout template."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateForm.php:209
+msgid "Saved the %label Layout template."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php:67
+msgid "Add"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php:77
+msgid "Edit"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php:85 modules/ds/core/layout_template/src/Form/LayoutTemplateTypeDeleteForm.php:32
+msgid "Delete"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateSwitchForm.php:103
+msgid "Switch"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateTypeDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateTypeDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateTypeForm.php:25
+msgid "Label for the Layout template type."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateTypeForm.php:52
+msgid "Created the %label Layout template type."
+msgstr ""
+
+#: modules/ds/core/layout_template/src/Form/LayoutTemplateTypeForm.php:58
+msgid "Saved the %label Layout template type."
+msgstr ""
+

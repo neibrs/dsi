@@ -1,0 +1,11 @@
+name: 'User Plus'
+type: module
+description: 'User Plus'
+core: 8.x
+interface translation project: user_plus
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - field_group
+  - image
+  - user

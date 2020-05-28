@@ -1,0 +1,9 @@
+services:
+  entity_plus.route_subscriber:
+    class: Drupal\entity_plus\EventSubscriber\RouteSubscriber
+    tags:
+      - { name: 'event_subscriber' }
+  entity_plus.route_enhancer:
+    class: Drupal\entity_plus\Enhancer\EntityRouteEnhancer
+    tags:
+      - { name: route_enhancer, priority: 20 }

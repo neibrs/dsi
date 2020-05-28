@@ -1,0 +1,7 @@
+entity.layout_template.add_form:
+  path: '/layout_template/add/{layout_template_type}/{related_config}'
+  defaults:
+    _controller: '\Drupal\layout_template\Controller\LayoutTemplateController::add'
+    _title: 'Add layout template'
+  requirements:
+    _permission: 'administer own layout templates'

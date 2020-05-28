@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implement hook_install() for language chinese.
+ */
+function language_chinese_install() {
+  if (!\Drupal::languageManager()->getLanguage('zh-hans')) {
+    \Drupal\language\Entity\ConfigurableLanguage::createFromLangcode('zh-hans')->save();
+
+    // Settings
+    $config_factory = \Drupal::configFactory();
+
+    // Negotiation
+    $config = $config_factory->getEditable('language.negotiation');
+    $config->set('url.prefixes.en', 'en');
+    $config->save();
+
+    // Language types
+    $config = $config_factory->getEditable('language.types');
+    $config->set('negotiation.language_interface.enabled.language-browser', 0);
+    $config->save();
+  }
+  \Drupal::service('locale_plus.manager')->localeUpdate();
+}
+

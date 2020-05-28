@@ -1,0 +1,44 @@
+category:
+  css:
+    theme:
+      css/category.css: {}
+
+tree:
+  css:
+    theme:
+      css/tree.css: {}
+  js:
+    js/tree.js: {}
+  dependencies:
+    - core/jquery
+
+wizard:
+  css:
+    theme:
+      css/wizard.css: {}
+
+container_layout:
+  css:
+    theme:
+      css/container-layout.css: {}
+
+select_submit:
+  js:
+    js/select-submit.js: {}
+
+jstree:
+  js:
+    #node_modules/jstree/dist/jstree.js: {}
+    node_modules/jstree/dist/jstree.min.js: {}
+    js/jstree.js: {}
+  css:
+    theme:
+      node_modules/jstree/dist/themes/default/style.css: {}
+  dependencies:
+    - core/jquery
+
+c3_chart:
+  js:
+    js/c3_chart.js: {}
+  dependencies:
+    - charts_c3/c3

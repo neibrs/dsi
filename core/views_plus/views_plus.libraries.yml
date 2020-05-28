@@ -1,0 +1,27 @@
+ajax_exposed_form:
+  js:
+    js/ajax_exposed_form.js: {}
+  dependencies:
+    - ajax_links_api/ajax_links_api
+
+table_tree:
+  css:
+    theme:
+      css/table_tree.css: { weight: 10 }
+  js:
+    js/table_tree.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+views_select:
+  css:
+    theme:
+      css/views_select.css: {}
+  js:
+    js/views_select.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

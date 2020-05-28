@@ -1,0 +1,31 @@
+.layout-template .box-body {
+  display: flex;
+  flex-flow: row wrap;
+}
+.layout-template .box-body > .col-md-4 {
+  flex: 1 1 33%;
+  padding: 0;
+}
+.layout-template .box-body > .form-actions {
+  flex: 1 1 100%;
+}
+
+.layout-template .form-item,
+.layout-template .field--type-datetime {
+  display: flex;
+  margin: 0.1em;
+  align-items: center;
+}
+.layout-template .field--widget-entity-reference-autocomplete label,
+.layout-template .field--widget-number label,
+.layout-template .field--widget-string-textfield label {
+  min-width: 8em;
+  text-align: right;
+  flex: 0 0 20%;
+  margin: 0 0.1em 0 0;
+}
+.layout-template .form-text {
+  max-width: 70%;
+  flex: 1 1 80%;
+}
+.layout-template input[type=checkbox] { margin-left: 8em; }

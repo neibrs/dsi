@@ -1,0 +1,7 @@
+name: 'Entity Workflow Test'
+type: module
+description: 'Provides a workflow type plugin for testing.'
+package: Testing
+core: 8.x
+dependencies:
+  - eabax_workflows

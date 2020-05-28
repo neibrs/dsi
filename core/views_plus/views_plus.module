@@ -2,31 +2,165 @@
 
 /**
  * @file
- * Contains views_plus.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\rest\Plugin\views\display\RestExport;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\views\Plugin\views\field\BulkForm;
+use Drupal\views\ViewExecutable;
 
 /**
- * Implements hook_help().
+ * Implements hook_theme().
  */
-function views_plus_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the views_plus module.
-    case 'help.page.views_plus':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('The plus of core views.') . '</p>';
-      return $output;
+function views_plus_theme($existing, $type, $theme, $path) {
+  return [
+    'views_plus_style_plugin_table_tree' => [
+      'render element' => 'form',
+    ],
+  ];
+}
 
-    default:
+/**
+ * Implements hook_ENTITY_TYPE_load() for view.
+ */
+function views_plus_view_load($entities) {
+  /** @var \Drupal\views\ViewEntityInterface $entity */
+  foreach ($entities as $entity) {
+    $display = &$entity->getDisplay('default');
+    if (isset($display['display_options']['cache']['type']) && $display['display_options']['cache']['type'] == 'tag') {
+      $display['display_options']['cache']['type'] = 'tag_with_display_tags';
+    }
   }
 }
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter().
+ * Implements hook_ENTITY_TYPE_presave() for view.
  */
+function views_plus_view_presave(EntityInterface $entity) {
+  /** @var \Drupal\views\ViewEntityInterface $entity */
+
+  $displays = $entity->get('display');
+  if (!isset($displays['page_1'])) {
+    return;
+  }
+  if (!isset($displays['default']['display_options']['fields'])) {
+    return;
+  }
+  if (empty($displays['default']['display_options']['fields'])) {
+    return;
+  }
+
+  $page = $displays['page_1'];
+  $default = $displays['default'];
+
+  // Setup rest_export_1 from default display
+  if (isset($displays['rest_export_1'])) {
+    $rest_export = &$entity->getDisplay('rest_export_1');
+  }
+  else {
+    $entity->addDisplay('rest_export', 'REST export', 'rest_export_1');
+    $rest_export = &$entity->getDisplay('rest_export_1');
+    $rest_export['display_options'] = [
+      'row' => [
+        'type' => 'data_field',
+      ],
+      'fields' => [],
+      'defaults' => [
+        'fields' => FALSE,
+      ],
+      'pager' => [
+        'type' => 'none',
+        'options' => [
+          'offset' => 0,
+        ],
+      ],
+    ];
+  }
+
+  $fields = $default['display_options']['fields'];
+  foreach ($default['display_options']['fields'] as $id => $field) {
+    if ($id == $field['table'] . '_bulk_form') {
+      unset($fields[$id]);
+      continue;
+    }
+    if ($id == 'operations') {
+      unset($fields[$id]);
+      continue;
+    }
+  }
+  $rest_export['display_options']['fields'] = $fields;
+
+  $rest_export['display_options']['path'] = $page['display_options']['path'] . '/export.csv';
+  $rest_export['cache_metadata'] = $default['cache_metadata'];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view_table.
+ */
+function views_plus_preprocess_views_view_table(&$variables) {
+  // Exit if no content available
+  if (empty($variables['result'])) {
+    return;
+  }
+
+  $view = $variables['view'];
+
+  // Add entity id for <tr> tag
+  foreach ($variables['rows'] as $key => $row) {
+    if ($entity = $variables['result'][$key]->_entity) {
+      $variables['rows'][$key]['attributes'] = new Attribute(['entity-id' => $entity->id()]);
+    }
+  }
+
+  if (isset($view->style_plugin->options['tree_column'])) {
+    $tree_column = $view->style_plugin->options['tree_column'];
+    foreach ($variables['rows'] as $key => $row) {
+      $markup = $row['columns'][$tree_column]['content'][0]['field_output']['#markup'];
+      $entity = $variables['result'][$key]->_entity;
+      if (!empty($entity)) {
+        $data_url = '';
+        \Drupal::moduleHandler()->alter('views_tree_data_url', $data_url, $view, $entity);
+      }
+
+      if (!empty($data_url)) {
+        $icon = '<span class="views-tree-icon views-tree-icon-folder" data-url="' . $data_url . '"></span>';
+      }
+      else {
+        $icon = '<span class="views-tree-icon views-tree-icon-leaf"></span>';
+      }
+      $variables['rows'][$key]['columns'][$tree_column]['content'][0]['field_output']['#markup'] = $icon . $markup;
+
+      $variables['rows'][$key]['columns'][$tree_column]['attributes'] = new Attribute(['class' => ['tree-column']]);
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function views_plus_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  $display =& $view->storage->getDisplay('default');
+  if (isset($display['display_options']['exposed_form']['type']) && $display['display_options']['exposed_form']['type'] == 'basic') {
+    $display['display_options']['exposed_form']['type'] = 'ajax';
+  }
+}
+
+/**
+ * Implements hook_views_plugins_display_alter().
+ */
+function views_plus_views_plugins_display_alter(array &$plugins) {
+  // Provides views_plus_view alter.
+  $plugins['page']['class'] = '\Drupal\views_plus\Plugin\views\display\Page';
+
+  // 中文环境导出excel采用GBK字符集
+  $plugins['rest_export']['class'] = '\Drupal\views_plus\Plugin\views\display\RestExport';
+}
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for form.
+*/
 function views_plus_form_views_form_content_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#prefix'] = '<div class=" views-form col-12">';
 }

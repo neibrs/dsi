@@ -1,0 +1,116 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Url;
+use Drupal\user_plus\Form\UserRoleSwitchForm;
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function user_plus_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'user' && !empty($fields['name'])) {
+    $fields['name']
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function user_plus_entity_extra_field_info() {
+  $extra['user']['user']['display']['dropdown_menu'] = [
+    'label' => t('Dropdown menu'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+  $extra['user']['user']['display']['logout'] = [
+    'label' => t('Log out'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+  $extra['user']['user']['display']['password_link'] = [
+    'label' => t('Password link'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function user_plus_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['user']->setFormClass('password', 'Drupal\user\ProfileForm');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for user.
+ */
+function user_plus_user_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('dropdown_menu')) {
+    $build['dropdown_menu'] = \Drupal::service('entity_type.manager')->getViewBuilder('user')->view($entity, 'dropdown_menu');
+  }
+  if ($display->getComponent('logout')) {
+    $build['logout'] = [
+      '#type' => 'link',
+      '#title' => t('Log out'),
+      '#url' => Url::fromRoute('user.logout'),
+      '#attributes' => ['class' => ['btn', 'btn-default', 'btn-flat']],
+    ];
+  }
+  if ($display->getComponent('password_link')) {
+    $build['password_link'] = [
+      '#type' => 'link',
+      '#title' => t('Change password'),
+      '#url' => Url::fromRoute('entity.user.password_form', [
+        'user' => \Drupal::currentUser()->id(),
+      ]),
+      '#attributes' => ['class' => ['btn', 'btn-default', 'btn-flat']],
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for user.
+ */
+function user_plus_preprocess_user(&$variables) {
+  $variables['attributes']['class'][] = 'user-' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for user.
+ */
+function user_plus_theme_suggestions_user(array $variables) {
+  $suggestions = [];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'user__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_title_switch_alter().
+ */
+function user_plus_title_switch_alter(array &$title_switches, array $route_parameters) {
+  if (isset($route_parameters['user_role'])) {
+    $user_role = $route_parameters['user_role'];
+    if (!is_object($user_role)) {
+      $user_role = \Drupal::entityTypeManager()->getStorage('user_role')->load($user_role);
+    }
+    $title_switches['user_role'] = Drupal::service('form_builder')->getForm(UserRoleSwitchForm::class, $user_role);
+  }
+}

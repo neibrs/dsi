@@ -1,0 +1,7 @@
+administer own layout templates:
+  title: 'Administer own Layout templates'
+
+administer layout templates:
+  title: 'Administer Layout template entities'
+  description: 'Allow to access the administration form to configure Layout template entities.'
+  restrict access: true

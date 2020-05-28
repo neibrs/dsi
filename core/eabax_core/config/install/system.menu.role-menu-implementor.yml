@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - eabax_core
+id: role-menu-implementor
+label: 'Implementor'
+description: 'Role menu.'
+locked: true

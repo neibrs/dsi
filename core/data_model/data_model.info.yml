@@ -1,0 +1,10 @@
+name: Data model
+type: module
+description: Data model
+core: 8.x
+interface translation project: data_model
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: Eabax core
+dependencies:
+  - charts_c3
+  - entity_type_resource

@@ -1,0 +1,14 @@
+services:
+  entity_type_resource.normalizer.entity_type:
+    class: Drupal\entity_type_resource\Normalizer\EntityTypeNormalizer
+    tags:
+      - { name: normalizer }
+    arguments: ['@entity_field.manager']
+  entity_type_resource.normalizer.data_definition:
+    class: Drupal\entity_type_resource\Normalizer\DataDefinitionNormalizer
+    tags:
+      - { name: normalizer }
+  entity_type_resource.normalizer.field_definition:
+    class: Drupal\entity_type_resource\Normalizer\FieldDefinitionNormalizer
+    tags:
+      - { name: normalizer, priority: 10 }

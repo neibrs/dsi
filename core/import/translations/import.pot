@@ -3,24 +3,24 @@
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
-#  modules/eabax/core/import/import.info.yml: n/a
-#  modules/eabax/core/import/import.routing.yml: n/a
-#  modules/eabax/core/import/src/Form/ExcelImportForm.php: n/a
-#  modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php: n/a
-#  modules/eabax/core/import/src/Form/ImportForm.php: n/a
-#  modules/eabax/core/import/src/Form/ImportFormSelectSheet.php: n/a
-#  modules/eabax/core/import/import.links.action.yml: n/a
-#  modules/eabax/core/import/import.links.menu.yml: n/a
-#  modules/eabax/core/import/src/ExcelMigrateListBuilder.php: n/a
-#  modules/eabax/core/import/src/Entity/ExcelMigrate.php: n/a
-#  modules/eabax/core/import/config/schema/excel_migrate.schema.yml: n/a
-#  modules/eabax/core/import/config/schema/import.schema.yml: n/a
-#  modules/eabax/core/import/src/Form/ImportDemoDataForm.php: n/a
-#  modules/eabax/core/import/src/Plugin/Action/ImportExcelMigrate.php: n/a
-#  modules/eabax/core/import/src/MigrateBatchExecutable.php: n/a
-#  modules/eabax/core/import/src/Controller/ImportController.php: n/a
-#  modules/eabax/core/import/src/Form/ImportRulesForm.php: n/a
-#  modules/eabax/core/import/src/Form/ExcelMigrateForm.php: n/a
+#  modules/ds/core/import/import.info.yml: n/a
+#  modules/ds/core/import/import.routing.yml: n/a
+#  modules/ds/core/import/src/Form/ExcelImportForm.php: n/a
+#  modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php: n/a
+#  modules/ds/core/import/src/Form/ImportForm.php: n/a
+#  modules/ds/core/import/src/Form/ImportFormSelectSheet.php: n/a
+#  modules/ds/core/import/import.links.action.yml: n/a
+#  modules/ds/core/import/import.links.menu.yml: n/a
+#  modules/ds/core/import/src/ExcelMigrateListBuilder.php: n/a
+#  modules/ds/core/import/src/Entity/ExcelMigrate.php: n/a
+#  modules/ds/core/import/config/schema/excel_migrate.schema.yml: n/a
+#  modules/ds/core/import/config/schema/import.schema.yml: n/a
+#  modules/ds/core/import/src/Form/ImportDemoDataForm.php: n/a
+#  modules/ds/core/import/src/Plugin/Action/ImportExcelMigrate.php: n/a
+#  modules/ds/core/import/src/MigrateBatchExecutable.php: n/a
+#  modules/ds/core/import/src/Controller/ImportController.php: n/a
+#  modules/ds/core/import/src/Form/ImportRulesForm.php: n/a
+#  modules/ds/core/import/src/Form/ExcelMigrateForm.php: n/a
 #
 #, fuzzy
 msgid ""
@@ -35,213 +35,213 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/eabax/core/import/import.info.yml:0;0 modules/eabax/core/import/import.routing.yml:0 modules/eabax/core/import/src/Form/ExcelImportForm.php:81 modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:94 modules/eabax/core/import/src/Form/ImportForm.php:81 modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:120
+#: modules/ds/core/import/import.info.yml:0;0 modules/ds/core/import/import.routing.yml:0 modules/ds/core/import/src/Form/ExcelImportForm.php:81 modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:94 modules/ds/core/import/src/Form/ImportForm.php:81 modules/ds/core/import/src/Form/ImportFormSelectSheet.php:120
 msgid "Import"
 msgstr ""
 
-#: modules/eabax/core/import/import.info.yml:0
+#: modules/ds/core/import/import.info.yml:0
 msgid "Eabax core"
 msgstr ""
 
-#: modules/eabax/core/import/import.links.action.yml:0
+#: modules/ds/core/import/import.links.action.yml:0
 msgid "Add Excel migrate"
 msgstr ""
 
-#: modules/eabax/core/import/import.links.menu.yml:0 modules/eabax/core/import/import.routing.yml:0
+#: modules/ds/core/import/import.links.menu.yml:0 modules/ds/core/import/import.routing.yml:0
 msgid "Define import rules"
 msgstr ""
 
-#: modules/eabax/core/import/import.links.menu.yml:0 modules/eabax/core/import/src/ExcelMigrateListBuilder.php:17 modules/eabax/core/import/src/Entity/ExcelMigrate.php:7
+#: modules/ds/core/import/import.links.menu.yml:0 modules/ds/core/import/src/ExcelMigrateListBuilder.php:17 modules/ds/core/import/src/Entity/ExcelMigrate.php:7
 msgid "Excel migrate"
 msgstr ""
 
-#: modules/eabax/core/import/import.links.menu.yml:0
+#: modules/ds/core/import/import.links.menu.yml:0
 msgid "List Excel migrate (bundles)"
 msgstr ""
 
-#: modules/eabax/core/import/import.routing.yml:0
+#: modules/ds/core/import/import.routing.yml:0
 msgid "Select sheet for import"
 msgstr ""
 
-#: modules/eabax/core/import/import.routing.yml:0
+#: modules/ds/core/import/import.routing.yml:0
 msgid "Select sheet"
 msgstr ""
 
-#: modules/eabax/core/import/import.routing.yml:0
+#: modules/ds/core/import/import.routing.yml:0
 msgid "Import demo data"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/excel_migrate.schema.yml:0
+#: modules/ds/core/import/config/schema/excel_migrate.schema.yml:0
 msgid "Excel migrate config"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/excel_migrate.schema.yml:0
+#: modules/ds/core/import/config/schema/excel_migrate.schema.yml:0
 msgid "ID"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/excel_migrate.schema.yml:0
+#: modules/ds/core/import/config/schema/excel_migrate.schema.yml:0
 msgid "File path"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/excel_migrate.schema.yml:0
+#: modules/ds/core/import/config/schema/excel_migrate.schema.yml:0
 msgid "Constants"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/import.schema.yml:0
+#: modules/ds/core/import/config/schema/import.schema.yml:0
 msgid "Import selected excel migrate"
 msgstr ""
 
-#: modules/eabax/core/import/config/schema/import.schema.yml:0 modules/eabax/core/import/src/Form/ExcelImportForm.php:74 modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:87 modules/eabax/core/import/src/Form/ImportDemoDataForm.php:26 modules/eabax/core/import/src/Plugin/Action/ImportExcelMigrate.php:64
+#: modules/ds/core/import/config/schema/import.schema.yml:0 modules/ds/core/import/src/Form/ExcelImportForm.php:74 modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:87 modules/ds/core/import/src/Form/ImportDemoDataForm.php:26 modules/ds/core/import/src/Plugin/Action/ImportExcelMigrate.php:64
 msgid "Update"
 msgstr ""
 
-#: modules/eabax/core/import/src/ExcelMigrateListBuilder.php:18
+#: modules/ds/core/import/src/ExcelMigrateListBuilder.php:18
 msgid "Machine name"
 msgstr ""
 
-#: modules/eabax/core/import/src/MigrateBatchExecutable.php:45;47
+#: modules/ds/core/import/src/MigrateBatchExecutable.php:45;47
 msgid "Migrating %migrate"
 msgstr ""
 
-#: modules/eabax/core/import/src/MigrateBatchExecutable.php:46
+#: modules/ds/core/import/src/MigrateBatchExecutable.php:46
 msgid "Start migrating %migrate"
 msgstr ""
 
-#: modules/eabax/core/import/src/MigrateBatchExecutable.php:48
+#: modules/ds/core/import/src/MigrateBatchExecutable.php:48
 msgid "An error occurred while migrating %migrate."
 msgstr ""
 
-#: modules/eabax/core/import/src/MigrateBatchExecutable.php:182
+#: modules/ds/core/import/src/MigrateBatchExecutable.php:182
 msgid "Importing %migration (@percent%)."
 msgstr ""
 
-#: modules/eabax/core/import/src/Controller/ImportController.php:64
+#: modules/ds/core/import/src/Controller/ImportController.php:64
 msgid "@entity_type import"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportForm.php:51
+#: modules/ds/core/import/src/Form/ExcelImportForm.php:51
 msgid "Excel Migrate %s"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportForm.php:61
+#: modules/ds/core/import/src/Form/ExcelImportForm.php:61
 msgid "Excel file"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportForm.php:64
+#: modules/ds/core/import/src/Form/ExcelImportForm.php:64
 msgid "The import file which needs import."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportForm.php:96 modules/eabax/core/import/src/Form/ImportForm.php:128
+#: modules/ds/core/import/src/Form/ExcelImportForm.php:96 modules/ds/core/import/src/Form/ImportForm.php:128
 msgid "File to import not found."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportForm.php:50
+#: modules/ds/core/import/src/Form/ExcelImportForm.php:50
 msgid "You can not migrate this excel %s"
 msgid_plural "%s not exist."
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:54
+#: modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:54
 msgid "- Select -"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:43
+#: modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/ds/core/import/src/Form/ImportFormSelectSheet.php:43
 msgid "Sheet"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/eabax/core/import/src/Form/ImportRulesForm.php:62
+#: modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/ds/core/import/src/Form/ImportRulesForm.php:62
 msgid "Migration"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelImportSelectSheetForm.php:115
+#: modules/ds/core/import/src/Form/ExcelImportSelectSheetForm.php:115
 msgid "Import successed."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelMigrateForm.php:22
+#: modules/ds/core/import/src/Form/ExcelMigrateForm.php:22
 msgid "Label"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelMigrateForm.php:25
+#: modules/ds/core/import/src/Form/ExcelMigrateForm.php:25
 msgid "Label for the Excel migrate."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelMigrateForm.php:52
+#: modules/ds/core/import/src/Form/ExcelMigrateForm.php:52
 msgid "Created the %label Excel migrate."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ExcelMigrateForm.php:58
+#: modules/ds/core/import/src/Form/ExcelMigrateForm.php:58
 msgid "Saved the %label Excel migrate."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportDemoDataForm.php:32
+#: modules/ds/core/import/src/Form/ImportDemoDataForm.php:32
 msgid "Install demo data"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:39
+#: modules/ds/core/import/src/Form/ImportForm.php:39
 msgid "Import template not found."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:44
+#: modules/ds/core/import/src/Form/ImportForm.php:44
 msgid "Template"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:59
+#: modules/ds/core/import/src/Form/ImportForm.php:59
 msgid "Data file"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:62
+#: modules/ds/core/import/src/Form/ImportForm.php:62
 msgid "A import file."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:74
+#: modules/ds/core/import/src/Form/ImportForm.php:74
 msgid "Update existing data"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:109
+#: modules/ds/core/import/src/Form/ImportForm.php:109
 msgid "A import file. %template"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportForm.php:110
+#: modules/ds/core/import/src/Form/ImportForm.php:110
 msgid "Download template"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:61
+#: modules/ds/core/import/src/Form/ImportFormSelectSheet.php:61
 msgid "Header row"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:78
+#: modules/ds/core/import/src/Form/ImportFormSelectSheet.php:78
 msgid "Sources"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:80
+#: modules/ds/core/import/src/Form/ImportFormSelectSheet.php:80
 msgid "Data item"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportFormSelectSheet.php:80
+#: modules/ds/core/import/src/Form/ImportFormSelectSheet.php:80
 msgid "Excel column"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportRulesForm.php:73
+#: modules/ds/core/import/src/Form/ImportRulesForm.php:73
 msgid "Process"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportRulesForm.php:82
+#: modules/ds/core/import/src/Form/ImportRulesForm.php:82
 msgid "Save"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportRulesForm.php:104
+#: modules/ds/core/import/src/Form/ImportRulesForm.php:104
 msgid "Must select a migration."
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportRulesForm.php:112
+#: modules/ds/core/import/src/Form/ImportRulesForm.php:112
 msgid "The process rule failed with the following message: %message"
 msgstr ""
 
-#: modules/eabax/core/import/src/Form/ImportRulesForm.php:131
+#: modules/ds/core/import/src/Form/ImportRulesForm.php:131
 msgid "Migration %migration saved."
 msgstr ""
 
-#: modules/eabax/core/import/src/Plugin/Action/ImportExcelMigrate.php:16
+#: modules/ds/core/import/src/Plugin/Action/ImportExcelMigrate.php:16
 msgid "Import excel file"
 msgstr ""
 

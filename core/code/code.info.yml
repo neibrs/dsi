@@ -1,0 +1,9 @@
+name: Code
+type: module
+description: 'Provides code field.'
+package: Eabax core
+core: 8.x
+interface translation project: code
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+dependencies:
+  - drupal:token

@@ -1,0 +1,10 @@
+services:
+  role_frontpage.path_processor_front:
+    class: Drupal\role_frontpage\PathProcessorFront
+    arguments: ['@current_user', '@entity_type.manager']
+    tags:
+      - { name: path_processor_inbound, priority: 250 }
+
+  role_frontpage.manager:
+    class: Drupal\role_frontpage\RoleFrontpageManager
+    arguments: ['@entity_type.manager']

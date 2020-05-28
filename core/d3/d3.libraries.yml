@@ -1,0 +1,23 @@
+radar:
+  js:
+    vendor/radarChart.js: {}
+    js/radar.js: {}
+  dependencies:
+    - charts_c3/d3
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+scatter:
+  css:
+    theme:
+      css/d3.css: {}
+  js:
+    js/scatter.js: {}
+  dependencies:
+    - charts_c3/d3
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

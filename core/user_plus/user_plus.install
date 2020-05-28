@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\field\Entity\FieldConfig;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_install().
+ */
+function user_plus_install() {
+  /* Setup default image for user picture */
+  file_unmanaged_copy(drupal_get_path('module', 'user_plus') . '/man-icon.jpg', 'public://man-icon.jpg');
+  $file = File::create([
+    'filename' => 'man-icon.jpg',
+    'uri' => 'public://man-icon.jpg',
+    'filemime' => 'image/jpeg',
+    'status' => FILE_STATUS_PERMANENT,
+  ]);
+  $file->save();
+  $field = FieldConfig::load('user.user.user_picture');
+  $setting = $field->getSetting('default_image');
+  $setting['uuid'] = $file->uuid();
+  $field->setSetting('default_image', $setting);
+  $field->save();
+}

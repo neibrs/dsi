@@ -1,0 +1,59 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/code/code.tokens.inc: n/a
+#  modules/ds/core/code/code.info.yml: n/a
+#  modules/ds/core/code/src/Plugin/Field/FieldType/CodeItem.php: n/a
+#  modules/ds/core/code/config/schema/code.schema.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-21 13:29+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/code/code.tokens.inc:15 modules/ds/core/code/code.info.yml:0 modules/ds/core/code/src/Plugin/Field/FieldType/CodeItem.php:8
+msgid "Code"
+msgstr ""
+
+#: modules/ds/core/code/code.tokens.inc:18 modules/ds/core/code/config/schema/code.schema.yml:0
+msgid "Encoding rules"
+msgstr ""
+
+#: modules/ds/core/code/code.tokens.inc:19
+msgid "\"0\" means digit, \"A\" means alphabet."
+msgstr ""
+
+#: modules/ds/core/code/code.info.yml:0
+msgid "Provides code field."
+msgstr ""
+
+#: modules/ds/core/code/code.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/ds/core/code/config/schema/code.schema.yml:0
+msgid "Code settings"
+msgstr ""
+
+#: modules/ds/core/code/src/Plugin/Field/FieldType/CodeItem.php:42
+msgid "Encoding rule"
+msgstr ""
+
+#: modules/ds/core/code/src/Plugin/Field/FieldType/CodeItem.php:43
+msgid "This field supports tokens. @browse_tokens_link"
+msgstr ""
+
+#: modules/ds/core/code/src/Plugin/Field/FieldType/CodeItem.php:8
+msgid "A field containing code value."
+msgstr ""
+

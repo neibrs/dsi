@@ -1,0 +1,83 @@
+eabax_core.implementor.data_modeling:
+  title: Business modeling
+  route_name: eabax_core.data_modeling
+  menu_name: role-menu-implementor
+  weight: 10
+
+eabax_core.implementor.implementation:
+  title: Implementation
+  route_name: eabax_core.implementation
+  menu_name: role-menu-implementor
+  weight: 20
+
+eabax_core.implementor.tools:
+  title: Implementor tools
+  route_name: eabax_core.implementation_tools
+  menu_name: role-menu-implementor
+  weight: 30
+
+eabax_core.implementor.rules:
+  title: 'Define rules'
+  route_name: entity.rules_reaction_rule.collection
+  parent: eabax_core.implementor.tools
+  weight: 20
+
+eabax_core.implementor.workflows:
+  title: 'Define Workflows'
+  route_name: entity.workflow.collection
+  parent: eabax_core.implementor.tools
+  weight: 30
+
+eabax_core.implementor.reports:
+  title: 'Define reports'
+  route_name: entity.view.collection
+  parent: eabax_core.implementor.tools
+  weight: 40
+
+eabax_core.implementor.custom_formatters:
+  title: Custom formatters
+  description: 'Administer custom formatters.'
+  route_name: entity.formatter.collection
+  parent: eabax_core.implementor.tools
+  weight: 60
+
+eabax_core.implementor.translate:
+  title: 'User interface translation'
+  route_name: locale.translate_page
+  parent: eabax_core.implementor.tools
+  weight: 80
+
+eabax_core.implementor.config.sync:
+  title: 'Configuration synchronization'
+  description: 'Import and export your configuration.'
+  route_name: config.sync
+  parent: eabax_core.implementor.tools
+
+eabax_core.system_administrator.system_administration:
+  title: 'System administration'
+  route_name: eabax_core.system_administration
+  menu_name: role-menu-system-administrator
+
+eabax_core.system_administrator.entity_permission.settings:
+  title: 'Entity permission settings'
+  route_name: entity_permission.settings
+  parent: eabax_core.system_administrator.system_administration
+  weight: 10
+
+eabax_core.system_administrator.system_administration.role:
+  title: 'Define roles'
+  route_name: entity.user_role.collection
+  parent: eabax_core.system_administrator.system_administration
+  weight: 20
+
+eabax_core.system_administrator.system_administration.menu:
+  title: 'Define menus'
+  route_name: entity.menu.collection
+  parent: eabax_core.system_administrator.system_administration
+  weight: 30
+
+eabax_core.system_administrator.system_administration.user:
+  title: 'User Management'
+  route_name: entity.user.collection
+  parent: eabax_core.system_administrator.system_administration
+  weight: 40

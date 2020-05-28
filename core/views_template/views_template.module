@@ -1,0 +1,53 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function views_template_theme($existing, $type, $theme, $path) {
+  $theme = [];
+  $theme['views_fields_override_form'] = [
+    'render element' => 'form',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function views_template_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  $route_match = \Drupal::routeMatch();
+  $route = $route_match->getRouteObject();
+  
+  // 只修改视图页面，不修改详情页面等其他页面嵌入的视图。
+  if ($view_id = $route->getDefault('view_id')) {
+    if ($view->id() == $view_id) {
+      $override = \Drupal::service('views_template.manager')->getViewOverride($view->storage);
+      if (!empty($override)) {
+        $default = $view->displayHandlers->get('default');
+
+        // Set fields
+        $default->options['fields'] = $override['fields'];
+
+        // TODO Add relationships
+
+        // Add filters.
+        foreach ($override['filters'] as $id => $filter) {
+          $default->options['filters'][$id] = $filter;
+          // Fix Undefined index: id
+          $default->options['filters'][$id]['id'] = $id;
+        }
+
+        // Add condition area.
+        $default->options['header']['views_template_conditions'] = [
+          'id' => 'views_template_conditions',
+          'table' => 'views',
+          'field' => 'views_template_conditions',
+          'plugin_id' => 'views_template_conditions',
+        ];
+      }
+    }
+  }
+
+}

@@ -1,0 +1,153 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/eabax_core/eabax_core.info.yml: n/a
+#  modules/ds/core/eabax_core/eabax_core.links.menu.yml: n/a
+#  modules/ds/core/eabax_core/eabax_core.routing.yml: n/a
+#  modules/ds/core/eabax_core/config/schema/eabax_core.views.schema.yml: n/a
+#  modules/ds/core/eabax_core/js/autocomplete.js: n/a
+#  modules/ds/core/eabax_core/src/EabaxCoreManager.php: n/a
+#  modules/ds/core/eabax_core/src/Form/BundleDeleteForm.php: n/a
+#  modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.phpl.php: n/a
+#  modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php: n/a
+#  modules/ds/core/eabax_core/templates/avatar-toggle.html.twig: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-02-13 11:57+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Business modeling"
+msgstr "业务模型"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0 modules/ds/core/eabax_core/eabax_core.routing.yml:0;0
+msgid "Implementation"
+msgstr "实施"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Implementor tools"
+msgstr "实施工具"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define pages"
+msgstr "定义页面"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define rules"
+msgstr "定义规则"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define Workflows"
+msgstr "定义工作流"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define reports"
+msgstr "定义报告"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Custom formatters"
+msgstr "自定义格式"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "User interface translation"
+msgstr "用户翻译界面"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0 modules/ds/core/eabax_core/eabax_core.routing.yml:0
+msgid "System administration"
+msgstr "系统管理"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define roles"
+msgstr "角色定义"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Define menus"
+msgstr "定义菜单"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "User Management"
+msgstr "用户管理"
+
+#: modules/ds/core/eabax_core/eabax_core.links.menu.yml:0
+msgid "Administer custom formatters."
+msgstr "管理自定义格式。"
+
+#: modules/ds/core/eabax_core/eabax_core.routing.yml:0
+msgid "Implementation tools"
+msgstr "实施工具"
+
+#: modules/ds/core/eabax_core/config/schema/eabax_core.views.schema.yml:0
+msgid "Bundle fields"
+msgstr "类型字段"
+
+#: modules/ds/core/eabax_core/src/EabaxCoreManager.php:46
+msgid "You do not have any menu items."
+msgstr "您还没有任何菜单项目."
+
+#: modules/ds/core/eabax_core/src/Form/BundleDeleteForm.php:22
+msgid "%type is used by 1 piece of %entity on your site. You can not remove %type until you have removed all of the %type %entity."
+msgid_plural "%type is used by @count pieces of %entity on your site. You can not remove %type until you have removed all of the %type %entity."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php:27
+msgid "This field has percent bar."
+msgstr "这个字段有进度条."
+
+#: modules/ds/core/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php:8
+msgid "Percent Bar"
+msgstr "进度条"
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:12
+msgid "Welcome to @content.name"
+msgstr "欢迎到@content.name"
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:13
+msgid "Since from @content.since ."
+msgstr "来自@content.since."
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:20
+msgid "Followers"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:23
+msgid "Sales"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:26
+msgid "Friends"
+msgstr ""
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:34
+msgid "Profile"
+msgstr "个人资料"
+
+#: modules/ds/core/eabax_core/templates/avatar-toggle.html.twig:37
+msgid "Sign out"
+msgstr "退出"
+
+# 以下未自动生成，手工添加：
+
+msgid "Implementor role menu"
+msgstr "实施人员角色菜单"
+
+msgid "Implementor"
+msgstr "实施人员"
+
+msgid "System Administrator"
+msgstr "系统管理员"
+
+msgid "System administrator role menu"
+msgstr "系统管理员角色菜单"
+

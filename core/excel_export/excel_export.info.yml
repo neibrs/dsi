@@ -1,0 +1,7 @@
+name: 'Excel Export'
+type: module
+description: 'Excel export.'
+core: 8.x
+interface translation project: excel_export
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax Core'

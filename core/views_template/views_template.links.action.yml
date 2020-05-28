@@ -1,0 +1,5 @@
+entity.view_template.add_form:
+  route_name: entity.view_template.add_form
+  title: 'Add View template'
+  appears_on:
+    - entity.view_template.collection

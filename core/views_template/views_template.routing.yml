@@ -1,0 +1,27 @@
+views_template.conditions_override_form:
+  path: '/views_template/{view}/conditions_override'
+  defaults:
+    _title: '条件设置'
+    _form: '\Drupal\views_template\Form\ViewsConditionsOverrideForm'
+  requirements:
+    _access: 'TRUE'
+
+views_template.fields_override_form:
+  path: '/views_template/{view}/fields_override'
+  defaults:
+    _title: '栏目设置'
+    _form: '\Drupal\views_template\Form\ViewsFieldsOverrideForm'
+  requirements:
+    _access: 'TRUE'
+
+views_template.save_as_form:
+  path: '/views_template/{view}/save_as'
+  defaults:
+    _title: 'View template save as'
+    _form: '\Drupal\views_template\Form\ViewTemplateSaveAsForm'
+  options:
+    parameters:
+      view:
+        type: entity:view
+  requirements:
+    _access: 'TRUE'

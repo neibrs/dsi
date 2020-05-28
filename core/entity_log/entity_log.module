@@ -1,0 +1,102 @@
+<?php
+
+use Drupal\Core\Entity\ContentEntityTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function entity_log_entity_insert(EntityInterface $entity) {
+  $entity_type = $entity->getEntityType();
+
+  if (!($entity_type instanceof ContentEntityTypeInterface)) {
+    return;
+  }
+
+  $account = \Drupal::currentUser();
+
+  \Drupal::database()->insert('entity_log')->fields([
+    'uid' => $account->id(),
+    'entity_type_id' => $entity->getEntityTypeId(),
+    'entity_id' => $entity->id(),
+    'message' => t('Add @entity_type : @entity', ['@entity_type' => $entity_type->getLabel(), '@entity' => $entity->label()]),
+    'hostname' => \Drupal::request()->getClientIp(),
+    'timestamp' => time(),
+  ])->execute();
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function entity_log_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
+
+  $entity_type = $entity->getEntityType();
+
+  if (!($entity_type instanceof ContentEntityTypeInterface)) {
+    return;
+  }
+
+  $account = \Drupal::currentUser();
+
+  \Drupal::database()->insert('entity_log')->fields([
+    'uid' => $account->id(),
+    'entity_type_id' => $entity->getEntityTypeId(),
+    'entity_id' => $entity->id(),
+    'message' => t('Delete @entity_type : @entity', ['@entity_type' => $entity_type->getLabel(), '@entity' => $entity->label()]),
+    'hostname' => \Drupal::request()->getClientIp(),
+    'timestamp' => time(),
+  ])->execute();
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function entity_log_entity_update(EntityInterface $entity) {
+  if (!($entity->getEntityType() instanceof ContentEntityTypeInterface)) {
+    return;
+  }
+
+  $account = \Drupal::currentUser();
+
+  $field_definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions($entity->getEntityTypeId(), $entity->bundle());
+  $messages = [];
+  foreach ($field_definitions as $field_name => $field_definition) {
+    if (in_array($field_name, ['langcode', 'created', 'changed', 'pinyin'])) {
+      continue;
+    }
+
+    switch ($field_definition->getType()) {
+      case 'entity_reference':
+        $old_value = $entity->original->get($field_name)->target_id;
+        $new_value = $entity->get($field_name)->target_id;
+        if ($new_value != $old_value) {
+          $message = $field_definition->getLabel() . ': ';
+          if ($old_value) {
+            $message .= $entity->original->get($field_name)->entity->label();
+          }
+          $message .= ' => ';
+          if ($new_value) {
+            $message .= $entity->get($field_name)->entity->label();
+          }
+          $messages[] = $message;
+        }
+        break;
+
+      default:
+        if ($entity->get($field_name)->value != $entity->original->get($field_name)->value) {
+          $messages[] = $field_definition->getLabel() . ': ' . $entity->original->get($field_name)->value . ' => ' . $entity->get($field_name)->value;
+        }
+    }
+  }
+
+  if (!empty($messages)) {
+    \Drupal::database()->insert('entity_log')->fields([
+      'uid' => $account->id(),
+      'entity_type_id' => $entity->getEntityTypeId(),
+      'entity_id' => $entity->id(),
+      'message' => implode(";\n", $messages),
+      'hostname' => \Drupal::request()->getClientIp(),
+      'timestamp' => time(),
+    ])->execute();
+  }
+}

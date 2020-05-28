@@ -1,0 +1,10 @@
+name: 'Views template'
+type: module
+description: 'Provides views template.'
+core: 8.x
+interface translation project: views_template
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - drupal:views
+  - entity_filter

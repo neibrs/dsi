@@ -1,0 +1,6 @@
+views_plus.config.export_single:
+  route_name: config.export_single
+  title: 'Export config'
+  class: \Drupal\views_plus\Plugin\Menu\LocalAction\ConfigExport
+  appears_on:
+    - entity.view.edit_form

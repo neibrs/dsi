@@ -1,0 +1,6 @@
+color_icon:
+  css:
+    theme:
+      css/color_icon.css: {}
+  js:
+    js/color_icon.js: {}

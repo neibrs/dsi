@@ -1,0 +1,17 @@
+id: quick_code_csv
+label: Quick Code(csv)
+migration_tags: { }
+source:
+  plugin: csv
+  header_row_count: 1
+  path: modules/ds/core/quick_code/tests/data/quick_code.csv
+  keys:
+    - label
+process:
+  type: constants/type
+  code: code
+  label: label
+  description: description
+destination:
+  plugin: entity:quick_code
+migration_dependencies: { }

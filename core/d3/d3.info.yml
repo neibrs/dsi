@@ -1,0 +1,9 @@
+name: 'd3'
+type: module
+description: 'D3 charts'
+core: 8.x
+interface translation project: d3
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - charts_c3

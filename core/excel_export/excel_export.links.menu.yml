@@ -1,0 +1,8 @@
+
+# Excel export menu items definition
+entity.excel_export.collection:
+  title: 'Excel export'
+  route_name: entity.excel_export.collection
+  description: 'List Excel export (bundles)'
+  parent: system.admin_structure
+  weight: 99

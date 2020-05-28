@@ -1,0 +1,5 @@
+eabax_core.system_administrator.eabax_plus.settings.form:
+  title: 'Entity plus settings'
+  route_name: entity_plus.settings_form
+  parent: eabax_core.system_administrator.system_administration
+  weight: 50

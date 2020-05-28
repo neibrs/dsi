@@ -1,0 +1,44 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/ds/core/entity_plus/entity_plus.module: n/a
+#  modules/ds/core/entity_plus/entity_plus.info.yml: n/a
+#  modules/ds/core/entity_plus/entity_plus.routing.yml: n/a
+#  modules/ds/core/entity_plus/config/schema/entity_plus.schema.yml: n/a
+#  modules/ds/core/entity_plus/src/Form/EntityPlusSettingsForm.php: n/a
+#  modules/ds/core/entity_plus/src/Plugin/Block/EntityOperationsBlock.php: n/a
+#  modules/ds/core/entity_plus/src/Entity/EffectiveDatesEntityBase.php: n/a
+#  modules/ds/core/entity_plus/src/Entity/Controller/EntityController.php: n/a
+#  modules/ds/core/entity_plus/src/Plugin/Derivative/EntityLocalAction.php: n/a
+#  modules/ds/core/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.php: n/a
+#  modules/ds/core/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceLabelPlusFormatter.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-01-06 08:46+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/ds/core/entity_plus/entity_plus.routing.yml:0 modules/ds/core/entity_plus/config/schema/entity_plus.schema.yml:0
+msgid "Entity plus settings"
+msgstr "实体设置"
+
+#: modules/ds/core/entity_plus/config/schema/entity_plus.schema.yml:0 modules/ds/core/entity_plus/src/Form/EntityPlusSettingsForm.php:32
+msgid "Display empty field"
+msgstr "显示空字段"
+#: modules/ds/core/entity_plus/src/Plugin/Block/EntityOperationsMenuBlock.php:69
+msgid "@entity information"
+msgstr "@entity信息"
+
+#: modules/ds/core/entity_plus/src/Entity/Controller/EntityController.php:100
+msgid "Edit @label"
+msgstr "编辑 @label"

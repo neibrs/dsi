@@ -1,0 +1,38 @@
+.user-menu .dropdown-toggle {
+  cursor: pointer;
+  padding-right: 10px;
+  color: #f6f6f6;
+}
+.user-menu .dropdown-toggle div {
+  padding-top: 15px;
+}
+.user-menu .dropdown-toggle img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+/* drupdown-menu */
+.dropdown-menu .user-header {
+  height: 175px;
+  padding: 10px;
+  text-align: center;
+  background-color: #3c8dbc;
+  color: #f6f6f6;
+}
+.dropdown-menu .user-header img {
+  height: 90px;
+  width: 90px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+}
+
+/* sidebar */
+.user-sidebar img {
+  float: left;
+  width: 100%;
+  max-width: 45px;
+  border-radius: 50%;
+}
