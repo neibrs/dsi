@@ -47,6 +47,10 @@ vendor/bin/drupal moi -y \
 #  translation
 #
 vendor/bin/drush en -y adminimal_admin_toolbar
+
+# install ds modules
+vendor/bin/drush en -y \
+  views_plus
 ## install multilingual
 #source $SCRIPTPATH/install-zh.sh
 #
