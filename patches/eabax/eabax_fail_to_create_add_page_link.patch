@@ -1,0 +1,32 @@
+diff --git a/core/entity_plus/src/Plugin/Field/FieldWidget/EntityReferenceAutocompleteWidget.php b/core/entity_plus/src/Plugin/Field/FieldWidget/EntityReferenceAutocompleteWidget.php
+index a8d1da98d..52dcfc56e 100644
+--- a/core/entity_plus/src/Plugin/Field/FieldWidget/EntityReferenceAutocompleteWidget.php
++++ b/core/entity_plus/src/Plugin/Field/FieldWidget/EntityReferenceAutocompleteWidget.php
+@@ -30,27 +30,6 @@ class EntityReferenceAutocompleteWidget extends EntityReferenceAutocompleteWidge
+   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+     $element = parent::formElement($items, $delta, $element, $form, $form_state);
+ 
+-    // Provides data-add-path attributes.
+-    $target_type = $items->getFieldDefinition()->getSetting('target_type');
+-    $entity_type = \Drupal::entityTypeManager()->getDefinition($target_type);
+-    $access_control_handler = \Drupal::entityTypeManager()->getAccessControlHandler($target_type);
+-    if ($access_control_handler->createAccess()) {
+-      // TODO 当路由里必需路由参数的时候,以下代码引起Some mandatory parameters are missing
+-      if ($entity_type->hasLinkTemplate('add-page')) {
+-        $add_route = 'entity.' . $target_type . '.add_page';
+-      }
+-      elseif ($entity_type->hasLinkTemplate('add-form')) {
+-        $add_route = 'entity.' . $target_type . '.add_form';
+-        $element['target_id']['#attributes']['data-add-path'] = Url::fromRoute('entity.' . $target_type . '.add_form')->toString();
+-      }
+-      if (isset($add_route)) {
+-        $element['target_id']['#attributes']['data-add-path'] = Url::fromRoute($add_route, [], [
+-          'query' => \Drupal::destination()->getAsArray(),
+-        ])->toString();
+-
+-      }
+-    }
+-
+     return $element;
+   }
+ 
