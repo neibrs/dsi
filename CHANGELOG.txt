@@ -1,6 +1,8 @@
 
 ==================
+
 Added modules: 
   1. core: translation, views_plus
   2. cbos:
   3. industry:
+  4. custom: demo_data

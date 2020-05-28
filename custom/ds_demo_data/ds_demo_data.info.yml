@@ -1,0 +1,5 @@
+name: 'Ds demo'
+type: module
+description: 'The demo data for ds.'
+core: 8.x
+package: 'Ds'
