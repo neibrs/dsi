@@ -62,3 +62,6 @@ echo $(pwd)
 
 cd $DRUPAL
 vendor/bin/drupal user:create test test --roles='authenticated' --email="test@example.com" --status="1"
+
+# Add demo
+vendor/bin/drush en -y ds_demo_data

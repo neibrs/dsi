@@ -1,8 +1,16 @@
 
 ==================
 
+Added third part modules:
+business_model                  eabax_layout                    entity_plus                     language_chinese                role_frontpage                  views_table_multi_header
+code                            eabax_search                    entity_type_resource            layout_template                 role_menu                       views_template
+color_icon                      eabax_workflows                 excel_export                    locale_plus                     small_title
+d3                              entity_filter                   field_plus                      options_plus                    translation
+data_model                      entity_log                      font_awesome                    quick_code                      user_plus
+eabax_core                      entity_permission               import                          report                          views_plus
+
 Added modules: 
   1. core: translation, views_plus, import
   2. cbos:
   3. industry:
-  4. custom: demo_data
+  4. custom: ds_demo_data
