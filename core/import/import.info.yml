@@ -7,5 +7,6 @@ interface translation server pattern: modules/ds/core/%project/translations/%pro
 package: 'Eabax core'
 dependencies:
   - eabax_core
+  - entity_plus
   - migrate_source_xls
   - migrate_tools
