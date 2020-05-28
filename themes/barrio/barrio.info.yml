@@ -1,6 +1,5 @@
-name: barrio
+name: Barrio
 type: theme
-description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 # version: VERSION
 core: 8.x
 core_version_requirement: ^8 || ^9
