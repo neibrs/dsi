@@ -10,6 +10,9 @@ libraries:
 libraries-override:
   bootstrap_barrio/global-styling: false
   bootstrap_barrio/file: false
+libraries-extend:
+  system/base:
+    - barrio/system_tabledrag
 regions:
   top_header: 'Top header'
   top_header_form: 'Top header form'

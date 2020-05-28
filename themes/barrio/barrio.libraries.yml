@@ -10,3 +10,7 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+system_tabledrag:
+  css:
+    component:
+      css/component/tabledrag.module.css: { weight: -10 }
