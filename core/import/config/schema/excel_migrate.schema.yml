@@ -1,0 +1,20 @@
+import.excel_migrate.*:
+  type: config_entity
+  label: 'Excel migrate config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    path:
+      type: string
+      label: 'File path'
+    constants:
+      type: ignore
+      label: 'Constants'
+    sheets:
+      type: sequence

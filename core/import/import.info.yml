@@ -1,0 +1,10 @@
+name: 'Import'
+type: module
+description: 'Import'
+core: 8.x
+interface translation project: import
+interface translation server pattern: modules/ds/core/%project/translations/%project.%language.po
+package: 'Eabax core'
+dependencies:
+  - migrate_source_xls
+  - migrate_tools

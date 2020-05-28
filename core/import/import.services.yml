@@ -1,0 +1,3 @@
+services:
+  import.manager:
+    class: Drupal\import\ImportManager

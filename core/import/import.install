@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function import_install() {
+  $directory = "private://import";
+  file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+  $directory = "public://import/images";
+  file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+
+  // 让多组织字段能在导入时设置默认值
+  $settings = \Drupal::configFactory()->getEditable('import.settings');
+  $default_value_fields = $settings->get('default_value_fields');
+  $entity_types = \Drupal::entityTypeManager()->getDefinitions();
+  foreach ($entity_types as $entity_type_id => $entity_type) {
+    if ($multiple_organization_classification = $entity_type->get('multiple_organization_classification')) {
+      $default_value_fields[$entity_type_id][] = $multiple_organization_classification;
+    }
+  }
+  $settings->set('default_value_fields', $default_value_fields)->save();
+}
