@@ -9,7 +9,8 @@ rm -rf sites/default/private
 rm -rf sites/default/files
 
 #vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:@127.0.0.1:3306/ds
-vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:8889/ds
+#vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:8889/ds
+vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@mariadb/ds
 chmod -R a+rw sites/default
 
 # For mac install only
