@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implement hook_install() for node type article.
+ */
+function news_install() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $article = $entityTypeManager->getStorage('node_type')->load('article');
+  $article->set('name', t('News'))
+    ->save();
+}

@@ -1,0 +1,172 @@
+id: person_xls
+label: Person(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/eabax/data/inte.xlsx
+  sheet_name: 员工名册
+  keys:
+    - 姓名
+    - placeholder
+  placeholder: placeholder
+  type: employee
+  columns:
+    -
+      编号: 编号
+    -
+      姓名: 姓名
+    -
+      部门: 部门
+    -
+      入职日期: 入职日期
+    -
+      性别: 性别
+    -
+      民族: 民族
+    -
+      籍贯: 籍贯
+    -
+      政治面貌: 政治面貌
+    -
+      身份证号码: 身份证号码
+    -
+      婚姻状态: 婚姻状态
+    -
+      电话: 电话
+    -
+      邮箱: 邮箱
+    -
+      有效期: 有效期
+    -
+      业务组: 业务组
+    -    
+      有效期开始: 有效期开始
+    -
+      有效期结束: 有效期结束
+
+process:
+  number: 编号
+
+  type: type
+
+  name:
+    -
+      plugin: callback
+      source: 姓名
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: stop
+      message: 姓名不能为空
+
+  organization:
+    -
+      plugin: callback
+      callable: trim
+      source: 部门
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: organization
+      delimiter: _
+      default_values:
+        type: department
+      not_found_message: '部门未找到'
+
+
+  hire_date:
+    -
+      plugin: skip_on_empty
+      source: 入职日期
+      method: process
+    -
+      plugin: format_date
+
+  gender:
+    -
+      plugin: callback
+      callable: trim
+      source: 性别
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      map:
+        男: 1
+        女: 2
+
+  birth_date:
+    -
+      plugin: skip_on_empty
+      source: 身份证号码
+      method: process
+    -
+      plugin: substr
+      start: 6
+      length: 8
+    -
+      plugin: format_date
+      from_format: 'Ymd'
+      to_format: 'Y-m-d'
+
+  nationality: 民族
+
+  native_place: 籍贯
+
+  political_status: 政治面貌
+
+  identify_number: 身份证号码
+
+  marital_status:
+    -
+      plugin: callback
+      callable: trim
+      source: 婚姻状态
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      map:
+        已婚: 1
+        未婚: 2
+        离异: 3
+        丧偶: 4
+
+  phone: 电话
+
+  email: 邮箱
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+
+#  multiple_organization_from_excel 固定字段, destination会用到
+
+
+destination:
+  plugin: entity:person
+migration_dependencies: { }
