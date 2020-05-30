@@ -4,6 +4,19 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\field\FieldConfigInterface;
 
 /**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function field_plus_entity_form_display_update(Drupal\Core\Entity\EntityInterface $entity) {
+  $x = 'a';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function field_plus_entity_view_display_update(Drupal\Core\Entity\EntityInterface $entity) {
+  $x = 'a';
+}
+/**
  * Implements hook_ENTITY_TYPE_insert() for field_config.
  */
 function field_plus_field_config_insert(EntityInterface $entity) {
