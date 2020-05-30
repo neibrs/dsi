@@ -158,9 +158,3 @@ function views_plus_views_plugins_display_alter(array &$plugins) {
   // 中文环境导出excel采用GBK字符集
   $plugins['rest_export']['class'] = '\Drupal\views_plus\Plugin\views\display\RestExport';
 }
-/**
- * Implements hook_form_BASE_FORM_ID_alter() for form.
-*/
-function views_plus_form_views_form_content_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['#prefix'] = '<div class=" views-form col-12">';
-}

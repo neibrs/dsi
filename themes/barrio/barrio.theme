@@ -30,3 +30,9 @@ function barrio_form_system_theme_settings_alter(&$form, FormStateInterface $for
     'bg-transparent' => t('Transparent'),
   );
 }
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for form.
+ */
+function barrio_form_views_form_content_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#prefix'] = '<div class=" views-form col-12">';
+}
