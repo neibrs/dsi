@@ -11,5 +11,8 @@ function news_theme() {
     'news_date_block' => [
       'variables' => ['content' => NULL],
     ],
+    'news_pre_next_block' => [
+      'variables' => ['content' => NULL],
+    ],
   ];
 }
