@@ -5,11 +5,11 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: claro
 
-libraries:
-  - barrio/global-styling
-libraries-extend:
-  system/base:
-    - barrio/system.tabledrag
+#libraries:
+#  - barrio/global-styling
+#libraries-extend:
+#  system/base:
+#    - barrio/system.tabledrag
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
