@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function news_theme() {
+  return [
+    'news_related_block' => [
+      'variables' => ['content' => NULL],
+    ],
+  ];
+}

@@ -55,7 +55,4 @@ function barrios_preprocess_html(&$variables) {
     $variables['page']['sidebar_second']['#attributes']['class'][] = 'layout-column--quarter float-right';
     $variables['page']['content']['#attributes']['class'][] = 'layout-column--three-quarter float-left';
   }
-  else {
-    $variables['page']['content']['class'][] = 'layout-column';
-  }
 }
