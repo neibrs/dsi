@@ -5,15 +5,11 @@ global-styling:
 #    js/bootstrap.min.js: {}
 #    js/global.js: {}
   css:
-    component:
-      css/style.css: {}
+    base:
+      css/base/base.css: {}
   dependencies:
     - core/jquery
     - core/drupal
-system.tabledrag:
-  css:
-    component:
-      css/component/tabledrag.module.css: { weight: -10 }
 claro.global.details:
   css:
     component:

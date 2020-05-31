@@ -5,11 +5,9 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: claro
 
-#libraries:
-#  - barrio/global-styling
+libraries:
+  - barrios/global-styling
 libraries-extend:
-#  system/base:
-#    - barrios/system.tabledrag
   claro/global-styling:
     - barrios/claro.global.details
 regions:
@@ -22,6 +20,7 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
   sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
   footer: 'Footer'
 
 # Information added by Drupal.org packaging script on 2020-05-09

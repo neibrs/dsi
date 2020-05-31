@@ -49,17 +49,35 @@
 </div>
 <div class="layout-container">
   {{ page.pre_content }}
+  <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+  {{ page.highlighted }}
+  {% if page.help %}
+    <div class="help">
+      {{ page.help }}
+    </div>
+  {% endif %}
   <main class="page-content clearfix" role="main">
-    <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-    {{ page.highlighted }}
-    {% if page.help %}
-      <div class="help">
-        {{ page.help }}
-      </div>
-    {% endif %}
-    {{ page.content }}
-    {{ page.footer }}
-  </main>
+    {# All have content #}
+      {% if page.sidebar_first %}
+        {% block sidebar_first %}
+          {{ page.sidebar_first }}
+        {% endblock %}
+      {% endif %}
 
+      {{ page.content }}
+
+      {% if page.sidebar_second %}
+        {% block sidebar_second %}
+          {{ page.sidebar_second }}
+        {% endblock %}
+      {% endif %}
+  </main>
 </div>
+{% if page.footer %}
+  {% block footer %}
+  <div class="layout-container">
+    {{ page.footer }}
+  </div>
+  {% endblock %}
+{% endif %}
 

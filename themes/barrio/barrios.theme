@@ -36,3 +36,26 @@ function barrio_form_system_theme_settings_alter(&$form, FormStateInterface $for
 function barrio_form_views_form_content_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#prefix'] = '<div class=" views-form col-12">';
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function barrios_preprocess_html(&$variables) {
+  // Override columns
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['page']['sidebar_first']['#attributes']['class'][] = 'layout-column--quarter float-left';
+    $variables['page']['sidebar_second']['#attributes']['class'][] = 'layout-column--quarter float-left';
+    $variables['page']['content']['#attributes']['class'][] = 'layout-column--half float-left';
+  }
+  else if (!empty($variables['page']['sidebar_first'])) {
+    $variables['page']['sidebar_first']['#attributes']['class'][] = 'layout-column--quarter float-left';
+    $variables['page']['content']['#attributes']['class'][] = 'layout-column--three-quarter float-left';
+  }
+  else if (!empty($variables['page']['sidebar_second'])) {
+    $variables['page']['sidebar_second']['#attributes']['class'][] = 'layout-column--quarter float-right';
+    $variables['page']['content']['#attributes']['class'][] = 'layout-column--three-quarter float-left';
+  }
+  else {
+    $variables['page']['content']['class'][] = 'layout-column';
+  }
+}
