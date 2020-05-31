@@ -36,12 +36,12 @@ echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
 echo Set site to the product mode
 # Set site mode to dev mode
 #vendor/bin/drupal site:mode dev
-vendor/bin/drush cset bandwidth_optimization.preprocess_css false
-vendor/bin/drush cset bandwidth_optimization.preprocess_js false
+vendor/bin/drush cset system.performance css.preprocess false -y
+vendor/bin/drush cset system.performance js.preprocess false -y
 
-vendor/bin/drush then -y barrio
-vendor/bin/drush cset system.theme admin -y barrio && \
-vendor/bin/drush cset system.theme default -y barrio
+vendor/bin/drush then -y barrios
+vendor/bin/drush cset system.theme admin -y barrios && \
+vendor/bin/drush cset system.theme default -y barrios
 
 # Enable modules
 vendor/bin/drush en -y \
