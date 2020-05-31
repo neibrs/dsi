@@ -14,3 +14,8 @@ system.tabledrag:
   css:
     component:
       css/component/tabledrag.module.css: { weight: -10 }
+claro.global.details:
+  css:
+    component:
+      css/component/details.css: { weight: 10 }
+      css/component/form.css: { weight: 10 }

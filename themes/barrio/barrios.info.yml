@@ -7,9 +7,11 @@ base theme: claro
 
 #libraries:
 #  - barrio/global-styling
-#libraries-extend:
+libraries-extend:
 #  system/base:
-#    - barrio/system.tabledrag
+#    - barrios/system.tabledrag
+  claro/global-styling:
+    - barrios/claro.global.details
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
