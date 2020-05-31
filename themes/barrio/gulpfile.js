@@ -11,15 +11,9 @@ const paths = {
   scss: {
     src: './scss/style.scss',
     dest: './css',
-    watch: './scss/**/*.scss',
-    bootstrap: './node_modules/bootstrap/scss/bootstrap.scss'
+    watch: './scss/**/*.scss'
   },
   js: {
-    bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    jquery: './node_modules/jquery/dist/jquery.min.js',
-    popper: 'node_modules/popper.js/dist/umd/popper.min.js',
-    popper: 'node_modules/popper.js/dist/umd/popper.min.js.map',
-    dest: './js'
   }
 }
 
@@ -48,13 +42,6 @@ function styles () {
     .pipe(browserSync.stream())
 }
 
-// Move the javascript files into our js folder
-function js () {
-  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper])
-    .pipe(gulp.dest(paths.js.dest))
-    .pipe(browserSync.stream())
-}
-
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
@@ -64,10 +51,9 @@ function serve () {
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve))
+const build = gulp.series(styles, gulp.parallel(serve))
 
 exports.styles = styles
-exports.js = js
 exports.serve = serve
 
 exports.default = build
