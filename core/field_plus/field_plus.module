@@ -40,7 +40,7 @@ function field_plus_configure_entity_form_display(FieldConfigInterface $field_co
   // Make sure the field is displayed in the 'default' form mode (using
   // default widget and settings). It stays hidden for other form modes
   // until it is explicitly configured.
-  entity_get_form_display($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
+  \Drupal::service('entity_display.repository')->getFormDisplay($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
     ->setComponent($field_config->getName(), $options)
     ->save();
 }
@@ -56,7 +56,7 @@ function field_plus_configure_entity_view_display(FieldConfigInterface $field_co
   // Make sure the field is displayed in the 'default' view mode (using
   // default formatter and settings). It stays hidden for other view
   // modes until it is explicitly configured.
-  entity_get_display($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
+  \Drupal::service('entity_display.repository')->getFormDisplay($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle(), 'default')
     ->setComponent($field_config->getName(), $options)
     ->save();
 }
