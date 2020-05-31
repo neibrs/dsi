@@ -6,6 +6,7 @@ global-styling:
 #    js/global.js: {}
   css:
     base:
+      //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: remote }
       css/base/base.css: {}
   dependencies:
     - core/jquery

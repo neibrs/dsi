@@ -2,7 +2,7 @@
 namespace Drupal\news\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Url;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a block to display 'related news' elements.
@@ -14,6 +14,9 @@ use Drupal\Core\Url;
  */
 class NewsRelatedBlock extends BlockBase {
 
+  /**
+   * {@inheritDoc}
+   */
   public function build() {
     $build = [];
     $build['#theme'] = 'news_related_block';
@@ -31,4 +34,17 @@ class NewsRelatedBlock extends BlockBase {
     return $build;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheTags() {
+    $news = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'article',
+    ]);
+    if (!empty($news)) {
+      $new = reset($news);
+      $tags = $new->getCacheTags();
+      return Cache::mergeTags(parent::getCacheTags(), $tags);
+    }
+  }
 }

@@ -8,5 +8,8 @@ function news_theme() {
     'news_related_block' => [
       'variables' => ['content' => NULL],
     ],
+    'news_date_block' => [
+      'variables' => ['content' => NULL],
+    ],
   ];
 }
