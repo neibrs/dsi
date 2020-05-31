@@ -46,9 +46,13 @@ vendor/bin/drush cset system.theme default -y barrios
 # Enable modules
 vendor/bin/drush en -y \
   config_translation \
-  drush_language
+  drush_language \
+  config_update_ui
 #  translation
 #
+vendor/bin/drush en -y \
+  field_plus
+
 vendor/bin/drush en -y adminimal_admin_toolbar
 
 # install ds modules
