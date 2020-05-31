@@ -1,1 +1,9 @@
-xxxx
+
+<div class="layout-column">
+  <p>{{ 'Related news'|t }}</p>
+  <ul>
+    {% for new in content %}
+      <li><a href="{{ new.link }}">{{ new.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
