@@ -9,7 +9,7 @@ let gulp = require('gulp'),
 
 const paths = {
   scss: {
-    src: './scss/style.scss',
+    src: './scss/**/*.scss',
     dest: './css',
     watch: './scss/**/*.scss'
   },
@@ -19,7 +19,7 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({
@@ -45,10 +45,10 @@ function styles () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'http://ds.server.host:8888',
+    proxy: 'http://dsi.server.host/',
   })
 
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.watch], styles).on('change', browserSync.reload)
 }
 
 const build = gulp.series(styles, gulp.parallel(serve))
