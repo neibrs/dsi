@@ -9,8 +9,8 @@ rm -rf sites/default/private
 rm -rf sites/default/files
 
 #vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:@127.0.0.1:3306/ds
-#vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/ds
-vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@mariadb/ds
+vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/ds
+#vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@mariadb/ds
 chmod -R a+rw sites/default
 
 # For mac install only
@@ -27,11 +27,11 @@ echo "ini_set('memory_limit', -1);" >> sites/default/settings.php
 echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
 
 # Enable memcache modules
-vendor/bin/drush en -y \
-  memcache \
-  memcache_admin
-cp modules/ds/settings.memcache.php sites/default/settings.memcache.php
-echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
+#vendor/bin/drush en -y \
+#  memcache \
+#  memcache_admin
+#cp modules/ds/settings.memcache.php sites/default/settings.memcache.php
+#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
 
 echo Set site to the product mode
 # Set site mode to dev mode
