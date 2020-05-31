@@ -38,7 +38,7 @@ function barrio_form_views_form_content_page_1_alter(&$form, FormStateInterface 
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for override columns.
  */
 function barrios_preprocess_html(&$variables) {
   // Override columns
