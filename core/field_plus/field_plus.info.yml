@@ -2,6 +2,7 @@ name: field_plus
 type: module
 description: 'Enhancements to field module for Drupal core'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Eabax core'
 dependencies:
   - field

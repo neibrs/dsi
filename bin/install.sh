@@ -27,7 +27,7 @@ echo "ini_set('memory_limit', -1);" >> sites/default/settings.php
 echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
 
 # Enable memcache modules
-vendor/bin/drupal moi -y \
+vendor/bin/drush en -y \
   memcache \
   memcache_admin
 cp modules/ds/settings.memcache.php sites/default/settings.memcache.php
@@ -35,13 +35,13 @@ echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sit
 
 echo Set site to the product mode
 # Set site mode to dev mode
-vendor/bin/drupal site:mode dev
+#vendor/bin/drupal site:mode dev
 vendor/bin/drush then -y barrio
 vendor/bin/drush cset system.theme admin -y barrio && \
 vendor/bin/drush cset system.theme default -y barrio
 
 # Enable modules
-vendor/bin/drupal moi -y \
+vendor/bin/drush en -y \
   config_translation \
   drush_language
 #  translation
@@ -61,7 +61,7 @@ vendor/bin/drush en -y adminimal_admin_toolbar
 echo $(pwd)
 
 cd $DRUPAL
-vendor/bin/drupal user:create test test --roles='authenticated' --email="test@example.com" --status="1"
+#vendor/bin/drupal user:create test test --roles='authenticated' --email="test@example.com" --status="1"
 
 # Add demo
-vendor/bin/drush en -y ds_demo_data
+#vendor/bin/drush en -y ds_demo_data

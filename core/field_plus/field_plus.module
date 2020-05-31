@@ -6,14 +6,14 @@ use Drupal\field\FieldConfigInterface;
 /**
  * Implements hook_ENTITY_TYPE_update().
  */
-function field_plus_entity_form_display_update(Drupal\Core\Entity\EntityInterface $entity) {
+function field_plus_entity_form_display_update(EntityInterface $entity) {
   $x = 'a';
 }
 
 /**
  * Implements hook_ENTITY_TYPE_update().
  */
-function field_plus_entity_view_display_update(Drupal\Core\Entity\EntityInterface $entity) {
+function field_plus_entity_view_display_update(EntityInterface $entity) {
   $x = 'a';
 }
 /**
