@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\taxonomy\Entity\Vocabulary;
+
 /**
  * Implement hook_install() for node type article.
  */
@@ -8,4 +10,25 @@ function news_install() {
   $article = $entityTypeManager->getStorage('node_type')->load('article');
   $article->set('name', t('News'))
     ->save();
+
+  // Add taxonomy category for news.
+  $news_category = Vocabulary::create([
+    'vid' => 'news_category',
+    'name' => t('New category'),
+  ]);
+  $news_category->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function news_uninstall($is_syncing) {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $article = $entityTypeManager->getStorage('node_type')->load('article');
+  $article->set('name', t('Article'))
+    ->save();
+
+  // Delete category for news.
+  $news_category = Vocabulary::load('news_category');
+  $news_category->delete();
 }
