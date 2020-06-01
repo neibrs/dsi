@@ -12,11 +12,13 @@ function news_install() {
     ->save();
 
   // Add taxonomy category for news.
-  $news_category = Vocabulary::create([
-    'vid' => 'news_category',
-    'name' => t('New category'),
-  ]);
-  $news_category->save();
+  if (empty($news_category) && $news_category = $entityTypeManager->getStorage('taxonomy_vocabulary')->load('news_category')) {
+    $news_category = Vocabulary::create([
+      'vid' => 'news_category',
+      'name' => t('New category'),
+    ]);
+    $news_category->save();
+  }
 }
 
 /**
@@ -29,6 +31,8 @@ function news_uninstall($is_syncing) {
     ->save();
 
   // Delete category for news.
-  $news_category = Vocabulary::load('news_category');
-  $news_category->delete();
+  $news_category = $entityTypeManager->getStorage('taxonomy_vocabulary')->load('news_category');
+  if ($news_category->id()) {
+    $news_category->delete();
+  }
 }
