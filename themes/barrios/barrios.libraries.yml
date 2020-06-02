@@ -8,6 +8,8 @@ global-styling:
     base:
       //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: remote }
       css/base/base.css: {}
+    component:
+      css/component/main-navigation.css: {}
     layout:
       css/layout/layout.css: {}
   dependencies:

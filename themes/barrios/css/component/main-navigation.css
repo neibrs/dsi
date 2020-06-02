@@ -1,0 +1,13 @@
+#block-barrios-main-menu ul.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  #block-barrios-main-menu ul.menu li.menu-item {
+    padding: 0 1rem;
+    list-style: none; }
+    #block-barrios-main-menu ul.menu li.menu-item a {
+      text-decoration: none;
+      font-size: 1.5rem; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudC9tYWluLW5hdmlnYXRpb24uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9CQUFhO0VBQWIscUJBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWEsRUFBQTtFQURmO0lBR0ksZUFBZTtJQUNmLGdCQUFnQixFQUFBO0lBSnBCO01BTU0scUJBQXFCO01BQ3JCLGlCQUFpQixFQUFBIiwiZmlsZSI6ImNvbXBvbmVudC9tYWluLW5hdmlnYXRpb24uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Jsb2NrLWJhcnJpb3MtbWFpbi1tZW51IHVsLm1lbnUge1xuICBkaXNwbGF5OiBmbGV4O1xuICBsaS5tZW51LWl0ZW0ge1xuICAgIHBhZGRpbmc6IDAgMXJlbTtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIGEge1xuICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgZm9udC1zaXplOiAxLjVyZW07XG4gICAgfVxuICB9XG59Il19 */
