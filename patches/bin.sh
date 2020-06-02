@@ -11,4 +11,4 @@ source $SCRIPTPATH/drupal/2986370.sh
 
 #2. Delete slick.settings.yml without slick module
 
-
+source $SCRIPTPATH/contrib/block_style_plugins.sh
