@@ -3,35 +3,35 @@
 DRUPAL="$(pwd)"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-chmod -R a+rw sites/default
-rm -rf sites/default/settings.php
-rm -rf sites/default/private
-rm -rf sites/default/files
+chmod -R a+rw web/sites/default
+rm -rf web/sites/default/settings.php
+rm -rf web/sites/default/private
+rm -rf web/sites/default/files
 
-#vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:@127.0.0.1:3306/ds
-vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/ds
+vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:@127.0.0.1:3306/ds
+#vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/ds
 #vendor/bin/drush site:install -y --account-pass=admin --db-url=mysql://root:root@mariadb/ds
-chmod -R a+rw sites/default
+chmod -R a+rw web/sites/default
 
 # For mac install only
-#mkdir -p sites/default/config/sync
-#cp -R modules/ds/bin/mac/sync/.htaccess sites/default/config/sync/.htaccess
-#echo "\$settings['config_sync_directory'] = 'sites/default/config/sync';" >> sites/default/settings.php
+#mkdir -p web/sites/default/config/sync
+#cp -R modules/ds/bin/mac/sync/.htaccess web/sites/default/config/sync/.htaccess
+#echo "\$settings['config_sync_directory'] = 'web/sites/default/config/sync';" >> web/sites/default/settings.php
 
-chmod -R a+rw sites/default
+chmod -R a+rw web/sites/default
 
-mkdir sites/default/private;
-echo "\$settings['file_private_path'] = 'sites/default/private';" >> sites/default/settings.php
+mkdir web/sites/default/private;
+echo "\$settings['file_private_path'] = 'sites/default/private';" >> web/sites/default/settings.php
 
-echo "ini_set('memory_limit', -1);" >> sites/default/settings.php
-echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
+echo "ini_set('memory_limit', -1);" >> web/sites/default/settings.php
+echo "ini_set('max_execution_time', 0);" >> web/sites/default/settings.php
 
 # Enable memcache modules
 #vendor/bin/drush en -y \
 #  memcache \
 #  memcache_admin
-#cp modules/ds/settings.memcache.php sites/default/settings.memcache.php
-#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
+#cp modules/ds/settings.memcache.php web/sites/default/settings.memcache.php
+#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> web/sites/default/settings.php
 
 echo Set site to the product mode
 # Set site mode to dev mode
