@@ -1,46 +1,52 @@
 <?php
 
+
 namespace Drupal\Tests\dsi_record\Functional;
 
-use Drupal\Core\Url;
-use Drupal\Tests\BrowserTestBase;
 
+use Drupal\Core\Url;
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
  * @group dsi_record
  */
-class RecordListTest extends BrowserTestBase {
-
+class RecordListTest extends RecordTestBase{
   /**
-   * Modules to enable.
-   *
-   * @var array
-   */
-  public static $modules = ['dsi_record'];
-
-  /**
-   * A user with permission to administer site configuration.
+   * A normal logged in user.
    *
    * @var \Drupal\user\UserInterface
    */
-  protected $user;
+  protected $webUser;
 
-  /**
-   * {@inheritdoc}
-   */
   protected function setUp() {
     parent::setUp();
-    $this->user = $this->drupalCreateUser(['view record entities']);
-    $this->drupalLogin($this->user);
+    $this->webUser = $this->drupalCreateUser([
+      'view published record entities'
+    ]);
   }
 
   /**
-   * Tests that the home page loads with a 200 response.
+   * 检测列表
+   * @throws \Behat\Mink\Exception\ExpectationException
    */
-  public function testLoad() {
+  public function testRecordList() {
+
+    $this->drupalLogin($this->webUser);
+
+    // 验证
+    $assertSession = $this->assertSession();
     $this->drupalGet(Url::fromRoute('entity.dsi_record.collection'));
-    $this->assertSession()->statusCodeEquals(200);
+    $assertSession->statusCodeEquals(200);
+
+    //创建新数据
+    $record = $this->createRecord();
+    // search full name 搜索验证
+    $keywords = [
+      'name' => $record->label(),
+    ];
+    $this->drupalPostForm('entity.dsi_record.collection', $keywords, t('Search'));
+    $assertSession->statusCodeEquals(200);
+    $assertSession->linkExists($record->label());
   }
 
 }
