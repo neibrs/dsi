@@ -319,3 +319,20 @@ a.tabledrag-handle .handle
 
     color: #f8c272;
 }
+
+.field__label
+{
+    color: #858896;
+}
+
+.field__item
+{
+    padding-right: 5px;
+
+    color: #303443;
+
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+}

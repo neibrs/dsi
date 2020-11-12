@@ -62,6 +62,7 @@ hr {
 }
 // Apply for oams end.
 
+// Apply for client page start
 .card-title {
   font-size: 16px;
   font-weight: 400;
@@ -79,3 +80,14 @@ hr {
   font-size: 15px;
   cursor: pointer;
 }
+.field__label {
+  color: #858896;
+}
+.field__item {
+  color: #303443;
+  padding-right: 5px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+// Apply for client page end
