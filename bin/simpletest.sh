@@ -38,12 +38,7 @@ runByIgnores() {
 runByGroups() {
   groups=( \
     'organization' \
-    'job' \
-    'person' \
-    'employee_assignment' \
-    'element_entry' \
-    'qualification' \
-    'transaction' \
+    'job'
   )
 
   for group in ${groups[@]}; do
