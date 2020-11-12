@@ -1,0 +1,35 @@
+{#
+/**
+ * @file dsi_client.html.twig
+ * Default theme implementation to present Client data.
+ *
+ * This template is used when viewing Client pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_dsi_client()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="card border-radius-5">
+  <div class="card-content">
+    <div class="row card-title">
+      <div class="col l10"><i class="iconfont icon-tushuguanshenghuo"></i>客户详情</div>
+      <div class="col l2 text-align-right title-operate"><span class="title-item__text"><i class="iconfont icon-bianji5 cursor editicon"></i>编辑详情</span></div>
+    </div>
+    <div class="row">
+        <div class="container p-35">
+        <div{{ attributes.addClass('dsi_client col l12 m12') }}>
+          {% if content %}
+            {{- content -}}
+          {% endif %}
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
