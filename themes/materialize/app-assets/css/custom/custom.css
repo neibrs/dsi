@@ -290,3 +290,32 @@ a.tabledrag-handle .handle
 {
     width: 90px;
 }
+
+.card-title
+{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.iconfont
+{
+    font-size: 22px;
+
+    color: #9fa5b9;
+}
+
+.editicon
+{
+    font-size: 16px;
+
+    color: #9fa5b9;
+}
+
+.title-operate
+{
+    font-size: 15px;
+
+    cursor: pointer;
+
+    color: #f8c272;
+}
