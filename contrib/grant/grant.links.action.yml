@@ -1,0 +1,5 @@
+entity.grant.add_form:
+  route_name: entity.grant.add_page
+  title: 'Add'
+  appears_on:
+    - entity.grant.collection

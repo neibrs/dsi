@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device_other_subtype
+id: access_point
+label: 'Access Point'
+locations:
+  blade_chassis: blade_chassis
+  rack: '0'
+  building: '0'
+  server_room: '0'
+  storage_room: '0'

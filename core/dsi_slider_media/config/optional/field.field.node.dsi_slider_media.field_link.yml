@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_slider_media
+  config:
+    - field.storage.node.field_link
+    - node.type.dsi_slider_media
+  module:
+    - link
+id: node.dsi_slider_media.field_link
+field_name: field_link
+entity_type: node
+bundle: dsi_slider_media
+label: 'Call for action link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

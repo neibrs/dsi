@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains data_security.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function data_security_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'entity.data_security.add_page':
+      return '<p>' . t('Select object data context:') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function data_security_theme() {
+  $theme = [];
+  $theme['data_security'] = [
+    'render element' => 'elements',
+    'file' => 'data_security.page.inc',
+    'template' => 'data_security',
+  ];
+  $theme['data_security_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'data_security.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function data_security_theme_suggestions_data_security(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#data_security'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'data_security__' . $sanitized_view_mode;
+  $suggestions[] = 'data_security__' . $entity->bundle();
+  $suggestions[] = 'data_security__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'data_security__' . $entity->id();
+  $suggestions[] = 'data_security__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

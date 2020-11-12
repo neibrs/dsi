@@ -1,0 +1,14 @@
+<div class="box">
+    <div class="box-body row">
+        <div class="col-md-6">
+            {{ form.name }}
+            {{ form.organization }}
+        </div>
+        <div class="col-md-6">
+            {{ form.status }}
+            {{ form.version }}
+        </div>
+    </div>
+</div>
+
+{{ form|without('name', 'organization', 'status', 'version') }}

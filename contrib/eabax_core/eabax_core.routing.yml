@@ -1,0 +1,34 @@
+eabax_core.data_modeling:
+  path: '/data_modeling'
+  defaults:
+    _controller: '\Drupal\eabax_core\Controller\EabaxCoreController::menuBlockPage'
+    _title: 'Implementation'
+    menu_id: role-menu-implementor
+  requirements:
+    _parent_menu_access: 'eabax_core.data_modeling'
+
+eabax_core.implementation:
+  path: '/implementation'
+  defaults:
+    _controller: '\Drupal\eabax_core\Controller\EabaxCoreController::menuBlockPage'
+    _title: 'Implementation'
+    menu_id: role-menu-implementor
+  requirements:
+    _parent_menu_access: 'eabax_core.implementation'
+
+eabax_core.implementation_tools:
+  path: '/implementation/tools'
+  defaults:
+    _controller: '\Drupal\eabax_core\Controller\EabaxCoreController::menuBlockPage'
+    _title: 'Implementation tools'
+    menu_id: role-menu-implementor
+  requirements:
+    _parent_menu_access: 'eabax_core.implementation_tools'
+
+eabax_core.sidebar_toggle:
+  path: '/eabax_seven/sidebar_toggle'
+  defaults:
+    _controller: '\Drupal\eabax_core\Controller\EabaxCoreController::sidebarToggle'
+  requirements:
+    _access: 'TRUE'
+    

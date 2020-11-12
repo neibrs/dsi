@@ -1,0 +1,12 @@
+import.import_rules_form:
+  title: Define import rules
+  route_name: import.import_rules_form
+  parent: eabax_core.implementor.tools
+
+# Excel migrate menu items definition
+entity.excel_migrate.collection:
+  title: 'Excel migrate'
+  route_name: entity.excel_migrate.collection
+  description: 'List Excel migrate (bundles)'
+  parent: system.admin_structure
+  weight: 99

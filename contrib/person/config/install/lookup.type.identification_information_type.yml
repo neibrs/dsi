@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: identification_information_type
+label: Identification information type
+description: 'CV02_01_101身份证件类别代码'
+organization_classification: business_group

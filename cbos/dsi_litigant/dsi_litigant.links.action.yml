@@ -1,0 +1,5 @@
+entity.dsi_litigant.add_form:
+  route_name: entity.dsi_litigant.add_form
+  title: 'Add Litigant'
+  appears_on:
+    - entity.dsi_litigant.collection

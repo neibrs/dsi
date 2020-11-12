@@ -1,0 +1,72 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/responsibility/src/ResponsibilityListBuilder.php: n/a
+#  modules/dsi/contrib/responsibility/src/UserResponsibilityListBuilder.php: n/a
+#  modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php: n/a
+#  modules/dsi/contrib/responsibility/src/Entity/Responsibility.php: n/a
+#  modules/dsi/contrib/responsibility/src/Form/UserResponsibilityForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/responsibility/src/ResponsibilityListBuilder.php:20 modules/dsi/contrib/responsibility/src/UserResponsibilityListBuilder.php:21 modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:95
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/UserResponsibilityListBuilder.php:20
+msgid "User responsibility ID"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/Responsibility.php:85 modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:127
+msgid "Responsibility"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/Responsibility.php:101
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/Responsibility.php:116
+msgid "Security profile"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:111
+msgid "User"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:146
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:147
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:150
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Entity/UserResponsibility.php:151
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Form/UserResponsibilityForm.php:53
+msgid "Created the %label User responsibility."
+msgstr ""
+
+#: modules/dsi/contrib/responsibility/src/Form/UserResponsibilityForm.php:59
+msgid "Saved the %label User responsibility."
+msgstr ""
+

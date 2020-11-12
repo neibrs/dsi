@@ -1,0 +1,5 @@
+entity.security_profile.add_form:
+  route_name: entity.security_profile.add_form
+  title: 'Add'
+  appears_on:
+    - entity.security_profile.collection

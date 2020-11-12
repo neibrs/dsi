@@ -1,0 +1,69 @@
+{#
+/**
+ * @file person.html.twig
+ * Default theme implementation to present Person data.
+ *
+ * This template is used when viewing Person pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_person()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="row">
+  <div class="col-sm-5">
+    {{ content.business_group }}
+  </div>
+  <div class="col-sm-5">
+    {{ content.status }}
+  </div>
+</div>
+
+{% if content.name is defined %}
+  <div class="box">
+    <div class="box-body row">
+      <div class="col-sm-5">
+        {{ content.number }}
+        {{ content.name }}
+        {{ content.organization }}
+        {{ content.gender }}
+        {{ content.marital_status }}
+        {{ content.birth_date }}
+        {{ content.nationality }}
+        {{ content.native_place }}
+        {{ content.political_status }}
+      </div>
+      <div class="col-sm-5">
+        {{ content.type }}
+        {{ content.employee_status }}
+        {{ content.phone }}
+        {{ content.email }}
+        {{ content.people_group }}
+        {{ content.hire_date }}
+        {{ content.adjusted_service_date }}
+        {{ content.completion_of_probation_date }}
+        {#{{ content.rehire_date }}#}
+        {{ content.termination_actual_date }}
+        {#{{ content.termination_notified_date }}#}
+        {#{{ content.termination_projected_date }}#}
+        {#{{ content.practice_experience }}#}
+        {#{{ content.effective_dates }}#}
+      </div>
+      <div class="col-sm-2">
+        {{ content.picture}}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{{ content|without('business_group','status','number', 'name', 'organization', 'type', 'employee_status', 'phone',
+                   'email', 'gender', 'marital_status', 'birth_date', 'identify_number', 'nationality',
+                   'native_place', 'political_status', 'people_group', 'hire_date', 'rehire_date',
+                   'termination_actual_date', 'termination_notified_date', 'termination_projected_date',
+                   'practice_experience', 'picture', 'effective_dates', 'master', 'adjusted_service_date',
+                   'completion_of_probation_date') }}

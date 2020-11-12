@@ -1,0 +1,22 @@
+{#
+/**
+ * @file person_address.html.twig
+ * Default theme implementation to present Person address data.
+ *
+ * This template is used when viewing Person address pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_person_address()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('person_address') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

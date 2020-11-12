@@ -1,0 +1,151 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_plus/entity_plus.module: n/a
+#  modules/dsi/contrib/entity_plus/src/EntityPlusManager.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Controller/EntityPlusController.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/EntityFormTrait.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/EntityMasterTrait.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/Controller/EntityController.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Form/EntityPlusSettingsForm.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Block/EntityOperationsBlock.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Derivative/EntityLocalAction.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceLabelPlusFormatter.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldWidget/EntityTypeSelectWidget.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntity.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntityType.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_plus/entity_plus.module:87
+msgid "Export"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/entity_plus.module:213;223
+msgid "Big block"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:68
+msgid "Illegal formula : The context does not contain @entity entity."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:77
+msgid "Illegal formula : @entity does not have @field field."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:108
+msgid "Illegal formula : The entity or field of @item in the formula does not match."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:121
+msgid "Formula error : @error"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Controller/EntityPlusController.php:39
+msgid "The settings have been updated."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:43
+msgid "Effective dates"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:63
+msgid "Enabled"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:80
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:81
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:84
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:85
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EntityFormTrait.php:24
+msgid "View"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EntityFormTrait.php:34
+msgid "@type %title has been created."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EntityFormTrait.php:44
+msgid "@type %title has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/EntityMasterTrait.php:18
+msgctxt "Data"
+msgid "Master"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Entity/Controller/EntityController.php:109
+msgid "Edit @label"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Form/EntityPlusSettingsForm.php:32
+msgid "Display empty field"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/Block/EntityOperationsBlock.php:33
+msgid "Entity type ID"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/Derivative/EntityLocalAction.php:33
+msgid "List"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.php:37
+msgid "Link label to the referenced entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceLabelPlusFormatter.php:36
+msgid "Link relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldWidget/EntityTypeSelectWidget.php:66
+msgid "@name field is required."
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntity.php:23;26
+msgid "%label is empty"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntity.php:23
+msgid "Target entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntity.php:26
+msgid "Target entity type"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntity.php:31
+msgid "Entity not found: @label"
+msgstr ""
+
+#: modules/dsi/contrib/entity_plus/src/Plugin/views/field/TargetEntityType.php:27
+msgid "Entity type not found: @label"
+msgstr ""
+

@@ -1,0 +1,36 @@
+{#
+/**
+ * @file person.html.twig
+ * Default theme implementation to present Person data.
+ *
+ * This template is used when viewing Person pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_person()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="box">
+  <div class="box-body row">
+    <div class="col-sm-5">
+      {{ content.name }}
+      {{ content.gender }}
+      {{ content.birth_date }}
+      {{ content.material_status }}
+    </div>
+    <div class="col-sm-5">
+      {{ content.type }}
+      {{ content.effective_dates }}
+      {{ content.status }}
+      {{ content.phone }}
+    </div>
+    <div class="col-sm-2">
+      {{ content.picture}}
+    </div>
+  </div>
+</div>

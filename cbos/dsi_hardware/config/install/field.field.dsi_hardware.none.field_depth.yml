@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - dsi_hardware.type.none
+    - field.storage.dsi_hardware.field_depth
+  module:
+    - options
+id: dsi_hardware.none.field_depth
+field_name: field_depth
+entity_type: dsi_hardware
+bundle: none
+label: Depth
+description: 'Defaults to full depth if left empty for regular type hardware.'
+required: false
+translatable: false
+default_value:
+  -
+    value: full_depth
+default_value_callback: ''
+settings: {  }
+field_type: list_string

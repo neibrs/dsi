@@ -1,0 +1,206 @@
+<?php
+
+/**
+ * @file
+ * Contains organization.module.
+ */
+
+// TODO: add fields for specified classification.
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\organization\Entity\OrganizationType;
+
+/**
+ * Implements hook_help() for organization.
+ */
+function organization_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'entity.organization.merge_form':
+      $output = '';
+      $output .= '<p>' . t('This function only provides first-level organizational consolidation.') . '</p>';
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function organization_theme() {
+  $theme = [];
+
+  $theme['organization'] = [
+    'render element' => 'elements',
+    'file' => 'organization.page.inc',
+  ];
+
+  $theme['organization__full'] = [
+    'base hook' => 'organization',
+  ];
+
+  $theme['organization__teaser'] = [
+    'base hook' => 'organization',
+  ];
+
+  $theme['organization_form'] = [
+    'render element' => 'form',
+  ];
+
+  $theme['organization_merge_form'] = [
+    'render element' => 'form',
+  ];
+
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK() for organization.
+*/
+function organization_theme_suggestions_organization(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#organization'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'organization__' . $sanitized_view_mode;
+  $suggestions[] = 'organization__' . $entity->bundle();
+  $suggestions[] = 'organization__' . $entity->bundle() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Load children organization without query_TAG.
+ */
+function _organization_get_all_children_ids($organization_id) {
+  $ids = [];
+
+  $query = \Drupal::database()->select('organization_field_data', 'ofd');
+  $query->addField('ofd', 'id');
+  $query->condition('parent', $organization_id);
+  $result = $query->execute()->fetchCol();
+  foreach ($result as $id) {
+    $ids[] = $id;
+    $ids += _organization_get_all_children_ids($id);
+  }
+  $ids += $result;
+
+  return $ids;
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function organization_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (OrganizationType::loadMultiple() as $bundle) {
+    $extra['organization'][$bundle->id()]['display']['children'] = [
+      'label' => t('Subordinate organization'),
+      'weight' => 0,
+      'third_party_settings' => [
+        'entity_plus' => ['big_block' => TRUE],
+      ],
+    ];
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_load() for predefined_filter.
+ */
+function organization_predefined_filter_load($entities) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  /** @var \Drupal\entity_filter\Entity\PredefinedFilterInterface[] $entities */
+  if (isset($entities['organization_field_data'])) {
+    $filters = $entities['organization_field_data']->getFilters();
+
+    // Organization type.
+    $types = $entity_type_manager
+      ->getStorage('organization_type')
+      ->loadMultiple();
+    foreach ($types as $id => $type) {
+      $filters[] = [
+        'table' => 'organization_field_data',
+        'field' => 'type',
+        'admin_label' => '类型:' . $type->label(),
+        'plugin_id' => 'bundle',
+        'operator' => 'in',
+        'value' => [
+          $id => $id,
+        ],
+      ];
+    }
+
+    // Add location
+    $locations = $entity_type_manager->getStorage('location')
+      ->loadMultiple();
+    foreach ($locations as $id => $location) {
+      $filters[] = [
+        'table' => 'organization_field_data',
+        'field' => 'location',
+        'admin_label' => '工作地点:' . $location->label(),
+        'plugin_id' => 'entity_reference_in_operator',
+        'operator' => 'in',
+        'value' => [
+          $id => $id,
+        ],
+      ];
+    }
+
+    $entities['organization_field_data']->setFilters($filters);
+  }
+
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function organization_entity_operation(EntityInterface $entity) {
+  $operations = [];
+
+  if ($entity->getEntityTypeId() == 'organization') {
+    $operations['merge'] = [
+      'title' => t('Merge'),
+      'url' => Url::fromRoute('entity.organization.merge_form', [
+        'organization' => $entity->id(),
+      ]),
+      'weight' => 20,
+    ];
+  }
+
+  return $operations;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function organization_cron() {
+  $current_time = \Drupal::time()->getRequestTime();
+  $storage = \Drupal::entityTypeManager()->getStorage('organization');
+  $query = $storage->getQuery();
+
+  $query->condition('effective_dates.end_value', date('Y-m-d', $current_time), '<=')
+    ->condition('status', TRUE);
+  $ids = $query->execute();
+
+  $organizations = $storage->loadMultiple($ids);
+
+  foreach ($organizations as $id => $organization) {
+    $organization->set('status', FALSE)
+      ->save();
+  }
+}
+
+/**
+ * Implements entity_reference_selection info alter.
+ */
+function organization_entity_reference_selection_alter(&$info) {
+  foreach ($info as $key => $value) {
+    if ($value['class'] == 'Drupal\Core\Entity\Plugin\EntityReferenceSelection\DefaultSelection' || $value['class'] == 'Drupal\entity_plus\Plugin\EntityReferenceSelection\DefaultSelection') {
+      $info[$key]['class'] = '\Drupal\organization\Plugin\EntityReferenceSelection\MultipleOrganizationEntitySelection';
+    }
+  }
+}

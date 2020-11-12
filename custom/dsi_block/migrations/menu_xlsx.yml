@@ -1,0 +1,42 @@
+id: main_menus_xlsx
+label: Main Menus(xlsx)
+migration_tags: { }
+source:
+  plugin: xls
+  header_row: 1
+  path: modules/dsi/data/MainMenus.xlsx
+  sheet_name: Sheet1
+  keys:
+    - 菜单名
+  columns:
+    -
+      菜单名: 菜单名
+    -
+      上级: 上级
+process:
+  title: 菜单名
+  menu_name:
+    plugin: default_value
+    default_value: 'main'
+  'link/uri':
+    plugin: default_value
+    default_value: 'internal:\/'
+  parent:
+    -
+      plugin: callback
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      source: 上级
+      value_key: title
+      bundle_key: bundle
+      bundle: menu_link_content
+      entity_type: menu_link_content
+      ignore_case: true
+
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies: { }

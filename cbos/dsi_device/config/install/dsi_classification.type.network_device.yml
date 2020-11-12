@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: network_device
+label: 'Network device'

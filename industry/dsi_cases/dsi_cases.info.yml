@@ -1,0 +1,11 @@
+name: 'dsi_cases'
+type: module
+description: 'The lawyer of cases.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+interface translation project: dsi_cases
+interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
+dependencies:
+  - code
+  - lookup

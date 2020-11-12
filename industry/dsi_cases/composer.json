@@ -1,0 +1,13 @@
+{
+    "name": "dsi_cases",
+    "type": "drupal-module",
+    "description": "The lawyer of cases.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/dsi_cases",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/dsi_cases",
+        "source": "http://cgit.drupalcode.org/dsi_cases"
+    }
+}

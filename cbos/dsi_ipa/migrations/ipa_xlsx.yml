@@ -1,0 +1,42 @@
+id: ipa_xlsx
+label: IP Address(xlsx)
+migration_tags: { }
+source:
+  plugin: xls
+  header_row: 1
+  path: modules/dsi/data/IPAddresses.xlsx
+  sheet_name: Sheet1
+  keys:
+    - ipaddress
+  columns:
+    -
+      ipaddress: ipaddress
+    -
+      label: label
+    -
+      subnet: subnet
+    -
+      macaddress: macaddress
+    -
+      device: device
+    -
+      type: type
+    -
+      vrf_group_id: vrf_group_id
+    -
+      vrf_group: vrf_group
+    -
+      notes: notes
+    -
+      available: available
+    -
+      subnet_id: subnet_id
+    -
+      clear_all: clear_all
+
+process:
+  name: ipaddress
+
+destination:
+  plugin: entity:dsi_ipa
+migration_dependencies: { }

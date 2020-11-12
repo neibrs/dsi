@@ -1,0 +1,13 @@
+{
+    "name": "dsi_contract",
+    "type": "drupal-module",
+    "description": "The contracts.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/dsi_contract",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/dsi_contract",
+        "source": "http://cgit.drupalcode.org/dsi_contract"
+    }
+}

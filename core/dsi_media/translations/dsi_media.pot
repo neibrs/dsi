@@ -1,0 +1,113 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/core/dsi_media/dsi_media.module: n/a
+#  modules/dsi/core/dsi_media/dsi_media.install: n/a
+#  modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module: n/a
+#  modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php: n/a
+#  modules/dsi/core/dsi_media/src/Form/MediaSettingsForm.php: n/a
+#  modules/dsi/core/dsi_media/src/Plugin/media/Source/MediaGallery.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:07+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/core/dsi_media/dsi_media.module:284
+msgid "Choose the positioning of the image."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:289
+msgid "A caption will be displayed under the image, to describe it in context of your content."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:303
+msgid "Start typing the title of a piece of content to select it. You can also enter an <br /> internal path such as /node/add or an external URL such as http://example.com."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:627
+msgid "Social Large"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:628
+msgid "Social Large (1200x630) image for the selected media type."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:634
+msgid "Social Medium"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:635
+msgid "Social Medium (600x315) image for the selected media type."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:641
+msgid "Social Small"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.module:642
+msgid "Social Small (280x150) image for the selected media type."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.install:148;279
+msgid "Unable to copy @source to the public files directory."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.install:168
+msgid "The directory %directory does not exist."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.install:171
+msgid "The directory %directory is not writable."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.install:173
+msgid "An automated attempt to create this directory failed, possibly due to a permissions problem. To proceed with the installation, either create the directory and modify its permissions manually or ensure that the installer has the permissions to create it automatically. For more information, see INSTALL.txt or the <a href=\":handbook_url\">online handbook</a>."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/dsi_media.install:326
+msgid "Provider"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module:70
+msgid "Preview"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module:71
+msgid "A live preview of the @media_type."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:27
+msgid "Enter a URL..."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:53
+msgid "You must enter a URL or embed code."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:68
+msgid "You can embed any of the following media by pasting a single complete URL:"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/src/Form/MediaSettingsForm.php:76
+msgid "Use blurred image loading effect for Lazy-loaded images"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/src/Form/MediaSettingsForm.php:77
+msgid "Dsi uses Blazy to lazy-load offscreen images. This setting enhances Dsi to lazy-load images with a low-res blurred image effect. Switching this setting off (<em>not recommended</em>) will fallback to Blazy pixel loader as configured in <a href=\"@blazy_settings_link\">Blazy UI</a> Note that you’ll need to enable Blazy UI module to configure it."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/src/Plugin/media/Source/MediaGallery.php:28
+msgid "Gallery length"
+msgstr ""
+

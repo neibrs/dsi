@@ -1,0 +1,11 @@
+views_fields_override_form:
+  css:
+    theme:
+      css/views_fields_override_form.css: {}
+    layout:
+      css/views_fields_override_form.css: {}
+  js:
+    js/views_fields_override_form.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/drupal.form

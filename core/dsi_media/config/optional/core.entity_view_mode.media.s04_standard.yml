@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.s04_standard
+label: 'Size 04 standard 16:9'
+targetEntityType: media
+cache: true

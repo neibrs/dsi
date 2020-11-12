@@ -1,0 +1,117 @@
+id: grant_xls
+label: Grant(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/products/hcm/hrms/data/grant.xlsx
+  sheet_name: 权限分配
+  keys:
+    - 名称
+  columns:
+    -
+      名称: 名称
+    -
+      描述: 描述
+    -
+      角色: 角色
+    -
+      经营单位: 经营单位
+    -
+      职责: 职责
+    -
+      权限集: 权限集
+    -
+      有效期开始: 有效期开始
+    -
+      有效期结束: 有效期结束
+process:
+  name: 名称
+
+  description: 描述
+
+  grantee:
+    -
+      plugin: callback
+      callable: trim
+      source: 角色
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: user_role
+      value_key: label
+      not_found_message: '角色未找到'
+      process: TRUE
+
+  operating_unit:
+    -
+      plugin: callback
+      callable: trim
+      source: 经营单位
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: organization
+      delimiter: _
+      not_found_message: 经营单位不存在
+
+  responsibility:
+    -
+      plugin: callback
+      callable: trim
+      source: 职责
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: responsibility
+      value_key: name
+      not_found_message: '职责未找到'
+      process: TRUE
+
+  set:
+    -
+      plugin: callback
+      callable: trim
+      source: 权限集
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: permission_set
+      value_key: name
+      not_found_message: '权限集未找到'
+      process: TRUE
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+
+destination:
+  plugin: entity:grant
+migration_dependencies: { }

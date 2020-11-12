@@ -1,0 +1,93 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/industry/dsi_project/dsi_project.module: n/a
+#  modules/dsi/industry/dsi_project/src/ProjectListBuilder.php: n/a
+#  modules/dsi/industry/dsi_project/src/Entity/Project.php: n/a
+#  modules/dsi/industry/dsi_project/src/Form/ProjectForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/industry/dsi_project/dsi_project.module:18
+msgid "About"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/dsi_project.module:19
+msgid "The project of lawyer."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/ProjectListBuilder.php:20
+msgid "Project ID"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/ProjectListBuilder.php:21 modules/dsi/industry/dsi_project/src/Entity/Project.php:171
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:146
+msgid "Authored by"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:147
+msgid "The user ID of author of the Project entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:172
+msgid "The name of the Project entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:196
+msgctxt "Project"
+msgid "Effective dates"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:217
+msgid "Project Cost"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:232
+msgctxt "Project"
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:247
+msgid "A boolean indicating whether the Project is published."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:254
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:255
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:258
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:259
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Form/ProjectForm.php:53
+msgid "Created the %label Project."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Form/ProjectForm.php:59
+msgid "Saved the %label Project."
+msgstr ""
+

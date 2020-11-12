@@ -1,0 +1,8 @@
+services:
+  import.manager:
+    class: Drupal\import\ImportManager
+
+  import.select_sheet.breadcrumb:
+    class: Drupal\import\ImportSelectSheetBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1005 }

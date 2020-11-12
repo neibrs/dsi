@@ -1,0 +1,21 @@
+# Administrative area routing definition
+administrative_area.settings_tab:
+  route_name: administrative_area.settings
+  title: 'Settings'
+  base_route: administrative_area.settings
+
+entity.administrative_area.canonical:
+  route_name: entity.administrative_area.canonical
+  base_route: entity.administrative_area.canonical
+  title: 'View'
+
+entity.administrative_area.edit_form:
+  route_name: entity.administrative_area.edit_form
+  base_route: entity.administrative_area.canonical
+  title: 'Edit'
+
+entity.administrative_area.delete_form:
+  route_name:  entity.administrative_area.delete_form
+  base_route:  entity.administrative_area.canonical
+  title: Delete
+  weight: 10

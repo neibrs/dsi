@@ -1,0 +1,7 @@
+entity.lookup.import_form:
+  path: 'lookup/import'
+  defaults:
+    _form: '\Drupal\lookup\Form\LookupImportForm'
+    _title: 'Import'
+  requirements:
+    _entity_create_any_access: 'lookup'

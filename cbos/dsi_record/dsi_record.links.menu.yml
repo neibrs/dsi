@@ -1,0 +1,9 @@
+
+# Record menu items definition
+
+
+dsi_record.admin.structure.settings:
+  title: 'Record settings'
+  description: 'Configure Record entities'
+  route_name: dsi_record.settings
+  parent: system.admin_structure

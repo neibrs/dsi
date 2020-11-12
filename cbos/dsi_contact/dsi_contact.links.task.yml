@@ -1,0 +1,21 @@
+# Contact routing definition
+dsi_contact.settings_tab:
+  route_name: dsi_contact.settings
+  title: 'Settings'
+  base_route: dsi_contact.settings
+
+entity.dsi_contact.canonical:
+  route_name: entity.dsi_contact.canonical
+  base_route: entity.dsi_contact.canonical
+  title: 'View'
+
+entity.dsi_contact.edit_form:
+  route_name: entity.dsi_contact.edit_form
+  base_route: entity.dsi_contact.canonical
+  title: 'Edit'
+
+entity.dsi_contact.delete_form:
+  route_name:  entity.dsi_contact.delete_form
+  base_route:  entity.dsi_contact.canonical
+  title: Delete
+  weight: 10

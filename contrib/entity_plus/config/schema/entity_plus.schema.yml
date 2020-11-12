@@ -1,0 +1,15 @@
+entity_plus.settings:
+  type: config_object
+  label: 'Entity plus settings'
+  mapping:
+    entity_view_display_empty_field:
+      type: boolean
+      label: 'Display empty field'
+
+block.settings.entity_operations:
+  type: block_settings
+  label: 'Entity operations'
+  mapping:
+    entity_type_id:
+      type: string
+      label: 'Entity type ID'

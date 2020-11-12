@@ -1,0 +1,5 @@
+entity.organization_hierarchy.add_form:
+  route_name: entity.organization_hierarchy.add_form
+  title: 'Add'
+  appears_on:
+    - entity.organization_hierarchy.collection

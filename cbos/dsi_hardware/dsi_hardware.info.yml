@@ -1,0 +1,12 @@
+name: Hardware
+type: module
+description: Hardware
+core: 8.x
+core_version_requirement: '^8 || ^9'
+interface translation project: dsi_hardware
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+package: Dsi
+dependencies:
+  - drupal:image
+  - datetime
+  - dsi_hardware

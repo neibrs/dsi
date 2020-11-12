@@ -1,0 +1,17 @@
+# Grant routing definition
+
+entity.grant.canonical:
+  route_name: entity.grant.canonical
+  base_route: entity.grant.canonical
+  title: 'View'
+
+entity.grant.edit_form:
+  route_name: entity.grant.edit_form
+  base_route: entity.grant.canonical
+  title: 'Edit'
+
+entity.grant.delete_form:
+  route_name:  entity.grant.delete_form
+  base_route:  entity.grant.canonical
+  title: Delete
+  weight: 10

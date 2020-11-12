@@ -1,0 +1,13 @@
+{
+    "name": "dsi_contact",
+    "type": "drupal-module",
+    "description": "The contacts.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/dsi_contact",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/dsi_contact",
+        "source": "http://cgit.drupalcode.org/dsi_contact",
+    },
+}

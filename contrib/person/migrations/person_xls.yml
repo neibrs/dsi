@@ -1,0 +1,344 @@
+id: person_xls
+label: Person(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/data/inte.xlsx
+  sheet_name: 员工名册
+  keys:
+    - 姓名
+  optional_keys:
+    - 人员编号
+  type: employee
+  columns:
+    -
+      编号: 人员编号
+    -
+      姓名: 姓名
+    -
+      人员类型: 人员类型
+    -
+      部门: 部门
+    -
+      职务: 职务
+    -
+      入职日期: 入职日期
+    -
+      转正日期: 转正日期
+    -
+      性别: 性别
+    -
+      出生日期: 出生日期
+    -
+      民族: 民族
+    -
+      籍贯: 籍贯
+    -
+      政治面貌: 政治面貌
+    -
+      身份证号码: 身份证号码
+    -
+      婚姻状态: 婚姻状态
+    -
+      试用期开始: 试用期开始
+    -
+      试用期结束: 试用期结束
+    -
+      有效期: 有效期
+    -
+      业务组: 业务组
+    -    
+      有效期开始: 有效期开始
+    -
+      有效期结束: 有效期结束
+    -
+      身份: 身份
+    -
+      工龄起算日期: 工龄起算日期
+
+process:
+  number:
+    -
+      plugin: skip_on_empty
+      source: 人员编号
+      method: process
+
+  # type 有默认值设置
+  # 默认值的处理见: @see \Drupal\import\Plugin\migrate\destination\EntityContentBase::import().
+  type:
+    -
+      plugin: callback
+      source: 人员类型
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: person_type
+      ignore_case: true
+      value_key: label
+      value_key_alias: alias
+
+  name:
+    -
+      plugin: callback
+      source: 姓名
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 姓名不能为空
+
+  organization:
+    -
+      plugin: callback
+      callable: trim
+      source: 部门
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: organization
+      delimiter: _
+      not_found_message: '部门未找到'
+
+  job:
+    -
+      plugin: callback
+      callable: trim
+      source: 职务
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: job
+      value_key: name
+      not_found_message: '职务未找到'
+      
+  hire_date:
+    -
+      plugin: skip_on_empty
+      source: 入职日期
+      method: process
+    -
+      plugin: format_date
+      
+  completion_of_probation_date:
+    -
+      plugin: skip_on_empty
+      source: 转正日期
+      method: process
+    -
+      plugin: format_date
+
+  gender:
+    -
+      plugin: callback
+      callable: trim
+      source: 性别
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        女: 女性
+        男: 男性
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: type
+      bundle: gender
+      entity_type: lookup
+      not_found_message: '性别未找到'
+
+  id_card_birth_date:
+    -
+      plugin: skip_on_empty
+      source: 身份证号码
+      method: process
+    -
+      plugin: substr
+      start: 6
+      length: 8
+
+  birth_date:
+    -
+      plugin: default_value
+      source: 出生日期
+      default_reference_value: '@id_card_birth_date'
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: format_date
+
+  nationality:
+    -
+      plugin: callback
+      callable: trim
+      source: 民族
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: type
+      bundle: nationality
+      entity_type: lookup
+      not_found_message: '民族未找到'
+
+  native_place:
+    -
+      plugin: callback
+      callable: trim
+      source: 籍贯
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: administrative_area_lookup
+      not_found_message: '籍贯未找到'
+
+  political_status:
+    -
+      plugin: callback
+      callable: trim
+      source: 政治面貌
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        党员: 中国共产党党员
+        中共党员: 中国共产党党员
+        团员: 中国共产主义青年团团员
+        共青团员: 中国共产主义青年团团员
+        民盟: 中国民主同盟盟员
+        农工: 中国农工民主党党员
+        农工党: 中国农工民主党党员
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: type
+      bundle: political_status
+      entity_type: lookup
+      not_found_message: '政治面貌未找到'
+
+  identify_number: 身份证号码
+
+  marital_status:
+    -
+      plugin: callback
+      callable: trim
+      source: 婚姻状态
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: type
+      bundle: marital_status
+      entity_type: lookup
+      not_found_message: '婚姻状况未找到'
+      
+  'probation_period/value':
+    -
+      plugin: skip_on_empty
+      source: 试用期开始
+      method: process
+    -
+      plugin: format_date
+  
+  'probation_period/end_value':
+    -
+      plugin: skip_on_empty
+      source: 试用期结束
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+
+  'adjusted_service_date/value':
+    -
+      plugin: callback
+      callable: trim
+      source: 工龄起算日期
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: format_date
+
+#  multiple_organization_from_excel 固定字段, destination会用到
+
+#  遵义
+  field_chushengnianyue_beianshiji:
+    -
+      plugin: callback
+      callable: trim
+      source: '出生年月-备案时间'
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: format_date
+      from_format: 'Y.m'
+      to_format: 'Y-m-d'
+
+#  遵义
+  employment_status:
+    -
+      plugin: callback
+      callable: trim
+      source: 身份
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        干部: 其他
+    -
+      plugin: entity_lookup
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: employment_status
+      not_found_message: '身份未找到'
+
+destination:
+  plugin: entity:person
+migration_dependencies: { }

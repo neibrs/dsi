@@ -1,0 +1,4 @@
+encoding_rules: '[code:rules:0001]'
+initial_password: "123456"
+resume_parsing_api_key: "pDJTUAasrFAjxhYGfM1J4PdS56pbpy000005ecff"
+days_before_probation_expires_to_alert: 30

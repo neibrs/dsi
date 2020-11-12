@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - organization_hierarchy
+id: organization_hierarchy_disable
+label: 'Disable organization hierarchy'
+type: organization_hierarchy
+plugin: entity:unpublish_action:organization_hierarchy
+configuration: {  }

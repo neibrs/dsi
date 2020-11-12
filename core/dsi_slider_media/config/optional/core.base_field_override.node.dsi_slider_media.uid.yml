@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_slider_media
+  config:
+    - node.type.dsi_slider_media
+id: node.dsi_slider_media.uid
+field_name: uid
+entity_type: node
+bundle: dsi_slider_media
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

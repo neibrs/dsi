@@ -1,0 +1,3 @@
+services:
+  organization.manager:
+    class: Drupal\organization\OrganizationManager

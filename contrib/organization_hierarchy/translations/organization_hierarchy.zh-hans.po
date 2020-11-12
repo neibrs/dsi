@@ -1,0 +1,89 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/organization_hierarchy/organization_hierarchy.info.yml: n/a
+#  modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php: n/a
+#  modules/dsi/contrib/organization_hierarchy/organization_hierarchy.links.action.yml: n/a
+#  modules/dsi/contrib/organization_hierarchy/organization_hierarchy.links.task.yml: n/a
+#  modules/dsi/contrib/organization_hierarchy/config/schema/organization_hierarchy.schema.yml: n/a
+#  modules/dsi/contrib/organization_hierarchy/src/OrganizationHierarchyListBuilder.php: n/a
+#  modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchyViewsData.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-08-13 10:27+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/organization_hierarchy/organization_hierarchy.info.yml:0;0 modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:12
+msgid "Organization hierarchy"
+msgstr "组织层级"
+
+#: modules/dsi/contrib/organization_hierarchy/organization_hierarchy.permissions.yml:0
+msgid "Administer Organization hierarchy entities"
+msgstr "管理组织层级"
+
+#: modules/dsi/contrib/organization_hierarchy/src/OrganizationHierarchyListBuilder.php:20
+msgid "Organization hierarchy ID"
+msgstr "组织层级ID"
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:100 modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0
+msgid "Subordinates"
+msgstr "下属"
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:120 modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0
+msgid "Effective dates"
+msgstr "生效日期"
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:134 modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0
+msgid "Enabled"
+msgstr "启用"
+
+#: modules/dsi/contrib/organization_hierarchy/src/Form/OrganizationHierarchyForm.php:37
+msgid "Created the %label Organization hierarchy."
+msgstr "已创建组织层级%label."
+
+#: modules/dsi/contrib/organization_hierarchy/src/Form/OrganizationHierarchyForm.php:43
+msgid "Saved the %label Organization hierarchy."
+msgstr "已保存%label."
+
+#: modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0;0
+msgid "Organization Hierarchy"
+msgstr "组织层级"
+
+#: modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0;0
+msgctxt "Date range separator"
+msgid "-"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0
+msgid "Effective dates (end_value)"
+msgstr "生效日期（结束值）"
+
+#: modules/dsi/contrib/organization_hierarchy/config/install/views.view.organization_hierarchy.yml:0
+msgid "Operations links"
+msgstr "操作"
+
+
+# Custom translation
+
+msgid "Delete organization hierarchy"
+msgstr "删除组织层级"
+
+msgid "Disable organization hierarchy"
+msgstr "禁用组织层级"
+
+msgid "Enable organization hierarchy"
+msgstr "雇用组织层级"
+
+msgid "Organization hierarchy type"
+msgstr "组织层级类型"

@@ -1,0 +1,45 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/currency/src/CurrencyListBuilder.php: n/a
+#  modules/dsi/contrib/currency/src/Form/CurrencyForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/currency/src/CurrencyListBuilder.php:17
+msgid "Currency"
+msgstr ""
+
+#: modules/dsi/contrib/currency/src/CurrencyListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/dsi/contrib/currency/src/Form/CurrencyForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/currency/src/Form/CurrencyForm.php:25
+msgid "Label for the Currency."
+msgstr ""
+
+#: modules/dsi/contrib/currency/src/Form/CurrencyForm.php:53
+msgid "Created the %label Currency."
+msgstr ""
+
+#: modules/dsi/contrib/currency/src/Form/CurrencyForm.php:59
+msgid "Saved the %label Currency."
+msgstr ""
+

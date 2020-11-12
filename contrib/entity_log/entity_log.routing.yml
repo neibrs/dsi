@@ -1,0 +1,6 @@
+entity.entity_log.entity_log:
+  path: '/entity_log/{entity_type_id}/{entity_id}'
+  default:
+    _title_callback: '\Drupal\entity_log\Controller\EntityLogController::getTitle'
+  requirements:
+    _permission: 'view entity logs'

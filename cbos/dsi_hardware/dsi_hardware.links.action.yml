@@ -1,0 +1,20 @@
+entity.dsi_hardware.add_form:
+  route_name: entity.dsi_hardware.add_page
+  title: 'Add'
+  appears_on:
+    - entity.dsi_hardware.collection
+entity.dsi_hardware_type.add_form:
+  route_name: entity.dsi_hardware_type.add_form
+  title: 'Add type'
+  appears_on:
+    - entity.dsi_hardware_type.collection
+entity.dsi_hardware.edit_form:
+  route_name: entity.dsi_hardware.edit_form
+  title: 'Edit'
+  appears_on:
+    - entity.dsi_hardware.canonical
+entity.dsi_hardware.modal_layout:
+  route_name: entity.dsi_hardware.edit_form
+  title: '@Modal Layout'
+  appears_on:
+    - entity.dsi_hardware.canonical

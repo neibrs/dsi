@@ -1,0 +1,148 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/core/dsi_import/dsi_import.module: n/a
+#  modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php: n/a
+#  modules/dsi/core/dsi_import/src/Controller/ImportController.php: n/a
+#  modules/dsi/core/dsi_import/src/Form/ImportForm.php: n/a
+#  modules/dsi/core/dsi_import/src/Plugin/migrate/destination/EntityContentBase.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:07+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/core/dsi_import/dsi_import.module:18
+msgid "About"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/dsi_import.module:19
+msgid "The import function for dsi."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/dsi_import.module:23
+msgid "Generic API Import Excel Sheet"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/dsi_import.module:24
+msgid "Please create an Excel spreadsheet (.xls or .xlsx file) using one of the samples provided below as a starting point."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/dsi_import.module:25
+msgid "Follow the documentation link for information on required vs. optional fields and field instructions."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:44;46
+msgid "Migrating %migrate"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:45
+msgid "Start migrating %migrate"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:47
+msgid "An error occurred while migrating %migrate."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:119;136
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:120;137
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:140
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name'"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/MigrateBatchExecutable.php:141
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name'"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Controller/ImportController.php:64
+msgid "@entity_type import"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:41
+msgid "Import template not found."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:46
+msgid "Template"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:66
+msgid "Data file"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:69
+msgid "A import file."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:99
+msgid "Update existing data"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:107;139
+msgid "Import"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:118
+msgid "Type of Import"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:119
+msgid "Sample File"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:120
+msgid "Link to Documentation"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:121
+msgid "Current Data"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:122
+msgid "Operation"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:130
+msgid "Download Sample Excel File"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:133
+msgid "View Documentation"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:136
+msgid "\tDownload Current Data"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Form/ImportForm.php:161
+msgid "File to import not found."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Plugin/migrate/destination/EntityContentBase.php:149
+msgid "@entity does not found: @label"
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Plugin/migrate/destination/EntityContentBase.php:164
+msgid "The allowed options for @field are: @allowed_options. @value is not allowed."
+msgstr ""
+
+#: modules/dsi/core/dsi_import/src/Plugin/migrate/destination/EntityContentBase.php:176
+msgid "@value : Date format is incorrect."
+msgstr ""
+

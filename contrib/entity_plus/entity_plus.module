@@ -1,0 +1,238 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Config\Entity\ConfigEntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+use Drupal\entity_plus\Entity\Entity\EntityViewDisplay;
+use Drupal\entity_plus\Entity\Entity\LayoutBuilderEntityViewDisplay;
+
+/**
+ * Implements hook_cron().
+ */
+function entity_plus_cron() {
+  $state = \Drupal::state();
+  $effective_dates_entity_timestamp = $state->get('effective_dates_entity_timestamp') ?: 0;
+  $current_timestamp = \Drupal::request()->server->get('REQUEST_TIME');
+  if (($current_timestamp - $effective_dates_entity_timestamp) < 86400) {
+    return;
+  }
+
+  $state->set('effective_dates_entity_timestamp', $current_timestamp);
+
+  // 根据有效期设置状态.
+  $database = \Drupal::database();
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $definitions = $entity_type_manager->getDefinitions();
+  $entity_type_bundle_info = \Drupal::service('entity_type.bundle.info');
+  foreach ($definitions as $entity_type_id => $definition) {
+    if ($definition->get('effective_dates_entity')) {
+      $storage = $entity_type_manager->getStorage($entity_type_id);
+
+      // 获得 published 和 unpublished 的状态值.
+      // 如果实体有 bundle，create 时需要提供 bundle 值，否则会报"Missing bundle"错误。
+      $values = [];
+      if ($bundle_key = $definition->getKey('bundle')) {
+        $bundle_info = $entity_type_bundle_info->getBundleInfo($entity_type_id);
+        if (!empty($bundle_info)) {
+          $values[$bundle_key] = reset(array_keys($bundle_info));
+        }
+        else {
+          // 如果找不到 bundle 就不处理.
+          continue;
+        }
+      }
+      $entity = $storage->create($values);
+      $entity->save();
+
+      $entity->setPublished();
+      $published_status = $entity->status->value;
+      $entity->setUnpublished();
+      $unpublished_status = $entity->status->value;
+
+      $table = $definition->getDataTable() ?: $definition->getBaseTable();
+      $database->update($table)
+        ->condition('effective_dates__value', date('Y-m-d', $current_timestamp), '>=')
+        ->condition('status', $published_status)
+        ->fields(['status' => $unpublished_status])
+        ->execute();
+
+      $database->update($table)
+        ->condition('effective_dates__end_value', date('Y-m-d', $current_timestamp), '<')
+        ->condition('status', $unpublished_status)
+        ->fields(['status' => $published_status])
+        ->execute();
+
+      Cache::invalidateTags($definition->getListCacheTags());
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function entity_plus_entity_operation(EntityInterface $entity) {
+  $operations = [];
+  if ($entity instanceof ConfigEntityInterface) {
+    $operations['export'] = [
+      'title' => t('Export'),
+      'url' => Url::fromRoute('config.export_single', [
+        'config_type' => $entity->getEntityTypeId(),
+        'config_name' => $entity->id(),
+      ]),
+      'weight' => 20,
+    ];
+  }
+
+  return $operations;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function entity_plus_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  $view_mode_name = $display->getMode();
+  $view_mode = \Drupal::entityTypeManager()->getStorage('entity_view_mode')
+    ->load($entity->getEntityTypeId() . '.' . $view_mode_name);
+  $display_empty_field = NULL;
+  if ($view_mode) {
+    $display_empty_field = $view_mode->getThirdPartySetting('entity_plus', 'display_empty_field');
+  }
+  if ($display_empty_field === NULL) {
+    $display_empty_field = \Drupal::config('entity_plus.settings')->get('entity_view_display_empty_field');
+  }
+
+  if (!$display_empty_field) {
+    return;
+  }
+
+  // 让无值的字段也要显示字段名称
+  $fields = Element::children($build);
+  $field_definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions($entity->getEntityTypeId(), $entity->bundle());
+
+  foreach ($fields as $field) {
+    // 未生成 #theme 的字段是无值的字段
+    if (!isset($build[$field]['#theme'])) {
+      if (isset($field_definitions[$field])) {
+        $field_definition = $field_definitions[$field];
+        $component = $display->getComponent($field);
+        // 只处理 label 为 inline 的字段
+        if ($component['label'] == 'inline') {
+          $build[$field]['#theme'] = 'field';
+          $build[$field]['#title'] = $field_definition->getLabel();
+          $build[$field]['#label_display'] = $component['label'];
+          $build[$field]['#view_mode'] = $build['#view_mode'];
+          $build[$field]['#field_name'] = $field;
+          $build[$field]['#field_type'] = $field_definition->getType();
+          $build[$field]['#entity_type'] = $entity->getEntityTypeId();
+          $build[$field]['#bundle'] = $entity->bundle();
+          $build[$field]['#object'] = $entity;
+          $build[$field]['#items'] = [];
+          $build[$field]['#formatter'] = $component['type'];
+          $build[$field]['#is_multiple'] = $field_definition->getFieldStorageDefinition()->isMultiple();
+          $build[$field]['#language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        }
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function entity_plus_field_widget_info_alter(array &$info) {
+  $info['entity_reference_autocomplete']['class'] = 'Drupal\entity_plus\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for entity_add_list.
+ */
+function entity_plus_preprocess_entity_add_list(&$variables) {
+  if ($destination = \Drupal::request()->query->get('destination')) {
+    foreach ($variables['bundles'] as $bundle_name => $value) {
+      /** @var \Drupal\Core\Link $add_link */
+      $add_link = $value['add_link'];
+      $add_link->getUrl()->setOption('query', ['destination' => $destination]);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function entity_plus_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  if (\Drupal::moduleHandler()->moduleExists('layout_builder')) {
+    $entity_types['entity_view_display']
+      ->setClass(LayoutBuilderEntityViewDisplay::class);
+  }
+  else {
+    $entity_types['entity_view_display']
+      ->setClass(EntityViewDisplay::class);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for entity_view_display.
+ */
+function entity_plus_entity_view_display_presave(EntityInterface $entity) {
+  $extra_fields = \Drupal::service('entity_field.manager')->getExtraFields($entity->getTargetEntityTypeId(), $entity->getTargetBundle());
+  /** @var \Drupal\Core\Entity\Display\EntityViewDisplayInterface $entity */
+  $components = $entity->getComponents();
+  foreach ($components as $key => $component) {
+    if (isset($component['third_party_settings']['entity_plus']['big_block'])) {
+      if ($component['third_party_settings']['entity_plus']['big_block'] == TRUE && $component['weight'] < 1000) {
+        $component['weight'] += 1000;
+        $entity->setComponent($key, $component);
+      }
+    }
+    elseif (isset($extra_fields['display'][$key]['third_party_settings']['entity_plus']['big_block'])) {
+      if ($extra_fields['display'][$key]['third_party_settings']['entity_plus']['big_block'] == TRUE && $component['weight'] < 1000) {
+        $component['weight'] += 1000;
+        $entity->setComponent($key, $component);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ */
+function entity_plus_field_formatter_settings_summary_alter(array &$summary, array $context) {
+  if ($context['formatter']->getThirdPartySetting('entity_plus', 'big_block')) {
+    $summary[] = t('Big block');
+  }
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ */
+function entity_plus_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, array $form, FormStateInterface $form_state) {
+  $element['big_block'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Big block'),
+    '#default_value' => $plugin->getThirdPartySetting('entity_plus', 'big_block'),
+  ];
+  return $element;
+}
+
+/**
+ * Implements entity_reference_selection info alter.
+ */
+function entity_plus_entity_reference_selection_alter(array &$info) {
+  foreach ($info as $key => $value) {
+    if ($value['class'] == 'Drupal\Core\Entity\Plugin\EntityReferenceSelection\DefaultSelection') {
+      $info[$key]['class'] = 'Drupal\entity_plus\Plugin\EntityReferenceSelection\DefaultSelection';
+    }
+  }
+}

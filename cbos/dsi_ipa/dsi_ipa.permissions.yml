@@ -1,0 +1,30 @@
+add ip address:
+  title: 'Create new IP Addresses'
+
+administer ip address:
+  title: 'Administer IP Addresses'
+  description: 'Allow to access the administration form to configure IP Addresses.'
+  restrict access: true
+
+delete ip address:
+  title: 'Delete IP Addresses'
+
+edit ip address:
+  title: 'Edit IP Addresses'
+
+view published ip address:
+  title: 'View published IP Addresses'
+
+view unpublished ip address:
+  title: 'View unpublished IP Addresses'
+
+view all ip address revisions:
+  title: 'View all IP Address revisions'
+
+revert all ip address revisions:
+  title: 'Revert all IP Address revisions'
+  description: 'Role requires permission <em>view IP Address revisions</em> and <em>edit rights</em> for ip address in question or <em>administer ip address</em>.'
+
+delete all ip address revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view IP Address revisions</em> and <em>delete rights</em> for ip address in question or <em>administer ip address</em>.'

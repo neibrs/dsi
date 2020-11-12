@@ -1,0 +1,3 @@
+services:
+  lookup.manager:
+    class: Drupal\lookup\LookupManager

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+name: default
+label: Default
+effects: {  }
+pipeline: ''

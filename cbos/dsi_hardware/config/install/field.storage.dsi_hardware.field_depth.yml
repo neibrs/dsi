@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - dsi_hardware
+    - options
+id: dsi_hardware.field_depth
+field_name: field_depth
+entity_type: dsi_hardware
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: full_depth
+      label: 'Full Depth'
+    -
+      value: half_depth
+      label: 'Half Depth'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

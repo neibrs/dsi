@@ -1,0 +1,102 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/views_template/views_template.views.inc: n/a
+#  modules/dsi/contrib/views_template/views_template.info.yml: n/a
+#  modules/dsi/contrib/views_template/views_template.links.action.yml: n/a
+#  modules/dsi/contrib/views_template/views_template.links.menu.yml: n/a
+#  modules/dsi/contrib/views_template/src/ViewTemplateListBuilder.php: n/a
+#  modules/dsi/contrib/views_template/src/Entity/ViewTemplate.php: n/a
+#  modules/dsi/contrib/views_template/views_template.permissions.yml: n/a
+#  modules/dsi/contrib/views_template/views_template.routing.yml: n/a
+#  modules/dsi/contrib/views_template/src/Form/ViewsFieldsOverrideForm.php: n/a
+#  modules/dsi/contrib/views_template/config/schema/view_template.schema.yml: n/a
+#  modules/dsi/contrib/views_template/src/Controller/ViewsTemplateController.php: n/a
+#  modules/dsi/contrib/views_template/src/Form/ViewTemplateDeleteForm.php: n/a
+#  modules/dsi/contrib/views_template/src/Form/ViewTemplateForm.php: n/a
+#  modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php: n/a
+#  modules/dsi/contrib/views_template/src/Plugin/Block/ViewTemplateBlock.php: n/a
+#  modules/dsi/contrib/views_template/src/Plugin/views/area/ViewsTemplateConditions.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-09-22 16:00+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/views_template/views_template.routing.yml:0 modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php:59
+msgid "View template save as"
+msgstr "保存方案"
+
+#: modules/dsi/contrib/views_template/views_template.views.inc:8
+msgid "Views conditions"
+msgstr "视图条件"
+
+#: modules/dsi/contrib/views_template/views_template.info.yml:0
+msgid "Views template"
+msgstr "视图方案"
+
+#: modules/dsi/contrib/views_template/views_template.info.yml:0
+msgid "Provides views template."
+msgstr "提供视图方案"
+
+#: modules/dsi/contrib/views_template/views_template.links.action.yml:0
+msgid "Add View template"
+msgstr "添加视图方案"
+
+#: modules/dsi/contrib/views_template/views_template.permissions.yml:0
+msgid "Maintain public view templates"
+msgstr "维护公共视图方案"
+
+#: modules/dsi/contrib/views_template/config/schema/view_template.schema.yml:0
+msgid "View template config"
+msgstr "视图方案配置"
+
+#: modules/dsi/contrib/views_template/config/schema/view_template.schema.yml:0
+msgid "Public"
+msgstr "公共"
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateForm.php:54
+msgid "Is public"
+msgstr "是否公共"
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateForm.php:77
+msgid "Created the %label View template."
+msgstr "视图方案 %label 已创建."
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateForm.php:83
+msgid "Saved the %label View template."
+msgstr "视图方案 %label 已保存."
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php:33
+msgid "Conditions setting"
+msgstr "条件设置"
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php:46
+msgid "Fields setting"
+msgstr "栏目设置"
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php:77
+msgid "-Select template-"
+msgstr "- 选择方案 -"
+
+#: modules/dsi/contrib/views_template/src/Form/ViewTemplateSwitchForm.php:80
+msgid "[Public]"
+msgstr "[公共]"
+
+#: modules/dsi/contrib/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:27
+msgid "Total rows: @total_rows &emsp;"
+msgstr "总行数: @total_rows &emsp;"
+
+#: modules/dsi/contrib/views_template/src/Plugin/views/area/ViewsTemplateConditions.php:30
+msgid "Conditions: @conditions"
+msgstr "条件：@conditions"

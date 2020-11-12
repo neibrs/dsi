@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_hardware.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_hardware_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_hardware module.
+    case 'help.page.dsi_hardware':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Hardware') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_hardware_theme() {
+  $theme = [];
+  $theme['dsi_hardware'] = [
+    'render element' => 'elements',
+    'file' => 'dsi_hardware.page.inc',
+    'template' => 'dsi_hardware',
+  ];
+  $theme['dsi_hardware_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'dsi_hardware.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function dsi_hardware_theme_suggestions_dsi_hardware(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#dsi_hardware'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'dsi_hardware__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_hardware__' . $entity->bundle();
+  $suggestions[] = 'dsi_hardware__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_hardware__' . $entity->id();
+  $suggestions[] = 'dsi_hardware__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

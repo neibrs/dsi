@@ -1,0 +1,53 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/eabax_core/js/autocomplete.js: n/a
+#  modules/dsi/contrib/eabax_core/js/table_to_excel.js: n/a
+#  modules/dsi/contrib/eabax_core/src/EabaxCoreManager.php: n/a
+#  modules/dsi/contrib/eabax_core/src/Plugin/BlockStyle/Box.php: n/a
+#  modules/dsi/contrib/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php: n/a
+#  modules/dsi/contrib/eabax_core/src/Plugin/Field/FieldFormatter/StringPlusFormatter.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/eabax_core/js/autocomplete.js:0
+msgid "Add"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/js/table_to_excel.js:0
+msgid "Export"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/src/EabaxCoreManager.php:64
+msgid "You do not have any menu items."
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/src/EabaxCoreManager.php:124
+msgid "Role menu"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/src/Plugin/BlockStyle/Box.php:34
+msgid "- None -"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/src/Plugin/Field/FieldFormatter/PercentBarFormatter.php:27
+msgid "This field has percent bar."
+msgstr ""
+
+#: modules/dsi/contrib/eabax_core/src/Plugin/Field/FieldFormatter/StringPlusFormatter.php:39
+msgid "Link relationship type"
+msgstr ""
+

@@ -1,0 +1,4 @@
+services:
+  entity_filter.manager:
+    class: Drupal\entity_filter\EntityFilterManager
+    arguments: ['@entity_type.manager', '@views.views_data']

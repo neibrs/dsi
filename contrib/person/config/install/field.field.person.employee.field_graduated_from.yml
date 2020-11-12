@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.person.field_graduated_from
+    - person.type.employee
+id: person.employee.field_graduated_from
+field_name: field_graduated_from
+entity_type: person
+bundle: employee
+label: 毕业院校
+description: 例如，北京大学
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

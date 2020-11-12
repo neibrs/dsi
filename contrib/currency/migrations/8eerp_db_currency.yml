@@ -1,0 +1,18 @@
+langcode: en
+status: true
+id: 8eerp_db_currency
+label: 8eERP DB currencies
+migration_tags: { }
+source:
+  plugin: csv
+  header_row_count: 1
+  path: modules/dsi/contrib/currency/tests/data/8eerp_db_currency.csv
+  keys:
+    - LNGCURRENCYID
+process:
+  id: STRCurrencycode
+  label: STRCURRENCYname
+  precision: BYTCURRENCYDEC
+destination:
+  plugin: entity:currency
+migration_dependencies: { }

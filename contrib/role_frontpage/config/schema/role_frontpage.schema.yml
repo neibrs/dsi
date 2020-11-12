@@ -1,0 +1,10 @@
+user.role.*.third_party.role_frontpage:
+  type: role_frontpage.third_party_settings
+
+role_frontpage.third_party_settings:
+  type: mapping
+  label: 'Per-role role front page settings'
+  mapping:
+    frontpage:
+      type: string
+      label: 'Front page'

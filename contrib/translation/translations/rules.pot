@@ -1,0 +1,1420 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/rules/rules.module: n/a
+#  modules/contrib/rules/rules.links.task.yml: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/RulesComponentActionDeriver.php: n/a
+#  modules/contrib/rules/rules.info.yml: n/a
+#  modules/contrib/rules/rules.links.menu.yml: n/a
+#  modules/contrib/rules/rules.routing.yml: n/a
+#  modules/contrib/rules/rules_ban/rules_ban.info.yml: n/a
+#  modules/contrib/rules/rules.links.action.yml: n/a
+#  modules/contrib/rules/src/Form/RulesComponentFormBase.php: n/a
+#  modules/contrib/rules/rules.permissions.yml: n/a
+#  modules/contrib/rules/config/schema/rules.schema.yml: n/a
+#  modules/contrib/rules/src/Entity/RulesComponentConfig.php: n/a
+#  modules/contrib/rules/config/schema/rules.action.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.condition.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.context.schema.yml: n/a
+#  modules/contrib/rules/config/schema/rules.expression.schema.yml: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php: n/a
+#  modules/contrib/rules/src/Controller/RulesComponentListBuilder.php: n/a
+#  modules/contrib/rules/src/Controller/RulesReactionListBuilder.php: n/a
+#  modules/contrib/rules/config/schema/rules.data_types.schema.yml: n/a
+#  modules/contrib/rules/src/Form/Expression/ConditionForm.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ActionSetExpression.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ActionContainerForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/RuleExpression.php: n/a
+#  modules/contrib/rules/src/Form/RulesSettingsForm.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php: n/a
+#  modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php: n/a
+#  modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php: n/a
+#  modules/contrib/rules/src/Core/ConditionManager.php: n/a
+#  modules/contrib/rules/src/Core/Annotation/Condition.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserHasRole.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/UserIsBlocked.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserBlock.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserRoleAdd.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserRoleRemove.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php: n/a
+#  modules/contrib/rules/src/Entity/ReactionRuleConfig.php: n/a
+#  modules/contrib/rules/src/Form/AddExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/BreakLockForm.php: n/a
+#  modules/contrib/rules/src/Form/DeleteExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/EditExpressionForm.php: n/a
+#  modules/contrib/rules/src/Form/ReactionRuleAddForm.php: n/a
+#  modules/contrib/rules/src/Form/ReactionRuleEditForm.php: n/a
+#  modules/contrib/rules/src/Form/RulesComponentAddForm.php: n/a
+#  modules/contrib/rules/src/Form/RulesComponentEditForm.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ActionForm.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php: n/a
+#  modules/contrib/rules/src/Form/Expression/ContextFormTrait.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataSet.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataComparison.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataListContains.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/TextComparison.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityHasField.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/EntityIsNew.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsPromoted.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsPublished.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/NodeIsSticky.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php: n/a
+#  modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/EntityCreateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesDataProcessor/NumericOffset.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesDataProcessor/TokenProcessor.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityDeleteDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityInsertDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityPresaveDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityUpdateDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesEvent/EntityViewDeriver.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/AndExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php: n/a
+#  modules/contrib/rules/src/Plugin/RulesExpression/OrExpression.php: n/a
+#  modules/contrib/rules/src/Ui/TempStoreTrait.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-05-09 22:11+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/rules/rules.module:24
+msgid "Reaction rules, listed below, react on selected events on the site. Each reaction rule may fire any number of <em>actions</em>, and may have any number of <em>conditions</em> that must be met for the actions to be executed. You can also set up <a href=\":url1\">components</a> – stand-alone sets of Rules configuration that can be used in Rules and other parts of your site. See <a href=\":url2\">the online documentation</a> for an introduction on how to use Rules."
+msgstr ""
+
+#: modules/contrib/rules/rules.module:31
+msgid "About"
+msgstr ""
+
+#: modules/contrib/rules/rules.module:33
+msgid "The Rules module allows site administrators to define conditionally executed actions based on occurring events (ECA-rules). For more information, see the <a href=\":url1\" target=\"_blank\">online documentation for the Rules module</a> and the current <a href=\":url2\" target=\"_blank\">Rules documentation for Drupal 8 on Gitbooks</a>."
+msgstr ""
+
+#: modules/contrib/rules/rules.module:38
+msgid "Uses"
+msgstr ""
+
+#: modules/contrib/rules/rules.module:40 modules/contrib/rules/rules.links.task.yml:0
+msgid "Reaction rules"
+msgstr ""
+
+#: modules/contrib/rules/rules.module:41
+msgid "Reaction rules associate one or more reactions to one or more specific site events. Execution of a reaction rule actions can optionally be tied to one or more conditions. To list and update existing reaction rules and to create a new one, visit the <a href=\":url\">reaction rules overview page</a>."
+msgstr ""
+
+#: modules/contrib/rules/rules.module:42 modules/contrib/rules/rules.links.task.yml:0 modules/contrib/rules/src/Plugin/RulesAction/RulesComponentActionDeriver.php:67
+msgid "Components"
+msgstr ""
+
+#: modules/contrib/rules/rules.module:43
+msgid "Rule components allows to define reusable combined actions which can optionally be tied to one or more conditions. Components are useable as actions in reaction rules or in other components. To list and update existing rule components and to create a new one, visit the <a href=\":url\">components overview pages</a>."
+msgstr ""
+
+#: modules/contrib/rules/rules.module:44
+msgid "General settings"
+msgstr ""
+
+#: modules/contrib/rules/rules.module:45
+msgid "The Rules modules allows to set global settings settings, such as logging. Visit the <a href=\":url\">rules settings page</a> to view and update current settings."
+msgstr ""
+
+#: modules/contrib/rules/rules.info.yml:0;0 modules/contrib/rules/rules.links.menu.yml:0 modules/contrib/rules/rules.routing.yml:0 modules/contrib/rules/rules_ban/rules_ban.info.yml:0
+msgid "Rules"
+msgstr ""
+
+#: modules/contrib/rules/rules.info.yml:0
+msgid "React on events and conditionally evaluate actions."
+msgstr ""
+
+#: modules/contrib/rules/rules.links.action.yml:0 modules/contrib/rules/rules.routing.yml:0
+msgid "Add reaction rule"
+msgstr ""
+
+#: modules/contrib/rules/rules.links.action.yml:0
+msgid "Add component"
+msgstr ""
+
+#: modules/contrib/rules/rules.links.menu.yml:0
+msgid "Reaction rules administration overview."
+msgstr ""
+
+#: modules/contrib/rules/rules.links.task.yml:0 modules/contrib/rules/src/Form/RulesComponentFormBase.php:45
+msgid "Settings"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer Rules"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer all Rules configurations and settings."
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer Rules reactions"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer Rules reaction configurations and settings."
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer Rules components"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Administer Rules component configurations and settings."
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Bypass Rules access control"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Control all configurations regardless of permission restrictions of events, conditions or actions."
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "View Rules debug log"
+msgstr ""
+
+#: modules/contrib/rules/rules.permissions.yml:0
+msgid "Access the Rules debug log."
+msgstr ""
+
+#: modules/contrib/rules/rules.routing.yml:0 modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Rules settings"
+msgstr ""
+
+#: modules/contrib/rules/rules.routing.yml:0 modules/contrib/rules/src/Entity/RulesComponentConfig.php:12
+msgid "Rules components"
+msgstr ""
+
+#: modules/contrib/rules/rules.routing.yml:0
+msgid "Add rule"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.action.schema.yml:0 modules/contrib/rules/config/schema/rules.condition.schema.yml:0 modules/contrib/rules/config/schema/rules.context.schema.yml:0 modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0
+msgid "Context values"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.action.schema.yml:0
+msgid "Message action context values"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.action.schema.yml:0
+msgid "Send email action context values"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.condition.schema.yml:0
+msgid "Entity is new context values"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.context.schema.yml:0
+msgid "Context definition"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.context.schema.yml:0 modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8 modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php:8 modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Type"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.context.schema.yml:0 modules/contrib/rules/src/Controller/RulesComponentListBuilder.php:26 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:26 modules/contrib/rules/src/Form/RulesComponentFormBase.php:83
+msgid "Description"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.context.schema.yml:0 modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0
+msgid "Context mapping"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.context.schema.yml:0 modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0
+msgid "Context processors"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.data_types.schema.yml:0
+msgid "Rules component (embedded)"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.data_types.schema.yml:0
+msgid "Context definitions"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.data_types.schema.yml:0
+msgid "Provided context definitions"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.data_types.schema.yml:0 modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Expression configuration"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Rules expression"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0;0;0;0;0
+msgid "Plugin ID"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0;0;0;0;0
+msgid "UUID"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Rules condition configuration"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Condition plugin ID"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Negated"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0
+msgid "Provided context mapping"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Rules action configuration"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Action plugin ID"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0
+msgid "Rules And"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0 modules/contrib/rules/src/Form/Expression/ConditionForm.php:99
+msgid "Negate"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:43
+msgid "Conditions"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0 modules/contrib/rules/src/Plugin/RulesExpression/ActionSetExpression.php:8
+msgid "Action set"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0;0 modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:43
+msgid "Actions"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.expression.schema.yml:0 modules/contrib/rules/src/Plugin/RulesExpression/RuleExpression.php:20
+msgid "Rule"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0 modules/contrib/rules/src/Entity/RulesComponentConfig.php:12
+msgid "Rules component"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0 modules/contrib/rules/src/Controller/RulesComponentListBuilder.php:24 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:24
+msgid "ID"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0
+msgid "Administrative description"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:27 modules/contrib/rules/src/Form/RulesComponentFormBase.php:73
+msgid "Tags"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0 modules/contrib/rules/src/Controller/RulesComponentListBuilder.php:27
+msgid "Tag"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0
+msgid "Configuration schema version"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Reaction rule"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Events"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Event"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Name"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0
+msgid "Configuration"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0 modules/contrib/rules/src/Form/RulesSettingsForm.php:39
+msgid "Log debug information"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0;0 modules/contrib/rules/src/Form/RulesSettingsForm.php:44;69
+msgid "Log level"
+msgstr ""
+
+#: modules/contrib/rules/config/schema/rules.schema.yml:0 modules/contrib/rules/src/Form/RulesSettingsForm.php:64
+msgid "Show debug information on screen (in the HTML response)"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/rules_ban.info.yml:0
+msgid "Rules Ban"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/rules_ban.info.yml:0
+msgid "Provides Rules conditions and actions on behalf of the core Ban module."
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php:11
+msgid "IP address is banned"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php:11 modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php:11 modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php:11
+msgid "Ban"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php:11 modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php:11 modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php:11
+msgid "IP Address"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/Condition/IpIsBanned.php:11
+msgid "Determine if an IP address is banned using the Ban Module. If no IP is provided, the current user IP is used."
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php:11
+msgid "Ban an IP address"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/RulesAction/BanIp.php:11
+msgid "Ban an IP address using the Ban Module. If no IP is provided, the current user IP is used."
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php:11
+msgid "Remove the ban on an IP address"
+msgstr ""
+
+#: modules/contrib/rules/rules_ban/src/Plugin/RulesAction/UnBanIp.php:11
+msgid "Removes the ban on an IP address using the Ban Module. If no IP is provided, the current user IP is used."
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:53
+msgid "Data selector %selector for context %context_name is invalid. @message"
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:67
+msgid "The context %context_name may not be configured using a selector."
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:80
+msgid "The context %context_name may only be configured using a selector."
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:90
+msgid "The required context %context_name is missing."
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:107
+msgid "Provided variable name %name contains not allowed characters."
+msgstr ""
+
+#: modules/contrib/rules/src/Context/ContextHandlerIntegrityTrait.php:144
+msgid "Expected a @expected_type data type for context %context_name but got a @provided_type data type instead."
+msgstr ""
+
+#: modules/contrib/rules/src/Controller/RulesComponentListBuilder.php:25 modules/contrib/rules/src/Controller/RulesReactionListBuilder.php:25 modules/contrib/rules/src/Form/RulesComponentFormBase.php:52
+msgid "Label"
+msgstr ""
+
+#: modules/contrib/rules/src/Core/ConditionManager.php:47
+msgid "Other"
+msgstr ""
+
+#: modules/contrib/rules/src/Core/Annotation/Condition.php:17
+msgid "My User is blocked"
+msgstr ""
+
+#: modules/contrib/rules/src/Core/Annotation/Condition.php:17;17 modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php:12;12 modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9;9 modules/contrib/rules/src/Plugin/Condition/UserIsBlocked.php:8;8 modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php:8;8 modules/contrib/rules/src/Plugin/RulesAction/UserBlock.php:11;11 modules/contrib/rules/src/Plugin/RulesAction/UserRoleAdd.php:9;9 modules/contrib/rules/src/Plugin/RulesAction/UserRoleRemove.php:9;9 modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php:8;8
+msgid "User"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/ReactionRuleConfig.php:11
+msgid "Reaction Rule"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/ReactionRuleConfig.php:11
+msgid "Reaction Rules"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/ReactionRuleConfig.php:11
+msgid "reaction rule"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/ReactionRuleConfig.php:11
+msgid "reaction rules"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/RulesComponentConfig.php:12
+msgid "rules component"
+msgstr ""
+
+#: modules/contrib/rules/src/Entity/RulesComponentConfig.php:12
+msgid "rules components"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/AddExpressionForm.php:101
+msgid "Add @expression"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/BreakLockForm.php:67
+msgid "Do you want to break the lock on %label?"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/BreakLockForm.php:80
+msgid "By breaking this lock, any unsaved changes made by @user will be lost."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/BreakLockForm.php:96
+msgid "Break lock"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/BreakLockForm.php:105
+msgid "There is no lock on %label to break."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/BreakLockForm.php:117
+msgid "The lock has been broken and you may now edit this @component_type."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/DeleteExpressionForm.php:49 modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:62 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:62
+msgid "Delete"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/DeleteExpressionForm.php:62
+msgid "Are you sure you want to delete %title from %rule?"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/EditExpressionForm.php:142
+msgid "Edit @expression"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:47 modules/contrib/rules/src/Form/ReactionRuleEditForm.php:101 modules/contrib/rules/src/Form/RulesComponentAddForm.php:36 modules/contrib/rules/src/Form/RulesComponentEditForm.php:60 modules/contrib/rules/src/Form/Expression/ActionForm.php:97 modules/contrib/rules/src/Form/Expression/ConditionForm.php:111
+msgid "Save"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:66
+msgid "React on event"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:69
+msgid "Rule evaluation is triggered whenever the selected event occurs."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleAddForm.php:81
+msgid "Reaction rule %label has been created."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:77
+msgid "Events:"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:78
+msgid "@label (@name)"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:105 modules/contrib/rules/src/Form/RulesComponentEditForm.php:64
+msgid "Cancel"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:123
+msgid "Reaction rule %label has been updated."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:131 modules/contrib/rules/src/Form/RulesComponentEditForm.php:90
+msgid "Canceled."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/ReactionRuleEditForm.php:139
+msgid "Edit reaction rule \"@label\""
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentAddForm.php:46
+msgid "Component %label has been created."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentEditForm.php:82
+msgid "Rule component %label has been updated."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentEditForm.php:98
+msgid "Edit rules component \"@label\""
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentFormBase.php:51
+msgid "Enter a name to be used to identify your component in the administrative interface."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentFormBase.php:59
+msgid "A unique machine-readable name for your component. Can only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentFormBase.php:66
+msgid "The machine-readable name must be unique, and can only contain lowercase letters, numbers, and underscores. Additionally, it can not be the reserved word \"custom\"."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentFormBase.php:75
+msgid "Enter a list of comma-separated tags here; e.g., \"notification, publishing\". Tags are used for filtering available components in the administration interface."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesComponentFormBase.php:82
+msgid "Enter a description for this component, to help document what this component is indended to do."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:35
+msgid "System log"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:46;71
+msgid "Log all warnings and errors"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:47;72
+msgid "Log errors only"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:50
+msgid "Evaluation errors are logged to available loggers."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:60
+msgid "Screen log"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/RulesSettingsForm.php:75
+msgid "Level of log messages shown on screen."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:44 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:44
+msgid "Elements"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:44 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:44
+msgid "Operations"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:45 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:45
+msgid "None"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:56 modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:56
+msgid "Edit"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionContainerForm.php:79
+msgid "Add action"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionForm.php:65 modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:17
+msgid "Action"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ActionForm.php:71 modules/contrib/rules/src/Form/Expression/ConditionForm.php:72
+msgid "Continue"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ConditionContainerForm.php:79
+msgid "Add condition"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ConditionForm.php:66 modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:17
+msgid "Condition"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ConditionForm.php:104
+msgid "Negate this condition"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ConditionForm.php:106
+msgid "If checked, the condition result is negated such that it returns TRUE if it evaluates to FALSE."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:43
+msgid "Data selector"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:43 modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8 modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7 modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Value"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:64
+msgid "The data selector helps you drill down into the data available to Rules. <em>To make entity fields appear in the data selector, you may have to use the condition 'entity has field' (or 'content is of type').</em> More useful tips about data selection is available in <a href=':url'>the online documentation</a>."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:76
+msgid "Enter one value per line for this multi-valued context."
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:84
+msgid "Switch to the direct input mode"
+msgstr ""
+
+#: modules/contrib/rules/src/Form/Expression/ContextFormTrait.php:84
+msgid "Switch to data selection"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "Data comparison"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7 modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php:12 modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8 modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7 modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8 modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7;7 modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Data"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "Data to compare"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "The data to be compared, specified by using a data selector, e.g. 'node.uid.entity.name.value'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7 modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7 modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Operator"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "The comparison operator. Valid values are == (default), <, >, CONTAINS (for strings or arrays) and IN (for arrays or lists)."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "Data value"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataComparison.php:7
+msgid "The value to compare the data with."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php:12
+msgid "Data value is empty"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php:12
+msgid "Data to check"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataIsEmpty.php:12
+msgid "The data to be checked to be empty, specified by using a data selector, e.g. 'node.uid.entity.name.value'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8
+msgid "List contains item"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8 modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "List"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8
+msgid "The list to be checked."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8 modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7 modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "Item"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListContains.php:8
+msgid "The item to check for."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7
+msgid "List Count Comparison"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7
+msgid "A multi value data element to have its count compared, specified by using a data selector, eg 'node.uid.entity.roles'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7
+msgid "The comparison operator."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7
+msgid "Count"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/DataListCountIs.php:7
+msgid "The count to compare the data count with."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityHasField.php:8
+msgid "Entity has field"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityHasField.php:8;8 modules/contrib/rules/src/Plugin/Condition/EntityIsNew.php:8;8 modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8;8 modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php:8;8 modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php:12 modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php:8;8 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8;8
+msgid "Entity"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityHasField.php:8 modules/contrib/rules/src/Plugin/Condition/EntityIsNew.php:8 modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8 modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php:8
+msgid "Specifies the entity for which to evaluate the condition."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityHasField.php:8 modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php:12
+msgid "Field"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityHasField.php:8
+msgid "The name of the field to check for."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsNew.php:8
+msgid "Entity is new"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8
+msgid "Entity is of bundle"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8
+msgid "The type of the evaluated entity."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8
+msgid "Bundle"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfBundle.php:8
+msgid "The bundle of the evaluated entity."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php:8
+msgid "Entity is of type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/EntityIsOfType.php:8
+msgid "The entity type specified by the condition."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php:8
+msgid "Node is of type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php:8;8 modules/contrib/rules/src/Plugin/Condition/NodeIsPromoted.php:8;8 modules/contrib/rules/src/Plugin/Condition/NodeIsPublished.php:8;8 modules/contrib/rules/src/Plugin/Condition/NodeIsSticky.php:8;8
+msgid "Node"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php:8
+msgid "Content types"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsOfType.php:8
+msgid "Check for the allowed node types."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsPromoted.php:8
+msgid "Node is promoted"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsPublished.php:8
+msgid "Node is published"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/NodeIsSticky.php:8
+msgid "Node is sticky"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11
+msgid "Path alias exists"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11 modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php:11;11 modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:61 modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11 modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php:10 modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php:10
+msgid "Path"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11 modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:69 modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "Path alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11
+msgid "Specify the path alias to check for. For example, '/about' for an about page."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11 modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php:11 modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11 modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Language"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathAliasExists.php:11 modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php:11
+msgid "If specified, the language for which the URL alias applies."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php:11
+msgid "Path has alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/PathHasAlias.php:11
+msgid "Specifies the existing path you wish to check. For example, '/node/28' or '/forum/1'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7
+msgid "Text comparison"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7
+msgid "Text"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7
+msgid "The comparison operator. One of 'contains', 'starts', 'ends', or 'regex'. Defaults to 'contains'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/TextComparison.php:7
+msgid "Matching text"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php:12
+msgid "User has entity field access"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasEntityFieldAccess.php:12
+msgid "Operation"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9
+msgid "User has role(s)"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9 modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/UserRoleAdd.php:9 modules/contrib/rules/src/Plugin/RulesAction/UserRoleRemove.php:9
+msgid "Roles"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9
+msgid "Match roles"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserHasRole.php:9
+msgid "If matching against all selected roles, the user must have <em>all</em> the roles selected."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/Condition/UserIsBlocked.php:8
+msgid "User is blocked"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Calculates a numeric value"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Input value 1"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "The first input value for the calculation."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "The calculation operator."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Input value 2"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "The second input value for the calculation."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataCalculateValue.php:7
+msgid "Calculated result"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8
+msgid "Convert data"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8
+msgid "Target type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8
+msgid "Rounding behavior"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataConvert.php:8
+msgid "Conversion result"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Add list item"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "The data list, to which an item is to be added."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Item to add."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Enforce uniqueness"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Only add the item to the list if it is not yet contained."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Insert position"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemAdd.php:7
+msgid "Position to insert the item."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "Remove item from list"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "The data list for which an item is to be removed."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataListItemRemove.php:7
+msgid "Item to remove."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7
+msgid "Set a data value"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7
+msgid "Specifies the data to be modified using a data selector, e.g. 'node.author.name'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/DataSet.php:7
+msgid "The new value to set for the specified data."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityCreateDeriver.php:71
+msgid "Create a new @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php:8
+msgid "Delete entity"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityDelete.php:8
+msgid "Specifies the entity, which should be deleted permanently."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Fetch entities by field"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Entity type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Specifies the type of the entity that should be fetched."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Field name"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Name of the field by which the entity is to be selected.."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Field value"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "The field value of the entity to be fetched."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Limit"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10
+msgid "Limit the maximum number of fetched entities. Leave blank for all matching entities."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchByField.php:10 modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Fetched entity"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Fetch entity by id"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "Identifier"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityFetchById.php:10
+msgid "The id of the entity that should be fetched."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:60
+msgid "Create a @entity_type path alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:67
+msgid "The @entity_type for which to create a path alias."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php:71
+msgid "Specify an alternative path by which the content can be accessed. For example, '/about' for an about page. Use an absolute path and do not add a trailing slash."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Save entity"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Specifies the entity, which should be saved permanently."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Force saving immediately"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/EntitySave.php:8
+msgid "Usually saving is postponed till the end of the evaluation, so that multiple saves can be fold into one. If this set, saving is forced to happen immediately."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "Create any path alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11 modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php:10
+msgid "Existing system path"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "Specifies the existing path you wish to alias. For example, '/node/28' or '/forum/1'."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "Specify an alternative path by which this data can be accessed. For example, '/about' for an about page. Use an absolute path and do not add a trailing slash."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasCreate.php:11
+msgid "If specified, the language for which the path alias applies."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php:10
+msgid "Delete path alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php:10
+msgid "Existing system path alias"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByAlias.php:10
+msgid "Specifies the existing path alias you wish to delete. For example, '/about/team'. Use an absolute path and do not add a trailing slash."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php:10
+msgid "Delete all aliases for a path"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/PathAliasDeleteByPath.php:10
+msgid "Specifies the existing path for which you wish to delete the alias. For example, '/node/1'. Use an absolute path and do not add a trailing slash."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/RulesComponentActionDeriver.php:63
+msgid "@expression_type: @label"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "Send account email"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "The user to whom we send the email."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "Email type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SendAccountEmail.php:8
+msgid "The type of the email to send."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:153
+msgid "Successfully sent email to %number out of %count users having the role(s) %roles"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13
+msgid "Send email to all users of a role"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12 modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:12 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "System"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13
+msgid "The roles to which to send the email."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Subject"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "The email's subject."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Message"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "The email's message body."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Reply to"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13 modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "The email's reply-to address. Leave it empty to use the site-wide configured address."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMailToUsersOfRole.php:13
+msgid "If specified, the language object (not language code) used for getting the email message and subject."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12
+msgid "Show a message on the site"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12
+msgid "Message type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12
+msgid "Repeat message"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemMessage.php:12
+msgid "If disabled and the message has been already shown, then the message won't be repeated."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:99
+msgid "Skipped page redirect on a rules admin page."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:106
+msgid "Skipped page redirect during batch processing."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:12
+msgid "Page redirect"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:12
+msgid "URL"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemPageRedirect.php:12
+msgid "A Drupal path, path alias, or external URL to redirect to. Enter (optional) queries after ? and (optional) anchor after #."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:124
+msgid "Successfully sent email to %recipient"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Send email"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Send to"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "Email address(es) drupal will send an email to."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/SystemSendEmail.php:12
+msgid "If specified, the language used for getting the email message and subject."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserBlock.php:11
+msgid "Block a user"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserBlock.php:11
+msgid "Specifies the user, that should be blocked."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserRoleAdd.php:9
+msgid "Add user role"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserRoleRemove.php:9
+msgid "Remove user role"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php:8
+msgid "Unblock a user"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/UserUnblock.php:8
+msgid "Specifies the user, that should be unblocked."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Add a variable"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesAction/VariableAdd.php:7
+msgid "Added variable"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesDataProcessor/NumericOffset.php:9
+msgid "Apply numeric offset"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesDataProcessor/TokenProcessor.php:12
+msgid "Placeholder token replacements"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityDeleteDeriver.php:57
+msgid "After deleting a @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityInsertDeriver.php:57
+msgid "After saving a new @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityPresaveDeriver.php:57
+msgid "Before saving a @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityPresaveDeriver.php:67 modules/contrib/rules/src/Plugin/RulesEvent/EntityUpdateDeriver.php:67
+msgid "Unchanged @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityUpdateDeriver.php:57
+msgid "After updating a @entity_type"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesEvent/EntityViewDeriver.php:57
+msgid "@entity_type is viewed"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:112
+msgid "Action: @label"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:133
+msgid "Action plugin ID is missing"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ActionExpression.php:137
+msgid "Action plugin %plugin_id does not exist"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/AndExpression.php:8
+msgid "Condition set (AND)"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:144
+msgid "Condition: @not @label"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:144
+msgid "NOT"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:147
+msgid "Condition: @label"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:169
+msgid "Condition plugin ID is missing"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/ConditionExpression.php:173
+msgid "Condition plugin %plugin_id does not exist"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php:57
+msgid "List variable is missing."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php:65
+msgid "List variable %list does not exist. @message"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php:74
+msgid "List item name %name conflicts with an existing variable."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php:81
+msgid "The data type of list variable %list is not a list."
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/LoopExpression.php:12
+msgid "Loop"
+msgstr ""
+
+#: modules/contrib/rules/src/Plugin/RulesExpression/OrExpression.php:8
+msgid "Condition set (OR)"
+msgstr ""
+
+#: modules/contrib/rules/src/Ui/TempStoreTrait.php:241
+msgid "You have unsaved changes."
+msgstr ""
+
+#: modules/contrib/rules/src/Ui/TempStoreTrait.php:278
+msgid "This @component_type is being edited by user @user, and is therefore locked from editing by others. This lock is @age old. Click here to <a href=\":url\">break this lock</a>."
+msgstr ""
+

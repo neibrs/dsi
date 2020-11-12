@@ -1,0 +1,93 @@
+# Chinese, Simplified translation of Redirect 403 to User Login (8.x-1.1)
+# Copyright (c) 2018 by the Chinese, Simplified translation team
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/r4032login/r4032login.module: n/a
+#  modules/contrib/r4032login/r4032login.info.yml: n/a
+#  modules/contrib/r4032login/config/schema/r4032login.schema.yml: n/a
+#  modules/contrib/r4032login/config/install/r4032login.settings.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-08-27 16:56+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/r4032login/r4032login.module:23 modules/contrib/r4032login/r4032login.info.yml:0
+msgid "Redirect 403 to User Login"
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:24 modules/contrib/r4032login/r4032login.info.yml:0
+msgid "Redirect anonymous users from 403 Access Denied pages to the /user/login page."
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:30 modules/contrib/r4032login/config/schema/r4032login.schema.yml:0
+msgid "Redirect user to the page they tried to access after login"
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:36 modules/contrib/r4032login/config/schema/r4032login.schema.yml:0
+msgid "Display access denied message on login page"
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:37
+msgid "Displays an access denied message on the user login page."
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:44 modules/contrib/r4032login/config/schema/r4032login.schema.yml:0
+msgid "User login 'access denied' message"
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:45
+msgid "The message text displayed to users who are denied access to the page."
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:57 modules/contrib/r4032login/config/schema/r4032login.schema.yml:0
+msgid "User login 'access denied' message type"
+msgstr ""
+
+#: modules/contrib/r4032login/r4032login.module:58
+msgid "The message type displayed to users who are denied access to the page."
+msgstr "向拒绝访问该页的用户显示的消息类型。"
+
+#: modules/contrib/r4032login/r4032login.module:61
+msgid "Error"
+msgstr "错误"
+
+#: modules/contrib/r4032login/r4032login.module:62
+msgid "Warning"
+msgstr "警告"
+
+#: modules/contrib/r4032login/r4032login.module:94
+msgid "302 Found"
+msgstr "302临时重定向"
+
+#: modules/contrib/r4032login/r4032login.module:95
+msgid "301 Moved Permanently"
+msgstr "301永久移动"
+
+msgid "Language code"
+msgstr "语言代码"
+msgid "Redirect 403 to User Login"
+msgstr "重定向403页面至用户登录页面"
+msgid "Only the listed pages"
+msgstr "只在下列页面"
+msgid ""
+"Specify pages by using their paths. Enter one path per line. The '*' "
+"character is a wildcard. Example paths are %blog for the blog page and "
+"%blog-wildcard for every personal blog. %front is the front page."
+msgstr ""
+"通过页面路径指定页面。每行一个路径。'*' "
+"为通配符。比如%blog可用作博客页面，%blog-wildcard可用作每个用户的个人博客，%front为首页。"
+
+#: modules/contrib/r4032login/config/install/r4032login.settings.yml:0
+msgid "Access denied. You must log in to view this page."
+msgstr "访问被拒绝。您必须登录才能查看此页面。"

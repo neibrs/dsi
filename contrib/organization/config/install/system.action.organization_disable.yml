@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - organization
+id: organization_disable
+label: 'Disable organization'
+type: organization
+plugin: entity:unpublish_action:organization
+configuration: {  }

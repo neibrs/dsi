@@ -1,0 +1,13 @@
+
+# IP Address menu items definition
+entity.dsi_ipa.collection:
+  title: 'IP Address list'
+  route_name: entity.dsi_ipa.collection
+  parent: system.admin_structure
+  weight: 100
+
+dsi_ipa.admin.structure.settings:
+  title: 'IP Address settings'
+  description: 'Configure IP Addresses'
+  route_name: dsi_ipa.settings
+  parent: system.admin_structure

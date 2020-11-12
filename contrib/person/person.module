@@ -1,0 +1,311 @@
+<?php
+
+/**
+ * @file
+ * Contains person.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\person\Entity\PersonType;
+
+/**
+ * Implements hook_help().
+ */
+function person_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'person.entity_import.select_sheet':
+      $output = '<p>';
+      $output .= '注：<br>';
+      $output .= '1. 如果导入身份证信息，会自动提取出生日期。如果同时导入Excel里的出生日期栏目，最终导入数据是Excel的出生日期。<br>';
+      $output .= '2. 如果不导入调整后的工龄起算日期，工龄计算将根据入职日期计算。';
+      $output .= '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function person_theme() {
+  $theme = [];
+
+  $theme['person'] = [
+    'render element' => 'elements',
+    'file' => 'person.page.inc',
+  ];
+  $theme['person__full'] = [
+    'base hook' => 'person',
+  ];
+  $theme['person__teaser'] = [
+    'base hook' => 'person',
+  ];
+
+  $theme['person_form'] = [
+    'render element' => 'form',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for person.
+ */
+function person_theme_suggestions_person(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#person'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'person__' . $sanitized_view_mode;
+  $suggestions[] = 'person__' . $entity->bundle();
+  $suggestions[] = 'person__' . $entity->bundle() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function person_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'user') {
+
+    $fields['person'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Person'))
+      ->setSetting('target_type', 'person')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 6,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    // TODO add phone? field
+  }
+
+  if ($entity_type->id() == 'organization') {
+
+    $fields['manager'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Manager'))
+      ->setSetting('target_type', 'person')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 6,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  }
+  return $fields;
+
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function person_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (PersonType::loadMultiple() as $bundle) {
+    $extra['person'][$bundle->id()]['display']['user_roles'] = [
+      'label' => t('User roles'),
+      'description' => 'User roles',
+      'weight' => 0,
+    ];
+  }
+
+  $extra['user']['user']['view']['name'] = [
+    'label' => t('Name'),
+    'weight' => 0,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function person_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  if ($field_definition->getName() == 'person' && $operation == 'edit') {
+    if ($items && $items->getEntity()->getEntityTypeId() == 'user') {
+      return AccessResult::allowedIfHasPermission($account, 'administer persons');
+    }
+  }
+
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access() for organization.
+ */
+function person_organization_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($operation == 'delete') {
+    $count = \Drupal::entityTypeManager()->getStorage('person')->getQuery()
+      ->condition('organization', $entity->id())
+      ->count()
+      ->execute();
+    if (!$count) {
+      return AccessResult::forbidden(t('%type is used by @count of %entity. You may not remove %type until you have removed all of the %type %entity.', [
+        '%type' => t('Organization'),
+        '%entity' => t('Person'),
+        '@count' => $count,
+      ]));
+    }
+  }
+}
+
+// TODO modify user_login form using phone number
+
+/**
+ * Implements hook_ENTITY_TYPE_load() for predefined_filter.
+ */
+function person_predefined_filter_load($entities) {
+  /** @var \Drupal\entity_filter\Entity\PredefinedFilterInterface[] $entities */
+  if (isset($entities['person_field_data'])) {
+    $filters = $entities['person_field_data']->getFilters();
+
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    // Person type conditions
+    $types = $entity_type_manager->getStorage('person_type')->loadByProperties([
+        'status' => true,
+      ]);
+    foreach ($types as $id => $type) {
+      $filters[] = [
+        'table' => 'person_field_data',
+        'field' => 'type',
+        'admin_label' => '类型:' . $type->label(),
+        'plugin_id' => 'person_type',
+        'operator' => 'in',
+        'value' => [
+          $id => $id,
+        ],
+      ];
+    }
+
+    // People group.
+    $groups = $entity_type_manager->getStorage('lookup')
+      ->loadByProperties([
+        'type' => 'people_group',
+      ]);
+    foreach ($groups as $id => $group) {
+      $filters[] = [
+        'table' => 'person_field_data',
+        'field' => 'people_group',
+        'admin_label' => '人员组:' . $group->label(),
+        'plugin_id' => 'entity_reference_in_operator',
+        'operator' => 'in',
+        'value' => [
+          $id => $id,
+        ],
+      ];
+    }
+
+    // Organization.
+    $organizations = $entity_type_manager->getStorage('organization')
+      ->loadMultiple();
+    foreach ($organizations as $id => $organization) {
+      $filters[] = [
+        'table' => 'person_field_data',
+        'field' => 'organization',
+        'admin_label' => '组织:' . $organization->label(),
+        'plugin_id' => 'entity_reference_in_operator',
+        'operator' => 'in',
+        'value' => [
+          $id => $id,
+        ],
+      ];
+    }
+
+    $entities['person_field_data']->setFilters($filters);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for user.
+ */
+function person_user_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('name')) {
+    if ($entity->person->entity) {
+      $name = $entity->person->entity->label();
+    }
+    else {
+      $name = $entity->label();
+    }
+
+    $build['name'] = [
+      '#markup' => $name,
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function person_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['user']->setClass('Drupal\person\Entity\User');
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function person_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+  if (in_array($context['entity_type'], ['person_phone', 'person_address', 'identification_information']) && $context['form_mode'] == 'inline_entity_form') {
+    $form_display->removeComponent('person');
+  }
+
+  //暂时屏蔽
+  foreach (['rehire_date', 'termination_notified_date', 'termination_projected_date'] as $item) {
+    $form_display->removeComponent($item);
+  }
+
+}
+
+/**
+ * Implements hook_cron().
+ */
+function person_cron() {
+  $current_time = \Drupal::time()->getRequestTime();
+  $storage = \Drupal::entityTypeManager()->getStorage('person');
+  $query = $storage->getQuery();
+
+  $or = $query->orConditionGroup()
+    ->condition('type', ['ex_employee', 'ex_contingent_worker', 'ex_applicant'], 'in')
+    ->condition('effective_dates.end_value', date('Y-m-d', $current_time), '<=')
+    ->condition('status', FALSE);
+  $query->condition($or);
+  $ids = $query->execute();
+
+  $persons = $storage->loadMultiple($ids);
+
+  foreach ($persons as $id => $person) {
+    $person->set('status', FALSE)
+      ->save();
+  }
+}

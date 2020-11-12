@@ -1,0 +1,15 @@
+name: 'Lawyer'
+type: module
+description: 'The lawyer industry'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+interface translation project: dsi_lawyer
+interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
+dependencies:
+  - dsi_cases
+  - dsi_contract
+  - dsi_client
+  - dsi_project
+  - dsi_record
+  - person

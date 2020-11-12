@@ -1,0 +1,46 @@
+{
+  "name": "drupal/dsi_slider_media",
+  "description": "Dsi Hero slider media : This app will populate the universal implementation of a \"Hero Slider\" to be used on the homepage in most cases. A rich hero slider that allows you to display video and/or image slides.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/dsi_slider_media",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/dsi_slider_media",
+    "source": "http://cgit.drupalcode.org/dsi_slider_media"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "oomphinc/composer-installers-extender": "~1.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/drupal-library-installer-plugin": "^0.3",
+    "drupal/core": "^8 || ~9",
+    "drupal/entityqueue": "~1.0",
+    "drupal/rabbit_hole": "~1.0",
+    "drupal/field_group": "~3.0",
+    "drupal/length_indicator": "~1.0",
+    "drupal/advanced_text_formatter": "~2.0",
+    "drupal/maxlength": "~1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-8.x-1.x": "1.x-dev"
+    },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
+    "enable-patching": true,
+    "composer-exit-on-patch-failure": true
+  }
+}

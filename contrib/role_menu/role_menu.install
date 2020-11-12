@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ * not work. TODO debug.
+ */
+function role_menu_install($is_syncing) {
+  $role = \Drupal::service('entity_type.manager')->getStorage('user_role')->load('authenticated');
+  $role->setThirdPartySetting('role_menu', 'menu', 'account');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function role_menu_uninstall($is_syncing) {
+  /** @var \Drupal\user\RoleInterface $role */
+  $role = \Drupal::service('entity_type.manager')->getStorage('user_role')->load('authenticated');
+  $role->unsetThirdPartySetting('role_menu', 'menu');
+}

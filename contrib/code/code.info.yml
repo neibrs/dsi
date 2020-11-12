@@ -1,0 +1,10 @@
+name: Code
+type: module
+description: 'Provides code field.'
+package: 'Dsi contrib'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: code
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - token:token

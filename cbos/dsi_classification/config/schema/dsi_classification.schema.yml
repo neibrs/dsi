@@ -1,0 +1,24 @@
+dsi_classification.classification.*:
+  type: config_entity
+  label: 'Classification config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    target_entity_bundle_id:
+      type: string
+      label: 'Target Entity Bundle ID'
+    target_entity_type_id:
+      type: string
+      label: 'Target Entity Type ID'
+    collections:
+      type: sequence
+      label: 'Collections'
+      sequence:
+        type: string
+        label: 'Collections'

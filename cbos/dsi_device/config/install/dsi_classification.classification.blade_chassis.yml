@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: blade_chassis
+label: Blade Chassis
+target_entity_type_id: dsi_device
+target_entity_bundle_id: blade
+collections:
+  in_service: in_service
+  network_device: '0'
+  virtual_host: '0'

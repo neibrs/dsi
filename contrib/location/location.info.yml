@@ -1,0 +1,12 @@
+name: Location
+type: module
+description: Location
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: VERSION
+interface translation project: location
+interface translation server pattern: modules/dsi/contrib/%project/translations/location.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - entity_plus
+  - pinyin:pinyin

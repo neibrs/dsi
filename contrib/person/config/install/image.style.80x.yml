@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+name: 80x
+label: '80×'
+effects:
+  B8F09C71-D844-4DD6-9420-53E188940436:
+    uuid: B8F09C71-D844-4DD6-9420-53E188940436
+    id: image_scale
+    weight: 0
+    data:
+      width: 80
+      height: null
+      upscale: false

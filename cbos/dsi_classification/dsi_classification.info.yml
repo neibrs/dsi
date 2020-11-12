@@ -1,0 +1,10 @@
+name: 'Classification'
+type: module
+description: 'The common classification.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: dsi_classification
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+package: 'Dsi'
+dependencies:
+  - entity_plus

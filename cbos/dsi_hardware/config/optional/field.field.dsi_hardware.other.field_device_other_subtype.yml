@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - dsi_hardware.type.other
+    - field.storage.dsi_hardware.field_device_other_subtype
+id: dsi_hardware.other.field_device_other_subtype
+field_name: field_device_other_subtype
+entity_type: dsi_hardware
+bundle: other
+label: 'Device Subtype'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:dsi_device_other_subtype'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

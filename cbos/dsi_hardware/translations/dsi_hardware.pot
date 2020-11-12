@@ -1,0 +1,186 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/cbos/dsi_hardware/dsi_hardware.module: n/a
+#  modules/dsi/cbos/dsi_hardware/src/HardwareListBuilder.php: n/a
+#  modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php: n/a
+#  modules/dsi/cbos/dsi_hardware/src/HardwareTypeListBuilder.php: n/a
+#  modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php: n/a
+#  modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeDeleteForm.php: n/a
+#  modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/cbos/dsi_hardware/dsi_hardware.module:18
+msgid "About"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/dsi_hardware.module:19
+msgid "Hardware"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/HardwareListBuilder.php:20
+msgid "Hardware ID"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/HardwareListBuilder.php:21 modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:106
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/HardwareTypeListBuilder.php:17
+msgid "Hardware type"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/HardwareTypeListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:107
+msgid "The name of the Hardware entity."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:127
+msgid "Part #"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:146
+msgid "Watts"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:147
+msgid "Watts per PSU"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:166
+msgid "Add Ports When Creating Device"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:167
+msgid "Check if you want ports to be automatically created when a device is created from UI or API."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:185
+msgid "Specification URL:"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:205
+msgid "Front Pictures"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:222
+msgid "Back Pictures"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:239
+msgid "End of Life Date"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:257
+msgid "End of U Date"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:310
+msgid "A boolean indicating whether the Hardware is published."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:317
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:318
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:321
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Entity/Hardware.php:322
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:48
+msgid "Direct Ports"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:50
+msgid "Port name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:51
+msgid "Port type"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:52
+msgid "Location"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:53 modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeDeleteForm.php:32
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:89
+msgid "Front"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:90
+msgid "Back"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:105
+msgid "Add another Direct Port"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:112
+msgid "Bulk add Direct Port"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:127
+msgid "Bulk Add Direct Ports"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:147
+msgid "Created the %label Hardware."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareForm.php:153
+msgid "Saved the %label Hardware."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeForm.php:25
+msgid "Label for the Hardware type."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeForm.php:52
+msgid "Created the %label Hardware type."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_hardware/src/Form/HardwareTypeForm.php:58
+msgid "Saved the %label Hardware type."
+msgstr ""
+

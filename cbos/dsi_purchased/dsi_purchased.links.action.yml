@@ -1,0 +1,5 @@
+entity.dsi_purchased.add_form:
+  route_name: entity.dsi_purchased.add_form
+  title: 'Add Purchased'
+  appears_on:
+    - entity.dsi_purchased.collection

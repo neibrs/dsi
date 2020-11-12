@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - dsi_hardware.type.none
+    - field.storage.dsi_hardware.field_width_ratio
+  module:
+    - options
+id: dsi_hardware.none.field_width_ratio
+field_name: field_width_ratio
+entity_type: dsi_hardware
+bundle: none
+label: 'Width Ratio'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1_1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

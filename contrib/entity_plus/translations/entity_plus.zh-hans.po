@@ -1,0 +1,70 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_plus/entity_plus.module: n/a
+#  modules/dsi/contrib/entity_plus/entity_plus.info.yml: n/a
+#  modules/dsi/contrib/entity_plus/entity_plus.links.menu.yml: n/a
+#  modules/dsi/contrib/entity_plus/entity_plus.routing.yml: n/a
+#  modules/dsi/contrib/entity_plus/config/schema/entity_plus.schema.yml: n/a
+#  modules/dsi/contrib/entity_plus/entity_plus.permissions.yml: n/a
+#  modules/dsi/contrib/entity_plus/src/Form/EntityPlusSettingsForm.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Block/EntityOperationsBlock.php: n/a
+#  modules/dsi/contrib/entity_plus/src/EntityPlusManager.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Controller/EntityPlusController.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/ContentEntityForm.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Entity/Controller/EntityController.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Derivative/EntityLocalAction.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceCustomLabel.php: n/a
+#  modules/dsi/contrib/entity_plus/src/Plugin/Field/FieldFormatter/EntityReferenceLabelPlusFormatter.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-06-09 08:54+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_plus/entity_plus.routing.yml:0 modules/dsi/contrib/entity_plus/config/schema/entity_plus.schema.yml:0
+msgid "Entity plus settings"
+msgstr "实体设置"
+
+#: modules/dsi/contrib/entity_plus/config/schema/entity_plus.schema.yml:0 modules/dsi/contrib/entity_plus/src/Form/EntityPlusSettingsForm.php:32
+msgid "Display empty field"
+msgstr "显示空字段"
+
+#: modules/dsi/contrib/entity_plus/config/schema/entity_plus.schema.yml:0 modules/dsi/contrib/entity_plus/src/Plugin/Block/EntityOperationsBlock.php:11
+msgid "Entity operations"
+msgstr "实体操作"
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:65
+msgid "Illegal formula : The context does not contain @entity entity."
+msgstr "非法公式：上下文不包含实体 @entity ."
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:74
+msgid "Illegal formula : @entity does not have @field field."
+msgstr "非法公式：@entity 没有 @field 字段."
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:87
+msgid "The @field field of the @entity is entity reference type and cannot participate in the calculation"
+msgstr "@entity 的 @field 字段是实体引用字段，不能参加计算."
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:101
+msgid "Illegal formula : The entity or field of @item in the formula does not match."
+msgstr "非法公式：@item 的实体或字段没有匹配."
+
+#: modules/dsi/contrib/entity_plus/src/EntityPlusManager.php:114
+msgid "Formula error : @error"
+msgstr "公式错误：@error."
+
+#: modules/dsi/contrib/entity_plus/src/Entity/Controller/EntityController.php:100
+msgid "Edit @label"
+msgstr "编辑 @label"

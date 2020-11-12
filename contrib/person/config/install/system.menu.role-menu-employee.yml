@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: role-menu-employee
+label: 'Employee'
+description: 'Role menu.'
+locked: true

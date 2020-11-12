@@ -1,0 +1,11 @@
+name: 'Views template'
+type: module
+description: 'Provides views template.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: views_template
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - drupal:views
+  - entity_filter

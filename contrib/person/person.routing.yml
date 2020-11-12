@@ -1,0 +1,33 @@
+entity.person_type.person:
+  path: '/person/type/{person_type}/person'
+  requirements:
+    _permission: 'view persons'
+
+entity.person.import_form:
+  path: '/person/import'
+  defaults:
+    _title: 'Import'
+    _form: '\Drupal\person\Form\PersonImportForm'
+    entity_type_id: 'person'
+  requirements:
+    _permission: 'maintain persons'
+entity.person.export:
+  path: '/person/export.csv'
+  requirements:
+    _permission: 'view persons'
+
+person.entity_import.select_sheet:
+  path: '/person/entity_import_select_sheet/{migration_id}'
+  defaults:
+    _title: 'Select sheet for import'
+    _form: '\Drupal\person\Form\PersonImportFormSelectSheet'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+person.settings:
+  path: '/person/settings'
+  defaults:
+    _form: 'Drupal\person\Form\PersonSettingsForm'
+    _title: 'Person settings'
+  requirements:
+    _permission: 'administer persons'

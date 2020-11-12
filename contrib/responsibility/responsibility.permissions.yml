@@ -1,0 +1,17 @@
+administer responsibilities:
+  title: 'Administer Responsibility entities'
+
+maintain responsibilities:
+  title: 'Maintain Responsibility entities'
+
+view responsibilities:
+  title: 'View Responsibility entities'
+
+administer user responsibilities:
+  title: 'Administer User responsibilities'
+
+maintain user responsibilities:
+  title: 'Maintain User responsibilities'
+
+view user responsibilities:
+  title: 'View User responsibilities'

@@ -1,0 +1,16 @@
+add cases entities:
+  title: 'Create new Cases entities'
+
+administer cases entities:
+  title: 'Administer Cases entities'
+  description: 'Allow to access the administration form to configure Cases entities.'
+  restrict access: true
+
+delete cases entities:
+  title: 'Delete Cases entities'
+
+edit cases entities:
+  title: 'Edit Cases entities'
+
+view published cases entities:
+  title: 'View published Cases entities'

@@ -1,0 +1,19 @@
+add purchased entities:
+  title: 'Create new Purchased entities'
+
+administer purchased entities:
+  title: 'Administer Purchased entities'
+  description: 'Allow to access the administration form to configure Purchased entities.'
+  restrict access: true
+
+delete purchased entities:
+  title: 'Delete Purchased entities'
+
+edit purchased entities:
+  title: 'Edit Purchased entities'
+
+view published purchased entities:
+  title: 'View published Purchased entities'
+
+view unpublished purchased entities:
+  title: 'View unpublished Purchased entities'

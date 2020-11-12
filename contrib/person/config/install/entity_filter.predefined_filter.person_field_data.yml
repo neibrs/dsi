@@ -1,0 +1,291 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: person_field_data
+label: 人员
+filters:
+  -
+    table: person_field_data
+    field: gender
+    admin_label: 性别:男
+    plugin_id: entity_reference_in_operator
+    operator: in
+    value:
+      29: '29'
+  -
+    table: person_field_data
+    field: gender
+    admin_label: 性别:女
+    plugin_id: entity_reference_in_operator
+    operator: in
+    value:
+      30: '30'
+  -
+    table: person_field_data
+    field: nationality
+    admin_label: 民族:汉族
+    plugin_id: entity_reference_in_operator
+    operator: in
+    value:
+      41: '41'
+  -
+    table: person_field_data
+    field: nationality
+    admin_label: 民族:少数民族
+    plugin_id: entity_reference_in_operator
+    operator: 'not in'
+    value:
+      41: '41'
+  -
+    table: person_field_data
+    field: status
+    admin_label: 状态:启用
+    plugin_id: boolean
+    operator: =
+    value: '1'
+  -
+    table: person_field_data
+    field: status
+    admin_label: 状态:禁用
+    plugin_id: boolean
+    operator: <>
+    value: '1'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):5年及以下
+    plugin_id: person_age
+    operator: between
+    value:
+      max: '5'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):6年-10年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '6'
+      max: '10'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):11年-15年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '11'
+      max: '15'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):16年-20年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '16'
+      max: '20'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):21年-25年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '21'
+      max: '25'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):26年-30年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '26'
+      max: '30'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):31年-35年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '31'
+      max: '35'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):36年-40年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '36'
+      max: '40'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(5年):41年以上
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '41'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(10年):10年及以下
+    plugin_id: person_age
+    operator: between
+    value:
+      max: '10'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(10年):11-20年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '11'
+      max: '20'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(10年):21-30年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '21'
+      max: '30'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(10年):31-40年
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '31'
+      max: '40'
+  -
+    table: person_field_data
+    field: length_of_service
+    admin_label: 工龄段(10年):41年以上
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '41'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(10年):30岁及以下
+    plugin_id: person_age
+    operator: between
+    value:
+      max: '30'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(10年):31-40岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '31'
+      max: '40'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(10年):41-50岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '41'
+      max: '50'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(10年):51-60岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '51'
+      max: '60'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(10年):61岁及以上
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '61'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):30岁及以下
+    plugin_id: person_age
+    operator: between
+    value:
+      max: '30'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):31-35岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '31'
+      max: '35'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):36-40岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '36'
+      max: '40'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):41-45岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '41'
+      max: '45'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):46-50岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '46'
+      max: '50'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):51-55岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '51'
+      max: '55'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):56-60岁
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '56'
+      max: '60'
+  -
+    table: person_field_data
+    field: age
+    admin_label: 年龄段(5年):61岁及以上
+    plugin_id: person_age
+    operator: between
+    value:
+      min: '61'
+relationships: {  }

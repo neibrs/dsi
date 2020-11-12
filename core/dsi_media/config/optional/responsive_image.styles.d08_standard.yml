@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  config:
+    - image.style.d08_standard
+  module:
+    - dsi_media
+id: d08_standard
+label: 'Display 08 responsive standard 16:9'
+image_style_mappings:
+  -
+    breakpoint_id: dsi_media.screen-md-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: d08_standard
+  -
+    breakpoint_id: dsi_media.screen-sm-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: d08_standard
+breakpoint_group: dsi_media
+fallback_image_style: d08_standard

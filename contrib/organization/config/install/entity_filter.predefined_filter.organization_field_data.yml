@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - organization
+id: organization_field_data
+label: 组织
+filters: {  }
+relationships: {  }

@@ -1,0 +1,132 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_log/entity_log.views.inc: n/a
+#  modules/dsi/contrib/entity_log/entity_log.module: n/a
+#  modules/dsi/contrib/entity_log/src/EntityLogBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/entity_log/src/Plugin/Derivative/EntityLogLocalAction.php: n/a
+#  modules/dsi/contrib/entity_log/src/Controller/EntityLogController.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:12
+msgid "Entity log"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:16
+msgid "Entity Log"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:17
+msgid "Contains a list of entity log entries."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:21
+msgid "ID"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:22
+msgid "Unique ID."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:38
+msgid "UID"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:39
+msgid "The user ID of the user on which the log entry was written."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:50
+msgid "User"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:51
+msgid "The user on which the log entry as written."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:59
+msgid "Type"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:60
+msgid "The type of the log entry."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:76
+msgid "Entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:77
+msgid "The entity on which the log entry was written."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:98
+msgid "The @entity_type to which the log is reply to."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:116
+msgid "Message"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:117
+msgid "The actual message of the log entry."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:133
+msgid "Hostname"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:134
+msgid "Hostname of the user who triggered the event."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:150
+msgid "Timestamp"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:151
+msgid "Date when the event occurred."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.module:22
+msgid "Add @entity_type : @entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/entity_log.module:45
+msgid "Delete @entity_type : @entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/src/EntityLogBreadcrumbBuilder.php:28
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/src/EntityLogBreadcrumbBuilder.php:42 modules/dsi/contrib/entity_log/src/Plugin/Derivative/EntityLogLocalAction.php:29
+msgid "Change log"
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/src/Controller/EntityLogController.php:15
+msgid "The entity type not found."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/src/Controller/EntityLogController.php:22
+msgid "The entity of %entity_type not found."
+msgstr ""
+
+#: modules/dsi/contrib/entity_log/src/Controller/EntityLogController.php:25
+msgid "%entity_type : %entity_id change log."
+msgstr ""
+

@@ -1,0 +1,44 @@
+
+## Person字段说明
+
+### 人员基本信息(Enter a new person)
+* 有效期，如果是员工，则是入职时间
+* 姓名
+* 性别
+* 动作(如，创建员工- employment)
+
+### 员工详情（Workforce details)
+* Workforce assignments
+* Identify workforce and assignments
+  * Person number
+  * Assignment number
+* Person type, as applicants, employees, contingent workers
+* Assignment statuses, as active, suspended, terminated
+
+### 人员识别信息
+* 员工编号
+* 身份证号
+
+### 人员详情信息
+* 生日
+* 出生地，籍贯，国家
+* 手机号
+* 婚姻状况
+* 民族
+* 人员类别（员工、候选人、或临时工）
+
+### 额外信息
+* 工作地
+* 办公室编号
+* 个人邮件地址
+
+### 候选人员信息
+* 区域
+
+### 背景调查信息
+* 背景调查
+* 是否执行(按钮)
+
+### 医疗信息
+* 血型
+* 最近一次体检

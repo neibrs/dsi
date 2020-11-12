@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: employee
+label: Employee
+weight: 2
+is_admin: false
+third_party_settings:
+  role_menu:
+    menu: role-menu-employee
+  role_frontpage:
+    frontpage: /workbench
+permissions:
+  - 'view organizations'

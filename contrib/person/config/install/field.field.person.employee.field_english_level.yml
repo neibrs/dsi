@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.person.field_english_level
+    - person.type.employee
+  module:
+    - options
+id: person.employee.field_english_level
+field_name: field_english_level
+entity_type: person
+bundle: employee
+label: 英语水平
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

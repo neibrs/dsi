@@ -1,0 +1,13 @@
+{
+    "name": "dsi_project",
+    "type": "drupal-module",
+    "description": "The project of lawyer.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/dsi_project",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/dsi_project",
+        "source": "http://cgit.drupalcode.org/dsi_project"
+    }
+}

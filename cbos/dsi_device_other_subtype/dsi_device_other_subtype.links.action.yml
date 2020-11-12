@@ -1,0 +1,10 @@
+entity.dsi_device_other_subtype.add_form:
+  route_name: entity.dsi_device_other_subtype.add_form
+  title: 'Add'
+  appears_on:
+    - entity.dsi_device_other_subtype.collection
+entity.dsi_device_oslc.add_form:
+  route_name: entity.dsi_device_oslc.add_form
+  title: 'Add'
+  appears_on:
+    - entity.dsi_device_oslc.collection

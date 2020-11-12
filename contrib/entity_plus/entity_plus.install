@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function entity_plus_install() {
+  // Ensure hook_entity_type_alter is run after layout_builder module.
+  module_set_weight('entity_plus', 10);
+}

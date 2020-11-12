@@ -1,0 +1,5 @@
+name: 'Icons(dsi)'
+type: module
+description: 'The icons.'
+core_version_requirement: ^8 || ^9
+package: 'Dsi'

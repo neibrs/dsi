@@ -1,0 +1,146 @@
+id: organization_xls
+label: Organization(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/data/inte.xlsx
+  sheet_name: 组织
+  keys:
+    - 组织
+  type: department
+  columns:
+    -
+      组织: 组织
+    -
+      描述: 描述
+    -
+      上级组织: 上级组织
+    -
+      组织类型: 组织类型
+    -
+      组织分类: 组织分类
+    -
+      工作地点: 工作地点
+    -
+      有效期: 有效期
+    -
+      有效期开始: 有效期开始
+    -
+      有效期结束: 有效期结束
+    -
+      业务组: 业务组
+process:
+  name:
+    -
+      plugin: callback
+      callable: trim
+      source: 组织
+    -
+      plugin: skip_on_empty
+      method: stop
+      message: 组织不能为空
+
+  description:
+    plugin: callback
+    callable: trim
+    source: 描述
+
+  parent:
+    -
+      plugin: callback
+      callable: trim
+      source: 上级组织
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: organization
+      value_key: name
+      not_found_message: 上级组织未找到
+      ignore_case: true
+      or_conditions:
+        description: 上级组织
+
+  type:
+    -
+      plugin: callback
+      callable: trim
+      source: 组织类型
+    -
+      plugin: entity_lookup
+      entity_type: organization_type
+      value_key: label
+      value_key_alias: alias
+
+  classifications:
+    -
+      plugin: callback
+      callable: trim
+      source: 组织分类
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        业务组: 'business_group'
+        法人实体: 'legal_entity'
+        经营单位: 'operating_unit'
+        HR组织: 'hr_organization'
+    -
+      plugin: entity_lookup
+      entity_type: organization_classification
+      value_key: id
+      not_found_message: '组织分类未找到'
+
+  location:
+    -
+      plugin: callback
+      callable: trim
+      source: 工作地点
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: location
+      value_key: name
+      not_found_message: 工作地点未找到
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+destination:
+  plugin: entity:organization
+  keys:
+    -
+      - name
+      - parent
+    - name
+migration_dependencies: { }

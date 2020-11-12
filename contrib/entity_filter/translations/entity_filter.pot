@@ -1,0 +1,90 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_filter/src/EntityFilterManager.php: n/a
+#  modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php: n/a
+#  modules/dsi/contrib/entity_filter/src/Controller/EntityFilterController.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_filter/src/EntityFilterManager.php:41
+msgid "Conditions"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/EntityFilterManager.php:59 modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:479
+msgid "Edit"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Controller/EntityFilterController.php:39;81
+msgid "Configure @type: @item"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Controller/EntityFilterController.php:146
+msgid "Do not use a relationship"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Controller/EntityFilterController.php:158
+msgid "Relationship"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Controller/EntityFilterController.php:200
+msgid "@group: @title"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:85
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:300
+msgid "Add custom condition"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:323
+msgid "Search"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:326
+msgid "- All -"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:329;346
+msgid "Category"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:345
+msgid "Title"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:413
+msgid "Return"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:421
+msgid "Cancel"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:454
+msgid "Item"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:454
+msgid "Operations"
+msgstr ""
+
+#: modules/dsi/contrib/entity_filter/src/Form/FiltersFormBase.php:488
+msgid "Delete"
+msgstr ""
+

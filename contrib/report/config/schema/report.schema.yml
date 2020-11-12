@@ -1,0 +1,100 @@
+report.settings:
+  type: config_object
+  label: 'Report settings'
+  mapping:
+    base_tables:
+      type: sequence
+      label: 'Base tables'
+      sequence:
+        type: string
+        label: 'Base table'
+
+report.report.*:
+  type: config_entity
+  label: 'Report config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    category:
+      type: string
+      label: 'Category'
+    plugin:
+      type: string
+      label: 'Plugin'
+    settings:
+      type: report_settings.[%parent.plugin]
+
+report_item:
+  type: map
+  label: 'Report item(Column, Row)'
+  mapping:
+    parent:
+      type: string
+      label: 'Parent'
+    weight:
+      type: integer
+      label: 'Weight'
+    filter:
+      type: views.filter.[plugin_id]
+      label: 'Filter'
+    field:
+      type: views.field.[plugin_id]
+      label: 'Field'
+    substree:
+      type: sequence
+      label: 'Sub tree'
+      sequence:
+        type: report_item
+
+report_settings:
+  type: map
+  label: 'Report settings'
+  mapping:
+    base_table:
+      type: string
+      label: 'Base table'
+    style:
+      type: string
+      label: 'Style'
+    arguments:
+      type: sequence
+      label: 'Arguments'
+      sequence:
+        type: views.argument.[plugin_id]
+    filters:
+      type: sequence
+      label: 'Filters'
+      sequence:
+        type: views.filter.[plugin_id]
+    field:
+      type: views.field.[plugin_id]
+      label: 'Field'
+
+report_settings.simple_chart:
+  type: report_settings
+  mapping:
+    columns:
+      type: sequence
+      label: 'Columns'
+      sequence:
+        type: report_item
+
+report_settings.cross_table:
+  type: report_settings
+  mapping:
+    columns:
+      type: sequence
+      label: 'Columns'
+      sequence:
+        type: report_item
+    rows:
+      type: sequence
+      label: 'Rows'
+      sequence:
+        type: report_item

@@ -1,0 +1,60 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_log/entity_log.views.inc: n/a
+#  modules/dsi/contrib/entity_log/entity_log.info.yml: n/a
+#  modules/dsi/contrib/entity_log/entity_log.module: n/a
+#  modules/dsi/contrib/entity_log/entity_log.permissions.yml: n/a
+#  modules/dsi/contrib/entity_log/src/EntityLogBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/entity_log/src/Plugin/Derivative/EntityLogLocalAction.php: n/a
+#  modules/dsi/contrib/entity_log/src/Controller/EntityLogController.php: n/a
+#  modules/dsi/contrib/entity_log/src/Plugin/views/cache/EntityLogTag.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-10-15 15:36+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:12 modules/dsi/contrib/entity_log/entity_log.info.yml:0;0
+msgid "Entity log"
+msgstr "修改日志"
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:16
+msgid "Entity Log"
+msgstr "修改日志"
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:50
+msgid "User"
+msgstr "用户"
+
+#: modules/dsi/contrib/entity_log/entity_log.views.inc:116
+msgid "Message"
+msgstr "消息"
+
+#: modules/dsi/contrib/entity_log/entity_log.module:22
+msgid "Add @entity_type : @entity"
+msgstr "新增 @entity_type : @entity"
+
+#: modules/dsi/contrib/entity_log/entity_log.module:45
+msgid "Delete @entity_type : @entity"
+msgstr "删除 @entity_type : @entity"
+
+#: modules/dsi/contrib/entity_log/entity_log.permissions.yml:0
+msgid "View Entity Log"
+msgstr "查看修改日志"
+
+msgid "Change log"
+msgstr "修改日志"
+
+msgid "change log"
+msgstr "修改日志"

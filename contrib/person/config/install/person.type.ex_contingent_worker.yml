@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: ex_contingent_worker
+label: Ex-contingent worker
+system_type: ex_contingent_worker
+is_system: true
+is_employee: true

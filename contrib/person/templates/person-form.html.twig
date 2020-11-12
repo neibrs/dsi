@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a person edit form.
+ *
+ * Available variables:
+ * - form: The person add/edit form.
+ */
+#}
+<div class="row">
+  <div class="col-sm-6">
+    {{ form.business_group }}
+  </div>
+  <div class="col-sm-6">
+    {{ form.status }}
+  </div>
+</div>
+
+{% if form.name is defined %}
+<div class="box">
+  <div class="box-body row">
+      {#<div class="col-sm-12">#}
+          {#<label class="col-sm-3">基础信息</label>#}
+      {#</div>#}
+    <div class="col-sm-6">
+      {{ form.number }}
+      {{ form.name }}
+      {{ form.gender }}
+      {{ form.birth_date }}
+      {{ form.marital_status }}
+      {{ form.political_status }}
+      {{ form.nationality }}
+      {{ form.people_group }}
+    </div>
+    <div class="col-sm-6">
+      {{ form.type }}
+      {{ form.employee_status }}
+      {{ form.hire_date }}
+      {{ form.adjusted_service_date }}
+      {{ form.completion_of_probation_date }}
+      {{ form.native_place }}
+      {{ form.organization }}
+      {#{{ form.rehire_date }}#}
+      {{ form.termination_actual_date }}
+      {#{{ form.termination_notified_date }}#}
+      {#{{ form.termination_projected_date }}#}
+      {#{{ form.practice_experience }}#}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{{ form|without('business_group','status','number', 'name', 'organization', 'type', 'employee_status',
+                'gender', 'marital_status', 'birth_date', 'identify_number', 'nationality',
+                'native_place', 'political_status', 'people_group', 'adjusted_service_date', 'completion_of_probation_date',
+                'hire_date', 'rehire_date','termination_actual_date', 'termination_notified_date', 'termination_projected_date',
+                'practice_experience', 'actions', 'master', 'identification_information', 'email', 'phone', 'address',
+                'picture', 'attachments', 'probation_period', 'effective_dates') }}
+
+{{ form.identification_information }}
+
+{{ form.email }}
+
+{{ form.phone }}
+
+{{ form.address }}
+
+{{ form.picture }}
+
+{{ form.attachments }}
+
+{{ form.probation_period }}
+
+{{ form.effective_dates }}
+
+{{ form.actions }}
+

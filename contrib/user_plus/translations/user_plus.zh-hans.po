@@ -1,0 +1,70 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/user_plus/user_plus.module: n/a
+#  modules/dsi/contrib/user_plus/user_plus.routing.yml: n/a
+#  modules/dsi/contrib/user_plus/user_plus.info.yml: n/a
+#  modules/dsi/contrib/user_plus/user_plus.links.action.yml: n/a
+#  modules/dsi/contrib/user_plus/user_plus.links.task.yml: n/a
+#  modules/dsi/contrib/user_plus/user_plus.permissions.yml: n/a
+#  modules/dsi/contrib/user_plus/src/PermissionSetListBuilder.php: n/a
+#  modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php: n/a
+#  modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php: n/a
+#  modules/dsi/contrib/user_plus/src/Form/UserRoleSwitchForm.php: n/a
+#  modules/dsi/contrib/user_plus/src/Plugin/Block/AvatarBlock.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-06-18 16:44+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/user_plus/user_plus.module:71 modules/dsi/contrib/user_plus/user_plus.routing.yml:0
+msgid "Change password"
+msgstr "修改口令"
+
+#: modules/dsi/contrib/user_plus/user_plus.info.yml:0;0
+msgid "User Plus"
+msgstr "用户增强"
+
+#: modules/dsi/contrib/user_plus/user_plus.permissions.yml:0
+msgid "Administer Permission sets"
+msgstr "管理权限集"
+
+#: modules/dsi/contrib/user_plus/user_plus.permissions.yml:0
+msgid "Maintain Permission sets"
+msgstr "维护权限集"
+
+#: modules/dsi/contrib/user_plus/user_plus.permissions.yml:0
+msgid "View Permission sets"
+msgstr "查看权限集"
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:112
+msgid "Permissions"
+msgstr "权限"
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:9
+msgid "Permission set"
+msgstr "权限集"
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:9
+msgid "Permission sets"
+msgstr "权限集"
+
+#: modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php:53
+msgid "Created the %label Permission set."
+msgstr "已创建权限集%label."
+
+#: modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php:59
+msgid "Saved the %label Permission set."
+msgstr "已保存权限集%label."
+

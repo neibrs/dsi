@@ -1,0 +1,8 @@
+administer reports:
+  title: 'Administer reports'
+
+maintain reports:
+  title: 'Maintain reports'
+
+view reports:
+  title: 'View reports'

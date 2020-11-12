@@ -1,0 +1,14 @@
+eabax_workflows.apply_transition:
+  path: '/workflow_type/{workflow_type}/transition/{transition_id}/{entity_type}/{field}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\eabax_workflows\Controller\EabaxWorkflowsController::applyTransition'
+  requirements:
+    _custom_access: '\Drupal\eabax_workflows\Controller\EabaxWorkflowsController::applyTransitionAccess'
+
+entity_workflows.condition.add:
+  path: 'admin/config/workflow/workflows/manage/{workflow}/transition/{transition}/condition/add'
+  defaults:
+    _form: '\Drupal\eabax_workflows\Form\ConditionForm'
+    _title: 'Transition Condition'
+  requirements:
+    _permission: 'administer workflow transition condition'

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: employee
+label: Employee
+system_type: employee
+is_system: true
+is_employee: true

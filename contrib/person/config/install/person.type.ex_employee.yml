@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: ex_employee
+label: Ex-employee
+system_type: ex_employee
+is_system: true
+is_employee: false

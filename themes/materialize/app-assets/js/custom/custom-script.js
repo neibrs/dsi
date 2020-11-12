@@ -1,0 +1,31 @@
+(function ($, Drupal, drupalSettings) {
+  Drupal.behaviors.custom_script = {
+    attach: function attach(context) {
+      // Apply for oams.
+      $(context).find('.brand-sidebar').once('brand-sidebar').addClass('.new-left');
+
+      // Click menu link.
+      $(context).find('.left-item').once('left-item').click(function () {
+        let link_url = $(this).find('.item-name').data('url');
+        window.location.href = link_url;
+      });
+
+
+      $('.views-table.views-view-table').DataTable({
+        "responsive": true,
+      });
+
+      $(context).find('.views-table.views-view-table tr').once('views-view-table-tr').click(function () {
+        let $id = $(this).attr('entity-id');
+        window.location.href = Drupal.url('dsi_client/' + $id);
+        // Drupal.ajax({
+        //   url:'/dsi_client/' + $id,
+        //   dialogType: 'modal',
+        //   dialog: {
+        //     width: 800
+        //   }
+        // }).execute();
+      });
+    }
+  };
+})(jQuery, Drupal, drupalSettings);

@@ -1,0 +1,9 @@
+name: Role menu
+type: module
+description: Role menu
+core_version_requirement: ^8 || ^9
+interface translation project: role_menu
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: Third
+dependencies:
+  - menu_ui

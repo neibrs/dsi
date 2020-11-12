@@ -1,0 +1,11 @@
+name: 'Import'
+type: module
+description: 'The import function for dsi.'
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+interface translation project: dsi_import
+interface translation server pattern: modules/dsi/core/%project/translations/%project.%language.po
+dependencies:
+  - drupal:migrate
+  - migrate_source_xls
+  - migrate_tools

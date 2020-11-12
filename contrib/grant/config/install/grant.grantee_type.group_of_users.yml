@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: group_of_users
+label: Group of users
+description: The grant applies to a group of users.
+target_entity_type_id: user_role

@@ -1,0 +1,12 @@
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.full
+label: 'Full content'
+targetEntityType: media
+cache: true

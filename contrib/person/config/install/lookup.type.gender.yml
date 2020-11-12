@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: gender
+label: 性别
+description: GB_T2261_1 人的性别代码
+organization_classification: business_group

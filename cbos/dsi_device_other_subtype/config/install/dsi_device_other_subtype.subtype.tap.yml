@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device_other_subtype
+id: tap
+label: 'Tap'
+locations:
+  rack: rack
+  server_room: '0'
+  storage_room: '0'
+  blade_chassis: '0'
+  building: '0'

@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - dsi_hardware
+    - options
+id: dsi_hardware.field_blade_size
+field_name: field_blade_size
+entity_type: dsi_hardware
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: full_height
+      label: 'Full Height'
+    -
+      value: half_height
+      label: 'Half Height'
+    -
+      value: double_full_height
+      label: 'Double Full Height'
+    -
+      value: double_half_height
+      label: 'Double Half Height'
+    -
+      value: quarter_height
+      label: 'Quarter Height'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,50 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/organization_hierarchy/src/OrganizationHierarchyListBuilder.php: n/a
+#  modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php: n/a
+#  modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchyViewsData.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/organization_hierarchy/src/OrganizationHierarchyListBuilder.php:20
+msgid "Organization hierarchy ID"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/OrganizationHierarchyListBuilder.php:21 modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:80
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:95
+msgid "Version"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:110
+msgid "Organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchy.php:130
+msgid "Subordinates"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchyViewsData.php:19
+msgid "Operations bulk form"
+msgstr ""
+
+#: modules/dsi/contrib/organization_hierarchy/src/Entity/OrganizationHierarchyViewsData.php:20
+msgid "Add a form element that lets you run operations on multiple items."
+msgstr ""
+

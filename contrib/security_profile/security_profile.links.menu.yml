@@ -1,0 +1,12 @@
+
+# Security profile menu items definition
+entity.security_profile.collection:
+  title: 'Security profile list'
+  route_name: entity.security_profile.collection
+  parent: system.admin_structure
+  weight: 100
+
+security_profile.admin.structure.settings:
+  title: 'Security profile settings'
+  route_name: security_profile.settings
+  parent: system.admin_structure

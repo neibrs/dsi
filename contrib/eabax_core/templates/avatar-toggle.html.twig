@@ -1,0 +1,41 @@
+<li class="dropdown user user-menu">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <img src="{{ content.avatar }}" class="user-image" alt="Avatar">
+    <span class="hidden-xs">{{ content.name }}</span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- User image -->
+    <li class="user-header">
+      <img src="{{ content.avatar }}" class="img-circle" alt="Avatar">
+
+      <p style="word-wrap:break-word;">
+        {% trans %} Welcome to {{ content.name }} {% endtrans %}
+        <small>{% trans %} Since from {{ content.since }} .{% endtrans %}</small>
+      </p>
+    </li>
+    <!-- Menu Body -->
+    <li class="user-body">
+      <div class="row">
+        <div class="col-xs-4 text-center">
+          <a href="#">{{ 'Followers'|t }}</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">{{ 'Sales'|t }}</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">{{ 'Friends'|t }}</a>
+        </div>
+      </div>
+      <!-- /.row -->
+    </li>
+    <!-- Menu Footer-->
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="{{ path("user.page") }}" class="btn btn-default btn-flat"> {{ 'Profile'|t }}</a>
+      </div>
+      <div class="pull-right">
+        <a href="{{ path("user.logout") }}" class="btn btn-default btn-flat">{{ 'Sign out' |t}}</a>
+      </div>
+    </li>
+  </ul>
+</li>

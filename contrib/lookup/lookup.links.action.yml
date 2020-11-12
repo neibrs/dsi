@@ -1,0 +1,24 @@
+entity.lookup.add_form:
+  route_name: entity.lookup.add_page
+  title: 'Add'
+  appears_on:
+    - entity.lookup.collection
+entity.lookup_type.add_form:
+  route_name: entity.lookup_type.add_form
+  title: 'Add'
+  appears_on:
+    - entity.lookup_type.collection
+
+entity.lookup_type.lookup.add_form:
+  route_name: entity.lookup.add_form
+  title: 'Add'
+  appears_on:
+    - entity.lookup_type.lookup
+
+entity.lookup.import_form:
+  route_name: entity.lookup.import_form
+  title: 'Import'
+  route_parameters:
+    entity_type_id: lookup
+  appears_on:
+    - entity.lookup_type.lookup

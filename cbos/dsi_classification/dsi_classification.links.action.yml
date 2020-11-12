@@ -1,0 +1,10 @@
+entity.dsi_classification.add_form:
+  route_name: entity.dsi_classification.add_form
+  title: 'Add'
+  appears_on:
+    - entity.dsi_classification.collection
+entity.dsi_classification_type.add_form:
+  route_name: entity.dsi_classification_type.add_form
+  title: 'Add type'
+  appears_on:
+    - entity.dsi_classification_type.collection

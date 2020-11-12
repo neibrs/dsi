@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.s07_traditional
+label: 'Size 07 traditional 4:3'
+targetEntityType: media
+cache: true

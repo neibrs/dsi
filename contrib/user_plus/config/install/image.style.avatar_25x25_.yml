@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - user_plus
+name: avatar_25x25_
+label: Avatar(25x25)
+effects:
+  2d3a215f-21dc-4260-970b-e80910f3535b:
+    uuid: 2d3a215f-21dc-4260-970b-e80910f3535b
+    id: image_scale
+    weight: 1
+    data:
+      width: 25
+      height: 25
+      upscale: true

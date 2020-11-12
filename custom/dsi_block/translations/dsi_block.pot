@@ -1,0 +1,42 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/custom/dsi_block/dsi_block.module: n/a
+#  modules/dsi/custom/dsi_block/src/Plugin/Block/BrandSidebarBlock.php: n/a
+#  modules/dsi/custom/dsi_block/src/Plugin/Block/HeaderTopBlock.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/custom/dsi_block/dsi_block.module:22
+msgid "About"
+msgstr ""
+
+#: modules/dsi/custom/dsi_block/dsi_block.module:23
+msgid "The theme blocks for themes."
+msgstr ""
+
+#: modules/dsi/custom/dsi_block/src/Plugin/Block/BrandSidebarBlock.php:32
+msgid "Site logo mini"
+msgstr ""
+
+#: modules/dsi/custom/dsi_block/src/Plugin/Block/BrandSidebarBlock.php:55
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/custom/dsi_block/src/Plugin/Block/HeaderTopBlock.php:41
+msgid "@login || @register"
+msgstr ""
+

@@ -1,0 +1,2 @@
+#entity_plus.entity_action:
+#  deriver: \Drupal\entity_plus\Plugin\Derivative\EntityLocalAction

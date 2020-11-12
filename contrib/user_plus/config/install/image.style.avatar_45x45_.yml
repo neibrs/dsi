@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - user_plus
+name: avatar_45x45_
+label: Avatar(45x45)
+effects:
+  97a7c469-1c3d-4e3e-a435-3396af1cd0f0:
+    uuid: 97a7c469-1c3d-4e3e-a435-3396af1cd0f0
+    id: image_scale
+    weight: 1
+    data:
+      width: 45
+      height: 45
+      upscale: true

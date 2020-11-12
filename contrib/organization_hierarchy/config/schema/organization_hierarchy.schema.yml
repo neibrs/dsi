@@ -1,0 +1,7 @@
+organization_hierarchy.settings:
+  type: config_object
+  label: 'Organization hierarchy settings'
+  mapping:
+    default_hierarchy:
+      type: string
+      label: 'Default hierarchy'

@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_contact.module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_contact_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_contact module.
+    case 'help.page.dsi_contact':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The contacts.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info() for crm_core.....
+ */
+function dsi_contact_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+  switch ($entity_type->id()) {
+    case 'crm_core_individual':
+    case 'crm_core_organization':
+      $fields['contact'] = BaseFieldDefinition::create('entity_reference')
+        ->setLabel(t('Contact'))
+        ->setSetting('target_type', $entity_type->id())
+        ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+        ->setDisplayOptions('view', [
+          'type' => 'entity_reference_label',
+          'weight' => 6,
+        ])
+        ->setDisplayOptions('form', [
+          'type' => 'entity_reference_autocomplete',
+          'weight' => 6,
+          'settings' => [
+            'match_operator' => 'CONTAINS',
+            'size' => '60',
+            'placeholder' => '',
+          ],
+        ])
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE);
+      break;
+  }
+  return $fields;
+}

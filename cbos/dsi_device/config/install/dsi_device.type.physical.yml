@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: physical
+label: 'Physical'
+classifications:
+  blade_chassis: '0'
+  in_service: in_service
+  network_device: '0'
+  virtual_host: '0'

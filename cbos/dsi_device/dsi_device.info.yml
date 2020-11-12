@@ -1,0 +1,10 @@
+name: 'Device'
+type: module
+description: 'The device.'
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+interface translation project: dsi_device
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+dependencies:
+  - dsi_classification
+  - dsi_lookup

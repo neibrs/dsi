@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: blade
+label: 'Blade'
+classifications:
+  in_service: in_service
+  network_device: '0'
+  virtual_host: '0'

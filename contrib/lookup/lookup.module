@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains lookup.module.
+ */
+
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\field\FieldConfigInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function lookup_theme() {
+  $theme = [];
+  $theme['lookup'] = [
+    'render element' => 'elements',
+    'file' => 'lookup.page.inc',
+    'template' => 'lookup',
+  ];
+  $theme['lookup_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'lookup.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function lookup_theme_suggestions_lookup(array $variables) {
+  $suggestions = [];
+
+  $entity = $variables['elements']['#lookup'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'lookup__' . $sanitized_view_mode;
+  $suggestions[] = 'lookup__' . $entity->bundle();
+  $suggestions[] = 'lookup__' . $entity->bundle() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function lookup_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+  // 为 lookup 的引用字段设置默认的 widget 为 options_select.
+  if ($form_display->isNew() || $form_display->getMode() != $context['form_mode']) {
+    $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions($form_display->getTargetEntityTypeId(), $form_display->getTargetBundle());
+    foreach ($form_display->getComponents() as $name => $options) {
+      if (isset($definitions[$name]) && $definitions[$name] instanceof FieldConfigInterface) {
+        $storage_definition = $definitions[$name]->getFieldStorageDefinition();
+        if ($storage_definition->getType() == 'entity_reference' && $storage_definition->getSetting('target_type') == 'lookup') {
+          $options['type'] = 'options_select';
+          $form_display->setComponent($name, $options);
+        }
+      }
+    }
+  }
+
+}

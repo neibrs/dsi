@@ -1,0 +1,6 @@
+entity.quick_code_type.collection:
+  title: Quick code
+  route_name: entity.quick_code_type.collection
+  description: 'Providing lists of valid values.'
+  parent: eabax_core.implementor.data_modeling
+  weight: -1

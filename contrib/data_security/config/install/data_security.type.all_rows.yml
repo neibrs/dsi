@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+label: All rows
+id: all_rows
+description: Indicates that the set of functions is being granted for all rows of the object (for a function security grant).

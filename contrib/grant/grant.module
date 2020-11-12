@@ -1,0 +1,84 @@
+<?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function grant_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'entity.grant.collection':
+      return '<p>' . t('Use this page to manage <a href=":grant_help">grants</a>. Grants are used to manage user access to product functionality.', [':grant_help' => Url::fromRoute('help.help_topic', ['id' => 'grant.grants'])->toString()]) . '</p>';
+    case 'entity.grant.add_page':
+      return '<p>' . t('Select grantee type:') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function grant_theme() {
+  $theme = [];
+  $theme['grant'] = [
+    'render element' => 'elements',
+    'file' => 'grant.page.inc',
+    'template' => 'grant',
+  ];
+  $theme['grant_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'grant.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function grant_theme_suggestions_grant(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#grant'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'grant__' . $sanitized_view_mode;
+  $suggestions[] = 'grant__' . $entity->bundle();
+  $suggestions[] = 'grant__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'grant__' . $entity->id();
+  $suggestions[] = 'grant__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function grant_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['user_role']->setClass('Drupal\grant\Entity\Role');
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function grant_entity_extra_field_info() {
+  $extra = [];
+
+  // Permission set.
+  $extra['permission_set']['permission_set']['view']['grants'] = [
+    'label' => t('Grants'),
+    'weight' => 0,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for permission_set.
+ */
+function grant_permission_set_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('grants')) {
+    // TODO
+  }
+}

@@ -1,0 +1,365 @@
+<?php
+
+namespace Drupal\person\Entity;
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityChangedTrait;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
+use Drupal\organization\Entity\EffectiveDatesBusinessGroupEntity;
+use Drupal\person\Plugin\Field\AgeFieldItemList;
+
+/**
+ * Defines the Person entity.
+ *
+ * @ingroup person
+ *
+ * @ContentEntityType(
+ *   id = "person",
+ *   label = "人员",
+ *   label_collection = @Translation("Persons"),
+ *   bundle_label = @Translation("Person type"),
+ *   handlers = {
+ *     "storage" = "Drupal\person\PersonStorage",
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "list_builder" = "Drupal\person\PersonListBuilder",
+ *     "views_data" = "Drupal\person\Entity\PersonViewsData",
+ *     "translation" = "Drupal\person\PersonTranslationHandler",
+ *
+ *     "form" = {
+ *       "default" = "Drupal\person\Form\PersonForm",
+ *       "add" = "Drupal\person\Form\PersonForm",
+ *       "edit" = "Drupal\person\Form\PersonForm",
+ *       "delete" = "Drupal\person\Form\PersonDeleteForm",
+ *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm"
+ *     },
+ *     "access" = "Drupal\person\PersonAccessControlHandler",
+ *     "route_provider" = {
+ *       "html" = "Drupal\person\PersonHtmlRouteProvider",
+ *     },
+ *     "inline_form" = "Drupal\person\Form\PersonInlineForm",
+ *   },
+ *   base_table = "person",
+ *   data_table = "person_field_data",
+ *   translatable = TRUE,
+ *   admin_permission = "administer persons",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "bundle" = "type",
+ *     "label" = "name",
+ *     "uuid" = "uuid",
+ *     "langcode" = "langcode",
+ *     "status" = "status",
+ *     "published" = "status",
+ *   },
+ *   links = {
+ *     "canonical" = "/person/{person}",
+ *     "add-page" = "/person/add",
+ *     "add-form" = "/person/add/{person_type}",
+ *     "edit-form" = "/person/{person}/edit",
+ *     "delete-form" = "/person/{person}/delete",
+ *     "delete-multiple-form" = "/person/delete",
+ *     "collection" = "/person",
+ *   },
+ *   bundle_entity_type = "person_type",
+ *   field_ui_base_route = "entity.person_type.edit_form",
+ *   common_reference_target = TRUE,
+ * )
+ */
+class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterface {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getName() {
+    return $this->get('name')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setName($name) {
+    $this->set('name', $name);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getOrganization() {
+    return $this->get('organization')->entity;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getOrganizationByClassification($classification) {
+    if ($organization = $this->getOrganization()) {
+      return $organization->getByClassification($classification);
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+    $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['number'] = BaseFieldDefinition::create('code')
+      ->setLabel(t('Number', [], ['context' => 'Person']))
+      ->setSetting('max_length', 32)
+      ->setSetting('encoding_rules', \Drupal::config('person.settings')->get('encoding_rules'))
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => -30,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -30,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Name'))
+      ->setRequired(TRUE)
+      ->setSetting('max_length', 32)
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => -20,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -20,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['pinyin'] = BaseFieldDefinition::create('pinyin_shortcode')
+      ->setLabel(t('Pinyin shortcode'))
+      ->setSetting('source_field', 'name');
+
+    $fields['type']
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => -10,
+        'label' => 'inline',
+        'settings' => [
+          'link' => FALSE,
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => -10,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['people_group'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Person group'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['people_group' => 'people_group'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['identify_number'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Identify number'))
+      ->setSetting('max_length', 16)
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['nationality'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Nationality'))
+      ->setSetting('max_length', 16)
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['gender'] = BaseFieldDefinition::create('list_integer')
+      ->setLabel(t('Gender'))
+      ->setSetting('allowed_values', [
+        1 => t('Male'),
+        2 => t('Female'),
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'list_default',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    // TODO title???
+
+    $fields['birth_date'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Birth date'))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
+      ->setDisplayOptions('view', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+        'label' => 'inline',
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['marital_status'] = BaseFieldDefinition::create('list_integer')
+      ->setLabel(t('Marital status'))
+      ->setSetting('allowed_values', [
+        1 => 'Married',
+        2 => 'Single',
+        3 => 'Divorced',
+        4 => 'Widowed',
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'list_default',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['phone'] = BaseFieldDefinition::create('telephone')
+      ->setLabel(t('Phone'))
+      ->setSettings([
+        'max_length' => 20,
+        'text_processing' => 0,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'basic_string',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'telephone_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['email'] = BaseFieldDefinition::create('email')
+      ->setLabel(t('Email'))
+      ->setDisplayOptions('view', [
+        'type' => 'basic_string',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'email_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['organization'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Organization'))
+      ->setSetting('target_type', 'organization');
+
+    $fields['picture'] = BaseFieldDefinition::create('image')
+      ->setLabel(t('Pictures'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('view', [
+        'type' => 'image',
+        'weight' => 0,
+        'label' => 'inline',
+        'settings' => [
+          'image_style' => '80x',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'image_image',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    if ($uuid = \Drupal::state()->get('default_person_picture_uuid')) {
+      $fields['picture']->setSetting('default_image', [
+        'uuid' => $uuid,
+        'alt' => t('Person photo'),
+        'title' => t('Person photo'),
+        'width' => 610,
+        'height' => 610,
+      ]);
+    }
+
+    $fields['attachments'] = BaseFieldDefinition::create('file')
+      ->setLabel(t('Attachments'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('file_extensions', 'doc docx xls xlsx jpeg png txt')
+      ->setDisplayOptions('view', [
+        'type' => 'file_default',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'file_generic',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    return $fields;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getOperatingUnits() {
+    $organizations = [];
+
+    if ($current_operating_unit = $this->getOrganizationByClassification('operating_unit')) {
+      $organizations[$current_operating_unit->id()] = $current_operating_unit;
+    }
+
+    // TODO add assigned operating units.
+    return $organizations;
+  }
+
+}

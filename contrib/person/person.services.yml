@@ -1,0 +1,14 @@
+services:
+  access_check.person_type:
+    class: Drupal\person\Access\PersonTypeCheck
+    tags:
+      - { name: access_check, applies_to: _person_type }
+
+  person.manager:
+    class: Drupal\person\PersonManager
+    arguments: ['@entity_type.manager', '@current_user']
+
+  person.breadcrumb:
+    class: Drupal\person\PersonBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1002 }

@@ -1,0 +1,4 @@
+commerce_product.user:
+  path: '/user/{user}/server'
+  requirements:
+    _user_is_logged_in: 'TRUE'

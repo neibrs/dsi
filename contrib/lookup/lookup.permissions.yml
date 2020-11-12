@@ -1,0 +1,8 @@
+administer lookups:
+  title: 'Administer lookups'
+
+maintain lookups:
+  title: 'Maintain lookups'
+
+view lookups:
+  title: 'View lookups'

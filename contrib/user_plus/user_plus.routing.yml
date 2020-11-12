@@ -1,0 +1,7 @@
+entity.user.password_form:
+  path: '/user/{user}/password'
+  defaults:
+    _entity_form: 'user.password'
+    _title: 'Change password'
+  requirements:
+    _entity_access: 'user.update'

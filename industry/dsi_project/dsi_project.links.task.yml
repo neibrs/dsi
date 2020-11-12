@@ -1,0 +1,21 @@
+# Project routing definition
+dsi_project.settings_tab:
+  route_name: dsi_project.settings
+  title: 'Settings'
+  base_route: dsi_project.settings
+
+entity.dsi_project.canonical:
+  route_name: entity.dsi_project.canonical
+  base_route: entity.dsi_project.canonical
+  title: 'View'
+
+entity.dsi_project.edit_form:
+  route_name: entity.dsi_project.edit_form
+  base_route: entity.dsi_project.canonical
+  title: 'Edit'
+
+entity.dsi_project.delete_form:
+  route_name:  entity.dsi_project.delete_form
+  base_route:  entity.dsi_project.canonical
+  title: Delete
+  weight: 10

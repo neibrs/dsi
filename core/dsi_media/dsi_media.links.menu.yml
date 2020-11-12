@@ -1,0 +1,5 @@
+dsi_media.settings:
+  title: 'Dsi Media settings'
+  description: 'Configuring Dsi Media.'
+  parent: dsi_core.settings_index
+  route_name: dsi_media.settings

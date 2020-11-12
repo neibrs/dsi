@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: person_phone_type
+label: Person phone type
+organization_classification: business_group

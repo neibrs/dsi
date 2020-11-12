@@ -1,0 +1,21 @@
+import.settings:
+  type: config_object
+  label: 'Import settings'
+  mapping:
+    default_value_fields:
+      type: sequence
+      label: 'Entity fields'
+      sequence:
+        type: sequence
+        label: 'Fields'
+        sequence:
+          type: string
+          label: 'Field'
+
+action.configuration.excel_migrate_import:
+  type: mapping
+  label: 'Import selected excel migrate'
+  mapping:
+    update:
+      type: boolean
+      label: 'Update'

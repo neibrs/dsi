@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.s09
+label: 'Size 09 auto'
+targetEntityType: media
+cache: true

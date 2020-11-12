@@ -1,0 +1,15 @@
+name: 'User Plus'
+type: module
+description: 'User Plus'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: user_plus
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - drupal:help_topics
+  - drupal:image
+  - drupal:user
+  - field_group
+  - organization
+  - pinyin

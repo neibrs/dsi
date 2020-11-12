@@ -1,0 +1,29 @@
+administer data securities:
+  title: 'Administer Data securities'
+
+maintain data securities:
+  title: 'Maintain Data securities'
+
+view data securities:
+  title: 'View Data securities'
+
+add instance set entities:
+  title: 'Create new Instance set entities'
+
+administer instance set entities:
+  title: 'Administer Instance set entities'
+  description: 'Allow to access the administration form to configure Instance set entities.'
+  restrict access: true
+
+delete instance set entities:
+  title: 'Delete Instance set entities'
+
+edit instance set entities:
+  title: 'Edit Instance set entities'
+
+view published instance set entities:
+  title: 'View published Instance set entities'
+
+view unpublished instance set entities:
+  title: 'View unpublished Instance set entities'
+

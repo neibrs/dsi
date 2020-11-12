@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: contact
+label: Contact
+system_type: external
+is_system: true
+is_employee: false

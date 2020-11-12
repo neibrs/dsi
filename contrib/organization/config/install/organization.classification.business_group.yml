@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: business_group
+label: 'Business group'
+description: 'The highest level in the organization structure, such as the consolidated enterprise, a major division, or an operation company.'

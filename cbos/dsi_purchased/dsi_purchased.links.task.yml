@@ -1,0 +1,21 @@
+# Purchased routing definition
+dsi_purchased.settings_tab:
+  route_name: dsi_purchased.settings
+  title: 'Settings'
+  base_route: dsi_purchased.settings
+
+entity.dsi_purchased.canonical:
+  route_name: entity.dsi_purchased.canonical
+  base_route: entity.dsi_purchased.canonical
+  title: 'View'
+
+entity.dsi_purchased.edit_form:
+  route_name: entity.dsi_purchased.edit_form
+  base_route: entity.dsi_purchased.canonical
+  title: 'Edit'
+
+entity.dsi_purchased.delete_form:
+  route_name:  entity.dsi_purchased.delete_form
+  base_route:  entity.dsi_purchased.canonical
+  title: Delete
+  weight: 10

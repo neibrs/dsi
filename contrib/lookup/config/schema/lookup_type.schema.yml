@@ -1,0 +1,15 @@
+lookup.type.*:
+  type: config_entity
+  label: 'Lookup type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    description:
+      type: text
+      label: 'Description'

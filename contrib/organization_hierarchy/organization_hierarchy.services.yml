@@ -1,0 +1,5 @@
+services:
+  organization_hierarchy.route_subscriber:
+    class: Drupal\organization_hierarchy\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

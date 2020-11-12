@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: virtual
+label: Virtual
+target_entity_type_id: dsi_device
+target_entity_bundle_id: virtual
+collections:
+  in_service: in_service
+  network_device: '0'

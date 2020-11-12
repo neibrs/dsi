@@ -1,0 +1,223 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityDeleteForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:31
+msgid "Activities"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:42
+msgid "Imported by feeds."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:158 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:33
+msgid "Activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:159
+msgid "Select the type of activities to be created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:166
+msgid "Author"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:167
+msgid "Select the author of the activities to be created - leave empty to assign \"anonymous\"."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:177
+msgid "Expire activities"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:179
+msgid "Select after how much time activities should be deleted. The activity's published date will be used for determining the activity's age, see Mapping settings."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:249 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:32 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:79
+msgid "Title"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:250
+msgid "The title of the CRM Activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:254
+msgid "Activity ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:255
+msgid "The activity_id of the activity. NOTE: use this feature with care, activity ids are usually assigned by Drupal."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:259
+msgid "User ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:260
+msgid "The Drupal user ID of the activity author."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:263
+msgid "Created date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:264
+msgid "The UNIX time when a activity has been created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:272
+msgid "Feed source"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:273
+msgid "The activity type created by this processor is a Feed Node, it represents a source itself. Depending on the fetcher selected on the importer \"@importer\", this field is expected to be for example a URL or a path to a file."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:31
+msgid "Activity Date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:65
+msgid "There are no activities available."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php:25 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:28
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php:28 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:49
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:22
+msgid "Activity preview field"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:24
+msgid "Activity preview"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:25
+msgid "Provide preview of activity"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:73
+msgid "Type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:74
+msgid "The activity type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:80
+msgid "The title of this activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:96
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:97
+msgid "The time that the activity was created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:105
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:106
+msgid "The time that the activity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:109
+msgid "Participants"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:132
+msgid "Date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:149
+msgid "Notes"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityDeleteForm.php:17
+msgid "@type %title has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:24
+msgid "Activity @title edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:33
+msgid "Activity @title created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:51
+msgid "Save Activity"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:31
+msgid "The human-readable name of this activity type. It is recommended that this name begin with a capital letter and contain only letters, numbers, and spaces. This name must be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:45
+msgid "A unique machine-readable name for this activity type. It must only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:52
+msgid "Describe this activity type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:58
+msgid "Display settings"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:63
+msgid "Activity string"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:64
+msgid "Enter text describing the relationship between the contact and this activity. For example: Someone Somewhere registered for this activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:76
+msgid "Save activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:77
+msgid "Delete activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:92
+msgid "The activity type %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:95
+msgid "The activity type %name has been added."
+msgstr ""
+

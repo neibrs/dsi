@@ -1,0 +1,21 @@
+# Record routing definition
+dsi_record.settings_tab:
+  route_name: dsi_record.settings
+  title: 'Settings'
+  base_route: dsi_record.settings
+
+entity.dsi_record.canonical:
+  route_name: entity.dsi_record.canonical
+  base_route: entity.dsi_record.canonical
+  title: 'View'
+
+entity.dsi_record.edit_form:
+  route_name: entity.dsi_record.edit_form
+  base_route: entity.dsi_record.canonical
+  title: 'Edit'
+
+entity.dsi_record.delete_form:
+  route_name:  entity.dsi_record.delete_form
+  base_route:  entity.dsi_record.canonical
+  title: Delete
+  weight: 10

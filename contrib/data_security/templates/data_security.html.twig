@@ -1,0 +1,22 @@
+{#
+/**
+ * @file data_security.html.twig
+ * Default theme implementation to present Data security data.
+ *
+ * This template is used when viewing Data security pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_data_security()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('data_security') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

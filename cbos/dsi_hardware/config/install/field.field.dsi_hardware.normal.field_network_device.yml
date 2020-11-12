@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - dsi_hardware.type.normal
+    - field.storage.dsi_hardware.field_network_device
+id: dsi_hardware.normal.field_network_device
+field_name: field_network_device
+entity_type: dsi_hardware
+bundle: normal
+label: 'Network Device'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,281 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/eabax/core/report/report.info.yml: n/a
+#  modules/eabax/core/report/src/Entity/Report.php: n/a
+#  modules/eabax/core/report/report.links.action.yml: n/a
+#  modules/eabax/core/report/report.routing.yml: n/a
+#  modules/eabax/core/report/config/schema/report.schema.yml: n/a
+#  modules/eabax/core/report/src/Plugin/Report/SimpleChart.php: n/a
+#  modules/eabax/core/report/src/Plugin/Report/CrossTable.php: n/a
+#  modules/eabax/core/report/report.permissions.yml: n/a
+#  modules/eabax/core/report/src/ReportListBuilder.php: n/a
+#  modules/eabax/core/report/src/Plugin/ReportPluginBase.php: n/a
+#  modules/eabax/core/report/src/Form/ReportForm.php: n/a
+#  modules/eabax/core/report/src/Form/ReportColumnsForm.php: n/a
+#  modules/eabax/core/report/js/report_to_print.js: n/a
+#  modules/eabax/core/report/src/Controller/ReportController.php: n/a
+#  modules/eabax/core/report/src/Form/ReportDeleteForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-04 11:10+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/eabax/core/report/report.info.yml:0;0
+msgid "Reports"
+msgstr ""
+
+#: modules/eabax/core/report/src/Entity/Report.php:9
+msgctxt "Sheet"
+msgid "Reports"
+msgstr ""
+
+#: modules/eabax/core/report/report.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/eabax/core/report/report.links.action.yml:0
+msgid "Add"
+msgstr ""
+
+#: modules/eabax/core/report/report.links.action.yml:0 modules/eabax/core/report/report.routing.yml:0 modules/eabax/core/report/config/schema/report.schema.yml:0;0 modules/eabax/core/report/src/Plugin/Report/SimpleChart.php:42
+msgid "Columns"
+msgstr ""
+
+#: modules/eabax/core/report/report.links.action.yml:0 modules/eabax/core/report/report.routing.yml:0 modules/eabax/core/report/config/schema/report.schema.yml:0 modules/eabax/core/report/src/Plugin/Report/CrossTable.php:41
+msgid "Rows"
+msgstr ""
+
+#: modules/eabax/core/report/report.permissions.yml:0
+msgid "Administer reports"
+msgstr ""
+
+#: modules/eabax/core/report/report.permissions.yml:0
+msgid "Maintain reports"
+msgstr ""
+
+#: modules/eabax/core/report/report.permissions.yml:0
+msgid "View reports"
+msgstr ""
+
+#: modules/eabax/core/report/report.routing.yml:0
+msgid "Report conditions"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0;0
+msgid "Report settings"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Base tables"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0;0 modules/eabax/core/report/src/ReportListBuilder.php:21 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:113
+msgid "Base table"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Report config"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "ID"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0 modules/eabax/core/report/src/ReportListBuilder.php:18 modules/eabax/core/report/src/Form/ReportForm.php:60
+msgid "Category"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0 modules/eabax/core/report/src/ReportListBuilder.php:20 modules/eabax/core/report/src/Form/ReportForm.php:89
+msgid "Plugin"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Report item(Column, Row)"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Parent"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0 modules/eabax/core/report/src/Form/ReportColumnsForm.php:164
+msgid "Weight"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Filter"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0;0
+msgid "Field"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Sub tree"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:222
+msgid "Style"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Arguments"
+msgstr ""
+
+#: modules/eabax/core/report/config/schema/report.schema.yml:0
+msgid "Filters"
+msgstr ""
+
+#: modules/eabax/core/report/js/report_to_print.js:0
+msgid "Print"
+msgstr ""
+
+#: modules/eabax/core/report/src/ReportListBuilder.php:19 modules/eabax/core/report/src/Entity/Report.php:9
+msgctxt "Sheet"
+msgid "Report"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:67
+msgid "Field setting: @column"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:93;121 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:133;172
+msgid "-Select-"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:111 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:155
+msgid "Statistics field"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:146 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:197
+msgid "Statistics relationship"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:153 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:207
+msgid "Statistics method"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:155 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:209
+msgid "Count"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:156 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:210
+msgid "Count(distinct)"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:157 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:211
+msgid "Sum"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:158 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:212
+msgid "Average"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:159 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:213
+msgid "Minimum"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:160 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:214
+msgid "Maximum"
+msgstr ""
+
+#: modules/eabax/core/report/src/Controller/ReportController.php:161 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:215
+msgid "Standard deviation"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:126
+msgid "Cancel"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:160
+msgid "Item"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:163
+msgid "Condition"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:165
+msgid "Operations"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:269 modules/eabax/core/report/src/Plugin/ReportPluginBase.php:411
+msgid "Edit"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:283
+msgid "Field setting"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportColumnsForm.php:294 modules/eabax/core/report/src/Form/ReportDeleteForm.php:32
+msgid "Delete"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportForm.php:66
+msgctxt "report"
+msgid "Label"
+msgstr ""
+
+#: modules/eabax/core/report/src/Form/ReportForm.php:128
+msgid "The configuration has been saved."
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/ReportPluginBase.php:114
+msgid "Data source of the report."
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/ReportPluginBase.php:156
+msgid "Report statistical results use statistical fields as data."
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/ReportPluginBase.php:198
+msgid "The relationship between the base table and the statistical field."
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/ReportPluginBase.php:391
+msgid "Conditions"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/CrossTable.php:50
+msgid "Stacked bar chart"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/CrossTable.php:54
+msgid "Table"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/CrossTable.php:10
+msgid "Cross table"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/SimpleChart.php:51
+msgid "Bar chart"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/SimpleChart.php:55
+msgid "Donut chart"
+msgstr ""
+
+#: modules/eabax/core/report/src/Plugin/Report/SimpleChart.php:12
+msgid "Simple chart"
+msgstr ""
+

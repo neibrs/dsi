@@ -1,0 +1,9 @@
+name: 'Dsi Media Twitter'
+description: 'Manages default config for Tweet media type.'
+type: module
+package: Dsi
+core_version_requirement: ^8 || ^9
+dependencies:
+  - dsi_media:dsi_media
+  - media_entity_twitter:media_entity_twitter
+  - dsi_media:entity_browser_generic_embed

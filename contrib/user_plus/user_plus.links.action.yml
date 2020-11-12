@@ -1,0 +1,13 @@
+entity.permission_set.add_form:
+  route_name: entity.permission_set.add_form
+  title: 'Add'
+  appears_on:
+    - entity.permission_set.collection
+entity.permission_set.import:
+  title: 'Import'
+  route_name: import.entity_import
+  route_parameters:
+    entity_type_id: permission_set
+  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+  appears_on:
+    - entity.permission_set.collection

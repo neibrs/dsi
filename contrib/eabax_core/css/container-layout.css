@@ -1,0 +1,99 @@
+@media screen and (min-width: 768px) {
+  .container-2cols,
+  .container-2cols-inline,
+  .container-2cols .details-wrapper,
+  .container-3cols,
+  .container-3cols-inline,
+  .container-3cols .details-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  /* view display */
+  div.container-2cols > div.field,
+  div.container-2cols-inline > div,
+  div.container-3cols > div.field,
+  div.container-3cols-inline > div.field {
+    flex: 0 1 100%;
+  }
+
+  details.container-2cols .field {
+    flex: 0 1 50%;
+  }
+
+  /* form display */
+
+  div.container-2cols > div.form-item,
+  div.container-2cols-inline > div.form-item,
+  div.container-3cols > div.form-item,
+  div.container-3cols-inline > div.form-item,
+  details.container-3cols > .details-wrapper > div.form-item {
+    flex: 0 1 100%;
+  }
+
+  .container-2cols .form-wrapper {
+    width: 50%;
+  }
+  .container-3cols .form-wrapper {
+    width: 32.33%;
+  }
+
+  .container-2cols-inline .form-item,
+  .container-3cols-inline .form-item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  div.container-2cols > div.field,
+  div.container-2cols-inline > div {
+    flex: 0 1 50%;
+  }
+  div.container-3cols > div.field,
+  div.container-3cols-inline > div.field {
+    flex: 0 1 33.33%;
+  }
+
+  div.container-2cols > div.form-wrapper,
+  div.container-2cols-inline > div.form-wrapper {
+    flex: 0 1 50%;
+  }
+
+  div.container-3cols > div.form-wrapper,
+  div.container-3cols > div.form-item,
+  div.container-3cols-inline > div.form-wrapper,
+  div.container-3cols-inline > div.form-item,
+  details.container-3cols > .details-wrapper > div.form-item,
+  div.container-3cols-inline > div.field {
+    flex: 0 1 32.33%;
+  }
+  div.container-2cols-inline .form-item,
+  div.container-3cols-inline .form-item {
+    margin: 0 0.5%;
+  }
+  .container-3cols .action,
+  .container-3cols .field--widget-boolean-checkbox {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .container-2cols-inline .form-item label,
+  .container-3cols-inline .form-item label {
+    width: 20%;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .container-2cols-inline .form-item > input.form-text,
+  .container-3cols-inline .form-item > input.form-text {
+    width: 78%;
+  }
+  .container-2cols-inline .form-item > input.form-checkbox,
+  .container-3cols-inline .form-item > input.form-checkbox {
+    margin-left: 20%;
+  }
+
+}
+

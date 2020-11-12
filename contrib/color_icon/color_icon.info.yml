@@ -1,0 +1,8 @@
+name: 'Color icon'
+type: module
+description: 'Color icon'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: color_icon
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'

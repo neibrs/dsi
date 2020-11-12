@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - dsi_hardware
+    - options
+id: dsi_hardware.field_width_ratio
+field_name: field_width_ratio
+entity_type: dsi_hardware
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1_1'
+      label: '1'
+    -
+      value: '1_2'
+      label: 1/2
+    -
+      value: '1_3'
+      label: 1/3
+    -
+      value: '1_4'
+      label: 1/4
+    -
+      value: '1_5'
+      label: 1/5
+    -
+      value: '1_6'
+      label: 1/6
+    -
+      value: '1_7'
+      label: 1/7
+    -
+      value: '1_8'
+      label: 1/8
+    -
+      value: '1_9'
+      label: 1/9
+    -
+      value: '1_10'
+      label: 1/10
+    -
+      value: '1_20'
+      label: 1/20
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

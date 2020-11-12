@@ -1,0 +1,48 @@
+eabax_core.implementor.data_modeling:
+  title: Business modeling
+  route_name: eabax_core.data_modeling
+  menu_name: role-menu-implementor
+  weight: 10
+
+eabax_core.implementor.implementation:
+  title: Implementation
+  route_name: eabax_core.implementation
+  menu_name: role-menu-implementor
+  weight: 20
+
+eabax_core.implementor.tools:
+  title: Implementor tools
+  route_name: eabax_core.implementation_tools
+  menu_name: role-menu-implementor
+  weight: 30
+
+eabax_core.implementor.workflows:
+  title: 'Define Workflows'
+  route_name: entity.workflow.collection
+  parent: eabax_core.implementor.tools
+  weight: 30
+
+eabax_core.implementor.reports:
+  title: 'Define reports'
+  route_name: entity.view.collection
+  parent: eabax_core.implementor.tools
+  weight: 40
+
+eabax_core.implementor.custom_formatters:
+  title: Custom formatters
+  description: 'Administer custom formatters.'
+  route_name: entity.formatter.collection
+  parent: eabax_core.implementor.tools
+  weight: 60
+
+eabax_core.implementor.translate:
+  title: 'User interface translation'
+  route_name: locale.translate_page
+  parent: eabax_core.implementor.tools
+  weight: 80
+
+eabax_core.implementor.config.sync:
+  title: 'Configuration synchronization'
+  description: 'Import and export your configuration.'
+  route_name: config.sync
+  parent: eabax_core.implementor.tools

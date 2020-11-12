@@ -1,0 +1,141 @@
+<?php
+
+/**
+ * @file
+ * Contains organization.install.
+ */
+
+use Drupal\Core\Config\Entity\ConfigEntityType;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\organization\Entity\Organization;
+
+/**
+ * Implements hook_install().
+ */
+function organization_install() {
+  // Import default fields.
+  $settings = \Drupal::configFactory()->getEditable('import.settings');
+  $default_value_fields = $settings->get('default_value_fields');
+  $default_value_fields['organization']['type'] = 'type';
+  $settings->set('default_value_fields', $default_value_fields)->save();
+
+  user_role_grant_permissions('implementor', [
+    'add organizations',
+    'administer organizations',
+    'edit organizations',
+    'delete organizations',
+    'view organizations',
+  ]);
+
+  // Initialize the first organization
+  $business_group = Organization::create([
+    'type' => 'company',
+    'name' => '默认业务组',
+    'classifications' => [
+      'business_group',
+      'hr_organization',
+      'legal_entity',
+      'operating_unit',
+    ],
+  ]);
+  $business_group->save();
+  \Drupal::configFactory()->getEditable('organization.settings')
+    ->set('default_business_group', $business_group->id())
+    ->save();
+}
+
+/**
+ * Update from 17.12
+ */
+function organization_update_180100() {
+  // Install modules
+  \Drupal::service('module_installer')->install([
+    'config_update',
+    'location',
+  ]);
+
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Add organization_classification entity.
+  $entity_definition_update_manager->installEntityType(new ConfigEntityType([
+    'id' => "organization_classification",
+    'label' => new TranslatableMarkup("Organization classification"),
+    'config_prefix' => "organization_classification",
+    'admin_permission' => "administer site configuration",
+    'entity_keys' => [
+      "id" => "id",
+      "label" => "label",
+      "uuid" => "uuid",
+    ],
+  ]));
+
+  /** @var \Drupal\config_update\ConfigRevertInterface $config_update */
+  $config_update = \Drupal::service('config_update.config_update');
+  $config_update->import('organization_classification', 'business_group');
+  $config_update->import('organization_classification', 'legal_entity');
+  $config_update->import('organization_classification', 'operating_unit');
+  $config_update->import('organization_classification', 'hr_organization');
+
+  // Add classification field.
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Classification'))
+    ->setSetting('target_type', 'organization_classification')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
+  $entity_definition_update_manager
+    ->installFieldStorageDefinition('classification', 'organization', 'organization', $storage_definition);
+
+  // Add business_group field.
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Business group'))
+    ->setSetting('target_type', 'organization');
+  $entity_definition_update_manager
+    ->installFieldStorageDefinition('business_group', 'organization', 'organization', $storage_definition);
+
+  // Add location field.
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Location'))
+    ->setSetting('target_type', 'location');
+  $entity_definition_update_manager
+    ->installFieldStorageDefinition('location', 'organization', 'organization', $storage_definition);
+
+  // Rename parent_id to parent field.
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Parent'))
+    ->setSetting('target_type', 'organization');
+  $entity_definition_update_manager
+    ->installFieldStorageDefinition('parent', 'organization', 'organization', $storage_definition);
+  Database::getConnection()->query('UPDATE {organization_field_data} SET parent = parent_id');
+  $storage_definition = $entity_definition_update_manager
+    ->getFieldStorageDefinition('parent_id', 'organization');
+  if ($storage_definition) {
+    $entity_definition_update_manager->uninstallFieldStorageDefinition($storage_definition);
+  }
+
+  // Remove user_id field.
+  $storage_definition = $entity_definition_update_manager
+    ->getFieldStorageDefinition('user_id', 'organization');
+  if ($storage_definition) {
+    $entity_definition_update_manager->uninstallFieldStorageDefinition($storage_definition);
+  }
+}
+
+/**
+ * Update from 18.02.
+ */
+function organization_update_180300() {
+  \Drupal::service('module_installer')->install([
+    'currency',
+  ]);
+
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Add the currency field.
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Currency'))
+    ->setSetting('target_type', 'currency');
+  $entity_definition_update_manager
+    ->installFieldStorageDefinition('currency', 'organization', 'organization', $storage_definition);
+}

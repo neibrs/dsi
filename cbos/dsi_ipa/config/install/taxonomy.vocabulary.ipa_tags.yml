@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: IP Address Tags
+vid: ipa_tags
+description: 'Use tags to group ip address on similar topics into categories.'
+weight: 0

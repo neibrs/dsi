@@ -1,0 +1,21 @@
+# Contract routing definition
+dsi_contract.settings_tab:
+  route_name: dsi_contract.settings
+  title: 'Settings'
+  base_route: dsi_contract.settings
+
+entity.dsi_contract.canonical:
+  route_name: entity.dsi_contract.canonical
+  base_route: entity.dsi_contract.canonical
+  title: 'View'
+
+entity.dsi_contract.edit_form:
+  route_name: entity.dsi_contract.edit_form
+  base_route: entity.dsi_contract.canonical
+  title: 'Edit'
+
+entity.dsi_contract.delete_form:
+  route_name:  entity.dsi_contract.delete_form
+  base_route:  entity.dsi_contract.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,1228 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/ContactTypeListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationTypeListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Matcher/MatcherListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityDeleteForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/IndividualListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualDeleteForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RelationForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/MergeContactsAction.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/SendEmailAction.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/crm_core_match.module: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Controller/MatcherController.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/RelationListBuilder.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/AddressFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/DateFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/EmailFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/PhoneNumberFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/SelectFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/TextFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/NameFieldHandler.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Entity/Relation.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/UserSyncBatch.php: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleDeleteConfirmForm.php: n/a
+#  modules/dsi/contrib/crm_core/src/CRMCorePermissions.php: n/a
+#  modules/dsi/contrib/crm_core/src/Form/SettingsForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:31
+msgid "Activities"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:42 modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:46
+msgid "Imported by feeds."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:158 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:33
+msgid "Activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:159
+msgid "Select the type of activities to be created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:166 modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:152
+msgid "Author"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:167
+msgid "Select the author of the activities to be created - leave empty to assign \"anonymous\"."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:177
+msgid "Expire activities"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:179
+msgid "Select after how much time activities should be deleted. The activity's published date will be used for determining the activity's age, see Mapping settings."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:249 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:32 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:79
+msgid "Title"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:250
+msgid "The title of the CRM Activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:254
+msgid "Activity ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:255
+msgid "The activity_id of the activity. NOTE: use this feature with care, activity ids are usually assigned by Drupal."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:259 modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:237
+msgid "User ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:260
+msgid "The Drupal user ID of the activity author."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:263 modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:241
+msgid "Created date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:264
+msgid "The UNIX time when a activity has been created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:272 modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:250
+msgid "Feed source"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/legacy/CRMFeedsActivityProcessor.inc:273
+msgid "The activity type created by this processor is a Feed Node, it represents a source itself. Depending on the fetcher selected on the importer \"@importer\", this field is expected to be for example a URL or a path to a file."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:31
+msgid "Activity Date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityListBuilder.php:65
+msgid "There are no activities available."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php:25 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:28 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/ContactTypeListBuilder.php:25 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationTypeListBuilder.php:26 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:103 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:104 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:34 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:37 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:185;243 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:37
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityTypeListBuilder.php:28 modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:49 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/ContactTypeListBuilder.php:28 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationTypeListBuilder.php:29 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:54 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:57 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:51 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Matcher/MatcherListBuilder.php:21
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:22
+msgid "Activity preview field"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:24
+msgid "Activity preview"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/ActivityViewsData.php:25
+msgid "Provide preview of activity"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:73
+msgid "Type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:74
+msgid "The activity type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:80
+msgid "The title of this activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:96 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:88 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:89
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:97
+msgid "The time that the activity was created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:105 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:98 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:99
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:106
+msgid "The time that the activity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:109
+msgid "Participants"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:132
+msgid "Date"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Entity/Activity.php:149
+msgid "Notes"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityDeleteForm.php:17
+msgid "@type %title has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:24
+msgid "Activity @title edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:33
+msgid "Activity @title created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityForm.php:51
+msgid "Save Activity"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:31
+msgid "The human-readable name of this activity type. It is recommended that this name begin with a capital letter and contain only letters, numbers, and spaces. This name must be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:45
+msgid "A unique machine-readable name for this activity type. It must only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:52
+msgid "Describe this activity type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:58
+msgid "Display settings"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:63
+msgid "Activity string"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:64
+msgid "Enter text describing the relationship between the contact and this activity. For example: Someone Somewhere registered for this activity."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:76
+msgid "Save activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:77
+msgid "Delete activity type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:92
+msgid "The activity type %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_activity/src/Form/ActivityTypeForm.php:95
+msgid "The activity type %name has been added."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:33 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:53 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:383
+msgid "Contacts"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:144 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:77
+msgid "Contact type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:145
+msgid "Select the type of contacts to be created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:153
+msgid "Select the author of the contacts to be created - leave empty to assign \"anonymous\"."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:160
+msgid "Expire contacts"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:162
+msgid "Select after how much time contacts should be deleted. The contact's published date will be used for determining the contact's age, see Mapping settings."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:232
+msgid "Contact ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:233
+msgid "The contact_id of the contact. NOTE: use this feature with care, contact ids are usually assigned by Drupal."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:238
+msgid "The Drupal user ID of the contact author."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:242
+msgid "The UNIX time when a contact has been created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/legacy/CRMFeedsContactProcessor.inc:251
+msgid "The contact type created by this processor is a Feed Node, it represents a source itself. Depending on the fetcher selected on the importer \"@importer\", this field is expected to be for example a URL or a path to a file."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/IndividualListBuilder.php:58 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationListBuilder.php:64 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:30 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Matcher/MatcherListBuilder.php:20 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:121
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/IndividualListBuilder.php:61
+msgid "Individual type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/IndividualListBuilder.php:66 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationListBuilder.php:72
+msgid "Updated"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/IndividualListBuilder.php:98
+msgid "There are no individuals available. Add one now."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationListBuilder.php:67
+msgid "Organization type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/OrganizationListBuilder.php:104
+msgid "There are no organizations available. Add one now."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:89
+msgid "The time that the individual was created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:99
+msgid "The time that the individual was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:104
+msgid "Name of the individual."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Individual.php:179 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:176
+msgid "Nameless #@id"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:90
+msgid "The time that the organization was created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Entity/Organization.php:100
+msgid "The time that the organization was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualDeleteForm.php:17
+msgid "The individual %name (%id) has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualForm.php:24
+msgid "The individual %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualForm.php:33
+msgid "The individual %name has been added."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualForm.php:44
+msgid "Save @individual_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:37
+msgid "The human-readable name of this individual type. It is recommended that this name begin with a capital letter and contain only letters, numbers, and spaces. This name must be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:50
+msgid "A unique machine-readable name for this individual type. It must only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:57
+msgid "Describe this individual type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:63 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:66
+msgid "Primary Fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:64
+msgid "Primary fields are used to tell other modules what fields to use for common communications tasks such as sending an email, addressing an envelope, etc. Use the fields below to indicate the primary fields for this individual type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:79 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:82
+msgid "Primary @field field"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:82 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:85
+msgid "--Please Select--"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:95
+msgid "Save individual type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:96
+msgid "Delete individual type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:109 modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:111
+msgid "Invalid machine-readable name. Enter a name other than %invalid."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:132
+msgid "The individual type %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/IndividualTypeForm.php:136
+msgid "The individual type %name has been added."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationForm.php:26
+msgid "The organization %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationForm.php:35
+msgid "The organization %name has been added."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationForm.php:46
+msgid "Save @organization_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:40
+msgid "The human-readable name of this organization type. It is recommended that this name begin with a capital letter and contain only letters, numbers, and spaces. This name must be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:53
+msgid "A unique machine-readable name for this organization type. It must only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:60
+msgid "Describe this organization type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:67
+msgid "Primary fields are used to tell other modules what fields to use for common communications tasks such as sending an email, addressing an envelope, etc. Use the fields below to indicate the primary fields for this organization type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:98
+msgid "Save organization type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:99
+msgid "Delete organization type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:129
+msgid "The organization type %name has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Form/OrganizationTypeForm.php:133
+msgid "The organization type %name has been added."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php:38 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RelationForm.php:46
+msgid "View"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php:39 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:131
+msgid "Edit"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php:40
+msgid "Duplicate"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php:41 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:281 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:165 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:138
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Menu/ContactLocalTaskProvider.php:42
+msgid "Revisions"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/MergeContactsAction.php:210
+msgid "You must select primary contact in table header!"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/MergeContactsAction.php:213
+msgid "Supplied more than one primary contact!"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/MergeContactsAction.php:232
+msgid "You should select contacts of one type to be able to merge them!"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/MergeContactsAction.php:242
+msgid "Field name\\Contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/SendEmailAction.php:128
+msgid "Subject"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/SendEmailAction.php:129
+msgid "The subject of the message."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/SendEmailAction.php:135
+msgid "Message"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_contact/src/Plugin/Action/SendEmailAction.php:136
+msgid "The message that should be sent."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/crm_core_match.module:95
+msgid "Configure matching engines for contacts. Matching engines are used when new contacts are created, allowing CRM Core to identify potential duplicates and prevent additional records from being added to the system. Use this screen to activate / deactivate various matching engines and control the order in which they are applied."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/crm_core_match.module:80
+msgid "CRM Core Match info"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Controller/MatcherController.php:23
+msgid "Edit %matcher matcher"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:38 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/RelationListBuilder.php:81
+msgid "ID"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:41
+msgid "ID of the matcher."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:54
+msgid "Description of the matcher."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:76 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:61;66
+msgid "- Select -"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:77
+msgid "Matcher Plugin"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:91
+msgid "Select plugin"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:101 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Matcher/MatcherListBuilder.php:22
+msgid "Match engine"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:116
+msgid "@plugin configuration"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Form/MatcherForm.php:171
+msgid "The configuration has been saved."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:130
+msgid "Threshold"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:131
+msgid "Defines the score at which a contact is considered a match."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:138
+msgid "If two or more contact records result in matches with identical scores, CRM Core will give preference to one over the other base on selected option."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:141
+msgid "Return Order"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:145
+msgid "Most recently created"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:146
+msgid "Most recently updated"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:147
+msgid "Associated with user"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:151
+msgid "Check this box to return a match for this contact type the first time one is identified that meets the threshold. Stops redundant processing."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:154
+msgid "Strict matching"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:160
+msgid "Field Matching"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:164
+msgid "There are no fields available."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:177
+msgid "Unsupported Fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:186;244
+msgid "Field type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:189
+msgid "There are no unsupported fields."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:194
+msgid "A given field is unsupported when there is no field match handler for the field type it belongs to. In order to make it supported a handler plugin should be created for it."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:242 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:95
+msgid "Enabled"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:245
+msgid "Operator"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:246
+msgid "Options"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:247
+msgid "Score"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:248 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:89 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:80
+msgid "Weight"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:288
+msgid "- Please Select -"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:311
+msgid "Weight for @field"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:327
+msgid "Threshold must be a number."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:333
+msgid "You must select an operator for enabled field."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/engine/DefaultMatchingEngine.php:338
+msgid "You must enter number in \"Score\" column."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/AddressFieldHandler.php:63 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/DateFieldHandler.php:20 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/EmailFieldHandler.php:23 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/PhoneNumberFieldHandler.php:58 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/SelectFieldHandler.php:19 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/TextFieldHandler.php:23
+msgid "Equals"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/DateFieldHandler.php:21
+msgid "Greater than"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/DateFieldHandler.php:22
+msgid "Less than"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/NameFieldHandler.php:64 modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/TextFieldHandler.php:26
+msgid "Contains"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/PhoneNumberFieldHandler.php:31
+msgid "Number"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/PhoneNumberFieldHandler.php:35
+msgid "Country code"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/PhoneNumberFieldHandler.php:39
+msgid "Extension"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/TextFieldHandler.php:24
+msgid "Starts with"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_match/src/Plugin/crm_core_match/field/TextFieldHandler.php:25
+msgid "Ends with"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:38
+msgid "Inactive"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:39
+msgid "Active"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:81 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:78
+msgid "Status"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:26
+msgid "Administer contact relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:27
+msgid "Allows user to create/edit/delete any contact relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:33
+msgid "Create Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:34
+msgid "Allows user to create any CRM relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:38
+msgid "View Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:39
+msgid "Allows user to view any CRM relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:43
+msgid "Edit Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:44
+msgid "Allows user to edit any CRM relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:52
+msgid "relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:53
+msgid "relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:19
+msgid "Friend of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:25
+msgid "Employee of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:26
+msgid "Employer of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:34
+msgid "Member of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:35
+msgid "Household for"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:28
+msgid "CRM Relationship Types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:38 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:79
+msgid "Operations"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:58
+msgid "edit"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:60
+msgid "manage fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:61
+msgid "display fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:63
+msgid "delete"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:92
+msgid "Add New Relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:92
+msgid "Edit Relationship Type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:122
+msgid "Display name of the relationship type. This is also used as the predicate in natural language formatters (ie. if A is related to B, you get \"A [label] B\")"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:138
+msgid "A directional relationship is one that does not imply the reverse relationship. For example, a \"likes\" relationship is directional (A likes B does not neccesarily mean B likes A), whereas a \"similar to\" relationship is non-directional (A similar to B implies B similar to A. Non-directional relationship are also known as symmetric relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:143
+msgid "Reverse label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:144
+msgid "Reverse label of the relation type. This is used as the predicate by formatters of directional relations, when you need to display the reverse direction (ie. from the target entity to the source entity). If this is not supplied, the forward label is used."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:160
+msgid "Unique"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:161
+msgid "Whether relations of this type are unique (ie. they can not contain exactly the same end points as other relations of this type)."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:171
+msgid "Infinite"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:190
+msgid "Any"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:221
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:250
+msgid "The relationship type has been saved."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:265
+msgid "Are you sure you want to delete the %label relationship type?"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:279
+msgid "This action cannot be undone."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:293
+msgid "The %label relationship type has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:308 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:47 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:381
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:309
+msgid "Administration"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:310
+msgid "Structure"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:311 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:48 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:382
+msgid "CRM Core"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:312
+msgid "Relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:294
+msgid "relation"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:294
+msgid "Deleted the %label relationship type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:273
+msgid "The %label relation type is used by 1 relation on your site. If you remove this relation type, you will not be able to edit  %label relations and they may not display correctly."
+msgid_plural "The %label relation type is used by @count relations on your site. If you remove %label, you will not be able to edit %label relations and they may not display correctly."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:55;58;205 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:28
+msgid "Add a relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:99
+msgid "Relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:111;122
+msgid "Destination contact name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:111;122
+msgid "Source contact name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:112;123
+msgid "Following contact types allowed: !types."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:157
+msgid "Save Relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:191
+msgid "Add new relationship @label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:220;238
+msgid "Create %kind relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:264
+msgid "Relationship type is required."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:270
+msgid "Relationship type is not valid CRM relationship type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:276
+msgid "Please, input source contact."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:282
+msgid "Please, input destination contact."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:289
+msgid "Please, input source contact of proper type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:296
+msgid "Please, input destination contact of proper type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:302
+msgid "Relationship could not be loopback."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:320
+msgid "This relationship exists. It should be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:440
+msgid "Relationship status was successfully changed."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:212
+msgid "Related Contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:217
+msgid "Related Contact(Human readable)"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:222
+msgid "Related Contact(Table)"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:227
+msgid "Current Contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:302
+msgid "!current_contact is a @relation !related_contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:318
+msgid "@current_contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:368
+msgid "Relationships for @contact_name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:385
+msgid "Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:29;41
+msgid "Add a relationship to this contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:40
+msgid "Add "
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:74
+msgid "CRM Core Relationship Types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:75
+msgid "Manage relationship types."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:84
+msgid "Add crm relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:94
+msgid "Edit crm relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:116;123
+msgid "Toggle relationship status"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:74
+msgid "Contact information"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:75
+msgid "Display related contact information"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:97
+msgid "Contact Information"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:98
+msgid "Contact name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:112
+msgid "CRM User Sync Relation"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:115
+msgid "Adds relation to CRM User Sync Relation that point to current user."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/crm_core_user_sync.module:127
+msgid "Adds relation to CRM User Sync Relation that point to current individual."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/RelationListBuilder.php:70
+msgid "Total relations: @total"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/RelationListBuilder.php:82 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Entity/Relation.php:123
+msgid "User"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/RelationListBuilder.php:83 modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Entity/Relation.php:149
+msgid "Individual"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/UserSyncBatch.php:57
+msgid "@count users have been associated with contacts."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Entity/Relation.php:124
+msgid "The user ID of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Entity/Relation.php:150
+msgid "The individual ID of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RelationForm.php:51
+msgid "New relation has been created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RelationForm.php:55
+msgid "The relation has been updated."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleDeleteConfirmForm.php:33
+msgid "Are you sure you want to delete this rule?"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:73
+msgid "User Role"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:81
+msgid "Contact Type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/RuleForm.php:97
+msgid "When checked, this rule will be used to synchronize user accounts. When unchecked, it will be ignored throughout the system."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:42
+msgid "CRM User Synchronization can automatically create contact records associated with user accounts under certain conditions."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:47
+msgid "Automatically create an associated contact when account is created"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:48
+msgid "When checked, this checkbox will automatically create new contacts when a new user account is created according to rules listed above. Rules will be processed in order until a new contact is created."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:54
+msgid "Look for existing contact when auto creating contacts."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:55
+msgid "When checked, creating accounts will not create duplicates if one existing account is found based on the email address."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:61
+msgid "Load contact related to the current user"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:62
+msgid "When checked, contact related to the current user will be loaded as part of the user account object in $account->crm_core[\"contact\"]. In certain situations,  loading contact data as part of a user entity can create performance issues (for instance, when there are hundreds of fields associated with each contact). Uncheck this box if it is creating problems with performance."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:68
+msgid "Show contact information"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:69
+msgid "When checked, contact related to the current user will be shown on user profile page. Configurable from \"Manage display\" page."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:76
+msgid "Role"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:89
+msgid "No rules configured"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:140
+msgid "Sync Current Users"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:144
+msgid "Synchronize Users"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:150
+msgid "Click this button to apply user synchronization rules to all user accounts that are currently not associated with a contact in the system. It will create an associated contact record for each user according to the rules configured above. Warning: this cannot be undone."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_user_sync/src/Form/SettingsForm.php:163
+msgid "Processing user synchronization"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:34
+msgid "Administer @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:35
+msgid "Allows users to perform any action on @entity_type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:41
+msgid "Create @entity_type of any type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:45
+msgid "Edit own @entity_type of any type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:49
+msgid "Edit any @entity_type of any type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:54
+msgid "View own @entity_type of any type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:58
+msgid "View any @entity_type of any type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:82
+msgid "Create %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:86
+msgid "Edit own %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:90
+msgid "Edit any %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:95
+msgid "Delete own %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:99
+msgid "Delete any %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:104
+msgid "View own %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/CRMCorePermissions.php:108
+msgid "View any %bundle @entity_type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/Form/SettingsForm.php:70
+msgid "CRM Theme"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/Form/SettingsForm.php:73
+msgid "Default"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/Form/SettingsForm.php:82
+msgid "Use a custom theme for the CRM UI"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/src/Form/SettingsForm.php:83
+msgid "When checked, all pages under the crm-core path will be displayed using this theme."
+msgstr ""
+

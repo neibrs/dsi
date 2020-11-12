@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - person
+id: person_create_user
+label: 'Create user account'
+type: person
+plugin: person_create_user
+configuration: {  }

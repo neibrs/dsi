@@ -1,0 +1,15 @@
+entity_plus.entity_bulk_update_form:
+  path: '/entity_bulk_update/{entity_type_id}/{entity_ids}'
+  defaults:
+    _form: '\Drupal\views_plus\Form\EntityBulkUpdateForm'
+    _title: 'Bulk update'
+  requirements:
+    # TODO
+    _access: 'TRUE'
+
+views_plus.js.update_editable_field:
+  path: '/views_plus/js/update_editable_field'
+  defaults:
+    _controller: '\Drupal\views_plus\Controller\ViewsPlusController::updateEditableField'
+  requirements:
+    _access: 'TRUE'

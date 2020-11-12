@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a organization edit form.
+ *
+ * Available variables:
+ * - form: The organization add/edit form.
+ */
+#}
+<div class="box-body">
+  <div class="row">
+    <div class="col-sm-6">{{ form.business_group }}</div>
+    <div class="col-sm-6">{{ form.status }}</div>
+  </div>
+</div>
+
+{% if form.name is defined %}
+<div class="box">
+  <div class="box-body row">
+    <div class="col-md-6">
+      {{ form.name }}
+      {{ form.description }}
+      {{ form.location }}
+    </div>
+    <div class="col-md-6">
+      {{ form.type }}
+      {{ form.parent }}
+      {{ form.manager }}
+      {{ form.currency }}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{{ form|without('business_group', 'status', 'name', 'description', 'location', 'type', 'parent', 'classifications', 'calendar', 'currency', 'manager', 'attachments', 'effective_dates', 'actions') }}
+
+{{ form.classifications }}
+
+{{ form.attachments }}
+
+{{ form.effective_dates }}
+
+{{ form.actions }}

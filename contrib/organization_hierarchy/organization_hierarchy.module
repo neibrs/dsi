@@ -1,0 +1,75 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function organization_hierarchy_theme () {
+  $theme = [];
+
+  $theme['organization_hierarchy'] = [
+    'render element' => 'elements',
+    'file' => 'organization_hierarchy.page.inc',
+  ];
+  $theme['organization_hierarchy_form'] = [
+    'render element' => 'form',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for organization_hierarchy.
+ */
+function organization_hierarchy_theme_suggestions_organization_hierarchy(array $variables) {
+  $suggestions = [];
+
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'organization_hierarchy__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for organization.
+ */
+function organization_hierarchy_organization_insert(EntityInterface $entity) {
+  /** @var \Drupal\organization\Entity\OrganizationInterface $entity */
+  if ($parent_id = $entity->get('parent')->target_id) {
+    $organization_hierarchy = \Drupal::entityTypeManager()->getStorage('organization_hierarchy')
+      ->loadOrCreateActiveHierarchy($parent_id);
+    $values = $organization_hierarchy->get('subordinates')->getValue();
+    $found = array_filter($values, function ($item) use ($entity) {
+      return $item['target_id'] == $entity->id();
+    });
+    if (empty($found)) {
+      $organization_hierarchy->get('subordinates')->appendItem($entity);
+      $organization_hierarchy->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for organization.
+ */
+function organization_hierarchy_organization_update(EntityInterface $entity) {
+  if ($entity->get('parent')->target_id != $entity->original->get('parent')->target_id) {
+    // Update old hierarchy.
+    if ($organization_id = $entity->original->get('parent')->target_id) {
+      $organization_hierarchy = \Drupal::entityTypeManager()->getStorage('organization_hierarchy')
+        ->loadOrCreateActiveHierarchy($organization_id);
+      $values = $organization_hierarchy->get('subordinates')->getValue();
+      $found = array_filter($values, function ($item) use ($entity) {
+        return $item['target_id'] == $entity->id();
+      });
+      foreach ($found as $key => $value) {
+        $organization_hierarchy->get('subordinates')->removeItem($key);
+        $organization_hierarchy->save();
+      }
+    }
+
+    // Update new hierarchy.
+    organization_hierarchy_organization_insert($entity);
+  }
+}

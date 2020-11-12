@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+label: Instance
+id: instance
+description: Indicates that the set of functions are being granted for a single row.

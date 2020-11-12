@@ -1,0 +1,63 @@
+uuid: 500f3394-53e4-4433-b178-a03b12808689
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.field.commerce_product_variation.default.attribute_cpu_ram
+  module:
+    - commerce_order
+    - ds
+id: commerce_product_variation.default.default
+targetEntityType: commerce_product_variation
+bundle: default
+mode: default
+content:
+  list_price:
+    label: inline
+    type: commerce_price_calculated
+    weight: -1
+    region: content
+    settings:
+      currency_display: none
+      adjustment_types:
+        fee: fee
+        promotion: '0'
+        tax: '0'
+        subscription: '0'
+      strip_trailing_zeroes: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  price:
+    label: inline
+    type: commerce_price_calculated
+    weight: 0
+    region: content
+    settings:
+      currency_display: none
+      adjustment_types:
+        fee: fee
+        promotion: '0'
+        tax: '0'
+        subscription: '0'
+      strip_trailing_zeroes: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  attribute_cpu_ram: true
+  langcode: true
+  product_id: true
+  sku: true
+  title: true

@@ -1,0 +1,16 @@
+add record entities:
+  title: 'Create new Record entities'
+
+administer record entities:
+  title: 'Administer Record entities'
+  description: 'Allow to access the administration form to configure Record entities.'
+  restrict access: true
+
+delete record entities:
+  title: 'Delete Record entities'
+
+edit record entities:
+  title: 'Edit Record entities'
+
+view record entities:
+  title: 'View Record entities'

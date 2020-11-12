@@ -1,0 +1,90 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/user_plus/user_plus.module: n/a
+#  modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php: n/a
+#  modules/dsi/contrib/user_plus/src/PermissionSetListBuilder.php: n/a
+#  modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php: n/a
+#  modules/dsi/contrib/user_plus/src/Form/UserRoleSwitchForm.php: n/a
+#  modules/dsi/contrib/user_plus/src/Plugin/Block/AvatarBlock.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/user_plus/user_plus.module:16
+msgid "<a href=\":permission_sets_help\">Permission sets</a> provide a way to group related permissions together. You can create a new permission set from this page."
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/user_plus.module:40
+msgid "Dropdown menu"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/user_plus.module:45;92
+msgid "Log out"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/user_plus.module:50
+msgid "Password link"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/user_plus.module:57 modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:133
+msgid "Permissions"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/user_plus.module:100
+msgid "Change password"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/PermissionSetListBuilder.php:20
+msgid "Permission set ID"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/PermissionSetListBuilder.php:21 modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:82
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:98
+msgid "Pinyin shortcode"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:102
+msgctxt "Entity"
+msgid "Code"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Entity/PermissionSet.php:117
+msgid "Inherited duties"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php:65
+msgid "Permission"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php:65
+msgid "Include"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Form/PermissionSetForm.php:90
+msgid "Warning: Give to trusted roles only; this permission has security implications."
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Form/UserRoleSwitchForm.php:40
+msgid "Switch"
+msgstr ""
+
+#: modules/dsi/contrib/user_plus/src/Plugin/Block/AvatarBlock.php:96
+msgid "View mode"
+msgstr ""
+

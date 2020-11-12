@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_port
+id: none
+label: 'Hardware port'
+target_entity_type_id: dsi_hardware

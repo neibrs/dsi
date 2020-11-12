@@ -1,0 +1,8 @@
+services:
+  plugin.manager.report:
+    class: Drupal\report\Plugin\ReportManager
+    parent: default_plugin_manager
+  access_check.report.rows:
+    class: Drupal\report\Access\ReportRowsAccessCheck
+    tags:
+      - { name: access_check, applies_to: _report_rows_check }

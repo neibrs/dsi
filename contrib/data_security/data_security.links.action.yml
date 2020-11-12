@@ -1,0 +1,17 @@
+entity.data_security.add_form:
+  route_name: entity.data_security.add_page
+  title: 'Add'
+  appears_on:
+    - entity.data_security.collection
+
+entity.data_security_type.add_form:
+  route_name: entity.data_security_type.add_form
+  title: 'Add'
+  appears_on:
+    - entity.data_security_type.collection
+
+entity.instance_set.add_form:
+  route_name: entity.instance_set.add_form
+  title: 'Add'
+  appears_on:
+    - entity.instance_set.collection

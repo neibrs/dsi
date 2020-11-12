@@ -1,0 +1,8 @@
+langcode: en
+status: true
+id: cny
+code: CNY
+label: Yuan Renminbi
+symbol: ¥
+precision: 2
+pinyin_code: rmb

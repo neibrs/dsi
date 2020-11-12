@@ -1,0 +1,208 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/views_plus/views_plus.theme.inc: n/a
+#  modules/dsi/contrib/views_plus/src/EntityViewsData.php: n/a
+#  modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/field/BulkForm.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/field/Date.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/filter/MonthFilter.php: n/a
+#  modules/dsi/contrib/views_plus/src/Plugin/views/style/TableTree.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:16
+msgid "Field"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:17
+msgid "Column"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:18
+msgid "Align"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:19
+msgid "Separator"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:20
+msgid "Tree column"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:22
+msgid "Sortable"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:26
+msgid "Default order"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:30
+msgid "Default sort"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:34
+msgid "Hide empty column"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:38
+msgid "Responsive"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/views_plus.theme.inc:86
+msgid "None"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/EntityViewsData.php:28
+msgid "Effective dates start"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/EntityViewsData.php:29
+msgid "Filter the view to effective dates start"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/EntityViewsData.php:42
+msgid "Effective dates end"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/EntityViewsData.php:43
+msgid "Filter the view to effective dates end"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:41
+msgid "<p>Bulk edit: @entities.</p>"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:64
+msgid "Item"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:65
+msgid "Update"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:66
+msgid "Value"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:110 modules/dsi/contrib/views_plus/src/Plugin/views/field/BulkForm.php:16
+msgid "Bulk update"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php:135
+msgid "Bulk update has been finished."
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/field/Date.php:37;53
+msgid "%time ago"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/field/Date.php:43;53
+msgid "%time hence"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:39
+msgid "Select date range."
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:43
+msgid "Date range"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:45;195
+msgid "This week"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:46;196
+msgid "Previous week"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:47;197
+msgid "This month"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:48;198
+msgid "Previous month"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:51;201
+msgid "This year"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:52;202
+msgid "Previous year"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:188
+msgid "grouped"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:191
+msgid "exposed"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:206 modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:28
+msgid "in"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:206 modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:35
+msgid "not in"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:27
+msgid "Is one of"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:29
+msgid "="
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:34
+msgid "Is not one of"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:36
+msgid "<>"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:45
+msgid "Is empty (NULL)"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:47
+msgid "empty"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:51
+msgid "Is not empty (NOT NULL)"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:53
+msgid "not empty"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/MonthFilter.php:21
+msgid "Format: YYYY-MM. Example: @example"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/style/TableTree.php:52
+msgid "Tree"
+msgstr ""
+

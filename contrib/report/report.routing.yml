@@ -1,0 +1,48 @@
+entity.report.filters_form:
+  path: '/report/{report}/edit/filters'
+  defaults:
+    _form: 'Drupal\report\Form\ReportFiltersForm'
+    setting_name: 'filters'
+  requirements:
+    _entity_access: 'report.update'
+
+entity.report.columns_form:
+  path: '/report/{report}/edit/columns'
+  defaults:
+    _form: 'Drupal\report\Form\ReportColumnsForm'
+    _title: 'Columns'
+    setting_name: 'columns'
+  requirements:
+    _entity_access: 'report.update'
+
+entity.report.rows_form:
+  path: '/report/{report}/edit/rows'
+  defaults:
+    _form: 'Drupal\report\Form\ReportColumnsForm'
+    _title: 'Rows'
+    setting_name: 'rows'
+  requirements:
+    _report_rows_check: 'report'
+    
+entity.report.filters_override_form:
+  path: '/report/{report}/edit/filters_override'
+  defaults:
+    _form: 'Drupal\report\Form\ReportFiltersOverrideForm'
+    _title: 'Report conditions'
+  requirements:
+    _entity_access: 'report.view'
+
+report.ajax_style:
+  path: '/report/{report}/ajax/style/{style}'
+  defaults:
+    _controller: 'Drupal\report\Controller\ReportController::ajaxStyle'
+  requirements:
+    _entity_access: 'report.view'
+    js: 'nojs|ajax'
+
+report.column.field_setting:
+  path: '/report/{base_table}/{column_filter}/{column_field}'
+  defaults:
+    _controller: '\Drupal\report\Controller\ReportController:fieldSetting'
+  requirements:
+    _user_is_logged_in: 'TRUE'

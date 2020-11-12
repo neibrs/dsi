@@ -1,0 +1,20 @@
+
+DEVELOPMENT
+-----------------------
+- Added modules:
+  * Core modules: entity_plus, dsi_import, dsi_media, dsi_slider_media, dsi_icons
+  * Common business objects: dsi_ipa, dsi_device, dsi_lookup, dsi_classification,dsi_hardware,dsi_litigant
+    dsi_device_subtype, dsi_device_other_subtype, dsi_purchased, dsi_record, dsi_contact, dsi_contract
+  * Product modules: dsi_commerce, dsi_commerce_product
+  * Theme modules: dsi_block
+  * Demo commerce modules: dsi_commerce_demo
+  * Third modules: translation, administrative_area
+  * Industry modules: dsi_lawyer, dsi_cases, dsi_project, dsi_client
+
+- Added entities:
+  * dsi_ipa: dsi_ipa
+  * dsi_device: dsi_device
+  * dsi_classification: dsi_classification
+  * dsi_purchased: dsi_purchased
+  * dsi_recored: dsi_record
+

@@ -1,0 +1,5 @@
+entity.dsi_record.add_form:
+  route_name: entity.dsi_record.add_form
+  title: 'Add'
+  appears_on:
+    - entity.dsi_record.collection

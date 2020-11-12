@@ -1,0 +1,22 @@
+entity_filter.predefined_filter.*:
+  type: config_entity
+  label: 'Predefined filter config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    filters:
+      type: sequence
+      label: 'Filters'
+      sequence:
+        type: views.filter.[plugin_id]
+    relationships:
+      type: sequence
+      label: 'Relationships'
+      sequence:
+        type: views.relationship.[plugin_id]

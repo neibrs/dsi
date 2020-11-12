@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device_other_subtype
+id: network_printer
+label: 'Network Printer'
+locations:
+  storage_room: storage_room
+  building: building
+  server_room: '0'
+  rack: '0'
+  blade_chassis: '0'

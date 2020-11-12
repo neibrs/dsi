@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_purchased.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_purchased_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_purchased module.
+    case 'help.page.dsi_purchased':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The purchased for user.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

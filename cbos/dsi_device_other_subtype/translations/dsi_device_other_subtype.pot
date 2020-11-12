@@ -1,0 +1,81 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/cbos/dsi_device_other_subtype/src/LocationChoicesListBuilder.php: n/a
+#  modules/dsi/cbos/dsi_device_other_subtype/src/OtherSubtypeListBuilder.php: n/a
+#  modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesDeleteForm.php: n/a
+#  modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeDeleteForm.php: n/a
+#  modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesForm.php: n/a
+#  modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/LocationChoicesListBuilder.php:17
+msgid "Location choices"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/LocationChoicesListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/OtherSubtypeListBuilder.php:31
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesDeleteForm.php:18 modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesDeleteForm.php:32 modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeDeleteForm.php:32
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesDeleteForm.php:42 modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesForm.php:22 modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesForm.php:25
+msgid "Label for the Location choices."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesForm.php:52
+msgid "Created the %label Location choices."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/LocationChoicesForm.php:58
+msgid "Saved the %label Location choices."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php:25
+msgid "Label for the Other subtype."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php:45
+msgid "Display the following location choices"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php:62
+msgid "Created the %label Other subtype."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_device_other_subtype/src/Form/OtherSubtypeForm.php:68
+msgid "Saved the %label Other subtype."
+msgstr ""
+

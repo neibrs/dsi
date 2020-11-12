@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - person
+id: person_enable_user
+label: 'Enable user account'
+type: person
+plugin: person_enable_user
+configuration: {  }

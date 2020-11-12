@@ -1,0 +1,82 @@
+id: permission_set_xls
+label: Permission set(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/products/hcm/hrms/data/grant.xlsx
+  sheet_name: 权限集
+  keys:
+    - 权限集
+  columns:
+    -
+      权限集: 权限集
+    -
+      编码: 编码
+    -
+      继承的职责: 继承的职责
+    -
+      权限: 权限
+    -
+      有效期开始: 有效期开始
+    -
+      有效期结束: 有效期结束
+    -
+      有效期: 有效期
+
+process:
+  name:
+    plugin: skip_on_empty
+    method: row
+    source: 权限集
+
+  code: 编码
+
+  inherited_duties:
+    -
+      # Fix Explode exception: NULL is not a string.
+      plugin: skip_on_empty
+      method: process
+      source: 继承的职责
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup
+      entity_type: permission_set
+      value_key: name
+      not_found_message: 权限集未找到
+
+  permissions:
+    plugin: permission_set_permissions
+    source: 权限
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+
+destination:
+  plugin: entity:permission_set
+  keys:
+    - name
+migration_dependencies: { }

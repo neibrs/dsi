@@ -1,0 +1,324 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/organization/organization.module: n/a
+#  modules/dsi/contrib/organization/organization.install: n/a
+#  modules/dsi/contrib/organization/src/Entity/Organization.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php: n/a
+#  modules/dsi/contrib/organization/config/install/organization.classification.business_group.yml: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php: n/a
+#  modules/dsi/contrib/organization/config/optional/views.view.organization.yml: n/a
+#  modules/dsi/contrib/organization/config/optional/views.view.organization_children.yml: n/a
+#  modules/dsi/contrib/organization/src/OrganizationClassificationListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/OrganizationClassification.php: n/a
+#  modules/dsi/contrib/organization/organization.info.yml: n/a
+#  modules/dsi/contrib/organization/config/schema/organization.views.schema.yml: n/a
+#  modules/dsi/contrib/organization/src/Plugin/views/filter/OrganizationSubordinates.php: n/a
+#  modules/dsi/contrib/organization/organization.links.action.yml: n/a
+#  modules/dsi/contrib/organization/organization.routing.yml: n/a
+#  modules/dsi/contrib/organization/src/OrganizationViewBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php: n/a
+#  modules/dsi/contrib/organization/organization.links.task.yml: n/a
+#  modules/dsi/contrib/organization/src/OrganizationTypeListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/OrganizationType.php: n/a
+#  modules/dsi/contrib/organization/config/schema/organization.schema.yml: n/a
+#  modules/dsi/contrib/organization/organization.permissions.yml: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php: n/a
+#  modules/dsi/contrib/organization/config/schema/organization_classification.schema.yml: n/a
+#  modules/dsi/contrib/organization/config/schema/organization_type.schema.yml: n/a
+#  modules/dsi/contrib/organization/src/OrganizationListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesBusinessGroupEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesLegalEntityEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesOperatingUnitEntity.php: n/a
+#  modules/dsi/contrib/organization/config/install/organization.classification.legal_entity.yml: n/a
+#  modules/dsi/contrib/organization/config/install/organization.classification.operating_unit.yml: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Block/OrganizationGraphBlock.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Block/OrganizationTreeSwitchBlock.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/EntityReferenceSelection/OrganizationSelection.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/MultiOrganizationUniqueFieldConstraint.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/OperatingUnitConstraint.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/OrganizationParentConstraint.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/views/cache/EmployeeAssignment.php: n/a
+#  modules/dsi/contrib/organization/config/install/core.entity_form_mode.organization.external.yml: n/a
+#  modules/dsi/contrib/organization/config/install/entity_filter.predefined_filter.organization_field_data.yml: n/a
+#  modules/dsi/contrib/organization/config/install/organization.classification.hr_organization.yml: n/a
+#  modules/dsi/contrib/organization/config/install/organization.type.company.yml: n/a
+#  modules/dsi/contrib/organization/config/install/organization.type.department.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-08-08 15:00+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/organization/organization.install:74 modules/dsi/contrib/organization/src/Entity/Organization.php:272
+
+#: modules/dsi/contrib/organization/organization.module:162
+msgid "Merge"
+msgstr "合并"
+
+#: modules/dsi/contrib/organization/organization.install:78 modules/dsi/contrib/organization/src/Entity/Organization.php:253
+msgid "Classification"
+msgstr "分类"
+
+#: modules/dsi/contrib/organization/organization.install:86 modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:42 modules/dsi/contrib/organization/config/install/organization.classification.business_group.yml:0
+msgid "Business group"
+msgstr "业务组"
+
+#: modules/dsi/contrib/organization/organization.install:93 modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php:24 modules/dsi/contrib/organization/config/optional/views.view.organization.yml:0 modules/dsi/contrib/organization/config/optional/views.view.organization_children.yml:0
+msgid "Location"
+msgstr "工作地点"
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:235
+msgctxt "Work place"
+msgid "Location"
+msgstr "工作地点"
+
+#: modules/dsi/contrib/organization/organization.install:100
+msgid "Parent"
+msgstr "上级"
+
+#: modules/dsi/contrib/organization/organization.install:131 modules/dsi/contrib/organization/src/Entity/Organization.php:270
+msgid "Currency"
+msgstr "币种"
+
+#: modules/dsi/contrib/organization/organization.install:59 modules/dsi/contrib/organization/src/OrganizationClassificationListBuilder.php:17 modules/dsi/contrib/organization/src/Entity/OrganizationClassification.php:7
+msgid "Organization classification"
+msgstr "组织分类"
+
+#: modules/dsi/contrib/organization/organization.info.yml:0;0 modules/dsi/contrib/organization/config/schema/organization.views.schema.yml:0 modules/dsi/contrib/organization/src/Entity/Organization.php:166 modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php:14 modules/dsi/contrib/organization/src/Plugin/views/filter/OrganizationSubordinates.php:62 modules/dsi/contrib/organization/config/optional/views.view.organization.yml:0;0;0 modules/dsi/contrib/organization/config/optional/views.view.organization_children.yml:0
+msgid "Organization"
+msgstr "组织"
+
+#: modules/dsi/contrib/organization/organization.links.task.yml:0
+msgid "Organization structure"
+msgstr "组织结构"
+
+#: modules/dsi/contrib/organization/organization.links.task.yml:0
+msgid "Organization list"
+msgstr "组织列表"
+
+#: modules/dsi/contrib/organization/organization.links.task.yml:0 modules/dsi/contrib/organization/src/OrganizationTypeListBuilder.php:17 modules/dsi/contrib/organization/src/Entity/Organization.php:10 modules/dsi/contrib/organization/src/Entity/OrganizationType.php:7
+msgid "Organization type"
+msgstr "组织类型"
+
+#: modules/dsi/contrib/organization/organization.links.task.yml:0 modules/dsi/contrib/organization/config/schema/organization.schema.yml:0
+msgid "Organization settings"
+msgstr "组织设置"
+
+#: modules/dsi/contrib/organization/organization.permissions.yml:0
+msgid "Bypass multiple organization access"
+msgstr "绕过多组织访问控制"
+
+#: modules/dsi/contrib/organization/organization.permissions.yml:0
+msgid "Administer organizations"
+msgstr "管理组织"
+
+#: modules/dsi/contrib/organization/organization.permissions.yml:0
+msgid "Maintain organizations"
+msgstr "维护组织"
+
+#: modules/dsi/contrib/organization/organization.permissions.yml:0
+msgid "View organizations"
+msgstr "查看组织"
+
+#: modules/dsi/contrib/organization/organization.routing.yml:0
+msgid "Organization merge"
+msgstr "组织合并"
+
+#: modules/dsi/contrib/organization/organization.routing.yml:0
+msgid "Organization chart"
+msgstr "组织架构图"
+
+#: modules/dsi/contrib/organization/config/schema/organization.schema.yml:0 modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php:45
+msgid "Default business group"
+msgstr "默认业务组"
+
+#: modules/dsi/contrib/organization/config/schema/organization_classification.schema.yml:0
+msgid "Organization classification config"
+msgstr "组织分类配置"
+
+#: modules/dsi/contrib/organization/config/schema/organization_type.schema.yml:0
+msgid "Organization type config"
+msgstr "组织类型配置"
+
+
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:48
+msgid "Sub organizations"
+msgstr "子组织"
+
+#: modules/dsi/contrib/organization/src/Entity/EffectiveDatesBusinessGroupEntity.php:22 modules/dsi/contrib/organization/src/Entity/EffectiveDatesOperatingUnitEntity.php:18
+msgid "Effective dates"
+msgstr "有效日期"
+
+#: modules/dsi/contrib/organization/config/install/organization.classification.legal_entity.yml:0
+msgid "Legal entity"
+msgstr "法人实体"
+
+#: modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:43 modules/dsi/contrib/organization/config/install/organization.classification.operating_unit.yml:0
+msgid "Operating unit"
+msgstr "经营单位"
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:199 modules/dsi/contrib/organization/config/optional/views.view.organization.yml:0
+msgid "Pinyin shortcode"
+msgstr "拼音简码"
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:219
+msgid "Parent organization"
+msgstr "上级组织"
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:10
+msgid "Organizations"
+msgstr "组织"
+
+#: modules/dsi/contrib/organization/src/Entity/OrganizationType.php:7
+msgid "Organization types"
+msgstr "组织类型"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:22 modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:22
+msgid "Label"
+msgstr "名称"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:25
+msgid "Label for the Organization classification."
+msgstr "组织分类名称"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:52
+msgid "Created the %label Organization classification."
+msgstr "已创建组织分类%label。"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:58
+msgid "Saved the %label Organization classification."
+msgstr "已保存组织分类%label。"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:28
+msgid "From organization"
+msgstr "源自组织"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:36
+msgid "To organization"
+msgstr "到组织"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:43
+msgid "Merge time"
+msgstr "合并时间"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:50
+msgid "Merge organizations"
+msgstr "合并组织"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:77
+msgid "Merge organization has success."
+msgstr "组织合并成功."
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:25
+msgid "Label for the Organization type."
+msgstr "组织类型的名称"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:52
+msgid "Created the %label Organization type."
+msgstr "已添加%label组织类型。"
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:58
+msgid "Saved the %label Organization type."
+msgstr "已保存组织类型%label."
+
+#: modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php:11
+msgid "Children organization block"
+msgstr "子组织区块"
+
+#: modules/dsi/contrib/organization/src/Plugin/Block/OrganizationGraphBlock.php:11
+msgid "Organization graph block"
+msgstr "组织图表区块"
+
+#: modules/dsi/contrib/organization/src/Plugin/Block/OrganizationTreeSwitchBlock.php:14
+msgid "Organization tree switch"
+msgstr "组织树切换"
+
+#: modules/dsi/contrib/organization/src/Plugin/EntityReferenceSelection/OrganizationSelection.php:5
+msgid "Organization selection"
+msgstr "机构选择"
+
+#: modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/MultiOrganizationUniqueFieldConstraint.php:19
+msgid "A @entity_type with @field_name %value in @organization already exists."
+msgstr "@entity_type 的 @field_name %value 在 @organization 已存在."
+
+#: modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/OperatingUnitConstraint.php:9
+msgid "Operating unit validate"
+msgstr "验证经营单位"
+
+#: modules/dsi/contrib/organization/src/Plugin/Validation/Constraint/OrganizationParentConstraint.php:9
+msgid "Organization parent validate"
+msgstr "上级组织验证"
+
+#: modules/dsi/contrib/organization/config/install/core.entity_form_mode.organization.external.yml:0
+msgid "External"
+msgstr "外部"
+
+#: modules/dsi/contrib/organization/config/install/organization.classification.hr_organization.yml:0
+msgid "HR organization"
+msgstr "HR组织"
+
+#: modules/dsi/contrib/organization/config/install/organization.type.company.yml:0
+msgid "Company"
+msgstr "公司"
+
+#: modules/dsi/contrib/organization/config/install/organization.type.department.yml:0
+msgid "Department"
+msgstr "部门"
+
+#: modules/dsi/contrib/organization/config/install/views.view.organization.yml:0
+msgid "Find and manage organization."
+msgstr "查找及管理组织"
+
+#: modules/dsi/contrib/organization/config/optional/views.view.organization_children.yml:0
+msgid "Children organization"
+msgstr "下级组织"
+
+#: modules/dsi/contrib/organization/config/optional/views.view.organization.yml:0
+msgid "Bulk update"
+msgstr "批量更新"
+
+# 以下未自动生成，手工添加
+
+msgid "Delete organization"
+msgstr "删除组织"
+
+msgid "Disable organization"
+msgstr "禁用组织"
+
+msgid "Enable organization"
+msgstr "启用组织"
+
+msgctxt "Data"
+msgid "Master"
+msgstr "主数据"
+
+msgid "This function only provides first-level organizational consolidation."
+msgstr "此功能仅提供一级组织合并"
+
+msgid "Organization(xls)"
+msgstr "组织(xls)"
+
+msgid "business_group"
+msgstr "业务组"
+
+msgid "operating_unit"
+msgstr "经营单位"
+
+msgid "legal_entity"
+msgstr "法人实体"

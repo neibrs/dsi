@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device_other_subtype
+id: workstation
+label: 'WorkStation'
+locations:
+  building: building
+  storage_room: storage_room
+  rack: '0'
+  server_room: '0'
+  blade_chassis: '0'

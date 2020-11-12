@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hr_organization
+label: 'HR organization'
+description: 'HR organizations represent the basic work structure of any enterprise. They usually represent the functional management, or reporting groups that exist within a business group.'

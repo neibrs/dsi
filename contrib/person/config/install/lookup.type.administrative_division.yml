@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: administrative_division
+label: 行政区划
+description: "GB_T2260_2018 行政区划字典"
+organization_classification: business_group

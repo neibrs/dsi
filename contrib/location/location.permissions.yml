@@ -1,0 +1,8 @@
+administer locations:
+  title: 'Administer locations'
+
+maintain locations:
+  title: 'Maintain locations'
+
+view locations:
+  title: 'View locations'

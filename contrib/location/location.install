@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ */
+
+function location_install() {
+  user_role_grant_permissions('implementor', [
+    'add locations',
+    'administer locations',
+    'edit locations',
+    'delete locations',
+    'view locations',
+  ]);
+
+}

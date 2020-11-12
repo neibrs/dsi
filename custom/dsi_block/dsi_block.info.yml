@@ -1,0 +1,5 @@
+name: 'dsi_block'
+type: module
+description: 'The theme blocks for custom theme.'
+core_version_requirement: ^8.8 || ^9
+package: 'Dsi'

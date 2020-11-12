@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_slider_media
+  module:
+    - media
+id: media.dsi_slider_media_slider
+label: 'Media Hero Slider'
+targetEntityType: media
+cache: true

@@ -1,0 +1,601 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/person/person.post_update.php: n/a
+#  modules/dsi/contrib/person/src/Entity/Person.php: n/a
+#  modules/dsi/contrib/person/config/install/quick_code.type.nationality.yml: n/a
+#  modules/dsi/contrib/person/config/install/views.view.person.yml: n/a
+#  modules/dsi/contrib/person/person.module: n/a
+#  modules/dsi/contrib/person/person.info.yml: n/a
+#  modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php: n/a
+#  modules/dsi/contrib/person/config/install/views.view.person_type_person.yml: n/a
+#  modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonAddressListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonEmailListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonPhoneListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonInlineForm.php: n/a
+#  modules/dsi/contrib/person/person.install: n/a
+#  modules/dsi/contrib/person/person.links.action.yml: n/a
+#  modules/dsi/contrib/person/person.routing.yml: n/a
+#  modules/dsi/contrib/person/person.links.task.yml: n/a
+#  modules/dsi/contrib/person/config/schema/person.schema.yml: n/a
+#  modules/dsi/contrib/person/config/schema/person.views.schema.yml: n/a
+#  modules/dsi/contrib/person/src/PersonTypeListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonType.php: n/a
+#  modules/dsi/contrib/person/person.permissions.yml: n/a
+#  modules/dsi/contrib/person/src/Form/PersonSettingsForm.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Action/CreateUser.php: n/a
+#  modules/dsi/contrib/person/config/schema/person_type.schema.yml: n/a
+#  modules/dsi/contrib/person/src/Form/PersonTypeForm.php: n/a
+#  modules/dsi/contrib/person/src/PersonPermissions.php: n/a
+#  modules/dsi/contrib/person/config/install/user.role.employee.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.employee.yml: n/a
+#  modules/dsi/contrib/person/config/install/user.role.contingent_worker.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.contingent_worker.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.ex_employee.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.ex_contingent_worker.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.external.yml: n/a
+#  modules/dsi/contrib/person/src/Entity/IdentificationInformation.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/WorkflowType/EmployeeStatus.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonAddress.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonEmail.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonPhone.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonViewsData.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Field/FieldFormatter/AgeFormatter.php: n/a
+#  modules/dsi/contrib/person/src/Form/IdentificationInformationForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/OrganizationPersonSwitchForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonAddressForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonEmailForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonPhoneForm.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Action/DisableUser.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Action/EnableUser.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Block/OrganizationPersonSwitchBlock.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/EntityReferenceSelection/PersonTypeSelection.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/Field/FieldFormatter/UserPersonFormatter.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/views/filter/CurrentPerson.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/views/filter/PersonType.php: n/a
+#  modules/dsi/contrib/person/config/install/core.entity_view_mode.person.photo_wall.yml: n/a
+#  modules/dsi/contrib/person/config/install/core.entity_view_mode.person.teaser.yml: n/a
+#  modules/dsi/contrib/person/config/install/entity_filter.predefined_filter.person_field_data.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.field.person.employee.field_english_level.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.field.person.employee.field_graduated_from.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.field.person.employee.field_postal_code.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.field.person.employee.field_stature.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.field.person.employee.field_supervisor.yml: n/a
+#  modules/dsi/contrib/person/config/install/field.storage.person.field_english_level.yml: n/a
+#  modules/dsi/contrib/person/config/install/image.style.80x.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.administrative_division.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.gender.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.identification_information_type.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.marital_status.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.nationality.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.people_group.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.person_address_type.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.person_email_type.yml: n/a
+#  modules/dsi/contrib/person/config/install/lookup.type.person_phone_type.yml: n/a
+#  modules/dsi/contrib/person/config/install/person.type.contact.yml: n/a
+#  modules/dsi/contrib/person/config/install/workflows.workflow.default_employee_status.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-10-14 09:39+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/person/person.post_update.php:22 modules/dsi/contrib/person/src/Entity/Person.php:112
+msgctxt "Person"
+msgid "Number"
+msgstr "人员编号"
+
+#: modules/dsi/contrib/person/person.post_update.php:31 modules/dsi/contrib/person/src/Entity/Person.php:370
+msgid "Pictures"
+msgstr "图片"
+
+#: modules/dsi/contrib/person/person.post_update.php:52 modules/dsi/contrib/person/src/Entity/Person.php:293 modules/dsi/contrib/person/config/install/quick_code.type.nationality.yml:0 modules/dsi/contrib/person/config/install/views.view.person.yml:0
+msgid "Nationality"
+msgstr "民族"
+
+#: modules/dsi/contrib/person/person.module:74;165 modules/dsi/contrib/person/person.info.yml:0;0 modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php:29 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:60 modules/dsi/contrib/person/config/install/views.view.person.yml:0;0 modules/dsi/contrib/person/config/install/views.view.person_type_person.yml:0
+msgid "Person"
+msgstr "人员"
+
+#: modules/dsi/contrib/person/person.module:103
+msgid "Manager"
+msgstr "负责人"
+
+#: modules/dsi/contrib/person/person.module:132
+msgid "User roles"
+msgstr "用户角色"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:131
+msgctxt "Person"
+msgid "Name"
+msgstr "姓名"
+
+#: modules/dsi/contrib/person/person.module:170 modules/dsi/contrib/person/src/Entity/Person.php:337 modules/dsi/contrib/person/config/install/views.view.person_type_person.yml:0
+msgid "Organization"
+msgstr "组织"
+
+#: modules/dsi/contrib/person/person.install:101 modules/dsi/contrib/person/src/Entity/Person.php:226 modules/dsi/contrib/person/src/Form/PersonInlineForm.php:19 modules/dsi/contrib/person/config/install/views.view.person.yml:0
+msgid "Gender"
+msgstr "性别"
+
+#: modules/dsi/contrib/person/person.install:110 modules/dsi/contrib/person/src/Entity/Person.php:276
+msgid "Marital status"
+msgstr "婚姻状况"
+
+#: modules/dsi/contrib/person/person.info.yml:0
+msgid "Eabax cbos"
+msgstr "eAbax 公共业务对象"
+
+#: modules/dsi/contrib/person/person.links.action.yml:0
+msgid "Add Person address"
+msgstr "添加人员地址"
+
+#: modules/dsi/contrib/person/person.links.action.yml:0
+msgid "Add Person phone"
+msgstr "添加人员电话"
+
+#: modules/dsi/contrib/person/person.links.action.yml:0
+msgid "Add Person email"
+msgstr "添加人员邮箱"
+
+#: modules/dsi/contrib/person/person.links.action.yml:0
+msgid "Add Identification information"
+msgstr "添加证件信息"
+
+#: modules/dsi/contrib/person/person.links.task.yml:0 modules/dsi/contrib/person/person.routing.yml:0 modules/dsi/contrib/person/config/schema/person.schema.yml:0
+msgid "Person settings"
+msgstr "人员设置"
+
+#: modules/dsi/contrib/person/person.links.task.yml:0 modules/dsi/contrib/person/config/schema/person.views.schema.yml:0 modules/dsi/contrib/person/src/PersonTypeListBuilder.php:43 modules/dsi/contrib/person/src/Entity/Person.php:154;15 modules/dsi/contrib/person/src/Entity/PersonType.php:8 modules/dsi/contrib/person/config/install/views.view.person.yml:0
+msgid "Person type"
+msgstr "人员类型"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Create new persons"
+msgstr "添加人员"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Administer persons"
+msgstr "管理人员"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Maintain persons"
+msgstr "维护人员"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "View persons"
+msgstr "查看人员"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Edit own profile"
+msgstr "编辑个人资料"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Allow to access the administration form to configure persons."
+msgstr "允许管理人员配置。"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Delete persons"
+msgstr "删除人员"
+
+#: modules/dsi/contrib/person/person.permissions.yml:0
+msgid "Edit persons"
+msgstr "编辑人员"
+
+#: modules/dsi/contrib/person/config/schema/person.schema.yml:0 modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:51
+msgid "Initial password"
+msgstr "初始密码"
+
+#: modules/dsi/contrib/person/config/schema/person.schema.yml:0 modules/dsi/contrib/person/src/Plugin/Action/CreateUser.php:12
+msgid "Create user account for selected person"
+msgstr "给所选人员创建账户"
+
+#: modules/dsi/contrib/person/config/schema/person.schema.yml:0
+msgid "Enable user account for selected person"
+msgstr "启用所选人员帐户"
+
+#: modules/dsi/contrib/person/config/schema/person.schema.yml:0
+msgid "Disable user account for selected person"
+msgstr "禁用所选人员帐户"
+
+#: modules/dsi/contrib/person/config/schema/person.views.schema.yml:0
+msgid "List of user accounts"
+msgstr "用户账户列表"
+
+#: modules/dsi/contrib/person/config/schema/person_type.schema.yml:0
+msgid "Person type config"
+msgstr "人员类型设置"
+
+#: modules/dsi/contrib/person/config/schema/person_type.schema.yml:0 modules/dsi/contrib/person/src/PersonTypeListBuilder.php:45 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:56
+msgid "System type"
+msgstr "系统类型"
+
+#: modules/dsi/contrib/person/config/schema/person_type.schema.yml:0 modules/dsi/contrib/person/src/PersonTypeListBuilder.php:46
+msgid "Is system"
+msgstr "是否系统"
+
+#: modules/dsi/contrib/person/config/schema/person_type.schema.yml:0 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:64
+msgid "Is employee"
+msgstr "是否员工"
+
+#: modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php:20
+msgid "Identification information ID"
+msgstr "证件信息序号"
+
+#: modules/dsi/contrib/person/src/PersonAddressListBuilder.php:20
+msgid "Person address ID"
+msgstr "人员地址序号"
+
+#: modules/dsi/contrib/person/src/PersonEmailListBuilder.php:20
+msgid "Person email ID"
+msgstr "人员邮箱序号"
+
+#: modules/dsi/contrib/person/src/PersonListBuilder.php:19
+msgid "Person ID"
+msgstr "人员序号"
+
+#: modules/dsi/contrib/person/src/PersonPermissions.php:47
+msgid "@type_name: Maintain persons"
+msgstr "@type_name: 维护人员"
+
+#: modules/dsi/contrib/person/src/PersonPermissions.php:50
+msgid "@type_name: View persons"
+msgstr "@type_name: 查看人员"
+
+#: modules/dsi/contrib/person/src/PersonPhoneListBuilder.php:20
+msgid "Person phone ID"
+msgstr "人员电话序号"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:44
+msgid "Person type alias"
+msgstr "人员类型别名"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:58 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:46 modules/dsi/contrib/person/config/install/user.role.employee.yml:0 modules/dsi/contrib/personnel_action_request/config/install/transaction.source_type.employee.yml:0
+msgid "Employee"
+msgstr "员工"
+
+#: modules/dsi/contrib/person/config/install/person.type.employee.yml:0
+msgctxt "Person type"
+msgid "Employee"
+msgstr "员工"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:59 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:47 modules/dsi/contrib/personnel_action_request/src/Plugin/Action/ApplicantHire.php:56
+msgid "Applicant"
+msgstr "申请人"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:60 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:48 modules/dsi/contrib/person/config/install/user.role.contingent_worker.yml:0
+msgid "Contingent worker"
+msgstr "临时工"
+
+#: modules/dsi/contrib/person/config/install/person.type.contingent_worker.yml:0
+msgctxt "Person type"
+msgid "Contingent worker"
+msgstr "临时工"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:61 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:49
+msgid "Ex-employee"
+msgstr "以前的员工"
+
+#: modules/dsi/contrib/person/config/install/person.type.ex_employee.yml:0
+msgctxt "Person type"
+msgid "Ex-employee"
+msgstr "以前的员工"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:62 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:50
+msgid "Ex-applicant"
+msgstr "以前的申请人"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:63 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:51
+msgid "Ex-contingent worker"
+msgstr "以前的零时工"
+
+#: modules/dsi/contrib/person/config/install/person.type.ex_contingent_worker.yml:0
+msgctxt "Person type"
+msgid "Ex-contingent worker"
+msgstr "以前的临时工"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:64 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:52
+msgid "External"
+msgstr "外部"
+
+#: modules/dsi/contrib/person/config/install/person.type.external.yml:0
+msgctxt "Person type"
+msgid "External"
+msgstr "外部人员"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:126
+msgid "There are no enabled @label."
+msgstr "无启用的@label。"
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:127
+msgid "There are no disabled @label."
+msgstr "无禁用的@label。"
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:72
+msgid "Identification type"
+msgstr "证件类型"
+
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:12;12 modules/dsi/contrib/person/src/Entity/Person.php:204 modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:43
+msgid "Identification information"
+msgstr "证件信息"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:148 modules/dsi/contrib/person/config/install/views.view.person.yml:0
+msgid "Pinyin shortcode"
+msgstr "拼音简码"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:170
+msgid "Person group"
+msgstr "人员组"
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:68 modules/dsi/contrib/person/src/Entity/Person.php:191
+msgid "Identify number"
+msgstr "证件号码"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:235
+msgid "Birth date"
+msgstr "出生日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:255
+msgid "Married"
+msgstr "已婚"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:256
+msgid "Single"
+msgstr "未婚"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:257
+msgid "Divorced"
+msgstr "离异"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:258
+msgid "Widowed"
+msgstr "丧偶"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:354
+msgctxt "Benefits"
+msgid "Adjusted service date"
+msgstr "工龄起算日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:273 modules/dsi/contrib/person/config/install/views.view.person.yml:0;0
+msgid "Phone"
+msgstr "电话"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:337
+msgid "Attachments"
+msgstr "附件"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:396 modules/dsi/contrib/person/src/Plugin/WorkflowType/EmployeeStatus.php:7
+msgid "Employee status"
+msgstr "员工状态"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:417
+msgid "Hire date"
+msgstr "入职日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:435
+msgid "Rehire date"
+msgstr "返聘日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:495
+msgid "Completion of probation date"
+msgstr "转正日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:533
+msgid "Actual termination date"
+msgstr "实际离职日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:551
+msgid "Notified date"
+msgstr "通知日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:569
+msgid "Projected date"
+msgstr "预计日期"
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:15
+msgid "Persons"
+msgstr "人员"
+
+#: modules/dsi/contrib/person/src/Entity/PersonAddress.php:62
+msgid "Address type"
+msgstr "地址类型"
+
+#: modules/dsi/contrib/person/src/Entity/PersonAddress.php:75
+msgctxt "Default"
+msgid "Primary"
+msgstr "主要"
+
+#: modules/dsi/contrib/person/src/Entity/PersonAddress.php:10
+msgid "Person address"
+msgstr "人员地址"
+
+#: modules/dsi/contrib/person/src/Entity/PersonEmail.php:69 modules/dsi/contrib/person/src/Entity/PersonPhone.php:75
+msgid "Preferred"
+msgstr "首选的"
+
+#: modules/dsi/contrib/person/src/Entity/PersonEmail.php:7
+msgid "Person email"
+msgstr "人员邮箱"
+
+#: modules/dsi/contrib/person/src/Entity/PersonPhone.php:130
+msgid "Phone type"
+msgstr "电话类型"
+
+#: modules/dsi/contrib/person/src/Entity/PersonPhone.php:11
+msgid "Person phone"
+msgstr "人员电话"
+
+#: modules/dsi/contrib/person/src/Entity/PersonType.php:8
+msgid "Person types"
+msgstr "人员类型"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:38;39
+msgid "Probation period start"
+msgstr "试用期开始"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:51;52
+msgid "Probation period end"
+msgstr "试用期结束"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:22;26 modules/dsi/contrib/person/src/Plugin/Field/FieldFormatter/AgeFormatter.php:8 modules/dsi/contrib/person/config/install/views.view.person.yml:0
+msgid "Age"
+msgstr "年龄"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:35;39
+msgid "Length of service"
+msgstr "工龄"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:48;52
+msgid "To company age"
+msgstr "司龄"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:48
+msgid "Accounts"
+msgstr "账户"
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:49
+msgid "Person's user accounts."
+msgstr "人员账户"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:32
+msgid "Personal"
+msgstr "个人"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:46;77
+msgid "Keep adding"
+msgstr "继续添加"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:54
+msgid "Add other info"
+msgstr "继续完善其它内容"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:38
+msgid "Save return list"
+msgstr "保存返回列表"
+
+#: modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:45
+msgid "Phones"
+msgstr "电话"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:43
+msgid "Employment"
+msgstr "雇用"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:62
+msgctxt "Person"
+msgid "Termination"
+msgstr "离职"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:85
+msgid "Created the %label Person."
+msgstr "已添加%label人员。"
+
+#: modules/dsi/contrib/person/src/Form/PersonForm.php:91
+msgid "Saved the %label Person."
+msgstr "已保存人员%label."
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:73
+msgid "Created the %label Person type."
+msgstr "已创建 %label 人员类型。"
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:79
+msgid "Saved the %label Person type."
+msgstr "已保存人员类型%label。"
+
+#: modules/dsi/contrib/person/src/Plugin/Action/DisableUser.php:11
+msgid "disable user account for selected person"
+msgstr "停用所选人员的用户账号"
+
+#: modules/dsi/contrib/person/src/Plugin/Action/EnableUser.php:11
+msgid "enable user account for selected person"
+msgstr "启用所选人员的用户账号"
+
+#: modules/dsi/contrib/person/src/Plugin/EntityReferenceSelection/PersonSelection.php:7
+msgid "Person selection"
+msgstr "人员选择"
+
+#: modules/dsi/contrib/person/config/install/field.field.person.employee.field_employee_number.yml:0
+msgid "Employee number"
+msgstr "员工编号"
+
+#: modules/dsi/contrib/person/config/install/field.field.person.employee.field_hire_date.yml:0
+msgid "Hire date"
+msgstr "入职日期"
+
+#: modules/dsi/contrib/person/config/install/field.field.person.employee.field_job.yml:0
+msgid "Job"
+msgstr "职务"
+
+#: modules/dsi/contrib/person/src/Plugin/views/filter/PersonType.php:36
+msgid "Include children"
+msgstr "包含下级"
+
+#: modules/dsi/contrib/person/config/install/field.field.person.employee.field_supervisor.yml:0
+msgid "Supervisor"
+msgstr "主管"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.email_type.yml:0
+msgid "Email type"
+msgstr "邮件类型"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.identification_information_type.yml:0
+msgid "Identification information type"
+msgstr "证件类型"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.people_group.yml:0
+msgid "People group"
+msgstr "人员组"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.person_address_type.yml:0
+msgid "Person address type"
+msgstr "人员地址类型"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.person_email_type.yml:0
+msgid "Person email type"
+msgstr "人员邮箱类型"
+
+#: modules/dsi/contrib/person/config/install/lookup.type.person_phone_type.yml:0
+msgid "Person phone type"
+msgstr "人员电话类型"
+
+#: modules/dsi/contrib/person/config/install/person.type.contact.yml:0
+msgctxt "Person type"
+msgid "Contact"
+msgstr "联系人"
+
+#: modules/dsi/contrib/person/config/install/views.view.person.yml:0 modules/dsi/contrib/person/config/install/views.view.person_type_person.yml:0
+msgid "Find and manage person."
+msgstr "查找和管理人员"
+
+# 以下未自动添加，手工添加
+
+msgid "Create user account"
+msgstr "添加用户账号"
+
+msgid "Delete person"
+msgstr "删除人员"
+
+msgid "Disable user account"
+msgstr "禁用用户账号"
+
+msgid "Enable user account"
+msgstr "启用用户账号"
+
+msgid "Person(xls)"
+msgstr "人员(xls)"
+

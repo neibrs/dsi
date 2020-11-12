@@ -1,0 +1,225 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/organization/organization.module: n/a
+#  modules/dsi/contrib/organization/organization.install: n/a
+#  modules/dsi/contrib/organization/src/Entity/Organization.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php: n/a
+#  modules/dsi/contrib/organization/src/OrganizationClassificationListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/OrganizationListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/OrganizationTypeListBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/OrganizationViewBuilder.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesBusinessGroupEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesLegalEntityEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Entity/EffectiveDatesOperatingUnitEntity.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/views/filter/OrganizationSubordinates.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php: n/a
+#  modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php: n/a
+#  modules/dsi/contrib/organization/src/Plugin/views/filter/Organization.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/organization/organization.module:22
+msgid "This function only provides first-level organizational consolidation."
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.module:100
+msgid "Subordinate organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.module:166
+msgid "Merge"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.install:84 modules/dsi/contrib/organization/src/Entity/Organization.php:261
+msgid "Classification"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.install:92 modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:42
+msgid "Business group"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.install:99 modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php:27
+msgid "Location"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:243
+msgctxt "Work place"
+msgid "Location"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.install:106
+msgid "Parent"
+msgstr ""
+
+#: modules/dsi/contrib/organization/organization.install:137 modules/dsi/contrib/organization/src/Entity/Organization.php:278
+msgid "Currency"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationClassificationListBuilder.php:17
+msgid "Organization classification"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationClassificationListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationListBuilder.php:19
+msgid "Organization ID"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationListBuilder.php:20
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationTypeListBuilder.php:17
+msgid "Organization type"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:50
+msgid "Sub organizations"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:55 modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php:56
+msgid "Add"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:69
+msgid "Views not found."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:70 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:70 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:70
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:71 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:71 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:71
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:74 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:74 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:74
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:75 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:75 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:75
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/EffectiveDatesBusinessGroupEntity.php:26 modules/dsi/contrib/organization/src/Entity/EffectiveDatesLegalEntityEntity.php:22 modules/dsi/contrib/organization/src/Entity/EffectiveDatesOperatingUnitEntity.php:24
+msgid "Effective dates"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/EffectiveDatesBusinessGroupEntity.php:46 modules/dsi/contrib/organization/src/Entity/EffectiveDatesLegalEntityEntity.php:41 modules/dsi/contrib/organization/src/Entity/EffectiveDatesOperatingUnitEntity.php:43
+msgid "Enabled"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:42
+msgid "Legal entity"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:43
+msgid "Operating unit"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:174 modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php:17 modules/dsi/contrib/organization/src/Plugin/views/filter/OrganizationSubordinates.php:63
+msgid "Organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:192 modules/dsi/contrib/organization/src/Form/OrganizationInlineForm.php:22
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:207
+msgid "Pinyin shortcode"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Entity/Organization.php:227
+msgid "Parent organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:22 modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:25
+msgid "Label for the Organization classification."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:52
+msgid "Created the %label Organization classification."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationClassificationForm.php:58
+msgid "Saved the %label Organization classification."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:28
+msgid "From organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:36
+msgid "To organization"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:43
+msgid "Merge time"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:50
+msgid "Merge organizations"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationMergeForm.php:77
+msgid "Merge organization has success."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php:45
+msgid "Default business group"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php:56
+msgid "Encoding rule"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationSettingsForm.php:57
+msgid "@browse_tokens_link"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:25
+msgid "Label for the Organization type."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:52
+msgid "Created the %label Organization type."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Form/OrganizationTypeForm.php:58
+msgid "Saved the %label Organization type."
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Plugin/views/filter/Organization.php:40
+msgid "Include children"
+msgstr ""
+
+#: modules/dsi/contrib/organization/src/Plugin/views/filter/OrganizationSubordinates.php:64
+msgid "Enter a comma separated list of organization names."
+msgstr ""
+

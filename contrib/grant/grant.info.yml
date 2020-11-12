@@ -1,0 +1,15 @@
+name: 'Grant'
+type: module
+description: 'Grant'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Common business objects'
+interface translation project: grant
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - data_security
+  - drupal:help_topics
+  - drupal:user
+  - organization
+  - responsibility
+  - user_plus

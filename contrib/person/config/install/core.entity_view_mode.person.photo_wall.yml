@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - person
+id: person.photo_wall
+label: 'Photo wall'
+targetEntityType: person
+cache: true

@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup themeable
+ */
+ *  窄屏按钮式导航
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+  {% if items %}
+<ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow new-left">
+  {% endif %}
+  {{ menus.menu_links(items, attributes, 0) }}
+  {% if items %}
+</ul>
+{% endif %}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% for item in items %}
+      {% set bundle_attributes = item.url.getOption('attributes') ?: {} %}
+      {% set link_attributes = create_attribute(bundle_attributes) %}
+      <div class="left-item {{ item.in_active_trail ? 'item-active'}}">
+        {% if item.icon %}
+          <i class="{{ item.icon }}"></i>
+        {% endif %}
+        <div class="item-name" data-url="{{ item.url }}">{{ item.title }}</div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}

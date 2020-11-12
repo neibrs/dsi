@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_import.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_import_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_import module.
+    case 'help.page.dsi_import':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The import function for dsi.') . '</p>';
+      return $output;
+
+    case 'dsi_import.import':
+      $output = '<h3>' . t('Generic API Import Excel Sheet') . '</h3>';
+      $output .= '<p><b>' . t('Please create an Excel spreadsheet (.xls or .xlsx file) using one of the samples provided below as a starting point.') . '</b></p>';
+      $output .= '<p>' . t('Follow the documentation link for information on required vs. optional fields and field instructions.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_migrate_TYPE_info_alter() for process.
+ */
+function dsi_import_migrate_destination_info_alter(&$definitions) {
+  foreach ($definitions as $id => $definition) {
+    if ($definition['class'] != 'Drupal\migrate\Plugin\migrate\destination\EntityContentBase') {
+      continue;
+    }
+    $definitions[$id]['class'] = 'Drupal\dsi_import\Plugin\migrate\destination\EntityContentBase';
+  }
+}

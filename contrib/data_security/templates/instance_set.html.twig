@@ -1,0 +1,22 @@
+{#
+/**
+ * @file instance_set.html.twig
+ * Default theme implementation to present Instance set data.
+ *
+ * This template is used when viewing Instance set pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_instance_set()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('instance_set') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

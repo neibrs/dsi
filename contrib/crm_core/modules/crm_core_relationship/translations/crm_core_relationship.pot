@@ -1,0 +1,94 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:38
+msgid "Inactive"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:39
+msgid "Active"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.fields.inc:81
+msgid "Status"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:26
+msgid "Administer contact relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:27
+msgid "Allows user to create/edit/delete any contact relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:33
+msgid "Create Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:34
+msgid "Allows user to create any CRM relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:38
+msgid "View Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:39
+msgid "Allows user to view any CRM relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:43
+msgid "Edit Any Contact Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:44
+msgid "Allows user to edit any CRM relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:52
+msgid "relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.module:53
+msgid "relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:19
+msgid "Friend of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:25
+msgid "Employee of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:26
+msgid "Employer of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:34
+msgid "Member of"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship/crm_core_relationship.install:35
+msgid "Household for"
+msgstr ""
+

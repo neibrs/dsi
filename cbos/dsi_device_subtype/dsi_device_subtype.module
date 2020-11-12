@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_device_subtype.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_device_subtype_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_device_subtype module.
+    case 'help.page.dsi_device_subtype':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The device of subtype in device other type.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

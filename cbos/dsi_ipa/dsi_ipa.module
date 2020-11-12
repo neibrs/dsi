@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_ipa.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_ipa_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_ipa module.
+    case 'help.page.dsi_ipa':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The ip address.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_slider_media
+id: node_type_dsi_slider_media
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301

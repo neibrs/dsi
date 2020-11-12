@@ -1,0 +1,27 @@
+langcode: en
+status: true
+id: location_xls
+label: Location(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/data/inte.xlsx
+  sheet_name: 岗位
+  keys:
+    - 工作地点
+  columns:
+    -
+      工作地点: 工作地点
+process:
+  name:
+    -
+      plugin: callback
+      callable: trim
+      source: 工作地点
+    -
+      plugin: skip_on_empty
+      method: row
+destination:
+  plugin: entity:location
+migration_dependencies: { }

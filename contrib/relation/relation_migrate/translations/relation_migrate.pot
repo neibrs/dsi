@@ -1,0 +1,119 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.migration.inc: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.module: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:49
+msgid "Relation: Existing relation ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:50
+msgid "Relation: Indicates a new relation with the specified relation ID should be created"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:51
+msgid "Relation: Authored by (uid)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:52
+msgid "Relation: Created timestamp"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:53
+msgid "Relation: Modified timestamp"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:97
+msgid "Incoming relation_id !relation_id and map destination relation_id !destid1 don't match"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:112
+msgid "System-of-record is DESTINATION, but no destination relation_id provided"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.migration.inc:58
+msgid "The owner of relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:52
+msgid "Migrate %type fields: %fields"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:61
+msgid "Source entity type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:62
+msgid "Source entity ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:63
+msgid "Destination entity type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:64
+msgid "Destination entity ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:65
+msgid "Field name"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:54
+msgid "Fields"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:57
+msgid "Select fields of type %type, that should be migrated to relation entites."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:62
+msgid "Relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:65
+msgid "Select relation type that should be used when migrating reference fields."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:72
+msgid "User"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:74
+msgid "User that should own created relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:94
+msgid "User not found."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:112
+msgid "Relation type %relation_type cannot be used with one of the selected %FieldType fields. <a href=\"@rel_type_url\">Check allowed source/target bundles for the relation type</a>."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:16
+msgid "Migration"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:20
+msgid "Configure migration between *reference fields and relations."
+msgstr ""
+

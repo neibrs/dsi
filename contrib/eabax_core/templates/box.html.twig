@@ -1,0 +1,30 @@
+<div{{ attributes }}>
+  {% if title or icon or tools %}
+    <div class="box-header">
+      {% if icon %}
+        <i class="{{ icon }}"></i>
+      {% endif %}
+      {% if title %}
+        <h3 class="box-title">{{ title }}</h3>
+      {% endif %}
+      {% if tools %}
+        <div class="pull-right box-tools">
+          {{ tools }}
+          <button class="btn btn-box-tool" type="button" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="box-body">
+    {{ body }}
+  </div>
+
+  {% if footer %}
+    <div class="box-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+</div>
