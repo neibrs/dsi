@@ -31,3 +31,32 @@ function dsi_client_preprocess_menu__role_menu(&$variables) {
   ];
   _eabax_core_set_menu_items_icon($variables['items'], $icons);
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_client_theme($existing, $type, $theme, $path) {
+  $theme = [];
+  $theme['dsi_client'] = [
+    'render element' => 'elements',
+    'file' => 'dsi_client.page.inc',
+  ];
+
+  $theme['dsi_client_form'] = [
+    'render element' => 'form',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for dsi_client.
+ */
+function dsi_client_theme_suggestions_dsi_client(array $variables) {
+  $suggestions = [];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'dsi_client__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
