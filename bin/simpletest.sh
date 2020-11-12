@@ -3,7 +3,7 @@
 #apt update && apt install sudo -y
 vendor/bin/drush en -y simpletest
 
-sudo rm sites/simpletest/browser_output -rf
+rm sites/simpletest/browser_output -rf
 OUTPUT="simpletest-`date +%Y%m%d`.txt"
 rm ${OUTPUT}
 
@@ -28,7 +28,7 @@ runByIgnores() {
       echo "Ignore $file"
     else
       echo "Testing $file"
-      sudo -u $USER php \
+      php \
         ./core/scripts/run-tests.sh --url http://localhost --verbose \
         $module >> $OUTPUT
     fi
@@ -48,7 +48,7 @@ runByGroups() {
 
   for group in ${groups[@]}; do
     echo "Testing $group"
-    sudo -u $USER php \
+    php \
       ./core/scripts/run-tests.sh --url http://localhost --verbose \
       $group >> $OUTPUT
   done
