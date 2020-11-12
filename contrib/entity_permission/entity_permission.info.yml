@@ -1,0 +1,10 @@
+name: 'Entity permission'
+type: module
+description: 'Entity permission'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: entity_permission
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - user

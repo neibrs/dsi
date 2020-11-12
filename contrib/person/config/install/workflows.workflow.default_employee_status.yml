@@ -1,0 +1,42 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - person
+id: default_employee_status
+label: 默认员工状态
+type: employee_status
+type_settings:
+  states:
+    inactive:
+      label: 未使用
+      weight: -10
+    active:
+      label: 有效
+      weight: 0
+    leave_of_absence:
+      label: 休假
+      weight: 10
+    leave_with_pay:
+      label: 带薪休假
+      weight: 20
+    retired_with_pay:
+      label: 带薪退休
+      weight: 30
+    terminated_with_pay:
+      label: 带薪离职
+      weight: 40
+    suspended:
+      label: 暂停
+      weight: 50
+    retired:
+      label: 退休
+      weight: 60
+    terminated:
+      label: 离职
+      weight: 70
+    deceased:
+      label: 已故
+      weight: 80
+  transitions: {  }
+  entity_type_id: person

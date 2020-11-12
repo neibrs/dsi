@@ -1,0 +1,84 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/industry/dsi_cases/dsi_cases.module: n/a
+#  modules/dsi/industry/dsi_cases/src/CasesListBuilder.php: n/a
+#  modules/dsi/industry/dsi_cases/src/Entity/Cases.php: n/a
+#  modules/dsi/industry/dsi_cases/src/Form/CasesForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:29+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/industry/dsi_cases/dsi_cases.module:19
+msgid "The lawyer of cases."
+msgstr "律师案件."
+
+#: modules/dsi/industry/dsi_cases/src/CasesListBuilder.php:21 modules/dsi/industry/dsi_cases/src/Entity/Cases.php:171
+msgctxt "Case"
+msgid "Name"
+msgstr "案件名称"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:146
+
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:192
+msgid "Case Category"
+msgstr "案件类型"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:212
+msgid "Case Procedure"
+msgstr "案件程序"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:233
+msgid "Case Cause"
+msgstr " 案由"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:253
+msgctxt "Case"
+msgid "Number"
+msgstr "案号"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:269
+msgctxt "Cases"
+msgid "Delegate  Datetime"
+msgstr "委托时间"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:288
+msgctxt "Cases"
+msgid "Subject Matter"
+msgstr "案件标的"
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:305
+msgctxt "Cases"
+msgid "Person in Charge"
+msgstr "主办律师"
+
+
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:305
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:288
+
+#: modules/dsi/industry/dsi_cases/src/Form/CasesForm.php:53
+msgid "Created the %label Cases."
+msgstr "已创建案件%label."
+
+#: modules/dsi/industry/dsi_cases/src/Form/CasesForm.php:59
+msgid "Saved the %label Cases."
+msgstr "已保存案件%label."
+
+# 自定义
+msgid "Cases"
+msgstr "案件"

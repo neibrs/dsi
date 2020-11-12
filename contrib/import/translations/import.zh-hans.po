@@ -1,0 +1,266 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/import/import.info.yml: n/a
+#  modules/dsi/contrib/import/import.routing.yml: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelImportForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php: n/a
+#  modules/dsi/contrib/import/import.links.action.yml: n/a
+#  modules/dsi/contrib/import/import.links.menu.yml: n/a
+#  modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php: n/a
+#  modules/dsi/contrib/import/src/Entity/ExcelMigrate.php: n/a
+#  modules/dsi/contrib/import/config/schema/excel_migrate.schema.yml: n/a
+#  modules/dsi/contrib/import/config/schema/import.schema.yml: n/a
+#  modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/Action/ImportExcelMigrate.php: n/a
+#  modules/dsi/contrib/import/src/ImportManager.php: n/a
+#  modules/dsi/contrib/import/src/MigrateBatchExecutable.php: n/a
+#  modules/dsi/contrib/import/src/Controller/ImportController.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportRulesForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/source/XlsSourcePlus.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-08-25 09:37+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/import/import.info.yml:0
+msgid "Eabax core"
+msgstr "金算盘核心"
+
+#: modules/dsi/contrib/import/import.links.action.yml:0
+msgid "Add Excel migrate"
+msgstr "添加Excel导入"
+
+#: modules/dsi/contrib/import/import.links.menu.yml:0 modules/dsi/contrib/import/import.routing.yml:0
+msgid "Define import rules"
+msgstr "定义导入规则"
+
+#: modules/dsi/contrib/import/import.links.menu.yml:0 modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php:17 modules/dsi/contrib/import/src/Entity/ExcelMigrate.php:7
+msgid "Excel migrate"
+msgstr "Excel导入"
+
+#: modules/dsi/contrib/import/import.links.menu.yml:0
+msgid "List Excel migrate (bundles)"
+msgstr "Excel迁移列表"
+
+#: modules/dsi/contrib/import/import.routing.yml:0
+msgid "Select sheet for import"
+msgstr "选择要导入的工作表"
+
+#: modules/dsi/contrib/import/import.routing.yml:0
+msgid "Select sheet"
+msgstr "选择工作表"
+
+#: modules/dsi/contrib/import/import.routing.yml:0
+msgid "Import demo data"
+msgstr "导入演示数据"
+
+#: modules/dsi/contrib/import/config/schema/excel_migrate.schema.yml:0
+msgid "Excel migrate config"
+msgstr "Excel导入配置"
+
+#: modules/dsi/contrib/import/config/schema/excel_migrate.schema.yml:0
+msgid "ID"
+msgstr ""
+
+#: modules/dsi/contrib/import/config/schema/excel_migrate.schema.yml:0
+msgid "File path"
+msgstr "文件路径"
+
+#: modules/dsi/contrib/import/config/schema/excel_migrate.schema.yml:0
+msgid "Constants"
+msgstr "常量"
+
+#: modules/dsi/contrib/import/config/schema/import.schema.yml:0
+msgid "Import selected excel migrate"
+msgstr "导入选择的Excel文件"
+
+#: modules/dsi/contrib/import/config/schema/import.schema.yml:0 modules/dsi/contrib/import/src/Form/ExcelImportForm.php:74 modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:87 modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php:26 modules/dsi/contrib/import/src/Plugin/Action/ImportExcelMigrate.php:64
+msgid "Update"
+msgstr "更新"
+
+#: modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php:18
+msgid "Machine name"
+msgstr "机器名"
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:93
+msgid "Importing %migration (@percent%)."
+msgstr "导入%migration (@percent%)."
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:118;120
+msgid "Migrating %migrate"
+msgstr "迁移%migrate"
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:119
+msgid "Start migrating %migrate"
+msgstr "开始迁移%migrate"
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:121
+msgid "An error occurred while migrating %migrate."
+msgstr "迁移%migrate时发生错误"
+
+#: modules/dsi/contrib/import/src/Controller/ImportController.php:64
+msgid "@entity_type import"
+msgstr "@entity_type导入"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:51
+msgid "Excel Migrate %s"
+msgstr "Excel迁移%s"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:61
+msgid "Excel file"
+msgstr "Excel文件"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:64
+msgid "The import file which needs import."
+msgstr "需要导入的文件."
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:96 modules/dsi/contrib/import/src/Form/ImportForm.php:128
+msgid "File to import not found."
+msgstr "待导入的文件未找到."
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:50
+msgid "You can not migrate this excel %s"
+msgid_plural "%s not exist."
+msgstr[0] "你不能导入"
+msgstr[1] "不存在的文件%s"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:54
+msgid "- Select -"
+msgstr "- 选择 -"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:43
+msgid "Sheet"
+msgstr "工作表"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:64 modules/dsi/contrib/import/src/Form/ImportRulesForm.php:62
+msgid "Migration"
+msgstr "迁移"
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:115
+msgid "Import successed."
+msgstr "导入成功."
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:22
+msgid "Label"
+msgstr "名称"
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:25
+msgid "Label for the Excel migrate."
+msgstr "Excel导入的名称."
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:52
+msgid "Created the %label Excel migrate."
+msgstr "已创建Excel导入%label."
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:58
+msgid "Saved the %label Excel migrate."
+msgstr "已保存Excel导入%label"
+
+#: modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php:32
+msgid "Install demo data"
+msgstr "安装演示数据"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:39
+msgid "Import template not found."
+msgstr "导入模板未找到."
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:44
+msgid "Template"
+msgstr "模板"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:59
+msgid "Data file"
+msgstr "数据文件"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:62
+msgid "A import file."
+msgstr "导入文件"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:74
+msgid "Update existing data"
+msgstr "更新已有数据"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:109
+msgid "A import file. %template"
+msgstr "导入文件的模板, %template"
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:110
+msgid "Download template"
+msgstr "下载模板"
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:61
+msgid "Header row"
+msgstr "起始行"
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:78
+msgid "Sources"
+msgstr "来源"
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:80
+msgid "Data item"
+msgstr "数据项"
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:80
+msgid "Excel column"
+msgstr "Excel栏目"
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:73
+msgid "Process"
+msgstr "处理规则"
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:82
+msgid "Save"
+msgstr "保存"
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:104
+msgid "Must select a migration."
+msgstr "必须选择一个导入类型."
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:112
+msgid "The process rule failed with the following message: %message"
+msgstr "处理过程包含以下错误:%message"
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:131
+msgid "Migration %migration saved."
+msgstr "已保存导入%migration."
+
+#: modules/dsi/contrib/import/src/Plugin/Action/ImportExcelMigrate.php:16
+msgid "Import excel file"
+msgstr "导入excel文件"
+
+#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:165 modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php:25;28
+msgid "@value : Date format is incorrect."
+msgstr "@value: 数据格式错误。"
+
+
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr "已处理 1 项目 (@created 创建, @updated 更新, @failures 失败, @ignored 忽略) - 用 '@name' 完成"
+
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr "已处理 @numitems 项目 (@created 创建, @updated 更新, @failures 失败, @ignored 忽略) - 用 '@name' 完成"
+
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name'"
+msgstr "已处理 1 项目 (@created 创建, @updated 更新, @failures 失败, @ignored 忽略) - 继续处理 '@name'"
+
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name"
+msgstr "已处理 @numitems 项目 (@created 创建, @updated 更新, @failures 失败, @ignored 忽略) - 继续处理 '@name'"
+
+msgid "If there are no other errors. You can force update it .Because some data is in a temporary table"
+msgstr "如果没有其他错误，您可以强制更新它，因为某些数据位于临时表中。"

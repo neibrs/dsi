@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: external
+label: External
+system_type: external
+is_system: false
+is_employee: false

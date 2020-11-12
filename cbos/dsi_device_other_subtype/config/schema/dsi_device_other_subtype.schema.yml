@@ -1,0 +1,18 @@
+dsi_device_other_subtype.subtype.*:
+  type: config_entity
+  label: 'Other subtype config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    locations:
+      type: sequence
+      label: 'Display the following location choices'
+      sequence:
+        type: string
+        label: 'Display the following location choices'

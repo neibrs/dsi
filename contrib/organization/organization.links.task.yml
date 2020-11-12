@@ -1,0 +1,17 @@
+organization_chart:
+  route_name: organization.chart
+  base_route: organization.chart
+  title: 'Organization structure'
+entity.organization.collection:
+  route_name: entity.organization.collection
+  base_route: organization.chart
+  title: 'Organization list'
+
+entity.organization_type.collection:
+  route_name: entity.organization_type.collection
+  base_route: entity.organization_type.collection
+  title: 'Organization type'
+organization.settings:
+  route_name: organization.settings
+  base_route: entity.organization_type.collection
+  title: 'Organization settings'

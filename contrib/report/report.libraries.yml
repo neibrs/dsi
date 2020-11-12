@@ -1,0 +1,11 @@
+report_filters_form:
+  js:
+    js/report_filters_form.js: {}
+  dependencies:
+    - entity_filter/filters_form
+
+report_to_print:
+  js:
+    js/report_to_print.js: {}
+  dependencies:
+    - eabax_core/jquery.jqprint-0.3

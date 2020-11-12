@@ -1,0 +1,41 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/code/code.tokens.inc: n/a
+#  modules/dsi/contrib/code/src/Plugin/Field/FieldType/CodeItem.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/code/code.tokens.inc:15
+msgid "Code"
+msgstr ""
+
+#: modules/dsi/contrib/code/code.tokens.inc:18
+msgid "Encoding rules"
+msgstr ""
+
+#: modules/dsi/contrib/code/code.tokens.inc:19
+msgid "\"0\" means digit, \"A\" means alphabet."
+msgstr ""
+
+#: modules/dsi/contrib/code/src/Plugin/Field/FieldType/CodeItem.php:42
+msgid "Encoding rule"
+msgstr ""
+
+#: modules/dsi/contrib/code/src/Plugin/Field/FieldType/CodeItem.php:43
+msgid "This field supports tokens. @browse_tokens_link"
+msgstr ""
+

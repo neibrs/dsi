@@ -1,0 +1,113 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/lookup/src/LookupListBuilder.php: n/a
+#  modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupImportForm.php: n/a
+#  modules/dsi/contrib/lookup/src/Entity/Lookup.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/lookup/src/LookupListBuilder.php:38
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:40
+msgid "List"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:52 modules/dsi/contrib/lookup/src/Form/LookupImportForm.php:21
+msgid "Lookup type"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:70 modules/dsi/contrib/lookup/src/Entity/Lookup.php:179
+msgid "Enabled"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:71
+msgid "Disabled"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:89
+msgid "There are no enabled @label."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:90
+msgid "There are no disabled @label."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:110
+msgid "Code"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:125
+msgid "Meaning"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:145
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:160
+msgid "Pinyin shortcode"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:164
+msgid "Effective dates"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:196
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:197
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:200
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:201
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php:18
+msgid "Are you sure you want to delete %name?"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php:32
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php:49
+msgid "Created the %label Lookup type."
+msgstr ""
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php:55
+msgid "Saved the %label Lookup type."
+msgstr ""
+

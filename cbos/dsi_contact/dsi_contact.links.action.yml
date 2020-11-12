@@ -1,0 +1,5 @@
+entity.dsi_contact.add_form:
+  route_name: entity.dsi_contact.add_form
+  title: 'Add Contact'
+  appears_on:
+    - entity.dsi_contact.collection

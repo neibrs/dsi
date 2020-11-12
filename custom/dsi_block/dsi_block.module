@@ -1,0 +1,90 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_block.module.
+ */
+
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_block module.
+    case 'help.page.dsi_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The theme blocks for themes.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function dsi_block_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation == 'view') {
+    $plugin_id = $block->getPluginId();
+    if (in_array($plugin_id, ['local_actions_block'])) {
+      $route_name = \Drupal::routeMatch()->getRouteName();
+      $hide_on = [
+        'user.login',
+        'user.register',
+        'user.pass',
+      ];
+      if (in_array($route_name, $hide_on)) {
+        return AccessResult::forbidden();
+      }
+    }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_block_theme() {
+  return [
+    'user_center_block' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    //    'brand_sidebar' => [
+    //      'variables' => [
+    //        'content' => NULL
+    //      ],
+    //      'render element' => 'children',
+    //    ],
+    'user_navbar_right_block' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'template' => 'user-navbar-right-block',
+      'render element' => 'children',
+    ],
+    'header_search_block' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'template' => 'header-search-block',
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function dsi_block_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
+  $x = 'a';
+}

@@ -1,0 +1,256 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/themes/materialize/materialize.drush.inc: n/a
+#  modules/dsi/themes/materialize/modules/materialize_helper/src/Commands/MaterializeCommands.php: n/a
+#  modules/dsi/themes/materialize/includes/form.inc: n/a
+#  modules/dsi/themes/materialize/src/Materialize.php: n/a
+#  modules/dsi/themes/materialize/src/Theme.php: n/a
+#  modules/dsi/themes/materialize/src/Annotation/MaterializeSetting.php: n/a
+#  modules/dsi/themes/materialize/src/Plugin/Form/UserLoginForm.php: n/a
+#  modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php: n/a
+#  modules/dsi/themes/materialize/src/Plugin/Settings/SettingBase.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:70
+msgid "The name of the theme was not specified."
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:104
+msgid "The directory \"!directory\" was not found."
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:114 modules/dsi/themes/materialize/modules/materialize_helper/src/Commands/MaterializeCommands.php:116
+msgid "The STARTERKIT directory was not found in \"!directory\""
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:121 modules/dsi/themes/materialize/modules/materialize_helper/src/Commands/MaterializeCommands.php:124
+msgid "Copying files from starter kit…"
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:136
+msgid "Updating .info.yml file…"
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:163 modules/dsi/themes/materialize/modules/materialize_helper/src/Commands/MaterializeCommands.php:162
+msgid "Replacing \"STARTERKIT\" in all files…"
+msgstr ""
+
+#: modules/dsi/themes/materialize/materialize.drush.inc:221 modules/dsi/themes/materialize/modules/materialize_helper/src/Commands/MaterializeCommands.php:223
+msgid "Starter kit for \"!name\" created in: !path"
+msgstr ""
+
+#: modules/dsi/themes/materialize/includes/form.inc:63 modules/dsi/themes/materialize/src/Materialize.php:342;615
+msgid "Search"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:322
+msgid "Download feature"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:325
+msgid "Add effect"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:326
+msgid "Add and configure"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:327
+msgid "Save configuration"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:328
+msgid "Install and set as default"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:331
+msgid "Save and add"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:332
+msgid "Add another item"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:333
+msgid "Update style"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:339
+msgid "Confirm"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:340;604
+msgid "Filter"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:341
+msgid "Submit"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:343;601
+msgid "Settings"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:344;618
+msgid "Log in"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:347;613
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:348;614
+msgid "Remove"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:349;609
+msgid "Uninstall"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:352
+msgid "Add"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:353
+msgid "Create"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:354;610
+msgid "Install"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:355;606
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:356;611
+msgid "Write"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:359;603
+msgid "Export"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:360;605
+msgid "Import"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:361
+msgid "Restore"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:362
+msgid "Rebuild"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:365
+msgid "Apply"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:366;607
+msgid "Update"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:420
+msgid "The following function(s) or method(s) have been deprecated, please check the logs for a more detailed backtrace on where these are being invoked. Click on the function or method link to search the documentation site for a possible replacement or solution."
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:421
+msgid "<a href=\":url\" target=\"_blank\">@title</a>."
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:599
+msgid "Manage"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:600
+msgid "Configure"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:602
+msgid "Download"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:608
+msgid "Edit"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:612
+msgid "Cancel"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:616
+msgid "Upload"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:617
+msgid "Preview"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Materialize.php:619
+msgid "Close"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Theme.php:649
+msgid "Could not include file: @include"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Annotation/MaterializeSetting.php:76
+msgid "General"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Form/UserLoginForm.php:24
+msgid "Sign in"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:109
+msgid "Updating @theme_title"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:111
+msgid "Processing update @current of @total..."
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:112
+msgid "An error was encountered while attempting to update the @theme_title theme."
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:161
+msgid "Update failed"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:167
+msgid "<strong>[@theme][@schema] @label</strong>"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:172
+msgid "<strong>[@theme][@schema] @label</strong> - @message"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:203
+msgid "Successfully completed the following theme updates:"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/Schemas.php:215
+msgid "The following theme updates could not be completed:"
+msgstr ""
+
+#: modules/dsi/themes/materialize/src/Plugin/Settings/SettingBase.php:175
+msgid "See also:"
+msgstr ""
+

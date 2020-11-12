@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - dsi_device.type.unknown
+    - dsi_hardware.type.blade_size
+    - dsi_hardware.type.none
+    - dsi_hardware.type.normal
+    - dsi_hardware.type.other
+    - field.storage.dsi_device.field_hardware
+id: dsi_device.unknown.field_hardware
+field_name: field_hardware
+entity_type: dsi_device
+bundle: unknown
+label: Hardware
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:dsi_hardware'
+  handler_settings:
+    target_bundles:
+      none: none
+      blade_size: blade_size
+      other: other
+      normal: normal
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: none
+field_type: entity_reference

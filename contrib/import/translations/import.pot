@@ -1,0 +1,226 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php: n/a
+#  modules/dsi/contrib/import/src/ImportSelectSheetBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/import/src/MigrateBatchExecutable.php: n/a
+#  modules/dsi/contrib/import/src/Controller/ImportController.php: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelImportForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/Action/ImportExcelMigrate.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php: n/a
+#  modules/dsi/contrib/import/src/Form/ImportRulesForm.php: n/a
+#  modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php: n/a
+#  modules/dsi/contrib/import/src/Plugin/migrate/source/XlsSourcePlus.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php:17
+msgid "Excel migrate"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/ExcelMigrateListBuilder.php:18
+msgid "Machine name"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/ImportSelectSheetBreadcrumbBuilder.php:28
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/ImportSelectSheetBreadcrumbBuilder.php:39
+msgid "Select Sheet For Import"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:45;47
+msgid "Migrating %migrate"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:46
+msgid "Start migrating %migrate"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:48
+msgid "An error occurred while migrating %migrate."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:223
+msgid "Importing %migration (@percent%)."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:239;256
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:240;257
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - done with '@name'"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:260
+msgid "Processed 1 item (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name'"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/MigrateBatchExecutable.php:261
+msgid "Processed @numitems items (@created created, @updated updated, @failures failed, @ignored ignored) - continuing with '@name'"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Controller/ImportController.php:62
+msgid "@entity_type import"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:51
+msgid "Excel Migrate %s"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:61
+msgid "Excel file"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:64
+msgid "The import file which needs import."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:74 modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:90 modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php:26 modules/dsi/contrib/import/src/Plugin/Action/ImportExcelMigrate.php:64
+msgid "Update"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:81 modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:97 modules/dsi/contrib/import/src/Form/ImportForm.php:132 modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:145
+msgid "Import"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:96 modules/dsi/contrib/import/src/Form/ImportForm.php:212
+msgid "File to import not found."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:57
+msgid "- Select -"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:67 modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:48
+msgid "Sheet"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:67 modules/dsi/contrib/import/src/Form/ImportRulesForm.php:62
+msgid "Migration"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:118
+msgid "Import successed."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:22
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:25
+msgid "Label for the Excel migrate."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:52
+msgid "Created the %label Excel migrate."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ExcelMigrateForm.php:58
+msgid "Saved the %label Excel migrate."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportDemoDataForm.php:32
+msgid "Install demo data"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:45
+msgid "Import template not found."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:50
+msgid "Template"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:88
+msgid "Data file"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:91
+msgid "A import file."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:124
+msgid "Update existing data"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:154
+msgid "Default value"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:67
+msgid "Header row"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:83
+msgid "Sources"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:85
+msgid "Data item"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:85
+msgid "Excel column"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:161
+msgid "-Select-"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:73
+msgid "Process"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:82
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:104
+msgid "Must select a migration."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:112
+msgid "The process rule failed with the following message: %message"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Form/ImportRulesForm.php:131
+msgid "Migration %migration saved."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:149
+msgid "@entity does not found: @label"
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:163
+msgid "The allowed options for @field are: @allowed_options. @value is not allowed."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:174 modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php:57;60
+msgid "@value : Date format is incorrect."
+msgstr ""
+
+#: modules/dsi/contrib/import/src/Plugin/migrate/source/XlsSourcePlus.php:169
+msgid "If there are no other errors. You can force update it .Because some data is in a temporary table"
+msgstr ""
+

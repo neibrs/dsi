@@ -1,0 +1,11 @@
+name: 'Relation Entity Collector block'
+type: module
+description: 'A block to collect entities loaded on any page(s), and create relations from them.'
+package: Relation
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - relation
+  - block
+stylesheets:
+  - relation_entity_collector.css

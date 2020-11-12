@@ -1,0 +1,82 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/security_profile/security_profile.info.yml: n/a
+#  modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php: n/a
+#  modules/dsi/contrib/security_profile/security_profile.links.action.yml: n/a
+#  modules/dsi/contrib/security_profile/security_profile.links.menu.yml: n/a
+#  modules/dsi/contrib/security_profile/security_profile.links.task.yml: n/a
+#  modules/dsi/contrib/security_profile/security_profile.permissions.yml: n/a
+#  modules/dsi/contrib/security_profile/src/SecurityProfileListBuilder.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-06-18 16:37+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/security_profile/security_profile.info.yml:0;0 modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php:12
+msgid "Security profile"
+msgstr "安全档案"
+
+#: modules/dsi/contrib/security_profile/security_profile.links.menu.yml:0
+msgid "Security profile settings"
+msgstr "安全档案设置"
+
+#: modules/dsi/contrib/security_profile/security_profile.links.menu.yml:0
+msgid "List Security profile entities"
+msgstr "安全档案列表"
+
+#: modules/dsi/contrib/security_profile/security_profile.links.menu.yml:0
+msgid "Configure Security profile entities"
+msgstr "配置安全档案"
+
+#: modules/dsi/contrib/security_profile/security_profile.permissions.yml:0
+msgid "Administer Security profiles"
+msgstr "管理安全档案"
+
+#: modules/dsi/contrib/security_profile/security_profile.permissions.yml:0
+msgid "Maintain Security profiles"
+msgstr "维护安全档案"
+
+#: modules/dsi/contrib/security_profile/security_profile.permissions.yml:0
+msgid "View Security profiles"
+msgstr "查看安全档案"
+
+#: modules/dsi/contrib/security_profile/src/SecurityProfileListBuilder.php:20
+msgid "Security profile ID"
+msgstr "安全档案编号"
+
+#: modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php:123
+msgid "Top organization"
+msgstr "顶级组织"
+
+#: modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php:138
+msgid "Include top organization"
+msgstr "包含顶级组织"
+
+#: modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php:156
+msgid "Exclude business group"
+msgstr "不包含业务组"
+
+#: modules/dsi/contrib/security_profile/src/Entity/SecurityProfile.php:12
+msgid "Security profiles"
+msgstr "安全档案"
+
+#: modules/dsi/contrib/security_profile/src/Form/SecurityProfileForm.php:78
+msgid "Created the %label Security profile."
+msgstr "已创建安全档案%label."
+
+#: modules/dsi/contrib/security_profile/src/Form/SecurityProfileForm.php:84
+msgid "Saved the %label Security profile."
+msgstr "已保存安全档案%label."
+

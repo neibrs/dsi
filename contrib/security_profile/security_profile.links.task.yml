@@ -1,0 +1,21 @@
+# Security profile routing definition
+security_profile.settings_tab:
+  route_name: security_profile.settings
+  title: 'Settings'
+  base_route: security_profile.settings
+
+entity.security_profile.canonical:
+  route_name: entity.security_profile.canonical
+  base_route: entity.security_profile.canonical
+  title: 'View'
+
+entity.security_profile.edit_form:
+  route_name: entity.security_profile.edit_form
+  base_route: entity.security_profile.canonical
+  title: 'Edit'
+
+entity.security_profile.delete_form:
+  route_name:  entity.security_profile.delete_form
+  base_route:  entity.security_profile.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,214 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function views_plus_theme($existing, $type, $theme, $path) {
+  return [
+    'views_plus_style_plugin_table_tree' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_load() for view.
+ */
+function views_plus_view_load($entities) {
+  /** @var \Drupal\views\ViewEntityInterface $entity */
+  foreach ($entities as $entity) {
+    $display = &$entity->getDisplay('default');
+    if (isset($display['display_options']['cache']['type']) && $display['display_options']['cache']['type'] == 'tag') {
+      $display['display_options']['cache']['type'] = 'tag_with_display_tags';
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for view.
+ */
+function views_plus_view_presave(EntityInterface $entity) {
+  /** @var \Drupal\views\ViewEntityInterface $entity */
+
+  $displays = $entity->get('display');
+
+  // 无 page_1 的视图不添加 rest_export.
+  if (!isset($displays['page_1'])) {
+    return;
+  }
+  // 无字段设置的视图不添加 rest_export.
+  if (!isset($displays['default']['display_options']['fields'])) {
+    return;
+  }
+  if (empty($displays['default']['display_options']['fields'])) {
+    return;
+  }
+
+  $page = $displays['page_1'];
+  $default = $displays['default'];
+
+  // Setup rest_export_1 from default display
+  if (isset($displays['rest_export_1'])) {
+    $rest_export = &$entity->getDisplay('rest_export_1');
+  }
+  else {
+    $entity->addDisplay('rest_export', 'REST export', 'rest_export_1');
+    $rest_export = &$entity->getDisplay('rest_export_1');
+    $rest_export['display_options'] = [
+      'row' => [
+        'type' => 'data_field',
+      ],
+      'pager' => [
+        'type' => 'none',
+        'options' => [
+          'offset' => 0,
+        ],
+      ],
+    ];
+  }
+
+  // @see views_template_views_pre_view() 会自动删除 rest_export 不需要的字段.
+
+  $rest_export['display_options']['path'] = $page['display_options']['path'] . '/export.csv';
+  $rest_export['cache_metadata'] = $default['cache_metadata'];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view_table.
+ */
+function views_plus_preprocess_views_view_table(&$variables) {
+  // Exit if no content available
+  if (empty($variables['result'])) {
+    return;
+  }
+
+  $view = $variables['view'];
+
+  // Add entity id for <tr> tag
+  foreach ($variables['rows'] as $key => $row) {
+    if ($entity = $variables['result'][$key]->_entity) {
+      $variables['rows'][$key]['attributes'] = new Attribute(['entity-id' => $entity->id()]);
+    }
+  }
+
+  if (isset($view->style_plugin->options['tree_column'])) {
+    $tree_column = $view->style_plugin->options['tree_column'];
+    foreach ($variables['rows'] as $key => $row) {
+      $markup = $row['columns'][$tree_column]['content'][0]['field_output']['#markup'];
+      $entity = $variables['result'][$key]->_entity;
+      if (!empty($entity)) {
+        $data_url = '';
+        \Drupal::moduleHandler()->alter('views_tree_data_url', $data_url, $view, $entity);
+      }
+
+      if (!empty($data_url)) {
+        $icon = '<span class="views-tree-icon views-tree-icon-folder" data-url="' . $data_url . '"></span>';
+      }
+      else {
+        $icon = '<span class="views-tree-icon views-tree-icon-leaf"></span>';
+      }
+      $variables['rows'][$key]['columns'][$tree_column]['content'][0]['field_output']['#markup'] = $icon . $markup;
+
+      $variables['rows'][$key]['columns'][$tree_column]['attributes'] = new Attribute(['class' => ['tree-column']]);
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function views_plus_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  $display =& $view->storage->getDisplay('default');
+  if (isset($display['display_options']['exposed_form']['type']) && $display['display_options']['exposed_form']['type'] == 'basic') {
+    $display['display_options']['exposed_form']['type'] = 'ajax';
+  }
+}
+
+/**
+ * Implements hook_views_plugins_display_alter().
+ */
+function views_plus_views_plugins_display_alter(array &$plugins) {
+  // Provides views_plus_view alter.
+  $plugins['page']['class'] = '\Drupal\views_plus\Plugin\views\display\Page';
+
+  // 中文环境导出excel采用GBK字符集
+  $plugins['rest_export']['class'] = '\Drupal\views_plus\Plugin\views\display\RestExport';
+}
+
+/**
+ * Implements hook_views_plugins_field_alter().
+ */
+function views_plus_views_plugins_field_alter(array &$plugins) {
+  // 提供批量更新功能.
+  $plugins['bulk_form']['class'] = '\Drupal\views_plus\Plugin\views\field\BulkForm';
+
+  $plugins['date']['class'] = '\Drupal\views_plus\Plugin\views\field\Date';
+}
+
+/**
+ * Implements hook_views_plugins_filter_alter().
+ */
+function views_plus_views_plugins_filter_alter(array &$plugins) {
+  // Support date range select.
+  $plugins['date']['class'] = '\Drupal\views_plus\Plugin\views\filter\Date';
+  $plugins['datetime']['class'] = '\Drupal\views_plus\Plugin\views\filter\DateTime';
+}
+
+/**
+ * Implements hook_views_plugins_query_alter().
+ */
+function views_plus_views_plugins_query_alter(array &$plugins) {
+  // 有 group_by 时，不乱加字段.
+  $plugins['views_query']['class'] = '\Drupal\views_plus\Plugin\views\query\Sql';
+}
+
+/**
+ * Implements hook_views_plugins_join_alter().
+ */
+function views_plus_views_plugins_join_alter(array &$plugins) {
+  $plugins['subquery']['class'] = '\Drupal\views_plus\Plugin\views\join\Subquery';
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function views_plus_views_pre_render(ViewExecutable $view) {
+  if (empty($view->is_attachment) && empty($view->live_preview)) {
+    $view->element['#attached']['library'][] = 'views_plus/views_plus';
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function views_plus_library_info_alter(&$libraries, $extension) {
+  if (isset($libraries['drupal.tableheader'])) {
+    $libraries['drupal.tableheader']['js'] = [
+      '/' . drupal_get_path('module', 'views_plus') . '/js/tableheader.js' => [],
+    ];
+  }
+}
+
+/**
+ * Implements hook_element_plugin_alter().
+ */
+function views_plus_element_plugin_alter(array &$definitions) {
+  // 让 view 支持 override.
+  $definitions['view']['class'] = '\Drupal\views_plus\Element\View';
+}
+
+/**
+ * @see template_preprocess_views_view_grid()
+ */
+function template_preprocess_views_view_block_item(&$variables) {
+  $x = 'a';
+  template_preprocess_views_view_unformatted($variables);
+}

@@ -1,0 +1,131 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\file\Entity\File;
+use Drupal\person\Entity\Person;
+use Drupal\person\InstallHelper;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ */
+function person_install() {
+  // Ensure hook_views_data_alter is run after view_plus module.
+  module_set_weight('person', 10);
+
+  // Import default fields.
+  $settings = \Drupal::configFactory()->getEditable('import.settings');
+  $default_value_fields = $settings->get('default_value_fields');
+  $default_value_fields['person'][] = 'type';
+  $default_value_fields['person'][] = 'employee_status';
+  $settings->set('default_value_fields', $default_value_fields)->save();
+
+  // Do not allow to delete the person's type machine name.
+  $locked = \Drupal::state()->get('person.type.locked');
+  $locked['employee'] = 'employee';
+  \Drupal::state()->set('person.type.locked', $locked);
+
+  // 设置报表基表.
+  $settings = \Drupal::configFactory()->getEditable('report.settings');
+  $base_tables = $settings->get('base_tables');
+  $base_tables[] = 'person_field_data';
+  $settings->set('base_tables', $base_tables)->save();
+  
+  user_role_grant_permissions('implementor', [
+    'administer persons',
+    'view persons',
+    'add persons',
+    'delete persons',
+    'edit persons',
+  ]);
+
+  $person = Person::create([
+    'type' => 'employee',
+    'name' => t('Admin'),
+    'organization' => 1,
+  ]);
+  $person->save();
+
+  $admin = User::load(1);
+  // TODO: Field person is unknown
+  $admin->person->target_id = $person->id();
+  $admin->save();
+
+  // Default picture for person
+  $filename = 'default_person_picture.jpg';
+  $source = drupal_get_path('module', 'person') . '/' . $filename;
+  $destination = 'public://' . $filename;
+  \Drupal::service('file_system')->copy($source, $destination);
+  $file = File::create([
+    'uri' => $destination,
+    'filename' => $filename,
+    'name' => $filename,
+  ]);
+  $file->setPermanent();
+  $file->save();
+  \Drupal::state()->set('default_person_picture_uuid', $file->uuid());
+
+  // 安装国标数据
+  if (!\Drupal::service('config.installer')->isSyncing()) {
+    \Drupal::classResolver(InstallHelper::class)->installData();
+  }
+}
+
+/**
+ * Update from 19.06
+ */
+function person_update_190700() {
+  \Drupal::service('module_installer')->install([
+    'entity_filter',
+  ]);
+}
+
+/**
+ * Update from 19.05
+ */
+function person_update_190600() {
+  /** @var \Drupal\config_update\ConfigRevertInterface $config_update */
+  $config_update = \Drupal::service('config_update.config_update');
+  $config_update->revert('view', 'person');
+}
+
+/**
+ * Add gender and marital_status fields to person entity.
+ */
+function person_update_171200() {
+  $storage_definition = BaseFieldDefinition::create('list_integer')
+    ->setLabel(t('Gender'))
+    ->setSetting('allowed_values', [
+      1 => 'Male',
+      2 => 'Female',
+    ]);
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('gender', 'person', 'person', $storage_definition);
+
+  $storage_definition = BaseFieldDefinition::create('list_integer')
+    ->setLabel(t('Marital status'))
+    ->setSetting('allowed_values', [
+      1 => 'Married',
+      2 => 'Single',
+      3 => 'Divorced',
+      4 => 'Widowed',
+    ]);
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('marital_status', 'person', 'person', $storage_definition);
+}
+
+/**
+ * Update from 18.01.
+ */
+function person_update_180200() {
+  // TODO reinstall person_type config entities.
+
+  /** @var \Drupal\config_update\ConfigRevertInterface $config_update */
+  $config_update = \Drupal::service('config_update.config_update');
+  $config_update->import('menu', 'role-menu-employee');
+  $config_update->revert('user_role', 'employee');
+}

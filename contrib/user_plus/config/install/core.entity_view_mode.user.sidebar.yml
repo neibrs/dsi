@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  enforced:
+    module:
+      - user_plus
+id: user.sidebar
+label: Sidebar
+targetEntityType: user
+cache: true

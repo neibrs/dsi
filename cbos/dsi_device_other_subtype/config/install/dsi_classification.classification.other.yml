@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: other
+label: Other
+target_entity_type_id: dsi_device
+target_entity_bundle_id: other
+collections:
+  in_service: in_service

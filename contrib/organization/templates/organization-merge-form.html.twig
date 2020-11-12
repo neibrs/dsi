@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a organization edit form.
+ *
+ * Available variables:
+ * - form: The organization add/edit form.
+ */
+#}
+
+<div class="form-horizontal">
+  <div class="box">
+    <div class="box-body row">
+      <div class="col-md-6">
+        {{ form.from_organization }}
+        {{ form.to_organization }}
+        {{ form.merge_date }}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{ form|without('from_organization', 'to_organization', 'merge_date') }}

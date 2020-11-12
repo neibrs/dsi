@@ -1,0 +1,31 @@
+views_template.view_template.*:
+  type: config_entity
+  label: 'View template config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    view_id:
+      type: string
+      label: 'View id'
+    fields:
+      type: sequence
+      label: 'Fields'
+      sequence:
+        type: views.field.[plugin_id]
+    filters:
+      type: sequence
+      label: 'Filters'
+      sequence:
+        type: views.filter.[plugin_id]
+    is_public:
+      type: boolean
+      label: 'Public'
+    user_id:
+      type: integer
+      label: 'User id'

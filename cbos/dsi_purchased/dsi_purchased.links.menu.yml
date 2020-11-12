@@ -1,0 +1,14 @@
+
+# Purchased menu items definition
+entity.dsi_purchased.collection:
+  title: 'Purchased list'
+  route_name: entity.dsi_purchased.collection
+  description: 'List Purchased entities'
+  parent: system.admin_structure
+  weight: 100
+
+dsi_purchased.admin.structure.settings:
+  title: 'Purchased settings'
+  description: 'Configure Purchased entities'
+  route_name: dsi_purchased.settings
+  parent: system.admin_structure

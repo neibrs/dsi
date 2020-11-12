@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function dsi_client_install($is_syncing) {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+  $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+
+  $data = [
+    '1' => '业务开发',
+    '2' => '客户介绍',
+    '3' => '客户主动联系',
+    '4' => '朋友介绍',
+    '5' => '宣传推广',
+    '6' => '网上获取',
+  ];
+  getOrCreateLookup('customer_source', $data, '客户来源', $lookup_storage);
+
+  $data = [
+    '1' => '核心',
+    '2' => '重要',
+    '3' => '一般',
+    '4' => '次要',
+  ];
+  getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);
+
+  $data = [
+    '1' => '签约',
+    '2' => '意向',
+    '3' => '潜在',
+    '4' => '终止',
+  ];
+  getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
+}
+
+function getOrCreateLookup($type, $data, $description, $lookup_storage) {
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => $type,
+      'name' => $value,
+      'code' => $key,
+      'description' => $description,
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+}

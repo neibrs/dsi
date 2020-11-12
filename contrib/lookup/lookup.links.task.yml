@@ -1,0 +1,11 @@
+# Lookup routing definition
+
+entity.lookup.canonical:
+  route_name: entity.lookup.canonical
+  base_route: entity.lookup.canonical
+  title: 'Detail'
+
+entity.lookup.edit_form:
+  route_name: entity.lookup.edit_form
+  base_route: entity.lookup.canonical
+  title: 'Edit'

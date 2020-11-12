@@ -1,0 +1,8 @@
+langcode: en
+status: true
+id: usd
+code: USD
+label: US Dollar
+symbol: $
+precision: 2
+pinyin_code: my

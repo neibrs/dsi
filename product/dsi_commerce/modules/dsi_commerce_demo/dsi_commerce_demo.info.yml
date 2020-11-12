@@ -1,0 +1,6 @@
+name: 'Dsi Commerce Demo'
+type: module
+description: 'The demo commerce for dsi.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi'

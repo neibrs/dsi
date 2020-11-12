@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dsi_commerce_product_install($is_syncing) {
+  $storage = \Drupal::service('entity_type.manager')->getStorage('commerce_product_variation_type');
+  $storage->load('default')
+    ->set('label', 'Server')
+    ->save();
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function dsi_commerce_product_uninstall($is_syncing) {
+  $storage = \Drupal::service('entity_type.manager')->getStorage('commerce_product_variation_type');
+  $storage->load('default')
+    ->set('label', 'Default')
+    ->save();
+}

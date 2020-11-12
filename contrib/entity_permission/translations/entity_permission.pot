@@ -1,0 +1,94 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/entity_permission/entity_permission.module: n/a
+#  modules/dsi/contrib/entity_permission/src/Form/EntityPermissionSettingsForm.php: n/a
+#  modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/entity_permission/entity_permission.module:137
+msgid "Edit entity permissions"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/EntityPermissionSettingsForm.php:32
+msgid "Entity"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/EntityPermissionSettingsForm.php:33
+msgid "Entity permission"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/EntityPermissionSettingsForm.php:34 modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:109
+msgid "Bundle permission"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/EntityPermissionSettingsForm.php:35
+msgid "Field permission"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:33
+msgid "Need to setup entities to manage permissions."
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:71;112;172;185
+msgid "View"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:80;113
+msgid "Update"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:89;114
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:98;115
+msgid "Create"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:111
+msgid "Bundle"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:162
+msgid "Field permissions"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:171;184
+msgid "Field"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:173;186
+msgid "Edit"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:175
+msgid "Base field permissions"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:188
+msgid "@bundle field permissions"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:213
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/contrib/entity_permission/src/Form/RoleEntityPermissionForm.php:266
+msgid "Entity permissions for @role has saved."
+msgstr ""
+

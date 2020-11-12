@@ -1,0 +1,37 @@
+entity.organization.children:
+  path: '/organization/{organization}/children'
+  requirements:
+    _permission: 'view organizations'
+    _entity_access: 'organization.view'
+
+entity.organization.children.add:
+  path: '/organization/{organization}/children/add'
+  defaults:
+    _entity_form: 'organization.add'
+    _title: 'Add'
+    organization_type: 'department'
+  requirements:
+    _permission: 'maintain organizations'
+    _entity_access: 'organization.update'
+
+entity.organization.export:
+  path: '/organization/export.csv'
+  requirements:
+    _permission: 'maintain organizations'
+
+entity.organization.merge_form:
+  path: '/organization/merge/{organization}/from'
+  defaults:
+    _form: '\Drupal\organization\Form\OrganizationMergeForm'
+    _title: 'Organization merge'
+  requirements:
+    _permission: 'maintain organizations'
+
+organization.chart:
+  path: '/organization/chart'
+  defaults:
+    _form: '\Drupal\organization\Form\OrganizationChartForm'
+    _title: 'Organization chart'
+  requirements:
+    _permission: 'view organizations'
+

@@ -1,0 +1,193 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/quick_code/src/QuickCodeBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/quick_code/src/Entity/QuickCode.php: n/a
+#  modules/dsi/contrib/quick_code/src/QuickCodeForm.php: n/a
+#  modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php: n/a
+#  modules/dsi/contrib/quick_code/src/QuickCodePermissions.php: n/a
+#  modules/dsi/contrib/quick_code/src/QuickCodeTypeListBuilder.php: n/a
+#  modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php: n/a
+#  modules/dsi/contrib/quick_code/src/Plugin/views/filter/Effective.php: n/a
+#  modules/dsi/contrib/quick_code/src/Plugin/Menu/LocalAction/QuickCodeAddForm.php: n/a
+#  modules/dsi/contrib/quick_code/src/Plugin/views/area/QuickCodeFilter.php: n/a
+#  modules/dsi/contrib/quick_code/src/Plugin/views/argument/QuickCode.php: n/a
+#  modules/dsi/contrib/quick_code/src/Plugin/views/argument/QuickCodeType.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeBreadcrumbBuilder.php:29
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeBreadcrumbBuilder.php:30
+msgid "Quick code"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:102
+msgctxt "Short code"
+msgid "Quick code"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeForm.php:41 modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:91
+msgid "Edit"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeForm.php:45
+msgid "Created new %type %entity."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeForm.php:49
+msgid "Updated %type %entity."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodePermissions.php:48
+msgid "Edit %type quick code"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodePermissions.php:53
+msgid "Delete %type quick code"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:21
+msgid "Add quick code type"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:24
+msgid "Edit quick code type"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:29 modules/dsi/contrib/quick_code/src/QuickCodeTypeListBuilder.php:26
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:46 modules/dsi/contrib/quick_code/src/QuickCodeTypeListBuilder.php:27 modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:88
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:51
+msgid "Hierarchy"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:56 modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:126
+msgid "Code"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:67
+msgid "Encoding rules"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:68
+msgid "@browse_tokens_link"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:94
+msgid "Created new quick code type %label."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeTypeForm.php:99
+msgid "Updated new quick code type %label."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:21
+msgid "Operations bulk form"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:22
+msgid "Add a form element that lets you run operations on multiple entities."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:29 modules/dsi/contrib/quick_code/src/Plugin/views/filter/Effective.php:53
+msgid "Effective"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:30
+msgid "Filter the view to the effective code."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:37
+msgid "Quick code filter"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/QuickCodeViewsData.php:38
+msgid "Provides a quick code list to filter quick codes."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:73
+msgctxt "QuickCode"
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:111
+msgid "Effective Dates"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:140
+msgid "Parent"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:141
+msgid "The parent quick code."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:155
+msgid "Color"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:169
+msgid "Weight"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:170
+msgid "The weight of this quick code in relation to other quick codes."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:174
+msgid "Authored on"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:175
+msgid "The time that the quick code was created."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:178
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Entity/QuickCode.php:179
+msgid "The time that the quick code was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Plugin/Menu/LocalAction/QuickCodeAddForm.php:18 modules/dsi/contrib/quick_code/src/Plugin/views/area/QuickCodeFilter.php:62
+msgid "Add %type"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Plugin/views/area/QuickCodeFilter.php:42
+msgid "Quick code type"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Plugin/views/area/QuickCodeFilter.php:44
+msgid "The quick code type."
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Plugin/views/argument/QuickCode.php:56 modules/dsi/contrib/quick_code/src/Plugin/views/argument/QuickCodeType.php:56
+msgid "No name"
+msgstr ""
+
+#: modules/dsi/contrib/quick_code/src/Plugin/views/filter/Effective.php:53
+msgid "All"
+msgstr ""
+

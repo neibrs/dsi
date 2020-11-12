@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - import
+id: excel_migrate_import
+label: 'Import excel file'
+type: excel_migrate
+plugin: excel_migrate_import
+configuration:
+  update: TRUE

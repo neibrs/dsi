@@ -1,0 +1,451 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/migrate_tools/migrate_tools.info.yml: n/a
+#  modules/migrate_tools/src/Controller/MigrationListBuilder.php: n/a
+#  modules/migrate_tools/migrate_tools.links.action.yml: n/a
+#  modules/migrate_tools/migrate_tools.routing.yml: n/a
+#  modules/migrate_tools/migrate_tools.links.menu.yml: n/a
+#  modules/migrate_tools/migrate_tools.links.task.yml: n/a
+#  modules/migrate_tools/src/Controller/MigrationController.php: n/a
+#  modules/migrate_tools/migrate_tools.permissions.yml: n/a
+#  modules/migrate_tools/src/MigrateBatchExecutable.php: n/a
+#  modules/migrate_tools/src/Controller/MessageController.php: n/a
+#  modules/migrate_tools/src/Form/MigrationFormBase.php: n/a
+#  modules/migrate_tools/src/Form/MigrationGroupFormBase.php: n/a
+#  modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php: n/a
+#  modules/migrate_tools/src/Form/MigrationExecuteForm.php: n/a
+#  modules/migrate_tools/src/Form/MigrationDeleteForm.php: n/a
+#  modules/migrate_tools/src/Form/MigrationEditForm.php: n/a
+#  modules/migrate_tools/src/Form/MigrationGroupAddForm.php: n/a
+#  modules/migrate_tools/src/Form/MigrationGroupDeleteForm.php: n/a
+#  modules/migrate_tools/src/Form/MigrationGroupEditForm.php: n/a
+#  modules/migrate_tools/src/Form/SourceCsvForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-12-10 16:19+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/migrate_tools/migrate_tools.info.yml:0
+msgid "Migrate Tools"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.info.yml:0
+msgid "Tools to assist in developing and running migrations."
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.info.yml:0 modules/migrate_tools/src/Controller/MigrationListBuilder.php:118
+msgid "Migration"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.action.yml:0 modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Add migration group"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.menu.yml:0 modules/migrate_tools/migrate_tools.routing.yml:0;0
+msgid "Migrations"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.menu.yml:0
+msgid "Manage migration processes."
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0
+msgid "View"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0;0 modules/migrate_tools/src/Controller/MigrationController.php:74
+msgid "Overview"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0;0 modules/migrate_tools/migrate_tools.routing.yml:0 modules/migrate_tools/src/Controller/MigrationController.php:123;205
+msgid "Source"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0 modules/migrate_tools/migrate_tools.routing.yml:0 modules/migrate_tools/src/Controller/MigrationController.php:200
+msgid "Process"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0 modules/migrate_tools/migrate_tools.routing.yml:0 modules/migrate_tools/src/Controller/MigrationController.php:204;270
+msgid "Destination"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0
+msgid "Edit"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0 modules/migrate_tools/src/Controller/MigrationListBuilder.php:124
+msgid "Messages"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.links.task.yml:0
+msgid "Delete"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.permissions.yml:0
+msgid "Administer migrations"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.permissions.yml:0
+msgid "Create, edit, and manage migration processed."
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Edit migration group"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Delete migration group"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Migration overview"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0 modules/migrate_tools/src/Controller/MigrationController.php:246
+msgid "Run"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Edit migration"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Delete migration"
+msgstr ""
+
+#: modules/migrate_tools/migrate_tools.routing.yml:0
+msgid "Execute migration"
+msgstr ""
+
+#: modules/migrate_tools/src/MigrateBatchExecutable.php:101;103
+msgid "Migrating %migrate"
+msgstr ""
+
+#: modules/migrate_tools/src/MigrateBatchExecutable.php:102
+msgid "Start migrating %migrate"
+msgstr ""
+
+#: modules/migrate_tools/src/MigrateBatchExecutable.php:104
+msgid "An error occurred while migrating %migrate."
+msgstr ""
+
+#: modules/migrate_tools/src/MigrateBatchExecutable.php:234
+msgid "Importing %migration (@percent%)."
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MessageController.php:98
+msgid "Severity level"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MessageController.php:103
+msgid "Message"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MessageController.php:137
+msgid "No messages for this migration."
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MessageController.php:156
+msgid "Messages of %migration"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:78
+msgid "Group:"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:84
+msgid "Description:"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:92
+msgid "Migration Dependencies"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:99
+msgid "Soft Migration Dependencies"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:125
+msgid "<p>These are the fields available from the source of this migration task. The machine names listed here may be used as sources in the process pipeline.</p>"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:134
+msgid "Query"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:137;283 modules/migrate_tools/src/Form/MigrationFormBase.php:85 modules/migrate_tools/src/Form/MigrationGroupFormBase.php:78
+msgid "Machine name"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:137;283 modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php:29 modules/migrate_tools/src/Form/MigrationGroupFormBase.php:89
+msgid "Description"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:150;297
+msgid "No fields"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:206
+msgid "Process plugin"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:207
+msgid "Default"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:241
+msgid "No process defined."
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:272
+msgid "<p>These are the fields available in the destination plugin of this migration task. The machine names are those available to be used as the keys in the process pipeline.</p>"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationController.php:280
+msgid "Type"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php:27 modules/migrate_tools/src/Form/MigrationFormBase.php:106
+msgid "Migration Group"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php:28 modules/migrate_tools/src/Controller/MigrationListBuilder.php:119
+msgid "Machine Name"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php:30
+msgid "Source Type"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationGroupListBuilder.php:60
+msgid "List migrations"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:120
+msgid "Status"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:121
+msgid "Total"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:122
+msgid "Imported"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:123
+msgid "Unprocessed"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:125
+msgid "Last Imported"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:126 modules/migrate_tools/src/Form/MigrationExecuteForm.php:70
+msgid "Operations"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:176;177;217;218;219;220;221;222
+msgid "N/A"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:205 modules/migrate_tools/src/Form/MigrationExecuteForm.php:87
+msgid "Execute"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:216
+msgid "No data found"
+msgstr ""
+
+#: modules/migrate_tools/src/Controller/MigrationListBuilder.php:164
+msgid "Migration entity id %id is malformed: %orig"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationDeleteForm.php:25
+msgid "Are you sure you want to delete migration %label?"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationDeleteForm.php:37
+msgid "Delete Migration"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationDeleteForm.php:63
+msgid "Migration %label was deleted."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationEditForm.php:32
+msgid "Update Migration"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:73
+msgid "Import"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:74
+msgid "Rollback"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:75
+msgid "Stop"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:76
+msgid "Reset"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:80
+msgid "Choose an operation to run"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:90
+msgid "Import: Imports all previously unprocessed records from the source, plus any records marked for update, into destination Drupal objects."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:91
+msgid "Rollback: Deletes all Drupal objects created by the import."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:92
+msgid "Stop: Cleanly interrupts any import or rollback processes that may currently be running."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:93
+msgid "Reset: Sometimes a process may fail to stop cleanly, and be left stuck in an Importing or Rolling Back status. Choose Reset to clear the status and permit other operations to proceed."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:96
+msgid "Definitions"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:103
+msgid "Options"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:109
+msgid "Update"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:110
+msgid "Check this box to update all previously-imported content\n      in addition to importing new content. Leave unchecked to only import\n      new content"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:116
+msgid "Ignore dependencies"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:117
+msgid "Check this box to ignore dependencies when running imports\n      - all tasks will run whether or not their dependent tasks have\n      completed."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:123
+msgid "Limit to:"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:125
+msgid "Set a limit of how many items to process for each migration task."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationExecuteForm.php:136
+msgid "Please select an operation."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:70
+msgid "Creating migrations is not yet supported. See <a href=\":url\">:url</a>"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:78 modules/migrate_tools/src/Form/MigrationGroupFormBase.php:71
+msgid "Label"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:110
+msgid "Assign this migration to an existing group."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:157 modules/migrate_tools/src/Form/MigrationGroupFormBase.php:146
+msgid "Save"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:172
+msgid "Migration %label has been updated."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationFormBase.php:176
+msgid "Migration %label has been added."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupAddForm.php:33
+msgid "Create Migration Group"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupDeleteForm.php:25
+msgid "Are you sure you want to delete migration group %label?"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupDeleteForm.php:37
+msgid "Delete Migration Group"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupDeleteForm.php:63
+msgid "Migration group %label was deleted."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupEditForm.php:31
+msgid "Update Migration Group"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupFormBase.php:95
+msgid "Source type"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupFormBase.php:96
+msgid "Type of source system the group is migrating from, for example \"Drupal 6\" or \"WordPress 4\"."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupFormBase.php:161
+msgid "Migration group %label has been updated."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/MigrationGroupFormBase.php:165
+msgid "Migration group %label has been added."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:254
+msgid "Column Aliases"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:258
+msgid ":label"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:259
+msgid "You can change the columns to be used by this migration for each source property."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:267
+msgid "Select the column where the data for <em>:label</em>, property <em>:property</em>, will be found."
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:283
+msgid "Submit"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:287
+msgid "Cancel"
+msgstr ""
+
+#: modules/migrate_tools/src/Form/SourceCsvForm.php:305
+msgid "Source properties can not share the same source column."
+msgstr ""
+

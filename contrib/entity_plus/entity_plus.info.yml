@@ -1,0 +1,12 @@
+name: 'Entity plus'
+type: module
+description: 'Enhancements to Entity for Drupal core'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi contrib'
+interface translation project: entity_plus
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - drupal:block
+  - drupal:config
+  - drupal:layout_builder

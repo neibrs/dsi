@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Implements hook_install().
+ */
+function dsi_import_install() {
+  $directory = "private://import";
+  \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+}

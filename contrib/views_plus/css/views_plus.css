@@ -1,0 +1,6 @@
+.view-content {
+  overflow-x: auto;
+}
+.view-content th {
+  white-space: nowrap;
+}

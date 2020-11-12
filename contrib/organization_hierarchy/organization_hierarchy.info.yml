@@ -1,0 +1,12 @@
+name: 'Organization hierarchy'
+type: module
+description: 'Organization hierarchy'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi contrib'
+interface translation project: organization_hierarchy
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - datetime_range
+  - lookup
+  - organization

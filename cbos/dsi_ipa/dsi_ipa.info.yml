@@ -1,0 +1,7 @@
+name: 'IP Address'
+type: module
+description: 'The ip address.'
+core_version_requirement: ^8 || ^9
+interface translation project: dsi_ipa
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+package: 'Dsi'

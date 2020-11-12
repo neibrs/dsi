@@ -1,0 +1,20 @@
+entity_filter.edit_form:
+  path: '/entity_filter/edit/{entity_type_id}/{entity_id}/{field_name}/{target_type}'
+  defaults:
+    _form: '\Drupal\entity_filter\Form\EntityFilterForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'  # TODO
+
+entity_filter.add_handler_config:
+  path: '/entity_filter/add_handler_config/{base_table}/{handler_type}/{key}'
+  defaults:
+    _controller: '\Drupal\entity_filter\Controller\EntityFilterController::viewsAddHandlerConfig'
+  requirements:
+    _user_is_logged_in: 'TRUE'  # TODO
+
+entity_filter.handler_config:
+  path: '/entity_filter/handler_config/{base_table}/{handler_type}/{handler_config}'
+  defaults:
+    _controller: '\Drupal\entity_filter\Controller\EntityFilterController::updateHandlerConfig'
+  requirements:
+    _user_is_logged_in: 'TRUE'  # TODO

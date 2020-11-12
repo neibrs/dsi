@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_commerce_product.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_commerce_product_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_commerce_product module.
+    case 'help.page.dsi_commerce_product':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The plus of commerce product.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu__role_menu.
+ */
+function dsi_commerce_product_preprocess_menu__role_menu(&$variables) {
+  $icons = [
+    'commerce_product.user' => [
+      'icon_class' => 'material-icons',
+      'icon_name' => 'chrome_reader_mode',
+    ],
+  ];
+  _dsi_icons_set_menu_items_icon($variables['items'], $icons);
+}

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_hardware
+id: normal
+label: 'Regular(Rack mountable)'

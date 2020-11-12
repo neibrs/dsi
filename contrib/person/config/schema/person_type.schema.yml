@@ -1,0 +1,22 @@
+person.type.*:
+  type: config_entity
+  label: 'Person type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+      translation context: 'Person type'
+    alias:
+      type: label
+      label: 'Alias'
+    uuid:
+      type: string
+    system_type:
+      type: string
+      label: 'System type'
+    is_system:
+      type: boolean
+      label: 'Is system'

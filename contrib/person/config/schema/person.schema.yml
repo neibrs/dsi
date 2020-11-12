@@ -1,0 +1,28 @@
+# Schema for the configuration files of the person module.
+
+person.settings:
+  type: config_object
+  label: 'Person settings'
+  mapping:
+    encoding_rules:
+      type: string
+      label: 'Encoding rules'
+    initial_password:
+      type: string
+      label: 'Initial password'
+    resume_parsing_api_key:
+      type: string
+      label: 'Resume parsing API key'
+    days_before_probation_expires_to_alert:
+      type: integer
+      label: 'Days before probation expires to alter'
+
+action.configuration.person_create_user:
+  type: action_configuration_default
+  label: 'Create user account for selected person'
+action.configuration.person_enable_user:
+  type: action_configuration_default
+  label: 'Enable user account for selected person'
+action.configuration.person_disable_user:
+  type: action_configuration_default
+  label: 'Disable user account for selected person'

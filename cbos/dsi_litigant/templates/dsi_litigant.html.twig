@@ -1,0 +1,22 @@
+{#
+/**
+ * @file dsi_litigant.html.twig
+ * Default theme implementation to present Litigant data.
+ *
+ * This template is used when viewing Litigant pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_dsi_litigant()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('dsi_litigant') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

@@ -1,0 +1,26 @@
+# IP Address routing definition
+dsi_ipa.settings_tab:
+  route_name: dsi_ipa.settings
+  title: 'Settings'
+  base_route: dsi_ipa.settings
+
+entity.dsi_ipa.canonical:
+  route_name: entity.dsi_ipa.canonical
+  base_route: entity.dsi_ipa.canonical
+  title: 'View'
+
+entity.dsi_ipa.edit_form:
+  route_name: entity.dsi_ipa.edit_form
+  base_route: entity.dsi_ipa.canonical
+  title: 'Edit'
+
+entity.dsi_ipa.version_history:
+  route_name: entity.dsi_ipa.version_history
+  base_route: entity.dsi_ipa.canonical
+  title: 'Revisions'
+
+entity.dsi_ipa.delete_form:
+  route_name:  entity.dsi_ipa.delete_form
+  base_route:  entity.dsi_ipa.canonical
+  title: Delete
+  weight: 10

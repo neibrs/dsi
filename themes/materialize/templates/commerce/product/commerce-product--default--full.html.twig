@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('materialize/commerce_product') }}
+<div class="row" id="ecommerce-products">
+  <div class="col s12">
+    <div class="card animate fadeUp">
+      <div class="card-badge"><a class="white-text"> <b>Hot</b> </a></div>
+      <div class="card-content">
+        <div class="row" id="product-four">
+          <div class="col m6 s12">
+            <img src="/{{ directory }}/app-assets/images/cards/remote.png" class="responsive-img" alt="">
+          </div>
+          <div class="col m6 s12">
+            <p> DSI </p>
+            <h5>{{ product.title }}</h5>
+            <hr class="mb-5">
+            {{- product|without('variation_attributes') -}}
+{#            <span class="vertical-align-top mr-4"><i class="material-icons mr-3">favorite_border</i>Wishlist</span>#}
+{#            {{ product.body }}#}
+{#            <h5 class="red-text">{{ product.variation_price }} <span class="grey-text lighten-2 ml-3"><del>{{ product.variation_list_price }}</del></span> </h5>#}
+{#            <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue z-depth-4 mt-2 mr-2">ADD TO#}
+{#              CART</a>#}
+{#            <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange z-depth-4 mt-2">BUY NOW</a>#}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+administer permission sets:
+  title: 'Administer Permission sets'
+
+maintain permission sets:
+  title: 'Maintain Permission sets'
+
+view permission sets:
+  title: 'View Permission sets'

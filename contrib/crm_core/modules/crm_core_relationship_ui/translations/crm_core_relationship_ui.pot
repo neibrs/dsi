@@ -1,0 +1,288 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc: n/a
+#  modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:28
+msgid "CRM Relationship Types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:37
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:38
+msgid "Operations"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:58
+msgid "edit"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:60
+msgid "manage fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:61
+msgid "display fields"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:63
+msgid "delete"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:92
+msgid "Add New Relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:92
+msgid "Edit Relationship Type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:121
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:122
+msgid "Display name of the relationship type. This is also used as the predicate in natural language formatters (ie. if A is related to B, you get \"A [label] B\")"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:138
+msgid "A directional relationship is one that does not imply the reverse relationship. For example, a \"likes\" relationship is directional (A likes B does not neccesarily mean B likes A), whereas a \"similar to\" relationship is non-directional (A similar to B implies B similar to A. Non-directional relationship are also known as symmetric relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:143
+msgid "Reverse label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:144
+msgid "Reverse label of the relation type. This is used as the predicate by formatters of directional relations, when you need to display the reverse direction (ie. from the target entity to the source entity). If this is not supplied, the forward label is used."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:160
+msgid "Unique"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:161
+msgid "Whether relations of this type are unique (ie. they can not contain exactly the same end points as other relations of this type)."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:171
+msgid "Infinite"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:190
+msgid "Any"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:221
+msgid "Save"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:250
+msgid "The relationship type has been saved."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:265
+msgid "Are you sure you want to delete the %label relationship type?"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:279
+msgid "This action cannot be undone."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:281 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:165 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:138
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:293
+msgid "The %label relationship type has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:308 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:47 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:381
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:309
+msgid "Administration"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:310
+msgid "Structure"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:311 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:48 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:382
+msgid "CRM Core"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:312
+msgid "Relationship types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:294
+msgid "relation"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:294
+msgid "Deleted the %label relationship type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.admin.inc:273
+msgid "The %label relation type is used by 1 relation on your site. If you remove this relation type, you will not be able to edit  %label relations and they may not display correctly."
+msgid_plural "The %label relation type is used by @count relations on your site. If you remove %label, you will not be able to edit %label relations and they may not display correctly."
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:53 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:383
+msgid "Contacts"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:55;58;205 modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:28
+msgid "Add a relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:99
+msgid "Relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:111;122
+msgid "Destination contact name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:111;122
+msgid "Source contact name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:112;123
+msgid "Following contact types allowed: !types."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:157
+msgid "Save Relationship"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:191
+msgid "Add new relationship @label"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:220;238
+msgid "Create %kind relationship."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:264
+msgid "Relationship type is required."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:270
+msgid "Relationship type is not valid CRM relationship type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:276
+msgid "Please, input source contact."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:282
+msgid "Please, input destination contact."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:289
+msgid "Please, input source contact of proper type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:296
+msgid "Please, input destination contact of proper type."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:302
+msgid "Relationship could not be loopback."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:320
+msgid "This relationship exists. It should be unique."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.pages.inc:440
+msgid "Relationship status was successfully changed."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:212
+msgid "Related Contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:217
+msgid "Related Contact(Human readable)"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:222
+msgid "Related Contact(Table)"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:227
+msgid "Current Contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:302
+msgid "!current_contact is a @relation !related_contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:318
+msgid "@current_contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:368
+msgid "Relationships for @contact_name"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:385
+msgid "Relationships"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:29;41
+msgid "Add a relationship to this contact"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:40
+msgid "Add "
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:74
+msgid "CRM Core Relationship Types"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:75
+msgid "Manage relationship types."
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:84
+msgid "Add crm relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:94
+msgid "Edit crm relationship type"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:116;123
+msgid "Toggle relationship status"
+msgstr ""
+
+#: modules/dsi/contrib/crm_core/modules/crm_core_relationship_ui/crm_core_relationship_ui.module:131
+msgid "Edit"
+msgstr ""
+

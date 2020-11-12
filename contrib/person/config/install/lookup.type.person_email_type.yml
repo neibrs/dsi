@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: person_email_type
+label: Person email type
+organization_classification: business_group

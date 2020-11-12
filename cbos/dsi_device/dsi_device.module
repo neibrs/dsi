@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_device.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_device_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_device module.
+    case 'help.page.dsi_device':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The device.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_device_theme() {
+  $theme = [];
+  $theme['dsi_device'] = [
+    'render element' => 'elements',
+    'file' => 'dsi_device.page.inc',
+    'template' => 'dsi_device',
+  ];
+  $theme['dsi_device_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'dsi_device.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function dsi_device_theme_suggestions_dsi_device(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#dsi_device'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'dsi_device__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_device__' . $entity->bundle();
+  $suggestions[] = 'dsi_device__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_device__' . $entity->id();
+  $suggestions[] = 'dsi_device__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

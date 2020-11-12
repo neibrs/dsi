@@ -1,0 +1,12 @@
+name: 'Import'
+type: module
+description: 'Migrate plus.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: import
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - eabax_core
+  - migrate_source_xls
+  - migrate_tools

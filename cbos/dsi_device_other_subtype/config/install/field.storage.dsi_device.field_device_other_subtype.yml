@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - dsi_device
+    - dsi_device_other_subtype
+id: dsi_device.field_device_other_subtype
+field_name: field_device_other_subtype
+entity_type: dsi_device
+type: entity_reference
+settings:
+  target_type: dsi_device_other_subtype
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

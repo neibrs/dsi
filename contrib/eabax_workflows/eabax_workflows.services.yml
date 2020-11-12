@@ -1,0 +1,4 @@
+services:
+  workflows_plus.manager:
+    class: Drupal\eabax_workflows\WorkflowsPlusManager
+    arguments: ['@entity_type.manager', '@entity_field.manager']

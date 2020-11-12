@@ -1,0 +1,25 @@
+langcode: en
+status: true
+id: materialize_local_actions
+dependencies:
+  module:
+    - block_style_plugins
+  theme:
+    - materialize
+third_party_settings:
+  block_style_plugins:
+    simple_class:
+      simple_class: ''
+    box:
+      box_style: ''
+theme: materialize
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

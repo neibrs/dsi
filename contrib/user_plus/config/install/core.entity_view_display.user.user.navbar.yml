@@ -1,0 +1,83 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.navbar
+    - field.field.user.user.user_picture
+    - image.style.x160
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_dropdown_toggle:
+      children:
+        - user_picture
+        - name
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'dropdown toggle'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: 'data-toggle="dropdown"'
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'dropdown-toggle container-inline'
+      label: 'dropdown toggle'
+    group_dropdown_menu:
+      children:
+        - dropdown_menu
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: dropdown-menu
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'dropdown menu'
+id: user.user.navbar
+targetEntityType: user
+bundle: user
+mode: navbar
+content:
+  dropdown_menu:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 3
+    region: content
+    settings:
+      image_style: x160
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  logout: true
+  member_for: true
+  password_link: true
+  person: true

@@ -1,0 +1,5 @@
+entity.administrative_area.add_form:
+  route_name: entity.administrative_area.add_form
+  title: 'Add'
+  appears_on:
+    - entity.administrative_area.collection

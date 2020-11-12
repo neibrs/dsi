@@ -1,0 +1,26 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+    'clear-both',
+] %}
+
+<div class="brand-sidebar">
+    <h1 class="logo-wrapper">
+        <a class="brand-logo darken-1" href="{{ path('<front>') }}">
+            <img class="hide-on-med-and-down" src="{{ site_logo }}" style="height: 38px;" alt="{{ 'Home'|t }}">
+            <img class="show-on-medium-and-down hide-on-med-and-up" src="{{ site_logo }}" alt="materialize logo">
+            <span class="logo-text hide-on-med-and-down">Materialize</span>
+        </a>
+        <a class="navbar-toggler" href="#">
+            <i class="material-icons">radio_button_checked</i>
+        </a>
+    </h1>
+</div>

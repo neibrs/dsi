@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.editor
+label: Editor
+targetEntityType: media
+cache: true

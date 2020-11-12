@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains translation.module.
+ */
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function translation_locale_translation_projects_alter(&$projects) {
+  $modules = [
+    'drupal',
+    'features',
+    'field_group',
+    'inline_entity_form',
+    'migrate_tools',
+    'rules',
+    'token',
+  ];
+  $path = drupal_get_path('module', 'translation');
+  foreach ($modules as $module) {
+    $projects[$module]['info']['interface translation project'] = 'translation';
+    $projects[$module]['info']['interface translation server pattern'] = $path . '/translations/' . $module . '.%language.po';
+  }
+}

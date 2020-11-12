@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  config:
+    - image.style.d08
+    - image.style.d10
+    - image.style.d12
+  module:
+    - dsi_media
+id: d12
+label: 'Display 12 responsive auto'
+image_style_mappings:
+  -
+    breakpoint_id: dsi_media.screen-sm-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: d08
+  -
+    breakpoint_id: dsi_media.screen-md-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: d10
+  -
+    breakpoint_id: dsi_media.screen-lg-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: d12
+breakpoint_group: dsi_media
+fallback_image_style: d08

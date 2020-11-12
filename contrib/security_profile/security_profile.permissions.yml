@@ -1,0 +1,8 @@
+administer security profiles:
+  title: 'Administer Security profiles'
+
+maintain security profiles:
+  title: 'Maintain Security profiles'
+
+view security profiles:
+  title: 'View Security profiles'

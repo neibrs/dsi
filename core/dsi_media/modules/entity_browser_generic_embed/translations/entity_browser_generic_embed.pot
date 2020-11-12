@@ -1,0 +1,41 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module: n/a
+#  modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:07+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module:70
+msgid "Preview"
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/entity_browser_generic_embed.module:71
+msgid "A live preview of the @media_type."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:27
+msgid "Enter a URL..."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:53
+msgid "You must enter a URL or embed code."
+msgstr ""
+
+#: modules/dsi/core/dsi_media/modules/entity_browser_generic_embed/src/Plugin/EntityBrowser/Widget/EmbedCode.php:68
+msgid "You can embed any of the following media by pasting a single complete URL:"
+msgstr ""
+

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains role_frontpage.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function role_frontpage_install() {
+  $role_storage = \Drupal::entityTypeManager()->getStorage('user_role');
+  /** @var \Drupal\user\RoleInterface $role */
+  $role = $role_storage->load('anonymous');
+  $role->setThirdPartySetting('role_frontpage', 'frontpage', '/user/login');
+  $role->save();
+}

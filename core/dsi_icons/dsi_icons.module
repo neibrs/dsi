@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_icons.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_icons_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_icons module.
+    case 'help.page.dsi_icons':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The icons.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu__role_menu.
+ */
+function dsi_icons_preprocess_menu__role_menu(&$variables) {
+  $icons = [
+    'user.page' => [
+      'icon_class' => 'material-icons',
+      'icon_name' => 'mail_outline',
+    ],
+    'user.logout' => [
+      'icon_class' => 'material-icons',
+      'icon_name' => 'invert_colors',
+    ],
+  ];
+  _dsi_icons_set_menu_items_icon($variables['items'], $icons);
+}
+
+/**
+ * @description Add and append icons to menu item in *.theme.
+ */
+function _dsi_icons_set_menu_items_icon(&$items, $icons) {
+  foreach ($items as $key => $item) {
+    if (isset($icons[$key])) {
+      $items[$key]['icon'] = $icons[$key];
+    }
+    if (!empty($item['below'])) {
+      _dsi_icons_set_menu_items_icon($item['below'], $icons);
+    }
+  }
+}

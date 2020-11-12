@@ -1,0 +1,14 @@
+
+# Instance set menu items definition
+entity.instance_set.collection:
+  title: 'Instance set list'
+  route_name: entity.instance_set.collection
+  description: 'List Instance set entities'
+  parent: system.admin_structure
+  weight: 100
+
+instance_set.admin.structure.settings:
+  title: 'Instance set settings'
+  description: 'Configure Instance set entities'
+  route_name: instance_set.settings
+  parent: system.admin_structure

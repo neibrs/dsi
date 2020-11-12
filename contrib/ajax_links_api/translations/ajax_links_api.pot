@@ -1,0 +1,85 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/ajax_links_api/ajax_links_api.module: n/a
+#  modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:41
+msgid "<p><strong>Method 1</strong> : You can ajaxify any links by specifying the Class/Id in @admin."
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:41
+msgid "Module settings page"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:43
+msgid "Example : <code>@example1</code> . You can ajaxify this link by adding"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:57
+msgid "Example : <code>@example2</code></p>"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:59
+msgid "<h2>@demo</h2>"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/ajax_links_api.module:59
+msgid "DEMO"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:27
+msgid "jQuery selector to trigger ajax (One per line)"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:29
+msgid "Just like jQuery, for example by providing \".content a\" will ajaxify all link under .content. You can also exclude some selectors by specifying ! (for example \"!#toolbar a\")"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:33
+msgid "Default Target DIV"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:35
+msgid "This can be override for indivdual link by providing rel. Check Demo."
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:39
+msgid "Enable URL and Title change (for HTML5 Only)"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:41
+msgid "Change URL and Title according to ajax content. This will work only for HTML5 supported browsers. Tested on latest Chrome,Firefox."
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:45
+msgid "Included js-bottom-placeholder in template"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:47
+msgid "If you removed js-bottom-placeholder from html--ajax.html.twig, uncheck this. For details, please check https://drupal.org/node/1923320"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:51
+msgid "Remove ?ajax=1 from Views pager"
+msgstr ""
+
+#: modules/dsi/contrib/ajax_links_api/src/Form/AjaxLinksApiSettingsForm.php:53
+msgid "Remove ?ajax=1 from Views pager. For details, please check http://drupal.org/node/1907376."
+msgstr ""
+

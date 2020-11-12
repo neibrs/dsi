@@ -1,0 +1,11 @@
+name: 'Record'
+type: module
+description: '待办事项。'
+core_version_requirement: ^8 || ^9
+core: 8.x
+package: 'Dsi'
+interface translation project: dsi_record
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+dependencies:
+  - drupal:datetime_range
+  - drupal:text

@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dsi_cases_install($is_syncing) {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+  $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+  $data = [
+    '1' => '民事案件',
+    '2' => '商事案件',
+    '3' => '刑事案件',
+    '4' => '行政案件',
+    '5' => '仲裁案件',
+  ];
+
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => 'case_category',
+      'name' => $value,
+      'code' => $key,
+      'description' => '案件类别',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+
+  $data = [
+    '1' => '仲裁',
+    '2' => '初审一审',
+    '3' => '初审二审',
+    '4' => '重审一审',
+    '5' => '重审二审',
+    '6' => '申请再审',
+    '7' => '再审一审',
+    '8' => '再审二审',
+  ];
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => 'case_procedure',
+      'name' => $value,
+      'code' => $key,
+      'description' => '案件程序',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+
+  $data = [
+    '1' => '机动车效能事故责任纠纷',
+    '2' => '买卖合同纠纷',
+    '3' => '民间借贷纠纷',
+    '4' => '信用卡纠纷',
+    '5' => '金融借款合同纠纷',
+    '6' => '合同纠纷',
+    '7' => '离婚纠纷',
+    '8' => '融资租赁合同纠纷',
+    '9' => '劳动争议',
+    '10' => '借款合同纠纷',
+  ];
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => 'case_cause',
+      'name' => $value,
+      'code' => $key,
+      'description' => '案由',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+}

@@ -1,0 +1,8 @@
+services:
+  eabax_core.manager:
+    class: Drupal\eabax_core\EabaxCoreManager
+    arguments: ['@menu.active_trail', '@menu.link_tree', '@entity_type.manager']
+  access_check.parent_menu:
+    class: Drupal\eabax_core\Access\ParentMenuAccessCheck
+    tags:
+      - { name: access_check, applies_to: _parent_menu_access }

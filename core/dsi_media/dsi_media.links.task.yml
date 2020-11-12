@@ -1,0 +1,4 @@
+dsi_bootstrap_paragraphs.settings:
+  title: 'Dsi Bootstrap Paragraphs settings'
+  route_name: dsi_core.settings_index
+  base_route: dsi_bootstrap_paragraphs.settings

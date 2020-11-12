@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: nationality
+label: 'Nationality'
+hierarchy: false
+code: true
+encoding_rules: '[code:rules:01]'
+weight: 0

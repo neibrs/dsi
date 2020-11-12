@@ -1,0 +1,33 @@
+name: Person
+type: module
+description: Person
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: person
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - administrative_area
+  - code
+  - drupal:datetime
+  - drupal:file
+  - drupal:image
+  - drupal:layout_builder
+  - drupal:options
+  - drupal:rest
+  - drupal:serialization
+  - drupal:telephone
+  - drupal:views
+  - eabax_core
+  - eabax_workflows
+  - entity_filter
+  - entity_plus
+  - file
+  - grant
+  - import
+  - inline_entity_form
+  - lookup
+  - organization
+  - pinyin:pinyin
+  - quick_code
+  - role_menu

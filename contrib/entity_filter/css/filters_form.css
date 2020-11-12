@@ -1,0 +1,26 @@
+#custom_condition_step2 {
+  height: 400px;
+  overflow: auto;
+}
+
+#custom_condition_step3{
+  padding: 10px;
+}
+
+#custom_condition_step3_title, #custom_condition_step4_title {
+  background-color: dimgrey;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+}
+
+.filter-delete {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  #custom_condition_step2 .js-form-item-options-search, #custom_condition_step2 .js-form-item-group{
+    width: 50%;
+  }
+}

@@ -1,0 +1,15 @@
+# Organization hierarchy routing definition
+organization_hierarchy.settings_tab:
+  route_name: organization_hierarchy.settings
+  title: 'Settings'
+  base_route: organization_hierarchy.settings
+
+entity.organization_hierarchy.canonical:
+  route_name: entity.organization_hierarchy.canonical
+  base_route: entity.organization_hierarchy.canonical
+  title: 'Detail'
+
+entity.organization_hierarchy.edit_form:
+  route_name: entity.organization_hierarchy.edit_form
+  base_route: entity.organization_hierarchy.canonical
+  title: 'Edit'

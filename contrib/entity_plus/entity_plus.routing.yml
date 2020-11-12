@@ -1,0 +1,7 @@
+entity_plus.settings_form:
+  path: '/entity_plus/settings'
+  defaults:
+    _form: '\Drupal\entity_plus\Form\EntityPlusSettingsForm'
+    _title: 'Entity plus settings'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,142 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/eabax_workflows/eabax_workflows.info.yml: n/a
+#  modules/dsi/contrib/eabax_workflows/eabax_workflows.routing.yml: n/a
+#  modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml: n/a
+#  modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.views.schema.yml: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Form/ConditionForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/EntityTransitionForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/Action/WorkflowStatusTransition.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/Action/Derivative/EntityStatusTransitionDeriver.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-07-03 13:20+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/eabax_workflows/eabax_workflows.info.yml:0;0
+msgid "Eabax workflows"
+msgstr "自动化办公工作流"
+
+#: modules/dsi/contrib/eabax_workflows/eabax_workflows.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/eabax_workflows.routing.yml:0
+msgid "Transition Condition"
+msgstr "转换条件"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml:0
+msgid "Fields access"
+msgstr "字段访问"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml:0 modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.views.schema.yml:0
+msgid "Entity status"
+msgstr "实体状态"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml:0
+msgid "Workflow value"
+msgstr "工作流值"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml:0
+msgid "Workflow type value"
+msgstr "工作流类型值"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.schema.yml:0 modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:101
+msgid "Workflow"
+msgstr "工作流"
+
+#: modules/dsi/contrib/eabax_workflows/config/schema/eabax_workflows.views.schema.yml:0
+msgid "Values"
+msgstr "值"
+
+#: modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php:99
+msgid "It's success to transition to %to from %from"
+msgstr "状态成功从%from转化到%to"
+
+#: modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php:107
+msgid "The status of transition not work."
+msgstr "状态转化未成功."
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:22
+msgid "Entity control"
+msgstr "实体控制"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:26;41;65
+msgid "Can update"
+msgstr "可更薪"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:31
+msgid "Can delete"
+msgstr "可删除"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:37
+msgid "Field control"
+msgstr "字段控制"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:39
+msgid "Field name"
+msgstr "字段名称"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:40;59
+msgid "Can view"
+msgstr "可查看"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:42
+msgid "Value"
+msgstr "值"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:43
+msgid "Usage"
+msgstr "用法"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:79
+msgid "Status setting"
+msgstr "状态设置"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:82
+msgid "Defaults value"
+msgstr "默认值"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:83
+msgid "Not used"
+msgstr "不使用"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:84
+msgid "Sets value"
+msgstr "设置值"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Action/WorkflowStatusTransition.php:12
+msgid "Workflow status transition"
+msgstr "工作流状态转化"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Action/Derivative/EntityStatusTransitionDeriver.php:20
+msgid "Transition @entity_type status"
+msgstr "转化@entity_type的状态"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:82
+msgid "Workflow type"
+msgstr "工作流类型"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:50
+msgid "State"
+msgstr "状态"
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:15
+msgid "Workflow status"
+msgstr "工作流状态"
+

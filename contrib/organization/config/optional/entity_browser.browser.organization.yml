@@ -1,0 +1,31 @@
+uuid: 495446a1-82e5-428f-9d34-27b7ec7af98f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entitybrowser_organization
+  module:
+    - views
+name: organization
+label: Organization
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  e3424bde-a8d8-46ac-b10b-4cbda85f1af2:
+    settings:
+      view: entitybrowser_organization
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: e3424bde-a8d8-46ac-b10b-4cbda85f1af2
+    weight: 1
+    label: 'view'
+    id: view

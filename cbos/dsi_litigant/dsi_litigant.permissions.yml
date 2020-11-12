@@ -1,0 +1,19 @@
+add litigant entities:
+  title: 'Create new Litigant entities'
+
+administer litigant entities:
+  title: 'Administer Litigant entities'
+  description: 'Allow to access the administration form to configure Litigant entities.'
+  restrict access: true
+
+delete litigant entities:
+  title: 'Delete Litigant entities'
+
+edit litigant entities:
+  title: 'Edit Litigant entities'
+
+view published litigant entities:
+  title: 'View published Litigant entities'
+
+view unpublished litigant entities:
+  title: 'View unpublished Litigant entities'

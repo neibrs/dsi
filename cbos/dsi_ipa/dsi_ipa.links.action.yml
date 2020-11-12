@@ -1,0 +1,12 @@
+entity.dsi_ipa.add_form:
+  route_name: entity.dsi_ipa.add_form
+  title: 'Add'
+  appears_on:
+    - entity.dsi_ipa.collection
+entity.dsi_ipa.import:
+  title: 'Import'
+  route_name: dsi_import.import
+  route_parameters:
+    entity_type_id: dsi_ipa
+  appears_on:
+    - entity.dsi_ipa.collection

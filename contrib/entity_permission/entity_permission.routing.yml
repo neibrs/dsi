@@ -1,0 +1,15 @@
+entity_permission.settings:
+  path: '/entity_permission/settings'
+  defaults:
+    _form: 'Drupal\entity_permission\Form\EntityPermissionSettingsForm'
+    _title: 'Entity permission settings'
+  requirements:
+    _permission: 'administer entity permissions'
+
+entity.user_role.entity_permission:
+  path: '/user/role/{user_role}/entity_permission'
+  defaults:
+    _form: 'Drupal\entity_permission\Form\RoleEntityPermissionForm'
+    _title: 'Edit entity permissions'
+  requirements:
+    _permission: 'administer entity permissions'

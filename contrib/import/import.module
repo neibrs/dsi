@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_migrate_TYPE_info_alter() for process.
+ */
+function import_migrate_process_info_alter(&$definitions) {
+  $definitions['entity_lookup']['class'] = '\Drupal\import\Plugin\migrate\process\EntityLookup';
+  $definitions['entity_generate']['class'] = '\Drupal\import\Plugin\migrate\process\EntityGeneratePlus';
+  $definitions['format_date']['class'] = '\Drupal\import\Plugin\migrate\process\FormatDate';
+  $definitions['skip_on_empty']['class'] = '\Drupal\import\Plugin\migrate\process\SkipOnEmpty';
+  $definitions['default_value']['class'] = '\Drupal\import\Plugin\migrate\process\DefaultValue';
+}
+
+/**
+ * Implements hook_migrate_TYPE_info_alter() for process.
+ */
+function import_migrate_destination_info_alter(&$definitions) {
+  foreach ($definitions as $id => $definition) {
+    if ($definition['class'] != 'Drupal\migrate\Plugin\migrate\destination\EntityContentBase') {
+      continue;
+    }
+    $definitions[$id]['class'] = 'Drupal\import\Plugin\migrate\destination\EntityContentBase';
+  }
+}
+

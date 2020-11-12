@@ -1,0 +1,57 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/location/src/LocationListBuilder.php: n/a
+#  modules/dsi/contrib/location/src/Entity/Location.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/location/src/LocationListBuilder.php:20
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:97
+msgid "Location"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:113
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:128
+msgid "Address"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:144
+msgid "Pinyin shortcode"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:148
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:149
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:152
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/location/src/Entity/Location.php:153
+msgid "The time that the entity was last edited."
+msgstr ""
+

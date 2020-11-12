@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - organization
+id: organization_enable
+label: 'Enable organization'
+type: organization
+plugin: entity:publish_action:organization
+configuration: {  }

@@ -1,0 +1,117 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/lookup/lookup.info.yml: n/a
+#  modules/dsi/contrib/lookup/src/Entity/Lookup.php: n/a
+#  modules/dsi/contrib/lookup/lookup.links.action.yml: n/a
+#  modules/dsi/contrib/lookup/lookup.routing.yml: n/a
+#  modules/dsi/contrib/lookup/lookup.links.task.yml: n/a
+#  modules/dsi/contrib/lookup/lookup.permissions.yml: n/a
+#  modules/dsi/contrib/lookup/config/schema/lookup_type.schema.yml: n/a
+#  modules/dsi/contrib/lookup/src/LookupListBuilder.php: n/a
+#  modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupImportForm.php: n/a
+#  modules/dsi/contrib/lookup/src/Entity/LookupType.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php: n/a
+#  modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php: n/a
+#  modules/dsi/contrib/lookup/config/install/lookup.type.administrative_position.yml: n/a
+#  modules/dsi/contrib/lookup/config/install/lookup.type.family_relations.yml: n/a
+#  modules/dsi/contrib/lookup/config/install/lookup.type.health.yml: n/a
+#  modules/dsi/contrib/lookup/config/install/lookup.type.major.yml: n/a
+#  modules/dsi/contrib/lookup/config/install/lookup.type.technical_position.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-10-15 16:20+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/lookup/lookup.module:18
+msgid "About"
+msgstr "关于"
+
+#: modules/dsi/contrib/lookup/lookup.info.yml:0;0
+msgid "Lookup"
+msgstr "基础数据"
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:15
+msgctxt "Codes"
+msgid "Lookup"
+msgstr "基础数据"
+
+#: modules/dsi/contrib/lookup/lookup.permissions.yml:0
+msgid "Administer lookups"
+msgstr "管理基础数据"
+
+#: modules/dsi/contrib/lookup/lookup.permissions.yml:0
+msgid "Maintain lookups"
+msgstr "维护基础数据"
+
+#: modules/dsi/contrib/lookup/lookup.permissions.yml:0
+msgid "View lookups"
+msgstr "查看基础数据"
+
+#: modules/dsi/contrib/lookup/config/schema/lookup_type.schema.yml:0
+msgid "Lookup type config"
+msgstr "基础数据类型配置"
+
+#: modules/dsi/contrib/lookup/config/schema/lookup_type.schema.yml:0
+msgid "Organization classification"
+msgstr "组织分类"
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:17 modules/dsi/contrib/lookup/src/Entity/Lookup.php:14
+msgid "Lookup type"
+msgstr "基础数据类型"
+
+#: modules/dsi/contrib/lookup/src/Entity/LookupType.php:7
+msgctxt "Codes"
+msgid "Lookup type"
+msgstr "基础数据类型"
+
+#: modules/dsi/contrib/lookup/src/LookupTypeListBuilder.php:18
+msgid "Machine name"
+msgstr "机器名称"
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:129
+msgid "Meaning"
+msgstr "含义"
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:183
+msgid "Enabled"
+msgstr "启用"
+
+#: modules/dsi/contrib/lookup/src/Entity/Lookup.php:14
+msgctxt "Codes"
+msgid "Lookups"
+msgstr "基础数据"
+
+#: modules/dsi/contrib/lookup/src/Entity/LookupType.php:7
+msgctxt "Codes"
+msgid "Lookup types"
+msgstr "基础数据类型"
+
+#: modules/dsi/contrib/lookup/src/Form/LookupForm.php:80
+msgid "Created the %label Lookup."
+msgstr "添加基础数据：%label"
+
+#: modules/dsi/contrib/lookup/src/Form/LookupForm.php:86
+msgid "Saved the %label Lookup."
+msgstr "保存基础数据：%label"
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeDeleteForm.php:42
+msgid "content @type: deleted @label."
+msgstr "内容 @type: 删除 @label"
+
+#: modules/dsi/contrib/lookup/src/Form/LookupTypeForm.php:26
+msgid "Label for the Lookup type."
+msgstr "基础数据标签"
+

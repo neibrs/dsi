@@ -1,0 +1,33 @@
+{#
+/**
+ * @file organization.html.twig
+ * Default theme implementation to present Organization data.
+ *
+ * This template is used when viewing Organization pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_organization()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="box">
+  <div class="box-body row">
+    <div class="col-sm-6">
+      {{ content.name }}
+      {{ content.type }}
+      {{ content.parent }}
+    </div>
+    <div class="col-sm-6">
+      {{ content.description }}
+      {{ content.location }}
+      {{ content.effective_dates }}
+      {{ content.status }}
+    </div>
+  </div>
+</div>

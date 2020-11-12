@@ -1,0 +1,10 @@
+entity.responsibility.add_form:
+  route_name: entity.responsibility.add_form
+  title: 'Add'
+  appears_on:
+    - entity.responsibility.collection
+entity.user_responsibility.add_form:
+  route_name: entity.user_responsibility.add_form
+  title: 'Add User responsibility'
+  appears_on:
+    - entity.user_responsibility.collection

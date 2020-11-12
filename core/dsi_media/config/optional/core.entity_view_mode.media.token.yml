@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.token
+label: Token
+targetEntityType: media
+cache: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_client
+name: 所属行业
+vid: sector
+weight: -10

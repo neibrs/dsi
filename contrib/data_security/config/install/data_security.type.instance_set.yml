@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+label: Instance set
+id: instance_set
+description: Indicates that the set of functions are being granted for a set of rows which is specified by an instance set predicate.

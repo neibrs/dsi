@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_cases
+id: case_procedure
+label: 案件程序

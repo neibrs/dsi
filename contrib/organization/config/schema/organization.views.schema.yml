@@ -1,0 +1,11 @@
+views.filter.organization:
+  type: views.filter.in_operator
+  label: 'Organization'
+  mapping:
+    classifications:
+      type: string
+      label: 'Classifications'
+
+views.filter_value.organization:
+  type: views.filter_value.in_operator
+  label: 'Values'

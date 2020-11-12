@@ -1,0 +1,53 @@
+id: lookup_xls
+label: 基础数据(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/contrib/lookup/data/dictionary.xlsx
+  sheet_name: Sheet1
+  keys:
+    - type
+    - 含义
+  optional_keys:
+    - 编码
+  含义: ''
+  编码: ''
+  columns:
+    -
+      编码: 编码
+    -
+      含义: 含义
+    -
+      描述: 描述
+process:
+  type: type
+
+  code:
+    -
+      plugin: callback
+      source: 编码
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: process
+
+  name:
+    -
+      plugin: callback
+      source: 含义
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: row
+
+  description: 描述
+
+destination:
+  plugin: entity:lookup
+  keys:
+    -
+      - type
+      - name
+    - name
+migration_dependencies: { }

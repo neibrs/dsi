@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains eabax_core.install.
+ */
+
+use Drupal\user\Entity\Role;
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ */
+function eabax_core_install() {
+  // 修改 html_datetime 格式.
+  $format = \Drupal::entityTypeManager()->getStorage('date_format')->load('html_datetime');
+  $format->setPattern('Y-m-d H:i');
+  $format->save();
+  
+  // Assign roles for user (1).
+  $user = User::load(1);
+  $user->roles[] = 'implementor';
+  $user->roles[] = 'system_administrator';
+  $user->save();
+
+  user_role_grant_permissions('authenticated', [
+    'bypass entity print access',
+  ]);
+}
+
+/**
+ * Update from 19.05.
+ */
+function eabax_core_update_190600() {
+  \Drupal::service('module_installer')->install(['entity_permission']);
+}
+
+/**
+ * Update from 18.01.
+ */
+function eabax_core_update_180200() {
+  // Install 'config_update' module.
+  \Drupal::service('module_installer')->install([
+    'config_update',
+    'page_manager_ui',
+    'role_frontpage',
+    'role_menu',
+  ]);
+
+  $role = Role::load(RoleInterface::AUTHENTICATED_ID);
+  $role->setThirdPartySetting('role_menu', 'menu', 'role-menu-authenticated');
+  $role->save();
+
+  /** @var \Drupal\config_update\ConfigRevertInterface $config_update */
+  $config_update = \Drupal::service('config_update.config_update');
+  $config_update->revert('user_role', 'implementor');
+  $config_update->revert('user_role', 'system_administrator');
+  $config_update->import('menu', 'role-menu-implementor');
+  $config_update->import('menu', 'role-menu-system-administrator');
+}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - organization
+id: organization.external
+label: External
+targetEntityType: organization
+cache: true

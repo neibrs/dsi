@@ -1,0 +1,14 @@
+
+# Litigant menu items definition
+entity.dsi_litigant.collection:
+  title: 'Litigant list'
+  route_name: entity.dsi_litigant.collection
+  description: 'List Litigant entities'
+  parent: system.admin_structure
+  weight: 100
+
+dsi_litigant.admin.structure.settings:
+  title: 'Litigant settings'
+  description: 'Configure Litigant entities'
+  route_name: dsi_litigant.settings
+  parent: system.admin_structure

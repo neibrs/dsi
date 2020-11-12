@@ -1,0 +1,33 @@
+name: Materialize
+type: theme
+description: 'The dsi theme.'
+package: OAs
+core_version_requirement: ^8 || ^9
+libraries:
+  - materialize/materialize.base.modern.page
+base theme: seven
+regions:
+  header_top: 'Header Top'
+  header_main: 'Header Main'
+  header_bottom: 'Header Bottom'
+  breadcrumb: 'Breadcrumb'
+  help: 'Help'
+  highlighted: 'Highlighted'
+  content_top: 'Content Top'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  footer_top: 'Footer Top'
+  footer_main: 'Footer Main'
+  footer_bottom: 'Footer Bottom'
+  sidebar_first: 'Sidebar First'
+
+regions_hidden:
+  page_top: 'Page Top'
+  page_bottom: 'Page Bottom'
+
+features:
+  logo: true
+  logo_mini: true
+  name: true
+  slogan: true
+  favicon: true

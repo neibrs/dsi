@@ -1,0 +1,9 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+      - dsi_lawyer
+id: lawyer
+label: 律师

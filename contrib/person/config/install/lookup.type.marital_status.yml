@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: marital_status
+label: 婚姻状况
+description: GB_T2261_2 婚姻状况代码
+organization_classification: business_group

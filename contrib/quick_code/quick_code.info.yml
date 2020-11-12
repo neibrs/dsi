@@ -1,0 +1,15 @@
+name: Quick code
+type: module
+description: 'Define and maintain QuickCodes for business object.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: quick_code
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - code
+  - color_icon
+  - datetime_range
+  - drupal:token
+  - eabax_core
+configure: entity.quick_code_type.collection

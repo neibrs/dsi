@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implement hook_install().
+ */
+function organization_hierarchy_install() {
+  // 添加 默认组织层级
+  $hierarchy_name = \Drupal::config('organization_hierarchy.settings')->get('default_hierarchy');
+  \Drupal::entityTypeManager()->getStorage('lookup')->create([
+    'type' => 'organization_hierarchy_type',
+    'name' => $hierarchy_name,
+  ])->save();
+}

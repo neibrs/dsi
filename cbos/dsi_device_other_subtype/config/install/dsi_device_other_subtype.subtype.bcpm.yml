@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device_other_subtype
+id: bcpm
+label: 'Branch Circuit Power Meter'
+locations:
+  server_room: server_room
+  storage_room: storage_room
+  blade_chassis: '0'
+  rack: '0'
+  building: '0'

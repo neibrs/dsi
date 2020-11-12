@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dsi_device_install($is_syncing) {
+  // 预置service_level.
+  $lookup_storage = \Drupal::entityTypeManager()->getStorage('lookup');
+
+  $data = [
+    '1' => 'Production',
+    '2' => 'Development',
+  ];
+
+  foreach ($data as $key => $value) {
+    $values = [
+      'name' => $value,
+      'type' => 'service_level',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+}

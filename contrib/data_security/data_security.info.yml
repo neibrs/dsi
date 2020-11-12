@@ -1,0 +1,11 @@
+name: 'Data security'
+type: module
+description: 'Data security'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Business'
+dependencies:
+  - entity_filter
+  - entity_plus
+  - organization
+  - pinyin

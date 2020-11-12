@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - user_plus
+name: x160
+label: x160
+effects:
+  4336a8b2-c2fe-4283-9428-909cf703aa80:
+    uuid: 4336a8b2-c2fe-4283-9428-909cf703aa80
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 160
+      upscale: false

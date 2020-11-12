@@ -1,0 +1,17 @@
+langcode: en
+status: true
+id: 8eerp_db_location
+label: 8eERP DB locations
+migration_tags: { }
+source:
+  plugin: csv
+  header_row_count: 1
+  path: modules/dsi/contrib/location/tests/data/8eerp_db_location.csv
+  keys:
+    - LOCATIONID
+process:
+  name: NAME
+  address: ADDRESS
+destination:
+  plugin: entity:location
+migration_dependencies: { }

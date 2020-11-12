@@ -1,0 +1,21 @@
+# Permission set routing definition
+permission_set.settings_tab:
+  route_name: permission_set.settings
+  title: 'Settings'
+  base_route: permission_set.settings
+
+entity.permission_set.canonical:
+  route_name: entity.permission_set.canonical
+  base_route: entity.permission_set.canonical
+  title: 'View'
+
+entity.permission_set.edit_form:
+  route_name: entity.permission_set.edit_form
+  base_route: entity.permission_set.canonical
+  title: 'Edit'
+
+entity.permission_set.delete_form:
+  route_name:  entity.permission_set.delete_form
+  base_route:  entity.permission_set.canonical
+  title: Delete
+  weight: 10

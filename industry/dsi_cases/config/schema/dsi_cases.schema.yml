@@ -1,0 +1,8 @@
+# Schema for the configuration files of the person module.
+dsi_cases.settings:
+  type: config_object
+  label: 'Cases settings'
+  mapping:
+    encoding_rules:
+      type: string
+      label: 'Encoding rules'

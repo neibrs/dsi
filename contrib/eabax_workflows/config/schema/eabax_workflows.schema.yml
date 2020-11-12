@@ -1,0 +1,65 @@
+eabax_workflow.field_control:
+  type: mapping
+  mapping:
+    view:
+      type: boolean
+    edit:
+      type: boolean
+    value:
+      type: ignore
+    status_setting:
+      type: string
+
+eabax_workflow.entity_control:
+  type: mapping
+  mapping:
+    update:
+      type: boolean
+    delete:
+      type: boolean
+
+entity_status.state:
+  type: workflows.state
+  mapping:
+    entity_control:
+      type: eabax_workflow.entity_control
+    fields_control:
+      type: sequence
+      label: 'Fields access'
+      sequence:
+        type: eabax_workflow.field_control
+
+entity_status.transition:
+  type: workflows.transition
+  mapping:
+    conditions:
+      type: sequence
+      label: 'Visibility Conditions'
+      sequence:
+        type: condition.plugin.[id]
+        label: 'Visibility Condition'
+
+field.storage_settings.entity_status:
+  type: mapping
+  label: 'Entity status'
+  mapping:
+    workflow:
+      type: string
+      label: 'Workflow value'
+    workflow_type:
+      type: string
+      label: 'Workflow type value'
+
+action.configuration.entity:wst:*:
+  type: action_configuration_default
+  label: 'Entity action'
+  mapping:
+    workflow:
+      type: string
+      label: 'Workflow'
+    field:
+      type: string
+      label: 'Field'
+    transition:
+      type: string
+      label: 'Transition'

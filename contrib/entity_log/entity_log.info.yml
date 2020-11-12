@@ -1,0 +1,10 @@
+name: 'Entity log'
+type: module
+description: 'Entity log'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: entity_log
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - drupal:views

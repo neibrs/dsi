@@ -1,0 +1,9 @@
+name: 'Dsi Media Instagram'
+description: 'Manages default config for Instagram media type.'
+type: module
+package: Dsi
+core_version_requirement: ^8 || ^9
+dependencies:
+  - dsi_media:dsi_media
+  - media_entity_instagram:media_entity_instagram
+  - dsi_media:entity_browser_generic_embed

@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: all_users
+label: All users
+description: The grant applies to all users.

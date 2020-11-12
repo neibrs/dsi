@@ -1,0 +1,5 @@
+entity.dsi_project.add_form:
+  route_name: entity.dsi_project.add_form
+  title: 'Add Project'
+  appears_on:
+    - entity.dsi_project.collection

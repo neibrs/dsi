@@ -1,0 +1,38 @@
+# Data security routing definition
+
+entity.data_security.canonical:
+  route_name: entity.data_security.canonical
+  base_route: entity.data_security.canonical
+  title: 'View'
+
+entity.data_security.edit_form:
+  route_name: entity.data_security.edit_form
+  base_route: entity.data_security.canonical
+  title: 'Edit'
+
+entity.data_security.delete_form:
+  route_name:  entity.data_security.delete_form
+  base_route:  entity.data_security.canonical
+  title: Delete
+  weight: 10
+# Instance set routing definition
+instance_set.settings_tab:
+  route_name: instance_set.settings
+  title: 'Settings'
+  base_route: instance_set.settings
+
+entity.instance_set.canonical:
+  route_name: entity.instance_set.canonical
+  base_route: entity.instance_set.canonical
+  title: 'View'
+
+entity.instance_set.edit_form:
+  route_name: entity.instance_set.edit_form
+  base_route: entity.instance_set.canonical
+  title: 'Edit'
+
+entity.instance_set.delete_form:
+  route_name:  entity.instance_set.delete_form
+  base_route:  entity.instance_set.canonical
+  title: Delete
+  weight: 10

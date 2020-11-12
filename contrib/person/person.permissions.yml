@@ -1,0 +1,17 @@
+administer persons:
+  title: 'Administer persons'
+
+maintain persons:
+  title: 'Maintain persons'
+
+view persons:
+  title: 'View persons'
+
+edit own profile:
+  title: 'Edit own profile'
+  
+view own profile:
+  title: 'View own profile'
+
+permission_callbacks:
+  - \Drupal\person\PersonPermissions::personTypePermissions

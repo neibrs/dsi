@@ -1,0 +1,22 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+  'clear-both',
+] %}
+{#<div{{ attributes.addClass(classes) }}>#}
+{#    {% for value in content %}#}
+{#        <p>{{value}}</p>#}
+{#    {% endfor %}#}
+{#</div>#}
+<div class="user-center-block">
+  用户信息小区块<br/>
+  用户金额信息区块
+</div>

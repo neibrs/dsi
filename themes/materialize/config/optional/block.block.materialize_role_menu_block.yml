@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_menu
+  theme:
+    - materialize
+id: materialize_role_menu_block
+theme: materialize
+region: sidebar_first
+weight: 0
+provider: null
+plugin: role_menu_block
+settings:
+  id: role_menu_block
+  label: 'Role menu block'
+  provider: role_menu
+  label_display: '0'
+visibility: { }

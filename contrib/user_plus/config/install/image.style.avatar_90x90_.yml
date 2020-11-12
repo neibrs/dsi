@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - user_plus
+name: avatar_90x90_
+label: Avatar(90x90)
+effects:
+  57bd4ad8-d197-4a93-a197-b4399357bcc5:
+    uuid: 57bd4ad8-d197-4a93-a197-b4399357bcc5
+    id: image_scale
+    weight: 1
+    data:
+      width: 90
+      height: 90
+      upscale: true

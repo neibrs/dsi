@@ -1,0 +1,83 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/cbos/dsi_contract/dsi_contract.module: n/a
+#  modules/dsi/cbos/dsi_contract/src/ContractListBuilder.php: n/a
+#  modules/dsi/cbos/dsi_contract/src/Entity/Contract.php: n/a
+#  modules/dsi/cbos/dsi_contract/src/Form/ContractForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/cbos/dsi_contract/dsi_contract.module:21
+msgid "About"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/dsi_contract.module:22
+msgid "The contracts."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/dsi_contract.module:38
+msgid "Contract"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/ContractListBuilder.php:20
+msgid "Contract ID"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/ContractListBuilder.php:21 modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:168
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:143
+msgid "Authored by"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:144
+msgid "The user ID of author of the Contract entity."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:169
+msgid "The name of the Contract entity."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:188
+msgid "A boolean indicating whether the Contract is published."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:195
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:196
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:199
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:200
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Form/ContractForm.php:53
+msgid "Created the %label Contract."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_contract/src/Form/ContractForm.php:59
+msgid "Saved the %label Contract."
+msgstr ""
+

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_slider_media
+  config:
+    - field.storage.node.field_brief
+    - node.type.dsi_slider_media
+id: node.dsi_slider_media.field_brief
+field_name: field_brief
+entity_type: node
+bundle: dsi_slider_media
+label: 'Slide text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

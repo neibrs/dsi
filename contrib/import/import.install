@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Implements hook_install().
+ */
+function import_install() {
+  $directory = "private://import";
+  \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $directory = "public://import/images";
+  \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+
+  // 让多组织字段能在导入时设置默认值
+  $settings = \Drupal::configFactory()->getEditable('import.settings');
+  $default_value_fields = $settings->get('default_value_fields');
+  $entity_types = \Drupal::entityTypeManager()->getDefinitions();
+  foreach ($entity_types as $entity_type_id => $entity_type) {
+    if ($multiple_organization_classification = $entity_type->get('multiple_organization_classification')) {
+      $default_value_fields[$entity_type_id][] = $multiple_organization_classification;
+    }
+  }
+  $settings->set('default_value_fields', $default_value_fields)->save();
+}

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - organization_hierarchy
+id: organization_hierarchy_delete
+label: 'Delete organization hierarchy'
+type: organization_hierarchy
+plugin: entity:delete_action:organization_hierarchy
+configuration: {  }

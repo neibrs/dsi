@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_litigant.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_litigant_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_litigant module.
+    case 'help.page.dsi_litigant':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The litigant.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

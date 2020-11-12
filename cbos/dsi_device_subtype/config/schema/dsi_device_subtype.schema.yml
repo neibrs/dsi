@@ -1,0 +1,12 @@
+dsi_device_subtype.type.*:
+  type: config_entity
+  label: 'Device subtype config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

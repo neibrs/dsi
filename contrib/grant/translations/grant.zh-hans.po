@@ -1,0 +1,122 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/grant/grant.module: n/a
+#  modules/dsi/contrib/grant/src/Entity/Grant.php: n/a
+#  modules/dsi/contrib/grant/grant.info.yml: n/a
+#  modules/dsi/contrib/grant/grant.links.action.yml: n/a
+#  modules/dsi/contrib/grant/grant.links.task.yml: n/a
+#  modules/dsi/contrib/grant/grant.permissions.yml: n/a
+#  modules/dsi/contrib/grant/config/schema/grant_type.schema.yml: n/a
+#  modules/dsi/contrib/grant/help_topics/grant.grants.html.twig: n/a
+#  modules/dsi/contrib/grant/src/GrantListBuilder.php: n/a
+#  modules/dsi/contrib/grant/src/Entity/GrantType.php: n/a
+#  modules/dsi/contrib/grant/src/Form/GrantForm.php: n/a
+#  modules/dsi/contrib/grant/config/install/grant.grantee_type.all_users.yml: n/a
+#  modules/dsi/contrib/grant/config/install/grant.grantee_type.group_of_users.yml: n/a
+#  modules/dsi/contrib/grant/config/install/grant.grantee_type.specific_user.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-10-15 22:02+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/grant/grant.module:14
+msgid "Use this page to manage <a href=\":grant_help\">grants</a>. Grants are used to manage user access to product functionality."
+msgstr "使用此页面管理<a href=\":grant_help\">授权</a>。授权用于管理用户对功能的访问。"
+
+#: modules/dsi/contrib/grant/grant.module:16
+msgid "Select grantee type:"
+msgstr "选择被授权人类型："
+
+#: modules/dsi/contrib/grant/grant.module:70 modules/dsi/contrib/grant/src/Entity/Grant.php:11
+msgid "Grants"
+msgstr "授权"
+
+#: modules/dsi/contrib/grant/grant.info.yml:0;0 modules/dsi/contrib/grant/src/Entity/Grant.php:11
+msgid "Grant"
+msgstr "授权"
+
+#: modules/dsi/contrib/grant/grant.permissions.yml:0
+msgid "Administer Grants"
+msgstr "管理授权"
+
+#: modules/dsi/contrib/grant/grant.permissions.yml:0
+msgid "Maintain Grants"
+msgstr "维护授权"
+
+#: modules/dsi/contrib/grant/grant.permissions.yml:0
+msgid "View Grants"
+msgstr "查看授权"
+
+#: modules/dsi/contrib/grant/config/schema/grant_type.schema.yml:0
+msgid "Grant type config"
+msgstr "授权类型配置"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:4
+msgid "Define Grant"
+msgstr "定义授权"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:6
+msgid "Enter a name and description for your grant."
+msgstr "输入授权名称和描述。"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:7
+msgid "Enter effective dates for your grant."
+msgstr "输入授权的生效日期。"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:13
+msgid "For Operating Unit, specify an operating unit if you want your grant to apply to a specific one."
+msgstr "对于经营单位，如果希望授权只适用于特定经营单位，就进行指定。"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:14
+msgid "For Responsibility, specify a responsibility if you want your grant to apply to a specific one."
+msgstr "对于职责，如果希望授权只适用于特定职责，就进行指定。"
+
+#: modules/dsi/contrib/grant/help_topics/grant.grants.html.twig:15
+msgid "Enter the Data Security information if you are creating a data security policy for an object. The grant applies to the object you specify."
+msgstr "如果要为对象创建数据安全策略，请输入数据安全信息。授权将只适用与指定的对象。"
+
+#: modules/dsi/contrib/grant/src/Entity/Grant.php:121
+msgid "Grantee"
+msgstr "被授权人"
+
+#: modules/dsi/contrib/grant/src/Entity/Grant.php:176
+msgctxt "Permission"
+msgid "Set"
+msgstr "权限集"
+
+#: modules/dsi/contrib/grant/src/Entity/Grant.php:9 modules/dsi/contrib/grant/src/Entity/GrantType.php:7
+msgid "Grantee type"
+msgstr "被授权人类型"
+
+#: modules/dsi/contrib/grant/src/Form/GrantForm.php:55
+msgid "Created the %label Grant."
+msgstr "已创建授权%label."
+
+#: modules/dsi/contrib/grant/src/Form/GrantForm.php:61
+msgid "Saved the %label Grant."
+msgstr "已保存授权%label."
+
+#: modules/dsi/contrib/grant/config/install/grant.grantee_type.all_users.yml:0
+msgid "All users"
+msgstr "所有用户"
+
+#: modules/dsi/contrib/grant/config/install/grant.grantee_type.group_of_users.yml:0
+msgid "Group of users"
+msgstr "用户组"
+
+#: modules/dsi/contrib/grant/config/install/grant.grantee_type.specific_user.yml:0
+msgid "Specific user"
+msgstr "特定用户"
+

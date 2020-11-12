@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implement hook_install().
+ */
+function dsi_commerce_install() {
+  // Add currency CNY.
+  $importer = \Drupal::service('commerce_price.currency_importer');
+  $importer->import('CNY');
+
+  $usd = \Drupal::entityTypeManager()->getStorage('commerce_currency')
+    ->load('USD');
+  if ($usd) {
+    $usd->delete();
+  }
+
+  // Init dsi commerce store.
+  $storage = \Drupal::entityTypeManager()->getStorage('commerce_store');
+  $store = $storage->create([
+    'name' => t('Dsi'),
+    'type' => 'online',
+    'is_default' => TRUE,
+    'default_currency' => 'CNY',
+    'mail' => '80285394@qq.com',
+    'address' => [
+      'country_code' => 'CN',
+      'address_line1' => 'xxx',
+      'address_line2' => 'xxx',
+      'locality' => 'Daxing Qu',
+      'administrative_area' => 'Beijing Shi',
+      'postal_code' => '401320',
+    ],
+  ]);
+  $store->save();
+}
+
+/**
+ * Implement hook_uninstall().
+ */
+function dsi_commerce_uninstall() {
+  $storage = \Drupal::entityTypeManager()->getStorage('commerce_store');
+  $entities = $storage->loadByProperties([
+    'name' => 'Dsi',
+    'type' => 'online',
+    'is_default' => TRUE,
+  ]);
+  if ($entity = reset($entities)) {
+    $entity->delete();
+  }
+}

@@ -1,0 +1,456 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/person/person.post_update.php: n/a
+#  modules/dsi/contrib/person/src/Entity/Person.php: n/a
+#  modules/dsi/contrib/person/person.module: n/a
+#  modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php: n/a
+#  modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonAddressListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonEmailListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/PersonPhoneListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonInlineForm.php: n/a
+#  modules/dsi/contrib/person/person.install: n/a
+#  modules/dsi/contrib/person/src/PersonPermissions.php: n/a
+#  modules/dsi/contrib/person/src/PersonTypeListBuilder.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonTypeForm.php: n/a
+#  modules/dsi/contrib/person/src/Entity/IdentificationInformation.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonAddress.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonEmail.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonPhone.php: n/a
+#  modules/dsi/contrib/person/src/Entity/PersonViewsData.php: n/a
+#  modules/dsi/contrib/person/src/Form/IdentificationInformationForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/OrganizationPersonSwitchForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonAddressForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonEmailForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonPhoneForm.php: n/a
+#  modules/dsi/contrib/person/src/Form/PersonSettingsForm.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/views/filter/CurrentPerson.php: n/a
+#  modules/dsi/contrib/person/src/Plugin/views/filter/PersonType.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/person/person.post_update.php:22 modules/dsi/contrib/person/src/Entity/Person.php:112
+msgctxt "Person"
+msgid "Number"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.post_update.php:31 modules/dsi/contrib/person/src/Entity/Person.php:370
+msgid "Pictures"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.post_update.php:52 modules/dsi/contrib/person/src/Entity/Person.php:293
+msgid "Nationality"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.post_update.php:57
+msgid "Nationality field has been converted to string type."
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:83;174 modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php:29 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:60
+msgid "Person"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:106
+msgid "Manager"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:135
+msgid "User roles"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:142 modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php:21 modules/dsi/contrib/person/src/PersonAddressListBuilder.php:21 modules/dsi/contrib/person/src/PersonEmailListBuilder.php:21 modules/dsi/contrib/person/src/PersonListBuilder.php:20 modules/dsi/contrib/person/src/PersonPhoneListBuilder.php:21 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:91 modules/dsi/contrib/person/src/Form/PersonInlineForm.php:14
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:129
+msgctxt "Person"
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:172
+msgid "%type is used by @count of %entity. You may not remove %type until you have removed all of the %type %entity."
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:173 modules/dsi/contrib/person/src/Entity/Person.php:335
+msgid "Organization"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.install:48
+msgid "Admin"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.install:101 modules/dsi/contrib/person/src/Entity/Person.php:224 modules/dsi/contrib/person/src/Form/PersonInlineForm.php:19
+msgid "Gender"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.install:110 modules/dsi/contrib/person/src/Entity/Person.php:274
+msgid "Marital status"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php:20
+msgid "Identification information ID"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonAddressListBuilder.php:20
+msgid "Person address ID"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php:28
+msgid "Home"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonEmailListBuilder.php:20
+msgid "Person email ID"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonListBuilder.php:19
+msgid "Person ID"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonPermissions.php:47
+msgid "@type_name: Maintain persons"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonPermissions.php:50
+msgid "@type_name: View persons"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonPhoneListBuilder.php:20
+msgid "Person phone ID"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:43 modules/dsi/contrib/person/src/Entity/Person.php:152
+msgid "Person type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:44
+msgid "Person type alias"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:45 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:56
+msgid "System type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:46
+msgid "Is system"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:58 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:46
+msgid "Employee"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:59 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:47
+msgid "Applicant"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:60 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:48
+msgid "Contingent worker"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:61 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:49
+msgid "Ex-employee"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:62 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:50
+msgid "Ex-applicant"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:63 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:51
+msgid "Ex-contingent worker"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:64 modules/dsi/contrib/person/src/Form/PersonTypeForm.php:52
+msgid "External"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:74
+msgid "Yes"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:74
+msgid "No"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:107 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:141
+msgid "Enabled"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:108
+msgid "Disabled"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:126
+msgid "There are no enabled @label."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:127
+msgid "There are no disabled @label."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/PersonTypeListBuilder.php:139
+msgid "List"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:68 modules/dsi/contrib/person/src/Entity/Person.php:189
+msgid "Identify number"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:72
+msgid "Identification type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/IdentificationInformation.php:79 modules/dsi/contrib/person/src/Entity/Person.php:398
+msgid "Attachments"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:148
+msgid "Pinyin shortcode"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:170
+msgid "Person group"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:204 modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:43
+msgid "Identification information"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:255
+msgid "Birth date"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:312
+msgid "Native place"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:352
+msgctxt "Benefits"
+msgid "Adjusted service date"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:390;391
+msgid "Person photo"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:415
+msgid "Employee status"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:436
+msgid "Hire date"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:454
+msgid "Rehire date"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:472
+msgid "Probation period"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:495
+msgid "Completion of probation date"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:515 modules/dsi/contrib/person/src/Entity/PersonAddress.php:72 modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:25
+msgid "Address"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:534
+msgid "Phone"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/Person.php:553
+msgid "Email"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonAddress.php:62
+msgid "Address type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonAddress.php:75
+msgctxt "Default"
+msgid "Primary"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:107
+msgid "Primary"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonEmail.php:59
+msgid "Email type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonEmail.php:66
+msgid "Email address"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonEmail.php:69 modules/dsi/contrib/person/src/Entity/PersonPhone.php:75
+msgid "Preferred"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonPhone.php:63
+msgid "Phone type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonPhone.php:70
+msgid "Telephone"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:38;39
+msgid "Probation period start"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:51;52
+msgid "Probation period end"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:65;69
+msgid "Age"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:78;82
+msgid "Length of service"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:91
+msgid "Accounts"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonViewsData.php:92
+msgid "Person's user accounts."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:76
+msgid "Type"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:122
+msgid "Effective dates"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:158
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:159
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:162
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:163
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/IdentificationInformationForm.php:53
+msgid "Created the %label Identification information."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/IdentificationInformationForm.php:59
+msgid "Saved the %label Identification information."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/OrganizationPersonSwitchForm.php:46
+msgid "Switch"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonAddressForm.php:53
+msgid "Created the %label Person address."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonAddressForm.php:59
+msgid "Saved the %label Person address."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonEmailForm.php:53
+msgid "Created the %label Person email."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonEmailForm.php:59
+msgid "Saved the %label Person email."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:31
+msgid "Phones"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonImportFormSelectSheet.php:37
+msgid "Emails"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonPhoneForm.php:53
+msgid "Created the %label Person phone."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonPhoneForm.php:59
+msgid "Saved the %label Person phone."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:45
+msgid "Encoding rule"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:46
+msgid "@browse_tokens_link"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:51
+msgid "Initial password"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:58
+msgid "Resume parsing API key"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonSettingsForm.php:65
+msgid "Days before probation expires to alter"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:23
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:40
+msgid "Alias"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:64
+msgid "Enable"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:80
+msgid "Created the %label Person type."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Form/PersonTypeForm.php:86
+msgid "Saved the %label Person type."
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Plugin/views/filter/CurrentPerson.php:21
+msgid "Is the logged in person"
+msgstr ""
+
+#: modules/dsi/contrib/person/src/Plugin/views/filter/PersonType.php:36
+msgid "Include children"
+msgstr ""
+

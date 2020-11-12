@@ -1,0 +1,8 @@
+dsi_import.import:
+  path: '/dsi_import/{entity_type_id}'
+  defaults:
+    _title_callback: '\Drupal\dsi_import\Controller\ImportController::getImportTitle'
+    _form: '\Drupal\dsi_import\Form\ImportForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+#    _entity_create_access: '{entity_type_id}'

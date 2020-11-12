@@ -1,0 +1,20 @@
+entity.dsi_record.collection:
+  title: 'Record'
+  route_name: entity.dsi_record.collection
+  menu_name: lawyer
+  weight: 10
+
+# Cases menu items definition
+entity.dsi_cases.collection:
+  title: 'Cases'
+  route_name: entity.dsi_cases.collection
+  description: 'List Cases entities'
+  menu_name: lawyer
+  weight: 80
+
+# Client menu items definition
+entity.dsi_client.collection:
+  title: 'Client'
+  route_name: entity.dsi_client.collection
+  menu_name: lawyer
+  weight: 100

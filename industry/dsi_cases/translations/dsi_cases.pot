@@ -1,0 +1,112 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/industry/dsi_cases/dsi_cases.module: n/a
+#  modules/dsi/industry/dsi_cases/src/CasesListBuilder.php: n/a
+#  modules/dsi/industry/dsi_cases/src/Entity/Cases.php: n/a
+#  modules/dsi/industry/dsi_cases/src/Form/CasesForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:29+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/industry/dsi_cases/dsi_cases.module:18
+msgid "About"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/dsi_cases.module:19
+msgid "The lawyer of cases."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/CasesListBuilder.php:20
+msgid "Cases ID"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/CasesListBuilder.php:21
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:173
+msgctxt "Case"
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:147
+msgid "Authored by"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:148
+msgid "The user ID of author of the Cases entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:194
+msgid "Case Category"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:214
+msgid "Case Procedure"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:234
+msgid "Case Cause"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:254
+msgctxt "Case"
+msgid "Number"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:270
+msgctxt "Cases"
+msgid "Delegate  Datetime"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:289
+msgctxt "Cases"
+msgid "Subject Matter"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:306
+msgctxt "Cases"
+msgid "Person in Charge"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:327
+msgid "A boolean indicating whether the Cases is published."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:334
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:335
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:338
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:339
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Form/CasesForm.php:53
+msgid "Created the %label Cases."
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Form/CasesForm.php:59
+msgid "Saved the %label Cases."
+msgstr ""
+

@@ -1,0 +1,15 @@
+grant.grantee_type.*:
+  type: config_entity
+  label: 'Grant type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    target_entity_type_id:
+      type: string
+      label: 'Target Entity Type ID'

@@ -1,0 +1,4 @@
+user_menu:
+  css:
+    theme:
+      css/user_menu.css: {}

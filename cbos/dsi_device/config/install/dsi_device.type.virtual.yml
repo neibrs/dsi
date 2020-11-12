@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: virtual
+label: 'Virtual'
+classifications:
+  in_service: in_service
+  network_device: '0'

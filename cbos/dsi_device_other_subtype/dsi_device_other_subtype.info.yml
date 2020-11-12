@@ -1,0 +1,10 @@
+name: 'Device other subtype'
+type: module
+description: 'The subtype of device other type.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+interface translation project: dsi_device_other_subtype
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+dependencies:
+  - dsi_device

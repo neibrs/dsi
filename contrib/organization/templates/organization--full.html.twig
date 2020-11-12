@@ -1,0 +1,60 @@
+{#
+/**
+ * @file organization.html.twig
+ * Default theme implementation to present Organization data.
+ *
+ * This template is used when viewing Organization pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_organization()
+ *
+ * @ingroup themeable
+ */
+#}
+{# 需要 box-body 的 padding 与下面对齐 #}
+<div class="box-body">
+  <div class="row">
+    <div class="col-sm-6">
+      {{ content.business_group }}
+    </div>
+    <div class="col-sm-6">
+      {{ content.status }}
+    </div>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-body row">
+    <div class="col-sm-6">
+      {{ content.name }}
+      {{ content.description }}
+      {{ content.location }}
+      {{ content.classifications }}
+      {{ content.attachments }}
+    </div>
+    <div class="col-sm-6">
+      {{ content.type }}
+      {{ content.manager }}
+      {{ content.parent }}
+      {{ content.effective_dates }}
+    </div>
+  </div>
+</div>
+
+{{ content|without('business_group', 'name', 'manager', 'type', 'location', 'classifications', 'description', 'parent',
+  'effective_dates', 'status', 'attachments', 'children', 'employee_assignment', 'organization_managers', 'positions',
+  'competency_requirement') }}
+
+{{ content.children }}
+
+{{ content.employee_assignment }}
+
+{{ content.organization_managers }}
+
+{{ content.positions }}
+
+{{ content.competency_requirement }}

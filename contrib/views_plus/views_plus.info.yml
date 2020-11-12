@@ -1,0 +1,15 @@
+name: 'Views plus'
+type: module
+description: '对 views 模块进行扩展。'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: views_plus
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - ajax_links_api
+  - csv_serialization
+  - drupal:config
+  - drupal:rest
+  - drupal:views
+  - drupal:views_ui

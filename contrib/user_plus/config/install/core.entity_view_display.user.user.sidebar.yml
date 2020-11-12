@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.sidebar
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_inline:
+      children:
+        - user_picture
+        - group_info
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: inline
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'container-inline user-panel'
+      label: inline
+    group_info:
+      children:
+        - name
+      parent_name: group_inline
+      weight: 23
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: info
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: info
+id: user.user.sidebar
+targetEntityType: user
+bundle: user
+mode: sidebar
+content:
+  name:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 21
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  dropdown_menu: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  logout: true
+  member_for: true
+  password_link: true
+  person: true

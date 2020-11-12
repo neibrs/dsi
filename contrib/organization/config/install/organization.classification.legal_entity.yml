@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: legal_entity
+label: 'Legal entity'
+description: 'A legal company for which you prepare fiscal or tax reports.'

@@ -1,0 +1,755 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/relation/relation.drush.inc: n/a
+#  modules/dsi/contrib/relation/relation.rules.inc: n/a
+#  modules/dsi/contrib/relation/relation.tokens.inc: n/a
+#  modules/dsi/contrib/relation/relation.views.inc: n/a
+#  modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php: n/a
+#  modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.module: n/a
+#  modules/dsi/contrib/relation/relation.module: n/a
+#  modules/dsi/contrib/relation/src/RelationListBuilder.php: n/a
+#  modules/dsi/contrib/relation/relation_entity_collector/relation_entity_collector.module: n/a
+#  modules/dsi/contrib/relation/relation_entity_collector/src/Controller/EntityCollectorController.php: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.migration.inc: n/a
+#  modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc: n/a
+#  modules/dsi/contrib/relation/src/RelationForm.php: n/a
+#  modules/dsi/contrib/relation/src/RelationTypeForm.php: n/a
+#  modules/dsi/contrib/relation/src/RelationTypeListBuilder.php: n/a
+#  modules/dsi/contrib/relation/src/Entity/Relation.php: n/a
+#  modules/dsi/contrib/relation/src/Form/RelationDeleteConfirm.php: n/a
+#  modules/dsi/contrib/relation/src/Form/RelationTypeDeleteConfirm.php: n/a
+#  modules/dsi/contrib/relation/views/views_handler_field_relation_link_delete.inc: n/a
+#  modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php: n/a
+#  modules/dsi/contrib/relation/views/views_handler_field_relation_link.inc: n/a
+#  modules/dsi/contrib/relation/views/views_handler_field_relation_link_edit.inc: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/relation/relation.drush.inc:81
+msgid "Deleted all @type relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:19
+msgid "After updating a relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:20;28;43;64;69 modules/dsi/contrib/relation/relation.tokens.inc:15 modules/dsi/contrib/relation/relation.views.inc:21;26
+msgid "Relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:22;30
+msgid "relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:22
+msgid "The relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:23
+msgid "unchanged relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:23
+msgid "The unchanged relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:27
+msgid "After deleting a relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:42
+msgid "Loads related entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:47
+msgid "Entity"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:51 modules/dsi/contrib/relation/relation.tokens.inc:30 modules/dsi/contrib/relation/relation.views.inc:50 modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:42 modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:86 modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:62
+msgid "Relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:58
+msgid "List of related entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:63
+msgid "Fetch relation endpoints"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:76
+msgid "Fetched Endpoint"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:208;330
+msgid "Entity type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:212
+msgid "Optional: Select the specific type of entities to return. This will allow you to access their field/property data."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:231;365
+msgid "Continue"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:231;365
+msgid "Reload form"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:234
+msgid "Reload the form to change the entity types list."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:288
+msgid "--All types--"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:332
+msgid "Select the specific entity type to return."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:338
+msgid "How many endpoints to return"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:340
+msgid "The number of enitites to return that match the above entity type criteria and in what form (single entity or a list). !zero returns a list containing every entity found; The default !one will return a single entity; !gt1 returns a list with maximum the specified number of entities."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:369
+msgid "Reload the form to change the entity/bundle types list."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.rules.inc:392
+msgid "<strong>Selected relation:</strong> %selector"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:16
+msgid "Tokens related to individual relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:22 modules/dsi/contrib/relation/relation.views.inc:31
+msgid "Relation ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:23
+msgid "The unique ID of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:26 modules/dsi/contrib/relation/relation.views.inc:70
+msgid "Revision ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:27
+msgid "The unique ID of the relation's latest revision."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:31
+msgid "The type of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:34
+msgid "Relation type label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:35
+msgid "The human-readable name of the relation type."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:42
+msgid "URL"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:43
+msgid "The URL of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:46
+msgid "Edit URL"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:47
+msgid "The URL of the relation's edit page."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:52
+msgid "Date created"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:53
+msgid "The date the relation was created."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:57
+msgid "Date changed"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:58
+msgid "The date the relation was most recently updated."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:62
+msgid "Author"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:63
+msgid "The author of the relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.tokens.inc:123
+msgid "Anonymous"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:32
+msgid "The relation ID."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:51
+msgid "The relation type."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:71
+msgid "The relation revision ID."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:88
+msgid "Uid"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:89
+msgid "The relation uid."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:106
+msgid "Relation Author"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:113
+msgid "Create Date"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:114
+msgid "The date when the relation was created."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:132
+msgid "Change Date"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:133
+msgid "The date when the relation was last changed."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:151
+msgid "Number of endpoints"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:152
+msgid "The number of endpoints in this relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:171
+msgid "Link"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:172
+msgid "Provide a simple link to the relation entity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:185
+msgid "Edit link"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:186
+msgid "Provide a simple link to edit the relation entity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:199
+msgid "Delete link"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:200
+msgid "Provide a simple link to delete the relation entity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:239
+msgid "Relation: @relation_type_label (@left → relation)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:240
+msgid "Provides a relationship from @left to the relation table via the relation @relation_type_label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:262
+msgid "Relation: @relation_type_label (@left @arrow @right)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:263
+msgid "Provides a relationship from @left to @right via the relation @relation_type_label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:280
+msgid "Relation: @relation_type_label (relation → @right)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:281
+msgid "Provides a relationship from the relation table to @right via the relation @relation_type_label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:299
+msgid "Relation: @relation_type_reverse_label (@right @arrow @left)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:300
+msgid "Provides a relationship from @right to @left via the relation @relation_type_reverse_label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:317
+msgid "Relation: @relation_type_reverse_label (@right → relation)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:318
+msgid "Provides a relationship from @right to the relation table via the relation @relation_type_reverse_label. Usually only needed to access the fields of the relation itself."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:334
+msgid "Relation: @relation_type_reverse_label (relation → @left)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.views.inc:335
+msgid "Provides a relationship from the relation table to @left via the relation @relation_type_reverse_label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation.module:373 modules/dsi/contrib/relation/src/RelationListBuilder.php:28
+msgid "Endpoints"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:32
+msgid "You must create a relation type before you can generate relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:47
+msgid "Relation types"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:48
+msgid "Select relation types to create relations from. If no types are selected, relations will be generated for all types."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:54
+msgid "Delete all relations in these relation types before generating new relations"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:59
+msgid "How many relations would you like to generate of each type?"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_devel/src/Form/RelationGenerate.php:67
+msgid "Generate"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/relation_entity_collector.module:37
+msgid "Edit @relation_type endpoints"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Controller/EntityCollectorController.php:42
+msgid "The relation is ready for edit"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:38
+msgid "Before you can create relations, you need to create one or more <a href=\"@url\">relation types</a>. Once you've done that, visit any page that loads one or more entities, and use this block to add entities to a new relation. Picked entities stay in the entity_collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:81
+msgid "This block shows all loaded entities on a page and allows adding them to a relation. Please navigate to a page where entities are loaded. Entities picked stay in the entity_collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:90
+msgid "Select a relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:95
+msgid "Select an entity"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:98
+msgid "Selector shows all !entities loaded on this page."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:99
+msgid "entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:104;181
+msgid "Pick"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:113
+msgid "Picked entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:134
+msgid "Remove"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:152;222
+msgid "Save relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:159
+msgid "Clear"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:170
+msgid "Picked entities stay in the Entity Collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:187
+msgid "Please select a relation type."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:191
+msgid "Please select an entity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:266
+msgid "Edited !link containing !list"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:269
+msgid "Created new !link from !list"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:275
+msgid "Relation not created."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:49
+msgid "Relation: Existing relation ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:50
+msgid "Relation: Indicates a new relation with the specified relation ID should be created"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:51
+msgid "Relation: Authored by (uid)"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:52
+msgid "Relation: Created timestamp"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:53
+msgid "Relation: Modified timestamp"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:97
+msgid "Incoming relation_id !relation_id and map destination relation_id !destid1 don't match"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.destination.inc:112
+msgid "System-of-record is DESTINATION, but no destination relation_id provided"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.migration.inc:58
+msgid "The owner of relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:52
+msgid "Migrate %type fields: %fields"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:61
+msgid "Source entity type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:62
+msgid "Source entity ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:63
+msgid "Destination entity type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:64
+msgid "Destination entity ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.source.inc:65
+msgid "Field name"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:54
+msgid "Fields"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:57
+msgid "Select fields of type %type, that should be migrated to relation entites."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:65
+msgid "Select relation type that should be used when migrating reference fields."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:72
+msgid "User"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:74
+msgid "User that should own created relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:94
+msgid "User not found."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:112
+msgid "Relation type %relation_type cannot be used with one of the selected %FieldType fields. <a href=\"@rel_type_url\">Check allowed source/target bundles for the relation type</a>."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:16
+msgid "Migration"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_migrate/relation_migrate.module:20
+msgid "Configure migration between *reference fields and relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationForm.php:43
+msgid "<em>Editing</em> @label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationListBuilder.php:26
+msgid "Title"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationListBuilder.php:27
+msgid "Type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationListBuilder.php:85
+msgid "No relations exist."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:28
+msgid "Add relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:31
+msgid "Edit %label relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:46
+msgid "Label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:47
+msgid "Display name of the relation type. This is also used as the predicate in natural language formatters (ie. if A is related to B, you get \"A [label] B\")"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:65
+msgid "Reverse label"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:66
+msgid "Reverse label of the relation type. This is used as the predicate by formatters of directional relations, when you need to display the reverse direction (ie. from the target entity to the source entity). If this is not supplied, the forward label is used."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:82
+msgid "A directional relation is one that does not imply the same relation in the reverse direction. For example, a \"likes\" relation is directional (A likes B does not neccesarily mean B likes A), whereas a \"similar to\" relation is non-directional (A similar to B implies B similar to A. Non-directional relations are also known as symmetric relations."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:93
+msgid "Advanced options"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:100
+msgid "Transitive"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:101
+msgid "A transitive relation implies that the relation passes through intermediate entities (ie. A=>B and B=>C implies that A=>C). For example \"Ancestor\" is transitive: your ancestor's ancestor is also your ancestor. But a \"Parent\" relation is non-transitive: your parent's parent is not your parent, but your grand-parent."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:111
+msgid "Unique"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:112
+msgid "Whether relations of this type are unique (ie. they can not contain exactly the same end points as other relations of this type)."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:119
+msgid "Minimum Arity"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:121
+msgid "Minimum number of entities joined by relations of this type (e.g. three siblings in one relation). <em>In nearly all cases you will want to leave this set to 2</em>."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:125
+msgid "Infinite"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:128
+msgid "Maximum Arity"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:130
+msgid "Maximum number of entities joined by relations of this type. <em>In nearly all cases you will want to leave this set to 2</em>."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:154
+msgid "Source bundles"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:160;169
+msgid "Select which bundles may be endpoints on relations of this type. Selecting \"all <em>entity</em> bundles\" includes bundles created in the future."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:164
+msgid "Target bundles"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:194
+msgid "Minimum arity cannot be more than maximum arity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:205
+msgid "The %relation_type relation type has been created."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:206
+msgid "The %relation_type relation type has been saved."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeForm.php:212
+msgid "Error saving relation type."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeListBuilder.php:22
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/RelationTypeListBuilder.php:42
+msgid "No relation types exist. <a href=\"@link\">Add relation type</a>."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:70
+msgid "Relation @id"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:80
+msgid "User ID"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:81
+msgid "The {users}.uid that owns this relation; initially, this is the user that created it."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:89
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:90
+msgid "The date the Relation was created."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:94
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:95
+msgid "The date the Relation was last edited."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:99
+msgid "ArityD"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Entity/Relation.php:100
+msgid "Number of endpoints on the Relation. Cannot exceed max_arity, or be less than min_arity in relation_type table."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Form/RelationDeleteConfirm.php:30
+msgid "Are you sure you want to delete relation @id?"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Form/RelationDeleteConfirm.php:46 modules/dsi/contrib/relation/src/Form/RelationTypeDeleteConfirm.php:65 modules/dsi/contrib/relation/views/views_handler_field_relation_link_delete.inc:29
+msgid "Delete"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Form/RelationDeleteConfirm.php:54
+msgid "Relation @id has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Form/RelationTypeDeleteConfirm.php:51
+msgid "Are you sure you want to delete the relation type %type?"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Form/RelationTypeDeleteConfirm.php:90
+msgid "The relation type %relation_type has been deleted."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:47
+msgid "Any"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:48
+msgid "Source"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:49
+msgid "Target"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:51
+msgid "Position of the relationship base"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:54
+msgid "Select whether the entity you are adding the relationship to is source or target of @relation_type_label relation."
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:62
+msgid "Avoid @direction @type duplication"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:63
+msgid "Avoid @type duplication"
+msgstr ""
+
+#: modules/dsi/contrib/relation/src/Plugin/views/relationship/RelationRelationship.php:65
+msgid "When creating a chain of Views relationships for example from node to relation and then from relation to node (both via the same relation type) then each node will display on both ends. Check this option to avoid this kind of duplication."
+msgstr ""
+
+#: modules/dsi/contrib/relation/views/views_handler_field_relation_link.inc:30
+msgid "Text to display"
+msgstr ""
+
+#: modules/dsi/contrib/relation/views/views_handler_field_relation_link.inc:57
+msgid "View"
+msgstr ""
+
+#: modules/dsi/contrib/relation/views/views_handler_field_relation_link_edit.inc:29
+msgid "Edit"
+msgstr ""
+

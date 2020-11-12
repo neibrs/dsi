@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.person.field_stature
+    - person.type.employee
+id: person.employee.field_stature
+field_name: field_stature
+entity_type: person
+bundle: employee
+label: 身高体重
+description: '例如: 165、48kg'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

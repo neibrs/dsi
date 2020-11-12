@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - organization_hierarchy
+id: organization_hierarchy_type
+label: Organization hierarchy type
+organization_classification: business_group

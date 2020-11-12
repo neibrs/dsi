@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media_unpublish_action
+label: 'Unpublish media'
+type: media
+plugin: entity:unpublish_action:media
+configuration: {  }

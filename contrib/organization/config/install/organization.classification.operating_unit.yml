@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: operating_unit
+label: 'Operating unit'
+description: 'An organization that uses subledgers, such as Cash Management, Order Management and Shipping Execution, Payables, Purchasing, Receivables, and related products. It may be a sales office, a division, or a department.'

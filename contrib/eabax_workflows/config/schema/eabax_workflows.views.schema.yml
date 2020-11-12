@@ -1,0 +1,7 @@
+views.filter.entity_status:
+  type: views.filter.in_operator
+  label: 'Entity status'
+
+views.filter_value.entity_status:
+  type: views.filter_value.in_operator
+  label: 'Values'

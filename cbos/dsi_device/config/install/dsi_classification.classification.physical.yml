@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_device
+id: physical
+label: Physical
+target_entity_type_id: dsi_device
+target_entity_bundle_id: physical
+collections:
+  in_service: in_service
+  blade_chassis: '0'
+  network_device: '0'
+  virtual_host: '0'

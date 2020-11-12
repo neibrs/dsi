@@ -1,0 +1,14 @@
+
+# Administrative area menu items definition
+entity.administrative_area.collection:
+  title: 'Administrative area list'
+  route_name: entity.administrative_area.collection
+  description: 'List Administrative areas'
+  parent: system.admin_structure
+  weight: 100
+
+administrative_area.admin.structure.settings:
+  title: 'Administrative area settings'
+  description: 'Configure Administrative areas'
+  route_name: administrative_area.settings
+  parent: system.admin_structure

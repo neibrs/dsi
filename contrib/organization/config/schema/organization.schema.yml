@@ -1,0 +1,7 @@
+organization.settings:
+  type: config_object
+  label: 'Organization settings'
+  mapping:
+    default_business_group:
+      type: integer
+      label: 'Default business group'

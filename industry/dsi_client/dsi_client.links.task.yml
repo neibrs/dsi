@@ -1,0 +1,21 @@
+# Client routing definition
+dsi_client.settings_tab:
+  route_name: dsi_client.settings
+  title: 'Settings'
+  base_route: dsi_client.settings
+
+entity.dsi_client.canonical:
+  route_name: entity.dsi_client.canonical
+  base_route: entity.dsi_client.canonical
+  title: 'View'
+
+entity.dsi_client.edit_form:
+  route_name: entity.dsi_client.edit_form
+  base_route: entity.dsi_client.canonical
+  title: 'Edit'
+
+entity.dsi_client.delete_form:
+  route_name:  entity.dsi_client.delete_form
+  base_route:  entity.dsi_client.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,12 @@
+name: 'Administrative area'
+type: module
+description: 'Administrative area'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi contrib'
+interface translation project: administrative_area
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - drupal:options
+  - drupal:views
+  - pinyin:pinyin

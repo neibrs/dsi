@@ -1,0 +1,8 @@
+
+# View template menu items definition
+entity.view_template.collection:
+  title: 'View template'
+  route_name: entity.view_template.collection
+  description: 'List View template (bundles)'
+  parent: system.admin_structure
+  weight: 99

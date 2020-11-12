@@ -1,0 +1,549 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.dsi_hardware.field_blade_size
+    - field.storage.dsi_hardware.field_depth
+    - field.storage.dsi_hardware.field_size
+    - image.style.thumbnail
+  module:
+    - dsi_hardware
+    - image
+    - options
+    - user
+id: hardware
+label: Hardware
+module: dsi_hardware
+description: 'Find and manage content.'
+tag: default
+base_table: dsi_hardware
+base_field: id
+display:
+  default:
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'administer hardware entities'
+      cache:
+        type: tag
+      query:
+        type: views_query
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Filter
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: full
+        options:
+          items_per_page: 50
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: true
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            name: name
+            type: type
+            field_size: field_size
+            watts: watts
+            field_blade_size: field_blade_size
+            field_depth: field_depth
+            back_picture__target_id: back_picture__target_id
+            front_picture__target_id: front_picture__target_id
+            part: part
+          info:
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            type:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_size:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            watts:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_blade_size:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_depth:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            back_picture__target_id:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            front_picture__target_id:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            part:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: true
+      row:
+        type: fields
+      fields:
+        name:
+          id: name
+          table: dsi_hardware
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: null
+          entity_field: name
+          plugin_id: field
+        type:
+          id: type
+          table: dsi_hardware
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Type
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_hardware
+          entity_field: type
+          plugin_id: field
+        field_size:
+          id: field_size
+          table: dsi_hardware__field_size
+          field: field_size
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Size
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 2
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        watts:
+          id: watts
+          table: dsi_hardware
+          field: watts
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: PSU(w)
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_hardware
+          entity_field: watts
+          plugin_id: field
+        field_blade_size:
+          id: field_blade_size
+          table: dsi_hardware__field_blade_size
+          field: field_blade_size
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Blade Size'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_depth:
+          id: field_depth
+          table: dsi_hardware__field_depth
+          field: field_depth
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Depth
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        back_picture__target_id:
+          id: back_picture__target_id
+          table: dsi_hardware
+          field: back_picture__target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Back Pictures'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: thumbnail
+            image_link: ''
+            only_first: 0
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_hardware
+          entity_field: back_picture
+          plugin_id: field
+        front_picture__target_id:
+          id: front_picture__target_id
+          table: dsi_hardware
+          field: front_picture__target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Front Pictures'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: thumbnail
+            image_link: ''
+            only_first: 0
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_hardware
+          entity_field: front_picture
+          plugin_id: field
+        part:
+          id: part
+          table: dsi_hardware
+          field: part
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Part #'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_hardware
+          entity_field: part
+          plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: dsi_hardware
+          field: status
+          plugin_id: boolean
+          entity_type: dsi_hardware
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: 'Search ...'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            name: name
+          plugin_id: combine
+      sorts: {  }
+      title: Hardware
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          empty: true
+          content: 'No content available.'
+          plugin_id: text_custom
+      arguments: {  }
+      relationships: {  }
+      display_extenders: {  }
+    display_plugin: default
+    display_title: Master
+    id: default
+    position: 0
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      max-age: -1
+      tags:
+        - 'config:field.storage.dsi_hardware.field_blade_size'
+        - 'config:field.storage.dsi_hardware.field_depth'
+        - 'config:field.storage.dsi_hardware.field_size'
+  page_1:
+    display_options:
+      path: dsi_hardware
+      display_extenders: {  }
+    display_plugin: page
+    display_title: Page
+    id: page_1
+    position: 1
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      max-age: -1
+      tags:
+        - 'config:field.storage.dsi_hardware.field_blade_size'
+        - 'config:field.storage.dsi_hardware.field_depth'
+        - 'config:field.storage.dsi_hardware.field_size'

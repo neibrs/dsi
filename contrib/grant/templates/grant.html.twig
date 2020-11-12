@@ -1,0 +1,56 @@
+{#
+/**
+ * @file grant.html.twig
+ * Default theme implementation to present Grant data.
+ *
+ * This template is used when viewing Grant pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_grant()
+ *
+ * @ingroup themeable
+ */
+#}
+{# 需要 box-body 的 padding 与下面对齐 #}
+<div class="box-body">
+  <div class="row">
+    <div class="col-sm-6">
+      {{ content.business_group }}
+    </div>
+    <div class="col-sm-6">
+      {{ content.master }}
+    </div>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-body">
+    <div class="row">
+      <div class="col-sm-6">
+        {{ content.name }}
+      </div>
+      <div class="col-sm-6">
+        {{ content.description }}
+      </div>
+    </div>
+
+    {{ content.effective_dates }}
+
+    <div class="row">
+      <div class="col-sm-6">
+        {{ content.grantee_type }}
+        {{ content.grantee }}
+        {{ content.operating_unit }}
+      </div>
+      <div class="col-sm-6">
+        {{ content.responsibility }}
+        {{ content.set }}
+        {{ content.data_security }}
+      </div>
+    </div>
+  </div>
+</div>

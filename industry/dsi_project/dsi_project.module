@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_project.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_project_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_project module.
+    case 'help.page.dsi_project':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The project of lawyer.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

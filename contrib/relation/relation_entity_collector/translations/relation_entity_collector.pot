@@ -1,0 +1,102 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/relation/relation_entity_collector/relation_entity_collector.module: n/a
+#  modules/dsi/contrib/relation/relation_entity_collector/src/Controller/EntityCollectorController.php: n/a
+#  modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/relation/relation_entity_collector/relation_entity_collector.module:37
+msgid "Edit @relation_type endpoints"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Controller/EntityCollectorController.php:42
+msgid "The relation is ready for edit"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:38
+msgid "Before you can create relations, you need to create one or more <a href=\"@url\">relation types</a>. Once you've done that, visit any page that loads one or more entities, and use this block to add entities to a new relation. Picked entities stay in the entity_collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:81
+msgid "This block shows all loaded entities on a page and allows adding them to a relation. Please navigate to a page where entities are loaded. Entities picked stay in the entity_collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:86
+msgid "Relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:90
+msgid "Select a relation type"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:95
+msgid "Select an entity"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:98
+msgid "Selector shows all !entities loaded on this page."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:99
+msgid "entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:104;181
+msgid "Pick"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:113
+msgid "Picked entities"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:134
+msgid "Remove"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:152;222
+msgid "Save relation"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:159
+msgid "Clear"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:170
+msgid "Picked entities stay in the Entity Collector until cleared or a relation is created so it is possible to collect the entities from several pages."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:187
+msgid "Please select a relation type."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:191
+msgid "Please select an entity."
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:266
+msgid "Edited !link containing !list"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:269
+msgid "Created new !link from !list"
+msgstr ""
+
+#: modules/dsi/contrib/relation/relation_entity_collector/src/Form/EntityCollector.php:275
+msgid "Relation not created."
+msgstr ""
+

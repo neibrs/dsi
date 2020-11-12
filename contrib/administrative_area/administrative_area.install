@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\administrative_area\InstallHelper;
+
+/**
+ * Implements hook_install().
+ */
+function administrative_area_install() {
+  \Drupal::classResolver(InstallHelper::class)->installData();
+}

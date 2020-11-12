@@ -1,0 +1,41 @@
+id: file_base
+label: File migration base
+source:
+  plugin: csv
+  header_row_count: 1
+  # The path must set before execute this migration
+  path: ''
+  # The source_base_path must set before execute this migration, and must end with a /.
+  source_base_path: ''
+  destination_base_path: 'public://import/images'
+  keys:
+    - source_base_path
+    - filename
+process:
+  filename: filename
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - source_base_path
+        - filename
+    -
+      plugin: urlencode
+  destination_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - desitnation_base_path
+        - filename
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - '@destination_full_path'
+  status: true
+destination:
+  plugin: entity:file

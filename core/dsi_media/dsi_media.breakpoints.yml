@@ -1,0 +1,71 @@
+dsi_media.screen-xs-max:
+  label: screen-xs-max
+  mediaQuery: 'all and (max-width: 575.98px)'
+  weight: 1
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-sm-min:
+  label: screen-sm-min
+  mediaQuery: 'all and (min-width: 576px)'
+  weight: 2
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-sm-max:
+  label: screen-sm-max
+  mediaQuery: 'all and (max-width: 767.98px)'
+  weight: 3
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-md-min:
+  label: screen-md-min
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 4
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-md-max:
+  label: screen-md-max
+  mediaQuery: 'all and (max-width: 991.98px)'
+  weight: 5
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-lg-min:
+  label: screen-lg-min
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 6
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-lg-max:
+  label: screen-lg-max
+  mediaQuery: 'all and (max-width: 1199.98px)'
+  weight: 7
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x
+
+dsi_media.screen-xl-min:
+  label: screen-xl-min
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 8
+  group: dsi_media
+  multipliers:
+    - 1x
+    - 2x

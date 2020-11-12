@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * callback for options_allowed_values.
+ */
+function dsi_classification_options_allowed_values(BaseFieldDefinition $definition, FieldableEntityInterface $entity, $cacheable) {
+  $classifications = \Drupal::entityTypeManager()->getStorage('dsi_classification')
+    ->loadByProperties([
+      'target_entity_bundle_id' => $entity->bundle(),
+      'target_entity_type_id' => $entity->getEntityTypeId(),
+    ]);
+  if ($classifications = reset($classifications)) {
+    $collections_ids = array_keys($classifications->getCollections());
+    $collections = \Drupal::entityTypeManager()->getStorage('dsi_classification_type')->loadMultiple($collections_ids);
+    $collections = array_map(function ($collection) {
+      return $collection->label();
+    }, $collections);
+    return $collections;
+  }
+  else {
+    \Drupal::messenger()->addWarning(t('There are not classification collections for options allowed values.'));
+    return [];
+  }
+
+}

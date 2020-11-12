@@ -1,0 +1,34 @@
+#entity.organization.add_form:
+#  route_name: entity.organization.add_page
+#  title: 'Add'
+#  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+#  appears_on:
+#    - entity.organization.collection
+#entity.organization.import:
+#  title: 'Import'
+#  route_name: import.entity_import
+#  route_parameters:
+#    entity_type_id: organization
+#  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+#  appears_on:
+#    - entity.organization.collection
+entity.organization.export:
+  title: 'Export'
+  route_name: entity.organization.export
+  options:
+    query:
+      _format: 'csv'
+  appears_on:
+    - entity.organization.collection
+
+entity.organization_type.add_form:
+  route_name: entity.organization_type.add_form
+  title: 'Add'
+  appears_on:
+    - entity.organization_type.collection
+
+entity.organization.edit_form:
+  route_name: entity.organization.edit_form
+  title: 'Edit'
+  appears_on:
+    - entity.organization.canonical

@@ -1,0 +1,20 @@
+currency.currency.*:
+  type: config_entity
+  label: 'Currency config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+
+currency.settings:
+  type: config_object
+  label: 'Currency settings'
+  mapping:
+    default_currency:
+      type: string
+      label: 'Default currency'

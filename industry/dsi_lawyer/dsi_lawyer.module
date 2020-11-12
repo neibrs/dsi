@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_lawyer.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_lawyer_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_lawyer module.
+    case 'help.page.dsi_lawyer':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The lawyer industry') . '</p>';
+      return $output;
+
+    default:
+  }
+}

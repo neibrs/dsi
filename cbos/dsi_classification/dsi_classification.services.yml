@@ -1,0 +1,4 @@
+services:
+  dsi_classification.repository:
+    class: Drupal\dsi_classification\ClassificationRepository
+    arguments: ['@entity_type.manager']

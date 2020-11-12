@@ -1,0 +1,18 @@
+# Schema for the views plugins of the Person module.
+
+views.field.person_users:
+  type: views.field.prerender_list
+  label: 'List of user accounts'
+
+views.filter.person_age:
+  type: views.filter.numeric
+  label: 'Person age'
+
+views.filter_value.person_age:
+  type: views.filter_value.numeric
+  label: 'Person age'
+
+views.filter.person_type:
+  type: views.filter.bundle
+  label: 'Person type'
+  

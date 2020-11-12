@@ -1,0 +1,47 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/color_icon/color_icon.info.yml: n/a
+#  modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/StringColorIcon.php: n/a
+#  modules/dsi/contrib/color_icon/config/schema/color_icon.schema.yml: n/a
+#  modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/EntityReferenceColorSquare.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-12-03 09:26+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/color_icon/color_icon.info.yml:0;0 modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/StringColorIcon.php:8
+msgid "Color icon"
+msgstr ""
+
+#: modules/dsi/contrib/color_icon/color_icon.info.yml:0
+msgid "Eabax core"
+msgstr ""
+
+#: modules/dsi/contrib/color_icon/config/schema/color_icon.schema.yml:0
+msgid "Color square settings"
+msgstr ""
+
+#: modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/EntityReferenceColorSquare.php:35;48
+msgid "Display label"
+msgstr ""
+
+#: modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/EntityReferenceColorSquare.php:48
+msgid "No label"
+msgstr ""
+
+#: modules/dsi/contrib/color_icon/src/Plugin/Field/FieldFormatter/EntityReferenceColorSquare.php:10
+msgid "Color square"
+msgstr ""
+

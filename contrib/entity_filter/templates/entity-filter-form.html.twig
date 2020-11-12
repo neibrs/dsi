@@ -1,0 +1,4 @@
+<div class="row">
+  <div id="predefined-filters" class="col-sm-3">{{ form.predefined_filters}}</div>
+  <div id="filters" class="col-sm-9">{{ form|without('predefined_filters') }}</div>
+</div>

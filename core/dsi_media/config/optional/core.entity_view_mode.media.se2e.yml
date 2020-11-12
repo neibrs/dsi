@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_media
+  module:
+    - media
+id: media.se2e
+label: 'Size Edge-to-Edge auto'
+targetEntityType: media
+cache: true

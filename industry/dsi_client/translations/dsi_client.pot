@@ -1,0 +1,130 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/industry/dsi_client/dsi_client.module: n/a
+#  modules/dsi/industry/dsi_client/src/ClientListBuilder.php: n/a
+#  modules/dsi/industry/dsi_client/src/Entity/Client.php: n/a
+#  modules/dsi/industry/dsi_client/src/Form/ClientForm.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/industry/dsi_client/dsi_client.module:18
+msgid "About"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/dsi_client.module:19
+msgid "The clients."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/ClientListBuilder.php:20
+msgid "Client ID"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/ClientListBuilder.php:21 modules/dsi/industry/dsi_client/src/Entity/Client.php:172
+msgid "Name"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:147
+msgid "Authored by"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:148
+msgid "The user ID of author of the Client entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:173
+msgid "The name of the Client entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:195
+msgctxt "Client"
+msgid "Follow"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:214
+msgctxt "Client"
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:230
+msgctxt "Client"
+msgid "Cooperating State"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:249
+msgctxt "Client"
+msgid "Number"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:266
+msgctxt "Client"
+msgid "Customer Source"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:286
+msgctxt "Client"
+msgid "Client Importance"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:304
+msgid "Entity type"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:306
+msgid "The role of the Contact entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:328
+msgid "Entity ID"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:329
+msgid "The ID of the entity of which this related entity."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:334
+msgctxt "Client"
+msgid "Sector"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:357
+msgid "A boolean indicating whether the Client is published."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:364
+msgid "Created"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:365
+msgid "The time that the entity was created."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:368
+msgid "Changed"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:369
+msgid "The time that the entity was last edited."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:53
+msgid "Created the %label Client."
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:59
+msgid "Saved the %label Client."
+msgstr ""
+

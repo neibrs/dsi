@@ -1,0 +1,33 @@
+add device:
+  title: 'Create new Devices'
+
+administer device:
+  title: 'Administer Devices'
+  description: 'Allow to access the administration form to configure Devices.'
+  restrict access: true
+
+delete device:
+  title: 'Delete Devices'
+
+edit device:
+  title: 'Edit Devices'
+
+view published device:
+  title: 'View published Devices'
+
+view unpublished device:
+  title: 'View unpublished Devices'
+
+view all device revisions:
+  title: 'View all Device revisions'
+
+revert all device revisions:
+  title: 'Revert all Device revisions'
+  description: 'Role requires permission <em>view Device revisions</em> and <em>edit rights</em> for device in question or <em>administer device</em>.'
+
+delete all device revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Device revisions</em> and <em>delete rights</em> for device in question or <em>administer device</em>.'
+
+permission_callbacks:
+  - \Drupal\dsi_device\DevicePermissions::generatePermissions

@@ -1,0 +1,25 @@
+name: Organization
+type: module
+description: Organization
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: organization
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+package: 'Dsi contrib'
+dependencies:
+  - currency
+  - drupal:datetime_range
+  - drupal:views
+  - drupal:layout_builder
+  - eabax_core
+  - entity_filter
+  - entity_plus
+  - field_group
+# - grant 会导致循环依赖
+  - dsi_import
+  - import
+  - location
+  - pinyin
+  - text
+  - views_plus
+  - views_template

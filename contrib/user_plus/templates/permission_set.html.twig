@@ -1,0 +1,22 @@
+{#
+/**
+ * @file permission_set.html.twig
+ * Default theme implementation to present Permission set data.
+ *
+ * This template is used when viewing Permission set pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_permission_set()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('permission_set') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

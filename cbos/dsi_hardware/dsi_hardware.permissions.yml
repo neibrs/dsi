@@ -1,0 +1,19 @@
+add hardware entities:
+  title: 'Create new Hardware entities'
+
+administer hardware entities:
+  title: 'Administer Hardware entities'
+  description: 'Allow to access the administration form to configure Hardware entities.'
+  restrict access: true
+
+delete hardware entities:
+  title: 'Delete Hardware entities'
+
+edit hardware entities:
+  title: 'Edit Hardware entities'
+
+view published hardware entities:
+  title: 'View published Hardware entities'
+
+view unpublished hardware entities:
+  title: 'View unpublished Hardware entities'

@@ -1,0 +1,5 @@
+services:
+  entity_log.breadcrumb:
+    class: Drupal\entity_log\EntityLogBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }

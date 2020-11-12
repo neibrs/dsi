@@ -1,0 +1,8 @@
+administer grants:
+  title: 'Administer Grants'
+
+maintain grants:
+  title: 'Maintain Grants'
+
+view grants:
+  title: 'View Grants'

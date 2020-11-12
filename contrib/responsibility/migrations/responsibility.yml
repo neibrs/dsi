@@ -1,0 +1,48 @@
+id: responsibility_xls
+label: Responsibility(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/products/hcm/hrms/data/grant.xlsx
+  sheet_name: 职责
+  keys:
+    - 名称
+  columns:
+    -
+      名称: 名称
+    -
+      描述: 描述
+
+process:
+  name: 名称
+
+  description: 描述
+
+  'effective_dates/value':
+    -
+      plugin: skip_on_empty
+      source: 有效期开始
+      method: process
+    -
+      plugin: format_date
+
+  'effective_dates/end_value':
+    -
+      plugin: skip_on_empty
+      source: 有效期结束
+      method: process
+    -
+      plugin: format_date
+
+  effective_dates:
+    -
+      plugin: skip_on_empty
+      source: 有效期
+      method: process
+    -
+      plugin: date_range
+
+destination:
+  plugin: entity:responsibility
+migration_dependencies: { }

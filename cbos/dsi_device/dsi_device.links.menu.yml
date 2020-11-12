@@ -1,0 +1,17 @@
+
+# Device menu items definition
+entity.dsi_device.collection:
+  title: 'Device list'
+  route_name: entity.dsi_device.collection
+  description: 'List Devices'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Device type menu items definition
+entity.dsi_device_type.collection:
+  title: 'Device type'
+  route_name: entity.dsi_device_type.collection
+  description: 'List Device type (bundles)'
+  parent: system.admin_structure
+  weight: 99

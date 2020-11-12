@@ -1,0 +1,10 @@
+name: 'Commerce(dsi)'
+type: module
+description: 'The initial commerce in dsi.'
+core_version_requirement: ^8 || ^9
+package: 'Dsi'
+dependencies:
+  - commerce
+  - commerce_checkout
+  - commerce_log
+  - commerce_recurring

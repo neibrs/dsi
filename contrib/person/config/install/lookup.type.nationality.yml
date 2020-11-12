@@ -1,0 +1,10 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: nationality
+label: 民族
+description: "GB_T3304 民族类别代码"
+organization_classification: business_group

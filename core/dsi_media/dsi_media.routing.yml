@@ -1,0 +1,7 @@
+dsi_media.settings:
+  path: '/admin/config/dsi/dsi-media'
+  defaults:
+    _form: '\Drupal\dsi_media\Form\MediaSettingsForm'
+    _title: 'Dsi Media settings'
+  requirements:
+    _permission: 'administer dsi media settings'

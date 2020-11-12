@@ -1,0 +1,61 @@
+entity.person.add_form:
+  route_name: entity.person.add_page
+  title: 'Add'
+  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+  appears_on:
+    - entity.person.collection
+entity.person.import_form:
+  route_name: entity.person.import_form
+  title: 'Import'
+  route_parameters:
+    entity_type_id: person
+  class: \Drupal\eabax_core\Plugin\Menu\LocalAction\AddDestination
+  appears_on:
+    - entity.person.collection
+entity.person.export:
+  route_name: entity.person.export
+  title: 'Export'
+  options:
+    query:
+      _format: 'csv'
+  appears_on:
+    - entity.person.collection
+
+entity.person.edit:
+  route_name: entity.person.edit_form
+  title: 'Edit'
+  appears_on:
+    - entity.person.canonical
+
+entity.person_type.add_form:
+  route_name: entity.person_type.add_form
+  title: 'Add'
+  appears_on:
+    - entity.person_type.collection
+
+entity.person_type.person.add_form:
+  route_name: entity.person.add_form
+  title: 'Add'
+  appears_on:
+    - entity.person_type.person
+entity.person_address.add_form:
+  route_name: entity.person_address.add_form
+  title: 'Add Person address'
+  appears_on:
+    - entity.person_address.collection
+entity.person_phone.add_form:
+  route_name: entity.person_phone.add_form
+  title: 'Add Person phone'
+  appears_on:
+    - entity.person_phone.collection
+
+entity.person_email.add_form:
+  route_name: entity.person_email.add_form
+  title: 'Add Person email'
+  appears_on:
+    - entity.person_email.collection
+entity.identification_information.add_form:
+  route_name: entity.identification_information.add_form
+  title: 'Add Identification information'
+  appears_on:
+    - entity.identification_information.collection

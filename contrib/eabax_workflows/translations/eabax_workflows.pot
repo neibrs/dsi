@@ -1,0 +1,105 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Form/ConditionForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/EntityTransitionForm.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/Action/Derivative/EntityStatusTransitionDeriver.php: n/a
+#  modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php:99
+msgid "It's success to transition to %to from %from"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Controller/EabaxWorkflowsController.php:107
+msgid "The status of transition not work."
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Form/ConditionForm.php:44
+msgid "Condition"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Form/ConditionForm.php:50
+msgid "Continue"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:22
+msgid "Entity control"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:26;41;65
+msgid "Can update"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:31
+msgid "Can delete"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:37
+msgid "Field control"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:39
+msgid "Field name"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:40;59
+msgid "Can view"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:42
+msgid "Value"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:43
+msgid "Usage"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:79
+msgid "Status setting"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:82
+msgid "Defaults value"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:83
+msgid "Not used"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityStateForm.php:84
+msgid "Sets value"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/EntityTransitionForm.php:88
+msgid "Conditions"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Action/Derivative/EntityStatusTransitionDeriver.php:20
+msgid "Transition @entity_type status"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:83
+msgid "Workflow type"
+msgstr ""
+
+#: modules/dsi/contrib/eabax_workflows/src/Plugin/Field/FieldType/EntityStatusFieldItem.php:102
+msgid "Workflow"
+msgstr ""
+

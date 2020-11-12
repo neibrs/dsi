@@ -1,0 +1,67 @@
+<?php
+
+use Drupal\Core\Cache\CacheableDependencyInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function views_template_theme($existing, $type, $theme, $path) {
+  $theme = [];
+  $theme['views_fields_override_form'] = [
+    'render element' => 'form',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function views_template_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  $route_match = \Drupal::routeMatch();
+  $route = $route_match->getRouteObject();
+
+  // 只修改视图页面，不修改详情页面等其他页面嵌入的视图。
+  if ($view_id = $route->getDefault('view_id')) {
+    if ($view->id() == $view_id) {
+      $default = $view->displayHandlers->get('default');
+
+      // 当 filters URL参数存在时，不处理方案和其他自定义条件.
+      $query = \Drupal::request()->query;
+      if ($query->has('filters')) {
+        $filters = unserialize($query->get('filters'));
+        foreach ($filters as $id => $filter) {
+          $default->options['filters'][$id] = $filter;
+          // Fix Undefined index: id
+          $default->options['filters'][$id]['id'] = $id;
+  
+          // 传输的过滤条件可能没有 id，需要设置 id.
+          $filters[$id]['id'] = $id;
+        }
+
+        // 将 filters 用到的 relationship 添加到 display options 里.
+        \Drupal::service('entity_filter.manager')->addHandlersRelationshipToDisplay($default, $filters);
+
+        // 将传来的过滤条件条件保存到当前视图方案.
+        \Drupal::service('views_template.manager')->setViewOverride($view, ['filters' => $filters]);
+
+        $query->remove('filters');
+      }
+      else {
+        $override = \Drupal::service('views_template.manager')->getViewOverride($view->storage);
+        if (!empty($override)) {
+          \Drupal::service('views_template.manager')->applyOverridesToView($view, $override);
+        }
+      }
+
+      // 显示条件.
+      $default->options['header']['views_template_conditions'] = [
+        'id' => 'views_template_conditions',
+        'table' => 'views',
+        'field' => 'views_template_conditions',
+        'plugin_id' => 'views_template_conditions',
+      ];
+    }
+  }
+}
+

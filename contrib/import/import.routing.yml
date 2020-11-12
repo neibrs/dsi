@@ -1,0 +1,56 @@
+import.entity_import:
+  path: '/entity_import/{entity_type_id}'
+  defaults:
+    _title_callback: '\Drupal\import\Controller\ImportController::getImportTitle'
+    _form: '\Drupal\import\Form\ImportForm'
+  requirements:
+    _entity_create_access: '{entity_type_id}'
+
+import.entity_import.select_sheet:
+  path: '/entity_import_select_sheet/{migration_id}'
+  defaults:
+    _title: 'Select sheet for import'
+    _form: '\Drupal\import\Form\ImportFormSelectSheet'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+import.excel_import_form:
+  path: '/excel_import/{excel_migrate}'
+  defaults:
+    _title: 'Import'
+    _form: '\Drupal\import\Form\ExcelImportForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  # TODO
+
+import.excel_import_form.select_sheet:
+  path: '/excel_import/{excel_migrate}/select_sheet'
+  defaults:
+    _title: 'Select sheet'
+    _form: '\Drupal\import\Form\ExcelImportSelectSheetForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  # TODO
+
+import.import_demo_data:
+  path: '/import_demo_data'
+  defaults:
+    _form: '\Drupal\import\Form\ImportDemoDataForm'
+    _title: 'Import demo data'
+  requirements:
+    _role: 'implementor'
+
+import.import_rules_form:
+  path: '/implementation/tools/import_rules'
+  defaults:
+    _form: '\Drupal\import\Form\ImportRulesForm'
+    _title: 'Define import rules'
+  requirements:
+    _role: 'implementor'
+
+import.entity_import.template:
+  path: '/entity_import/{entity_type_id}/{migration_id}/template'
+  defaults:
+    _controller: '\Drupal\import\Controller\ImportController::getTemplate'
+  requirements:
+    _access: 'TRUE'

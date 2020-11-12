@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - person
+id: contingent_worker
+label: Contingent worker
+weight: 2
+is_admin: false
+permissions: {  }

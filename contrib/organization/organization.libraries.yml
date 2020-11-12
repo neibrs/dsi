@@ -1,0 +1,29 @@
+view:
+  css:
+    theme:
+      css/view.css: {}
+
+tree:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css: { type: external}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js: { type: external }
+    js/organization_tree.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.ui
+    - core/jquery.ui.draggable
+    - core/jquery.ui.droppable
+    - core/jquery.ui.resizable
+
+chart:
+  js:
+    js/collapsible_tree.js: {}
+    /libraries/d3-5.16.0/d3.min.js: {  }
+  css:
+    theme:
+      css/organization-chart.css: {}
+  dependencies:
+    - core/jquery

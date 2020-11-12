@@ -1,0 +1,16 @@
+# Location routing definition
+location.settings_tab:
+  route_name: location.settings
+  title: Settings
+  base_route: location.settings
+
+entity.location.canonical:
+  route_name: entity.location.canonical
+  base_route: entity.location.canonical
+  title: View
+
+entity.location.edit_form:
+  route_name: entity.location.edit_form
+  base_route: entity.location.canonical
+  title: Edit
+

@@ -1,0 +1,21 @@
+# Litigant routing definition
+dsi_litigant.settings_tab:
+  route_name: dsi_litigant.settings
+  title: 'Settings'
+  base_route: dsi_litigant.settings
+
+entity.dsi_litigant.canonical:
+  route_name: entity.dsi_litigant.canonical
+  base_route: entity.dsi_litigant.canonical
+  title: 'View'
+
+entity.dsi_litigant.edit_form:
+  route_name: entity.dsi_litigant.edit_form
+  base_route: entity.dsi_litigant.canonical
+  title: 'Edit'
+
+entity.dsi_litigant.delete_form:
+  route_name:  entity.dsi_litigant.delete_form
+  base_route:  entity.dsi_litigant.canonical
+  title: Delete
+  weight: 10

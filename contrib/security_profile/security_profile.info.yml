@@ -1,0 +1,11 @@
+name: 'Security profile'
+type: module
+description: 'Security profile'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Dsi contrib'
+interface translation project: security_profile
+interface translation server pattern: modules/dsi/contrib/%project/translations/%project.%language.po
+dependencies:
+  - organization
+  - organization_hierarchy

@@ -1,0 +1,4 @@
+services:
+  grant.manager:
+    class: Drupal\grant\GrantManager
+    arguments: ['@entity_type.manager']
