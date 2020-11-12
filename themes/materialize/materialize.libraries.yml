@@ -32,7 +32,6 @@ materialize.base.modern.page:
     - materialize/materialize.base.modern
     - materialize/iconfont
     - materialize/law86
-    - materialize/datatables
 
 # Global library: Vendor CSS and JS
 materialize.vendor:
