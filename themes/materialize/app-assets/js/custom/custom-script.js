@@ -11,17 +11,17 @@
       });
 
 
-      $('.views-table.views-view-table').DataTable({
-        "responsive": true,
-      });
+      // $('.views-table.views-view-table').DataTable({
+      //   "responsive": true,
+      // });
 
       $(context).find('.views-table.views-view-table tr').once('views-view-table-tr').click(function () {
         let $id = $(this).attr('entity-id');
         window.location.href = Drupal.url('dsi_client/' + $id);
       });
 
-      // For local tasks block
-      $('li .tab').once('nav-min-li-a').click(function() {
+      // For local tasks block TODO
+      $('.tabs .tab a').once('nav-min-li-a').click(function() {
         console.log($(this).attr('href'));
         window.location.href = $(this).attr('href');
       });
