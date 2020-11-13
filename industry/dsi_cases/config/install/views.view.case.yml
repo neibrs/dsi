@@ -368,7 +368,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: dsi_case
+      path: dsi_cases
     cache_metadata:
       max-age: -1
       contexts:
