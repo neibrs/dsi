@@ -178,7 +178,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])

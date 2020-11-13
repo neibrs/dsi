@@ -175,7 +175,7 @@ class Contact extends ContentEntityBase implements ContactInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])

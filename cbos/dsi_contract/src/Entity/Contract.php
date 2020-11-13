@@ -170,7 +170,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])

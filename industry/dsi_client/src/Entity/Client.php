@@ -175,7 +175,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])
@@ -310,7 +310,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       // Set the default value of this field to 'user'.
       ->setDefaultValue('organization')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -2,
       ])
