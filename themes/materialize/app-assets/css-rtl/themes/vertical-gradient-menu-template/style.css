@@ -1,7 +1,7 @@
 /*-------------------------------------------------
 	Style file contain theme components style
 -------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600);
+@import url(https://fonts.geekzu.org/css?family=Montserrat:300,300i,400,400i,500,600);
 .materialize-red
 {
     background-color: #e51c23 !important;

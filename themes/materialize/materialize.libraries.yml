@@ -2,7 +2,7 @@
 materialize.base:
   css:
     theme:
-      https://fonts.googleapis.com/icon?family=Material+Icons: { type: remote }
+      https://fonts.geekzu.org/icon?family=Material+Icons: { type: remote }
   js:
     app-assets/js/plugins.js: { } # 以下3个 JS 位置待确认 Theme JS
     app-assets/js/search.js: { }
