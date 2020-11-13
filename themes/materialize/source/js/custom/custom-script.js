@@ -11,9 +11,9 @@
       });
 
 
-      $('.views-table.views-view-table').DataTable({
-        "responsive": true,
-      });
+      // $('.views-table.views-view-table').DataTable({
+      //   "responsive": true,
+      // });
 
       $(context).find('.views-table.views-view-table tr').once('views-view-table-tr').click(function () {
         let $id = $(this).attr('entity-id');
