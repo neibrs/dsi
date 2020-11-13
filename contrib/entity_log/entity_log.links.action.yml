@@ -1,4 +1,5 @@
 
-entity_log.entity_log.deriver:
-  class: \Drupal\Core\Menu\LocalActionDefault
-  deriver: \Drupal\entity_log\Plugin\Derivative\EntityLogLocalAction
+# TODO, remove temporary
+#entity_log.entity_log.deriver:
+#  class: \Drupal\Core\Menu\LocalActionDefault
+#  deriver: \Drupal\entity_log\Plugin\Derivative\EntityLogLocalAction
