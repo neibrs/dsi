@@ -96,3 +96,8 @@ hr {
 .min-height-48 {
   min-height: 48px !important;
 }
+
+// Apply for tables
+.views-table.views-view-table tr:hover {
+  cursor: pointer;
+}

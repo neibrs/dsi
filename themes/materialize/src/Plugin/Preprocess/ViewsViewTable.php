@@ -17,6 +17,5 @@ class ViewsViewTable extends PreprocessBase {
   public function preprocess(array &$variables, $hook, array $info) {
     // 行高亮
     $variables['attributes']['class'][] = 'highlight';
-    $variables['#attached']['library'][] = 'materialize/datatables';
   }
 }
