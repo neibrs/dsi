@@ -161,3 +161,18 @@ function materialize_preprocess_form_element(&$variables) {
       break;
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for menu_local_action.
+ */
+function materialize_preprocess_menu_local_action(array &$variables) {
+  $classes = $variables['link']['#options']['attributes']['class'];
+  $classes = array_diff($classes, [
+    'button',
+    'button-action',
+    'button--primary',
+    'button--small',
+  ]);
+  $classes[] = 'waves-effect waves-light btn-small';
+  $variables['link']['#options']['attributes']['class'] = $classes;
+}
