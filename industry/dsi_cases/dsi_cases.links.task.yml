@@ -3,19 +3,3 @@ dsi_cases.settings_tab:
   route_name: dsi_cases.settings
   title: 'Settings'
   base_route: dsi_cases.settings
-
-entity.dsi_cases.canonical:
-  route_name: entity.dsi_cases.canonical
-  base_route: entity.dsi_cases.canonical
-  title: 'View'
-
-entity.dsi_cases.edit_form:
-  route_name: entity.dsi_cases.edit_form
-  base_route: entity.dsi_cases.canonical
-  title: 'Edit'
-
-entity.dsi_cases.delete_form:
-  route_name:  entity.dsi_cases.delete_form
-  base_route:  entity.dsi_cases.canonical
-  title: Delete
-  weight: 10
