@@ -80,12 +80,19 @@
       {{ description.content }}
     </div>
   {% endif %}
+  {% if materialize %}
+    <label>
+      {{ children }}
+      <span>{{ label }}</span>
+    </label>
+  {% else %}
   {{ children }}
   {% if suffix is not empty %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
   {% if label_display == 'after' %}
     {{ label }}
+  {% endif %}
   {% endif %}
   {% if errors %}
     <div class="form-item--error-message">
