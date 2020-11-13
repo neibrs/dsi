@@ -336,3 +336,8 @@ a.tabledrag-handle .handle
     -webkit-flex: 1;
             flex: 1;
 }
+
+.min-height-48
+{
+    min-height: 48px !important;
+}

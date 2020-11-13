@@ -19,6 +19,12 @@
         let $id = $(this).attr('entity-id');
         window.location.href = Drupal.url('dsi_client/' + $id);
       });
+
+      // For local tasks block
+      $('.tabs .tab a').once('nav-min-li-a').click(function() {
+        console.log($(this).attr('href'));
+        window.location.href = $(this).attr('href');
+      });
     }
   };
 })(jQuery, Drupal, drupalSettings);
