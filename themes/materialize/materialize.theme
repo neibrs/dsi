@@ -158,7 +158,6 @@ function materialize_preprocess_form_element(&$variables) {
   switch ($variables['type']) {
     case 'radio':
       $variables['materialize'] = TRUE;
-      $variables['element']['#attributes']['class'][] = 'with-gap';
       break;
   }
 }

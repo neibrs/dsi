@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Seven theme implementation to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing primary tasks.
+ *
+ * Each item in these variables (primary and secondary) can be individually
+ * themed in menu-local-task.html.twig.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if primary %}
+<nav class="nav-extended">
+  <div class="nav-wrapper min-height-48">
+    <ul class="tabs mb-0">
+      {{ primary }}
+    </ul>
+  </div>
+  {% if secondary %}
+  
+  <div class="nav-content">
+    <ul class="tabs">
+      {{ secondary }}
+    </ul>
+  </div>
+  {% endif %}
+</nav>
+{% endif %}
