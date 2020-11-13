@@ -4,6 +4,6 @@ gulp {{task}} --Layout="vertical-gradient-menu-template" --LayoutName="vertical-
 前端源替换:
 1. google资源
 https://fonts.googleapis.com/icon?family=Material+Icons
-https://fonts.googleapis.com/ 替换成 http://fonts.geekzu.org/
+https://fonts.googleapis.com/ 替换成 https://fonts.geekzu.org/
 
 
