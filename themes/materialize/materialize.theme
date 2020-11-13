@@ -155,7 +155,10 @@ function materialize_preprocess_breadcrumb(&$variables) {
  */
 function materialize_preprocess_form_element(&$variables) {
   $variables['materialize'] = FALSE;
-  if ($variables['type'] == 'radio') {
-    $variables['materialize'] = TRUE;
+  switch ($variables['type']) {
+    case 'radio':
+      $variables['materialize'] = TRUE;
+      $variables['element']['#attributes']['class'][] = 'with-gap';
+      break;
   }
 }
