@@ -107,7 +107,7 @@ class Litigant extends ContentEntityBase implements LitigantInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])

@@ -176,7 +176,7 @@ class Record extends ContentEntityBase implements RecordInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -4,
       ])
