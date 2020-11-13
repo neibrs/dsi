@@ -341,3 +341,8 @@ a.tabledrag-handle .handle
 {
     min-height: 48px !important;
 }
+
+.views-table.views-view-table tr:hover
+{
+    cursor: pointer;
+}
