@@ -20,7 +20,7 @@
         window.location.href = Drupal.url('dsi_client/' + $id);
       });
 
-      // For local tasks block
+      // For local tasks block TODO
       $('.tabs .tab a').once('nav-min-li-a').click(function() {
         console.log($(this).attr('href'));
         window.location.href = $(this).attr('href');
