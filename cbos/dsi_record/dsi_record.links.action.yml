@@ -1,5 +1,10 @@
 entity.dsi_record.add_form:
   route_name: entity.dsi_record.add_form
   title: 'Add'
+  options:
+    attributes:
+      class: ['use-ajax']
+      data-dialog-type: modal
+      data-dialog-options: '{"width":"80%"}'
   appears_on:
     - entity.dsi_record.collection

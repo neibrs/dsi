@@ -118,9 +118,9 @@ class ViewsTemplateManager implements ViewsTemplateManagerInterface {
     }
   
     $default = $view->displayHandlers->get('default');
-    $display_id = $view->current_display; // Check it.
+    $display_id = $view->current_display; /* Check it.*/
     
-    // Set fields
+    /* Set fields */
     if (isset($override['fields']) && !empty($override['fields'])) {
       $default->options['fields'] = $override['fields'];
     
@@ -134,29 +134,31 @@ class ViewsTemplateManager implements ViewsTemplateManagerInterface {
           }
         }
       
-        // 添加缓存。
+        /* 添加缓存。*/
         $handler = \Drupal::service('plugin.manager.views.field')->getHandler($field);
         $handler->view = $view;
         $handler->displayHandler = $default;
         if ($handler instanceof CacheableDependencyInterface) {
           $view->storage->addCacheTags($handler->getCacheTags());
         }
-      
-        // 添加到 columns 设置，以提供排序排序功能。
-        if (!in_array($id, $default->options['style']['options']['columns'], TRUE)) {
-          if (isset($field['exclude']) && $field['exclude']) {
-            continue;
+
+        if (isset($default->options['style']['options']['columns'])) {
+          /* 添加到 columns 设置，以提供排序排序功能。*/
+          if (!in_array($id, $default->options['style']['options']['columns'], TRUE)) {
+            if (isset($field['exclude']) && $field['exclude']) {
+              continue;
+            }
+            if ($field['plugin_id'] == 'bulk_form') {
+              continue;
+            }
+
+            $default->options['style']['options']['columns'][$id] = $id;
+
+            $default->options['style']['options']['info'][$id] = [
+              'sortable' => TRUE,
+              'default_sort_order' => 'asc',
+            ];
           }
-          if ($field['plugin_id'] == 'bulk_form') {
-            continue;
-          }
-        
-          $default->options['style']['options']['columns'][$id] = $id;
-        
-          $default->options['style']['options']['info'][$id] = [
-            'sortable' => TRUE,
-            'default_sort_order' => 'asc',
-          ];
         }
       }
     

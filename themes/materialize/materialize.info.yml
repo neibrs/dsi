@@ -31,3 +31,10 @@ features:
   name: true
   slogan: true
   favicon: true
+libraries-override:
+  seven/global-styling:
+    css:
+      component:
+        css/classy/components/action-links.css: false
+        css/classy/components/button.css: false
+        css/components/buttons.css: false
