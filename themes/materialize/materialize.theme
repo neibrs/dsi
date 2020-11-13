@@ -21,6 +21,7 @@
  */
 
 use Drupal\materialize\Materialize;
+use Drupal\views\Form\ViewsForm;
 
 /**
  * Initialize the active theme.
@@ -61,10 +62,59 @@ function materialize_theme_suggestions_alter(&$data, &$context1 = NULL, &$contex
 
 /**
  * {@inheritdoc}
- *
  * @see \Drupal\materialize\Theme::alter()
+ * $data: $form,
+ * $context1: $form_state,
+ * $context2: $form_id
  */
 function materialize_form_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
+  if (isset($data['actions']['submit'])) {
+    $data['actions']['submit']['#attributes']['class'] = [
+      'btn',
+      'btn-danger',
+      'btn-sm',
+    ];
+  }
+  if (isset($data['actions']['delete'])) {
+    $data['actions']['delete']['#attributes']['class'] = [
+      'btn',
+      'btn-danger',
+      'btn-sm',
+    ];
+  }
+  if (isset($data['actions']['cancel'])) {
+    $data['actions']['cancel']['#attributes']['class'] = [
+      'btn',
+      'btn-warning',
+      'btn-sm',
+    ];
+  }
+  if (isset($data['actions']['edit-add-block'])) {
+    $data['actions']['edit-add-block']['#attributes']['class'] = [
+      'btn',
+      'btn-warning',
+      'btn-sm',
+    ];
+  }
+
+  // Make bulk_form inline.
+  $form_object = $context1->getFormObject();
+  if ($form_object instanceof ViewsForm) {
+    if (isset($data['header']['bulk_form'])) {
+      $data['header']['bulk_form']['#attributes']['class'] = 'form--inline clearfix';
+    }
+    else {
+      $build_info = $context1->getBuildInfo();
+      /** @var \Drupal\views\ViewExecutable $view_executable */
+      $view_executable = $build_info['args'][0];
+      $base_table = $view_executable->storage->get('base_table');
+      $base_table = str_replace('_field_data', '', $base_table);
+      if (isset($form['header'][$base_table . '_bulk_form'])) {
+        $data['header'][$base_table . '_bulk_form']['#attributes']['class'] = 'form--inline clearfix';
+      }
+    }
+  }
+
   Materialize::alter(__FUNCTION__, $data, $context1, $context2);
 }
 
