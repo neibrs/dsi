@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\lookup\InstallHelper;
+
 /**
  * Implements hook_install().
  */
@@ -15,7 +17,8 @@ function dsi_client_install($is_syncing) {
     '5' => '宣传推广',
     '6' => '网上获取',
   ];
-  getOrCreateLookup('customer_source', $data, '客户来源', $lookup_storage);
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('customer_source', $data, '客户来源', $lookup_storage);
 
   $data = [
     '1' => '核心',
@@ -23,7 +26,8 @@ function dsi_client_install($is_syncing) {
     '3' => '一般',
     '4' => '次要',
   ];
-  getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);
 
   $data = [
     '1' => '签约',
@@ -31,19 +35,5 @@ function dsi_client_install($is_syncing) {
     '3' => '潜在',
     '4' => '终止',
   ];
-  getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
-}
-
-function getOrCreateLookup($type, $data, $description, $lookup_storage) {
-  foreach ($data as $key => $value) {
-    $values = [
-      'type' => $type,
-      'name' => $value,
-      'code' => $key,
-      'description' => $description,
-    ];
-    if (empty($lookup_storage->loadByProperties($values))) {
-      $lookup_storage->create($values)->save();
-    }
-  }
+  \Drupal::classResolver(InstallHelper::class)->getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
 }
