@@ -8,6 +8,6 @@
     "minimum-stability": "dev",
     "support": {
         "issues": "https://www.drupal.org/project/issues/dsi_litigant",
-        "source": "http://cgit.drupalcode.org/dsi_litigant",
-    },
+        "source": "http://cgit.drupalcode.org/dsi_litigant"
+    }
 }
