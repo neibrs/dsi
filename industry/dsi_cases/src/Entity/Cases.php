@@ -249,6 +249,8 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+
+    // 案件简略登记，案件来源，联系人电话
     // 案件来源
     $fields['case_source'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Case Source'))

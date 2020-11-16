@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function dsi_lawyer_install($is_syncing) {
+  // Setting role menu for authenticated.
+  $role_storage = \Drupal::service('entity_type.manager')->getStorage('user_role');
+  $role = $role_storage->load('authenticated');
+  $role->unsetThirdPartySetting('role_menu', 'menu');
+  $role->setThirdPartySetting('role_menu', 'menu', 'lawyer');
+
+  $role = $role_storage->load('administrator');
+  $role->unsetThirdPartySetting('role_menu', 'menu');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function dsi_laywer_uninstall($is_syncing) {
+  /** @var \Drupal\user\RoleInterface $role */
+  $role = \Drupal::service('entity_type.manager')->getStorage('user_role')->load('authenticated');
+  $role->unsetThirdPartySetting('role_menu', 'menu');
+}
