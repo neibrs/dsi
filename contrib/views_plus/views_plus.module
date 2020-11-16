@@ -95,7 +95,7 @@ function views_plus_preprocess_views_view_table(&$variables) {
   // Add entity id for <tr> tag
   foreach ($variables['rows'] as $key => $row) {
     if ($entity = $variables['result'][$key]->_entity) {
-      $variables['rows'][$key]['attributes'] = new Attribute(['entity-id' => $entity->id()]);
+      $variables['rows'][$key]['attributes'] = new Attribute(['entity-id' => $entity->id(), 'entity-type' => $entity->getEntityTypeId()]);
     }
   }
 
