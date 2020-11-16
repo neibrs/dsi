@@ -249,6 +249,25 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // 案件来源
+    $fields['case_source'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Case Source'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['case_source' => 'case_source'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
     //    * 案号
     $fields['number'] = BaseFieldDefinition::create('code')
       ->setLabel(t('Number', [], ['context' => 'Case']))
