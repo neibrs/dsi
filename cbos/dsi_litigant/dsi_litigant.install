@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function dsi_litigant_install($is_syncing) {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+  $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+  $data = [
+    '1' => '原告',
+    '2' => '被告',
+    '3' => '上诉人',
+    '4' => '申请人',
+  ];
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => 'extra_attribute',
+      'name' => $value,
+      'code' => $key,
+      'description' => '属性',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
+}
