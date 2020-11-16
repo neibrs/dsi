@@ -12,6 +12,11 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 body {
   background-color: #f0f3f8;
 }
+.nav-light-blue {
+  background-color: #1d84c3;
+  background-image: -webkit-linear-gradient(top, #055a8e 0%, #1d84c3 100%);
+  background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
+}
 .user-login-form .input-field {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
