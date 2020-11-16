@@ -1,19 +1,8 @@
 <?php
 
-function getOrCreateLookup($type, $data, $description, $lookup_storage) {
-  foreach ($data as $key => $value) {
-    $values = [
-      'type' => $type,
-      'name' => $value,
-      'code' => $key,
-      'description' => $description,
-    ];
-    if (empty($lookup_storage->loadByProperties($values))) {
-      $lookup_storage->create($values)->save();
-    }
-  }
-}
-
+/**
+ * Implements hook_install().
+ */
 function dsi_litigant_install($is_syncing) {
   /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
   $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
@@ -23,5 +12,15 @@ function dsi_litigant_install($is_syncing) {
     '3' => '上诉人',
     '4' => '申请人',
   ];
-  getOrCreateLookup('extra_attribute', $data, '属性', $lookup_storage);
+  foreach ($data as $key => $value) {
+    $values = [
+      'type' => 'extra_attribute',
+      'name' => $value,
+      'code' => $key,
+      'description' => '属性',
+    ];
+    if (empty($lookup_storage->loadByProperties($values))) {
+      $lookup_storage->create($values)->save();
+    }
+  }
 }
