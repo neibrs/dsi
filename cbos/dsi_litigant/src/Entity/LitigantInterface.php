@@ -18,25 +18,6 @@ interface LitigantInterface extends ContentEntityInterface, EntityChangedInterfa
    */
 
   /**
-   * Gets the Litigant name.
-   *
-   * @return string
-   *   Name of the Litigant.
-   */
-  public function getName();
-
-  /**
-   * Sets the Litigant name.
-   *
-   * @param string $name
-   *   The Litigant name.
-   *
-   * @return \Drupal\dsi_litigant\Entity\LitigantInterface
-   *   The called Litigant entity.
-   */
-  public function setName($name);
-
-  /**
    * Gets the Litigant creation timestamp.
    *
    * @return int

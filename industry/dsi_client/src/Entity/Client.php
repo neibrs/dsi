@@ -325,6 +325,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setLabel(t('Entity ID'))
       ->setRequired(TRUE)
       ->setDefaultValue(0);
+
     // 所属行业
     $fields['sector'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Sector', [], ['context' => 'Client']))
