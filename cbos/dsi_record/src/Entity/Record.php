@@ -286,6 +286,25 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 所属团队
     // 所属律所
 
+    $fields['entity_type'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Entity type',[], ['context' => 'Record']))
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -2,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+        'weight' => -2,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Entity ID'))
+      ->setDefaultValue(0);
+
     $fields['status']->setDescription(t('A boolean indicating whether the Record is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
