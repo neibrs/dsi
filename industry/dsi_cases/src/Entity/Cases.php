@@ -324,7 +324,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['status']->setDescription(t('A boolean indicating whether the Cases is published.'))
+    $fields['status']
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
         'weight' => -3,
