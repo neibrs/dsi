@@ -4,6 +4,8 @@
  * @file
  */
 
+use Drupal\lookup\InstallHelper;
+
 /**
  * Implements hook_install().
  */
@@ -18,17 +20,8 @@ function dsi_cases_install($is_syncing) {
     '5' => '仲裁案件',
   ];
 
-  foreach ($data as $key => $value) {
-    $values = [
-      'type' => 'case_category',
-      'name' => $value,
-      'code' => $key,
-      'description' => '案件类别',
-    ];
-    if (empty($lookup_storage->loadByProperties($values))) {
-      $lookup_storage->create($values)->save();
-    }
-  }
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('case_category', $data, '案件类别', $lookup_storage);
 
   $data = [
     '1' => '仲裁',
@@ -40,17 +33,8 @@ function dsi_cases_install($is_syncing) {
     '7' => '再审一审',
     '8' => '再审二审',
   ];
-  foreach ($data as $key => $value) {
-    $values = [
-      'type' => 'case_procedure',
-      'name' => $value,
-      'code' => $key,
-      'description' => '案件程序',
-    ];
-    if (empty($lookup_storage->loadByProperties($values))) {
-      $lookup_storage->create($values)->save();
-    }
-  }
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('case_procedure', $data, '案件程序', $lookup_storage);
 
   $data = [
     '1' => '机动车效能事故责任纠纷',
@@ -64,15 +48,12 @@ function dsi_cases_install($is_syncing) {
     '9' => '劳动争议',
     '10' => '借款合同纠纷',
   ];
-  foreach ($data as $key => $value) {
-    $values = [
-      'type' => 'case_cause',
-      'name' => $value,
-      'code' => $key,
-      'description' => '案由',
-    ];
-    if (empty($lookup_storage->loadByProperties($values))) {
-      $lookup_storage->create($values)->save();
-    }
-  }
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('case_cause', $data, '案由', $lookup_storage);
+
+  $data = [
+    '1' => '法网',
+  ];
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('case_source', $data, '案件来源', $lookup_storage);
 }
