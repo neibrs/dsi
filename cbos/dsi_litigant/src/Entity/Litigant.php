@@ -62,21 +62,6 @@ class Litigant extends ContentEntityBase implements LitigantInterface {
   /**
    * {@inheritdoc}
    */
-  public function getName() {
-    return $this->get('name')->value;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function setName($name) {
-    $this->set('name', $name);
-    return $this;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getCreatedTime() {
     return $this->get('created')->value;
   }
@@ -98,26 +83,65 @@ class Litigant extends ContentEntityBase implements LitigantInterface {
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);
 
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Litigant entity.'))
+    $fields['entity_type'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Type',[], ['context' => 'Litigant']))
+      ->setRequired(TRUE)
       ->setSettings([
-        'max_length' => 50,
-        'text_processing' => 0,
+        'allowed_values' => [
+          'individual' => t('Individual'),
+          'organization' => t('Organization'),
+        ],
       ])
-      ->setDefaultValue('')
+      // Set the default value of this field to 'user'.
+      ->setDefaultValue('organization')
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => -2,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -4,
+        'type' => 'options_buttons',
+        'weight' => -2,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Entity ID'))
+      ->setRequired(TRUE)
+      ->setDefaultValue(0);
+
+    // 委托方
+    $fields['mandating'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Mandating'))
+      ->setDefaultValue(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+        'settings' => [
+          'display_label' => TRUE,
+        ],
+        'weight' => 16,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    // 属性: 进攻方，防御方，其他参与人(lookup)
+    $fields['extra_attribute'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Extra attribute', [], ['context' => 'Litigant']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['client_importance' => 'client_importance'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status']->setDescription(t('A boolean indicating whether the Litigant is published.'))
       ->setDisplayOptions('form', [
