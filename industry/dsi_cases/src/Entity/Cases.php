@@ -187,8 +187,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
         'weight' => -4,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
     //    * 案件类型
     $fields['case_category'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Case Category'))
