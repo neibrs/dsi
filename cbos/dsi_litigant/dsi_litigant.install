@@ -14,7 +14,7 @@ function getOrCreateLookup($type, $data, $description, $lookup_storage) {
   }
 }
 
-function dsi_client_install($is_syncing) {
+function dsi_litigant_install($is_syncing) {
   /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
   $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
   $data = [
