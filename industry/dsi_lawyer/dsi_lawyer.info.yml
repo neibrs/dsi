@@ -10,6 +10,7 @@ dependencies:
   - dsi_cases
   - dsi_contract
   - dsi_client
+  - dsi_litigant
   - dsi_project
   - dsi_record
   - person
