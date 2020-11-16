@@ -17,7 +17,8 @@
 
       $(context).find('.views-table.views-view-table tr').once('views-view-table-tr').click(function () {
         let $id = $(this).attr('entity-id');
-        window.location.href = Drupal.url('dsi_client/' + $id);
+        let $type = $(this).attr('entity-type');
+        window.location.href = Drupal.url($type +'/' + $id);
       });
 
       // For local tasks block TODO
