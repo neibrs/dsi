@@ -268,6 +268,23 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
+    // 联系人电话
+    $fields['contact_phone'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Contact Phone', [], ['context' => 'Cases']))
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
     //    * 案号
     $fields['number'] = BaseFieldDefinition::create('code')
       ->setLabel(t('Number', [], ['context' => 'Case']))
