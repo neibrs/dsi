@@ -39,7 +39,6 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   admin_permission = "administer litigant entities",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "name",
  *     "uuid" = "uuid",
  *     "langcode" = "langcode",
  *     "published" = "status",
