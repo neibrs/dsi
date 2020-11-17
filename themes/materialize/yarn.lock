@@ -16,6 +16,71 @@
   dependencies:
     "commander" "^2.15.1"
 
+"@fullcalendar/common@~5.4.0":
+  "integrity" "sha1-ZUdBY+Q76kRDsld8051wIWeCN98="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/common/download/@fullcalendar/common-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "tslib" "^2.0.3"
+
+"@fullcalendar/core@^5.4.0":
+  "integrity" "sha1-Qm7tQAsJSLlV6SJ1CV1hfkKL5aE="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/core/download/@fullcalendar/core-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "preact" "^10.0.5"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/daygrid@^5.4.0", "@fullcalendar/daygrid@~5.4.0":
+  "integrity" "sha1-nikIn1gWbL/qmA2hpptV4Vd5TtY="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/daygrid/download/@fullcalendar/daygrid-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/interaction@^5.4.0":
+  "integrity" "sha1-XXCaM4HKBnD25imksZvbS54YUVw="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/interaction/download/@fullcalendar/interaction-5.4.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40fullcalendar%2Finteraction%2Fdownload%2F%40fullcalendar%2Finteraction-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/list@^5.4.0":
+  "integrity" "sha1-9q3m1KbcnmHvjqwVW8L6uUqJfHY="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/list/download/@fullcalendar/list-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/moment@^5.4.0":
+  "integrity" "sha1-DYfggQQUjD4/IKFru5ok1zlEKVw="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/moment/download/@fullcalendar/moment-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/rrule@^5.4.0":
+  "integrity" "sha1-u1Kmmqy2J41mMr+lMwggKLrNbIs="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/rrule/download/@fullcalendar/rrule-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "tslib" "^2.0.3"
+
+"@fullcalendar/timegrid@^5.4.0":
+  "integrity" "sha1-eGnWyLpiX0UIuy9MSjw5M1J6BpA="
+  "resolved" "https://registry.npm.taobao.org/@fullcalendar/timegrid/download/@fullcalendar/timegrid-5.4.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40fullcalendar%2Ftimegrid%2Fdownload%2F%40fullcalendar%2Ftimegrid-5.4.0.tgz"
+  "version" "5.4.0"
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    "@fullcalendar/daygrid" "~5.4.0"
+    "tslib" "^2.0.3"
+
 "@polymer/iron-flex-layout@^3.0.0-pre.18":
   "integrity" "sha512-7gB869czArF+HZcPTVSgvA7tXYFze9EKckvM95NB7SqYF+NnsQyhoXgKnpFwGyo95lUjUW9TFDLUwDXnCYFtkw=="
   "resolved" "https://registry.npmjs.org/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.1.tgz"
@@ -1717,6 +1782,11 @@
     "readable-stream" "1.1.x"
     "xregexp" "2.0.0"
 
+"fullcalendar@^5.4.0":
+  "integrity" "sha1-B55v+f+xf37FgJraXjUubLw7pck="
+  "resolved" "https://registry.npm.taobao.org/fullcalendar/download/fullcalendar-5.4.0.tgz"
+  "version" "5.4.0"
+
 "function-bind@^1.1.1":
   "integrity" "sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0="
   "resolved" "https://registry.npm.taobao.org/function-bind/download/function-bind-1.1.1.tgz"
@@ -3210,6 +3280,11 @@
   "resolved" "https://registry.npm.taobao.org/lru-cache/download/lru-cache-2.7.3.tgz?cache=0&sync_timestamp=1594427588278&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flru-cache%2Fdownload%2Flru-cache-2.7.3.tgz"
   "version" "2.7.3"
 
+"luxon@^1.21.3":
+  "integrity" "sha1-2GIZ6QvAECwOspnWWy9ele/h/nI="
+  "resolved" "https://registry.npm.taobao.org/luxon/download/luxon-1.25.0.tgz"
+  "version" "1.25.0"
+
 "make-error-cause@^1.1.1":
   "integrity" "sha1-3wOI/NCzeBbf8KX7gQiTl3fcvJ0="
   "resolved" "https://registry.npm.taobao.org/make-error-cause/download/make-error-cause-1.2.2.tgz"
@@ -3413,6 +3488,11 @@
   "version" "0.5.5"
   dependencies:
     "minimist" "^1.2.5"
+
+"moment@^2.29.1":
+  "integrity" "sha1-sr52n6MZQL6e7qZGnAdeNQBvo9M="
+  "resolved" "https://registry.npm.taobao.org/moment/download/moment-2.29.1.tgz?cache=0&sync_timestamp=1601983557585&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmoment%2Fdownload%2Fmoment-2.29.1.tgz"
+  "version" "2.29.1"
 
 "ms@^2.1.1":
   "integrity" "sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk="
@@ -3962,6 +4042,11 @@
     "source-map" "^0.6.1"
     "supports-color" "^6.1.0"
 
+"preact@^10.0.5":
+  "integrity" "sha1-8dhHJVOeGPfMvqk3zz21iVZh29M="
+  "resolved" "https://registry.npm.taobao.org/preact/download/preact-10.5.7.tgz"
+  "version" "10.5.7"
+
 "prelude-ls@~1.1.2":
   "integrity" "sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ="
   "resolved" "https://registry.npm.taobao.org/prelude-ls/download/prelude-ls-1.1.2.tgz"
@@ -4451,6 +4536,16 @@
   "version" "2.7.1"
   dependencies:
     "glob" "^7.1.3"
+
+"rrule@^2.6.0":
+  "integrity" "sha1-cAMXJ9pKpkjqDcxSS26V9WWvBj4="
+  "resolved" "https://registry.npm.taobao.org/rrule/download/rrule-2.6.6.tgz"
+  "version" "2.6.6"
+  dependencies:
+    "luxon" "^1.21.3"
+    "tslib" "^1.10.0"
+  optionalDependencies:
+    "luxon" "^1.21.3"
 
 "rtlcss@^2.4.0":
   "integrity" "sha1-5l0HvWwj4TQ4o+TIHTirAAp5bcU="
@@ -5086,7 +5181,12 @@
   dependencies:
     "glob" "^7.1.2"
 
-"tslib@^2.0.1":
+"tslib@^1.10.0":
+  "integrity" "sha1-zy04vcNKE0vK8QkcQfZhni9nLQA="
+  "resolved" "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1602286730817&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz"
+  "version" "1.14.1"
+
+"tslib@^2.0.1", "tslib@^2.0.3":
   "integrity" "sha1-jgdBrEX8DCJuWKF7/D5kubxsphw="
   "resolved" "https://registry.npm.taobao.org/tslib/download/tslib-2.0.3.tgz?cache=0&sync_timestamp=1602288909923&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.0.3.tgz"
   "version" "2.0.3"
