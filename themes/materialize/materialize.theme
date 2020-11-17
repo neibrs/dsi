@@ -74,6 +74,14 @@ function materialize_form_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
       'btn-danger',
       'btn-sm',
     ];
+
+    $classes = array_diff($data['actions']['submit']['#attributes']['class'], [
+      'button',
+      'button-action',
+      'button--primary',
+      'button--small',
+    ]);
+    $data['actions']['submit']['#attributes']['class'] = $classes;
   }
   if (isset($data['actions']['delete'])) {
     $data['actions']['delete']['#attributes']['class'] = [
