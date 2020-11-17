@@ -206,22 +206,38 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     // 开始时间 - 结束时间
-    $fields['effective_dates'] = BaseFieldDefinition::create('daterange')
-      ->setLabel(t('Effective dates'))
+    $fields['start'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Start', [], ['context' => 'Record']))
       ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
-      ->setSetting('optional_start_date', TRUE)
-      ->setSetting('optional_end_date', TRUE)
       ->setDisplayOptions('view', [
-        'type' => 'daterange_default',
-        'weight' => 90,
+        'type' => 'datetime_default',
+        'weight' => 0,
         'label' => 'inline',
         'settings' => [
           'format_type' => 'html_date',
         ],
       ])
       ->setDisplayOptions('form', [
-        'type' => 'daterange_default',
-        'weight' => 90,
+        'type' => 'datetime_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['end'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('End', [], ['context' => 'Record']))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
+      ->setDisplayOptions('view', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+        'label' => 'inline',
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
