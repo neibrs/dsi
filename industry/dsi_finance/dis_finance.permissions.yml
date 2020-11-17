@@ -1,0 +1,19 @@
+add finance entities:
+  title: 'Create new Finance entities'
+
+administer finance entities:
+  title: 'Administer Finance entities'
+  description: 'Allow to access the administration form to configure Finance entities.'
+  restrict access: true
+
+delete finance entities:
+  title: 'Delete Finance entities'
+
+edit finance entities:
+  title: 'Edit Finance entities'
+
+view published finance entities:
+  title: 'View published Finance entities'
+
+view unpublished finance entities:
+  title: 'View unpublished Finance entities'

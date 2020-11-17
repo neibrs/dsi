@@ -1,0 +1,10 @@
+name: 'Finance'
+type: module
+description: '财务模块'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project: dsi_finance
+interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
+package: 'Dsi'
+dependencies:
+  - person:person
