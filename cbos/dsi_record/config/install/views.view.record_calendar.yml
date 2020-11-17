@@ -68,7 +68,7 @@ display:
           rrule: ''
           duration: ''
           bundle_type: dsi_record
-          classes: xxxxx
+          classes: card-content
       row:
         type: fields
       fields:
