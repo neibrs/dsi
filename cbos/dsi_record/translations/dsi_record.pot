@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:07+0000\n"
+"POT-Creation-Date: 2020-11-17 00:35+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -66,23 +66,32 @@ msgctxt "Record"
 msgid "Attachments"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:289
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:290
+msgctxt "Record"
+msgid "Entity type"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:305
+msgid "Entity ID"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:308
 msgid "A boolean indicating whether the Record is published."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:296
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:315
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:297
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:316
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:300
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:319
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:301
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:320
 msgid "The time that the entity was last edited."
 msgstr ""
 

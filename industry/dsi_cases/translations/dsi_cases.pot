@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:29+0000\n"
+"POT-Creation-Date: 2020-11-17 00:37+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -50,55 +50,60 @@ msgstr ""
 msgid "The user ID of author of the Cases entity."
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:194
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:193
 msgid "Case Category"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:214
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:213
 msgid "Case Procedure"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:234
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:233
 msgid "Case Cause"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:254
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:255
+msgid "Case Source"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:275
+msgctxt "Cases"
+msgid "Contact Phone"
+msgstr ""
+
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:291
 msgctxt "Case"
 msgid "Number"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:270
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:307
 msgctxt "Cases"
 msgid "Delegate  Datetime"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:289
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:326
 msgctxt "Cases"
 msgid "Subject Matter"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:306
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:343
 msgctxt "Cases"
 msgid "Person in Charge"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:327
-msgid "A boolean indicating whether the Cases is published."
-msgstr ""
-
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:334
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:371
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:335
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:372
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:338
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:375
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:339
+#: modules/dsi/industry/dsi_cases/src/Entity/Cases.php:376
 msgid "The time that the entity was last edited."
 msgstr ""
 
