@@ -32,3 +32,17 @@ function dsi_record_preprocess_menu__role_menu(&$variables) {
   ];
   _eabax_core_set_menu_items_icon($variables['items'], $icons);
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_record_theme() {
+  return [
+    'dsi_record_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
