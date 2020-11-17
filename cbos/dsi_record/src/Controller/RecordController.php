@@ -16,6 +16,8 @@ class RecordController extends ControllerBase {
     $build = $section->toRenderArray();
 
     $build['second']['calendar'] = views_embed_view('record_calendar', 'page_1');
+    $build['second']['calendar']['#prefix'] = '<div class="card"><div class=""card-content">';
+    $build['second']['calendar']['#suffix'] = '</div></div>';
 
     return $build;
   }

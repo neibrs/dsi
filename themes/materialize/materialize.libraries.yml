@@ -14,12 +14,21 @@ materialize.base:
     - core/drupalSettings
     - materialize/materialize.vendor
 
-# Theme style library
+# Theme style library vertical modern menu.
 materialize.base.modern:
   css:
     base:
       app-assets/css/themes/vertical-modern-menu-template/materialize.css: { } # Page Level CSS
       app-assets/css/themes/vertical-modern-menu-template/style.css: { } # Page Level CSS
+  dependencies:
+    - materialize/materialize.base
+
+# Theme style library vertical gradient menu.
+materialize.base.gradient:
+  css:
+    base:
+      app-assets/css/themes/vertical-gradient-menu-template/materialize.css: { } # Page Level CSS
+      app-assets/css/themes/vertical-gradient-menu-template/style.css: { } # Page Level CSS
   dependencies:
     - materialize/materialize.base
 
@@ -29,7 +38,8 @@ materialize.base.modern.page:
     theme:
       app-assets/css/custom/custom.css: { } # Custom CSS
   dependencies:
-    - materialize/materialize.base.modern
+#    - materialize/materialize.base.modern
+    - materialize/materialize.base.gradient
     - materialize/iconfont
     - materialize/law86
 

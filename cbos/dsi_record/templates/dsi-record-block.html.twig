@@ -9,10 +9,14 @@
 */
 #}
 {% set classes = [
-    'clear-both',
+  'clear-both',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-    {% for value in content %}
+  <div class="card">
+    <div class="card-content">
+      {% for value in content %}
         <p>{{value}}</p>
-    {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
