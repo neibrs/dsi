@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"POT-Creation-Date: 2020-11-17 00:37+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -33,98 +33,90 @@ msgstr ""
 msgid "Client ID"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/ClientListBuilder.php:21 modules/dsi/industry/dsi_client/src/Entity/Client.php:172
+#: modules/dsi/industry/dsi_client/src/ClientListBuilder.php:21 modules/dsi/industry/dsi_client/src/Entity/Client.php:170
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:147
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:146
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:148
-msgid "The user ID of author of the Client entity."
-msgstr ""
-
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:173
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:171
 msgid "The name of the Client entity."
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:195
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:193
 msgctxt "Client"
 msgid "Follow"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:214
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:212
 msgctxt "Client"
 msgid "Description"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:230
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:228
 msgctxt "Client"
 msgid "Cooperating State"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:249
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:247
 msgctxt "Client"
 msgid "Number"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:266
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:264
 msgctxt "Client"
 msgid "Customer Source"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:286
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:284
 msgctxt "Client"
 msgid "Client Importance"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:304
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:302
 msgid "Entity type"
 msgstr ""
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:306
-msgid "The role of the Contact entity."
+msgid "Individual"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:328
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:307
+msgid "Organization"
+msgstr ""
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:325
 msgid "Entity ID"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:329
-msgid "The ID of the entity of which this related entity."
-msgstr ""
-
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:334
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:331
 msgctxt "Client"
 msgid "Sector"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:357
-msgid "A boolean indicating whether the Client is published."
-msgstr ""
-
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:364
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:361
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:365
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:362
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:368
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:365
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Entity/Client.php:369
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:366
 msgid "The time that the entity was last edited."
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:53
+#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:61
 msgid "Created the %label Client."
 msgstr ""
 
-#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:59
+#: modules/dsi/industry/dsi_client/src/Form/ClientForm.php:67
 msgid "Saved the %label Client."
 msgstr ""
 

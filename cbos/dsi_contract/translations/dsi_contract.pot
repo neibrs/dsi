@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"POT-Creation-Date: 2020-11-17 00:35+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "The contracts."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/dsi_contract.module:38
+#: modules/dsi/cbos/dsi_contract/dsi_contract.module:37
 msgid "Contract"
 msgstr ""
 
@@ -37,39 +37,39 @@ msgstr ""
 msgid "Contract ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/ContractListBuilder.php:21 modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:168
+#: modules/dsi/cbos/dsi_contract/src/ContractListBuilder.php:21 modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:165
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:143
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:140
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:144
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:141
 msgid "The user ID of author of the Contract entity."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:169
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:166
 msgid "The name of the Contract entity."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:188
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:185
 msgid "A boolean indicating whether the Contract is published."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:195
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:192
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:196
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:193
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:199
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:196
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:200
+#: modules/dsi/cbos/dsi_contract/src/Entity/Contract.php:197
 msgid "The time that the entity was last edited."
 msgstr ""
 

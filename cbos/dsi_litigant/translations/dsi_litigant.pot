@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:08+0000\n"
+"POT-Creation-Date: 2020-11-17 00:35+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -21,43 +21,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/cbos/dsi_litigant/dsi_litigant.module:18
+#: modules/dsi/cbos/dsi_litigant/dsi_litigant.module:21
 msgid "About"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/dsi_litigant.module:19
+#: modules/dsi/cbos/dsi_litigant/dsi_litigant.module:22
 msgid "The litigant."
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/dsi_litigant.module:36
+msgid "Litigant"
 msgstr ""
 
 #: modules/dsi/cbos/dsi_litigant/src/LitigantListBuilder.php:20
 msgid "Litigant ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/LitigantListBuilder.php:21 modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:102
+#: modules/dsi/cbos/dsi_litigant/src/LitigantListBuilder.php:21
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:103
-msgid "The name of the Litigant entity."
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:86
+msgctxt "Litigant"
+msgid "Type"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:122
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:90
+msgid "Individual"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:91
+msgid "Organization"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:109
+msgid "Entity ID"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:115
+msgid "Mandating"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:128
+msgctxt "Litigant"
+msgid "Extra attribute"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:145
 msgid "A boolean indicating whether the Litigant is published."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:129
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:152
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:130
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:153
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:133
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:156
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:134
+#: modules/dsi/cbos/dsi_litigant/src/Entity/Litigant.php:157
 msgid "The time that the entity was last edited."
 msgstr ""
 
