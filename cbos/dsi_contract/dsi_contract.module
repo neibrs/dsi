@@ -26,7 +26,6 @@ function dsi_contract_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
-
 /**
  * Implements hook_entity_base_field_info().
  */

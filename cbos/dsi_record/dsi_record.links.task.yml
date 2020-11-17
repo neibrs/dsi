@@ -3,4 +3,3 @@ dsi_record.settings_tab:
   route_name: dsi_record.settings
   title: 'Settings'
   base_route: dsi_record.settings
-

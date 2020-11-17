@@ -1,16 +1,15 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_record\Functional;
 
-
 use Drupal\Core\Url;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
  * @group dsi_record
  */
-class RecordListTest extends RecordTestBase{
+class RecordListTest extends RecordTestBase {
   /**
    * A normal logged in user.
    *
@@ -21,7 +20,7 @@ class RecordListTest extends RecordTestBase{
   protected function setUp() {
     parent::setUp();
     $this->webUser = $this->drupalCreateUser([
-      'view published record entities'
+      'view published record entities',
     ]);
   }
 
@@ -38,7 +37,7 @@ class RecordListTest extends RecordTestBase{
     $this->drupalGet(Url::fromRoute('entity.dsi_record.collection'));
     $assertSession->statusCodeEquals(200);
 
-    //创建新数据
+    // 创建新数据
     $record = $this->createRecord();
     // search full name 搜索验证
     $keywords = [
