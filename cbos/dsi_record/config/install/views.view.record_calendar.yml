@@ -7,7 +7,7 @@ dependencies:
     - fullcalendar_view
     - serialization
     - user
-id: record
+id: record_calendar
 label: Record
 module: dsi_record
 description: 'Find and manage records.'
@@ -322,19 +322,4 @@ display:
         - 'languages:language_interface'
         - user.permissions
       max-age: -1
-      tags: {  }
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: 'Record'
-    position: 3
-    display_options:
-      display_extenders: {  }
-      path: dsi_record/calendar
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - user.permissions
       tags: {  }
