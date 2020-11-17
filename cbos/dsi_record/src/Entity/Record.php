@@ -305,6 +305,24 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setLabel(t('Entity ID'))
       ->setDefaultValue(0);
 
+    // 处理状态
+    $fields['state'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('State', [], ['context' => 'Record state']))
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'settings' => [
+          'display_label' => TRUE,
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'boolean',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     $fields['status']->setDescription(t('A boolean indicating whether the Record is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
