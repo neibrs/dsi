@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_contact\Functional;
 
-
 use Drupal\Core\Url;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
@@ -21,7 +20,7 @@ class ContactListTest extends ContactTestBase {
   protected function setUp() {
     parent::setUp();
     $this->webUser = $this->drupalCreateUser([
-      'view published contact entities'
+      'view published contact entities',
     ]);
   }
 
@@ -38,7 +37,7 @@ class ContactListTest extends ContactTestBase {
     $this->drupalGet(Url::fromRoute('entity.dsi_contact.collection'));
     $assertSession->statusCodeEquals(200);
 
-    //创建新数据
+    // 创建新数据
     $contact = $this->createContact();
     // search full name 搜索验证
     $keywords = [

@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\dsi_record\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
@@ -7,6 +8,7 @@ use Drupal\Core\Controller\ControllerBase;
  * Returns responses for record routes.
  */
 class RecordController extends ControllerBase {
+
   public function getRecords() {
 
     $section = \Drupal::service('dsi_record.manager')->getRecordSection();
@@ -17,4 +19,5 @@ class RecordController extends ControllerBase {
 
     return $build;
   }
+
 }

@@ -20,4 +20,5 @@ class RecordManager implements RecordManagerInterface {
 
     return $section;
   }
+
 }

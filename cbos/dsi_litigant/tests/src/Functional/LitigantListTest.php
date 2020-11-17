@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_litigant\Functional;
 
-
 use Drupal\Core\Url;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
@@ -21,7 +20,7 @@ class LitigantListTest extends LitigantTestBase {
   protected function setUp() {
     parent::setUp();
     $this->webUser = $this->drupalCreateUser([
-      'view published litigant entities'
+      'view published litigant entities',
     ]);
   }
 
@@ -38,7 +37,7 @@ class LitigantListTest extends LitigantTestBase {
     $this->drupalGet(Url::fromRoute('entity.dsi_litigant.collection'));
     $assertSession->statusCodeEquals(200);
 
-    //创建新数据
+    // 创建新数据
     $litigant = $this->createLitigant();
     // search full name 搜索验证
     $keywords = [
