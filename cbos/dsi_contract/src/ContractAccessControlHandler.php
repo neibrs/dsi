@@ -28,7 +28,6 @@ class ContractAccessControlHandler extends EntityAccessControlHandler {
           return AccessResult::allowedIfHasPermission($account, 'view unpublished contract entities');
         }
 
-
         return AccessResult::allowedIfHasPermission($account, 'view published contract entities');
 
       case 'update':
@@ -50,6 +49,5 @@ class ContractAccessControlHandler extends EntityAccessControlHandler {
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add contract entities');
   }
-
 
 }

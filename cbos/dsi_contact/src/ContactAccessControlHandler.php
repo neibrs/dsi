@@ -28,7 +28,6 @@ class ContactAccessControlHandler extends EntityAccessControlHandler {
           return AccessResult::allowedIfHasPermission($account, 'view unpublished contact entities');
         }
 
-
         return AccessResult::allowedIfHasPermission($account, 'view published contact entities');
 
       case 'update':
@@ -50,6 +49,5 @@ class ContactAccessControlHandler extends EntityAccessControlHandler {
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add contact entities');
   }
-
 
 }

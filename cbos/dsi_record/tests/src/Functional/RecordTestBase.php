@@ -1,11 +1,10 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_record\Functional;
-
 
 use Drupal\dsi_record\Entity\Record;
 use Drupal\Tests\BrowserTestBase;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *

@@ -1,11 +1,10 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_contact\Functional;
-
 
 use Drupal\dsi_contact\Entity\Contact;
 use Drupal\Tests\BrowserTestBase;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
