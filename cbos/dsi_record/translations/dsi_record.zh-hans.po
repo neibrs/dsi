@@ -63,6 +63,11 @@ msgctxt "Record"
 msgid "Attachments"
 msgstr "文书"
 
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:290
+msgctxt "Record"
+msgid "Entity type"
+msgstr "关联案件/项目/客户"
+
 # 自定义
 msgid "Record"
 msgstr "日程"
