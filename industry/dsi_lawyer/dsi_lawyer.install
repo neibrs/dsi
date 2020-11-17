@@ -6,6 +6,7 @@
 function dsi_lawyer_install($is_syncing) {
   // Setting role menu for authenticated.
   $role_storage = \Drupal::service('entity_type.manager')->getStorage('user_role');
+  /** @var \Drupal\user\RoleInterface $role */
   $role = $role_storage->load('authenticated');
   $role->unsetThirdPartySetting('role_menu', 'menu');
   $role->setThirdPartySetting('role_menu', 'menu', 'lawyer');
