@@ -11,9 +11,9 @@ class RecordManager implements RecordManagerInterface {
     $section = new Section('layout_twocol_section', [
       'column_widths' => '25-75',
     ], [
-      'views_calendar' => new SectionComponent('views_calender', 'second', [
-        'id' => 'record_calender',
-        'label' => 'Record calender',
+      'record' => new SectionComponent('record', 'first', [
+        'id' => 'dsi_record_block',
+        'label' => 'Record block',
         'label_display' => FALSE,
       ]),
     ]);

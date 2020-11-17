@@ -20,7 +20,7 @@ class RecordBlock extends BlockBase {
   public function build() {
     $build = [];
     $build['#theme'] = 'dsi_record_block';
-     $build['dsi_record_block']['#markup'] = 'Implement RecordBlock.';
+    $build['dsi_record_block']['#markup'] = 'Implement RecordBlock.';
 
     return $build;
   }
