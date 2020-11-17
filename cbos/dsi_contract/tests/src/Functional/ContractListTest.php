@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_contract\Functional;
 
-
 use Drupal\Core\Url;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
@@ -21,7 +20,7 @@ class ContractListTest extends ContractTestBase {
   protected function setUp() {
     parent::setUp();
     $this->webUser = $this->drupalCreateUser([
-      'view published contract entities'
+      'view published contract entities',
     ]);
   }
 
@@ -38,7 +37,7 @@ class ContractListTest extends ContractTestBase {
     $this->drupalGet(Url::fromRoute('entity.dsi_contract.collection'));
     $assertSession->statusCodeEquals(200);
 
-    //创建新数据
+    // 创建新数据
     $contract = $this->createContract();
     // search full name 搜索验证
     $keywords = [

@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_contract\Functional;
 
-
 use Drupal\Core\Url;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
@@ -26,7 +25,7 @@ class ContractAddFormTest extends ContractTestBase {
   protected function setUp() {
     parent::setUp();
     $this->webUser = $this->drupalCreateUser([
-      'add contract entities'
+      'add contract entities',
     ]);
   }
 
@@ -35,31 +34,29 @@ class ContractAddFormTest extends ContractTestBase {
    * @throws \Behat\Mink\Exception\ExpectationException
    */
   public function testContractAdd() {
-    //登录验证
+    // 登录验证
     $this->drupalLogin($this->webUser);
-    //断言回话
+    // 断言回话
     $assertSession = $this->assertSession();
-    //访问验证
+    // 访问验证
     $this->drupalGet(Url::fromRoute('entity.dsi_contract.collection'));
     $assertSession->statusCodeEquals(200);
     $assertSession->linkExists(t('Add'));
-    //点击验证
+    // 点击验证
     $this->clickLink(t('Add'));
     $assertSession->statusCodeEquals(200);
-    //定义模拟添加数据
+    // 定义模拟添加数据
     $edit = [
-      'name'=>$this->randomMachineName(),
-      'user_id'=>rand(1,999),
-      'status'=>rand(1,10),
-      'created'=>time(),
-      'changed'=>time(),
+      'name' => $this->randomMachineName(),
+      'user_id' => rand(1, 999),
+      'status' => rand(1, 10),
+      'created' => time(),
+      'changed' => time(),
     ];
-    //验证是否成功添加
+    // 验证是否成功添加
     $this->drupalPostForm('entity.dsi_contract.add_form', $edit, t('Save'));
     $assertSession->statusCodeEquals(200);
 
   }
-
-
 
 }

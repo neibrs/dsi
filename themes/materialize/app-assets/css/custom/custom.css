@@ -353,3 +353,8 @@ a.tabledrag-handle .handle
 {
     cursor: pointer;
 }
+
+.fc button
+{
+    background-color: #0b0b0b;
+}

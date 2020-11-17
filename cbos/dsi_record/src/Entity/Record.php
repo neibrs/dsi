@@ -303,7 +303,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 所属律所
 
     $fields['entity_type'] = BaseFieldDefinition::create('list_string')
-      ->setLabel(t('Entity type',[], ['context' => 'Record']))
+      ->setLabel(t('Entity type', [], ['context' => 'Record']))
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
         'label' => 'inline',

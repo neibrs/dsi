@@ -1,0 +1,7 @@
+dsi_record.workspace:
+  path: '/dsi_record'
+  defaults:
+    _title: 'Record'
+    _controller: '\Drupal\dsi_record\Controller\RecordController::getRecords'
+  requirements:
+    _permission: 'view record entities'

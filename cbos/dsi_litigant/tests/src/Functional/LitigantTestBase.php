@@ -1,11 +1,10 @@
 <?php
 
-
 namespace Drupal\Tests\dsi_litigant\Functional;
-
 
 use Drupal\dsi_litigant\Entity\Litigant;
 use Drupal\Tests\BrowserTestBase;
+
 /**
  * Simple test to ensure that main page loads with module enabled.
  *

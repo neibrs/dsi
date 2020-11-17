@@ -1,0 +1,3 @@
+services:
+  dsi_record.manager:
+    class: Drupal\dsi_record\RecordManager
