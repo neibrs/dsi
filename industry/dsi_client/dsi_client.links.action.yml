@@ -1,6 +1,8 @@
 entity.dsi_client.add_form:
   route_name: entity.dsi_client.add_form
   title: 'Add'
+  route_parameters:
+    dsi_client_type: individual
   options:
     attributes:
       class: ['use-ajax']

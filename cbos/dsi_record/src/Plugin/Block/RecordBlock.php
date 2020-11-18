@@ -29,19 +29,22 @@ class RecordBlock extends BlockBase {
     $query_expired = $query->condition('state', FALSE);
 //      ->condition('end', REQUEST_TIME, '<');
     $expired_ids = $query_expired->execute();
+
+    $rows = array_map(function($item) {
+      return $item->label();
+
+    }, $record_storage->loadMultiple($expired_ids));
     $data = [
       'expired' => [
         'count' => count($expired_ids),
-        'data' => $record_storage->loadMultiple($expired_ids),
+        'data' => $rows,
       ],
     ];
     // 2. 即将过期事件
     // 3. 本周未完成事件
 //    $query_week = $query->condition('state', FALSE)
 //      ->condition('start', \DateTime::createFromFormat())
-    $build['dsi_record_block'] = [
-      '#content' => $data,
-    ];
+    $build['#content']['expired_data'] = $data['expired'];
 
     return $build;
   }

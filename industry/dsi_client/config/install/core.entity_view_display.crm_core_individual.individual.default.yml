@@ -1,0 +1,83 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - crm_core_contact.type.individual
+    - field.field.crm_core_individual.individual.field_gender
+    - field.field.crm_core_individual.individual.field_id_number
+    - field.field.crm_core_individual.individual.field_location
+    - field.field.crm_core_individual.individual.field_nation
+    - field.field.crm_core_individual.individual.field_person_name
+    - field.field.crm_core_individual.individual.field_phone
+  module:
+    - name
+    - options
+id: crm_core_individual.individual.default
+targetEntityType: crm_core_individual
+bundle: individual
+mode: default
+content:
+  field_gender:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_id_number:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_location:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nation:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_person_name:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  name:
+    label: hidden
+    type: name_default
+    weight: 0
+    region: content
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+hidden:
+  langcode: true

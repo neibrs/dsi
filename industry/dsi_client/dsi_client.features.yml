@@ -1,0 +1,6 @@
+excluded:
+  - tb_megamenu.menu_config.main__materialize
+  - image.style.avatar_25x25_
+  - image.style.avatar_45x45_
+  - image.style.avatar_90x90_
+required: true

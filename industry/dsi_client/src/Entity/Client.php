@@ -18,7 +18,7 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "dsi_client",
  *   label = @Translation("Client"),
- *   label_collection = @Translation("Client"),
+ *   bundle_label = @Translation("Client type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\dsi_client\ClientListBuilder",
@@ -42,6 +42,7 @@ use Drupal\user\UserInterface;
  *   admin_permission = "administer client entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "bundle" = "type",
  *     "label" = "name",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
@@ -50,12 +51,14 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/dsi_client/{dsi_client}",
- *     "add-form" = "/dsi_client/add",
+ *     "add-page" = "/dsi_client/add",
+ *     "add-form" = "/dsi_client/add/{dsi_client_type}",
  *     "edit-form" = "/dsi_client/{dsi_client}/edit",
  *     "delete-form" = "/dsi_client/{dsi_client}/delete",
  *     "collection" = "/dsi_client",
  *   },
- *   field_ui_base_route = "dsi_client.settings"
+ *   bundle_entity_type = "dsi_client_type",
+ *   field_ui_base_route = "entity.dsi_client_type.edit_form"
  * )
  */
 class Client extends ContentEntityBase implements ClientInterface {
@@ -142,8 +145,23 @@ class Client extends ContentEntityBase implements ClientInterface {
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);
 
+    $fields['type']
+      ->setLabel(t('Client type', [], ['context' => 'Client']))
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_buttons',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
+      ->setDescription(t('The user ID of author of the Client entity.'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -167,7 +185,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
+      ->setLabel(t('Name', [], ['context' => 'Client name']))
       ->setDescription(t('The name of the Client entity.'))
       ->setSettings([
         'max_length' => 50,
@@ -297,32 +315,16 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    // 客户标识
-    $fields['entity_type'] = BaseFieldDefinition::create('list_string')
+    // 客户标识, 未用
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type'))
       ->setRequired(TRUE)
-      ->setSettings([
-        'allowed_values' => [
-          'individual' => t('Individual'),
-          'organization' => t('Organization'),
-        ],
-      ])
-      // Set the default value of this field to 'user'.
-      ->setDefaultValue('organization')
-      ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -2,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_buttons',
-        'weight' => -2,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
-    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Entity ID'))
+      ->setDescription(t('The ID of the entity of which this comment is a reply.'))
       ->setRequired(TRUE)
       ->setDefaultValue(0);
 
@@ -366,5 +368,16 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDescription(t('The time that the entity was last edited.'));
 
     return $fields;
+  }
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($client_type = ClientType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $client_type->getTargetEntityTypeId());
+      return $fields;
+    }
+    return [];
   }
 }

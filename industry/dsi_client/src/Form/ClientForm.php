@@ -2,7 +2,10 @@
 
 namespace Drupal\dsi_client\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Entity\ContentEntityForm;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -37,15 +40,36 @@ class ClientForm extends ContentEntityForm {
     /* @var \Drupal\dsi_client\Entity\Client $entity */
     $form = parent::buildForm($form, $form_state);
 
-//    if(!$this->entity->isNew() && $entity_type = $this->entity->get('entity_type')) {
-//      $storage = $this->entityTypeManager->getStorage($entity_type);
-//      if ($entity_id = $this->entity->get('entity_id')) {
-//        $entity = $storage->load($entity_id);
-//      }
-//
-//    }
-
+    $form['type']['widget']['#ajax'] = [
+      'callback' => '::clientTypeSwitch',
+      'wrapper' => 'client-type-wrapper',
+    ];
+    $form['client_type'] = [
+      '#type' => 'container',
+      '#id' => 'client-type-wrapper',
+    ];
     return $form;
+  }
+
+  /**
+   * Handles switching the available regions based on the selected theme.
+   */
+  public function clientTypeSwitch($form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+
+    $type = $form_state->getValue('type')[0]['target_id'];
+    $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
+
+    $target_entity_type_id = $type->getTargetEntityTypeId();
+
+    $values = [
+      'type' => 'default',
+    ];
+    $target_entity = $this->entityTypeManager->getStorage($target_entity_type_id)->create($values);
+//    \Drupal::service('entity.form_builder')->getForm($entity, 'create_editors');
+    $form['organization'] = \Drupal::formBuilder()->getForm($target_entity, 'default');//'\Drupal\crm_core_contact\Form\OrganizationForm', $form, $form_state, $target_entity);
+    $response->addCommand(new ReplaceCommand('#client-type-wrapper', $form['organization']));
+    return $response;
   }
 
   /**
