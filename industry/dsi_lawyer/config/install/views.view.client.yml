@@ -670,7 +670,14 @@ display:
       title: Client
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          empty: true
+          content: 'No content available.'
+          plugin_id: text_custom
       relationships:
         contract_target_id:
           id: contract_target_id
