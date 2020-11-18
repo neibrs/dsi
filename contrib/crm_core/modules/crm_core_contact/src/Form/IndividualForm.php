@@ -18,10 +18,10 @@ class IndividualForm extends ContentEntityForm {
 
     $status = $individual->save();
 
-    $t_args = ['%name' => $individual->label(), 'link' => $individual->url()];
+    $t_args = ['%name' => $individual->label(), 'link' => $individual->toLink()->toString()];
 
     if ($status == SAVED_UPDATED) {
-      drupal_set_message($this->t('The individual %name has been updated.', $t_args));
+      $this->messenger()->addMessage($this->t('The individual %name has been updated.', $t_args) );
       if ($individual->access('view')) {
         $form_state->setRedirect('entity.crm_core_individual.canonical', ['crm_core_individual' => $individual->id()]);
       }
@@ -30,7 +30,7 @@ class IndividualForm extends ContentEntityForm {
       }
     }
     elseif ($status == SAVED_NEW) {
-      drupal_set_message($this->t('The individual %name has been added.', $t_args));
+      $this->messenger()->addMessage($this->t('The individual %name has been added.', $t_args));
       \Drupal::logger('crm_core_individual')->notice('Added individual %name.', $t_args);
       $form_state->setRedirect('entity.crm_core_individual.collection');
     }

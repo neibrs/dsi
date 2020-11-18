@@ -41,7 +41,7 @@ class RecordForm extends ContentEntityForm {
 
     $start = \Drupal::request()->query->get('start');
     if (isset($start)) {
-      // Set default value on date 00:00:00.
+      // Set default value on date 2020-11-20 00:00:00.
       $form['start']['widget'][0]['value']['#default_value'] = new DrupalDateTime($start . ' 00:00:00');
     }
     return $form;

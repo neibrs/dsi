@@ -32,6 +32,7 @@ function dsi_contract_help($route_name, RouteMatchInterface $route_match) {
 function dsi_contract_entity_base_field_info(EntityTypeInterface $entity_type) {
   if ($entity_type->id() == 'dsi_client') {
     $fields = [];
+    // @deprecated in later version.
     $fields['contract'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Contract'))
       ->setSetting('target_type', 'dsi_contract')

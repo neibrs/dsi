@@ -70,7 +70,8 @@
         "drupal/diff": "^1.0",
         "drupal/feeds": "^3.0@alpha",
         "drupal/name": "1.x-dev",
-        "phpspec/prophecy-phpunit": "^2"
+        "phpspec/prophecy-phpunit": "^2",
+        "drupal/features": "^3.11"
     },
     "extra": {
         "branch-alias": {

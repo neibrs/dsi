@@ -23,7 +23,7 @@ class OrganizationForm extends ContentEntityForm {
     $status = $organization->save();
 
     if ($status == SAVED_UPDATED) {
-      drupal_set_message($this->t('The organization %name has been updated.', ['%name' => $organization->label()]));
+      $this->messenger()->addMessage($this->t('The organization %name has been updated.', ['%name' => $organization->label()]));
       if ($organization->access('view')) {
         $form_state->setRedirect('entity.crm_core_organization.canonical', ['crm_core_organization' => $organization->id()]);
       }
@@ -32,7 +32,7 @@ class OrganizationForm extends ContentEntityForm {
       }
     }
     elseif ($status == SAVED_NEW) {
-      drupal_set_message($this->t('The organization %name has been added.', ['%name' => $organization->label()]));
+      $this->messenger()->addMessage($this->t('The organization %name has been added.', ['%name' => $organization->label()]));
       \Drupal::logger('crm_core_organization')->notice('Added organization %name.', ['%name' => $organization->label()]);
       $form_state->setRedirect('entity.crm_core_organization.collection');
     }
