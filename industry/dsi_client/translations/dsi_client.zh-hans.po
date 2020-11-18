@@ -6,13 +6,16 @@
 #  modules/dsi/industry/dsi_client/dsi_client.module: n/a
 #  modules/dsi/industry/dsi_client/src/ClientListBuilder.php: n/a
 #  modules/dsi/industry/dsi_client/src/Entity/Client.php: n/a
+#  modules/dsi/industry/dsi_client/src/ClientTypeListBuilder.php: n/a
 #  modules/dsi/industry/dsi_client/src/Form/ClientForm.php: n/a
+#  modules/dsi/industry/dsi_client/src/Form/ClientTypeDeleteForm.php: n/a
+#  modules/dsi/industry/dsi_client/src/Form/ClientTypeForm.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-11 01:09+0000\n"
+"POT-Creation-Date: 2020-11-18 05:43+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -24,6 +27,11 @@ msgstr ""
 #: modules/dsi/industry/dsi_client/dsi_client.module:19
 msgid "The clients."
 msgstr "客户信息。"
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:149
+msgctxt "Client"
+msgid "Client type"
+msgstr "客户标识"
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:195
 msgctxt "Client"
@@ -59,6 +67,13 @@ msgstr "客户重要性"
 msgctxt "Client"
 msgid "Sector"
 msgstr "所属行业"
+
+msgid "Created the %label Client type."
+msgstr "已添加客户标识%label."
+
+#: modules/dsi/industry/dsi_client/src/Form/ClientTypeForm.php:81
+msgid "Saved the %label Client type."
+msgstr "已保存客户标识%label."
 
 # 自定义添加
 msgid "Client"
