@@ -40,6 +40,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   config_export = {
  *     "id",
  *     "label",
+ *     "target_entity_type_id",
  *   }
  * )
  */
@@ -59,4 +60,17 @@ class ClientType extends ConfigEntityBundleBase implements ClientTypeInterface {
    */
   protected $label;
 
+  /**
+   * The target entity type.
+   *
+   * @var string
+   */
+  protected $target_entity_type_id;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTargetEntityTypeId() {
+    return $this->target_entity_type_id;
+  }
 }

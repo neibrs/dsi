@@ -355,5 +355,15 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     return $fields;
   }
-
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($client_type = ClientType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $client_type->getTargetEntityTypeId());
+      return $fields;
+    }
+    return [];
+  }
 }
