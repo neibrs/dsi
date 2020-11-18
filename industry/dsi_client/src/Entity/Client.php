@@ -298,31 +298,15 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
     // 客户标识
-    $fields['entity_type'] = BaseFieldDefinition::create('list_string')
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type'))
       ->setRequired(TRUE)
-      ->setSettings([
-        'allowed_values' => [
-          'individual' => t('Individual'),
-          'organization' => t('Organization'),
-        ],
-      ])
-      // Set the default value of this field to 'user'.
-      ->setDefaultValue('organization')
-      ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -2,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_buttons',
-        'weight' => -2,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
-    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Entity ID'))
+      ->setDescription(t('The ID of the entity of which this comment is a reply.'))
       ->setRequired(TRUE)
       ->setDefaultValue(0);
 
