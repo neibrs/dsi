@@ -1,41 +1,32 @@
 
-{#{{ form }}#}
-<div class="row">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                {{ form.number }}
-            </div>
-            <div class="input-field col s6">
-                {{ form.entity_type }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                {{ form.follow }}
-            </div>
-            <div class="input-field col s6">
-                {{ form.sector }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                {{form.cooperating_state}}
-            </div>
-            <div class="input-field col s6">
-                {{form.customer_source}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                {{form.client_importance}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">差备注字段</label>
-            </div>
-        </div>
-    </form>
+<div class="card">
+  <div class="card-title">客户基本信息</div>
+  <div class="card-content">
+    <div class="row">
+      <div class="col l6">
+        {{ form.number }}
+      </div>
+      <div class="col l6">
+        {{ form.entity_type }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l6">
+        {{ form.number }}
+      </div>
+      <div class="col l6">
+        {{ form.entity_type }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l6">
+        {{ form.number }}
+      </div>
+      <div class="col l6">
+        {{ form.entity_type }}
+      </div>
+    </div>
+  </div>
 </div>
+
+{{ form|without('number') }}
