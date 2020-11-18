@@ -1,11 +1,18 @@
-name: 'Client'
+name: Client
 type: module
 description: 'The clients.'
 core: 8.x
-core_version_requirement: ^8 || ^9
-interface translation project: dsi_client
-interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
-package: 'Dsi'
+core_version_requirement: '^8 || ^9'
+'interface translation project': dsi_client
+'interface translation server pattern': modules/dsi/industry/%project/translations/%project.%language.po
+package: Dsi
 dependencies:
   - crm_core_contact
-  - person:person
+  - dsi_client
+  - field
+  - lookup
+  - name
+  - options
+  - 'person:person'
+  - taxonomy
+  - text

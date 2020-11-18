@@ -1,0 +1,18 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - crm_core_contact.type.individual
+    - field.storage.crm_core_individual.field_nation
+id: crm_core_individual.individual.field_nation
+field_name: field_nation
+entity_type: crm_core_individual
+bundle: individual
+label: 民族
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
