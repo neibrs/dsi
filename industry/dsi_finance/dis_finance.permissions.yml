@@ -17,3 +17,24 @@ view published finance entities:
 
 view unpublished finance entities:
   title: 'View unpublished Finance entities'
+
+
+add finance_expendditure entities:
+  title: 'Create new FinanceExpenditure entities'
+
+administer finance_expendditure entities:
+  title: 'Administer FinanceExpenditure entities'
+  description: 'Allow to access the administration form to configure FinanceExpenditure entities.'
+  restrict access: true
+
+delete finance_expendditure entities:
+  title: 'Delete FinanceExpenditure entities'
+
+edit finance_expendditure entities:
+  title: 'Edit FinanceExpenditure entities'
+
+view published finance_expendditure entities:
+  title: 'View published FinanceExpenditure entities'
+
+view unpublished finance_expendditure entities:
+  title: 'View unpublished FinanceExpenditure entities'
