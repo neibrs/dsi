@@ -5,7 +5,7 @@ echo $(pwd)
 
 for file in `find modules/dsi -name "*.info.yml"`; do
   echo $(dirname $file) -- $(basename $(dirname $file));
-  $(pwd)/vendor/bin/drush potx single --include=modules/potx --folder="$(dirname $file)/" --api=9
+  $(pwd)/vendor/bin/drush potx single --include=modules/contrib/potx --folder="$(dirname $file)/" --api=9
   if [ ! -d $(dirname $file)/translations ]; then
     mkdir $(dirname $file)/translations;
     echo "mkdir $(dirname $file)/translations";
