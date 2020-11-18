@@ -35,7 +35,30 @@ class ClientTypeForm extends EntityForm {
       '#disabled' => !$dsi_client_type->isNew(),
     ];
 
-    /* You will need additional form elements for your custom properties. */
+    if ($dsi_client_type->isNew()) {
+      $options = [];
+      foreach ($this->entityTypeManager->getDefinitions() as $entity_type) {
+        // Only expose entities that have field UI enabled, only those can
+        // get comment fields added in the UI.
+        if ($entity_type->get('field_ui_base_route')) {
+          $options[$entity_type->id()] = $entity_type->getLabel();
+        }
+      }
+      $form['target_entity_type_id'] = [
+        '#type' => 'select',
+        '#default_value' => $dsi_client_type->getTargetEntityTypeId(),
+        '#title' => t('Target entity type'),
+        '#options' => $options,
+        '#description' => t('The target entity type can not be changed after the comment type has been created.'),
+      ];
+    }
+    else {
+      $form['target_entity_type_id_display'] = [
+        '#type' => 'item',
+        '#markup' => $this->entityTypeManager->getDefinition($dsi_client_type->getTargetEntityTypeId())->getLabel(),
+        '#title' => t('Target entity type'),
+      ];
+    }
 
     return $form;
   }
