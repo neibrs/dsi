@@ -30,4 +30,5 @@ dependencies:
   - organization
   - pinyin:pinyin
   - quick_code
+  - report
   - role_menu
