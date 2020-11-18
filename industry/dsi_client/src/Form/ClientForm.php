@@ -37,14 +37,6 @@ class ClientForm extends ContentEntityForm {
     /* @var \Drupal\dsi_client\Entity\Client $entity */
     $form = parent::buildForm($form, $form_state);
 
-//    if(!$this->entity->isNew() && $entity_type = $this->entity->get('entity_type')) {
-//      $storage = $this->entityTypeManager->getStorage($entity_type);
-//      if ($entity_id = $this->entity->get('entity_id')) {
-//        $entity = $storage->load($entity_id);
-//      }
-//
-//    }
-
     return $form;
   }
 

@@ -18,7 +18,7 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "dsi_client",
  *   label = @Translation("Client"),
- *   label_collection = @Translation("Client"),
+ *   bundle_label = @Translation("Client type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\dsi_client\ClientListBuilder",
@@ -42,6 +42,7 @@ use Drupal\user\UserInterface;
  *   admin_permission = "administer client entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "bundle" = "type",
  *     "label" = "name",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
@@ -50,12 +51,14 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/dsi_client/{dsi_client}",
- *     "add-form" = "/dsi_client/add",
+ *     "add-page" = "/dsi_client/add",
+ *     "add-form" = "/dsi_client/add/{dsi_client_type}",
  *     "edit-form" = "/dsi_client/{dsi_client}/edit",
  *     "delete-form" = "/dsi_client/{dsi_client}/delete",
  *     "collection" = "/dsi_client",
  *   },
- *   field_ui_base_route = "dsi_client.settings"
+ *   bundle_entity_type = "dsi_client_type",
+ *   field_ui_base_route = "entity.dsi_client_type.edit_form"
  * )
  */
 class Client extends ContentEntityBase implements ClientInterface {
@@ -144,6 +147,7 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
+      ->setDescription(t('The user ID of author of the Client entity.'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -351,4 +355,5 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     return $fields;
   }
+
 }

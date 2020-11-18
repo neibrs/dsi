@@ -22,6 +22,43 @@ function dsi_client_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_client_theme() {
+  $theme = [];
+  $theme['dsi_client'] = [
+    'render element' => 'elements',
+    'file' => 'dsi_client.page.inc',
+  ];
+  $theme['dsi_client_form'] = [
+    'render element' => 'form',
+  ];
+  $theme['dsi_client_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'dsi_client.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function dsi_client_theme_suggestions_dsi_client(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#dsi_client'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'dsi_client__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_client__' . $entity->bundle();
+  $suggestions[] = 'dsi_client__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_client__' . $entity->id();
+  $suggestions[] = 'dsi_client__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
 /**
  * Implements hook_preprocess_HOOK() for menu__role_menu.
  */
@@ -29,34 +66,5 @@ function dsi_client_preprocess_menu__role_menu(&$variables) {
   $icons = [
     'entity.dsi_client.collection' => 'iconfont icon-kehu4',
   ];
-  _eabax_core_set_menu_items_icon($variables['items'], $icons);
-}
-
-/**
- * Implements hook_theme().
- */
-function dsi_client_theme($existing, $type, $theme, $path) {
-  $theme = [];
-  $theme['dsi_client'] = [
-    'render element' => 'elements',
-    'file' => 'dsi_client.page.inc',
-  ];
-
-  $theme['dsi_client_form'] = [
-    'render element' => 'form',
-  ];
-
-  return $theme;
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK() for dsi_client.
- */
-function dsi_client_theme_suggestions_dsi_client(array $variables) {
-  $suggestions = [];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-
-  $suggestions[] = 'dsi_client__' . $sanitized_view_mode;
-
-  return $suggestions;
+ _eabax_core_set_menu_items_icon($variables['items'], $icons);
 }
