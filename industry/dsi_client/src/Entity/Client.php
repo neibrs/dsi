@@ -219,8 +219,14 @@ class Client extends ContentEntityBase implements ClientInterface {
         'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 0,
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);

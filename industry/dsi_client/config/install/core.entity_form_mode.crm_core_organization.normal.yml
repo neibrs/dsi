@@ -1,0 +1,13 @@
+angcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - crm_core_contact
+      - dsi_client
+  module:
+    - crm_core_contact
+id: crm_core_organization.normal
+label: Normal
+targetEntityType: crm_core_organization
+cache: true

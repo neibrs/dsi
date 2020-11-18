@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.crm_core_organization.normal
+    - crm_core_contact.organization_type.organization
+    - field.field.crm_core_organization.organization.field_address
+    - field.field.crm_core_organization.organization.field_legal_person
+    - field.field.crm_core_organization.organization.field_organization_name
+    - field.field.crm_core_organization.organization.field_phone
+    - field.field.crm_core_organization.organization.field_social_code
+id: crm_core_organization.organization.normal
+targetEntityType: crm_core_organization
+bundle: organization
+mode: normal
+content:
+  field_address:
+    weight: 1
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_legal_person:
+    weight: 2
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_organization_name:
+    weight: 0
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone:
+    weight: 3
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_code:
+    weight: 4
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
