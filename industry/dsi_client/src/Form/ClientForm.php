@@ -44,9 +44,13 @@ class ClientForm extends ContentEntityForm {
       'callback' => '::clientTypeSwitch',
       'wrapper' => 'client-type-wrapper',
     ];
+
     $form['client_type'] = [
-      '#type' => 'container',
       '#id' => 'client-type-wrapper',
+      '#type' => 'inline_entity_form',
+      '#entity_type' => 'crm_core_individual',
+      '#bundle' => 'individual',
+      '#form_mode' => 'normal',
     ];
     return $form;
   }
@@ -62,13 +66,14 @@ class ClientForm extends ContentEntityForm {
 
     $target_entity_type_id = $type->getTargetEntityTypeId();
 
-    $values = [
-      'type' => 'default',
+    $form['client_type'] = [
+      '#id' => 'client-type-wrapper',
+      '#type' => 'inline_entity_form',
+      '#entity_type' => $target_entity_type_id,
+      '#bundle' => $type,
+      '#form_mode' => 'normal',
     ];
-    $target_entity = $this->entityTypeManager->getStorage($target_entity_type_id)->create($values);
-//    \Drupal::service('entity.form_builder')->getForm($entity, 'create_editors');
-    $form['organization'] = \Drupal::formBuilder()->getForm($target_entity, 'default');//'\Drupal\crm_core_contact\Form\OrganizationForm', $form, $form_state, $target_entity);
-    $response->addCommand(new ReplaceCommand('#client-type-wrapper', $form['organization']));
+    $response->addCommand(new ReplaceCommand('#client-type-wrapper', $form['client_type']));
     return $response;
   }
 

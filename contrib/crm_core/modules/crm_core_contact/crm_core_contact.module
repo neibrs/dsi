@@ -5,6 +5,7 @@
  * Provides default CRM Core Contact entities and the ability to create more.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 
 /**
