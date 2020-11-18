@@ -38,7 +38,7 @@ function ajax_links_api_help($route_name, RouteMatchInterface $route_match) {
   $ajax_links_api_demo_url = Url::fromRoute('ajax_links_api.demo');
   $output = '<h2><strong>How to use Ajax links API</strong></h2>';
 
-  $output .= t('<p><strong>Method 1</strong> : You can ajaxify any links by specifying the Class/Id in @admin.', ['@admin' => Link::fromTextAndUrl(t('Module settings page'), $ajax_links_api_settings_url)]);
+  $output .= t('<p><strong>Method 1</strong> : You can ajaxify any links by specifying the Class/Id in @admin.', ['@admin' => Link::fromTextAndUrl(t('Module settings page'), $ajax_links_api_settings_url)->toString()]);
   $output .= ' Target DIV will be default Target DIV defined in module config page.</p>';
   $output .= '<p>' . t('Example : <code>@example1</code> . You can ajaxify this link by adding', ['@example1' => '<a class="test" href="node/add/page">Add page</a>']);
   $output .= '<code>.test</code> in module config page.</p>';
