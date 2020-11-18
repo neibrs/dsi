@@ -2,7 +2,7 @@
 
 namespace Drupal\dsi_client\Entity;
 
-use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 
 /**
  * Defines the Client type entity.
@@ -24,6 +24,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   },
  *   config_prefix = "dsi_client_type",
  *   admin_permission = "administer site configuration",
+ *   bundle_of = "dsi_client",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "label",
@@ -35,10 +36,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "edit-form" = "/dsi_client_type/{dsi_client_type}/edit",
  *     "delete-form" = "/dsi_client_type/{dsi_client_type}/delete",
  *     "collection" = "/dsi_client_type"
+ *   },
+ *   config_export = {
+ *     "id",
+ *     "label",
  *   }
  * )
  */
-class ClientType extends ConfigEntityBase implements ClientTypeInterface {
+class ClientType extends ConfigEntityBundleBase implements ClientTypeInterface {
 
   /**
    * The Client type ID.
