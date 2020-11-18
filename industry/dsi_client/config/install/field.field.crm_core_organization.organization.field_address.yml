@@ -1,0 +1,18 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - crm_core_contact.organization_type.organization
+    - field.storage.crm_core_organization.field_address
+id: crm_core_organization.organization.field_address
+field_name: field_address
+entity_type: crm_core_organization
+bundle: organization
+label: 单位地址
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

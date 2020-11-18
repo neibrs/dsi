@@ -185,7 +185,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
+      ->setLabel(t('Name', [], ['context' => 'Client name']))
       ->setDescription(t('The name of the Client entity.'))
       ->setSettings([
         'max_length' => 50,
@@ -315,7 +315,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    // 客户标识
+    // 客户标识, 未用
     $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type'))
       ->setRequired(TRUE)

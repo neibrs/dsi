@@ -1,0 +1,20 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - crm_core_contact
+id: crm_core_individual.field_id_number
+field_name: field_id_number
+entity_type: crm_core_individual
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
