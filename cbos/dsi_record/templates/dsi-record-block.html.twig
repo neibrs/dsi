@@ -13,10 +13,25 @@
 ] %}
 <div{{ attributes.addClass(classes) }}>
   <div class="card">
-    <div class="card-content">
-      {% for value in content %}
-        <p>{{value}}</p>
-      {% endfor %}
+    <div class="card-content p-0">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <div class="collapsible-header" tabindex="0"><i class="material-icons">mic_none</i> 已过期({{ content.expired_data.count }})</div>
+          <div class="collapsible-body">
+                  {% for value in content.expired_data.data %}
+                    <p>{{value}}</p>
+                  {% endfor %}
+          </div>
+        </li>
+        <li class="active">
+          <div class="collapsible-header" tabindex="0"><i class="material-icons">adjust</i> 本周({{ content.expired_data.count }})</div>
+          <div class="collapsible-body" style="display: block;">
+            {% for value in content.expired_data.data %}
+              <p>{{value}}</p>
+            {% endfor %}
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
