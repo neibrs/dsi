@@ -105,15 +105,19 @@ class ClientForm extends ContentEntityForm {
     foreach ($values as $key => $value) {
       $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
     }
-    $entity = $this->entityTypeManager->getStorage($target_entity_type_id);
+    $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
     if ($entity_id) {
       // 批量保存$items到entity_id, TODO
-      $entity->load($entity_id);
+      $entity = $entity_storage->load($entity_id);
+      foreach ($items as $key => $val) {
+        $entity->set($key, $val);
+      }
+      $entity->save();
     }
     else {
-      $entity->create($items + ['type' => $type]);
+      $entity = $entity_storage->create($items + ['type' => $type]);
+      $entity->save();
     }
-    $entity->save();
     return $entity;
   }
 
