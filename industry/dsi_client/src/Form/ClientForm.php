@@ -83,12 +83,13 @@ class ClientForm extends ContentEntityForm {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitForm($form, $form_state);
     $values = $form_state->getValue('client_type');
     $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values);
 
     $this->entity->set('entity_id', $entity->id());
     $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
-    parent::submitForm($form, $form_state);
+    $this->entity->save();
   }
 
   /**

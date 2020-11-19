@@ -3,14 +3,14 @@ namespace Drupal\dsi_client\Plugin\views\field;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\views\Plugin\views\field\NumericField;
+use Drupal\views\Plugin\views\field\Standard;
 use Drupal\views\ResultRow;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @ViewsField("client_sign")
  */
-class ClientSign extends NumericField {
+class ClientSign extends Standard {
 
   /**
    * The entity type manager.
@@ -46,12 +46,12 @@ class ClientSign extends NumericField {
   public function getValue(ResultRow $values, $field = NULL) {
     $data = parent::getValue($values, $field);
 
+    // Get type label.
     $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($values->_entity->bundle());
 
     $target_type = $type->getTargetEntityTypeId();
+    $target_entity = $this->entityTypeManager->getStorage($target_type)->load($data);
 
-
-    return [];
+    return '('.$type->label() . ')' . $target_entity->label();
   }
-
 }
