@@ -301,21 +301,11 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 出类设计图后再加
     // 所属团队
     // 所属律所
-
-    $fields['entity_type'] = BaseFieldDefinition::create('list_string')
-      ->setLabel(t('Entity type', [], ['context' => 'Record']))
-      ->setDefaultValue('')
-      ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -2,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_buttons',
-        'weight' => -2,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type'))
+      ->setRequired(TRUE)
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
     $fields['entity_id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Entity ID'))

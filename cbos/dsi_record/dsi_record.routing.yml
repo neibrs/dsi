@@ -5,3 +5,11 @@ dsi_record.workspace:
     _controller: '\Drupal\dsi_record\Controller\RecordController::getRecords'
   requirements:
     _permission: 'view record entities'
+
+entity.dsi_record.add_todo:
+  path: '/dsi_record/{entity_type}/{entity_id}/add'
+  defaults:
+    _title: 'Add Record'
+    _entity_form: 'dsi_record.add'
+  requirements:
+    _entity_create_access: 'dsi_record'
