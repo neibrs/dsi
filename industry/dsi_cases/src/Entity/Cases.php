@@ -248,7 +248,6 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-
     // 案件简略登记，案件来源，联系人电话
     // 案件来源
     $fields['case_source'] = BaseFieldDefinition::create('entity_reference')
@@ -360,7 +359,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    
+
     // 案件重要性
     $fields['importance'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Importance', [], ['context' => 'Cases']))
@@ -379,6 +378,8 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
+    // TODO, 委托人，其他当事人，待办事项，受理单位
 
     $fields['status']
       ->setDisplayOptions('form', [

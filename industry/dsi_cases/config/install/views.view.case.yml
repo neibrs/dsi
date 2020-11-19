@@ -69,81 +69,68 @@ display:
           quantity: 9
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: false
+          sticky: true
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            case_cause: case_cause
+            case_procedure: case_procedure
+            case_category: case_category
+            person_in_charge: person_in_charge
+            operations: operations
+          info:
+            case_cause:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            case_procedure:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            case_category:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            person_in_charge:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: true
       row:
         type: fields
       fields:
-        name:
+        case_category:
+          id: case_category
           table: dsi_cases_field_data
-          field: name
-          id: name
-          entity_type: null
-          entity_field: name
-          plugin_id: field
+          field: case_category
           relationship: none
           group_type: group
           admin_label: ''
-          label: 案件名称
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        case_cause:
-          id: case_cause
-          table: dsi_cases_field_data
-          field: case_cause
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ' 案由'
+          label: 类型
           exclude: false
           alter:
             alter_text: false
@@ -187,7 +174,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -199,7 +186,7 @@ display:
           separator: ', '
           field_api_classes: false
           entity_type: dsi_cases
-          entity_field: case_cause
+          entity_field: case_category
           plugin_id: field
         case_procedure:
           id: case_procedure
@@ -252,7 +239,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -266,14 +253,14 @@ display:
           entity_type: dsi_cases
           entity_field: case_procedure
           plugin_id: field
-        case_category:
-          id: case_category
+        case_cause:
+          id: case_cause
           table: dsi_cases_field_data
-          field: case_category
+          field: case_cause
           relationship: none
           group_type: group
           admin_label: ''
-          label: 类型
+          label: ' 案由'
           exclude: false
           alter:
             alter_text: false
@@ -317,7 +304,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -329,8 +316,124 @@ display:
           separator: ', '
           field_api_classes: false
           entity_type: dsi_cases
-          entity_field: case_category
+          entity_field: case_cause
           plugin_id: field
+        person_in_charge:
+          id: person_in_charge
+          table: dsi_cases_field_data
+          field: person_in_charge
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 主办律师
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_cases
+          entity_field: person_in_charge
+          plugin_id: field
+        operations:
+          id: operations
+          table: dsi_cases
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 操作
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: false
+          entity_type: dsi_cases
+          plugin_id: entity_operations
       filters:
         status:
           value: '1'
