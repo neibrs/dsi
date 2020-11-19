@@ -72,22 +72,6 @@ function dsi_record_entity_operation(\Drupal\Core\Entity\EntityInterface $entity
 }
 
 /**
- * Implements hook_entity_extra_field_info().
- */
-function dsi_record_entity_extra_field_info() {
-  $extra = [];
-
-  foreach (ClientType::loadMultiple() as $bundle) {
-    $extra['dsi_client'][$bundle->id()]['display']['record'] = [
-      'label' => t('Record'),
-      'description' => t('Record todos for client'),
-      'weight' => 0,
-    ];
-  }
-  return $extra;
-}
-
-/**
  * Implements hook_entity_base_field_info() for client.
  */
 function dsi_record_entity_base_field_info(EntityTypeInterface $entity_type) {
