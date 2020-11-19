@@ -5,7 +5,11 @@
  * Contains dsi_record.module.
  */
 
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\dsi_client\Entity\ClientType;
 
 /**
  * Implements hook_help().
@@ -64,5 +68,41 @@ function dsi_record_entity_operation(\Drupal\Core\Entity\EntityInterface $entity
     ];
 
     return $operations;
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function dsi_record_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (ClientType::loadMultiple() as $bundle) {
+    $extra['dsi_client'][$bundle->id()]['display']['record'] = [
+      'label' => t('Record'),
+      'description' => t('Record todos for client'),
+      'weight' => 0,
+    ];
+  }
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_base_field_info() for client.
+ */
+function dsi_record_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'dsi_client') {
+    $fields = [];
+    $fields['record'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Record'))
+      ->setSetting('target_type', 'dsi_record')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_table',
+        'weight' => 6,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    return $fields;
   }
 }
