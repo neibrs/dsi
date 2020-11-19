@@ -209,27 +209,8 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-
-    //约定收款日
-    $fields['happen_date'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Happen  Date', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
-      ->setDisplayOptions('view', [
-        'type' => 'datetime_default',
-        'weight' => 0,
-        'label' => 'inline',
-        'settings' => [
-          'format_type' => 'html_date',
-        ],
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     //关联案件
     $fields['cases'] = BaseFieldDefinition::create('entity_reference')
@@ -252,13 +233,69 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         ],
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
+    //费用承担者
+    $fields['undertaker'] = BaseFieldDefinition::create('integer')
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'author',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
+    //发生日期
+    $fields['happen_date'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Happen  Date', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
+      ->setDisplayOptions('view', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+        'label' => 'inline',
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     //报销状态
-    $fields['reimbursement_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Reimbursement Status', [], ['context' => 'FinanceExpenditure']));
+    $fields['reimbursement_status'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Reimbursement Status', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['client_importance' => 'client_importance'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     //备注
     $fields['remarks'] = BaseFieldDefinition::create('string')
