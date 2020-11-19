@@ -52,6 +52,18 @@ class ClientSign extends Standard {
     $target_type = $type->getTargetEntityTypeId();
     $target_entity = $this->entityTypeManager->getStorage($target_type)->load($data);
 
-    return '('.$type->label() . ')' . $target_entity->label();
+    $label = '';
+    if ($type->label()) {
+      $label .= '(' . $type->label() . ')';
+    }
+    if ($target_entity->label()) {
+      $label .= $target_entity->label();
+    }
+
+    if ($phone = $target_entity->get('field_phone')->value) {
+      $label .= '-' . $phone;
+    }
+
+    return $label;
   }
 }
