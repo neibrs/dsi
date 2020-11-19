@@ -6,11 +6,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class FinanceSettingsForm.
+ * Class FinanceDetailedSettingsForm.
  *
- * @ingroup dsi_finance
+ * @ingroup dsi_finance_detailed
  */
-class FinanceSettingsForm extends FormBase {
+class FinanceDetailedSettingsForm extends FormBase {
 
   /**
    * Returns a unique string identifying the form.
@@ -31,12 +31,11 @@ class FinanceSettingsForm extends FormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
     // Empty implementation of the abstract submit class.
   }
 
   /**
-   * Defines the settings form for Finance entities.
+   * Defines the settings form for FinanceDetailed entities.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -47,7 +46,7 @@ class FinanceSettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['finance_settings']['#markup'] = 'Settings form for Finance entities. Manage field settings here.';
+    $form['finance_settings']['#markup'] = 'Settings form for FinanceDetailed entities. Manage field settings here.';
     return $form;
   }
 
