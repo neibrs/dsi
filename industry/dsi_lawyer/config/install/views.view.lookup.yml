@@ -1,13 +1,12 @@
-uuid: ce3dfa84-9fa4-434c-92ed-bdd3c30c4310
 langcode: en
 status: true
 dependencies:
+  enforced:
+    module:
+      - dsi_lawyer
   module:
     - lookup
-    - rest
-    - serialization
     - user
-    - views_plus
 id: lookup
 label: Lookup
 module: views

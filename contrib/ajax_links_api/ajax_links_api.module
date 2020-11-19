@@ -56,7 +56,7 @@ function ajax_links_api_help($route_name, RouteMatchInterface $route_match) {
   $output .= '<p><strong>Method 3</strong> : Add <code>class="ajax-link"</code> to any link. Target div will be Target DIV defined . You can change default Target DIV or override target by specifying attribute <code>rel=""</code>.</p>';
   $output .= '<p>' . t('Example : <code>@example2</code></p>', ['@example2' => '<a class="ajax-link" href="node/add/page" rel="#content">Add page</a>']);
 
-  $output .= t('<h2>@demo</h2>', ['@demo' => Link::fromTextAndUrl(t('DEMO'), $ajax_links_api_demo_url)]);
+  $output .= t('<h2>@demo</h2>', ['@demo' => Link::fromTextAndUrl(t('DEMO'), $ajax_links_api_demo_url)->toString()]);
   switch ($route_name) {
     case 'ajax_links_api.admin_settings':
     case 'help.page.ajax_links_api':
