@@ -69,6 +69,7 @@ class ClientForm extends ContentEntityForm {
         '#entity_type' => $target_entity_type_id,
         '#bundle' => $this->entity->bundle(),
         '#form_mode' => 'normal',
+        '#default_value' => !empty($this->entity->get('entity_id')->target_id) ? $this->entity->get('entity_id')->entity : NULL,
       ];
     }
 
@@ -85,7 +86,7 @@ class ClientForm extends ContentEntityForm {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
     $values = $form_state->getValue('client_type');
-    $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values);
+    $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values, $this->entity->get('entity_id')->target_id);
 
     $this->entity->set('entity_id', $entity->id());
     $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
@@ -97,15 +98,21 @@ class ClientForm extends ContentEntityForm {
    * @param $type
    * @param $values
    */
-  protected function updateRelatedEntity($type, $values) {
+  protected function updateRelatedEntity($type, $values, $entity_id = NULL) {
     $client_type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
     $target_entity_type_id = $client_type->getTargetEntityTypeId();
     $items = [];
     foreach ($values as $key => $value) {
       $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
     }
-    $entity = $this->entityTypeManager->getStorage($target_entity_type_id)
-      ->create($items + ['type' => $type]);
+    $entity = $this->entityTypeManager->getStorage($target_entity_type_id);
+    if ($entity_id) {
+      // 批量保存$items到entity_id, TODO
+      $entity->load($entity_id);
+    }
+    else {
+      $entity->create($items + ['type' => $type]);
+    }
     $entity->save();
     return $entity;
   }
