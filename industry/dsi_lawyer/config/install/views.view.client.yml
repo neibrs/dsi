@@ -2,13 +2,9 @@ langcode: zh-hans
 status: true
 dependencies:
   module:
-    - datetime_range
     - dsi_client
-    - dsi_contract
-    - rest
     - serialization
     - user
-    - views_plus
 id: client
 label: 客户
 module: views
@@ -467,14 +463,14 @@ display:
           entity_type: dsi_client
           entity_field: number
           plugin_id: field
-        effective_dates__value:
-          id: effective_dates__value
-          table: dsi_contract_field_data
-          field: effective_dates__value
-          relationship: contract_target_id
+        record_target_id:
+          id: record_target_id
+          table: dsi_client__record
+          field: record_target_id
+          relationship: none
           group_type: group
           admin_label: ''
-          label: 合同起始日
+          label: 待办事项
           exclude: false
           alter:
             alter_text: false
@@ -507,7 +503,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -515,13 +511,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            timezone_override: ''
-            format_type: html_datetime
-            separator: '-'
-          group_column: value
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -531,75 +525,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: dsi_contract
-          entity_field: effective_dates
-          plugin_id: field
-        effective_dates__end_value:
-          id: effective_dates__end_value
-          table: dsi_contract_field_data
-          field: effective_dates__end_value
-          relationship: contract_target_id
-          group_type: group
-          admin_label: ''
-          label: 合同终止日
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: end_value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: html_datetime
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: dsi_contract
-          entity_field: effective_dates
+          entity_type: dsi_client
+          entity_field: record
           plugin_id: field
         operations:
           id: operations
@@ -678,18 +605,6 @@ display:
           empty: true
           content: 'No content available.'
           plugin_id: text_custom
-      relationships:
-        contract_target_id:
-          id: contract_target_id
-          table: dsi_client__contract
-          field: contract_target_id
-          relationship: none
-          group_type: group
-          admin_label: Contract
-          required: false
-          entity_type: dsi_client
-          entity_field: contract
-          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
