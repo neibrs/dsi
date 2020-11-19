@@ -321,7 +321,8 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    // 客户标识, 未用
+
+    // TODO,客户标识, 应该存实体ID,现在存的是bundle ID.
     $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type'))
       ->setRequired(TRUE)
@@ -330,8 +331,12 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Entity ID'))
-      ->setDescription(t('The ID of the entity of which this comment is a reply.'))
       ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'settings' => [
+          'label' => 'hidden',
+        ],
+      ])
       ->setDefaultValue(0);
 
     // 所属行业
@@ -382,6 +387,14 @@ class Client extends ContentEntityBase implements ClientInterface {
     if ($client_type = ClientType::load($bundle)) {
       $fields['entity_id'] = clone $base_field_definitions['entity_id'];
       $fields['entity_id']->setSetting('target_type', $client_type->getTargetEntityTypeId());
+      $fields['entity_id']->setDisplayOptions('view', [
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+        'settings' => [
+          'view_mode' => 'normal',
+          'label' => 'hidden',
+        ],
+      ]);
       return $fields;
     }
     return [];
