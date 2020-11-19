@@ -64,7 +64,16 @@ function dsi_record_entity_operation(\Drupal\Core\Entity\EntityInterface $entity
         'title' => t('Add Record', [], ['context' => 'Add todo']),
         'url' => \Drupal\Core\Url::fromRoute('entity.dsi_record.add_todo',[
             'entity_type' => $entity->getEntityTypeId(),
-            'entity_id' => $entity->id()]
+            'entity_id' => $entity->id()
+          ], [
+            'attributes' => [
+              'class' => [
+                'use-ajax',
+              ],
+              'data-dialog-type' => 'modal',
+              'data-dialog-options' => '{"width": "80%"}',
+            ],
+          ],
         ),
         'weight' => 0,
       ];
