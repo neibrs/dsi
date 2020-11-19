@@ -73,4 +73,6 @@ class ClientType extends ConfigEntityBundleBase implements ClientTypeInterface {
   public function getTargetEntityTypeId() {
     return $this->target_entity_type_id;
   }
+
+  // TODO, getTargetEntity.
 }
