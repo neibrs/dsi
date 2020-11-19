@@ -18,7 +18,7 @@ class EditableField extends EntityField {
   protected function defineOptions() {
     $options = parent::defineOptions();
 
-    $options['editable'] = ['default' => FALSE];
+    $options['editable'] = ['default' => TRUE];
 
     return $options;
   }
