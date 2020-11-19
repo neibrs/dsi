@@ -41,15 +41,6 @@ function dsi_contract_entity_base_field_info(EntityTypeInterface $entity_type) {
         'type' => 'entity_reference_label',
         'weight' => 6,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 6,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'placeholder' => '',
-        ],
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
     return $fields;
