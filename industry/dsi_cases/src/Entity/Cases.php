@@ -360,6 +360,25 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+    
+    // 案件重要性
+    $fields['importance'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Importance', [], ['context' => 'Cases']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['client_importance' => 'client_importance'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status']
       ->setDisplayOptions('form', [
