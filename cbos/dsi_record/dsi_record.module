@@ -47,3 +47,22 @@ function dsi_record_theme() {
   ];
 }
 
+
+/**
+ * Implements hook_entity_operation().
+ */
+function dsi_record_entity_operation(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'dsi_client') {
+    $operations = [];
+    $operations['record'] = [
+      'title' => t('Add Record', [], ['context' => 'Add todo']),
+      'url' => \Drupal\Core\Url::fromRoute('entity.dsi_record.add_todo',[
+        'entity_type' => $entity->getEntityTypeId(),
+        'entity_id' => $entity->id()]
+      ),
+      'weight' => 0,
+    ];
+
+    return $operations;
+  }
+}
