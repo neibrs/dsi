@@ -274,7 +274,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
       ->setLabel(t('Contact Phone', [], ['context' => 'Cases']))
       ->setSetting('max_length', 255)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -5,
       ])
