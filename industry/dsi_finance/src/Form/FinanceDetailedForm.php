@@ -7,7 +7,7 @@ use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class FinanceForm extends ContentEntityForm {
+class FinanceDetailedForm extends ContentEntityForm {
   /**
    * The current user account.
    *
@@ -30,11 +30,11 @@ class FinanceForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var \Drupal\dsi_finance\Entity\Finance $entity */
+    /* @var \Drupal\dsi_finance\Entity\FinanceDetailed $entity */
     $form = parent::buildForm($form, $form_state);
-    $form['#attributes']['class'][0] = 'col s12';
-    $form['name']['#attributes']['class'][0] = 'input-field col s6';
-    unset($form['type']);
+    $type = \Drupal::routeMatch()->getParameter('type');
+
+
     return $form;
   }
 
@@ -43,33 +43,33 @@ class FinanceForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
-    //当前登录用户user_id
-//    $form_state->getValues('#build_info')['user_id'][0]['target_id'];
-    if (!empty($form_state->getValues('values')['type'])){
-      switch ($form_state->getValues('values')['type'][0]['value']){
-        case 1://收款
-          $form_state->getValues('values')['type'][0]['value'] = 3;
-          break;
-        case 2://支出
-          $form_state->getValues('values')['type'][0]['value'] = 4;
-          break;
-      }
-    }
+
+    /**
+     *   #input: array:10 [▼
+    "name" => array:1 [▼
+    0 => array:1 [▼
+    "value" => "武侠剧投资项目"
+    ]
+    ]
+     */
+    $form_state->setValue('type','1'. $form_state->getValue('type'));
+    
+//        $form_state['#input']['type'][0]['value'] = 1;
 //    dd($form_state);
+
     $status = parent::save($form, $form_state);
-    //添加收款 || 支出 明细记录
     switch ($status) {
       case SAVED_NEW:
-        $this->messenger()->addMessage($this->t('Created the %label Finance.', [
+        $this->messenger()->addMessage($this->t('Created the %label FinanceDetailed.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        $this->messenger()->addMessage($this->t('Saved the %label Finance.', [
+        $this->messenger()->addMessage($this->t('Saved the %label FinanceDetailed.', [
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.dsi_finance.canonical', ['dsi_finance' => $entity->id()]);
+    $form_state->setRedirect('entity.dsi_finance_detailed.canonical', ['dsi_finance_detailed' => $entity->id()]);
   }
 }
