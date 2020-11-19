@@ -77,7 +77,7 @@ class RecordForm extends ContentEntityForm {
     if ($this->routeMatch->getRouteName() == 'entity.dsi_record.add_todo') {
       $this->routeMatch->getParameters()->all();
       foreach ($this->routeMatch->getParameters()->all() as $id => $val) {
-        $entity->set($id, $val);
+        $this->entity->set($id, $val);
       }
     }
 

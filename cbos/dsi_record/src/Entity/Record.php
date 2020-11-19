@@ -346,4 +346,17 @@ class Record extends ContentEntityBase implements RecordInterface {
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    $entity_type_id = $this->get('entity_type')->value;
+    $entity_id = $this->get('entity_id')->value;
+    if (!empty($entity_type_id) && !empty($entity_id)) {
+      /** @var \Drupal\Core\Entity\EntityInterface $target_entity */
+      $target_entity = $this->entityTypeManager()->getStorage($entity_type_id)->load($entity_id);
+      $target_entity->get('record')->appendItem($this);
+      $target_entity->save();
+    }
+  }
 }
