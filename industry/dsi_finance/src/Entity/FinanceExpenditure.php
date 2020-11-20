@@ -157,17 +157,17 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'type' => 'author',
         'weight' => 0,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
-      ->setDisplayConfigurable('form', TRUE)
+//      ->setDisplayOptions('form', [
+//        'type' => 'entity_reference_autocomplete',
+//        'weight' => 5,
+//        'settings' => [
+//          'match_operator' => 'CONTAINS',
+//          'size' => '60',
+//          'autocomplete_type' => 'tags',
+//          'placeholder' => '',
+//        ],
+//      ])
+//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //费用名称
@@ -215,7 +215,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
     //关联案件
     $fields['cases'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Cases', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('target_type', 'user')
+      ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [
         'label' => 'hidden',
@@ -223,35 +223,28 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
+        'type' => 'options_select',
+        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
     //费用承担者
-    $fields['undertaker'] = BaseFieldDefinition::create('integer')
+    $fields['undertaker'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Undertaker', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['undertaker' => 'undertaker'],
+      ])
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'author',
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
+        'type' => 'options_select',
+        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -282,7 +275,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setLabel(t('Reimbursement Status', [], ['context' => 'FinanceExpenditure']))
       ->setSetting('target_type', 'lookup')
       ->setSetting('handler_settings', [
-        'target_bundles' => ['client_importance' => 'client_importance'],
+        'target_bundles' => ['reimbursement_status' => 'reimbursement_status'],
       ])
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
