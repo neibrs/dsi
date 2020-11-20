@@ -8,6 +8,7 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
 /**
@@ -65,6 +66,7 @@ class Client extends ContentEntityBase implements ClientInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
+  use PersonTrait;
 
   /**
    * {@inheritdoc}
@@ -214,6 +216,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setSetting('handler_settings', [
         'target_bundles' => ['lawyer' => 'lawyer'],
       ])
+      ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
         'weight' => 0,
