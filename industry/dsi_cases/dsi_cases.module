@@ -5,6 +5,7 @@
  * Contains dsi_cases.module.
  */
 
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -31,4 +32,34 @@ function dsi_cases_preprocess_menu__role_menu(&$variables) {
     'entity.dsi_cases.collection' => 'iconfont icon-anjian1',
   ];
   _eabax_core_set_menu_items_icon($variables['items'], $icons);
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function dsi_cases_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'dsi_client') {
+    $fields = [];
+    // 案件类型
+    $fields['case_category'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Case Category'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['case_category' => 'case_category'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    return $fields;
+  }
 }
