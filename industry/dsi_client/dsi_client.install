@@ -10,12 +10,22 @@ function dsi_client_install($is_syncing) {
   $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
 
   $data = [
-    '1' => '业务开发',
-    '2' => '客户介绍',
-    '3' => '客户主动联系',
-    '4' => '朋友介绍',
-    '5' => '宣传推广',
-    '6' => '网上获取',
+    '1' => '找法网',
+    '2' => '法律快车',
+    '3' => '华律网',
+    '4' => '电话营销',
+    '5' => '律师365',
+    '6' => '58同城',
+    '7' => '搜索引擎',
+    '8' => '微信',
+    '9' => '智飞法律网',
+    '10' => '美团',
+    '11' => '业务开发',
+    '12' => '客户介绍',
+    '13' => '客户主动联系',
+    '14' => '朋友介绍',
+    '15' => '宣传推广',
+    '16' => '网上获取',
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('customer_source', $data, '客户来源', $lookup_storage);
@@ -25,15 +35,20 @@ function dsi_client_install($is_syncing) {
     '2' => '重要',
     '3' => '一般',
     '4' => '次要',
+    '5' => '无效',
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);
 
   $data = [
-    '1' => '签约',
-    '2' => '意向',
-    '3' => '潜在',
-    '4' => '终止',
+    '1' => '待跟进',
+    '2' => '跟进中',
+    '3' => '签约',
+    '4' => '不用联系',
+    '5' => '首电未接通',
+    '6' => '意向',
+    '7' => '潜在',
+    '8' => '终止',
   ];
   \Drupal::classResolver(InstallHelper::class)->getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
 }

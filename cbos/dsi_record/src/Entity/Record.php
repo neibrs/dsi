@@ -311,7 +311,9 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setLabel(t('Entity ID'))
       ->setDefaultValue(0);
 
-    // 处理状态
+    // 处理状态:
+    // False, 未处理
+    // True, 已处理
     $fields['state'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('State', [], ['context' => 'Record state']))
       ->setDefaultValue(FALSE)
