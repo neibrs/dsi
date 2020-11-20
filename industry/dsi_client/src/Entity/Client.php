@@ -206,6 +206,8 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setRequired(TRUE);
 
     // TODO, Add fields.
+
+    // 案件类型, 注入字段
     // 跟进人
     $fields['follow'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Follow', [], ['context' => 'Client']))
@@ -231,7 +233,24 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    // 工作摘要
+    // 客户简述
+    $fields['summary'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Summary', [], ['context' => 'Client']))
+      ->setSetting('max_length', 128)
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -10,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -10,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    // 工作摘要/客户介绍: TODO, 摘要信息不出来
     $fields['description'] = BaseFieldDefinition::create('text_with_summary')
       ->setLabel(t('Description', [], ['context' => 'Client']))
       ->setTranslatable(TRUE)
@@ -243,12 +262,9 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', [
         'type' => 'text_textarea_with_summary',
-        'weight' => 0,
-        'settings' => [
-          'show_summary' => TRUE,
-        ],
       ])
       ->setDisplayConfigurable('form', TRUE);
+
     // 合同使用另外一个实体
     // 合作状态
     $fields['cooperating_state'] = BaseFieldDefinition::create('entity_reference')
