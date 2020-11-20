@@ -202,8 +202,7 @@ class Client extends ContentEntityBase implements ClientInterface {
         'weight' => -4,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
 
     // TODO, Add fields.
 
