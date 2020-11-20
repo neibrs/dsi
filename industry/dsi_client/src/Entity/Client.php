@@ -232,7 +232,7 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     // 工作摘要
-    $fields['description'] = BaseFieldDefinition::create('text_long')
+    $fields['description'] = BaseFieldDefinition::create('text_with_summary')
       ->setLabel(t('Description', [], ['context' => 'Client']))
       ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
@@ -242,8 +242,11 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
+        'type' => 'text_textarea_with_summary',
         'weight' => 0,
+        'settings' => [
+          'show_summary' => TRUE,
+        ],
       ])
       ->setDisplayConfigurable('form', TRUE);
     // 合同使用另外一个实体
