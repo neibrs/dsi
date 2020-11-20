@@ -53,7 +53,7 @@ use Drupal\user\UserInterface;
  *   },
  *   links = {
  *     "canonical" = "/dsi_finance_detailed/{dsi_finance_detailed}",
- *     "add-form" = "/dsi_finance_detailed/add",
+ *     "add-form" = "/dsi_finance_detailed/add/{finance_id}/{finance_name}",
  *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/edit",
  *     "collection" = "/dsi_finance_detailed",
  *   },
@@ -156,17 +156,17 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
         'type' => 'author',
         'weight' => 0,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
-      ->setDisplayConfigurable('form', TRUE)
+//      ->setDisplayOptions('form', [
+//        'type' => 'entity_reference_autocomplete',
+//        'weight' => 5,
+//        'settings' => [
+//          'match_operator' => 'CONTAINS',
+//          'size' => '60',
+//          'autocomplete_type' => 'tags',
+//          'placeholder' => '',
+//        ],
+//      ])
+//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //费用名称
@@ -185,6 +185,22 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    // TODO, Add fields.
+    //财务id
+    $fields['finance_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Finance Id'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+//      ->setDisplayOptions('view', [
+//        'label' => 'inline',
+//        'type' => 'string',
+//        'weight' => -4,
+//      ])
+//      ->setDisplayConfigurable('view', TRUE)
+      ->setDefaultValue(0);
+
     //收支类型
     $fields['type'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('type'))
@@ -200,9 +216,6 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setDisplayConfigurable('view', TRUE)
       ->setDefaultValue(0)
       ->setRequired(TRUE);
-
-    // TODO, Add fields.
-
 
 
     //金额
@@ -332,12 +345,18 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
         'type' => 'author',
         'weight' => 0,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
+//      ->setDisplayOptions('form', [
+//        'type' => 'options_select',
+//        'weight' => 5,
+//      ])
+//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
+
+    //明细状态 1正常 2删除
+    $fields['detailed_status'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Detail Status', [], ['context' => 'FinanceDetailed']))
+      ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

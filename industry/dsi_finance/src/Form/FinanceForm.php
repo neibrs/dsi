@@ -32,9 +32,10 @@ class FinanceForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\dsi_finance\Entity\Finance $entity */
     $form = parent::buildForm($form, $form_state);
-    $form['#attributes']['class'][0] = 'col s12';
-    $form['name']['#attributes']['class'][0] = 'input-field col s6';
-    unset($form['type']);
+//    $form['wait_price'] = array(
+//      '#type' => 'hidden',
+//      '#value' => 0,
+//    );
     return $form;
   }
 
@@ -43,21 +44,10 @@ class FinanceForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
-    //当前登录用户user_id
-//    $form_state->getValues('#build_info')['user_id'][0]['target_id'];
-    if (!empty($form_state->getValues('values')['type'])){
-      switch ($form_state->getValues('values')['type'][0]['value']){
-        case 1://收款
-          $form_state->getValues('values')['type'][0]['value'] = 3;
-          break;
-        case 2://支出
-          $form_state->getValues('values')['type'][0]['value'] = 4;
-          break;
-      }
-    }
-//    dd($form_state);
+    //初始化待收金额
+    $this->entity->set('wait_price', $form_state->getValue('receivable_price'));
     $status = parent::save($form, $form_state);
-    //添加收款 || 支出 明细记录
+
     switch ($status) {
       case SAVED_NEW:
         $this->messenger()->addMessage($this->t('Created the %label Finance.', [

@@ -3,6 +3,7 @@
 
 namespace Drupal\dsi_finance\Form;
 
+use Drupal\Console\Bootstrap\Drupal;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -32,8 +33,29 @@ class FinanceDetailedForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\dsi_finance\Entity\FinanceDetailed $entity */
     $form = parent::buildForm($form, $form_state);
-    $type = \Drupal::routeMatch()->getParameter('type');
-
+    $name =  \Drupal::routeMatch()->getParameter('finance_name');
+    $finance_id =  \Drupal::routeMatch()->getParameter('finance_id');
+    $user = \Drupal::currentUser();
+    $form['finance_id'] = array(
+      '#type' => 'hidden',
+      '#value' => $finance_id,
+    );
+    $form['type'] = array(
+      '#type' => 'hidden',
+      '#value' => 1,
+    );
+    $form['name'] = array(
+      '#type' => 'hidden',
+      '#value' => $name,
+    );
+    $form['happen_date'] = array(
+      '#type' => 'hidden',
+      '#value' => date('Y-m-d'),
+    );
+    $form['happen_by'] = array(
+      '#type' => 'hidden',
+      '#value' => $user->id(),
+    );
 
     return $form;
   }
@@ -42,22 +64,78 @@ class FinanceDetailedForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function save(array $form, FormStateInterface $form_state) {
-    $entity = $this->entity;
-
     /**
-     *   #input: array:10 [▼
-    "name" => array:1 [▼
-    0 => array:1 [▼
-    "value" => "武侠剧投资项目"
-    ]
-    ]
+     *
+     * //实例化数据库
+    * //    $database = \Drupal::database();
+     * //添加
+     *    $result = $database->insert('mytable')
+     * //      ->fields([
+    * //        'title' => 'Example',
+    * //        'uid' => 1,
+    * //        'created' => \Drupal::time()->getRequestTime(),
+    * //      ])
+    * //      ->execute();
+     * //查询
+    * //    $finance = $database->query('select receivable_price,received_price from dsi_finance_field_data')->fetch();
+    * //    $received_price = 0;
+    * //    $form_price = $form_state->getValue('price')[0]['value'];
+    * //    if ($finance->received_price != 0){
+    * //      $received_price += $form_price;
+    * //    }else{
+    * //      $received_price = $form_price;
+    * //    }
+    * //    $wait_price = $finance->receivable_price - $received_price;
+    * //    $wait_price = $wait_price < 0 ? 0 : $wait_price;
+     * //更新
+    * //    $database
+    * //      ->update('dsi_finance_field_data')
+    * //      ->fields([
+    * //        'received_price' => $received_price,
+    * //        'wait_price' => $wait_price,
+    * //      ])
+    * //      ->condition('id', $finance_id) //==where()
+    * //      ->execute();
+    * //    /**
+    * //     * 上面的示例等效于以下查询：
+    * //    UPDATE {mytable} SET field1=5, field2=1 WHERE created >= 1221717405;
+    * //
+     *
      */
-    $form_state->setValue('type','1'. $form_state->getValue('type'));
-    
-//        $form_state['#input']['type'][0]['value'] = 1;
-//    dd($form_state);
 
+    $entity = $this->entity;
+//    $type = $form_state->getValue('type');
+//    $name =  $form_state->getValue('finance_name');//接收表单参数
+//
+//    dd($name,$type,$form_state);
+
+//        $form_state['#input']['type'][0]['value'] = 1;
     $status = parent::save($form, $form_state);
+    $finance_id = $form_state->getValue('finance_id');
+    //更新收款实体 实收金额
+    $database = \Drupal::database();
+    $finance = $database->query('select receivable_price,received_price from dsi_finance_field_data')->fetch();
+    $received_price = 0;
+    $form_price = $form_state->getValue('price')[0]['value'];
+    if ($finance->received_price != 0){
+      $received_price += $form_price;
+    }else{
+      $received_price = $form_price;
+    }
+    $wait_price = $finance->receivable_price - $received_price;
+    $wait_price = $wait_price < 0 ? 0 : $wait_price;
+    $database
+      ->update('dsi_finance_field_data')
+      ->fields([
+        'received_price' => $received_price,
+        'wait_price' => $wait_price,
+      ])
+      ->condition('id', $finance_id)
+      ->execute();
+    /**
+     * 上面的示例等效于以下查询：
+    UPDATE {mytable} SET field1=5, field2=1 WHERE created >= 1221717405;
+     */
     switch ($status) {
       case SAVED_NEW:
         $this->messenger()->addMessage($this->t('Created the %label FinanceDetailed.', [

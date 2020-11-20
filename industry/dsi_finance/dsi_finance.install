@@ -23,5 +23,5 @@ function dsi_finance_install($is_syncing) {
     '3' => '已报销',
   ];
   \Drupal::classResolver(InstallHelper::class)
-    ->getOrCreateLookup('reimbursement_status', $data, '客户重要性', $lookup_storage);
+    ->getOrCreateLookup('reimbursement_status', $data, '报销状态', $lookup_storage);
 }

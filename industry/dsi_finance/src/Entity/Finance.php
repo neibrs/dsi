@@ -157,17 +157,17 @@ class Finance extends ContentEntityBase implements FinanceInterface{
         'type' => 'author',
         'weight' => 0,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
-      ->setDisplayConfigurable('form', TRUE)
+//      ->setDisplayOptions('form', [
+//        'type' => 'entity_reference_autocomplete',
+//        'weight' => 5,
+//        'settings' => [
+//          'match_operator' => 'CONTAINS',
+//          'size' => '60',
+//          'autocomplete_type' => 'tags',
+//          'placeholder' => '',
+//        ],
+//      ])
+//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //款项名称
@@ -262,7 +262,7 @@ class Finance extends ContentEntityBase implements FinanceInterface{
     //关联案件
     $fields['cases'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Cases', [], ['context' => 'Finance']))
-      ->setSetting('target_type', 'user')
+      ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [
         'label' => 'hidden',
@@ -270,19 +270,12 @@ class Finance extends ContentEntityBase implements FinanceInterface{
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
+        'type' => 'options_select',
         'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-
 
     //备注
     $fields['remarks'] = BaseFieldDefinition::create('string')
@@ -298,6 +291,11 @@ class Finance extends ContentEntityBase implements FinanceInterface{
         'type' => 'text_textfield',
         'weight' => 0,
       ]);
+
+    //收款状态 1正常 2删除
+    $fields['collection_status'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Collection Status', [], ['context' => 'FinanceDetailed']))
+      ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
