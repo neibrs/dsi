@@ -54,7 +54,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/dsi_finance_detailed/{dsi_finance_detailed}",
  *     "add-form" = "/dsi_finance_detailed/add/{finance_id}/{finance_name}",
- *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/edit",
+ *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/{finance_id}/edit",
  *     "collection" = "/dsi_finance_detailed",
  *   },
  *   field_ui_base_route = "dsi_finance_detailed.settings"
@@ -193,12 +193,6 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
         'max_length' => 50,
         'text_processing' => 0,
       ])
-//      ->setDisplayOptions('view', [
-//        'label' => 'inline',
-//        'type' => 'string',
-//        'weight' => -4,
-//      ])
-//      ->setDisplayConfigurable('view', TRUE)
       ->setDefaultValue(0);
 
     //收支类型
