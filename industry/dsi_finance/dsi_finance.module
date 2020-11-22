@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_finance.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_finance_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_finance module.
+    case 'help.page.dsi_finance':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The finances.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_finance_theme() {
+  $theme = [];
+  $theme['dsi_finance'] = [
+    'render element' => 'elements',
+    'file' => 'dsi_finance.page.inc',
+  ];
+  $theme['dsi_finance_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'dsi_finance.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function dsi_finance_theme_suggestions_dsi_finance(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#dsi_finance'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'dsi_finance__' . $entity->id();
+  $suggestions[] = 'dsi_finance__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu__role_menu.
+ */
+function dsi_finance_preprocess_menu__role_menu(&$variables) {
+  $icons = [
+    'entity.dsi_finance.collection' => 'iconfont icon-kehu4',
+  ];
+ _eabax_core_set_menu_items_icon($variables['items'], $icons);
+}
+
+/**
+ * Implements hook_crm_core_individual_label_alter().
+ */
+function dsi_finance_crm_core_individual_label_alter(&$data, &$context1) {
+  $data = $context1->field_person_name->value;
+}

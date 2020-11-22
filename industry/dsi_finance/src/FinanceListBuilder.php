@@ -27,6 +27,8 @@ class FinanceListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var \Drupal\dsi_finance\Entity\Finance $entity */
     $row['id'] = $entity->id();
+//    $row['receivable_price'] = $entity->getFieldDefinition('receivable_price');
+//    $row['receivable_price'] = $entity->get('receivable_price');
     $row['name'] = Link::createFromRoute(
       $entity->label(),
       'entity.dsi_finance.edit_form',
