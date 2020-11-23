@@ -1,0 +1,34 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: { }
+  js:
+    js/base.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax
+    - core/drupal.progress
+    - core/jquery.once
+    - dsi_color/color.default
+
+color.theme:
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700: { type: external }
+  js:
+    assets/4.6/assets/js/app.min.js: { }
+  dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.once
+
+color.default:
+  css:
+    theme:
+      assets/4.6/assets/css/default/app.min.css: { }
+  js:
+    assets/4.6/assets/js/theme/default.min.js: { }
+  dependencies:
+    - dsi_color/color.theme
