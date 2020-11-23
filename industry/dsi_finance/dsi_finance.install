@@ -24,4 +24,12 @@ function dsi_finance_install($is_syncing) {
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('reimbursement_status', $data, '报销状态', $lookup_storage);
+
+  $data = [
+    '1' => '案件',
+    '2' => '项目',
+    '3' => '客户',
+  ];
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('relation_type', $data, '关联类型', $lookup_storage);
 }

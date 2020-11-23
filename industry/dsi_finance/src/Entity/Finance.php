@@ -257,11 +257,23 @@ class Finance extends ContentEntityBase implements FinanceInterface{
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    //关联类型
+    $fields['relation_type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Relation Type', [], ['context' => 'Finance']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['relation_type' => 'relation_type'],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setRequired(TRUE);
 
-
-    //关联案件
-    $fields['cases'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Cases', [], ['context' => 'Finance']))
+    //关联案件 || 项目 || 客户
+    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('', [], ['context' => 'Finance']))
       ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [
@@ -274,8 +286,8 @@ class Finance extends ContentEntityBase implements FinanceInterface{
         'weight' => 5,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
+//      ->setRequired(TRUE);
 
     //备注
     $fields['remarks'] = BaseFieldDefinition::create('string')

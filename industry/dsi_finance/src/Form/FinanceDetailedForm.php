@@ -111,29 +111,31 @@ class FinanceDetailedForm extends ContentEntityForm
 
         $entity = $this->entity;
         $status = parent::save($form, $form_state);
-        $finance_id = $form_state->getValue('finance_id');
-        //更新收款实体 实收金额
-        $database = \Drupal::database();
-        $finance = $database->query("select receivable_price,received_price from dsi_finance_field_data where id = $finance_id")->fetch();
-        $detailed = $database->query("select price from dsi_finance_detailed_field_data where finance_id = $finance_id")->fetchAll();
-        $price = 0;
-        foreach ($detailed as $key => $val) {
+        if ($status){
+          $finance_id = $form_state->getValue('finance_id');
+          //更新收款实体 实收金额
+          $database = \Drupal::database();
+          $finance = $database->query("select receivable_price,received_price from dsi_finance_field_data where id = $finance_id")->fetch();
+          $detailed = $database->query("select price from dsi_finance_detailed_field_data where finance_id = $finance_id")->fetchAll();
+          $price = 0;
+          foreach ($detailed as $key => $val) {
             $price += $val->price;
-        }
-        $wait_price = $finance->receivable_price - $price;
-        $wait_price = $wait_price < 0 ? 0 : $wait_price;
-        $database
+          }
+          $wait_price = $finance->receivable_price - $price;
+          $wait_price = $wait_price < 0 ? 0 : $wait_price;
+          $database
             ->update('dsi_finance_field_data')
             ->fields([
-                'received_price' => $price,
-                'wait_price' => $wait_price,
+              'received_price' => $price,
+              'wait_price' => $wait_price,
             ])
             ->condition('id', $finance_id)
             ->execute();
-        /**
-         * 上面的示例等效于以下查询：
-         * UPDATE {mytable} SET field1=5, field2=1 WHERE created >= 1221717405;
-         */
+          /**
+           * 上面的示例等效于以下查询：
+           * UPDATE {mytable} SET field1=5, field2=1 WHERE created >= 1221717405;
+           */
+        }
 
         switch ($status) {
             case SAVED_NEW:

@@ -27,7 +27,8 @@ use Drupal\user\UserInterface;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\dsi_finance\FinanceExpenditureListBuilder",
  *     "views_data" = "Drupal\dsi_finance\Entity\FinanceExpenditureViewsData",
- *     "translation" = "Drupal\dsi_finance\FinanceExpenditureTranslationHandler",
+ *     "translation" =
+ *   "Drupal\dsi_finance\FinanceExpenditureTranslationHandler",
  *     "access" = "Drupal\dsi_finance\FinanceExpenditureAccessControlHandler",
  *     "form" = {
  *       "default" = "Drupal\dsi_finance\Form\FinanceExpenditureForm",
@@ -55,13 +56,14 @@ use Drupal\user\UserInterface;
  *     "canonical" = "/dsi_finance_expenditure/{dsi_finance_expenditure}",
  *     "add-form" = "/dsi_finance_expenditure/add",
  *     "edit-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/edit",
- *     "delete-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
+ *     "delete-form" =
+ *   "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
  *     "collection" = "/dsi_finance_expenditure",
  *   },
  *   field_ui_base_route = "dsi_finance_expenditure.settings"
  * )
  */
-class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditureInterface{
+class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditureInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
@@ -157,17 +159,17 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'type' => 'author',
         'weight' => 0,
       ])
-//      ->setDisplayOptions('form', [
-//        'type' => 'entity_reference_autocomplete',
-//        'weight' => 5,
-//        'settings' => [
-//          'match_operator' => 'CONTAINS',
-//          'size' => '60',
-//          'autocomplete_type' => 'tags',
-//          'placeholder' => '',
-//        ],
-//      ])
-//      ->setDisplayConfigurable('form', TRUE)
+      //      ->setDisplayOptions('form', [
+      //        'type' => 'entity_reference_autocomplete',
+      //        'weight' => 5,
+      //        'settings' => [
+      //          'match_operator' => 'CONTAINS',
+      //          'size' => '60',
+      //          'autocomplete_type' => 'tags',
+      //          'placeholder' => '',
+      //        ],
+      //      ])
+      //      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //费用名称
@@ -196,7 +198,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
 
     //金额
     $fields['price'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Price', [], ['context' => 'Finance']))
+      ->setLabel(t('Price', [], ['context' => 'FinanceExpenditure']))
       ->setSetting('unsigned', TRUE)
       ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
@@ -212,9 +214,23 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    //关联案件
-    $fields['cases'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Cases', [], ['context' => 'FinanceExpenditure']))
+    //关联类型
+    $fields['relation_type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Relation Type', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['relation_type' => 'relation_type'],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setRequired(TRUE);
+
+    //关联案件 || 项目 || 客户
+    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('', [], ['context' => 'FinanceExpenditure']))
       ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [
@@ -224,11 +240,10 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
-        'weight' => 0,
+        'weight' => 5,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setDisplayConfigurable('view', TRUE);
 
     //费用承担者
     $fields['undertaker'] = BaseFieldDefinition::create('entity_reference')
@@ -305,10 +320,10 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'weight' => 0,
       ]);
 
-      //支出数据状态 1正常 2删除
-      $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
-          ->setLabel(t('Expenditure Status', [], ['context' => 'FinanceExpenditure']))
-          ->setDefaultValue(1);
+    //支出数据状态 1正常 2删除
+    $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Expenditure Status', [], ['context' => 'FinanceExpenditure']))
+      ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
