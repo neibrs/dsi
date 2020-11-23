@@ -9,7 +9,8 @@ rm -rf sites/default/settings.php
 rm -rf sites/default/private
 rm -rf sites/default/files
 
-vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/oas
+vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:@127.0.0.1:3306/oas
+
 chmod -R a+rw sites/default
 mkdir sites/default/private;
 echo "\$settings['file_private_path'] = 'sites/default/private';" >> sites/default/settings.php
