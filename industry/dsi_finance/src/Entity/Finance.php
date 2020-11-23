@@ -54,7 +54,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/dsi_finance/{dsi_finance}",
  *     "add-form" = "/dsi_finance/add",
- *     "edit-form" = "/dsi_finance/{dsi_finance}/edit",
+ *     "edit-form" = "/dsi_finance/{dsi_finance_id}/edit",
  *     "delete-form" = "/dsi_finance/{dsi_finance}/delete",
  *     "collection" = "/dsi_finance",
  *   },

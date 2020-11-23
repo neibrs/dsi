@@ -30,8 +30,12 @@ class RecordBlock extends BlockBase {
     $expired_ids = $query_expired->execute();
 
     $rows = array_map(function($item) {
-      $entity_type = \Drupal::entityTypeManager()->getStorage($item->get('entity_type')->value)->getEntityType();
-      return $entity_type->getLabel() . '-' . $item->label();
+      $label = '';
+      if ($item->get('entity_type')->value) {
+        $entity_type = \Drupal::entityTypeManager()->getStorage($item->get('entity_type')->value)->getEntityType();
+        $label .= $entity_type->getLabel() . '-';
+      }
+      return $label . $item->label();
     }, $record_storage->loadMultiple($expired_ids));
     $data = [
       'expired' => [

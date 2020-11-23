@@ -305,6 +305,11 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'weight' => 0,
       ]);
 
+      //支出数据状态 1正常 2删除
+      $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
+          ->setLabel(t('Expenditure Status', [], ['context' => 'FinanceExpenditure']))
+          ->setDefaultValue(1);
+
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));
