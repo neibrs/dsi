@@ -47,9 +47,10 @@ class ClientForm extends ContentEntityForm {
       'callback' => '::clientTypeSwitch',
       'wrapper' => 'client-type-wrapper',
     ];
-
     $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($this->entity->bundle());
+
     $target_entity_type_id = $type->getTargetEntityTypeId();
+
     if ($type = $form_state->getValue('type')) {
       $type = $type[0]['target_id'];
       $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);

@@ -34,8 +34,44 @@ class FinanceExpenditureForm extends ContentEntityForm
     {
         /* @var \Drupal\dsi_finance\Entity\FinanceExpenditure $entity */
         $form = parent::buildForm($form, $form_state);
+      $form['relation_type']['widget']['#ajax'] = [
+        'callback' => '::ajaxChangeRelationDataCallback',
+        'wrapper' => 'edit-relation',
+      ];
+      unset($form['relation_type']['widget']['#options']['_none']);
         return $form;
     }
+
+  /**
+   * Ajax动态更新 关联类型
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return mixed
+   */
+  public function ajaxChangeRelationDataCallback(array &$form, FormStateInterface $form_state){
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+    $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+    $relation_type = $lookup_storage->load($form_state->getValue('relation_type')[0]['target_id']);
+    $value = $relation_type->label();
+    $database = \Drupal::database();
+    switch ($value){
+      case '案件':
+        $cases = $database->query('select id,name from dsi_cases_field_data')->fetchAll();
+        $form['relation']['widget']['#options'] =  $this->changeRelationData($cases);
+        break;
+      case '项目':
+        $project = $database->query('select id,name from dsi_project_field_data')->fetchAll();
+        $form['relation']['widget']['#options'] =  $this->changeRelationData($project);
+        break;
+      case '客户':
+        $client = $database->query('select id,name from dsi_client_field_data')->fetchAll();
+        $form['relation']['widget']['#options'] =  $this->changeRelationData($client);
+        break;
+    }
+    $form['relation']['widget']['#id'] = 'edit-relation';
+    return $form['relation'];
+  }
 
     /**
      * {@inheritdoc}
@@ -46,36 +82,34 @@ class FinanceExpenditureForm extends ContentEntityForm
         $status = parent::save($form, $form_state);
         if ($status) {
             $database = \Drupal::database();
-            if ($entity->isNew()) {
+          $id = $entity->id();
+          $financeExpenditure = $entity->toArray();
+          if ($entity->isNew()) {
                 //添加支出明细记录
-                $id = $entity->id();
-
-                $database->insert('dsi_finance_field_data')
+                $database->insert('dsi_finance_detailed_field_data')
                     ->fields(
                         [
                             'type' => 2,//支出
-                            'name' => $entity->get('name'),
-                            'price' => $entity->get('price'),
-                            'happen_date' => $entity->get('happen_date'),
-                            'happen_by' => $entity->get('user_id'),
-                            'cases' => $entity->get('cases'),
+                            'name' => $financeExpenditure['name'][0]['value'],
+                            'price' => $financeExpenditure['price'][0]['value'],
+                            'happen_date' => $financeExpenditure['happen_date'][0]['value'],
+                            'happen_by' => $financeExpenditure['happen_by'][0]['value'],
+                            'cases' => $financeExpenditure['cases'][0]['value'],
                             'finance_id' => $id,
                         ]
                     )
                     ->execute();
             } else {
                 //更新支出明细记录
-                $id = $entity->id();
-                $database->update('dsi_finance_field_data')
+                $database->update('dsi_finance_detailed_field_data')
                     ->fields(
                         [
-                            'type' => 2,//支出
-                            'name' => $entity->get('name'),
-                            'price' => $entity->get('price'),
-                            'happen_date' => $entity->get('happen_date'),
-                            'happen_by' => $entity->get('user_id'),
-                            'cases' => $entity->get('cases'),
-                            'finance_id' => $id,
+                          'name' => $financeExpenditure['name'][0]['value'],
+                          'price' => $financeExpenditure['price'][0]['value'],
+                          'happen_date' => $financeExpenditure['happen_date'][0]['value'],
+                          'happen_by' => $financeExpenditure['happen_by'][0]['value'],
+                          'cases' => $financeExpenditure['cases'][0]['value'],
+                          'finance_id' => $id,
                         ]
                     )
                     ->condition('finance_id', $id)
@@ -94,7 +128,6 @@ class FinanceExpenditureForm extends ContentEntityForm
                     '%label' => $entity->label(),
                 ]));
         }
-//    $form_state->setRedirect('entity.dsi_finance.canonical');
         $form_state->setRedirect('entity.dsi_finance_expenditure.canonical', ['dsi_finance_expenditure' => $entity->id()]);
     }
 }
