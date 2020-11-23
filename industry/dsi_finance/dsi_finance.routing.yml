@@ -1,0 +1,7 @@
+dsi_finance.overview:
+  path: '/finance/overview'
+  defaults:
+    _controller: '\Drupal\dsi_finance\FinanceOverviewController::overview'
+    _title: 'finance'
+  requirements:
+    _permission: 'access content'
