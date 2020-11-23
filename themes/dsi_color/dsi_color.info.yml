@@ -1,10 +1,26 @@
 name: Color
 type: theme
-description: 'The color admin extension theme.'
-package: Dsi
+description: 'Color subtheme'
 core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap4
+
+# Stylesheets.
+stylesheets-remove:
+  - '@bootstrap4/css/styles.css'
+
+# Libraries.
 libraries:
-  - dsi_color/global
-base theme: seven
+  - dsi_color/global-styling
+
+# Regions.
 regions:
-  content: Content
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
