@@ -219,7 +219,7 @@ var handleMobileSidebarToggle = function() {
 /* 04. Handle Sidebar - Minify / Expand
 ------------------------------------------------ */
 var handleSidebarMinify = function() {
-  $(document).on('click', '[data-click="sidebar-minify"]', function(e) {
+  $(document).once('sidebar-minify').on('click', '[data-click="sidebar-minify"]', function(e) {
     e.preventDefault();
     var sidebarClass = 'page-sidebar-minified';
     var targetContainer = '#page-container';
