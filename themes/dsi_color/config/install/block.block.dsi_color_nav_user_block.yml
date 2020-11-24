@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_style_plugins
+    - dsi_color_block
+  theme:
+    - dsi_color
+third_party_settings:
+  block_style_plugins:
+    simple_class:
+      simple_class: ''
+    box:
+      box_style: ''
+id: dsi_color_nav_user_block
+theme: dsi_color
+region: header
+weight: -3
+provider: null
+plugin: navbar_user_block
+settings:
+  id: navbar_user_block
+  label: 'Navbar user block'
+  provider: dsi_color_block
+  label_display: '0'
+visibility: {  }
