@@ -15,7 +15,7 @@ third_party_settings:
 id: dsi_color_nav_user_block
 theme: dsi_color
 region: header
-weight: -3
+weight: 3
 provider: null
 plugin: navbar_user_block
 settings:
