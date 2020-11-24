@@ -4,3 +4,13 @@
 ul {
   margin: 0
 }
+
+
+/**
+ * Override:
+ * core/modules/system/css/components/tabledrag.module.css
+ */
+a.tabledrag-handle .handle {
+  width: 21px;
+  height: 21px;
+}
