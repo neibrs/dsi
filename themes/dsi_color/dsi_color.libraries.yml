@@ -16,7 +16,7 @@ global-styling:
 color.theme:
   css:
     theme:
-      https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700: { type: external }
+      css/google_3467.css: { }
   js:
     node_modules/pace-js/pace.min.js: { }
     node_modules/bootstrap/dist/js/bootstrap.bundle.min.js: { }
