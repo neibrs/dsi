@@ -20,7 +20,7 @@ class NavbarUserBlock extends BlockBase {
   public function build() {
     $build = [];
     $build['#theme'] = 'navbar_user_block';
-     $build['navbar_user_block']['#markup'] = 'Implement NavbarUserBlock.';
+    $build['navbar_user_block']['#markup'] = 'Implement NavbarUserBlock.';
 
     return $build;
   }
