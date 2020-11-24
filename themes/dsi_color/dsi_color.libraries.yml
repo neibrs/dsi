@@ -24,13 +24,13 @@ color.theme:
     node_modules/jquery-ui-sortable/jquery-ui.min.js: { }
     node_modules/js-cookie/src/js.cookie.js: { }
     assets/4.6/assets/js/app.js: { }
-#    js/coloradmin.script.js: {}
   dependencies:
     - core/jquery
     - core/jquery.ui
     - core/jquery.once
     - core/drupal
     - core/sortable
+#    - core/popperjs
 
 color.default:
   css:
