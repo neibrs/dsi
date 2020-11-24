@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_style_plugins
+    - system
+  theme:
+    - dsi_color
+third_party_settings:
+  block_style_plugins:
+    simple_class:
+      simple_class: navbar-header
+    box:
+      box_style: ''
+id: dsi_color_site_branding
+theme: dsi_color
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
