@@ -1,0 +1,10 @@
+name: 'User block for color'
+type: module
+description: 'The extension user block for color theme.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+interface translation project': dsi_color_user
+interface translation server pattern': modules/dsi/themes/dsi_color/modules/%project/translations/%project.%language.po
+package: 'Dsi themes'
+dependencies:
+  - dsi_color_block
