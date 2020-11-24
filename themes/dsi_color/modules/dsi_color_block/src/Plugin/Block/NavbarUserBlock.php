@@ -2,6 +2,7 @@
 
 namespace Drupal\dsi_color_block\Plugin\Block;
 
+use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -20,8 +21,11 @@ class NavbarUserBlock extends BlockBase {
   public function build() {
     $build = [];
     $build['#theme'] = 'navbar_user_block';
-    $build['navbar_user_block']['#markup'] = 'Implement NavbarUserBlock.';
 
+    $data = \Drupal::moduleHandler()->invokeAll('navbar_user_block_item');
+
+    uasort($data, ['\Drupal\Component\Utility\SortArray', 'sortByWeightProperty']);
+    $build['data'] = $data;
     return $build;
   }
 
