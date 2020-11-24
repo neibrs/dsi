@@ -143,7 +143,7 @@ class FinanceForm extends ContentEntityForm
           'name'=>$entity->get('name')->getValue()[0]['value'],
           'happen_date'=>empty($detailsData[$val['id']])?'':$detailsData[$val['id']],
           'happen_by'=>$auth_id,
-          'relation'=>$entity->get('relation')->getValue()[0]['value'],
+          'relation'=>$entity->get('relation')->getValue()[0]['target_id'],
         ])
         ->condition('id',$val['id'])
         ->execute();
