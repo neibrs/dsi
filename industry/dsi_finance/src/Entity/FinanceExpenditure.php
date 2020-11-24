@@ -197,12 +197,10 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
 
 
     //金额
-    $fields['price'] = BaseFieldDefinition::create('integer')
+    $fields['price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Price', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('unsigned', TRUE)
-      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
