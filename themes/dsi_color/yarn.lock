@@ -33,6 +33,11 @@
   "resolved" "https://registry.npm.taobao.org/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.15.1.tgz"
   "version" "5.15.1"
 
+"@popperjs/core@^2.5.4":
+  "integrity" "sha1-3iW12p9yeYWjdX/Vm10Cirp1hBo="
+  "resolved" "https://registry.npm.taobao.org/@popperjs/core/download/@popperjs/core-2.5.4.tgz"
+  "version" "2.5.4"
+
 "@rollup/plugin-babel@^5.2.1":
   "integrity" "sha1-IPyPiGTcDqocVXhAhFlgaAj3KSQ="
   "resolved" "https://registry.npm.taobao.org/@rollup/plugin-babel/download/@rollup/plugin-babel-5.2.1.tgz"
