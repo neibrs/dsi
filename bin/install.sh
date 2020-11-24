@@ -62,11 +62,11 @@ vendor/bin/drush en -y \
 
 # Dsi cbos modules
 vendor/bin/drush en -y \
-  dsi_block
+  dsi_color_block
 
-vendor/bin/drush then materialize -y
-vendor/bin/drush cset system.theme default materialize -y
-vendor/bin/drush cset system.theme admin seven -y
+vendor/bin/drush then dsi_color -y
+vendor/bin/drush cset system.theme default dsi_color -y
+vendor/bin/drush cset system.theme admin dsi_color -y
 
 #Predefined configuration
 vendor/bin/drush ucrt lijd --mail="lijd@139.com" --password="123456"

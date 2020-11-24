@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_color_block.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_color_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_color_block module.
+    case 'help.page.dsi_color_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The extension block for color theme.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
