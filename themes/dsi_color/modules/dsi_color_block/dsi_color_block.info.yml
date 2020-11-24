@@ -1,0 +1,5 @@
+name: 'Color block'
+type: module
+description: 'The extension block for color theme.'
+core: 8.x
+package: 'Dsi'
