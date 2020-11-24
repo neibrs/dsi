@@ -41,8 +41,20 @@ class FinanceForm extends ContentEntityForm
             'wrapper' => 'edit-relation', // Ajax需要改变元素id
         ];
         unset($form['relation_type']['widget']['#options']['_none']);
+        //动态添加div
+//        $form['detailed'] = $form['remarks'];
+//
+//      $form['detailed']['widget']['#id'] = 'edit-detailed';
+//      $form['detailed']['widget']['#parents'][0] = 'detailed';
+//      $form['detailed']['widget']['#title'] = $this->t('Detailed');
+//      $form['detailed']['#title'] = $this->t('Detailed');
+//      $form['detailed']['widget']['#field_name'] = 'detailed';
+//      $form['detailed']['#parents'][0] = 'detailed_wrapper';
+//      dd($form);
       return $form;
     }
+
+
 
 
   /**
@@ -98,122 +110,62 @@ class FinanceForm extends ContentEntityForm
     public function save(array $form, FormStateInterface $form_state)
     {
       $entity = $this->entity;
-      $detailed = $form_state->getValue('detailed');
-      $database = \Drupal::database();
-
+      $auth_id = \Drupal::currentUser()->id();
       if ($entity->isNew() ) {
         //初始化待收金额
         $this->entity->set('wait_price', $form_state->getValue('receivable_price'));
-        //检测有没收款记录
-        if (count($detailed)) {
-          //添加收款记录
-          $detailed = [
-            [
-              'price' => 1,
-              'collection_date' => date('Y-m-d'),
-              'invoice_code' => 1,
-              'invoice_price' => 1,
-              'invoice_date' => date('Y-m-d'),
-            ],
-            [
-              'price' => 1,
-              'collection_date' => date('Y-m-d'),
-              'invoice_code' => 1,
-              'invoice_price' => 1,
-              'invoice_date' => date('Y-m-d'),
-            ],
-          ];
-          foreach ($detailed as $k => $v) {
-            //insert收款明细记录
-            $database->insert('dsi_finance_detailed_field_data')
-              ->fields([
-                'price' => $v['price'],
-                'collection_date' => $v['collection_date'],
-                'invoice_code' => $v['invoice_code'],
-                'invoice_price' => $v['invoice_price'],
-                'invoice_date' => $v['invoice_date'],
-              ])
-              ->execute();
-          }
-        }
-//dd(222);
-      } else {
-
-        $finance_id = $form_state->getValue('finance_id');
-
-        if (count($detailed)){
-          //更新收款记录
-          $detailed = [
-            [
-              'id' => 0,
-              'price' => 1,
-              'collection_date' => date('Y-m-d'),
-              'invoice_code' => 1,
-              'invoice_price' => 1,
-              'invoice_date' => date('Y-m-d'),
-            ],
-            [
-              'id' => 1,
-              'price' => 1,
-              'collection_date' => date('Y-m-d'),
-              'invoice_code' => 1,
-              'invoice_price' => 1,
-              'invoice_date' => date('Y-m-d'),
-            ],
-          ];
-          //已收款总金额
-          $price = 0;
-          foreach ($detailed as $k => $v) {
-            $price += $v['price'];
-            if (!empty($v['id'])){//本次修改記錄
-              $database
-                ->update('dsi_finance_detailed_field_data')
-                ->fields([
-                  'collection_date' => $v['collection_date'],
-                  'price' => $v['price'],
-                  'invoice_date' => $v['invoice_date'],
-                  'invoice_price' => $v['invoice_price'],
-                  'invoice_code' => $v['invoice_code'],
-                ])
-                ->condition('id', $v['id'])
-                ->execute();
-            }else{//本次新增记录
-              $database
-                ->insert('dsi_finance_detailed_field_data')
-                ->fields([
-                  'collection_date' => $v['collection_date'],
-                  'price' => $v['price'],
-                  'invoice_date' => $v['invoice_date'],
-                  'invoice_price' => $v['invoice_price'],
-                  'invoice_code' => $v['invoice_code'],
-                ])
-                ->execute();
-            }
-            }
-          $finance = $database->query("select receivable_price,received_price from dsi_finance_field_data where id = $finance_id")->fetch();
-          //本次修改 修改了已收款总额
-          if ($finance->received_price != $price) {
-            //更新最近收款总额到财务表
-            $wait_price = $finance->receivable_price - $price;
-            $wait_price = $wait_price < 0 ? 0 : $wait_price;
-            $database
-              ->update('dsi_finance_field_data')
-              ->fields([
-                'received_price' => $price,
-                'wait_price' => $wait_price,
-              ])
-              ->condition('id', $finance_id)
-              ->execute();
-          }
-        }
       }
 
       $status = parent::save($form, $form_state);
-//      dd(2121);
+
+      //更新财务详情部分字段
+      $database = \Drupal::database();
+      //查询实体关联
+      $finance_id = $entity->id();
+      $finance_detail = $database->query("select detail_target_id from dsi_finance__detail where entity_id = $finance_id")->fetchAll();
+      $detailIds = [];
+      foreach ($finance_detail as $key => $val ){
+        $detailIds [] = $val->detail_target_id;
+      }
+      $ids = implode(",",$detailIds);
+      $details = $database->query("select id,price,happen_date from dsi_finance_detailed_field_data where id in ($ids)")->fetchAll();
+      $detailsData = [];
+      $price = 0;
+      foreach ($details as $key => $val) {
+        $detailsData[$val->id] = $val->happen_date;
+        $price += $val->price;
+      }
+      foreach ($detailIds as $key => $val ){
+        $database->update('dsi_finance_detailed_field_data')
+        ->fields([
+          'finance_id'=>$entity->id(),
+          'type'=>1,
+          'name'=>$entity->get('name')->getValue()[0]['value'],
+          'happen_date'=>empty($detailsData[$val['id']])?'':$detailsData[$val['id']],
+          'happen_by'=>$auth_id,
+          'relation'=>$entity->get('relation')->getValue()[0]['value'],
+        ])
+        ->condition('id',$val['id'])
+        ->execute();
+      }
+      $finance = $database->query("select receivable_price,received_price from dsi_finance_field_data where id = $finance_id")->fetch();
+      //本次修改 修改了已收款总额
+      if ($finance->received_price != $price) {
+        //更新最近收款总额到财务表
+        $wait_price = $finance->receivable_price - $price;
+        $wait_price = $wait_price < 0 ? 0 : $wait_price;
+        $database
+          ->update('dsi_finance_field_data')
+          ->fields([
+            'received_price' => $price,
+            'wait_price' => $wait_price,
+          ])
+          ->condition('id', $entity->id())
+          ->execute();
+      }
       switch ($status) {
 
             case SAVED_NEW:
-
               $this->messenger()->addMessage($this->t('Created the %label Finance.', [
                     '%label' => $entity->label(),
                 ]));
@@ -225,8 +177,6 @@ class FinanceForm extends ContentEntityForm
                     '%label' => $entity->label(),
                 ]));
         }
-//      dd(2121,SAVED_NEW,77777777,$entity->id());
-
       $form_state->setRedirect('entity.dsi_finance.canonical', ['dsi_finance' => $entity->id()]);
     }
 }

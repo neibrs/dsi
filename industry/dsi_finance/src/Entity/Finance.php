@@ -10,6 +10,8 @@ use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 use Drupal\dsi_finance\Entity\FinanceInterface;
 use Drupal\user\UserInterface;
@@ -54,7 +56,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/dsi_finance/{dsi_finance}",
  *     "add-form" = "/dsi_finance/add",
- *     "edit-form" = "/dsi_finance/{dsi_finance_id}/edit",
+ *     "edit-form" = "/dsi_finance/{dsi_finance}/edit",
  *     "delete-form" = "/dsi_finance/{dsi_finance}/delete",
  *     "collection" = "/dsi_finance",
  *   },
@@ -193,15 +195,11 @@ class Finance extends ContentEntityBase implements FinanceInterface{
 
     // TODO, Add fields.
 
-
-
     //应收金额
-    $fields['receivable_price'] = BaseFieldDefinition::create('integer')
+    $fields['receivable_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Receivable Price', [], ['context' => 'Finance']))
-      ->setSetting('unsigned', TRUE)
-      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
@@ -215,24 +213,21 @@ class Finance extends ContentEntityBase implements FinanceInterface{
 
 
     //已收金额
-    $fields['received_price'] = BaseFieldDefinition::create('integer')
+    $fields['received_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Received Price', [], ['context' => 'Finance']))
-      ->setSetting('unsigned', TRUE)
       ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
       ->setDisplayConfigurable('view', TRUE);
 
     //待收金额
-    $fields['wait_price'] = BaseFieldDefinition::create('integer')
+    $fields['wait_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Wait Price', [], ['context' => 'Finance']))
-      ->setSetting('unsigned', TRUE)
-      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
@@ -287,27 +282,36 @@ class Finance extends ContentEntityBase implements FinanceInterface{
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-//      ->setRequired(TRUE);
+
+    $fields['detail'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Detail', [], ['context' => 'Finance detail']))
+      ->setSetting( 'target_type', 'dsi_finance_detailed')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('form', [
+        'type' => 'inline_entity_form_complex',
+        'settings' => [
+          'form_mode' => 'inline_entity_form',
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
 
     //备注
-    $fields['remarks'] = BaseFieldDefinition::create('string')
+    $fields['remarks'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Remarks', [], ['context' => 'Finance']))
       ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
+        'label' => 'inline',
         'type' => 'text_default',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
+        'type' => 'text_textarea',
         'weight' => 0,
-      ]);
-
-    //收款状态 1正常 2删除
-    $fields['collection_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Collection Status', [], ['context' => 'FinanceDetailed']))
-      ->setDefaultValue(1);
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

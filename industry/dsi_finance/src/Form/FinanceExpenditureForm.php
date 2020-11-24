@@ -34,10 +34,12 @@ class FinanceExpenditureForm extends ContentEntityForm
     {
         /* @var \Drupal\dsi_finance\Entity\FinanceExpenditure $entity */
         $form = parent::buildForm($form, $form_state);
+      $form['relation']['widget']['#id'] = 'edit-relation-new';
       $form['relation_type']['widget']['#ajax'] = [
-        'callback' => '::ajaxChangeRelationDataCallback',
-        'wrapper' => 'edit-relation',
+        'callback' => '::ajaxChangeRelationOptionsCallback',
+        'wrapper' => 'edit-relation-new',
       ];
+
       unset($form['relation_type']['widget']['#options']['_none']);
         return $form;
     }
@@ -49,7 +51,7 @@ class FinanceExpenditureForm extends ContentEntityForm
    *
    * @return mixed
    */
-  public function ajaxChangeRelationDataCallback(array &$form, FormStateInterface $form_state){
+  public function ajaxChangeRelationOptionsCallback(array &$form, FormStateInterface $form_state){
     /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
     $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
     $relation_type = $lookup_storage->load($form_state->getValue('relation_type')[0]['target_id']);
@@ -58,22 +60,33 @@ class FinanceExpenditureForm extends ContentEntityForm
     switch ($value){
       case '案件':
         $cases = $database->query('select id,name from dsi_cases_field_data')->fetchAll();
-        $form['relation']['widget']['#options'] =  $this->changeRelationData($cases);
+        $form['relation']['widget']['#options'] =  $this->changeRelationOptions($cases);
         break;
       case '项目':
         $project = $database->query('select id,name from dsi_project_field_data')->fetchAll();
-        $form['relation']['widget']['#options'] =  $this->changeRelationData($project);
+        $form['relation']['widget']['#options'] =  $this->changeRelationOptions($project);
         break;
       case '客户':
         $client = $database->query('select id,name from dsi_client_field_data')->fetchAll();
-        $form['relation']['widget']['#options'] =  $this->changeRelationData($client);
+        $form['relation']['widget']['#options'] =  $this->changeRelationOptions($client);
         break;
     }
-    $form['relation']['widget']['#id'] = 'edit-relation';
+    $form['relation']['widget']['#id'] = 'edit-relation-new';
     return $form['relation'];
   }
 
-    /**
+
+  public function changeRelationOptions($data){
+    foreach ($data as $key => $val){
+      $options = [
+        $val->id => $this->t($val->name),
+      ];
+    }
+    return $options;
+  }
+
+
+  /**
      * {@inheritdoc}
      */
     public function save(array $form, FormStateInterface $form_state)

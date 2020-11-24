@@ -28,6 +28,7 @@ class FinanceListBuilder extends EntityListBuilder {
     /* @var \Drupal\dsi_finance\Entity\Finance $entity */
     $row['id'] = $entity->id();
     $finance = $entity->toArray();
+//    dd($entity->id());
     $row['name'] = Link::createFromRoute(
       $entity->label(),
       'entity.dsi_finance.edit_form',
@@ -39,9 +40,10 @@ class FinanceListBuilder extends EntityListBuilder {
     $row['appointment_time'] = $finance['appointment_time'][0]['value'];
     $row['remarks'] = $finance['remarks'][0]['value'];
     //获取当前收款detailed记录集
-    $database = \Drupal::database();
-    $finance_id = $entity->id();
-    $row['detailed'] = $database->query("select price,collection_date,invoice_date,invoice_price,invoice_code from dsi_finance_detailed_field_data where finance_id = $finance_id")->fetchAll();
+//    $database = \Drupal::database();
+//    $finance_id = $entity->id();
+//    $row['detailed'] = $database->query("select price,collection_date,invoice_date,invoice_price,invoice_code from dsi_finance_detailed_field_data where finance_id = $finance_id")->fetchAll();
+//    dd($row);
     return $row + parent::buildRow($entity);
   }
 }

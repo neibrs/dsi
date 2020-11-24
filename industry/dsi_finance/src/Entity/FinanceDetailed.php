@@ -213,12 +213,10 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
 
 
     //金额
-    $fields['price'] = BaseFieldDefinition::create('integer')
+    $fields['price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Price', [], ['context' => 'FinanceDetailed']))
-      ->setSetting('unsigned', TRUE)
-      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
@@ -283,12 +281,10 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setDisplayConfigurable('view', TRUE);
 
     //开票金额
-    $fields['invoice_price'] = BaseFieldDefinition::create('integer')
+    $fields['invoice_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Invoice Price', [], ['context' => 'FinanceDetailed']))
-      ->setSetting('unsigned', TRUE)
-      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
-        'type' => 'number_integer',
+        'type' => 'number_decimal',
         'weight' => 0,
         'label' => 'inline',
       ])
@@ -329,9 +325,9 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-    //关联案件
-    $fields['cases'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Cases', [], ['context' => 'FinanceDetailed']))
+    //关联 id
+    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Relation', [], ['context' => 'FinanceDetailed']))
       ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [

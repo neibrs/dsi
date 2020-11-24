@@ -110,7 +110,9 @@ class FinanceDetailedForm extends ContentEntityForm
          */
 
         $entity = $this->entity;
+//        dd($form_state);
         $status = parent::save($form, $form_state);
+
         if ($status){
           $finance_id = $form_state->getValue('finance_id');
           //更新收款实体 实收金额
