@@ -1180,7 +1180,7 @@ var handlePageScrollClass = function() {
 var handleToggleNavProfile = function() {
   var expandTime = ($('.sidebar').attr('data-disable-slide-animation')) ? 0 : 250;
 
-  $(document).on('click', '[data-toggle="nav-profile"]', function(e) {
+  $(document).once('nav-profile-click').on('click', '[data-toggle="nav-profile"]', function(e) {
     e.preventDefault();
 
     var targetLi = $(this).closest('li');
