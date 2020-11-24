@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_menu
+  theme:
+    - dsi_color
+id: dsi_color_role_menu_block
+theme: dsi_color
+region: sidebar_first
+weight: -3
+provider: null
+plugin: role_menu_block
+settings:
+  id: role_menu_block
+  label: 'Role menu block'
+  provider: role_menu
+  label_display: '0'
+visibility: {  }
