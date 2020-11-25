@@ -28,16 +28,6 @@ function dsi_record_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for menu__role_menu.
- */
-function dsi_record_preprocess_menu__role_menu(&$variables) {
-  $icons = [
-    'entity.dsi_record.collection' => 'iconfont icon-rili',
-  ];
-  _eabax_core_set_menu_items_icon($variables['items'], $icons);
-}
-
-/**
  * Implements hook_theme().
  */
 function dsi_record_theme() {
