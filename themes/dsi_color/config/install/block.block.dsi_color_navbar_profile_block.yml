@@ -6,12 +6,6 @@ dependencies:
     - dsi_color_block
   theme:
     - dsi_color
-third_party_settings:
-  block_style_plugins:
-    simple_class:
-      simple_class: ''
-    box:
-      box_style: ''
 id: dsi_color_navbar_profile_block
 theme: dsi_color
 region: sidebar_first

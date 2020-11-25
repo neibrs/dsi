@@ -6,13 +6,7 @@ dependencies:
     - dsi_color_block
   theme:
     - dsi_color
-third_party_settings:
-  block_style_plugins:
-    simple_class:
-      simple_class: ''
-    box:
-      box_style: ''
-id: themepanelblock
+id: dsi_color_theme_panel_block
 theme: dsi_color
 region: extra
 weight: 0

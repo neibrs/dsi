@@ -8,7 +8,7 @@ dependencies:
 id: dsi_color_role_menu_block
 theme: dsi_color
 region: sidebar_first
-weight: -3
+weight: 5
 provider: null
 plugin: role_menu_block
 settings:
