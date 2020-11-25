@@ -14,6 +14,7 @@ global-styling:
     - dsi_color/color.default
     - dsi_color/iconfont
     - dsi_color/law86
+    - dsi_color/color.page.table
 
 color.theme:
   css:
@@ -42,6 +43,20 @@ color.default:
     assets/4.6/assets/js/theme/default.min.js: { }
   dependencies:
     - dsi_color/color.theme
+
+color.page.table:
+  css:
+    theme:
+      assets/4.6/assets/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css: { }
+      assets/4.6/assets/plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css: { }
+  js:
+    assets/4.6/assets/plugins/datatables.net/js/jquery.dataTables.min.js: { }
+    assets/4.6/assets/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js: { }
+    assets/4.6/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js: { }
+    assets/4.6/assets/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js: { }
+    assets/4.6/assets/js/demo/table-manage-default.demo.js: { }
+  dependencies:
+    - core/jquery
 
 # 案件云图标
 iconfont:
