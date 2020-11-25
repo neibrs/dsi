@@ -1,9 +1,8 @@
 			<!-- begin header-nav -->
 			<ul class="navbar-nav navbar-right">
-        {{ content }}
-    {#{% for value in content %}#}
-        {#<li>{{value.item}}</li>#}
-    {#{% endfor %}#}
+    {# {% for item in content %}
+        <li class="{{ item.class }}">{{ item.content }}</li>
+    {% endfor %} #}
 				<li class="navbar-form">
 					<form action="" method="POST" name="search">
 						<div class="form-group">

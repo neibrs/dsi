@@ -1,0 +1,11 @@
+<div class="user-header">
+  {{ content|without('password_link', 'logout') }}
+</div>
+<div class="user-footer">
+  <div class="pull-left">
+    {{ content.password_link }}
+  </div>
+  <div class="pull-right">
+    {{ content.logout }}
+  </div>
+</div>
