@@ -16,6 +16,7 @@ a.tabledrag-handle .handle {
 }
 
 
-.z-index-1030 {
-  z-index: 1030 !important;
+/* Greater than ore/themes/claro/css/components/jquery.ui/theme.css */
+.z-index-1360 {
+  z-index: 1360 !important;
 }
