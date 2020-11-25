@@ -1,3 +1,4 @@
+#收入
 add finance entities:
   title: 'Create new Finance entities'
 
@@ -18,7 +19,7 @@ view published finance entities:
 view unpublished finance entities:
   title: 'View unpublished Finance entities'
 
-
+#支出
 add finance_expendditure entities:
   title: 'Create new FinanceExpenditure entities'
 
@@ -39,7 +40,7 @@ view published finance_expendditure entities:
 view unpublished finance_expendditure entities:
   title: 'View unpublished FinanceExpenditure entities'
 
-
+#详情
 add finance_detailed entities:
   title: 'Create new FinanceDetailed entities'
 

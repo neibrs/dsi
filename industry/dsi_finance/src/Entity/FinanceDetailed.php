@@ -324,7 +324,8 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
         'weight' => 0,
       ])
       ->setDisplayConfigurable('view', TRUE);
-
+    //关联类型
+    $fields['relation_type'] = BaseFieldDefinition::create('integer');
     //关联 id
     $fields['relation'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Relation', [], ['context' => 'FinanceDetailed']))
