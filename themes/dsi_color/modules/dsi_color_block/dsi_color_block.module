@@ -34,5 +34,11 @@ function dsi_color_block_theme() {
       ],
       'render element' => 'children',
     ],
+    'navbar_user_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
   ];
 }

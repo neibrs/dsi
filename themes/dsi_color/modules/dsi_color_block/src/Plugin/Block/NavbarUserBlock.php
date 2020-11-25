@@ -24,9 +24,15 @@ class NavbarUserBlock extends BlockBase {
 
     $data = \Drupal::moduleHandler()->invokeAll('navbar_user_block_item');
 
-    uasort($data, ['\Drupal\Component\Utility\SortArray', 'sortByWeightProperty']);
-    $build['data'] = $data;
+    // uasort($data, ['\Drupal\Component\Utility\SortArray', 'sortByWeightProperty']);
+    $build['#content'] = $data;
     return $build;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    return 0;
+  }
 }
