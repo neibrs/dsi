@@ -126,17 +126,15 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
 
   unset($form['name']['#description']);
   unset($form['pass']['#description']);
-//  $form['name']['#field_prefix'] = '<i class="material-icons prefix pt-2">person_outline</i>';
   $form['name']['#title_display'] = 'invisible';
   $form['name']['#wrapper_attributes']['class'] = 'form-group m-b-20';
   $form['name']['#attributes']['class'][] = 'form-control form-control-lg';
+  $form['name']['#placeholder'] = t('Email Address');
 
-//  $form['pass']['#prefix'] = '<div class="row margin">';
-//  $form['pass']['#suffix'] = '</div>';
-//  $form['pass']['#field_prefix'] = '<i class="material-icons prefix pt-2">lock_outline</i>';
   $form['pass']['#title_display'] = 'invisible';
   $form['pass']['#wrapper_attributes']['class'] = 'form-group m-b-20';
   $form['pass']['#attributes']['class'][] = 'form-control form-control-lg';
+  $form['pass']['#placeholder'] = t('Password');
 
 //  $form['persistent_login']['#prefix'] = '<div class="row">';
 //  $form['persistent_login']['#suffix'] = '</div>';
