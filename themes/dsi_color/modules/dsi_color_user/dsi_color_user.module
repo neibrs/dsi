@@ -12,12 +12,22 @@ function dsi_color_user_navbar_user_block_item() {
       ],
     ],
     '#content' => [
-      '#markup' => 'xxx',
+      'item' => ['#markup' => 'xxx'],
     ],
   ];
   return $build;
 }
 
-function template_preprocess_navbar_user(array &$variables) {
-  $x = 'a';
+/**
+ * Implements hook_theme().
+ */
+function dsi_color_user_theme($existing, $type, $theme, $path) {
+  return [
+    'navbar_user' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+  ];
 }
