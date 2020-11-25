@@ -22,3 +22,17 @@ function dsi_color_block_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_color_block_theme() {
+  return [
+    'theme_panel_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
