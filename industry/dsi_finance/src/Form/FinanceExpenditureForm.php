@@ -5,6 +5,7 @@ namespace Drupal\dsi_finance\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\dsi_finance\Entity\FinanceDetailed;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class FinanceExpenditureForm extends ContentEntityForm
@@ -34,11 +35,13 @@ class FinanceExpenditureForm extends ContentEntityForm
     {
         /* @var \Drupal\dsi_finance\Entity\FinanceExpenditure $entity */
         $form = parent::buildForm($form, $form_state);
+//        $this->entityRepository
       $form['relation']['widget']['#id'] = 'edit-relation-new';
       $form['relation_type']['widget']['#ajax'] = [
         'callback' => '::ajaxChangeRelationOptionsCallback',
         'wrapper' => 'edit-relation-new',
       ];
+//      $this->entityTypeManager->getStorage('detail')->load()
 
       unset($form['relation_type']['widget']['#options']['_none']);
         return $form;
@@ -91,42 +94,50 @@ class FinanceExpenditureForm extends ContentEntityForm
      */
     public function save(array $form, FormStateInterface $form_state)
     {
+
+
         $entity = $this->entity;
-        $status = parent::save($form, $form_state);
+        $isAdd = 0;
+        if($entity->isNew()){
+          $isAdd = 1;
+        }
+        dd(FinanceExpenditure::load(12));
+//      $finance_detail = $this->entityTypeManager->getStorage('dsi_finance_expenditure')->loadByProperties([
+//       'id'=> [1,13,17,10,6]
+//      ]);
+
+      $status = parent::save($form, $form_state);
+      $id = $entity->id();
         if ($status) {
-            $database = \Drupal::database();
-          $id = $entity->id();
-          $financeExpenditure = $entity->toArray();
-          if ($entity->isNew()) {
-                //添加支出明细记录
-                $database->insert('dsi_finance_detailed_field_data')
-                    ->fields(
-                        [
-                            'type' => 2,//支出
-                            'name' => $financeExpenditure['name'][0]['value'],
-                            'price' => $financeExpenditure['price'][0]['value'],
-                            'happen_date' => $financeExpenditure['happen_date'][0]['value'],
-                            'happen_by' => $financeExpenditure['happen_by'][0]['value'],
-                            'cases' => $financeExpenditure['cases'][0]['value'],
-                            'finance_id' => $id,
-                        ]
-                    )
-                    ->execute();
+          if ($isAdd) {
+            $data = [
+              'type'=>2,//支出
+              'name'=>$entity->get('name')->getValue()[0]['value'],
+              'price'=>$entity->get('price')->getValue()[0]['value'],
+              'happen_date'=>$entity->get('happen_date')->getValue()[0]['value'],
+              'happen_by'=>$entity->get('user_id')->getValue()[0]['target_id'],
+              'relation_type'=>$entity->get('relation_type')->getValue()[0]['target_id'],
+              'relation'=>$entity->get('relation')->getValue()[0]['target_id'],
+              'finance_id'=>$id,
+            ];
+
+            FinanceDetailed::create($data)->save();
             } else {
                 //更新支出明细记录
-                $database->update('dsi_finance_detailed_field_data')
-                    ->fields(
-                        [
-                          'name' => $financeExpenditure['name'][0]['value'],
-                          'price' => $financeExpenditure['price'][0]['value'],
-                          'happen_date' => $financeExpenditure['happen_date'][0]['value'],
-                          'happen_by' => $financeExpenditure['happen_by'][0]['value'],
-                          'cases' => $financeExpenditure['cases'][0]['value'],
-                          'finance_id' => $id,
-                        ]
-                    )
-                    ->condition('finance_id', $id)
-                    ->execute();
+            //->load($id);//查询当条
+            $detail = $this->entityTypeManager
+              ->getStorage('dsi_finance_detailed')
+              ->loadByProperties([
+              'finance_id' => $id,
+            ]);
+            $detail[1]
+              ->set('name',$entity->get('name')->getValue()[0]['value'])
+              ->set('price',$entity->get('price')->getValue()[0]['value'])
+              ->set('happen_date',$entity->get('happen_date')->getValue()[0]['value'])
+              ->set('happen_by',$entity->get('user_id')->getValue()[0]['target_id'])
+              ->set('relation_type',$entity->get('relation_type')->getValue()[0]['target_id'])
+              ->set('relation',$entity->get('relation')->getValue()[0]['target_id'])
+              ->save();
             }
         }
         switch ($status) {

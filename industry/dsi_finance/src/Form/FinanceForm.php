@@ -5,6 +5,7 @@ namespace Drupal\dsi_finance\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\dsi_finance\Entity\FinanceDetailed;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\lookup\InstallHelper;
 
@@ -117,7 +118,6 @@ class FinanceForm extends ContentEntityForm
       }
 
       $status = parent::save($form, $form_state);
-
       //更新财务详情部分字段
       $database = \Drupal::database();
       //查询实体关联
@@ -128,40 +128,36 @@ class FinanceForm extends ContentEntityForm
         $detailIds [] = $val->detail_target_id;
       }
       $ids = implode(",",$detailIds);
-      $details = $database->query("select id,price,happen_date from dsi_finance_detailed_field_data where id in ($ids)")->fetchAll();
+      $details = $database->query("select id,price,collection_date from dsi_finance_detailed_field_data where id in ($ids)")->fetchAll();
       $detailsData = [];
       $price = 0;
       foreach ($details as $key => $val) {
-        $detailsData[$val->id] = $val->happen_date;
+        $detailsData[$val->id] = $val->collection_date;
         $price += $val->price;
       }
       foreach ($detailIds as $key => $val ){
-        $database->update('dsi_finance_detailed_field_data')
-        ->fields([
-          'finance_id'=>$entity->id(),
-          'type'=>1,
-          'name'=>$entity->get('name')->getValue()[0]['value'],
-          'happen_date'=>empty($detailsData[$val['id']])?'':$detailsData[$val['id']],
-          'happen_by'=>$auth_id,
-          'relation'=>$entity->get('relation')->getValue()[0]['target_id'],
-        ])
-        ->condition('id',$val['id'])
-        ->execute();
+        $detail = FinanceDetailed::load($val);
+        $detail
+          ->set('finance_id',$entity->id())
+          ->set('type',1)
+          ->set('relation_type',$entity->get('relation_type')->getValue()[0]['target_id'])
+          ->set('name',$entity->get('name')->getValue()[0]['value'])
+          ->set('happen_date',empty($detailsData[$val])?'':$detailsData[$val])
+          ->set('happen_by',$auth_id)
+          ->set('relation',$entity->get('relation')->getValue()[0]['target_id'])
+          ->save();
+
       }
+
       $finance = $database->query("select receivable_price,received_price from dsi_finance_field_data where id = $finance_id")->fetch();
       //本次修改 修改了已收款总额
       if ($finance->received_price != $price) {
         //更新最近收款总额到财务表
         $wait_price = $finance->receivable_price - $price;
         $wait_price = $wait_price < 0 ? 0 : $wait_price;
-        $database
-          ->update('dsi_finance_field_data')
-          ->fields([
-            'received_price' => $price,
-            'wait_price' => $wait_price,
-          ])
-          ->condition('id', $entity->id())
-          ->execute();
+        $entity->received_price = $price;
+        $entity->wait_price = $wait_price;
+        $entity->save();
       }
       switch ($status) {
 

@@ -159,17 +159,6 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
         'type' => 'author',
         'weight' => 0,
       ])
-      //      ->setDisplayOptions('form', [
-      //        'type' => 'entity_reference_autocomplete',
-      //        'weight' => 5,
-      //        'settings' => [
-      //          'match_operator' => 'CONTAINS',
-      //          'size' => '60',
-      //          'autocomplete_type' => 'tags',
-      //          'placeholder' => '',
-      //        ],
-      //      ])
-      //      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //费用名称
@@ -231,6 +220,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setLabel(t('', [], ['context' => 'FinanceExpenditure']))
       ->setSetting('target_type', 'dsi_cases')
       ->setSetting('handler', 'default')
+      ->setDefaultValue(0)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'author',
@@ -304,19 +294,20 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setRequired(TRUE);
 
     //备注
-    $fields['remarks'] = BaseFieldDefinition::create('string')
+    $fields['remarks'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Remarks', [], ['context' => 'FinanceExpenditure']))
       ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
+        'label' => 'inline',
         'type' => 'text_default',
         'weight' => 0,
       ])
-      ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', [
-        'type' => 'text_textfield',
+        'type' => 'text_textarea',
         'weight' => 0,
-      ]);
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
 
     //支出数据状态 1正常 2删除
     $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
