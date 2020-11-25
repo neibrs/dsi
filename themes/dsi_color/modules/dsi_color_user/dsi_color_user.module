@@ -4,5 +4,36 @@
  * Implements hook_navbar_user_block_item().
  */
 function dsi_color_user_navbar_user_block_item() {
+
+  /** @var \Drupal\Core\Block\BlockManagerInterface $plugin_manager_block */
+  $plugin_manager_block = \Drupal::service('plugin.manager.block');
+  $build['navbar_user'] = [
+    '#theme' => 'navbar_user',
+    '#attributes' => [
+      'class' => [
+        'dropdown navbar-user',
+      ],
+    ],
+    '#content' => [
+      'item' => $plugin_manager_block->createInstance('avatar_block')->build(),
+    ],
+  ];
+  return $build;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_color_user_theme($existing, $type, $theme, $path) {
+  return [
+    'navbar_user' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+    ],
+  ];
+}
+
+function template_preprocess_navbar_user(&$variables) {
   $x = 'a';
 }

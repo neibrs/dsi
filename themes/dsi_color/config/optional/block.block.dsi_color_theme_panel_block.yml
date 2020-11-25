@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_style_plugins
+    - dsi_color_block
+  theme:
+    - dsi_color
+third_party_settings:
+  block_style_plugins:
+    simple_class:
+      simple_class: ''
+    box:
+      box_style: ''
+id: themepanelblock
+theme: dsi_color
+region: extra
+weight: 0
+provider: null
+plugin: theme_panel_block
+settings:
+  id: theme_panel_block
+  label: 'Theme panel block'
+  provider: dsi_color_block
+  label_display: '0'
+visibility: {  }
