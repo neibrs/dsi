@@ -30,11 +30,7 @@ Drupal.behaviors.table_manage_default = {
   attach: function attach(context) {
     $(document).once('document_table_manage_default').ready(function () {
       TableManageDefault.init();
-      // App.init();
-    })
+    });
   }
 };
-// $(document).ready(function() {
-//   App.init();
-// });
 })(jQuery, Drupal);

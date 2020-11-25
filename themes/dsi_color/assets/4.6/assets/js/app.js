@@ -1774,9 +1774,9 @@ var App = function () {
   };
 }();
 
-  Drupal.behaviors.claroAutoCompete = {
+  Drupal.behaviors.color_app = {
     attach: function attach(context) {
-      $(document).once('document').ready(function () {
+      $(document).once('document_color_app').ready(function () {
         App.init();
       })
     }
