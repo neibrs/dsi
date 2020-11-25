@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% if breadcrumb %}
+    <ol class="breadcrumb float-xl-right">
+    {% for item in breadcrumb %}
+      <li{{ create_attribute({'class': 'breadcrumb-item'}) }}>
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ol>
+{% endif %}
