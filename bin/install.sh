@@ -54,6 +54,13 @@ vendor/bin/drush pmu -y \
 #cp modules/dsi/settings.memcache.php sites/default/
 #echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
 
+# drupal console issue: https://github.com/hechoendrupal/drupal-console/issues/4005
+#vendor/bin/drush cr
+
+# Enable varnish_purge
+#vendor/bin/drupal moi -y \
+#  varnish_purger
+
 ## Dsi core modules
 vendor/bin/drush en -y \
   entity_plus \
