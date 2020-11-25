@@ -69,3 +69,8 @@ law86:
   css:
     theme:
       app-assets/ce199dc4.css: { }
+
+login-v2:
+  version: VERSION
+  js:
+    assets/4.6/assets/js/demo/login-v2.demo.js: { }

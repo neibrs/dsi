@@ -5,6 +5,7 @@ Author: Sean Ngu
 Website: http://www.seantheme.com/color-admin/admin/
 */
 
+(function ($, Drupal) {
 var handleLoginPageChangeBackground = function() {
 	$(document).on('click', '[data-click="change-bg"]', function(e) {
 		e.preventDefault();
@@ -13,7 +14,7 @@ var handleLoginPageChangeBackground = function() {
 
 		$(targetImage).css('background-image', targetImageSrc);
 		$('[data-click="change-bg"]').closest('li').removeClass('active');
-		$(this).closest('li').addClass('active');	
+		$(this).closest('li').addClass('active');
 	});
 };
 
@@ -27,6 +28,11 @@ var LoginV2 = function () {
 	};
 }();
 
-$(document).ready(function() {
-	LoginV2.init();
-});
+Drupal.behaviors.table_manage_default = {
+  attach: function attach(context) {
+    $(document).once('document_login_v2').ready(function () {
+      LoginV2.init();
+    });
+  }
+};
+})(jQuery, Drupal);

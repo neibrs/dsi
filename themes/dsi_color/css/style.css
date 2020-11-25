@@ -20,3 +20,7 @@ a.tabledrag-handle .handle {
 .z-index-1360 {
   z-index: 1360 !important;
 }
+
+a {
+  color: #000000;
+}
