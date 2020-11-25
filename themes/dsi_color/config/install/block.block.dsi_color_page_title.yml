@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_style_plugins
+  theme:
+    - dsi_color
+third_party_settings:
+  block_style_plugins:
+    simple_class:
+      simple_class: ''
+    box:
+      box_style: ''
+id: dsi_color_page_title
+theme: dsi_color
+region: breadcrumb
+weight: 10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }
