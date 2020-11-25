@@ -32,13 +32,11 @@ function dsi_color_block_theme($existing, $type, $theme, $path) {
       'variables' => [
         'content' => NULL
       ],
-      'render element' => 'children',
     ],
     'navbar_user_block' => [
       'variables' => [
         'content' => NULL
       ],
-      'render element' => 'children',
     ],
   ];
 }
