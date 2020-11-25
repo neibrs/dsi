@@ -12,6 +12,8 @@ global-styling:
     - core/drupal.progress
     - core/jquery.once
     - dsi_color/color.default
+    - dsi_color/iconfont
+    - dsi_color/law86
 
 color.theme:
   css:
@@ -40,3 +42,15 @@ color.default:
     assets/4.6/assets/js/theme/default.min.js: { }
   dependencies:
     - dsi_color/color.theme
+
+# 案件云图标
+iconfont:
+  version: VERSION
+  css:
+    theme:
+      https://at.alicdn.com/t/font_446676_zvzrfwfis9r.css: { type: external, minified: true }
+law86:
+  version: VERSION
+  css:
+    theme:
+      app-assets/ce199dc4.css: { }
