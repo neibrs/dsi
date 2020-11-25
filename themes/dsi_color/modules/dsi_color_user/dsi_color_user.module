@@ -4,5 +4,20 @@
  * Implements hook_navbar_user_block_item().
  */
 function dsi_color_user_navbar_user_block_item() {
+  $build['navbar_user'] = [
+    '#theme' => 'navbar_user',
+    '#attributes' => [
+      'class' => [
+        'ttttt',
+      ],
+    ],
+    '#content' => [
+      '#markup' => 'xxx',
+    ],
+  ];
+  return $build;
+}
+
+function template_preprocess_navbar_user(array &$variables) {
   $x = 'a';
 }
