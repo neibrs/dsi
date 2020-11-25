@@ -5,17 +5,15 @@ dependencies:
     - block_style_plugins
   theme:
     - dsi_color
-id: dsi_color_tabs
+id: dsi_color_local_actions
 theme: dsi_color
 region: content
-weight: 5
+weight: 1
 provider: null
-plugin: local_tasks_block
+plugin: local_actions_block
 settings:
-  id: local_tasks_block
-  label: Tabs
+  id: local_actions_block
+  label: 'Primary admin actions'
   provider: core
   label_display: '0'
-  primary: true
-  secondary: true
 visibility: {  }

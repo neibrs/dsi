@@ -6,15 +6,15 @@ dependencies:
     - dsi_color_block
   theme:
     - dsi_color
-id: dsi_color_nav_user_block
+id: dsi_color_navbar_profile_block
 theme: dsi_color
-region: header
-weight: 5
+region: sidebar_first
+weight: 1
 provider: null
-plugin: navbar_user_block
+plugin: dsi_navbar_profile_block
 settings:
-  id: navbar_user_block
-  label: 'Navbar user block'
+  id: dsi_navbar_profile_block
+  label: 'Navbar profile block'
   provider: dsi_color_block
   label_display: '0'
 visibility: {  }
