@@ -5,9 +5,10 @@ Author: Sean Ngu
 Website: http://www.seantheme.com/color-admin/admin/
 */
 
+(function ($, Drupal) {
 var handleDataTableDefault = function() {
 	"use strict";
-    
+
 	if ($('#data-table-default').length !== 0) {
 		$('#data-table-default').DataTable({
 			responsive: true
@@ -25,6 +26,15 @@ var TableManageDefault = function () {
 	};
 }();
 
-$(document).ready(function() {
-	TableManageDefault.init();
-});
+Drupal.behaviors.table_manage_default = {
+  attach: function attach(context) {
+    $(document).once('document_table_manage_default').ready(function () {
+      TableManageDefault.init();
+      // App.init();
+    })
+  }
+};
+// $(document).ready(function() {
+//   App.init();
+// });
+})(jQuery, Drupal);
