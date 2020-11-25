@@ -5,6 +5,9 @@
  * SUBTHEME theme file.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Form\ViewsForm;
+
 
 /**
  * Implements hook_preprocess_HOOK() for menu__role_menu.
@@ -16,4 +19,93 @@ function dsi_color_preprocess_menu__role_menu(&$variables) {
     'entity.dsi_record.collection' => 'iconfont icon-rili',
   ];
  _eabax_core_set_menu_items_icon($variables['items'], $icons);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu_local_action.
+ */
+function dsi_color_preprocess_menu_local_action(array &$variables) {
+  $classes = $variables['link']['#options']['attributes']['class'];
+  $classes = array_diff($classes, [
+    'button',
+    'button-action',
+    'button--primary',
+    'button--small',
+  ]);
+  $classes[] = 'btn';
+  $classes[] = 'btn-info';
+  $classes[] = 'btn-sm';
+  $variables['link']['#options']['attributes']['class'] = $classes;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for links__dropbutton__operations.
+ */
+function dsi_color_preprocess_links__dropbutton__operations(&$variables) {
+  $colors = [
+    'edit' => 'text-primary',
+    'delete' => 'text-danger',
+    'terminate' => 'text-purple',
+    'manage-fields' => 'text-aqua',
+    'manage-form-display' => 'text-blue',
+    'manage-display' => 'text-fuchsia',
+    'translate' => 'text-maroon',
+    'export' => 'text-warning',
+    'disable' => 'text-danger',
+    'enable' => 'text-olive',
+  ];
+  foreach ($variables['links'] as $key => $item) {
+    if (isset($colors[$key])) {
+      $variables['links'][$key]['link']['#attributes']['class'][] = $colors[$key];
+    }
+    else {
+      $variables['links'][$key]['link']['#attributes']['class'][] = 'text-muted';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if (isset($form['actions']['delete'])) {
+    $form['actions']['delete']['#attributes']['class'] = [
+      'btn',
+      'btn-danger',
+      'btn-sm',
+    ];
+  }
+  if (isset($form['actions']['cancel'])) {
+    $form['actions']['cancel']['#attributes']['class'] = [
+      'btn',
+      'btn-warning',
+      'btn-sm',
+    ];
+  }
+  if (isset($form['actions']['edit-add-block'])) {
+    $form['actions']['edit-add-block']['#attributes']['class'] = [
+      'btn',
+      'btn-warning',
+      'btn-sm',
+    ];
+  }
+
+  // Make bulk_form inline.
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof ViewsForm) {
+    if (isset($form['header']['bulk_form'])) {
+      $form['header']['bulk_form']['#attributes']['class'] = 'form--inline clearfix';
+    }
+    else {
+      $build_info = $form_state->getBuildInfo();
+      /** @var \Drupal\views\ViewExecutable $view_executable */
+      $view_executable = $build_info['args'][0];
+      $base_table = $view_executable->storage->get('base_table');
+      $base_table = str_replace('_field_data', '', $base_table);
+      if (isset($form['header'][$base_table . '_bulk_form'])) {
+        $form['header'][$base_table . '_bulk_form']['#attributes']['class'] = 'form--inline clearfix';
+      }
+    }
+  }
 }

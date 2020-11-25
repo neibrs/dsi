@@ -62,7 +62,8 @@ vendor/bin/drush en -y \
 
 # Dsi cbos modules
 vendor/bin/drush en -y \
-  dsi_color_block
+  dsi_color_block \
+  dsi_color_user
 
 vendor/bin/drush then dsi_color -y
 vendor/bin/drush cset system.theme default dsi_color -y
