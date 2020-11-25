@@ -5,7 +5,10 @@
  * Contains dsi_color_block.module.
  */
 
+use Drupal\block\Entity\Block;
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_help().
@@ -39,4 +42,24 @@ function dsi_color_block_theme($existing, $type, $theme, $path) {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function dsi_color_block_block_access(Block $block, $operation, AccountInterface $account) {
+  $plugin_id = $block->getPluginId();
+  if (in_array($plugin_id, ['local_actions_block', 'local_tasks_block'])) {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    $hide_on = [
+      'user.login',
+      'user.register',
+      'user.pass',
+    ];
+    // Delete local actions, tabs from user.login... page.
+    if (in_array($route_name, $hide_on)) {
+      return AccessResult::forbidden();
+    }
+  }
+  return AccessResult::neutral();
 }
