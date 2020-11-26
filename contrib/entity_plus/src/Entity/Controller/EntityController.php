@@ -47,7 +47,7 @@ class EntityController extends EntityControllerBase {
     if ($bundle_entity_type_id) {
       $bundle_argument = $bundle_entity_type_id;
       $bundle_entity_type = $this->entityTypeManager->getDefinition($bundle_entity_type_id);
-      $bundle_entity_type_label = $bundle_entity_type->getLowercaseLabel();
+      $bundle_entity_type_label = $bundle_entity_type->getSingularLabel();
       $build['#cache']['tags'] = $bundle_entity_type->getListCacheTags();
 
       // Build the message shown when there are no bundles.
