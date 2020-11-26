@@ -13,7 +13,7 @@ global-styling:
     - core/jquery.once
     - dsi_color/color.default
     - dsi_color/iconfont
-    - dsi_color/law86
+#    - dsi_color/law86
     - dsi_color/color.page.table
 
 color.theme:
@@ -68,7 +68,7 @@ law86:
   version: VERSION
   css:
     theme:
-      app-assets/ce199dc4.css: { }
+      css/ce199dc4.css: { }
 
 login-v2:
   version: VERSION
