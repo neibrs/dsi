@@ -32,6 +32,7 @@ vendor/bin/drush cset -y language.types negotiation.language_interface.enabled.l
 
 ## Install contrib modules
 vendor/bin/drush en -y \
+  block_style_plugins \
   components \
   ludwig \
   views_plus \
