@@ -191,3 +191,15 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
 function dsi_color_preprocess_user_login_form(&$variables) {
   $x = 'a';
 }
+
+function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $x = 'a';
+  // Unset description.
+  foreach($form['account'] as $key => $item ) {
+    $form['account'][$key]['#title_display'] = 'invisible';
+    $form['account'][$key]['#place_holder'] = $form['account'][$key]['#title'];
+    if (isset($form['account'][$key]['#description'])) {
+      unset($form['account'][$key]['#description']);
+    }
+  }
+}
