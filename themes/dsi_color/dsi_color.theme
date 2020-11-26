@@ -196,10 +196,12 @@ function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $for
   $x = 'a';
   // Unset description.
   foreach($form['account'] as $key => $item ) {
-    $form['account'][$key]['#title_display'] = 'invisible';
-    $form['account'][$key]['#place_holder'] = $form['account'][$key]['#title'];
-    if (isset($form['account'][$key]['#description'])) {
-      unset($form['account'][$key]['#description']);
+    if (strpos($key, '#') !== 0) {
+      $form['account'][$key]['#title_display'] = 'invisible';
+      $form['account'][$key]['#placeholder'] = isset($form['account'][$key]['#title']) ? $form['account'][$key]['#title'] : [];
+      if (isset($form['account'][$key]['#description'])) {
+        unset($form['account'][$key]['#description']);
+      }
     }
   }
 }
