@@ -194,6 +194,7 @@ function dsi_color_preprocess_user_login_form(&$variables) {
 
 /**
  * @see dsi_color_form_user_login_form_alter, TODO
+ * TODO, 注册表单，中屏时，排版异常.
  */
 function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Unset description.
