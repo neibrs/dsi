@@ -119,7 +119,7 @@ function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // 修改登录页面输入框样式.
 
-  $form['#prefix'] = '<div class="login-content">';
+  $form['#prefix'] = '<div class="login-content p-0">';
   $form['#suffix'] = '</div>';
 
   $form['#attributes']['class'][] = 'margin-bottom-0';
@@ -175,6 +175,7 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
   if (isset($form['actions']['submit'])) {
       $classes = isset($form['actions']['submit']['#attributes']['class']) ? $form['actions']['submit']['#attributes']['class'] : [];
 
+      // button 移除不成功
       $classes = array_diff($classes, [
         'button',
         'button--primary',
@@ -185,4 +186,8 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
       $classes[] = 'btn-success';
       $form['actions']['submit']['#attributes']['class'] = $classes;
   }
+}
+
+function dsi_color_preprocess_user_login_form(&$variables) {
+  $x = 'a';
 }
