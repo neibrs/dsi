@@ -10,7 +10,7 @@ use Drupal\Core\Link;
 use Drupal\views\Form\ViewsForm;
 
 function dsi_color_preprocess_html(&$variables) {
-  if (\Drupal::routeMatch()->getRouteName() == 'user.login') {
+  if (in_array(\Drupal::routeMatch()->getRouteName(), ['user.login', 'user.register'])) {
     $variables['attributes']['class'][] = 'page-top';
   }
 }
