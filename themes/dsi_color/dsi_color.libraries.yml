@@ -14,7 +14,6 @@ global-styling:
     - dsi_color/color.default
     - dsi_color/iconfont
 #    - dsi_color/law86
-    - dsi_color/color.page.table
 
 color.theme:
   css:

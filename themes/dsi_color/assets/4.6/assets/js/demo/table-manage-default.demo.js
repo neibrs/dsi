@@ -9,8 +9,8 @@ Website: http://www.seantheme.com/color-admin/admin/
 var handleDataTableDefault = function() {
 	"use strict";
 
-	if ($('#data-table-default').length !== 0) {
-		$('#data-table-default').DataTable({
+	if ($(".views-view-table").length !== 0) {
+		$(".views-view-table").DataTable({
 			responsive: true
 		});
 	}
@@ -28,7 +28,7 @@ var TableManageDefault = function () {
 
 Drupal.behaviors.table_manage_default = {
   attach: function attach(context) {
-    $(document).once('document_table_manage_default').ready(function () {
+    $(document).once("document_table_manage_default").ready(function () {
       TableManageDefault.init();
     });
   }

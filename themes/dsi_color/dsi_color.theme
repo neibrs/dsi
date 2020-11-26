@@ -235,3 +235,12 @@ function dsi_color_preprocess_input__password(&$variables) {
   $variables['title_display'] = 'invisible';
   $variables['label_display'] = 'invisible';
 }
+
+function dsi_color_preprocess_views_view_table(&$variables) {
+  $variables['attributes']['class'][] = 'table table-striped table-bordered table-td-valign-middle dataTable no-footer dtr-inline collapsed';
+}
+
+function dsi_color_preprocess_views_view(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $variables['view_label'] = $variables['view']->storage->label();
+}
