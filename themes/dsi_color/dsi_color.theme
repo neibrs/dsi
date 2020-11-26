@@ -193,10 +193,11 @@ function dsi_color_preprocess_user_login_form(&$variables) {
 }
 
 function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $x = 'a';
   // Unset description.
   foreach($form['account'] as $key => $item ) {
     if (strpos($key, '#') !== 0) {
+      unset($form['account'][$key]['#theme_wrappers']);
+      $form['account'][$key]['#attributes']['class'][] = 'form-control';
       $form['account'][$key]['#title_display'] = 'invisible';
       $form['account'][$key]['#placeholder'] = isset($form['account'][$key]['#title']) ? $form['account'][$key]['#title'] : [];
       if (isset($form['account'][$key]['#description'])) {
@@ -204,4 +205,13 @@ function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $for
       }
     }
   }
+}
+
+/**
+ * 找到element_type === password的相关钩子再处理.
+ */
+function dsi_color_preprocess_input__password(&$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+  $variables['title_display'] = 'invisible';
+  $variables['label_display'] = 'invisible';
 }
