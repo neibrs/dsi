@@ -192,6 +192,9 @@ function dsi_color_preprocess_user_login_form(&$variables) {
   $x = 'a';
 }
 
+/**
+ * @see dsi_color_form_user_login_form_alter, TODO
+ */
 function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Unset description.
   foreach($form['account'] as $key => $item ) {
@@ -204,6 +207,22 @@ function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $for
         unset($form['account'][$key]['#description']);
       }
     }
+  }
+
+
+  if (isset($form['actions']['submit'])) {
+    $classes = isset($form['actions']['submit']['#attributes']['class']) ? $form['actions']['submit']['#attributes']['class'] : [];
+
+    // button 移除不成功
+    $classes = array_diff($classes, [
+      'button',
+      'button--primary',
+    ]);
+    $classes[] = 'btn';
+    $classes[] = 'btn-lg';
+    $classes[] = 'btn-block';
+    $classes[] = 'btn-primary';
+    $form['actions']['submit']['#attributes']['class'] = $classes;
   }
 }
 
