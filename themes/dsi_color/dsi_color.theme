@@ -171,4 +171,18 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
       ],
     ],
   ];
+
+  if (isset($form['actions']['submit'])) {
+      $classes = isset($form['actions']['submit']['#attributes']['class']) ? $form['actions']['submit']['#attributes']['class'] : [];
+
+      $classes = array_diff($classes, [
+        'button',
+        'button--primary',
+      ]);
+      $classes[] = 'btn';
+      $classes[] = 'btn-lg';
+      $classes[] = 'btn-block';
+      $classes[] = 'btn-success';
+      $form['actions']['submit']['#attributes']['class'] = $classes;
+  }
 }
