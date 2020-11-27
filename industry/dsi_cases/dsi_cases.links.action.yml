@@ -6,5 +6,7 @@ entity.dsi_cases.add_form:
       class: ['use-ajax']
       data-dialog-type: modal
       data-dialog-options: '{"width":"80%"}'
+    query:
+      destination: '/dsi_cases'
   appears_on:
     - entity.dsi_cases.collection

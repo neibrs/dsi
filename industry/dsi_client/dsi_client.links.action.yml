@@ -8,5 +8,7 @@ entity.dsi_client.add_form:
       class: ['use-ajax']
       data-dialog-type: modal
       data-dialog-options: '{"width":"80%"}'
+    query:
+      destination: '/dsi_client'
   appears_on:
     - entity.dsi_client.collection
