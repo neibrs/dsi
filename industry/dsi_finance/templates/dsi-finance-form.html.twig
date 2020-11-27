@@ -1,15 +1,27 @@
 {#
 /**
- * @file
- * Default theme implementation for a 'form' element.
+ * @file dsi_finance.html.twig
+ * Default theme implementation to present Finance data.
  *
- * Available variables
- * - attributes: A list of HTML attributes for the wrapper element.
- * - children: The child elements of the form.
+ * This template is used when viewing Finance pages.
  *
- * @see template_preprocess_form()
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_dsi_finance()
  *
  * @ingroup themeable
  */
 #}
-{#{{ form }}#}
+{#<input class="form-control form-control-lg col-md-4" type="text" />#}
+
+<h1>覆写</h1>
+<div>
+    {{ form.name }}
+</div>
+<input class="form-control form-control-lg col-md-4" type="text" />
+
+    {{ form }}
+
