@@ -156,17 +156,6 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
         'type' => 'author',
         'weight' => 0,
       ])
-//      ->setDisplayOptions('form', [
-//        'type' => 'entity_reference_autocomplete',
-//        'weight' => 5,
-//        'settings' => [
-//          'match_operator' => 'CONTAINS',
-//          'size' => '60',
-//          'autocomplete_type' => 'tags',
-//          'placeholder' => '',
-//        ],
-//      ])
-//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //费用名称

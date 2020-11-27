@@ -32,6 +32,9 @@ function dsi_finance_theme() {
     'render element' => 'elements',
     'file' => 'dsi_finance.page.inc',
   ];
+  $theme['dsi_finance_form'] = [
+    'render element' => 'form',
+  ];
   $theme['dsi_finance_content_add_list'] = [
     'render element' => 'content',
     'variables' => ['content' => NULL],
@@ -48,6 +51,9 @@ function dsi_finance_theme_suggestions_dsi_finance(array $variables) {
   $entity = $variables['elements']['#dsi_finance'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
 
+  $suggestions[] = 'dsi_finance__' . $sanitized_view_mode;
+  $suggestions[] = 'dsi_finance__' . $entity->bundle();
+  $suggestions[] = 'dsi_finance__' . $entity->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'dsi_finance__' . $entity->id();
   $suggestions[] = 'dsi_finance__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
@@ -69,3 +75,51 @@ function dsi_finance_preprocess_menu__role_menu(&$variables) {
 function dsi_finance_crm_core_individual_label_alter(&$data, &$context1) {
   $data = $context1->field_person_name->value;
 }
+
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+//function dsi_finance_theme_registry_alter(&$theme_registry) {
+//  // Dsi finance path.
+//  $dsi_finance_path = Drupal::service('module_handler')->getModule('dsi_finance')->getPath();
+//  $theme_registry['entity_embed_container']['path'] = $dsi_finance_path. '/templates';//$dsi_finance_path . '/templates';
+//}
+
+///**
+// * Implements hook_preprocess_HOOK().
+// */
+//function dsi_media_preprocess_entity_embed_container(&$variables) {
+//  $variables['url'] = isset($variables['element']['#context']['data-entity-embed-display-settings']['link_url']) ? UrlHelper::filterBadProtocol($variables['element']['#context']['data-entity-embed-display-settings']['link_url']) : '';
+//}
+
+
+/**
+ * Implements hook_theme().
+ */
+//function dsi_finance_theme($existing, $type, $theme, $path) {
+//  return [
+//    'dsi_finance_from' => [
+//      'template' => 'dsi_finance_from',
+//      'base hook' => 'form'
+//    ],
+//  ];
+//}
+
+/**
+ * Implements hook_theme().
+ */
+//function dsi_finance_theme() {
+//  return array(
+//    'dsi_finance_from' => [
+//      'template' => 'dsi_finance_from',
+//      'base hook' => 'form',
+//    ],
+//    'dsi_finance' => [
+//      'template' => 'dsi_finance',
+//      'base hook' => 'form',
+//    ],
+//  );
+//}
+
+

@@ -79,6 +79,11 @@ class FinanceExpenditureForm extends ContentEntityForm
   }
 
 
+  /**
+   * @param $data
+   *
+   * @return array
+   */
   public function changeRelationOptions($data){
     foreach ($data as $key => $val){
       $options = [
@@ -94,14 +99,11 @@ class FinanceExpenditureForm extends ContentEntityForm
      */
     public function save(array $form, FormStateInterface $form_state)
     {
-
-
-        $entity = $this->entity;
-        $isAdd = 0;
+      $entity = $this->entity;
+        $is_add = 0;
         if($entity->isNew()){
-          $isAdd = 1;
+          $is_add = 1;
         }
-        dd(FinanceExpenditure::load(12));
 //      $finance_detail = $this->entityTypeManager->getStorage('dsi_finance_expenditure')->loadByProperties([
 //       'id'=> [1,13,17,10,6]
 //      ]);
@@ -109,7 +111,7 @@ class FinanceExpenditureForm extends ContentEntityForm
       $status = parent::save($form, $form_state);
       $id = $entity->id();
         if ($status) {
-          if ($isAdd) {
+          if ($is_add) {
             $data = [
               'type'=>2,//支出
               'name'=>$entity->get('name')->getValue()[0]['value'],
