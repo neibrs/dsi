@@ -1,0 +1,17 @@
+
+# Alert menu items definition
+entity.alert.collection:
+  title: 'Alert list'
+  route_name: entity.alert.collection
+  description: 'List alerts'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Alert type menu items definition
+entity.alert_type.collection:
+  title: 'Alert type'
+  route_name: entity.alert_type.collection
+  description: 'List Alert type (bundles)'
+  parent: system.admin_structure
+  weight: 99

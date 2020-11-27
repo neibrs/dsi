@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - alert
+id: alert.compact
+label: Compact
+targetEntityType: alert
+cache: true

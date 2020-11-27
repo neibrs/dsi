@@ -1,0 +1,187 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/eabax/cbos/alert/alert.module: n/a
+#  modules/eabax/cbos/alert/alert.info.yml: n/a
+#  modules/eabax/cbos/alert/src/Entity/Alert.php: n/a
+#  modules/eabax/cbos/alert/alert.links.action.yml: n/a
+#  modules/eabax/cbos/alert/alert.links.menu.yml: n/a
+#  modules/eabax/cbos/alert/src/AlertTypeListBuilder.php: n/a
+#  modules/eabax/cbos/alert/src/Entity/AlertType.php: n/a
+#  modules/eabax/cbos/alert/alert.links.task.yml: n/a
+#  modules/eabax/cbos/alert/alert.permissions.yml: n/a
+#  modules/eabax/cbos/alert/alert.routing.yml: n/a
+#  modules/eabax/cbos/alert/config/schema/alert_type.schema.yml: n/a
+#  modules/eabax/cbos/alert/src/Form/AlertTypeForm.php: n/a
+#  modules/eabax/cbos/alert/src/AlertListBuilder.php: n/a
+#  modules/eabax/cbos/alert/src/Form/AlertForm.php: n/a
+#  modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php: n/a
+#  modules/eabax/cbos/alert/config/install/core.entity_view_mode.alert.compact.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-11-16 17:06+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/eabax/cbos/alert/alert.module:18
+msgid "About"
+msgstr "关于"
+
+#: modules/eabax/cbos/alert/alert.info.yml:0 modules/eabax/cbos/alert/src/Entity/Alert.php:12
+msgid "Alert"
+msgstr "预警"
+
+#: modules/eabax/cbos/alert/alert.info.yml:0;0
+msgid "Eabax cbos"
+msgstr "eAbax 公共对象"
+
+#: modules/eabax/cbos/alert/alert.links.action.yml:0
+msgid "Add Alert"
+msgstr "添加预警"
+
+#: modules/eabax/cbos/alert/alert.links.action.yml:0
+msgid "Add Alert type"
+msgstr "添加预警类型"
+
+#: modules/eabax/cbos/alert/alert.links.menu.yml:0
+msgid "Alert list"
+msgstr "预警列表"
+
+#: modules/eabax/cbos/alert/alert.links.menu.yml:0 modules/eabax/cbos/alert/src/AlertTypeListBuilder.php:17 modules/eabax/cbos/alert/src/Entity/Alert.php:12 modules/eabax/cbos/alert/src/Entity/AlertType.php:8
+msgid "Alert type"
+msgstr "预警类型"
+
+#: modules/eabax/cbos/alert/alert.links.menu.yml:0
+msgid "List alerts"
+msgstr "预警列表"
+
+#: modules/eabax/cbos/alert/alert.links.menu.yml:0
+msgid "List Alert type (bundles)"
+msgstr "预警类型列表"
+
+#: modules/eabax/cbos/alert/alert.links.task.yml:0
+msgid "View"
+msgstr "查看"
+
+#: modules/eabax/cbos/alert/alert.links.task.yml:0
+msgid "Edit"
+msgstr "编辑"
+
+#: modules/eabax/cbos/alert/alert.links.task.yml:0
+msgid "Delete"
+msgstr "删除"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "Create new alerts"
+msgstr "创建预警"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "Administer alerts"
+msgstr "管理预警"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "Allow to access the administration form to configure alerts."
+msgstr "允许访问预警配置表单。"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "Delete alerts"
+msgstr "删除预警"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "Edit alerts"
+msgstr "编辑预警"
+
+#: modules/eabax/cbos/alert/alert.permissions.yml:0
+msgid "View alerts"
+msgstr "查看预警"
+
+#: modules/eabax/cbos/alert/alert.routing.yml:0
+msgid "Alert settings"
+msgstr "预警设置"
+
+#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0
+msgid "Alert type config"
+msgstr "预警类型配置"
+
+#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0 modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:46
+msgid "Color"
+msgstr "颜色"
+
+#: modules/eabax/cbos/alert/src/AlertListBuilder.php:20
+msgid "Alert ID"
+msgstr "预警序号"
+
+#: modules/eabax/cbos/alert/src/Entity/Alert.php:158
+msgid "The user ID of author of the Alert entity."
+msgstr "预警的创建者ID"
+
+#: modules/eabax/cbos/alert/src/Entity/Alert.php:167
+msgid "Message text"
+msgstr "内容"
+
+#: modules/eabax/cbos/alert/src/Entity/Alert.php:188
+msgid "The time that the entity was created."
+msgstr "预警的创建时间。"
+
+#: modules/eabax/cbos/alert/src/Entity/Alert.php:192
+msgid "The time that the entity was last edited."
+msgstr "预警的最近一次变更时间。"
+
+#: modules/eabax/cbos/alert/src/Entity/Alert.php:12
+msgid "Alerts"
+msgstr "预警"
+
+#: modules/eabax/cbos/alert/src/Entity/AlertType.php:8
+msgid "Alert types"
+msgstr "预警类型"
+
+#: modules/eabax/cbos/alert/src/Form/AlertForm.php:37
+msgid "Created the %label Alert."
+msgstr "已创建预警 %label 。"
+
+#: modules/eabax/cbos/alert/src/Form/AlertForm.php:43
+msgid "Saved the %label Alert."
+msgstr "已保存预警%label."
+
+#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:22
+msgid "Label"
+msgstr "名称"
+
+#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:25
+msgid "Label for the Alert type."
+msgstr "预警类型名称"
+
+#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:62
+msgid "Created the %label Alert type."
+msgstr "已创建预警类型 %label 。"
+
+#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:68
+msgid "Saved the %label Alert type."
+msgstr "已保存预警类型 %label 。"
+
+#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:88
+msgid "You have %num notifications"
+msgstr "您有%num个未读信息"
+
+#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:89
+msgid "No notifications."
+msgstr "暂无信息."
+
+#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:14
+msgid "Alert icon block"
+msgstr "预警信息图标区块"
+
+#: modules/eabax/cbos/alert/config/install/core.entity_view_mode.alert.compact.yml:0
+msgid "Compact"
+msgstr "复合"
+
