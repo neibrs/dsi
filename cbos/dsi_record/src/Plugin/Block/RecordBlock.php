@@ -2,7 +2,6 @@
 
 namespace Drupal\dsi_record\Plugin\Block;
 
-use Composer\Installers\RadPHPInstaller;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -29,7 +28,7 @@ class RecordBlock extends BlockBase {
     $query_expired = $query->condition('state', FALSE);
     $expired_ids = $query_expired->execute();
 
-    $rows = array_map(function($item) {
+    $rows = array_map(function ($item) {
       $label = '';
       if ($item->get('entity_type')->value) {
         $entity_type = \Drupal::entityTypeManager()->getStorage($item->get('entity_type')->value)->getEntityType();
@@ -45,8 +44,8 @@ class RecordBlock extends BlockBase {
     ];
     // 2. 即将过期事件
     // 3. 本周未完成事件
-//    $query_week = $query->condition('state', FALSE)
-//      ->condition('start', \DateTime::createFromFormat())
+    //    $query_week = $query->condition('state', FALSE)
+    //      ->condition('start', \DateTime::createFromFormat())
     $build['#content']['expired_data'] = $data['expired'];
 
     return $build;

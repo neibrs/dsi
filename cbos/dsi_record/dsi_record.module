@@ -5,11 +5,12 @@
  * Contains dsi_record.module.
  */
 
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\dsi_client\Entity\ClientType;
 
 /**
  * Implements hook_help().
@@ -34,27 +35,26 @@ function dsi_record_theme() {
   return [
     'dsi_record_block' => [
       'variables' => [
-        'content' => NULL
+        'content' => NULL,
       ],
       'render element' => 'children',
     ],
   ];
 }
 
-
 /**
  * Implements hook_entity_operation().
  */
-function dsi_record_entity_operation(\Drupal\Core\Entity\EntityInterface $entity) {
+function dsi_record_entity_operation(EntityInterface $entity) {
   $operations = [];
   switch ($entity->getEntityTypeId()) {
     case 'dsi_client':
     case 'dsi_cases':
       $operations['record'] = [
         'title' => t('Add Record', [], ['context' => 'Add todo']),
-        'url' => \Drupal\Core\Url::fromRoute('entity.dsi_record.add_todo',[
+        'url' => Url::fromRoute('entity.dsi_record.add_todo', [
             'entity_type' => $entity->getEntityTypeId(),
-            'entity_id' => $entity->id()
+            'entity_id' => $entity->id(),
           ], [
             'attributes' => [
               'class' => [
@@ -96,4 +96,3 @@ function dsi_record_entity_base_field_info(EntityTypeInterface $entity_type) {
 
   return $fields;
 }
-
