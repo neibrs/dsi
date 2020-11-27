@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Contains alert.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function alert_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the alert module.
+    case 'help.page.alert':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function alert_theme() {
+  $theme = [];
+  $theme['alert'] = [
+    'render element' => 'elements',
+    'file' => 'alert.page.inc',
+    'template' => 'alert',
+  ];
+  $theme['alert_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'alert.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function alert_theme_suggestions_alert(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#alert'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'alert__' . $sanitized_view_mode;
+  $suggestions[] = 'alert__' . $entity->bundle();
+  $suggestions[] = 'alert__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'alert__' . $entity->id();
+  $suggestions[] = 'alert__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

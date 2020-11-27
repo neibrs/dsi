@@ -12,7 +12,7 @@
         let $td_count = $tr.children().length;
 
         let url = Drupal.url('ajax/dsi_record/'+ $entity_type + '/' + $entity_id + '/list');
-        let $search_key = $(context).find('tr[entity-id-child="$entity_id"]');
+        let $search_key = $(context).find('tr[entity-id-child='+ $entity_id +']');
         if ($search_key.length) {
           $search_key.remove();
         }
@@ -22,6 +22,7 @@
             success: function(data){
               let content = '<tr entity-type='+ $entity_type + ' entity-id-child='+ $entity_id + '><td colspan='+ $td_count + '>' + data + '</td></tr>';
               $tr.after(content);
+              Drupal.attachBehaviors($('.record-ajax-tr').parent().parent(), settings);
             }
           });
         }
