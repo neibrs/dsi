@@ -22,4 +22,7 @@ class RecordController extends ControllerBase {
     return $build;
   }
 
+  public function ajaxRecords() {
+    return $this->getRecords();
+  }
 }
