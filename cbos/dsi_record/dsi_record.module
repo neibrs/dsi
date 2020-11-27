@@ -55,7 +55,8 @@ function dsi_record_entity_operation(EntityInterface $entity) {
         'url' => Url::fromRoute('entity.dsi_record.add_todo', [
             'entity_type' => $entity->getEntityTypeId(),
             'entity_id' => $entity->id(),
-          ], [
+          ],
+          [
             'attributes' => [
               'class' => [
                 'use-ajax',
@@ -63,8 +64,9 @@ function dsi_record_entity_operation(EntityInterface $entity) {
               'data-dialog-type' => 'modal',
               'data-dialog-options' => '{"width": "80%"}',
             ],
-          'query' => \Drupal::destination()->getAsArray(),
-          ]),
+            'query' => \Drupal::destination()->getAsArray(),
+          ]
+        ),
         'weight' => 0,
       ];
       break;
