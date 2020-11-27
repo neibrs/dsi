@@ -1,0 +1,16 @@
+add alerts:
+  title: 'Create new alerts'
+
+administer alerts:
+  title: 'Administer alerts'
+  description: 'Allow to access the administration form to configure alerts.'
+  restrict access: true
+
+delete alerts:
+  title: 'Delete alerts'
+
+edit alerts:
+  title: 'Edit alerts'
+
+view alerts:
+  title: 'View alerts'
