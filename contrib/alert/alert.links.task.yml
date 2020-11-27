@@ -1,0 +1,11 @@
+# Alert routing definition
+
+entity.alert.canonical:
+  route_name: entity.alert.canonical
+  base_route: entity.alert.canonical
+  title: 'Detail'
+
+entity.alert.edit_form:
+  route_name: entity.alert.edit_form
+  base_route: entity.alert.canonical
+  title: 'Edit'
