@@ -13,3 +13,11 @@ entity.dsi_record.add_todo:
     _entity_form: 'dsi_record.add'
   requirements:
     _entity_create_access: 'dsi_record'
+
+ajax.dsi_record.list:
+  path: 'ajax/dsi_record/{entity_type}/{entity_id}/list'
+  defaults:
+    _title: 'Record list'
+    _controller: '\Drupal\dsi_record\Controller\RecordController::ajaxRecords'
+  requirements:
+    _permission: 'view record entities'
