@@ -52,7 +52,6 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
   public function build() {
     $build = [];
     $build['#theme'] = 'record_by_entity_block';
-    $build['record_by_entity_block']['#markup'] = 'Implement RecordByEntityBlock.';
     if (empty($this->configuration['entity_id']) || empty($this->configuration['entity_type'])) {
       return $build;
     }
