@@ -31,16 +31,15 @@ class RecordController extends ControllerBase {
 //      'entity_id' => $entity_id
 //    ])->build();
     $section = new Section('layout_twocol_section', [
-      'column_widths' => '25-75',
-    ], [
-      'record' => new SectionComponent('record', 'first', [
-        'id' => 'record_by_entity_block',
-        'label' => 'Record entity block',
-        'label_display' => FALSE,
-      ]),
+      'column_widths' => '50-50',
     ]);
-
     $build = $section->toRenderArray();
+    $build['second']['record'] = \Drupal::service('plugin.manager.block')->createInstance('record_by_entity_block',[
+      'entity_type' => $entity_type,
+      'entity_id' => $entity_id
+    ])->build();
+
+
     return $build;
   }
 

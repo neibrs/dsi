@@ -53,6 +53,9 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     $build = [];
     $build['#theme'] = 'record_by_entity_block';
     $build['record_by_entity_block']['#markup'] = 'Implement RecordByEntityBlock.';
+    if (empty($this->configuration['entity_id']) || empty($this->configuration['entity_type'])) {
+      return $build;
+    }
 
     $query = $this->recordStorage->getQuery();
     $ids = $query
@@ -65,10 +68,7 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     foreach ($entities as $key => $entity) {
       $data[$key] = [
         'name' => $entity->label(),
-        'detail' => $entity->get('detail')->value,
-        'start' => $entity->get('start')->value,
-        'end' => $entity->get('end')->value,
-        'reminder' => $entity->get('reminder')->value,
+        // 'detail' => $entity->get('detail')->value,
       ];
     }
     $build['#content']['data'] = $data;
