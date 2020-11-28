@@ -11,7 +11,7 @@
         let $entity_id = $tr.attr('entity-id');
         let $td_count = $tr.children().length;
 
-        let url = Drupal.url('dsi_record/'+ $entity_type + '/' + $entity_id + '/list');
+        let url = Drupal.url('ajax/dsi_record/'+ $entity_type + '/' + $entity_id + '/list');
         let $search_key = $(context).find('tr[entity-id-child='+ $entity_id +']');
         if ($search_key.length) {
           $search_key.remove();
