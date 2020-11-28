@@ -35,7 +35,11 @@ class RecordController extends ControllerBase {
       'entity_id' => $entity_id
     ])->build();
 
-    \Drupal::moduleHandler()->alter('record_entity_list', $build);
+    $context1 = [
+      'entity_type' => $entity_type,
+      'entity_id' => $entity_id,
+    ];
+    \Drupal::moduleHandler()->alter('record_entity_list', $build, $context1);
 
     return $build;
   }

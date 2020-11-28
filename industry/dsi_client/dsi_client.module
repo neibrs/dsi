@@ -73,6 +73,10 @@ function dsi_client_crm_core_individual_label_alter(&$data, &$context1) {
 /**
  * Implements hook_record_entity_list_alter().
  */
-function dsi_client_record_entity_list_alter(&$build = []) {
-  $build['first']['client_intro'] = \Drupal::service('plugin.manager.block')->createInstance('client_intro_block')->build();
+function dsi_client_record_entity_list_alter(&$build = [], &$context1 = []) {
+  $build['first']['client_intro'] = \Drupal::service('plugin.manager.block')->createInstance('client_intro_block', $context1)->build();
+}
+
+function template_preprocess_client_intro_block(&$variables) {
+  $x = 'a';
 }
