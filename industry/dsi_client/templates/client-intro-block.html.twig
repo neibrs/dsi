@@ -12,7 +12,6 @@
     'clear-both',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-    {% for value in content %}
-        <p>{{value}}</p>
-    {% endfor %}
+  <p>客户简述{{ content.add_link }}</p>
+  <p>{{ content.intro }}</p>
 </div>
