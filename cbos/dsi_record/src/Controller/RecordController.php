@@ -16,13 +16,21 @@ class RecordController extends ControllerBase {
     $build = $section->toRenderArray();
 
     $build['second']['calendar'] = views_embed_view('record_calendar', 'page_1');
-    $build['second']['calendar']['#prefix'] = '<div class="card"><div class=""card-content">';
+    $build['second']['calendar']['#prefix'] = '<div class="card"><div class="card-content">';
     $build['second']['calendar']['#suffix'] = '</div></div>';
 
     return $build;
   }
 
-  public function ajaxRecords() {
-    return $this->getRecords();
+  public function getRecordsByEntity($entity_type, $entity_id) {
+
+    $build['entities'] = \Drupal::service('plugin.manager.block')->createInstance('record_by_entity_block', [
+      'entity_type' => $entity_type,
+      'entity_id' => $entity_id
+    ])->build();
+
+
+    return $build;
   }
+
 }
