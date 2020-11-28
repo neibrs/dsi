@@ -26,10 +26,6 @@ class RecordController extends ControllerBase {
 
   public function getRecordsByEntity($entity_type, $entity_id) {
 
-//    $build['entities'] = \Drupal::service('plugin.manager.block')->createInstance('record_by_entity_block', [
-//      'entity_type' => $entity_type,
-//      'entity_id' => $entity_id
-//    ])->build();
     $section = new Section('layout_twocol_section', [
       'column_widths' => '50-50',
     ]);
@@ -39,6 +35,7 @@ class RecordController extends ControllerBase {
       'entity_id' => $entity_id
     ])->build();
 
+    \Drupal::moduleHandler()->alter('record_entity_list', $build);
 
     return $build;
   }
