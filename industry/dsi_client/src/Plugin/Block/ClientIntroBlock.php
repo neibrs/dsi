@@ -20,7 +20,7 @@ class ClientIntroBlock extends BlockBase {
   public function build() {
     $build = [];
     $build['#theme'] = 'client_intro_block';
-    $build['client_intro_block']['#markup'] = 'Implement ClientIntroBlock.';
+    $build['#content']['#markup'] = 'Implement ClientIntroBlock.';
 
     return $build;
   }
