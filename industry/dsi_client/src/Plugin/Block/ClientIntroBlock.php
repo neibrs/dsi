@@ -34,7 +34,7 @@ class ClientIntroBlock extends BlockBase {
     // add link
     // list
     $client = \Drupal::entityTypeManager()->getStorage($this->configuration['entity_type'])->load($this->configuration['entity_id']);
-    $build['#content']['add_link'] = $client->toLink('简单修改', 'edit-form', ['dsi_client' => $this->configuration['entity_id']])->toRenderable();
+    $build['#content']['add_link'] = $this->configuration['entity_id'];//$client->toLink('简单修改', 'edit-form', ['dsi_client' => $this->configuration['entity_id']])->toString();//->toRenderable();
     $build['#content']['intro'] = $client->get('summary')->value;
 
     return $build;

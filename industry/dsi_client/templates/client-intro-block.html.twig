@@ -12,6 +12,8 @@
     'clear-both',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  <p>客户简述{{ content.add_link }}</p>
-  <p>{{ content.intro }}</p>
+  <p>客户简述<a href="/dsi_client/{{ content.add_link }}/edit" class="use-ajax text-muted" data-dialog-type="modal" data-dialog-options="{"width": "80%"}">Add Record</a></p>
+  <ul>
+    <li> {{ content.intro }}</li>
+  </ul>
 </div>
