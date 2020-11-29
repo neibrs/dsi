@@ -50,9 +50,6 @@ function eabax_core_theme() {
     'tree' => [
       'variables' => ['items' => [], 'attributes' => []],
     ],
-    'dropdown_toggle' => [
-      'variables' => ['items' => [], 'icon_pre' => [], 'icon' => [], 'title' => '', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'more_link' => NULL],
-    ],
     'box' => [
       'variables' => ['title' => NULL, 'icon' => NULL, 'tools' => NULL, 'body' => NULL, 'footer' => NULL, 'attributes' => []],
       'file' => 'eabax_core.page.inc',
