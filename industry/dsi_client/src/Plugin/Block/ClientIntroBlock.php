@@ -39,8 +39,8 @@ class ClientIntroBlock extends BlockBase {
       '#title' => $this->t('Edit'),
       '#url' => Url::fromRoute('entity.dsi_client.edit_form', [
         'dsi_client' => $this->configuration['entity_id'],
-      ],
-        ['query' => \Drupal::destination()->getAsArray()]),
+      ]
+      ),
       '#options' => ['attributes' => [
         'class' => ['use-ajax'],
         'data-dialog-type' => 'modal',
