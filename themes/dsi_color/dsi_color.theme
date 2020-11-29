@@ -248,3 +248,12 @@ function dsi_color_preprocess_views_view(&$variables) {
   /** @var \Drupal\views\ViewExecutable $view */
   $variables['view_label'] = $variables['view']->storage->label();
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for dropdown_toggle.
+ */
+function dsi_color_preprocess_dropdown_toggle(&$variables) {
+  if (!empty($variables['wrapper_attributes'])) {
+    $variables['wrapper_attributes'] = new Attribute($variables['wrapper_attributes']);
+  }
+}
