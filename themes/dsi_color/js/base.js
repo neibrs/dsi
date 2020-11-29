@@ -21,8 +21,10 @@
             url: url,
             success: function(data){
               let rs = $(data).find('#block-dsi-color-content').html();
-              let content = '<tr entity-type='+ $entity_type + ' entity-id-child='+ $entity_id + '><td colspan='+ $td_count + '><div class="layout layout--twocol-section layout--twocol-section--50-50">' + rs + '</div></td></tr>';
+              let content = '<tr entity-type='+ $entity_type + ' entity-id-child='+ $entity_id + '><td colspan='+ $td_count + '>' + rs + '</td></tr>';
               $tr.after(content);
+
+              Drupal.attachBehaviors(data, settings);
             }
           });
         }
