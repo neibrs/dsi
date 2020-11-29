@@ -26,7 +26,6 @@ class RecordController extends ControllerBase {
   }
 
   public function getRecordsByEntity($entity_type, $entity_id) {
-
     $section = new Section('layout_twocol_section', [
       'column_widths' => '50-50',
     ]);
@@ -43,14 +42,5 @@ class RecordController extends ControllerBase {
     \Drupal::moduleHandler()->alter('record_entity_list', $build, $context1);
 
     return $build;
-  }
-
-  public function getJsonRecordsByEntity($entity_type, $entity_id) {
-    
-    $data = [
-      'entity_type' => $entity_type,
-      'entity_id' => $entity_id,
-    ];
-    return JsonResponse::create($data);
   }
 }

@@ -2,10 +2,12 @@
 
 namespace Drupal\dsi_record\Plugin\Block;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -67,18 +69,29 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     foreach ($entities as $key => $entity) {
       $data[$key] = [
         'name' => $entity->label(),
+        'created' => date('Y-m-d H:i', $entity->getCreatedTime()),
         // 'detail' => $entity->get('detail')->value,
       ];
     }
+    $build['#content']['add_link'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Add'),
+      '#url' => Url::fromRoute('entity.dsi_record.add_todo', [
+        'entity_type' => $this->configuration['entity_type'],
+        'entity_id' => $this->configuration['entity_id'],
+      ],
+      ['query' => \Drupal::destination()->getAsArray()]),
+          '#options' => ['attributes' => [
+            'class' => ['use-ajax'],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode([
+            'width' => 800,
+          ]),
+        ]
+      ]
+    ];
     $build['#content']['data'] = $data;
 
     return $build;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
   }
 }
