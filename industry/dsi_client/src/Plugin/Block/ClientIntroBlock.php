@@ -2,7 +2,9 @@
 
 namespace Drupal\dsi_client\Plugin\Block;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Url;
 
 /**
  * Provides a 'ClientIntroBlock' block.
@@ -31,13 +33,23 @@ class ClientIntroBlock extends BlockBase {
     if (empty($this->configuration['entity_type']) || empty($this->configuration['entity_id'])) {
       return $build;
     }
-    // add link
-    // list
     $client = \Drupal::entityTypeManager()->getStorage($this->configuration['entity_type'])->load($this->configuration['entity_id']);
-    $build['#content']['add_link'] = $this->configuration['entity_id'];//$client->toLink('简单修改', 'edit-form', ['dsi_client' => $this->configuration['entity_id']])->toString();//->toRenderable();
+    $build['#content']['edit_link'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Edit'),
+      '#url' => Url::fromRoute('entity.dsi_client.edit_form', [
+        'dsi_client' => $this->configuration['entity_id'],
+      ],
+        ['query' => \Drupal::destination()->getAsArray()]),
+      '#options' => ['attributes' => [
+        'class' => ['use-ajax'],
+        'data-dialog-type' => 'modal',
+        'data-dialog-options' => Json::encode([
+          'width' => 700,
+        ]),
+      ]]];
     $build['#content']['intro'] = $client->get('summary')->value;
 
     return $build;
   }
-
 }

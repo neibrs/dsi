@@ -75,3 +75,10 @@ login-v2:
   version: VERSION
   js:
     assets/4.6/assets/js/demo/login-v2.demo.js: { }
+
+color.page.fullcalendar:
+  version: VERSION
+  css:
+    theme:
+#      assets/4.6/assets/plugins/fullcalendar/dist/fullcalendar.print.css: { }
+      assets/4.6/assets/plugins/fullcalendar/dist/fullcalendar.min.css: { }
