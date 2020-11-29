@@ -79,8 +79,8 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
       '#url' => Url::fromRoute('entity.dsi_record.add_todo', [
         'entity_type' => $this->configuration['entity_type'],
         'entity_id' => $this->configuration['entity_id'],
-      ],
-      ['query' => \Drupal::destination()->getAsArray()]),
+      ]
+      ),
           '#options' => ['attributes' => [
             'class' => ['use-ajax'],
             'data-dialog-type' => 'modal',
