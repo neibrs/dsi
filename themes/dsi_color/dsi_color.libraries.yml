@@ -13,6 +13,7 @@ global-styling:
     - core/jquery.once
     - dsi_color/color.default
     - dsi_color/iconfont
+    - layout_builder/twocol_section
 #    - dsi_color/color.page.table
 #    - dsi_color/law86
 

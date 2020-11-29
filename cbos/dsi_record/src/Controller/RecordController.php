@@ -5,6 +5,7 @@ namespace Drupal\dsi_record\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\layout_builder\Section;
 use Drupal\layout_builder\SectionComponent;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Returns responses for record routes.
@@ -44,4 +45,12 @@ class RecordController extends ControllerBase {
     return $build;
   }
 
+  public function getJsonRecordsByEntity($entity_type, $entity_id) {
+    
+    $data = [
+      'entity_type' => $entity_type,
+      'entity_id' => $entity_id,
+    ];
+    return JsonResponse::create($data);
+  }
 }
