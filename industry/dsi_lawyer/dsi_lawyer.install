@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\user\UserInterface;
+
 /**
  * Implements hook_install().
  */
@@ -15,6 +17,13 @@ function dsi_lawyer_install($is_syncing) {
   $role = $role_storage->load('administrator');
   $role->unsetThirdPartySetting('role_menu', 'menu');
   $role->save();
+  
+  // Set user configuration.
+  $userSettings = \Drupal::configFactory()->getEditable('user.settings');
+  $userSettings->set('register', UserInterface::REGISTER_VISITORS);
+  $userSettings->set('verify_mail', FALSE);
+  $userSettings->save();
+  
 }
 
 /**
