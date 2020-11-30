@@ -4,6 +4,7 @@ namespace Drupal\dsi_record\Plugin\Block;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -94,4 +95,14 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
 
     return $build;
   }
+  
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheTags() {
+    $cache_tags = parent::getCacheTags();
+    
+    return Cache::mergeTags($cache_tags, ['dsi_record_list']);
+  }
+  
 }
