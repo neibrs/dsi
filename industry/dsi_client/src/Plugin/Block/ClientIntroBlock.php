@@ -4,6 +4,7 @@ namespace Drupal\dsi_client\Plugin\Block;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Url;
 
 /**
@@ -51,5 +52,12 @@ class ClientIntroBlock extends BlockBase {
     $build['#content']['intro'] = $client->get('summary')->value;
 
     return $build;
+  }
+  
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheTags() {
+    return Cache::mergeTags(parent::getCacheTags(), ['dsi_client_list']);
   }
 }

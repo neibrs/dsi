@@ -60,17 +60,19 @@ class AlertIconBlock extends BlockBase implements ContainerFactoryPluginInterfac
 
     $items = [];
     foreach ($entities as $entity) {
+      $bundle = $entity->bundle();
+      $definitions = \Drupal::entityTypeManager()->getDefinitions();
       $item = [
-        'icon' => [
-          '#markup' => '<span class="color-square" data-fill-color="' . $entity->get('type')->entity->getColor() . '"></span>',
-          '#attached' => ['library' => ['color_icon/color_icon']],
-        ],
-        'link' => Link::createFromRoute($entity->label(), 'entity.alert.canonical', ['alert' => $entity->id()])->toRenderable(),
+        'title' => $entity->label(),
+        'created' => date('Y-m-d H:i:s', $entity->getCreatedTime()),
       ];
+      if (in_array($bundle, array_keys($definitions))) {
+        $item['type'] = $this->entityTypeManager->getStorage($bundle)->getEntityType()->getLabel();
+      }
       $items[] = $item;
     }
     $menu = [
-      '#theme' => 'item_list',
+      '#theme' => 'item_list_a',
       '#items' => $items,
     ];
 

@@ -59,6 +59,9 @@ function _dsi_icons_set_menu_items_icon(&$items, $icons) {
  */
 function dsi_icons_theme($existing, $type, $theme, $path) {
   return [
+    'item_list_a' => [
+      'variables' => ['items' => [], 'title' => '', 'list_type' => 'ul', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'context' => []],
+    ],
     'dropdown_toggle' => [
       'variables' => ['items' => [], 'icon_pre' => [], 'icon' => [], 'title' => '', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'more_link' => NULL],
     ],
@@ -73,4 +76,8 @@ function dsi_icons_preprocess_dropdown_toggle(&$variables) {
   if (!empty($variables['wrapper_attributes'])) {
     $variables['wrapper_attributes'] = new \Drupal\Core\Template\Attribute($variables['wrapper_attributes']);
   }
+}
+
+function template_preprocess_item_list_a(&$variables) {
+  template_preprocess_item_list($variables);
 }

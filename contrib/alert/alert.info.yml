@@ -8,4 +8,5 @@ interface translation server pattern: modules/dsi/contrib/%project/translations/
 package: 'Dsi contrib'
 dependencies:
   - color_icon
+  - entity_plus
   - views
