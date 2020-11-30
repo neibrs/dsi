@@ -38,6 +38,12 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *     "edit-form" = "/alert/type/{alert_type}/edit",
  *     "delete-form" = "/alert/type/{alert_type}/delete",
  *     "collection" = "/alert/type",
+ *   },
+ *   config_export = {
+ *     "id",
+ *     "label",
+ *     "description",
+ *     "color",
  *   }
  * )
  */

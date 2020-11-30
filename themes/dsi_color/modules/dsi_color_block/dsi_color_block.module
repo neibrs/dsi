@@ -63,3 +63,4 @@ function dsi_color_block_block_access(Block $block, $operation, AccountInterface
   }
   return AccessResult::neutral();
 }
+

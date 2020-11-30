@@ -24,9 +24,9 @@ function dsi_color_alert_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_navbar_user_block_item_alter().
+ * Implements hook_navbar_user_block_item().
  */
-function dsi_color_alert_navbar_user_block_item_alter(&$build, &$configuration) {
-  $build['#content'] = \Drupal::service('plugin.manager.block')->createInstance('alert_icon_block')->build();
+function dsi_color_alert_navbar_user_block_item() {
+  $build = \Drupal::service('plugin.manager.block')->createInstance('alert_icon_block')->build();
+  return $build;
 }
-

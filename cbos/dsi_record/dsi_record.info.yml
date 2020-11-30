@@ -9,4 +9,5 @@ interface translation server pattern: modules/dsi/cbos/%project/translations/%pr
 dependencies:
   - drupal:datetime_range
   - drupal:text
+  - alert
   - fullcalendar_view
