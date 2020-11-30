@@ -2,6 +2,8 @@
 
 namespace Drupal\dsi_record\Entity;
 
+use Drupal\alert\Entity\Alert;
+use Drupal\alert\Entity\AlertType;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
@@ -356,9 +358,32 @@ class Record extends ContentEntityBase implements RecordInterface {
     $entity_id = $this->get('entity_id')->value;
     if (!empty($entity_type_id) && !empty($entity_id)) {
       /** @var \Drupal\Core\Entity\EntityInterface $target_entity */
-      $target_entity = $this->entityTypeManager()->getStorage($entity_type_id)->load($entity_id);
+      $target_entity_type = $this->entityTypeManager()->getStorage($entity_type_id);
+      $target_entity = $target_entity_type->load($entity_id);
       $target_entity->get('record')->appendItem($this);
       $target_entity->save();
+    }
+    else {
+      return;
+    }
+    
+    // Add alert
+    if ($this->isNew()) {
+      $alert_type = $this->entityTypeManager()->getStorage('alert_type')->load($entity_type_id);
+      if (empty($alert_type)) {
+        // Add alert type.
+        $alert_type = AlertType::create([
+          'id' => $entity_type_id,
+          'name' => $target_entity_type->getEntityType()->getLabel(),
+        ]);
+        $alert_type->save();
+      }
+      // 创建alert数据.
+      $alert = Alert::create([
+        'name' => $this->label(),
+        'type' => $entity_type_id,
+      ]);
+      $alert->save();
     }
   }
 
