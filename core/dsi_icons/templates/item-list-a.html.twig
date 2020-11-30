@@ -31,11 +31,18 @@
       <a href="javascript:;" class="dropdown-item media">
         <div class="media-left">
           <i class="fa fa-bug media-object bg-silver-darker"></i>
+{#          <i class="{{ item.attributes }}"></i>#}
         </div>
         <div class="media-body">
-          <h6 class="media-heading">John Smith</h6>
-          <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
-          <div class="text-muted f-s-10">25 minutes ago</div>
+          <h6 class="media-heading">
+            {%if item.value.type %}
+              {{ item.value.type }}
+            {% endif %}
+            {{ item.value.title }}</h6>
+          {% if item.value.description %}
+            <p>{{ item.value.description }}</p>
+          {% endif %}
+          <div class="text-muted f-s-10">{{ item.value.created }}</div>
         </div>
       </a>
     {%- endfor -%}

@@ -28,3 +28,6 @@ a {
 .fc-header-toolbar {
   display: inherit;
 }
+.dropdown-menu {
+  min-width: 300px;
+}
