@@ -71,6 +71,7 @@ vendor/bin/drush en -y \
 
 # Dsi cbos modules
 vendor/bin/drush en -y \
+  dsi_color_alert \
   dsi_color_block \
   dsi_color_user
 
