@@ -10,9 +10,11 @@ function dsi_lawyer_install($is_syncing) {
   $role = $role_storage->load('authenticated');
   $role->unsetThirdPartySetting('role_menu', 'menu');
   $role->setThirdPartySetting('role_menu', 'menu', 'lawyer');
+  $role->save();
 
   $role = $role_storage->load('administrator');
   $role->unsetThirdPartySetting('role_menu', 'menu');
+  $role->save();
 }
 
 /**
