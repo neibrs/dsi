@@ -20,9 +20,11 @@
           $.get({
             url: url,
             success: function(data){
-              let content = '<tr entity-type='+ $entity_type + ' entity-id-child='+ $entity_id + '><td colspan='+ $td_count + '>' + data + '</td></tr>';
+              let rs = $(data).find('#block-dsi-color-content').html();
+              let content = '<tr entity-type='+ $entity_type + ' entity-id-child='+ $entity_id + '><td colspan='+ $td_count + '>' + rs + '</td></tr>';
               $tr.after(content);
-              Drupal.attachBehaviors($('.record-ajax-tr').parent().parent(), settings);
+
+              Drupal.attachBehaviors(data, settings);
             }
           });
         }

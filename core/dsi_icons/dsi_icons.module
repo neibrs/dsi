@@ -53,3 +53,24 @@ function _dsi_icons_set_menu_items_icon(&$items, $icons) {
     }
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_icons_theme($existing, $type, $theme, $path) {
+  return [
+    'dropdown_toggle' => [
+      'variables' => ['items' => [], 'icon_pre' => [], 'icon' => [], 'title' => '', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'more_link' => NULL],
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for dropdown_toggle.
+ */
+function dsi_icons_preprocess_dropdown_toggle(&$variables) {
+  if (!empty($variables['wrapper_attributes'])) {
+    $variables['wrapper_attributes'] = new \Drupal\Core\Template\Attribute($variables['wrapper_attributes']);
+  }
+}

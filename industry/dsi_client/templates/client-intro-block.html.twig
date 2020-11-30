@@ -1,0 +1,19 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+    'clear-both',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <h5><b>客户简述</b>{{ content.edit_link }}</h5>
+  <ul>
+    <li> {{ content.intro }}</li>
+  </ul>
+</div>

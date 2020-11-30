@@ -1,0 +1,23 @@
+{%- set wrapper_attributes = wrapper_attributes.addClass('dropdown') -%}
+{#<li {{ wrapper_attributes }}>#}
+  <a href="#" class="dropdown-toggle f-s-14" data-toggle="dropdown">
+    <i class="{{ icon_pre }}"></i>
+    {{ icon }}
+  </a>
+  <div class="dropdown-menu media-list dropdown-menu-right">
+    <div class="dropdown-header">{{ title }}</li>
+    <a href="javascript:;" class="dropdown-item media">
+      <!-- inner menu: contains the actual data -->
+      <div class="media-body">
+        {%- if items -%}
+          {{ items }}
+        {%- else -%}
+          {{- empty -}}
+        {%- endif -%}
+      </div>
+    </a>
+    <div class="dropdown-footer text-center">
+      <a href="{{ more_link }}">{{ 'View all'|t }}</a>
+    </div>
+  </div>
+{#</li>#}
