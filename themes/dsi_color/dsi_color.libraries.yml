@@ -13,6 +13,7 @@ global-styling:
     - core/jquery.once
     - dsi_color/color.default
     - dsi_color/iconfont
+    - layout_builder/twocol_section
 #    - dsi_color/color.page.table
 #    - dsi_color/law86
 
@@ -74,3 +75,10 @@ login-v2:
   version: VERSION
   js:
     assets/4.6/assets/js/demo/login-v2.demo.js: { }
+
+color.page.fullcalendar:
+  version: VERSION
+  css:
+    theme:
+#      assets/4.6/assets/plugins/fullcalendar/dist/fullcalendar.print.css: { }
+      assets/4.6/assets/plugins/fullcalendar/dist/fullcalendar.min.css: { }

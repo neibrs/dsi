@@ -74,14 +74,14 @@ class AlertIconBlock extends BlockBase implements ContainerFactoryPluginInterfac
       '#items' => $items,
     ];
 
-    $count = count($ids) ? '<span class="label label-danger">' . count($ids) . '</span>' : '';
+    $count = count($ids) ? '<span class="label">' . count($ids) . '</span>' : '';
     $build['icon_toggle'] = [
       '#theme' => 'dropdown_toggle',
       '#wrapper_attributes' => [
         'class' => ["notifications-menu"],
       ],
       '#attributes' => [],
-      '#icon_pre' => ['#markup' => 'fa fa-bell-o'],
+      '#icon_pre' => ['#markup' => 'fa fa-bell'],
       '#icon' => ['#markup' => $count],
       '#items' => $menu,
       '#title' => $this->t('You have %num notifications', ['%num' => count($ids)]),

@@ -39,6 +39,12 @@ function dsi_record_theme() {
       ],
       'render element' => 'children',
     ],
+    'record_by_entity_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
   ];
 }
 
@@ -97,4 +103,8 @@ function dsi_record_entity_base_field_info(EntityTypeInterface $entity_type) {
   }
 
   return $fields;
+}
+
+function template_preprocess_record_by_entity_block(&$variables) {
+  $x = 'a';
 }

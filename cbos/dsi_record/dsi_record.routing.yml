@@ -18,6 +18,6 @@ ajax.dsi_record.list:
   path: 'ajax/dsi_record/{entity_type}/{entity_id}/list'
   defaults:
     _title: 'Record list'
-    _controller: '\Drupal\dsi_record\Controller\RecordController::ajaxRecords'
+    _controller: '\Drupal\dsi_record\Controller\RecordController::getRecordsByEntity'
   requirements:
     _permission: 'view record entities'
