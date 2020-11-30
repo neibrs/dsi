@@ -70,7 +70,7 @@ class AlertIconBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $items[] = $item;
     }
     $menu = [
-      '#theme' => 'item_list',
+      '#theme' => 'item_list_a',
       '#items' => $items,
     ];
 

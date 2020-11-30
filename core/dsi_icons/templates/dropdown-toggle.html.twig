@@ -31,20 +31,6 @@
 		<div class="dropdown-header">{{ title }}</div>
 		{%- if items -%}
 			{{ items }}
-			<a href="javascript:;" class="dropdown-item media">
-				<div class="media-left">
-					<i class="fa fa-bug media-object bg-silver-darker"></i>
-				</div>
-				<div class="media-body">
-					<h6 class="media-heading">John Smith</h6>
-					<p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
-					<div class="text-muted f-s-10">25 minutes ago</div>
-				</div>
-			</a>
-		{%- else -%}
-			<div class="text-center width-300 p-b-10 p-t-10">
-				{{- empty -}}
-			</div>
 		{%- endif -%}
 		<div class="dropdown-footer text-center">
 			<a href="{{ more_link }}">{{ 'View more'|t }}</a>
