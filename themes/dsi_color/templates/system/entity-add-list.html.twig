@@ -16,7 +16,6 @@
 #}
 {% if bundles is not empty %}
   <div class="vertical-box">
-    <!-- begin event-list -->
     <div class="vertical-box-column p-r-30 d-table-cell">
       <div id="external-events" class="fc-event-list">
         {% for bundle in bundles %}
@@ -27,15 +26,7 @@
         {% endfor %}
       </div>
     </div>
-    <!-- end event-list -->
   </div>
-
-
-  {#<ul class="admin-list">#}
-    {#{% for bundle in bundles %}#}
-      {#<li class="clearfix"><a href="{{ bundle.add_link.url }}"><span class="label">{{ bundle.label }}</span><div class="description">{{ bundle.description }}</div></a></li>#}
-    {#{% endfor %}#}
-  {#</ul>#}
 {% elseif add_bundle_message is not empty %}
   <p>
     {{ add_bundle_message }}
