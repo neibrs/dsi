@@ -24,3 +24,7 @@ a.tabledrag-handle .handle {
 a {
   color: #000000;
 }
+
+.fc-header-toolbar {
+  display: inherit;
+}
