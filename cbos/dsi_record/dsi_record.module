@@ -41,7 +41,7 @@ function dsi_record_theme() {
     ],
     'record_by_entity_block' => [
       'variables' => [
-        'content' => NULL
+        'content' => NULL,
       ],
       'render element' => 'children',
     ],
