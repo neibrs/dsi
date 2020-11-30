@@ -5,3 +5,23 @@ table tr {
 table {
   margin-bottom: 0;
 }
+
+.js-drupal-fullcalendar .fc-button-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.js-drupal-fullcalendar .fc-button-group .fc-button-primary {
+  border-left-color: #1c75c7;
+}
+.js-drupal-fullcalendar .fc-button-group .fc-button-active {
+  color: #fff;
+  background-color: #1c75c7;
+  border-color: #1c75c7;
+}
+.fc-button-group {
+  /*background-color: red;*/
+}
+.fc .fc-toolbar.fc-header-toolbar .fc-button-group .fc-button {
+  background-color: inherit;
+}
