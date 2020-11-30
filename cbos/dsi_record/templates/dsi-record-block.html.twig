@@ -9,7 +9,7 @@
 */
 #}
 {% set classes = [
-  'clear-both',
+    'clear-both',
 ] %}
 {#<div{{ attributes.addClass(classes) }}>#}
 {#  <div class="card">#}
@@ -39,59 +39,84 @@
 <div class="vertical-box-column p-r-30 d-none d-lg-table-cell" style="width: 400px">
     <div id="external-events" class="fc-event-list">
 
-        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">已过期({{ content.expired_data.count }})</font></font></h5>
+        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">已过期({{ content.expired_data.count }})</font></font></h5>
         {% for value in content.expired_data.data %}
 
-        <div class="fc-event" data-color="#00acac">
-            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-            {{value}}
-                </font></font></div>
+            <div class="fc-event" data-color="#00acac">
+                <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
+                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                        {{ value }}
+                    </font></font></div>
         {% endfor %}
 
 
-{#        <div class="fc-event" data-color="#348fe2">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-blue"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    iOS App开发#}
-{#                </font></font></div>#}
-{#        <div class="fc-event" data-color="#f59c1a">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-warning"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    小组讨论#}
-{#                </font></font></div>#}
-{#        <div class="fc-event" data-color="#ff5b57">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-danger"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    新系统简报#}
-{#                </font></font></div>#}
-{#        <div class="fc-event">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-inverse"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    集思广益#}
-{#                </font></font></div>#}
-{#        #}
+        {#        <div class="fc-event" data-color="#348fe2">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-blue"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    iOS App开发#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#f59c1a">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-warning"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    小组讨论#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#ff5b57">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-danger"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    新系统简报#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-inverse"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    集思广益#}
+        {#                </font></font></div>#}
+        {#        #}
 
         <hr class="bg-grey-lighter m-b-15">
-        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本周({{ content.expired_data.count }})</font></font></h5>
+        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">本周({{ content.expired_data.count }})</font></font></h5>
         {% for value in content.expired_data.data %}
 
-        <div class="fc-event" data-color="#b6c2c9">
-            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-blue"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-            {{value}}
-                </font></font></div>
+            <div class="fc-event" data-color="#b6c2c9">
+                <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-blue"></i></div>
+                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                        {{ value }}
+                    </font></font></div>
         {% endfor %}
 
-{#        <div class="fc-event" data-color="#b6c2c9">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    其他活动2#}
-{#                </font></font></div>#}
-{#        <div class="fc-event" data-color="#b6c2c9">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    其他活动3#}
-{#                </font></font></div>#}
-{#        <div class="fc-event" data-color="#b6c2c9">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    其他活动4#}
-{#                </font></font></div>#}
-{#        <div class="fc-event" data-color="#b6c2c9">#}
-{#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
-{#                    其他活动5#}
-{#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#b6c2c9">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    其他活动2#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#b6c2c9">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    其他活动3#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#b6c2c9">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    其他活动4#}
+        {#                </font></font></div>#}
+        {#        <div class="fc-event" data-color="#b6c2c9">#}
+        {#            <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#}
+        {#                    其他活动5#}
+        {#                </font></font></div>#}
     </div>
 </div>
+
+
+{#<div class="fc-header-toolbar fc-toolbar fc-toolbar-ltr">#}
+{#    <div class="fc-toolbar-chunk">#}
+{#        <div class="btn-group">#}
+{#            <button class="fc-dayGridMonth-button btn btn-primary active" type="button">Month</button>#}
+{#            <button class="fc-timeGridWeek-button btn btn-primary" type="button">Week</button>#}
+{#            <button class="fc-timeGridDay-button btn btn-primary" type="button">Day</button>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="fc-toolbar-chunk"><h2 class="fc-toolbar-title">November 2020</h2></div>#}
+{#    <div class="fc-toolbar-chunk">#}
+{#        <div class="btn-group">#}
+{#            <button class="fc-prev-button btn btn-primary" type="button" aria-label="prev"><span#}
+{#                        class="fa fa-chevron-left"></span></button>#}
+{#            <button class="fc-next-button btn btn-primary" type="button" aria-label="next"><span#}
+{#                        class="fa fa-chevron-right"></span></button>#}
+{#        </div>#}
+{#        <button disabled="" class="fc-today-button btn btn-primary" type="button">Today</button>#}
+{#    </div>#}
+{#</div>#}
