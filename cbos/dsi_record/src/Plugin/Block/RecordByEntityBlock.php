@@ -6,7 +6,6 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,7 +25,8 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
    */
   protected $entityTypeManager;
 
-  /** @var \Drupal\Core\Entity\EntityStorageInterface */
+  /**
+ * @var \Drupal\Core\Entity\EntityStorageInterface */
   protected $recordStorage;
 
   /**
@@ -82,27 +82,28 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
         'entity_id' => $this->configuration['entity_id'],
       ]
       ),
-          '#options' => ['attributes' => [
+          '#options' => [
+    'attributes' => [
             'class' => ['use-ajax'],
             'data-dialog-type' => 'modal',
             'data-dialog-options' => Json::encode([
             'width' => 800,
           ]),
-        ]
-      ]
+        ],
+      ],
     ];
     $build['#content']['data'] = $data;
 
     return $build;
   }
-  
+
   /**
    * {@inheritDoc}
    */
   public function getCacheTags() {
     $cache_tags = parent::getCacheTags();
-    
+
     return Cache::mergeTags($cache_tags, ['dsi_record_list']);
   }
-  
+
 }

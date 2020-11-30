@@ -4,8 +4,6 @@ namespace Drupal\dsi_record\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\layout_builder\Section;
-use Drupal\layout_builder\SectionComponent;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Returns responses for record routes.
@@ -30,9 +28,9 @@ class RecordController extends ControllerBase {
       'column_widths' => '50-50',
     ]);
     $build = $section->toRenderArray();
-    $build['second']['record'] = \Drupal::service('plugin.manager.block')->createInstance('record_by_entity_block',[
+    $build['second']['record'] = \Drupal::service('plugin.manager.block')->createInstance('record_by_entity_block', [
       'entity_type' => $entity_type,
-      'entity_id' => $entity_id
+      'entity_id' => $entity_id,
     ])->build();
 
     $context1 = [
@@ -43,4 +41,5 @@ class RecordController extends ControllerBase {
 
     return $build;
   }
+
 }

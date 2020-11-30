@@ -366,7 +366,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     else {
       return;
     }
-    
+
     // Add alert
     if ($this->isNew()) {
       $alert_type = $this->entityTypeManager()->getStorage('alert_type')->load($entity_type_id);
