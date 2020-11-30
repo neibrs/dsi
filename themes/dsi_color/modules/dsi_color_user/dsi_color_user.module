@@ -29,6 +29,10 @@ function dsi_color_user_theme($existing, $type, $theme, $path) {
   ];
 }
 
-function template_preprocess_navbar_user(&$variables) {
-  $x = 'a';
+/**
+ * Implements hook_navbar_user_block_item().
+ */
+function dsi_color_user_navbar_user_block_item() {
+  $build = \Drupal::service('plugin.manager.block')->createInstance('avatar_block')->build();
+  return $build;
 }
