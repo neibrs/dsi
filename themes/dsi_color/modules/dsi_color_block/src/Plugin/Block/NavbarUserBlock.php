@@ -22,10 +22,8 @@ class NavbarUserBlock extends BlockBase {
     $build = [];
     $build['#theme'] = 'navbar_user_block';
 
-    $data = \Drupal::moduleHandler()->invokeAll('navbar_user_block_item');
+    \Drupal::moduleHandler()->alter('navbar_user_block_item', $build, $this->configuration);
 
-    // uasort($data, ['\Drupal\Component\Utility\SortArray', 'sortByWeightProperty']);
-    $build['#content'] = $data;
     return $build;
   }
 

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_color_alert.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_color_alert_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_color_alert module.
+    case 'help.page.dsi_color_alert':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The alert block extension.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_navbar_user_block_item_alter().
+ */
+function dsi_color_alert_navbar_user_block_item_alter(&$build, &$configuration) {
+  $build['#content'] = \Drupal::service('plugin.manager.block')->createInstance('alert_icon_block')->build();
+}
+

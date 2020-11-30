@@ -3,18 +3,18 @@
 /**
  * Implements hook_navbar_user_block_item().
  */
-function dsi_color_user_navbar_user_block_item() {
-
-  /** @var \Drupal\Core\Block\BlockManagerInterface $plugin_manager_block */
-  $plugin_manager_block = \Drupal::service('plugin.manager.block');
-  $build['navbar_user'] = [
-    '#theme' => 'navbar_user',
-    '#content' => [
-      'item' => $plugin_manager_block->createInstance('avatar_block')->build(),
-    ],
-  ];
-  return $build;
-}
+//function dsi_color_user_navbar_user_block_item() {
+//
+//  /** @var \Drupal\Core\Block\BlockManagerInterface $plugin_manager_block */
+//  $plugin_manager_block = \Drupal::service('plugin.manager.block');
+//  $build['navbar_user'] = [
+//    '#theme' => 'navbar_user',
+//    '#content' => [
+//      'item' => $plugin_manager_block->createInstance('avatar_block')->build(),
+//    ],
+//  ];
+//  return $build;
+//}
 
 /**
  * Implements hook_theme().
