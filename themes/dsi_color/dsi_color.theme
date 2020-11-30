@@ -240,6 +240,9 @@ function dsi_color_preprocess_views_view_table(&$variables) {
   $variables['attributes']['class'][] = 'table table-striped table-bordered table-td-valign-middle dataTable no-footer dtr-inline collapsed';
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function dsi_color_preprocess_views_view_fullcalendar(&$variables) {
   $variables['#attached']['library'][] = 'dsi_color/color.page.fullcalendar';
 }
