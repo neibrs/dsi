@@ -20,9 +20,9 @@ class NavbarUserBlock extends BlockBase {
    */
   public function build() {
     $build = [];
-    $build['#theme'] = 'navbar_user_block';
+//    $build['#theme'] = 'navbar_user_block';
 
-    \Drupal::moduleHandler()->alter('navbar_user_block_item', $build, $this->configuration);
+    $build = \Drupal::moduleHandler()->invokeAll('navbar_user_block_item');
 
     return $build;
   }
