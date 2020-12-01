@@ -1,19 +1,19 @@
-langcode: zh-hans
+langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - dsi_lawyer
   module:
-    - dsi_client
+    - dsi_contract
     - serialization
     - user
-id: client
-label: 客户
+id: contract
+label: Contract
 module: views
 description: ''
 tag: ''
-base_table: dsi_client_field_data
+base_table: dsi_contract_field_data
 base_field: id
 display:
   default:
@@ -25,7 +25,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view published client entities'
+          perm: 'view published contract entities'
       cache:
         type: tag
         options: {  }
@@ -48,9 +48,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: some
+        type: full
         options:
-          items_per_page: 100
+          items_per_page: 10
           offset: 0
       style:
         type: table
@@ -64,30 +64,13 @@ display:
           summary: ''
           description: ''
           columns:
-            client_importance: client_importance
-            cooperating_state: cooperating_state
             number: number
-            entity_id: entity_id
-            summary: summary
-            follow: follow
-            changed: changed
-            record_target_id: record_target_id
+            name: name
+            contract_client: contract_client
+            amount: amount
+            rate: rate
             operations: operations
           info:
-            client_importance:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            cooperating_state:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             number:
               sortable: false
               default_sort_order: asc
@@ -95,35 +78,30 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            entity_id:
+            name:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            summary:
+            contract_client:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            follow:
+            amount:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            changed:
+            rate:
               sortable: false
               default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            record_target_id:
               align: ''
               separator: ''
               empty_column: false
@@ -138,82 +116,14 @@ display:
       row:
         type: fields
       fields:
-        client_importance:
-          id: client_importance
-          table: dsi_client_field_data
-          field: client_importance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: dsi_client
-          entity_field: client_importance
-          plugin_id: field
-        cooperating_state:
-          id: cooperating_state
-          table: dsi_client_field_data
-          field: cooperating_state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 状态
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: dsi_client
-          entity_field: cooperating_state
-          plugin_id: field
         number:
           id: number
-          table: dsi_client_field_data
+          table: dsi_contract_field_data
           field: number
           relationship: none
           group_type: group
           admin_label: ''
-          label: 客户编号
+          label: 合同编号
           exclude: false
           alter:
             alter_text: false
@@ -237,52 +147,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: dsi_client
+          entity_type: dsi_contract
           entity_field: number
           plugin_id: field
-        entity_id:
-          id: entity_id
-          table: dsi_client_field_data
-          field: entity_id
+        name:
+          id: name
+          table: dsi_contract_field_data
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
-          label: 客户名称/标识
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: dsi_client
-          entity_field: entity_id
-          plugin_id: field
-        summary:
-          id: summary
-          table: dsi_client_field_data
-          field: summary
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 简述
+          label: 合同标题
           exclude: false
           alter:
             alter_text: false
@@ -306,51 +181,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: dsi_client
-          entity_field: summary
+          entity_type: null
+          entity_field: name
           plugin_id: field
-        follow:
-          id: follow
-          table: dsi_client_field_data
-          field: follow
+        contract_client:
+          id: contract_client
+          table: dsi_contract_field_data
+          field: contract_client
           relationship: none
           group_type: group
           admin_label: ''
-          label: 跟进人
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: dsi_client
-          entity_field: follow
-          plugin_id: field
-        changed:
-          id: changed
-          table: dsi_client_field_data
-          field: changed
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 最近联络日
+          label: 委托人
           exclude: false
           alter:
             alter_text: false
@@ -361,11 +202,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: timestamp
+          type: string
           settings:
-            date_format: html_date
-            custom_date_format: ''
-            timezone: ''
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -376,31 +215,34 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: dsi_client
-          entity_field: changed
+          entity_type: dsi_contract
+          entity_field: contract_client
           plugin_id: field
-        record_target_id:
-          id: record_target_id
-          table: dsi_client__record
-          field: record_target_id
+        amount:
+          id: amount
+          table: dsi_contract_field_data
+          field: amount
           relationship: none
           group_type: group
           admin_label: ''
-          label: 待办事项
+          label: 合同金额
           exclude: false
           alter:
             alter_text: false
-          element_class: record-ajax-tr
+          element_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: number_decimal
           settings:
-            link: false
-          group_column: target_id
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 2
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -410,12 +252,49 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: dsi_client
-          entity_field: record
+          entity_type: dsi_contract
+          entity_field: amount
+          plugin_id: field
+        rate:
+          id: rate
+          table: dsi_contract_field_data
+          field: rate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 提成比例
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 2
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_contract
+          entity_field: rate
           plugin_id: field
         operations:
           id: operations
-          table: dsi_client
+          table: dsi_contract
           field: operations
           relationship: none
           group_type: group
@@ -431,15 +310,15 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
-          entity_type: dsi_client
+          entity_type: dsi_contract
           plugin_id: entity_operations
       filters:
         status:
           value: '1'
-          table: dsi_client_field_data
+          table: dsi_contract_field_data
           field: status
           plugin_id: boolean
-          entity_type: dsi_client
+          entity_type: dsi_contract
           entity_field: status
           id: status
           expose:
@@ -447,8 +326,54 @@ display:
             operator_limit_selection: false
             operator_list: {  }
           group: 1
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              contingent_worker: '0'
+              employee: '0'
+              administrator: '0'
+              implementor: '0'
+            placeholder: 'Search name'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            name: name
+          plugin_id: combine
       sorts: {  }
-      title: Client
+      title: Contract
       header: {  }
       footer: {  }
       empty:
@@ -459,6 +384,7 @@ display:
           empty: true
           content: 'No content available.'
           plugin_id: text_custom
+      relationships: {  }
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -466,6 +392,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - user.permissions
       tags: {  }
   page_1:
@@ -475,11 +402,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: dsi_client
+      path: dsi_contract
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - user.permissions
       tags: {  }
