@@ -56,6 +56,9 @@ class ClientSign extends Standard {
     if ($type->label()) {
       $label .= '(' . $type->label() . ')';
     }
+    if (empty($target_entity)) {
+      return $label;
+    }
     if ($target_entity->label()) {
       $label .= $target_entity->label();
     }
