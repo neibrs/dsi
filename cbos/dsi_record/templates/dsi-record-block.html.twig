@@ -19,10 +19,15 @@
         {% for value in content.expired_data.data %}
 
             <div class="fc-event" data-color="#00acac">
-                <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                <div class="fc-event-icon">
+                    <i class="fas fa-circle fa-fw f-s-9 text-grey" data-toggle="popover"></i>
+                </div>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;" >
                         {{ value }}
-                    </font></font></div>
+                    </font>
+                </font>
+            </div>
         {% endfor %}
 
         <hr class="bg-grey-lighter m-b-15">
@@ -31,12 +36,40 @@
         {% for value in content.expired_data.data %}
 
             <div class="fc-event" data-color="#b6c2c9">
-                <div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-blue"></i></div>
+                <div class='fc-event-icon'>
+                    <i class='fas fa-circle fa-fw f-s-9 text-blue'></i>
+                </div>
                 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                         {{ value }}
-                    </font></font></div>
+                    </font></font>
+            </div>
         {% endfor %}
     </div>
+    <button
+            type="button"
+            class="btn btn-success"
+            data-toggle="popover"
+
+    >
+        右侧的 Popover
+    </button>
+    <button
+            type="button"
+            class="btn btn-warning"
+            title="Popover title"
+            data-container="body"
+            data-toggle="popover"
+            data-placement="right"
+            data-content="右侧的 Popover 中的一些内容">
+        右侧的 Popover
+    </button>
 </div>
+
+<script>
+
+</script>
+
+
+
 
 

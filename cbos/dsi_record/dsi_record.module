@@ -108,3 +108,7 @@ function dsi_record_entity_base_field_info(EntityTypeInterface $entity_type) {
 function template_preprocess_record_by_entity_block(&$variables) {
   $x = 'a';
 }
+
+function dsi_record_preprocess_dsi_record_block(&$variables) {
+  $x = 'a';
+}
