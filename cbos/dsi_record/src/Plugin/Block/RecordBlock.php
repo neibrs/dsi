@@ -47,6 +47,7 @@ class RecordBlock extends BlockBase {
     //    $query_week = $query->condition('state', FALSE)
     //      ->condition('start', \DateTime::createFromFormat())
     $build['#content']['expired_data'] = $data['expired'];
+    $build['#attached']['library'][] = 'dsi_record/dsi_record.popover';
 
     return $build;
   }

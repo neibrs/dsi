@@ -1,0 +1,7 @@
+dsi_record.popover:
+  version: VERSION
+  js:
+    js/record.popover.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery
