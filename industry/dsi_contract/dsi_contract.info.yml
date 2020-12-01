@@ -1,10 +1,10 @@
 name: 'Contract'
 type: module
-description: 'The contracts.'
+description: 'The contracts of lawyer.'
 core: 8.x
 core_version_requirement: ^8 || ^9
 interface translation project: dsi_contract
-interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
+interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
 package: 'Dsi'
 dependencies:
   - organization
