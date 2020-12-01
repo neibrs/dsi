@@ -9,6 +9,7 @@ interface translation server pattern: modules/dsi/industry/%project/translations
 dependencies:
   - dsi_cases
   - dsi_client
+  - dsi_contract
   - dsi_litigant
   - dsi_project
   - dsi_record

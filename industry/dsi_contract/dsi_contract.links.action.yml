@@ -1,5 +1,5 @@
 entity.dsi_contract.add_form:
   route_name: entity.dsi_contract.add_form
-  title: 'Add Contract'
+  title: 'Add'
   appears_on:
     - entity.dsi_contract.collection
