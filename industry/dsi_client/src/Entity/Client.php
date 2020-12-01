@@ -291,7 +291,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['number'] = BaseFieldDefinition::create('code')
       ->setLabel(t('Number', [], ['context' => 'Client']))
       ->setSetting('max_length', 32)
-      ->setSetting('encoding_rules', \Drupal::config('dsi_cases.settings')->get('encoding_rules'))
+      ->setSetting('encoding_rules', \Drupal::config('dsi_client.settings')->get('encoding_rules'))
       ->setDisplayOptions('view', [
         'type' => 'string',
         'weight' => -30,

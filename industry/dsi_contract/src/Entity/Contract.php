@@ -6,6 +6,8 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 use Drupal\organization\Entity\EffectiveDatesBusinessGroupEntity;
 use Drupal\user\UserInterface;
 
@@ -181,7 +183,372 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-
+    
+    // TODO, Add fields.
+    // 合同编号
+    $fields['number'] = BaseFieldDefinition::create('code')
+      ->setLabel(t('Number', [], ['context' => 'Contract']))
+      ->setSetting('max_length', 32)
+      ->setSetting('encoding_rules', \Drupal::config('dsi_contract.settings')->get('encoding_rules'))
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => -30,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -30,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 客户
+    $fields['client'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Client'))
+      ->setSetting('target_type', 'dsi_client')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 6,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    // 合同类型=案件类型
+    $fields['case_category'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Case Category'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['case_category' => 'case_category'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 委托人(合同委托人)
+    $fields['contract_client'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Contract Client'))
+      ->setDescription(t('The name of the Client entity.'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    
+    // 证件号码
+    $fields['passport_number'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Passport Number'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 是否为当事人
+    $fields['is_litigant'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Is litigant'))
+      ->setDefaultValue(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'settings' => [
+          'display_label' => TRUE,
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'boolean',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+  
+    // 与当事人关系
+    $fields['litigant_relationship'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Litigant Relationship'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['litigant_relationship' => 'litigant_relationship'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 委托程序
+    $fields['case_procedure'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Case procedure'))
+      ->setSetting('target_type', 'lookup')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['case_procedure' => 'case_procedure'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 其他事项
+    $fields['other_description'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Other description'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 授权类型
+    $fields['auth_type'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Auth Type'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['auth_type' => 'auth_type'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 合同金额
+    $fields['amount'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Amount', [], ['context' => 'Contract']))
+      ->setDisplayOptions('view', [
+        'type' => 'number_decimal',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'number',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    
+    // 金额大写
+    $fields['amount_text'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Amount Text'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+    // 提成比例
+    $fields['rate'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Rate', [], ['context' => 'Contract']))
+      ->setDisplayOptions('view', [
+        'type' => 'number_decimal',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'number',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    // 通讯地址
+    $fields['address'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Address', [], ['context' => 'Contract']))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    // 签定时间
+    $fields['signing_time'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Signing Time', [], ['context' => 'Contract']))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
+      ->setDisplayOptions('view', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+        'label' => 'inline',
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 差旅费约定
+    $fields['travel_expenses_agreement'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Travel expenses agreement'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['auth_type' => 'auth_type'],
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 差旅费预收
+    $fields['travel_expenses_collection'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Travel expenses collection', [], ['context' => 'Contract']))
+      ->setDisplayOptions('view', [
+        'type' => 'number_decimal',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'number',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 备注
+    $fields['description'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Description'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'text_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+    // 签订人
+    $fields['person'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Person'))
+      ->setSetting('target_type', 'person')
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
+    // 合同正文
+    // 子合同即关联合同
+    // 结算情况
+    // 订单
+    // 相关流程
+    // 提醒计划
+    // 附件
+    $fields['attachments'] = BaseFieldDefinition::create('file')
+      ->setLabel(t('Attachments'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('file_extensions', 'doc docx xls xlsx jpeg png txt')
+      ->setDisplayOptions('view', [
+        'type' => 'file_default',
+        'weight' => 110,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'file_generic',
+        'weight' => 110,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
     $fields['status']->setDescription(t('A boolean indicating whether the Contract is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
