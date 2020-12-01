@@ -1,0 +1,88 @@
+id: contract_xlsx
+label: Contract(xlsx)
+migration_tags: { }
+source:
+  plugin: xls
+  header_row: 1
+  path: modules/dsi/industry/dsi_contract/data/contract.xlsx
+  sheet_name: 合同列表
+  keys:
+    - 合同编号
+  columns:
+    -
+      合同编号: 合同编号
+    -
+      合同标题: 合同标题
+    -
+      合同类型: 合同类型
+    -
+      合同金额: 合同金额
+    -
+      合同大写: 合同大写
+    -
+      委托人: 委托人
+    -
+      通讯地址: 通讯地址
+    -
+      签定时间: 签定时间
+    -
+      备注: 备注
+    -
+      签订人: 签订人
+    -
+      状态: 状态
+    -
+      证件号码: 证件号码
+    -
+      委托程序: 委托程序
+    -
+      授权类型: 授权类型
+    -
+      提成比例: 提成比例
+    -
+      客户: 客户
+    -
+      是否为当事人: 是否为当事人
+    -
+      与当事人关系: 与当事人关系
+    -
+      其他事项: 其他事项
+    -
+      差旅费约定: 差旅费约定
+    -
+      差旅费预收: 差旅费预收
+
+process:
+  number: 合同编号
+  name: 合同标题
+  case_category:
+    -
+      plugin: callback
+      callable: trim
+      source: 合同类型
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_lookup
+  amount: 合同金额
+  amount_text: 合同大写
+  contract_client: 委托人
+  address: 通讯地址
+  signing_time: 签定时间
+  description: 备注
+  person: 签订人
+  passport_number: 证件号码
+  case_procedure: 委托程序
+  auth_type: 授权类型
+  rate: 提成比例
+  client: 客户
+  is_litigant: 是否为当事人
+  litigant_relationship: 与当事人关系
+  other_description: 其他事项
+  travel_expenses_agreement: 差旅费约定
+  travel_expenses_collection: 差旅费预收
+
+destination:
+  plugin: entity:dsi_contract
+migration_dependencies: { }

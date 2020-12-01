@@ -140,7 +140,6 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
-      ->setDescription(t('The user ID of author of the Contract entity.'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -164,7 +163,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
+      ->setLabel(t('Name', [], ['context' => 'Contract title']))
       ->setDescription(t('The name of the Contract entity.'))
       ->setSettings([
         'max_length' => 50,
@@ -244,7 +243,6 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
     // 委托人(合同委托人)
     $fields['contract_client'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Contract Client'))
-      ->setDescription(t('The name of the Client entity.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
