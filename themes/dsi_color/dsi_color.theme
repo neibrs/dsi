@@ -23,6 +23,7 @@ function dsi_color_preprocess_menu__role_menu(&$variables) {
     'entity.dsi_client.collection' => 'iconfont icon-kehu4',
     'entity.dsi_cases.collection' => 'iconfont icon-anjian1',
     'entity.dsi_record.collection' => 'iconfont icon-rili',
+    'entity.dsi_contract.collection' => 'iconfont icon-kehu4',
   ];
  _eabax_core_set_menu_items_icon($variables['items'], $icons);
 }
