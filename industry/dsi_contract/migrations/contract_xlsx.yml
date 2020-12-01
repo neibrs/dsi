@@ -1,0 +1,203 @@
+id: contract_xlsx
+label: Contract(xlsx)
+migration_tags: { }
+source:
+  plugin: xls
+  header_row: 1
+  path: modules/dsi/industry/dsi_contract/data/contract.xlsx
+  sheet_name: 合同列表
+  keys:
+    - 合同编号
+  columns:
+    -
+      合同编号: 合同编号
+    -
+      合同标题: 合同标题
+    -
+      合同类型: 合同类型
+    -
+      合同金额: 合同金额
+    -
+      金额大写: 金额大写
+    -
+      委托人: 委托人
+    -
+      通讯地址: 通讯地址
+    -
+      签定时间: 签定时间
+    -
+      备注: 备注
+    -
+      签订人: 签订人
+    -
+      状态: 状态
+    -
+      证件号码: 证件号码
+    -
+      委托程序: 委托程序
+    -
+      授权类型: 授权类型
+    -
+      提成比例: 提成比例
+    -
+      客户: 客户
+    -
+      是否为当事人: 是否为当事人
+    -
+      与当事人关系: 与当事人关系
+    -
+      其他事项: 其他事项
+    -
+      差旅费约定: 差旅费约定
+    -
+      差旅费预收: 差旅费预收
+
+process:
+  number:
+    plugin: callback
+    callable: trim
+    source: 合同编号
+  name:
+    plugin: callback
+    callable: trim
+    source: 合同标题
+  case_category:
+    -
+      plugin: callback
+      callable: trim
+      source: 合同类型
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: case_category
+      ignore_case: true
+  amount/value:
+    -
+      plugin: callback
+      callable: trim
+      source: 合同金额
+    -
+      plugin: str_replace
+      search: ','
+      replace: ''
+  amount_text: 金额大写
+  contract_client: 委托人
+  address: 通讯地址
+  signing_time/value: 签定时间
+  description: 备注
+  person:
+    -
+      plugin: callback
+      callable: trim
+      source: 签订人
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
+  passport_number: 证件号码
+  case_procedure:
+    -
+      plugin: callback
+      callable: trim
+      source: 委托程序
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: case_procedure
+      ignore_case: true
+  auth_type:
+    -
+      plugin: callback
+      callable: trim
+      source: 授权类型
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: auth_type
+      ignore_case: true
+  rate: 提成比例
+  client:
+    -
+      plugin: callback
+      callable: trim
+      source: 客户
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: dsi_client
+      value_key: name
+      bundle_key: type
+      bundle: individual
+      ignore_case: true
+
+  is_litigant:
+    -
+      plugin: callback
+      callable: trim
+      source: 是否为当事人
+    -
+      plugin: static_map
+      default_value: false
+      map:
+        是: true
+        否: false
+  litigant_relationship:
+    -
+      plugin: callback
+      callable: trim
+      source: 与当事人关系
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: litigant_relationship
+      ignore_case: true
+  other_description: 其他事项
+  travel_expenses_agreement:
+    -
+      plugin: callback
+      callable: trim
+      source: 差旅费约定
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: travel_expenses_agreement
+      ignore_case: true
+  travel_expenses_collection: 差旅费预收
+
+destination:
+  plugin: entity:dsi_contract
+  keys:
+    - number
+migration_dependencies: { }

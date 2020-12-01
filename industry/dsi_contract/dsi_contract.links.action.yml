@@ -1,0 +1,19 @@
+entity.dsi_contract.add_form:
+  route_name: entity.dsi_contract.add_form
+  title: 'Add'
+  options:
+    attributes:
+      class: ['use-ajax']
+      data-dialog-type: modal
+      data-dialog-options: '{"width":"80%"}'
+    query:
+      destination: '/dsi_contract'
+  appears_on:
+    - entity.dsi_contract.collection
+entity.dsi_contract.import:
+  title: 'Import'
+  route_name: dsi_import.import
+  route_parameters:
+    entity_type_id: dsi_contract
+  appears_on:
+    - entity.dsi_contract.collection

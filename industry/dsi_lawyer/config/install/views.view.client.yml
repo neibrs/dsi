@@ -1,6 +1,9 @@
 langcode: zh-hans
 status: true
 dependencies:
+  enforced:
+    module:
+      - dsi_lawyer
   module:
     - dsi_client
     - serialization
@@ -24,7 +27,7 @@ display:
         options:
           perm: 'view published client entities'
       cache:
-        type: tag_with_display_tags
+        type: tag
         options: {  }
       query:
         type: views_query

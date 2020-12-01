@@ -8,7 +8,6 @@ entity.dsi_record.collection:
 entity.dsi_cases.collection:
   title: 'Cases'
   route_name: entity.dsi_cases.collection
-  description: 'List Cases entities'
   menu_name: lawyer
   weight: 80
 
@@ -18,3 +17,9 @@ entity.dsi_client.collection:
   route_name: entity.dsi_client.collection
   menu_name: lawyer
   weight: 100
+
+entity.dsi_contract.collection:
+  title: 'Contract'
+  route_name: entity.dsi_contract.collection
+  menu_name: lawyer
+  weight: 120

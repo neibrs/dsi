@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\lookup\InstallHelper;
+
+/**
+ * Implements hook_install().
+ */
+function dsi_contract_install($is_syncing) {
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+  $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+  $data = [
+    '1' => '夫妻',
+    '2' => '父母',
+    '3' => '子女',
+    '4' => '兄弟姐妹',
+    '5' => '外祖父',
+    '6' => '外祖母',
+    '7' => '其他',
+  ];
+  
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('litigant_relationship', $data, '与当事人关系', $lookup_storage);
+  $data = [
+    '1' => '特别授权',
+    '2' => '一般授权',
+  ];
+  
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('auth_type', $data, '授权类型', $lookup_storage);
+  $data = [
+    '1' => '包干制',
+    '2' => '实报实销',
+  ];
+  
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('travel_expenses_agreement', $data, '差旅费约定', $lookup_storage);
+  
+  
+}
