@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_contract
+id: travel_expenses_agreement
+label: 差旅费约定
