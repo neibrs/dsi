@@ -2,13 +2,15 @@
 #
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: modules/dsi/contrib/role_menu/role_menu.module: n/a
+# Generated from files:
+#  modules/dsi/contrib/role_menu/role_menu.module: n/a
+#  modules/dsi/contrib/role_menu/src/Plugin/Block/RoleMenuBlock.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-17 00:36+0000\n"
+"POT-Creation-Date: 2020-12-01 03:08+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -23,5 +25,9 @@ msgstr ""
 
 #: modules/dsi/contrib/role_menu/role_menu.module:55
 msgid "Edit role menu"
+msgstr ""
+
+#: modules/dsi/contrib/role_menu/src/Plugin/Block/RoleMenuBlock.php:79
+msgid "@role navigation"
 msgstr ""
 

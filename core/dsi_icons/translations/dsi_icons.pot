@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-17 00:35+0000\n"
+"POT-Creation-Date: 2020-12-01 03:06+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/core/dsi_icons/dsi_icons.module:18
+#: modules/dsi/core/dsi_icons/dsi_icons.module:19
 msgid "About"
 msgstr ""
 
-#: modules/dsi/core/dsi_icons/dsi_icons.module:19
+#: modules/dsi/core/dsi_icons/dsi_icons.module:20
 msgid "The icons."
 msgstr ""
 
