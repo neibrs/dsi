@@ -62,25 +62,114 @@ process:
       source: 合同类型
     -
       plugin: skip_on_empty
-      method: row
+      method: process
     -
-      plugin: entity_lookup
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: case_category
+      ignore_case: true
   amount: 合同金额
   amount_text: 合同大写
   contract_client: 委托人
   address: 通讯地址
-  signing_time: 签定时间
+  signing_time/value: 签定时间
   description: 备注
-  person: 签订人
+  person:
+    -
+      plugin: callback
+      callable: trim
+      source: 签订人
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
   passport_number: 证件号码
-  case_procedure: 委托程序
-  auth_type: 授权类型
+  case_procedure:
+    -
+      plugin: callback
+      callable: trim
+      source: 委托程序
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: case_procedure
+      ignore_case: true
+  auth_type:
+    -
+      plugin: callback
+      callable: trim
+      source: 授权类型
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: auth_type
+      ignore_case: true
   rate: 提成比例
-  client: 客户
+  client:
+    -
+      plugin: callback
+      callable: trim
+      source: 客户
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: dsi_client
+      value_key: name
+      bundle_key: type
+      bundle: individual
+      ignore_case: true
+
   is_litigant: 是否为当事人
-  litigant_relationship: 与当事人关系
+  litigant_relationship:
+    -
+      plugin: callback
+      callable: trim
+      source: 与当事人关系
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: litigant_relationship
+      ignore_case: true
   other_description: 其他事项
-  travel_expenses_agreement: 差旅费约定
+  travel_expenses_agreement:
+    -
+      plugin: callback
+      callable: trim
+      source: 差旅费约定
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: travel_expenses_agreement
+      ignore_case: true
   travel_expenses_collection: 差旅费预收
 
 destination:
