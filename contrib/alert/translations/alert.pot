@@ -3,28 +3,18 @@
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
-#  modules/eabax/cbos/alert/alert.module: n/a
-#  modules/eabax/cbos/alert/alert.info.yml: n/a
-#  modules/eabax/cbos/alert/src/Entity/Alert.php: n/a
-#  modules/eabax/cbos/alert/config/install/views.view.alert.yml: n/a
-#  modules/eabax/cbos/alert/alert.links.action.yml: n/a
-#  modules/eabax/cbos/alert/alert.links.menu.yml: n/a
-#  modules/eabax/cbos/alert/src/AlertTypeListBuilder.php: n/a
-#  modules/eabax/cbos/alert/src/Entity/AlertType.php: n/a
-#  modules/eabax/cbos/alert/alert.links.task.yml: n/a
-#  modules/eabax/cbos/alert/alert.permissions.yml: n/a
-#  modules/eabax/cbos/alert/config/schema/alert_type.schema.yml: n/a
-#  modules/eabax/cbos/alert/src/Form/AlertTypeForm.php: n/a
-#  modules/eabax/cbos/alert/src/AlertListBuilder.php: n/a
-#  modules/eabax/cbos/alert/src/Form/AlertForm.php: n/a
-#  modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php: n/a
-#  modules/eabax/cbos/alert/config/install/core.entity_view_mode.alert.compact.yml: n/a
+#  modules/dsi/contrib/alert/alert.module: n/a
+#  modules/dsi/contrib/alert/src/AlertListBuilder.php: n/a
+#  modules/dsi/contrib/alert/src/AlertTypeListBuilder.php: n/a
+#  modules/dsi/contrib/alert/src/Entity/Alert.php: n/a
+#  modules/dsi/contrib/alert/src/Form/AlertTypeForm.php: n/a
+#  modules/dsi/contrib/alert/src/Plugin/Block/AlertIconBlock.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-03-21 13:30+0800\n"
+"POT-Creation-Date: 2020-12-01 03:07+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -33,243 +23,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/eabax/cbos/alert/alert.module:18
+#: modules/dsi/contrib/alert/alert.module:18
 msgid "About"
 msgstr ""
 
-#: modules/eabax/cbos/alert/alert.info.yml:0 modules/eabax/cbos/alert/src/Entity/Alert.php:12 modules/eabax/cbos/alert/config/install/views.view.alert.yml:0;0
-msgid "Alert"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.info.yml:0;0
-msgid "Eabax cbos"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.action.yml:0
-msgid "Add Alert"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.action.yml:0
-msgid "Add Alert type"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.menu.yml:0
-msgid "Alert list"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.menu.yml:0 modules/eabax/cbos/alert/src/AlertTypeListBuilder.php:17 modules/eabax/cbos/alert/src/Entity/Alert.php:12 modules/eabax/cbos/alert/src/Entity/AlertType.php:8
-msgid "Alert type"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.menu.yml:0
-msgid "List alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.menu.yml:0
-msgid "List Alert type (bundles)"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.task.yml:0
-msgid "View"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.task.yml:0
-msgid "Edit"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.links.task.yml:0
-msgid "Delete"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "Create new alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "Administer alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "Allow to access the administration form to configure alerts."
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "Delete alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "Edit alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/alert.permissions.yml:0
-msgid "View alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0
-msgid "Alert type config"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0
-msgid "ID"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0 modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:39
-msgid "Description"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/schema/alert_type.schema.yml:0 modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:46
-msgid "Color"
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/AlertListBuilder.php:20
+#: modules/dsi/contrib/alert/src/AlertListBuilder.php:19
 msgid "Alert ID"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/AlertListBuilder.php:21
+#: modules/dsi/contrib/alert/src/AlertListBuilder.php:20
 msgid "Name"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:142
+#: modules/dsi/contrib/alert/src/AlertTypeListBuilder.php:17
+msgid "Alert type"
+msgstr ""
+
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:142
 msgid "Authored by"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:143
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:143
 msgid "The user ID of author of the Alert entity."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:167
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:167
 msgid "Message text"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:187 modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:187
 msgid "Created"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:188
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:188
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:191
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:191
 msgid "Changed"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:192
+#: modules/dsi/contrib/alert/src/Entity/Alert.php:192
 msgid "The time that the entity was last edited."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Entity/Alert.php:12
-msgid "Alerts"
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/Entity/AlertType.php:8
-msgid "Alert types"
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/Form/AlertForm.php:37
-msgid "Created the %label Alert."
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/Form/AlertForm.php:43
-msgid "Saved the %label Alert."
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:22
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:22
 msgid "Label"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:25
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:25
 msgid "Label for the Alert type."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:62
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:39
+msgid "Description"
+msgstr ""
+
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:46
+msgid "Color"
+msgstr ""
+
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:62
 msgid "Created the %label Alert type."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Form/AlertTypeForm.php:68
+#: modules/dsi/contrib/alert/src/Form/AlertTypeForm.php:68
 msgid "Saved the %label Alert type."
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:88
+#: modules/dsi/contrib/alert/src/Plugin/Block/AlertIconBlock.php:89
 msgid "You have %num notifications"
 msgstr ""
 
-#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:89
+#: modules/dsi/contrib/alert/src/Plugin/Block/AlertIconBlock.php:90
 msgid "No notifications."
-msgstr ""
-
-#: modules/eabax/cbos/alert/src/Plugin/Block/AlertIconBlock.php:14
-msgid "Alert icon block"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/core.entity_view_mode.alert.compact.yml:0
-msgid "Compact"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Find and manage alerts."
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Filter"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Reset"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Sort by"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Asc"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Desc"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "‹ Previous"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Next ›"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "« First"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Last »"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0;0
-msgid "Message"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0;0
-msgid "Type"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid ", "
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Operations"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "No content available."
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Master"
-msgstr ""
-
-#: modules/eabax/cbos/alert/config/install/views.view.alert.yml:0
-msgid "Page"
 msgstr ""
 
