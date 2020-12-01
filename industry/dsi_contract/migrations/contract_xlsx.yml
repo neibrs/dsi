@@ -18,7 +18,7 @@ source:
     -
       合同金额: 合同金额
     -
-      合同大写: 合同大写
+      金额大写: 金额大写
     -
       委托人: 委托人
     -
@@ -53,8 +53,14 @@ source:
       差旅费预收: 差旅费预收
 
 process:
-  number: 合同编号
-  name: 合同标题
+  number:
+    plugin: callback
+    callable: trim
+    source: 合同编号
+  name:
+    plugin: callback
+    callable: trim
+    source: 合同标题
   case_category:
     -
       plugin: callback
@@ -70,8 +76,16 @@ process:
       bundle_key: type
       bundle: case_category
       ignore_case: true
-  amount: 合同金额
-  amount_text: 合同大写
+  amount/value:
+    -
+      plugin: callback
+      callable: trim
+      source: 合同金额
+    -
+      plugin: str_replace
+      search: ','
+      replace: ''
+  amount_text: 金额大写
   contract_client: 委托人
   address: 通讯地址
   signing_time/value: 签定时间
@@ -138,7 +152,17 @@ process:
       bundle: individual
       ignore_case: true
 
-  is_litigant: 是否为当事人
+  is_litigant:
+    -
+      plugin: callback
+      callable: trim
+      source: 是否为当事人
+    -
+      plugin: static_map
+      default_value: false
+      map:
+        是: true
+        否: false
   litigant_relationship:
     -
       plugin: callback
@@ -174,4 +198,6 @@ process:
 
 destination:
   plugin: entity:dsi_contract
+  keys:
+    - number
 migration_dependencies: { }

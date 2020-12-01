@@ -370,7 +370,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
         'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
@@ -441,7 +441,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
     // 签定时间
     $fields['signing_time'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Signing Time', [], ['context' => 'Contract']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
         'weight' => 0,
