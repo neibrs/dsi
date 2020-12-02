@@ -9,6 +9,7 @@ source:
   keys:
     - 组织
   type: department
+  auto_install: true
   columns:
     -
       组织: 组织
@@ -53,6 +54,8 @@ process:
       entity_type: organization
       value_key: name
       not_found_message: 上级组织未找到
+      bundle_key: type
+      bundle: company
       ignore_case: true
       or_conditions:
         description: 上级组织
