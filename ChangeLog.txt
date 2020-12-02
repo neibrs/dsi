@@ -1,5 +1,11 @@
 
-DEVELOPMENT
+DEVELOPMENT(2020-12-02)
+-----------------------
+
+Test(2020-12-02)
+-----------------------
+
+Master(2020-12-02)
 -----------------------
 - Added modules:
   * Core modules: entity_plus, dsi_import, dsi_media, dsi_slider_media, dsi_icons
