@@ -96,6 +96,8 @@ msgid "Description"
 msgstr "备注"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:514
+
+msgctxt "Contract"
 msgid "Person"
 msgstr "签订人"
 
@@ -103,6 +105,3 @@ msgstr "签订人"
 msgid "Attachments"
 msgstr "附件"
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:552
-msgid "A boolean indicating whether the Contract is published."
-msgstr ""

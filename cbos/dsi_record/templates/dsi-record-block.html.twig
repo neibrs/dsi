@@ -8,44 +8,102 @@
 * @ingroup themeable
 */
 #}
-{% set classes = [
-    'clear-both',
-] %}
 <div class="vertical-box-column p-r-30 d-none d-lg-table-cell" style="width: 400px">
-    <div id="external-events" class="fc-event-list">
-
-        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font
-                        style="vertical-align: inherit;">已过期({{ content.expired_data.count }})</font></font></h5>
-        {% for value in content.expired_data.data %}
-
-            <div class="fc-event" data-color="#00acac">
-                <div class="fc-event-icon">
-                    <i class="fas fa-circle fa-fw f-s-9 text-grey" data-toggle="popover"></i>
-                </div>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;" >
-                        {{ value }}
-                    </font>
-                </font>
-            </div>
-        {% endfor %}
-
-        <hr class="bg-grey-lighter m-b-15">
-        <h5 class="m-t-0 m-b-15"><font style="vertical-align: inherit;"><font
-                        style="vertical-align: inherit;">本周({{ content.expired_data.count }})</font></font></h5>
-        {% for value in content.expired_data.data %}
-
-            <div class="fc-event" data-color="#b6c2c9">
-                <div class='fc-event-icon'>
-                    <i class='fas fa-circle fa-fw f-s-9 text-blue'></i>
-                </div>
-                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        {{ value }}
-                    </font></font>
-            </div>
-        {% endfor %}
+  <div class="widget-todolist widget-todolist-rounded m-b-30" data-id="widget">
+    <!-- begin widget-todolist-header -->
+    <div class="widget-todolist-header">
+      <div class="widget-todolist-header-left">
+        <h4 class="widget-todolist-header-title">{{ 本周事项 }}</h4>
+      </div>
+      <div class="widget-todolist-header-right">
+        <div class="widget-todolist-header-total"><span>0</span><small>Done</small></div>
+      </div>
     </div>
-
+    <!-- end widget-todolist-header -->
+    <!-- begin widget-todolist-body -->
+    <div class="widget-todolist-body">
+      <!-- begin widget-todolist-item -->
+      <div class="widget-todolist-item">
+        <div class="widget-todolist-input">
+          <div class="checkbox checkbox-css pt-0">
+            <input type="checkbox" id="widget_todolist_1">
+            <label for="widget_todolist_1" class="p-l-15">&nbsp;</label>
+          </div>
+        </div>
+        <div class="widget-todolist-content">
+          <h4 class="widget-todolist-title">Borrow Tony's travel guide</h4>
+          <p class="widget-todolist-desc">Vacation in Rome</p>
+        </div>
+        <div class="widget-todolist-icon">
+          <a href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+      </div>
+      <!-- end widget-todolist-item -->
+      <!-- begin widget-todolist-item -->
+      <div class="widget-todolist-item">
+        <div class="widget-todolist-input">
+          <div class="checkbox checkbox-css pt-0">
+            <input type="checkbox" id="widget_todolist_2">
+            <label for="widget_todolist_2" class="p-l-15">&nbsp;</label>
+          </div>
+        </div>
+        <div class="widget-todolist-content">
+          <h4 class="widget-todolist-title">Finish expense report</h4>
+          <p class="widget-todolist-desc">Today, 4:00PM, Daily</p>
+        </div>
+        <div class="widget-todolist-icon">
+          <a href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+      </div>
+      <!-- end widget-todolist-item -->
+      <!-- begin widget-todolist-item -->
+      <div class="widget-todolist-item">
+        <div class="widget-todolist-input">
+          <div class="checkbox checkbox-css pt-0">
+            <input type="checkbox" id="widget_todolist_3">
+            <label for="widget_todolist_3" class="p-l-15">&nbsp;</label>
+          </div>
+        </div>
+        <div class="widget-todolist-content">
+          <h4 class="widget-todolist-title">Confirm conference call for Wednesday</h4>
+          <p class="widget-todolist-desc">Work</p>
+        </div>
+        <div class="widget-todolist-icon">
+          <a href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+      </div>
+      <!-- end widget-todolist-item -->
+      <!-- begin widget-todolist-item -->
+      <div class="widget-todolist-item">
+        <div class="widget-todolist-input">
+          <div class="checkbox checkbox-css pt-0">
+            <input type="checkbox" id="widget_todolist_4">
+            <label for="widget_todolist_4" class="p-l-15">&nbsp;</label>
+          </div>
+        </div>
+        <div class="widget-todolist-content">
+          <h4 class="widget-todolist-title"><b class="text-warning">!!</b> Mobile App WIP Presentation</h4>
+          <p class="widget-todolist-desc">Today, 12:00PM</p>
+        </div>
+        <div class="widget-todolist-icon">
+          <a href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+      </div>
+      <!-- end widget-todolist-item -->
+      <!-- begin widget-todolist-item -->
+      <div class="widget-todolist-item">
+        <div class="widget-todolist-input">
+          <i class="fa fa-plus text-muted"></i>
+        </div>
+        <div class="widget-todolist-content">
+          <input type="text" class="form-control" placeholder="Write your task here...">
+        </div>
+      </div>
+      <!-- end widget-todolist-item -->
+    </div>
+    <!-- end widget-todolist-body -->
+  </div>
+>>>>>>> 0823908ecb9b6f6f1f29f9a0a27d1b21e5baa873
 </div>
 
 

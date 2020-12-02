@@ -27,6 +27,8 @@ vendor/bin/drush en -y \
 # Install zh-hans language
 vendor/bin/drush language:add zh-hans
 
+vendor/bin/drush language:default zh-hans
+
 vendor/bin/drush cset -y language.negotiation url.prefixes.en "en"
 vendor/bin/drush cset -y language.types negotiation.language_interface.enabled.language-browser 0
 

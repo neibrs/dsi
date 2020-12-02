@@ -509,7 +509,8 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE);
     // 签订人
     $fields['person'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Person'))
+
+      ->setLabel(t('Person', [], ['context' => 'Contract']))
       ->setSetting('target_type', 'person')
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
