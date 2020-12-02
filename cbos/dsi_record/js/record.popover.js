@@ -30,14 +30,14 @@
 
   function ContentMethod(txt) {
     var html =
-        '<div class="fc-event-icon">' +
-        '<i class="fas fa-circle fa-fw f-s-9 text-grey" ></i>' +
-        '</div>' +
-        '<a style="text-decoration:none; color:#000000 ">停用</a>' +
-        '<div class="fc-event-icon">' +
-        '<i class="fas fa-circle fa-fw f-s-9 text-grey" ></i>' +
-        '</div>' +
-        '<a style="text-decoration:none; color:#000000">启用</a>';
+      '<div class="fc-event-icon" id="record-popover">' +
+      '<i class="fas fa-circle fa-fw f-s-9 text-grey" ></i> &emsp;' +
+      '<a style="text-decoration:none; color:#000000 ">停用</a>' +
+      '</div>' +
+      '<div class="fc-event-icon" id="record-popover">' +
+      '<i class="fas fa-circle fa-fw f-s-9 text-green" ></i> &emsp;'  +
+      '<a style="text-decoration:none; color:#000000">启用</a>'+
+      '</div>' ;
     return html;
             }
         }
