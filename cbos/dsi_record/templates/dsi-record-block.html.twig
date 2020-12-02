@@ -16,7 +16,7 @@
         <h4 class="widget-todolist-header-title">本周</h4>
       </div>
       <div class="widget-todolist-header-right">
-        <div class="widget-todolist-header-total"><span>{{ content.expired_data.count }}</span><small>Done</small></div>
+        <div class="widget-todolist-header-total"><span>{{ content.expired_data.count }}</span><small>总</small></div>
       </div>
     </div>
     <!-- end widget-todolist-header -->
@@ -26,7 +26,7 @@
       {% for key,value in content.expired_data.data %}
       <div class="widget-todolist-item">
         <div class="widget-todolist-input">
-          <div class="checkbox checkbox-css pt-0">
+          <div class="checkbox checkbox-css pt-0" id="checkbox-div">
             <input type="checkbox" id="widget_todolist_{{ key+1 }}">
             <label for="widget_todolist_{{ key+1 }}" class="p-l-15">&nbsp;</label>
           </div>
@@ -52,7 +52,7 @@
         <h4 class="widget-todolist-header-title">已过期</h4>
       </div>
       <div class="widget-todolist-header-right">
-        <div class="widget-todolist-header-total"><span>{{ content.expired_data.count }}</span><small>Done</small></div>
+        <div class="widget-todolist-header-total"><span>{{ content.expired_data.count }}</span><small>总</small></div>
       </div>
     </div>
     <!-- end widget-todolist-header -->
@@ -62,7 +62,7 @@
       {% for key,value in content.expired_data.data %}
         <div class="widget-todolist-item">
           <div class="widget-todolist-input">
-            <div class="checkbox checkbox-css pt-0">
+            <div class="checkbox checkbox-css pt-0" id="checkbox-div">
               <input type="checkbox" id="widget_overdue_{{ key+1 }}">
               <label for="widget_overdue_{{ key+1 }}" class="p-l-15">&nbsp;</label>
             </div>

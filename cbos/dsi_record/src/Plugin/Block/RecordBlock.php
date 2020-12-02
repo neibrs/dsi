@@ -48,8 +48,17 @@ class RecordBlock extends BlockBase {
     //      ->condition('start', \DateTime::createFromFormat())
     $build['#content']['expired_data'] = $data['expired'];
     $build['#attached']['library'][] = 'dsi_record/dsi_record.popover';
-
+    //4. 动态build Ajax
+    $build['checkbox-div']['#ajax'] = [
+       'callback' => '::ajaxChangeRecordStatus', // 事件回调 方法 || 类 (名)
+     ];
+//    dd($build);
     return $build;
+  }
+
+  public function ajaxChangeRecordStatus()
+  {
+      return 1;
   }
 
 }
