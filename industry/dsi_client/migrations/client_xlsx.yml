@@ -2,10 +2,11 @@ id: client_xlsx
 label: Client(xlsx)
 migration_tags: { }
 source:
-  plugin: xls
+  plugin: xls_plus
   header_row: 1
   path: modules/dsi/industry/dsi_client/data/client.xlsx
   sheet_name: 客户
+  auto_install: true
   keys:
     - 客户名称
   columns:
@@ -160,17 +161,15 @@ process:
 #  年销售额
   description/value: 客户介绍
   created: 创建时间
-  uid:
-    -
-      plugin: callback
-      callable: trim
-      source: 创建人
-    -
-      plugin: entity_generate_plus
-      entity_type: person
-      value_key: name
-      bundle_key: type
-      bundle: employee
+#  uid:
+#    -
+#      plugin: callback
+#      callable: trim
+#      source: 创建人
+#    -
+#      plugin: entity_lookup
+#      entity_type: user
+#      value_key: name
   summary: 简述
 #  公海分组
 #  未联系
@@ -178,4 +177,6 @@ process:
 #  案件
 destination:
   plugin: entity:dsi_client
+  keys:
+    - name
 migration_dependencies: { }
