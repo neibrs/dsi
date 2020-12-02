@@ -9,11 +9,12 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
+use Drupal\eabax_core\Entity\EffectiveDatesTrait;
 
 abstract class EffectiveDatesEntityBase extends ContentEntityBase implements EffectiveDatesEntityInterface {
 
   use EntityChangedTrait;
-  use EntityPublishedTrait;
+  use EffectiveDatesTrait;
 
   /**
    * {@inheritdoc}
