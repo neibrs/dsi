@@ -4,6 +4,7 @@ namespace Drupal\dsi_color_block\Plugin\Block;
 
 use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a 'NavbarUserBlock' block.
@@ -25,6 +26,12 @@ class NavbarUserBlock extends BlockBase {
     $build = \Drupal::moduleHandler()->invokeAll('navbar_user_block_item');
 
     return $build;
+  }
+
+  public function getCacheContexts() {
+	  $cache_contexts = Cache::mergeContexts(parent::getCacheContexts(), ['user']);
+
+	  return $cache_contexts;
   }
 
 }
