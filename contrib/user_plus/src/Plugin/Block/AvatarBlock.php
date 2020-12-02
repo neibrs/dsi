@@ -131,10 +131,8 @@ class AvatarBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * {@inheritdoc}
    */
-  public function getCacheContexts() {
-    $cache_contexts = Cache::mergeContexts(parent::getCacheContexts(), ['user']);
-    
-    return $cache_contexts;
+  public function getCacheMaxAge() {
+  	return 0;
   }
-  
+
 }
