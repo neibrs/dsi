@@ -2,6 +2,7 @@
 
 namespace Drupal\import\Form;
 
+use Drupal\Component\Utility\Environment;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
@@ -63,7 +64,7 @@ class ImportForm extends ImportFormBase {
     }
     $validators = [
       'file_validate_extensions' => ['xls xlsx'],
-      'file_validate_size' => [file_upload_max_size()],
+      'file_validate_size' => [Environment::getUploadMaxSize()],
     ];
 
     $multiple_organization_classification = \Drupal::entityTypeManager()->getDefinition($entity_type_id)->get('multiple_organization_classification');
@@ -136,7 +137,7 @@ class ImportForm extends ImportFormBase {
     // 将 default_value_fields 放到表单里让用户设置这些字段的导入默认值.
     $default_value_fields = [];
     if (isset($migration)) {
-      $destination = $migration->get('destination');
+      $destination = $migration->getDestinationConfiguration('destination');
       if (isset($destination['default_value_fields'])) {
         $default_value_fields = $destination['default_value_fields'];
       }

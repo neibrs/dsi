@@ -6,6 +6,7 @@ source:
   header_row: 1
   path: modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx
   sheet_name: 人员
+  auto_install: true
   keys:
     - 账号
   columns:
@@ -25,7 +26,7 @@ process:
   person:
     -
       plugin: callback
-      source: 人员
+      source: 姓名
       callable: trim
     -
       plugin: skip_on_empty
@@ -37,13 +38,35 @@ process:
       not_found_message: 人员未找到
   roles:
     -
-      plugin: default_value
-      default_value: 'authenticated'
+      plugin: callback
+      callable: trim
+      source: 角色
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: static_map
+      default_value: 'Employee'
+      map:
+        人力资源专员: 'Human resource specialist'
+        人力资源经理: 'Human resource manager'
+        人力资源VP: 'Human resource VP'
+        部门经理: 'Line manager'
+    -
+      plugin: entity_lookup
+      entity_type: user_role
+      value_key: label
+      not_found_message: '角色未找到'
 
   status:
     plugin: default_value
     default_value: 1
 destination:
   plugin: entity:user
+  keys:
+    - name
   md5_passwords: true
 migration_dependencies: { }
