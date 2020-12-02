@@ -6,6 +6,7 @@ source:
   header_row: 1
   path: modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx
   sheet_name: 人员
+  auto_install: true
   keys:
     - 姓名
   type: employee
