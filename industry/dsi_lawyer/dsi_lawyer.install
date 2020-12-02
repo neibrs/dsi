@@ -47,6 +47,50 @@ function dsi_lawyer_install($is_syncing) {
     'edit record entities',
     'view record entities',
   ]);
+  
+  // 修改组织类型公司为律所
+  $company = \Drupal::entityTypeManager()->getStorage('organization_type')->load('company');
+  $company->set('label', '律所')
+    ->save();
+  
+  // 导入组织数据
+  /** @var \Drupal\import\ImportManagerInterface $import_manager */
+  $import_manager = \Drupal::service('import.manager');
+  
+  /**
+   * 组织机构数据
+   * =============== 1. Organization ============
+   */
+  $configuration['ende_organization_xls'] = [
+    'source' => [
+      'path' => 'modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx',
+      'sheet_name' => '组织',
+      'auto_install' => TRUE,
+    ],
+  ];
+  /**
+   * 人员数据
+   * =============== 2. Person =================
+   */
+  $configuration['ende_person_xls'] = [
+    'source' => [
+      'path' => 'modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx',
+      'sheet_name' => '人员',
+      'auto_install' => TRUE,
+    ],
+  ];
+  /**
+   * 账号数据
+   * =============== 3. User =================
+   */
+  $configuration['ende_user_xls'] = [
+    'source' => [
+      'path' => 'modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx',
+      'sheet_name' => '人员',
+      'auto_install' => TRUE,
+    ],
+  ];
+  $import_manager->doMigrates($configuration);
 }
 
 /**
