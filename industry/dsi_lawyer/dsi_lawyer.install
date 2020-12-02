@@ -24,6 +24,29 @@ function dsi_lawyer_install($is_syncing) {
   $userSettings->set('verify_mail', FALSE);
   $userSettings->save();
   
+  // 修改默认业务组名称
+  $organization_storage = \Drupal::entityTypeManager()->getStorage('organization');
+  $default_business_group = $organization_storage->load(1);
+  if ($default_business_group) {
+    $default_business_group->set('name', '恩德律师事务所');
+    $default_business_group->save();
+  }
+  
+  // Add permission to authenticated.
+  user_role_grant_permissions('authenticated', [
+    'add cases entities',
+    'edit cases entities',
+    'view published cases entities',
+    'add client entities',
+    'edit client entities',
+    'view published client entities',
+    'add contract entities',
+    'edit contract entities',
+    'view published contract entities',
+    'add record entities',
+    'edit record entities',
+    'view record entities',
+  ]);
 }
 
 /**
