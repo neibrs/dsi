@@ -1,0 +1,12 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - organization
+  enforced:
+    module:
+      - dsi_client
+id: organization.client
+label: 客户
+targetEntityType: organization
+cache: true

@@ -1,0 +1,12 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - person
+  enforced:
+    module:
+      - dsi_client
+id: person.client
+label: 客户
+targetEntityType: person
+cache: true
