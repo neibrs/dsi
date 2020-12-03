@@ -20,106 +20,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ClientForm extends ContentEntityForm {
 
   /**
-   * The current user account.
-   *
-   * @var \Drupal\Core\Session\AccountProxyInterface
-   */
-  protected $account;
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    // Instantiates this form class.
-    $instance = parent::create($container);
-    $instance->account = $container->get('current_user');
-    return $instance;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\dsi_client\Entity\Client $entity */
     $form = parent::buildForm($form, $form_state);
 
-    $form['type']['widget']['#ajax'] = [
-      'callback' => '::clientTypeSwitch',
-      'wrapper' => 'client-type-wrapper',
-    ];
-    $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($this->entity->bundle());
-
-    $target_entity_type_id = $type->getTargetEntityTypeId();
-
-    if ($type = $form_state->getValue('type')) {
-      $type = $type[0]['target_id'];
-      $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
-      $target_entity_type_id = $type->getTargetEntityTypeId();
-      $form['client_type'] = [
-        '#id' => 'client-type-wrapper',
-        '#type' => 'inline_entity_form',
-        '#entity_type' => $target_entity_type_id,
-        '#bundle' => $type->id(),
-        '#form_mode' => 'normal',
-      ];
-    }
-    else {
-      $form['client_type'] = [
-        '#id' => 'client-type-wrapper',
-        '#type' => 'inline_entity_form',
-        '#entity_type' => $target_entity_type_id,
-        '#bundle' => $this->entity->bundle(),
-        '#form_mode' => 'normal',
-        '#default_value' => !empty($this->entity->get('entity_id')->target_id) ? $this->entity->get('entity_id')->entity : NULL,
-      ];
-    }
-
     return $form;
-  }
-
-  /**
-   * Handles switching the available regions based on the selected theme.
-   */
-  public function clientTypeSwitch($form, FormStateInterface $form_state) {
-    return $form['client_type'];
-  }
-
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    parent::submitForm($form, $form_state);
-    $values = $form_state->getValue('client_type');
-    $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values, $this->entity->get('entity_id')->target_id);
-
-    $this->entity->set('entity_id', $entity->id());
-    $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
-    $this->entity->save();
-  }
-
-  /**
-   * Callback for related entity, crm_core_individual, crm_core_organization
-   * @param $type
-   * @param $values
-   */
-  protected function updateRelatedEntity($type, $values, $entity_id = NULL) {
-    $client_type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
-    $target_entity_type_id = $client_type->getTargetEntityTypeId();
-    $items = [];
-    foreach ($values as $key => $value) {
-      $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
-    }
-    $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
-    if ($entity_id) {
-      // 批量保存$items到entity_id, TODO
-      $entity = $entity_storage->load($entity_id);
-      foreach ($items as $key => $val) {
-        $entity->set($key, $val);
-      }
-      $entity->save();
-    }
-    else {
-      $entity = $entity_storage->create($items + ['type' => $type]);
-      $entity->save();
-    }
-    return $entity;
   }
 
   /**

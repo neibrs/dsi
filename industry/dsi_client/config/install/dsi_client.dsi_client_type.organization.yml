@@ -6,4 +6,4 @@ dependencies:
       - dsi_client
 id: organization
 label: 组织
-target_entity_type_id: crm_core_organization
+target_entity_type_id: organization

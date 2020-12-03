@@ -6,4 +6,5 @@ dependencies:
       - dsi_client
 id: individual
 label: 个人
-target_entity_type_id: crm_core_individual
+target_entity_type_id: person
+#target_bundle:
