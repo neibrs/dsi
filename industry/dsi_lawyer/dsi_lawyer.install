@@ -90,6 +90,8 @@ function dsi_lawyer_install($is_syncing) {
       'auto_install' => TRUE,
     ],
   ];
+  
+  // TODO, Add client
   $import_manager->doMigrates($configuration);
 }
 

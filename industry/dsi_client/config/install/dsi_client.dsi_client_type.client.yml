@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - dsi_client
-id: individual
-label: 个人
-target_entity_type_id: person
-target_bundle: individual
+id: client
+label: 单位
+target_entity_type_id: organization
+target_bundle: client

@@ -1,0 +1,8 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforeced:
+    module:
+      - dsi_client
+id: client
+label: 单位

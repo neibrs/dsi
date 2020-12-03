@@ -66,13 +66,25 @@ class ClientType extends ConfigEntityBundleBase implements ClientTypeInterface {
    * @var string
    */
   protected $target_entity_type_id;
-
+  
+  /**
+   * The target entity bundle.
+   *
+   * @var string
+   */
+  protected $target_bundle;
+  
   /**
    * {@inheritdoc}
    */
   public function getTargetEntityTypeId() {
     return $this->target_entity_type_id;
   }
-
-  // TODO, getTargetEntity.
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getTargetEntityBundle() {
+    return $this->target_bundle;
+  }
 }
