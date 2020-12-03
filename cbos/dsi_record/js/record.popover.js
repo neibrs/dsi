@@ -3,30 +3,30 @@
     attach: function attach(context) {
       $('[data-toggle="popover"]').each(function () {
         var element = $(this);
-            var id = element.attr('id');
-            var txt = element.html();
-            element.popover({
-                trigger: 'manual',
-                placement: 'right', //top, bottom, left or right
-             // title: txt,
-                html: true,
-                content: ContentMethod(txt),
+        var id = element.attr('id');
+        var txt = element.html();
+        element.popover({
+            trigger: 'manual',
+            placement: 'right', //top, bottom, left or right
+         // title: txt,
+            html: true,
+            content: ContentMethod(txt),
 
-            }).on("mouseenter", function () {
-                var _this = this;
-                $(this).popover("show");
-                $(this).siblings(".popover").on("mouseleave", function () {
-                    $(_this).popover('hide');
-                });
-            }).on("mouseleave", function () {
-                var _this = this;
-                setTimeout(function () {
-                    if (!$(".popover:hover").length) {
-                        $(_this).popover("hide")
-                    }
-                }, 100);
+        }).on("mouseenter", function () {
+            var _this = this;
+            $(this).popover("show");
+            $(this).siblings(".popover").on("mouseleave", function () {
+                $(_this).popover('hide');
             });
-            });
+        }).on("mouseleave", function () {
+            var _this = this;
+            setTimeout(function () {
+                if (!$(".popover:hover").length) {
+                    $(_this).popover("hide")
+                }
+            }, 100);
+        });
+        });
 
   function ContentMethod(txt) {
     var html =
@@ -41,6 +41,27 @@
 
     return html;
             }
-        }
+  $(":checkbox").click(function(){
+    var element = $(this);
+    var id = element.attr('data-id');
+    if (id != null && id != ''){
+       var state = 0;
+       if (element.is(":checked")){
+         var state = 1;
+       }
+       //ajax
+      $.post(
+          "ajax/dsi_record/"+id+"/"+state+"/setStatus", {
+            id:id,
+            state:state
+          },
+          function(data,status){
+            alert(data);
+          });
+    }
+    // var txt = element.html();
+    console.log(id,state);
+        });
+      }
     };
 })(jQuery, Drupal, drupalSettings);

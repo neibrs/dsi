@@ -5,3 +5,11 @@ dsi_record.popover:
   dependencies:
     - core/drupal
     - core/jquery
+
+dsi_record.ajax_set_status:
+  version: VERSION
+  js:
+    js/record.ajax-set-status.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery

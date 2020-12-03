@@ -26,17 +26,17 @@
       {% for key,value in content.expired_data.data %}
       <div class="widget-todolist-item">
         <div class="widget-todolist-input">
-          <div class="checkbox checkbox-css pt-0" id="checkbox-div">
-            <input type="checkbox" id="widget_todolist_{{ key+1 }}">
+          <div class="checkbox checkbox-css pt-0" >
+            <input data-id = "{{ value.id }}" type="checkbox" id="widget_todolist_{{ key+1 }}">
             <label for="widget_todolist_{{ key+1 }}" class="p-l-15">&nbsp;</label>
           </div>
         </div>
         <div class="widget-todolist-content">
-          <h4 class="widget-todolist-title"> {{ value }}</h4>
-          <p class="widget-todolist-desc">2020/11/11 00:00</p>
+          <h4 class="widget-todolist-title"> {{ value.name }}</h4>
+          <p class="widget-todolist-desc">{{  value.date  }}</p>
         </div>
         <div class="widget-todolist-icon">
-          <a href="#"><i class="fa fa-question-circle"></i></a>
+          <a data-toggle="popover" href="#"><i class="fa fa-question-circle"></i></a>
         </div>
       </div>
       {% endfor %}
@@ -63,13 +63,13 @@
         <div class="widget-todolist-item">
           <div class="widget-todolist-input">
             <div class="checkbox checkbox-css pt-0" id="checkbox-div">
-              <input type="checkbox" id="widget_overdue_{{ key+1 }}">
+              <input data-id = "{{ value.id }}" type="checkbox" id="widget_overdue_{{ key+1 }}">
               <label for="widget_overdue_{{ key+1 }}" class="p-l-15">&nbsp;</label>
             </div>
           </div>
           <div class="widget-todolist-content">
-            <h4 class="widget-todolist-title"> {{ value }}</h4>
-            <p class="widget-todolist-desc">2020/11/11 00:00</p>
+            <h4 class="widget-todolist-title"> {{ value.name }}</h4>
+            <p class="widget-todolist-desc">{{ value.date }}</p>
           </div>
           <div class="widget-todolist-icon">
             <a href="#"><i class="fa fa-question-circle"></i></a>
@@ -81,6 +81,7 @@
     <!-- end widget-todolist-body -->
   </div>
 </div>
+
 
 
 

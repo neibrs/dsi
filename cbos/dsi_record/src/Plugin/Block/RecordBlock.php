@@ -3,6 +3,7 @@
 namespace Drupal\dsi_record\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Routing\RouteMatch;
 
 /**
  * Provides a 'RecordBlock' block.
@@ -34,8 +35,13 @@ class RecordBlock extends BlockBase {
         $entity_type = \Drupal::entityTypeManager()->getStorage($item->get('entity_type')->value)->getEntityType();
         $label .= $entity_type->getLabel() . '-';
       }
-      return $label . $item->label();
+      return [
+        'id'=>$item->id(),
+        'name'=>$label . $item->label(),
+        'date'=> $item->get('start')->getValue()[0]['value']
+      ];
     }, $record_storage->loadMultiple($expired_ids));
+
     $data = [
       'expired' => [
         'count' => count($expired_ids),
@@ -48,17 +54,34 @@ class RecordBlock extends BlockBase {
     //      ->condition('start', \DateTime::createFromFormat())
     $build['#content']['expired_data'] = $data['expired'];
     $build['#attached']['library'][] = 'dsi_record/dsi_record.popover';
+//    $build['#attached']['library'][] = 'dsi_record/dsi_record.ajax_set_status';
+//dd($build);
     //4. 动态build Ajax
-    $build['checkbox-div']['#ajax'] = [
-       'callback' => '::ajaxChangeRecordStatus', // 事件回调 方法 || 类 (名)
-     ];
-//    dd($build);
+//    $build['checkbox-div']['#ajax'] = [
+//       'callback' => '::ajaxChangeRecordStatus', // 事件回调 方法 || 类 (名)
+//     ];
+
+//    $build['link']['#attached']['drupalSettings']['ajax']['checkbox-div'] = [ //以触发元素ID做键名
+//      'event'      => 'click',
+////      'dialogType' => 'dialog', //该项使得显示位置在对话框中
+//      'url'        => 'ajax/dsi_record/1/1/setStatus',
+//      'method'     => 'append',
+//      'effect'     => 'slide',
+//      'speed'      => 1000,
+//      'prevent'    => 'click',
+//      'progress'   => [
+//        'type'    => 'throbber',
+//        'message' => '正在进行ajax...',
+//      ],
+//    ];
     return $build;
   }
 
   public function ajaxChangeRecordStatus()
   {
-      return 1;
+      //动态更新status
+
+
   }
 
 }

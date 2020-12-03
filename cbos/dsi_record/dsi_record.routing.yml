@@ -21,3 +21,11 @@ ajax.dsi_record.list:
     _controller: '\Drupal\dsi_record\Controller\RecordController::getRecordsByEntity'
   requirements:
     _permission: 'view record entities'
+
+ajax.dsi_record.status:
+  path: 'ajax/dsi_record/{entity_id}/{state}/setStatus'
+  defaults:
+    _title: 'Record list'
+    _controller: '\Drupal\dsi_record\Controller\RecordController::setStatus'
+  requirements:
+    _permission: 'view record entities'

@@ -42,4 +42,20 @@ class RecordController extends ControllerBase {
     return $build;
   }
 
+  public function setStatus($entity_id,$state)
+  {
+//    /* @var \Drupal\dsi_record\Entity\Record $entity */
+//    if (!empty($entity_id) && !empty($status)){
+//      $entity = $entity->load($entity_id);
+//      $entity->status = $status;
+//      //操作
+//      if ($entity->save()){
+//          //redirect  set->massage
+//      }
+//    }
+//    return ['code'=>400,'massage'=>'未知错误'];
+
+    return ['entity_id'=>$entity_id,'status'=>$state];
+  }
+
 }
