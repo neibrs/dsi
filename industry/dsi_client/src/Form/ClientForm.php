@@ -32,30 +32,29 @@ class ClientForm extends ContentEntityForm {
     $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($this->entity->bundle());
 
     $target_entity_type_id = $type->getTargetEntityTypeId();
-    $target_bundle = $type->getTargetBundle();
 
-//    if ($type = $form_state->getValue('type')) {
-//      $type = $type[0]['target_id'];
-//      $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
-//      $target_entity_type_id = $type->getTargetEntityTypeId();
-//      $form['client_type'] = [
-//        '#id' => 'client-type-wrapper',
-//        '#type' => 'inline_entity_form',
-//        '#entity_type' => $target_entity_type_id,
-//        '#bundle' => $type->id(),
-//        '#form_mode' => 'normal',
-//        ];
-//      }
-//    else {
-//      $form['client_type'] = [
-//         '#id' => 'client-type-wrapper',
-//        '#type' => 'inline_entity_form',
-//        '#entity_type' => $target_entity_type_id,
-//        '#bundle' => $this->entity->bundle(),
-//        '#form_mode' => 'normal',
-//        '#default_value' => !empty($this->entity->get('entity_id')->target_id) ? $this->entity->get('entity_id')->entity : NULL,
-//      ];
-//    }
+    if ($type = $form_state->getValue('type')) {
+      $type = $type[0]['target_id'];
+      $type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
+      $target_entity_type_id = $type->getTargetEntityTypeId();
+      $form['client_type'] = [
+        '#id' => 'client-type-wrapper',
+        '#type' => 'inline_entity_form',
+        '#entity_type' => $target_entity_type_id,
+        '#bundle' => $type->id(),
+        '#form_mode' => 'client',
+        ];
+      }
+    else {
+      $form['client_type'] = [
+         '#id' => 'client-type-wrapper',
+        '#type' => 'inline_entity_form',
+        '#entity_type' => $target_entity_type_id,
+        '#bundle' => $this->entity->bundle(),
+        '#form_mode' => 'client',
+        '#default_value' => !empty($this->entity->get('entity_id')->target_id) ? $this->entity->get('entity_id')->entity : NULL,
+      ];
+    }
 
     return $form;
   }
