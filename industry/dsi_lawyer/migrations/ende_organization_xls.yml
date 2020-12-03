@@ -22,8 +22,6 @@ source:
     -
       组织分类: 组织分类
     -
-      工作地点: 工作地点
-    -
       有效期: 有效期
     -
       有效期开始: 有效期开始
@@ -62,8 +60,14 @@ process:
 
   type:
     -
-      plugin: default_value
-      default_value: 'department'
+      plugin: callback
+      callable: trim
+      source: 组织类型
+    -
+      plugin: entity_lookup
+      entity_type: organization_type
+      value_key: label
+      value_key_alias: alias
 
   classifications:
     -
