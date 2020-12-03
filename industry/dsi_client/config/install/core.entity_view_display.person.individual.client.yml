@@ -1,0 +1,99 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.person.client
+    - field.field.person.individual.field_beizhu
+    - field.field.person.individual.field_location
+    - person.type.individual
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: person.individual.client
+targetEntityType: person
+bundle: individual
+mode: client
+content:
+  field_beizhu:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  gender:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  identify_number:
+    type: string
+    weight: 4
+    label: inline
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: true
+    region: content
+    third_party_settings: {  }
+  nationality:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  phone:
+    type: entity_reference_label
+    weight: 3
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  address: true
+  adjusted_service_date: true
+  attachments: true
+  birth_date: true
+  business_group: true
+  completion_of_probation_date: true
+  effective_dates: true
+  email: true
+  employee_status: true
+  hire_date: true
+  identification_information: true
+  langcode: true
+  marital_status: true
+  native_place: true
+  number: true
+  organization: true
+  people_group: true
+  picture: true
+  probation_period: true
+  rehire_date: true
+  status: true
+  type: true
+  user_roles: true

@@ -1,0 +1,20 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - field.storage.organization.field_beizu
+    - organization.type.client
+  module:
+    - text
+id: organization.client.field_beizu
+field_name: field_beizu
+entity_type: organization
+bundle: client
+label: 备注
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

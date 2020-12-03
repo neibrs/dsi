@@ -1,0 +1,18 @@
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - organization
+    - text
+id: organization.field_beizu
+field_name: field_beizu
+entity_type: organization
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
