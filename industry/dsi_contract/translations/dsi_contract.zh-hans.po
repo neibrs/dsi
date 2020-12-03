@@ -21,6 +21,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: modules/dsi/industry/dsi_contract/dsi_contract.module:37
+msgid "Contract"
+msgstr "合同"
+
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:190
 msgctxt "Contract"
 msgid "Number"
@@ -29,6 +33,10 @@ msgstr "合同编号"
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:207
 msgid "Client"
 msgstr "客户"
+
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:225
+msgid "Case Category"
+msgstr "案件类型"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:246
 msgid "Contract Client"

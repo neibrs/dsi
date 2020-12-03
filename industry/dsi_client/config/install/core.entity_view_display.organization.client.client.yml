@@ -1,0 +1,88 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.organization.client
+    - field.field.organization.client.field_address
+    - field.field.organization.client.field_beizhu
+    - field.field.organization.client.field_beizu
+    - field.field.organization.client.field_phone
+    - field.field.organization.client.field_social_code
+    - organization.type.client
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: organization.client.client
+targetEntityType: organization
+bundle: client
+mode: client
+content:
+  field_address:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_beizhu:
+    weight: 5
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_beizu:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_phone:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_code:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  manager:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 0
+    label: inline
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  business_group: true
+  children: true
+  classifications: true
+  description: true
+  effective_dates: true
+  langcode: true
+  location: true
+  parent: true
+  status: true
+  type: true

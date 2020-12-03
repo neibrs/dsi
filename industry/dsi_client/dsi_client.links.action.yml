@@ -12,3 +12,10 @@ entity.dsi_client.add_form:
       destination: '/dsi_client'
   appears_on:
     - entity.dsi_client.collection
+entity.dsi_client.import:
+  title: 'Import'
+  route_name: dsi_import.import
+  route_parameters:
+    entity_type_id: dsi_client
+  appears_on:
+    - entity.dsi_client.collection

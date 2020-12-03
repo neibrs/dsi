@@ -1,0 +1,183 @@
+id: client_xlsx
+label: Client(xlsx)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/industry/dsi_client/data/client.xlsx
+  sheet_name: 客户
+  auto_install: true
+  keys:
+    - 客户名称
+  columns:
+    -
+      客户名称: 客户名称
+    -
+      客户编号: 客户编号
+    -
+      电销: 电销
+    -
+      客服: 客服
+    -
+      客户来源: 客户来源
+    -
+      客户状态: 客户状态
+    -
+      客户类型: 客户类型
+    -
+      案件类型: 案件类型
+    -
+      客户行业: 客户行业
+    -
+      客户电话: 客户电话
+    -
+      传真号码: 传真号码
+    -
+      公司网址: 公司网址
+    -
+      企业法人: 企业法人
+    -
+      邮政编码: 邮政编码
+    -
+      电子邮箱: 电子邮箱
+    -
+      客户地址: 客户地址
+    -
+      公司规模: 公司规模
+    -
+      年销售额: 年销售额
+    -
+      客户介绍: 客户介绍
+    -
+      所在地区: 所在地区
+    -
+      创建时间: 创建时间
+    -
+      创建人: 创建人
+    -
+      公海分组: 公海分组
+    -
+      未联系: 未联系
+    -
+      简述: 简述
+    -
+      客户手机: 客户手机
+    -
+      合同: 合同
+    -
+      案件: 案件
+
+process:
+  type:
+    plugin: default_value
+    default_value: individual
+  name: 客户名称
+  number/value: 客户编号
+  customer_source:
+    -
+      plugin: callback
+      callable: trim
+      source: 客户来源
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: customer_source
+      ignore_case: true
+  cooperating_state:
+    -
+      plugin: callback
+      callable: trim
+      source: 客户状态
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: cooperating_state
+      ignore_case: true
+  client_importance:
+    -
+      plugin: callback
+      callable: trim
+      source: 客户类型
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: client_importance
+      ignore_case: true
+
+  case_category:
+    -
+      plugin: callback
+      callable: trim
+      source: 案件类型
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate_plus
+      entity_type: lookup
+      value_key: name
+      bundle_key: type
+      bundle: case_category
+      ignore_case: true
+#  entity_type:
+#    plugin: default_value
+#    default_value: individual
+#  entity_id:
+#    plugin: entity_generate
+#    entity_type: crm_core_individual
+#    value_key: name
+#    bundle_key: type
+#    bundle: individual
+#    values:
+#      name: 客户名称
+#      field_phone: 客户手机
+#      field_person_name: 客户名称
+#      field_location: 客户地址
+#  客户行业
+#  客户电话: 与客户手机同义
+#  电销
+#  客服
+#  传真号码
+#  公司网址
+#  企业法人
+#  邮政编码
+#  电子邮箱
+#  所在地区
+#  公司规模
+#  年销售额
+  description/value: 客户介绍
+  created: 创建时间
+#  uid:
+#    -
+#      plugin: callback
+#      callable: trim
+#      source: 创建人
+#    -
+#      plugin: entity_lookup
+#      entity_type: user
+#      value_key: name
+  summary: 简述
+#  公海分组
+#  未联系
+#  合同
+#  案件
+destination:
+  plugin: entity:dsi_client
+  keys:
+    - name
+migration_dependencies: { }

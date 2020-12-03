@@ -22,7 +22,7 @@ display:
         options:
           perm: 'view organizations'
       cache:
-        type: employee_assignment_tag
+        type: tag
       query:
         type: views_query
       exposed_form:
@@ -65,8 +65,6 @@ display:
             parent: parent
             manager: manager
             name_1: name_1
-            holder_count: holder_count
-            headcount: headcount
             status: status
             effective_dates__value: effective_dates__value
             operations: operations
@@ -126,20 +124,6 @@ display:
               empty_column: false
               responsive: ''
             name_1:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            holder_count:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            headcount:
               sortable: true
               default_sort_order: asc
               align: ''
@@ -348,102 +332,6 @@ display:
           entity_type: location
           entity_field: name
           plugin_id: field
-        holder_count:
-          id: holder_count
-          table: organization_employee_assignment_statistics
-          field: holder_count
-          label: 'Holder count'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'organization/{{ id }}/employee_assignment'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          set_precision: false
-          precision: 0
-          decimal: .
-          separator: ','
-          format_plural: false
-          format_plural_string: !!binary MQNAY291bnQ=
-          prefix: ''
-          suffix: ''
-          plugin_id: numeric
-        headcount:
-          id: headcount
-          table: organization_position_statistics
-          field: headcount
-          label: Headcount
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'organization/{{ id }}/position'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          set_precision: false
-          precision: 0
-          decimal: .
-          separator: ','
-          format_plural: false
-          format_plural_string: !!binary MQNAY291bnQ=
-          prefix: ''
-          suffix: ''
-          plugin_id: numeric
         status:
           id: status
           table: organization_field_data

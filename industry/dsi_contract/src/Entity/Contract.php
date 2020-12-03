@@ -137,7 +137,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
-
+    
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
       ->setRevisionable(TRUE)
@@ -295,6 +295,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
         'label' => 'inline',
         'type' => 'boolean',
         'weight' => 0,
+        'settings' => [
+          'format' => 'yes-no',
+        ],
       ])
       ->setDisplayConfigurable('form', TRUE);
   
@@ -564,5 +567,17 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     return $fields;
   }
-
+  
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if ($business_group = $person->getOrganizationByClassification('business_group')) {
+      $this->set('business_group', $business_group);
+    }
+    
+    parent::preSave($storage);
+  }
+  
 }

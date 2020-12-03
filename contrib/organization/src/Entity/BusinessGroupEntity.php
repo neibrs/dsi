@@ -47,18 +47,6 @@ abstract class BusinessGroupEntity extends ContentEntityBase implements Business
           'classifications' => 'business_group',
         ],
       ])
-      ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
-        'weight' => -100,
-        'label' => 'inline',
-        'settings' => [
-          'link' => FALSE,
-        ],
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => -100,
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 

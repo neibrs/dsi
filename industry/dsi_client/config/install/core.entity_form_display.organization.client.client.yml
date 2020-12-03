@@ -1,0 +1,79 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.organization.client
+    - field.field.organization.client.field_address
+    - field.field.organization.client.field_beizhu
+    - field.field.organization.client.field_beizu
+    - field.field.organization.client.field_phone
+    - field.field.organization.client.field_social_code
+    - organization.type.client
+  module:
+    - text
+id: organization.client.client
+targetEntityType: organization
+bundle: client
+mode: client
+content:
+  field_address:
+    weight: 2
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_beizu:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_phone:
+    weight: 3
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_code:
+    weight: 4
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  manager:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      placeholder: ''
+      match_limit: 10
+      size: 40
+    region: content
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  business_group: true
+  classifications: true
+  currency: true
+  description: true
+  effective_dates: true
+  field_beizhu: true
+  langcode: true
+  location: true
+  parent: true
+  type: true

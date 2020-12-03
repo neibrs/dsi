@@ -4,6 +4,6 @@ dependencies:
   enforced:
     module:
       - dsi_client
-id: customer_source
-label: 客户来源
-description: null
+id: client
+label: 单位
+target_entity_type_id: organization

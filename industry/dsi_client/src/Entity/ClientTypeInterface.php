@@ -11,4 +11,6 @@ interface ClientTypeInterface extends ConfigEntityInterface {
 
   // Add get/set methods for your configuration properties here.
   public function getTargetEntityTypeId();
+  
+  public function getTargetEntityBundle();
 }

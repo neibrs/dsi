@@ -6,3 +6,4 @@ dependencies:
       - dsi_client
 id: cooperating_state
 label: 合作状态
+description: null

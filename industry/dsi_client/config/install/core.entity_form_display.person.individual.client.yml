@@ -1,0 +1,99 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.person.client
+    - field.field.person.individual.field_beizhu
+    - field.field.person.individual.field_location
+    - person.type.individual
+  module:
+    - inline_entity_form
+    - text
+id: person.individual.client
+targetEntityType: person
+bundle: individual
+mode: client
+content:
+  field_beizhu:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_location:
+    weight: 5
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  gender:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  identify_number:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+  nationality:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  phone:
+    type: inline_entity_form_complex
+    settings:
+      form_mode: inline_entity_form
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    weight: 3
+    region: content
+    third_party_settings: {  }
+hidden:
+  address: true
+  adjusted_service_date: true
+  attachments: true
+  birth_date: true
+  business_group: true
+  completion_of_probation_date: true
+  effective_dates: true
+  email: true
+  employee_status: true
+  hire_date: true
+  identification_information: true
+  langcode: true
+  marital_status: true
+  native_place: true
+  number: true
+  organization: true
+  people_group: true
+  picture: true
+  probation_period: true
+  rehire_date: true
+  type: true

@@ -211,7 +211,7 @@ class EntityContentBase extends EntityContentBaseBase {
     // 根据 migration 配置文件取 default_value_fields
     $migration = $this->migration;
     if (isset($migration)) {
-      $destination = $migration->get('destination');
+      $destination = $migration->getDestinationConfiguration('destination');
       if (isset($destination['default_value_fields'])) {
         $default_value_fields = $destination['default_value_fields'];
       }

@@ -6,4 +6,7 @@ dependencies:
       - dsi_client
 id: individual
 label: 个人
-target_entity_type_id: person
+alias: null
+system_type: null
+is_system: false
+is_employee: null

@@ -1,0 +1,73 @@
+id: ende_person_xls
+label: 恩德人员(xls)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx
+  sheet_name: 人员
+  auto_install: true
+  keys:
+    - 姓名
+  type: employee
+  columns:
+    -
+      姓名: 姓名
+    -
+      部门: 部门
+    -
+      律所: 律所
+
+process:
+  # type 有默认值设置
+  # 默认值的处理见: @see \Drupal\import\Plugin\migrate\destination\EntityContentBase::import().
+  type:
+    -
+      plugin: callback
+      source: 人员类型
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: person_type
+      ignore_case: true
+      value_key: label
+      value_key_alias: alias
+
+  name:
+    -
+      plugin: callback
+      source: 姓名
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 姓名不能为空
+
+  organization:
+    -
+      plugin: callback
+      callable: trim
+      source: 部门
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: organization
+      delimiter: _
+      not_found_message: '部门未找到'
+  business_group:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: 律所
+    -
+      plugin: entity_lookup
+      entity_type: organization
+      value_key: name
+      process: true
+destination:
+  plugin: entity:person
+migration_dependencies: { }

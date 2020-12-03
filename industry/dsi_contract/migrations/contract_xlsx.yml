@@ -104,6 +104,7 @@ process:
       value_key: name
       bundle_key: type
       bundle: employee
+#  business_group:
   passport_number: 证件号码
   case_procedure:
     -
