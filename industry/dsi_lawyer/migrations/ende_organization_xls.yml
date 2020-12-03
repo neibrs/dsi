@@ -6,9 +6,9 @@ source:
   header_row: 1
   path: modules/dsi/industry/dsi_lawyer/data/OrgPerson.xlsx
   sheet_name: 组织
+  type: department
   keys:
     - 组织
-  type: department
   auto_install: true
   columns:
     -
@@ -67,7 +67,6 @@ process:
       plugin: entity_lookup
       entity_type: organization_type
       value_key: label
-      value_key_alias: alias
 
   classifications:
     -
@@ -100,5 +99,5 @@ destination:
     -
       - name
       - parent
-    - name
+    - name #不同业务组下，相同部门名称会导致不能导入
 migration_dependencies: { }
