@@ -567,5 +567,17 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     return $fields;
   }
-
+  
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if ($business_group = $person->getOrganizationByClassification('business_group')) {
+      $this->set('business_group', $business_group);
+    }
+    
+    parent::preSave($storage);
+  }
+  
 }
