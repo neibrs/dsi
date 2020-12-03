@@ -137,7 +137,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
-
+    
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
       ->setRevisionable(TRUE)
