@@ -22,7 +22,7 @@ display:
         options:
           perm: 'view organizations'
       cache:
-        type: employee_assignment_tag
+        type: tag
       query:
         type: views_query
       exposed_form:
