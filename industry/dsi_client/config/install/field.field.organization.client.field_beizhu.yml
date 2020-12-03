@@ -1,0 +1,23 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - field.storage.organization.field_beizhu
+    - organization.type.client
+  module:
+    - text
+  enforced:
+    module:
+      - dsi_client
+id: organization.client.field_beizhu
+field_name: field_beizhu
+entity_type: organization
+bundle: client
+label: 备注
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

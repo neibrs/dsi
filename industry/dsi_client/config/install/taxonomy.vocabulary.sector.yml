@@ -1,4 +1,4 @@
-langcode: en
+langcode: zh-hans
 status: true
 dependencies:
   enforced:
@@ -6,4 +6,5 @@ dependencies:
       - dsi_client
 name: 所属行业
 vid: sector
+description: null
 weight: -10

@@ -1,0 +1,23 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - field.storage.person.field_beizhu
+    - person.type.individual
+  module:
+    - text
+  enforced:
+    module:
+      - dsi_client
+id: person.individual.field_beizhu
+field_name: field_beizhu
+entity_type: person
+bundle: individual
+label: 备注
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

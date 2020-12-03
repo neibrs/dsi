@@ -1,0 +1,21 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - field.storage.organization.field_social_code
+    - organization.type.client
+  enforced:
+    module:
+      - dsi_client
+id: organization.client.field_social_code
+field_name: field_social_code
+entity_type: organization
+bundle: client
+label: 统一社会信用代码
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

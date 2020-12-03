@@ -7,4 +7,3 @@ dependencies:
 id: individual
 label: 个人
 target_entity_type_id: person
-target_bundle: individual
