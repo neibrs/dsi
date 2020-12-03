@@ -295,6 +295,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
         'label' => 'inline',
         'type' => 'boolean',
         'weight' => 0,
+        'settings' => [
+          'format' => 'yes-no',
+        ],
       ])
       ->setDisplayConfigurable('form', TRUE);
   
