@@ -128,7 +128,6 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name', [], ['context' => 'Person']))
       ->setRequired(TRUE)
-      ->setSetting('max_length', 32)
       ->setDisplayOptions('view', [
         'type' => 'string',
         'weight' => -20,

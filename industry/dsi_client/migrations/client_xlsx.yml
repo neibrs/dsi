@@ -54,8 +54,6 @@ source:
     -
       创建时间: 创建时间
     -
-      创建人: 创建人
-    -
       公海分组: 公海分组
     -
       未联系: 未联系
@@ -171,15 +169,20 @@ process:
     -
       plugin: callback
       callable: strtotime
-#  uid:
-#    -
-#      plugin: callback
-#      callable: trim
-#      source: 创建人
-#    -
-#      plugin: entity_lookup
-#      entity_type: user
-#      value_key: name
+  uid:
+    -
+      plugin: callback
+      callable: trim
+      source: 电销
+    -
+      plugin: entity_lookup
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
+    -
+      plugin: person_account_lookup
+
   summary: 简述
 #  公海分组
 #  未联系
