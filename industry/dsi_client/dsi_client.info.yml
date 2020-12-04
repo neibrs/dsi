@@ -11,7 +11,6 @@ dependencies:
   - field
   - inline_entity_form
   - lookup
-  - name
   - options
   - organization
   - person

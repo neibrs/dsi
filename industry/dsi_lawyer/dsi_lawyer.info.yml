@@ -8,9 +8,7 @@ interface translation project: dsi_lawyer
 interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
 dependencies:
   - dsi_cases
-  - dsi_client
   - dsi_contract
   - dsi_litigant
   - dsi_project
   - dsi_record
-  - person

@@ -1,8 +1,0 @@
-name: 'Projects'
-type: module
-description: 'The project of lawyer.'
-core: 8.x
-core_version_requirement: ^8 || ^9
-package: 'Dsi'
-interface translation project: dsi_project
-interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po

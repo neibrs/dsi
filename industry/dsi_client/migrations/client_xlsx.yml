@@ -146,7 +146,9 @@ process:
     values:
       name: 客户名称
       phone: 客户手机
-      field_location: 客户地址
+      address: 客户地址
+    conditions:
+      type: individual
 #  客户行业
 #  客户电话: 与客户手机同义
 #  电销
