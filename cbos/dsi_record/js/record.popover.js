@@ -51,13 +51,15 @@
        }
        //ajax
       $.post(
-          "ajax/dsi_record/"+id+"/"+state+"/setStatus", {
-            id:id,
-            state:state
-          },
-          function(data,status){
+        "ajax/dsi_record/"+id+"/"+state+"/setStatus", {
+          // id:id,
+          // state:state
+        },
+        function(data,status){
+          if (data.code == 200){
             alert(data);
-          });
+          }el
+        });
     }
     // var txt = element.html();
     console.log(id,state);

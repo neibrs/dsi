@@ -42,20 +42,32 @@ class RecordController extends ControllerBase {
     return $build;
   }
 
+  /**
+   * @param $entity_id
+   * @param $state
+   *
+   * @return false|string
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
   public function setStatus($entity_id,$state)
   {
-//    /* @var \Drupal\dsi_record\Entity\Record $entity */
-//    if (!empty($entity_id) && !empty($status)){
-//      $entity = $entity->load($entity_id);
-//      $entity->status = $status;
-//      //操作
-//      if ($entity->save()){
-//          //redirect  set->massage
-//      }
-//    }
-//    return ['code'=>400,'massage'=>'未知错误'];
+    /* @var \Drupal\dsi_record\Entity\Record $entity */
+    if (!empty($entity_id) and isset($state)){
 
-    return ['entity_id'=>$entity_id,'status'=>$state];
+      $entity = $entity->load($entity_id);
+      $entity->state = $state==0 ? FALSE : TRUE;
+      //操作
+      $data = [
+        'code'=>4000,
+        'entity_id'=>0,
+        'massage'=>'未知错误'
+      ];
+      if ($entity->save()){
+        $data = ['code'=>200,'entity_id'=>$entity_id,'massage'=>'操作成功'];
+      }
+      return json_encode($data);
+    }
+
   }
 
 }

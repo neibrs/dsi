@@ -84,7 +84,11 @@ class ClientForm extends ContentEntityForm {
     $target_entity_type_id = $client_type->getTargetEntityTypeId();
     $items = [];
     foreach ($values as $key => $value) {
+      if ($key == 'gender' or $key == 'nationality' or $key == 'manager'){
+        $items[$key] = isset($value[0]['target_id']) ? $value[0]['target_id'] : 0;
+      }else{
         $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
+      }
       }
     $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
     if ($entity_id) {
@@ -107,7 +111,6 @@ class ClientForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
-
     $status = parent::save($form, $form_state);
 
     switch ($status) {
