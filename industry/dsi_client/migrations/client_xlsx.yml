@@ -134,20 +134,19 @@ process:
       bundle_key: type
       bundle: case_category
       ignore_case: true
-#  entity_type:
-#    plugin: default_value
-#    default_value: individual
-#  entity_id:
-#    plugin: entity_generate
-#    entity_type: crm_core_individual
-#    value_key: name
-#    bundle_key: type
-#    bundle: individual
-#    values:
-#      name: 客户名称
-#      field_phone: 客户手机
-#      field_person_name: 客户名称
-#      field_location: 客户地址
+  entity_type:
+    plugin: default_value
+    default_value: individual
+  entity_id:
+    plugin: entity_generate
+    entity_type: person
+    value_key: name
+    bundle_key: type
+    bundle: individual
+    values:
+      name: 客户名称
+      phone: 客户手机
+      field_location: 客户地址
 #  客户行业
 #  客户电话: 与客户手机同义
 #  电销

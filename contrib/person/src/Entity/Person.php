@@ -511,21 +511,17 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
 
     // Contact information: Address, Phone, Email.
 
-    $fields['address'] = BaseFieldDefinition::create('entity_reference')
+    $fields['address'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Address'))
-      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('target_type', 'person_address')
+      ->setSetting('max_length', 32)
       ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
-        'weight' => 0,
         'label' => 'inline',
+        'type' => 'string',
+        'weight' => -10,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'inline_entity_form_complex',
-        'settings' => [
-          'form_mode' => 'inline_entity_form',
-        ],
-        'weight' => 0,
+        'type' => 'string_textfield',
+        'weight' => -10,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -548,21 +544,17 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['email'] = BaseFieldDefinition::create('entity_reference')
+    $fields['email'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Email'))
-      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('target_type', 'person_email')
+      ->setSetting('max_length', 32)
       ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
-        'weight' => 0,
         'label' => 'inline',
+        'type' => 'string',
+        'weight' => -10,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'inline_entity_form_complex',
-        'settings' => [
-          'form_mode' => 'inline_entity_form',
-        ],
-        'weight' => 0,
+        'type' => 'string_textfield',
+        'weight' => -10,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -585,42 +577,6 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
     }
 
     parent::preSave($storage);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function postDelete(EntityStorageInterface $storage, array $entities) {
-    foreach ($entities as $entity) {
-      foreach (['phone', 'email', 'address'] as $field_name) {
-        foreach ($entity->$field_name as $field) {
-          $field->entity->delete();
-        }
-      }
-    }
-
-    parent::postDelete($storage, $entities);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
-    parent::postSave($storage, $update);
-
-    // Ensure the back-reference.
-    foreach (['address', 'phone', 'email', 'identification_information'] as $field_name) {
-      foreach ($this->$field_name as $field) {
-        if (empty($field->target_id)) {
-          continue;
-        }
-        $target_entity = $field->entity;
-        if ($target_entity->person->isEmpty() || $target_entity->person->target_id != $this->id()) {
-          $target_entity->person->target_id = $this->id();
-          $target_entity->save();
-        }
-      }
-    }
   }
 
   /**
