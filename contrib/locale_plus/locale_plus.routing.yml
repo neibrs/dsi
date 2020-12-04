@@ -1,0 +1,6 @@
+locale_plus.update_config_translations:
+  path: '/admin/update_config_translations'
+  defaults:
+    _controller: '\Drupal\locale_plus\Controller\LocalePlusController::updateConfigTranslations'
+  requirements:
+    _permission: 'translate interface'

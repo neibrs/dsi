@@ -1,0 +1,3 @@
+services:
+  locale_plus.manager:
+    class: Drupal\locale_plus\LocalePlusManager

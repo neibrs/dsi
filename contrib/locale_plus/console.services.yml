@@ -1,0 +1,6 @@
+services:
+  locale_plus.locale_plus_update_config_translations:
+    class: Drupal\locale_plus\Command\UpdateConfigTranslationsCommand
+    arguments: []
+    tags:
+      - { name: drupal.command }
