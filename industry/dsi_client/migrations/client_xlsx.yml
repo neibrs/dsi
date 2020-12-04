@@ -163,7 +163,14 @@ process:
 #  公司规模
 #  年销售额
   description/value: 客户介绍
-  created: 创建时间
+  created:
+    -
+      plugin: skip_on_empty
+      source: 创建时间
+      method: row
+    -
+      plugin: callback
+      callable: strtotime
 #  uid:
 #    -
 #      plugin: callback
