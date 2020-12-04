@@ -59,11 +59,47 @@ class ClientForm extends ContentEntityForm {
     return $form;
   }
   
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitForm($form, $form_state);
+  
+    $values = $form_state->getValue('client_type');
+    $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values, $this->entity->get('entity_id')->target_id);
+
+    $this->entity->set('entity_id', $entity->id());
+    $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
+    $this->entity->save();
+  }
+  
   /**
    * Handles switching the available regions based on the selected theme.
    */
   public function clientTypeSwitch($form, FormStateInterface $form_state) {
     return $form['client_type'];
+  }
+  
+  /**
+   */
+  protected function updateRelatedEntity($type, $values, $entity_id = NULL) {
+    $client_type = $this->entityTypeManager->getStorage('dsi_client_type')->load($type);
+    $target_entity_type_id = $client_type->getTargetEntityTypeId();
+    $items = [];
+    foreach ($values as $key => $value) {
+        $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
+      }
+    $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
+    if ($entity_id) {
+        // 批量保存$items到entity_id, TODO
+        $entity = $entity_storage->load($entity_id);
+        foreach ($items as $key => $val) {
+            $entity->set($key, $val);
+          }
+      $entity->save();
+    }
+    else {
+        $entity = $entity_storage->create($items + ['type' => $type]);
+        $entity->save();
+    }
+    return $entity;
   }
   
   /**

@@ -529,21 +529,20 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
-    $fields['phone'] = BaseFieldDefinition::create('entity_reference')
+  
+    $fields['phone'] = BaseFieldDefinition::create('telephone')
       ->setLabel(t('Phone'))
-      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('target_type', 'person_phone')
+      ->setSettings([
+        'max_length' => 20,
+        'text_processing' => 0,
+      ])
       ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
+        'type' => 'basic_string',
         'weight' => 0,
         'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'inline_entity_form_complex',
-        'settings' => [
-          'form_mode' => 'inline_entity_form',
-        ],
+        'type' => 'telephone_default',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
@@ -612,6 +611,9 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
     // Ensure the back-reference.
     foreach (['address', 'phone', 'email', 'identification_information'] as $field_name) {
       foreach ($this->$field_name as $field) {
+        if (empty($field->target_id)) {
+          continue;
+        }
         $target_entity = $field->entity;
         if ($target_entity->person->isEmpty() || $target_entity->person->target_id != $this->id()) {
           $target_entity->person->target_id = $this->id();
