@@ -213,9 +213,6 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['follow'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Follow', [], ['context' => 'Client']))
       ->setSetting('target_type', 'person')
-      ->setSetting('handler_settings', [
-        'target_bundles' => ['lawyer' => 'lawyer'],
-      ])
       ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',

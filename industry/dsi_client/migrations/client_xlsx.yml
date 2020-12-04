@@ -148,6 +148,17 @@ process:
     values:
       phone: 客户手机
       address: 客户地址
+  follow:
+    -
+      plugin: callback
+      callable: trim
+      source: 电销
+    -
+      plugin: entity_lookup
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
 #  客户行业
 #  客户电话: 与客户手机同义
 #  电销
