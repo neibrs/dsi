@@ -40,11 +40,11 @@ class Client extends EntityContentBase {
       // create record
       $values = [
         'entity_type' => 'dsi_client',
-        'entity_id' => $ids[0],
+        'entity_id' => reset($ids),
         'name' => substr(strip_tags($rs->record_content), 0, 32),
         'detail' => strip_tags($rs->record_content),
-        'start' => strtotime($rs->record_start),
-        'end' => strtotime($rs->record_end),
+//        'start' => strtotime($rs->record_start),
+//        'end' => strtotime($rs->record_end),
         'uid' => $row->getDestinationProperty('uid'),
         'state' => TRUE,
         'status' => TRUE,

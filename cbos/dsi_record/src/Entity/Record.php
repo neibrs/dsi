@@ -207,36 +207,36 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     // 开始时间 - 结束时间
-    $fields['start'] = BaseFieldDefinition::create('timestamp')
+    $fields['start'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Start', [], ['context' => 'Record']))
       ->setDisplayOptions('view', [
-        'type' => 'timestamp',
+        'type' => 'datetime_default',
         'weight' => 0,
         'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'datetime_timestamp',
+        'type' => 'datetime_default',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['end'] = BaseFieldDefinition::create('timestamp')
+    $fields['end'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('End', [], ['context' => 'Record']))
       ->setDisplayOptions('view', [
-        'type' => 'timestamp',
+        'type' => 'datetime_default',
         'weight' => 0,
         'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'datetime_timestamp',
+        'type' => 'datetime_default',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     // 提醒时间
-    $fields['reminder'] = BaseFieldDefinition::create('timestamp')
+    $fields['reminder'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Reminder time', [], ['context' => 'Record']))
       ->setDisplayOptions('view', [
         'type' => 'timestamp',
