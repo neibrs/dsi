@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-18 05:43+0000\n"
+"POT-Creation-Date: 2020-12-01 03:09+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -37,6 +37,11 @@ msgstr "客户标识"
 msgctxt "Client"
 msgid "Follow"
 msgstr "跟进人"
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:240
+msgctxt "Client"
+msgid "Summary"
+msgstr "简述"
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:214
 msgctxt "Client"
@@ -62,6 +67,10 @@ msgstr "客户来源"
 msgctxt "Client"
 msgid "Client Importance"
 msgstr "客户重要性"
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:348
+msgid "Entity type"
+msgstr "客户标识"
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:334
 msgctxt "Client"
