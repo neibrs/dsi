@@ -173,7 +173,6 @@ class Record extends ContentEntityBase implements RecordInterface {
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name', [], ['context' => 'Record']))
       ->setSettings([
-        'max_length' => 50,
         'text_processing' => 0,
       ])
       ->setDefaultValue('')

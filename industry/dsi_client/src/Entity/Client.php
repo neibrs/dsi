@@ -238,7 +238,6 @@ class Client extends ContentEntityBase implements ClientInterface {
     // 客户简述
     $fields['summary'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Summary', [], ['context' => 'Client']))
-      ->setSetting('max_length', 128)
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'inline',
