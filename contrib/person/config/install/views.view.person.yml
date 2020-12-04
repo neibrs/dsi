@@ -132,13 +132,6 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            nationality:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             effective_dates__value:
               sortable: true
               default_sort_order: asc
