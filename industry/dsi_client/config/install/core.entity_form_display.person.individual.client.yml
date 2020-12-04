@@ -59,21 +59,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   phone:
-    type: inline_entity_form_complex
-    settings:
-      form_mode: inline_entity_form
-      revision: false
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-    weight: 3
+    type: string_textfield
+    weight: 0
     region: content
+    settings:
+      size: 40
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   address: true

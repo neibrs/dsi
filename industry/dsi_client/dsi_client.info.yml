@@ -7,7 +7,6 @@ interface translation project: dsi_client
 interface translation server pattern: modules/dsi/industry/%project/translations/%project.%language.po
 package: Dsi
 dependencies:
-  - dsi_client
   - field
   - inline_entity_form
   - lookup

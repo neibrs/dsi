@@ -66,12 +66,12 @@ content:
       link: true
     third_party_settings: {  }
   phone:
-    type: entity_reference_label
+    type: string
     weight: 3
     label: inline
-    region: content
     settings:
-      link: true
+      link_to_entity: false
+    region: content
     third_party_settings: {  }
 hidden:
   address: true
