@@ -213,9 +213,6 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['follow'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Follow', [], ['context' => 'Client']))
       ->setSetting('target_type', 'person')
-      ->setSetting('handler_settings', [
-        'target_bundles' => ['lawyer' => 'lawyer'],
-      ])
       ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
@@ -238,7 +235,6 @@ class Client extends ContentEntityBase implements ClientInterface {
     // 客户简述
     $fields['summary'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Summary', [], ['context' => 'Client']))
-      ->setSetting('max_length', 128)
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'inline',
