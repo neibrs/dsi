@@ -3,7 +3,9 @@
 namespace Drupal\dsi_record\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\dsi_record\Entity\Record;
 use Drupal\layout_builder\Section;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Returns responses for record routes.
@@ -51,21 +53,19 @@ class RecordController extends ControllerBase {
    */
   public function setStatus($entity_id,$state)
   {
-    /* @var \Drupal\dsi_record\Entity\Record $entity */
     if (!empty($entity_id) and isset($state)){
-
-      $entity = $entity->load($entity_id);
-      $entity->state = $state==0 ? FALSE : TRUE;
+      $record = Record::load($entity_id);
+      $record->state = $state==0 ? FALSE : TRUE;
       //操作
       $data = [
         'code'=>4000,
         'entity_id'=>0,
         'massage'=>'未知错误'
       ];
-      if ($entity->save()){
+      if ($record->save()){
         $data = ['code'=>200,'entity_id'=>$entity_id,'massage'=>'操作成功'];
       }
-      return json_encode($data);
+      return new JsonResponse($data);
     }
 
   }

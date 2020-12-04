@@ -42,6 +42,7 @@
     return html;
             }
   $(":checkbox").click(function(){
+    console.log(context);
     var element = $(this);
     var id = element.attr('data-id');
     if (id != null && id != ''){
@@ -49,19 +50,22 @@
        if (element.is(":checked")){
          var state = 1;
        }
-       //ajax
-      $.post(
-        "ajax/dsi_record/"+id+"/"+state+"/setStatus", {
-          // id:id,
-          // state:state
-        },
-        function(data,status){
-          if (data.code == 200){
-            alert(data);
-          }el
-        });
+      $.ajax({
+        //提交数据的类型 POST GET
+        type:"POST",
+        //提交的网址
+        url:"ajax/dsi_record/"+id+"/"+state+"/setStatus",
+        //提交的数据   该参数为属性值类型的参数         //（和url?Name="sanmao"&Password="sanmapword"一样）后台若为SpringMVC接受，注明@RequestParam
+        data:{},
+        //返回数据的格式
+        datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+        //成功返回之后调用的函数
+        success:function(data){
+          alert(data.massage);
+          console.log(data);
+        }
+      });
     }
-    // var txt = element.html();
     console.log(id,state);
         });
       }
