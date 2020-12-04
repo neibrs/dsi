@@ -345,7 +345,7 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     // TODO,客户标识, 应该存实体ID,现在存的是bundle ID.
     $fields['entity_type'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Entity type'))
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
       ->setRequired(TRUE)
       ->setSetting('is_ascii', TRUE)
       ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
