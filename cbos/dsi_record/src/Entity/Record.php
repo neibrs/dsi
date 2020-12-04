@@ -209,7 +209,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 开始时间 - 结束时间
     $fields['start'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Start', [], ['context' => 'Record']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
         'weight' => 0,
@@ -227,7 +227,7 @@ class Record extends ContentEntityBase implements RecordInterface {
 
     $fields['end'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('End', [], ['context' => 'Record']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
         'weight' => 0,
