@@ -207,56 +207,44 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     // 开始时间 - 结束时间
-    $fields['start'] = BaseFieldDefinition::create('datetime')
+    $fields['start'] = BaseFieldDefinition::create('timestamp')
       ->setLabel(t('Start', [], ['context' => 'Record']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
       ->setDisplayOptions('view', [
-        'type' => 'datetime_default',
+        'type' => 'timestamp',
         'weight' => 0,
         'label' => 'inline',
-        'settings' => [
-          'format_type' => 'html_date',
-        ],
       ])
       ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
+        'type' => 'datetime_timestamp',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['end'] = BaseFieldDefinition::create('datetime')
+    $fields['end'] = BaseFieldDefinition::create('timestamp')
       ->setLabel(t('End', [], ['context' => 'Record']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATETIME)
       ->setDisplayOptions('view', [
-        'type' => 'datetime_default',
+        'type' => 'timestamp',
         'weight' => 0,
         'label' => 'inline',
-        'settings' => [
-          'format_type' => 'html_date',
-        ],
       ])
       ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
+        'type' => 'datetime_timestamp',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     // 提醒时间
-    $fields['reminder'] = BaseFieldDefinition::create('datetime')
+    $fields['reminder'] = BaseFieldDefinition::create('timestamp')
       ->setLabel(t('Reminder time', [], ['context' => 'Record']))
-      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
       ->setDisplayOptions('view', [
-        'type' => 'datetime_default',
+        'type' => 'timestamp',
         'weight' => 0,
         'label' => 'inline',
-        'settings' => [
-          'format_type' => 'html_date',
-        ],
       ])
       ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
+        'type' => 'datetime_timestamp',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
