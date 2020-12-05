@@ -1,11 +1,11 @@
-id: 30_record_xls
+id: 30_record_xlsx
 label: 30回访记录(xlsx)
 migration_tags: { }
 source:
   plugin: xls_plus
   header_row: 1
   path: modules/dsi/industry/dsi_client/data/30/30record.xlsx
-  sheet_name: customer_contact_record
+  sheet_name: record
   auto_install: true
   keys:
     - record_id

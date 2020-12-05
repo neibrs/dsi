@@ -5,7 +5,7 @@ source:
   plugin: xls_plus
   header_row: 1
   path: modules/dsi/industry/dsi_client/data/208/208clients1205.xlsx
-  sheet_name: 客户导出模板
+  sheet_name: 客户
   auto_install: true
   individual: individual
   keys:
@@ -137,17 +137,24 @@ process:
     plugin: default_value
     default_value: individual
   entity_id:
-    plugin: entity_generate
-    entity_type: person
-    source: 客户名称
-    value_key: name
-    bundle_key: type
-    bundle: individual
-    default_values:
-      type: individual
-    values:
-      phone: 客户手机
-      address: 客户地址
+    -
+      plugin: callback
+      callable: trim
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_generate
+      entity_type: person
+      source: 客户名称
+      value_key: name
+      bundle_key: type
+      bundle: individual
+      default_values:
+        type: individual
+      values:
+        phone: 客户手机
+        address: 客户地址
   follow:
     -
       plugin: callback

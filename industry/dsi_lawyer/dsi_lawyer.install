@@ -94,14 +94,14 @@ function dsi_lawyer_install($is_syncing) {
   $configuration['30_client_xlsx'] = [
     'source' => [
       'path' => 'modules/dsi/industry/dsi_client/data/30/30clients1205.xlsx',
-      'sheet_name' => '客户导出模板',
+      'sheet_name' => '客户',
       'auto_install' => TRUE,
     ],
   ];
   $configuration['30_record_xls'] = [
     'source' => [
       'path' => 'modules/dsi/industry/dsi_client/data/30/30record.xlsx',
-      'sheet_name' => 'customer_contact_record',
+      'sheet_name' => 'record',
       'auto_install' => TRUE,
     ],
   ];

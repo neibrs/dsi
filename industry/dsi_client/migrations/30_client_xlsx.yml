@@ -5,7 +5,7 @@ source:
   plugin: xls_plus
   header_row: 1
   path: modules/dsi/industry/dsi_client/data/30/30clients1205.xlsx
-  sheet_name: 客户导出模板
+  sheet_name: 客户
   auto_install: true
   individual: individual
   keys:
