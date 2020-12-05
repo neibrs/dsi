@@ -154,6 +154,9 @@ process:
       callable: trim
       source: 电销
     -
+      plugin: skip_on_empty
+      method: process
+    -
       plugin: entity_lookup
       entity_type: person
       value_key: name
@@ -185,6 +188,9 @@ process:
       plugin: callback
       callable: trim
       source: 电销
+    -
+      plugin: skip_on_empty
+      method: process
     -
       plugin: entity_lookup
       entity_type: person
