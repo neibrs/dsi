@@ -610,21 +610,6 @@ class Person extends EffectiveDatesBusinessGroupEntity implements PersonInterfac
       ->execute();
     return reset($ids);
   }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function label() {
-    $items = [];
-    if (!empty($this->get('number')->value)) {
-      $items[] = $this->get('number')->value;
-    }
-    if (!empty($this->getName())) {
-      $items[] = $this->getName();
-    }
-
-    return implode('-', $items);
-  }
   
   /**
    * {@inheritdoc}
