@@ -1,0 +1,105 @@
+id: 30_record_xls
+label: 30回访记录(xlsx)
+migration_tags: { }
+source:
+  plugin: xls_plus
+  header_row: 1
+  path: modules/dsi/industry/dsi_client/data/30/30record.xlsx
+  sheet_name: customer_contact_record
+  auto_install: true
+  keys:
+    - record_id
+  columns:
+    -
+      record_id: record_id
+    -
+      customer_id: customer_id
+    -
+      customer_name: customer_nam
+    -
+      record_start: record_start
+    -
+      record_end: record_end
+    -
+      record_type: record_type
+    -
+      record_creator: record_creator
+    -
+      record_content: record_content
+    -
+      created_at: created_at
+    -
+      updated_at: updated_at
+    -
+      deleted_at: deleted_at
+    -
+      address: address
+
+process:
+  entity_type:
+    plugin: default_value
+    default_value: 'dsi_client'
+
+#  customer_id
+  entity_id:
+    -
+      plugin: callback
+      callable: trim
+      source: customer_name
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_lookup
+      entity_type: dsi_client
+      value_key: name
+      bundle_key: type
+      bundle: individual
+  start: record_start
+#    -
+#      plugin: explode
+#      source: record_start
+#      delimiter: ' '
+  end: record_end
+#  record_type
+  uid:
+    -
+      plugin: callback
+      callable: trim
+      source: person #record_creator
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
+  name: record_content
+  detail: record_content
+  created:
+    -
+      plugin: skip_on_empty
+      source: created_at
+      method: row
+    -
+      plugin: callback
+      callable: strtotime
+  changed:
+    -
+      plugin: skip_on_empty
+      source: updated_at
+      method: process
+    -
+      plugin: callback
+      callable: strtotime
+
+#  deleted_at
+#  address
+
+destination:
+  plugin: entity:dsi_record
+  keys:
+    - name
+migration_dependencies: { }

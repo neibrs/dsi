@@ -1,11 +1,11 @@
-id: client_xlsx
-label: 客户(xlsx)
+id: 30_client_xlsx
+label: 30客户(xlsx)
 migration_tags: { }
 source:
   plugin: xls_plus
   header_row: 1
-  path: modules/dsi/industry/dsi_client/data/client.xlsx
-  sheet_name: 客户
+  path: modules/dsi/industry/dsi_client/data/30clients1205.xlsx
+  sheet_name: 客户导出模板
   auto_install: true
   individual: individual
   keys:
