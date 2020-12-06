@@ -91,21 +91,21 @@ function dsi_lawyer_install($is_syncing) {
     ],
   ];
   
-  $configuration['30_client_xlsx'] = [
-    'source' => [
-      'path' => 'modules/dsi/industry/dsi_client/data/30/30clients1205.xlsx',
-      'sheet_name' => '客户',
-      'auto_install' => TRUE,
-    ],
-  ];
-  $configuration['30_record_xls'] = [
-    'source' => [
-      'path' => 'modules/dsi/industry/dsi_client/data/30/30record.xlsx',
-      'sheet_name' => 'record',
-      'auto_install' => TRUE,
-    ],
-  ];
-  
+//  $configuration['30_client_xlsx'] = [
+//    'source' => [
+//      'path' => 'modules/dsi/industry/dsi_client/data/30/30clients1205.xlsx',
+//      'sheet_name' => '客户',
+//      'auto_install' => TRUE,
+//    ],
+//  ];
+//  $configuration['30_record_xlsx'] = [
+//    'source' => [
+//      'path' => 'modules/dsi/industry/dsi_client/data/30/30record.xlsx',
+//      'sheet_name' => 'record',
+//      'auto_install' => TRUE,
+//    ],
+//  ];
+//
   // TODO, Add client
   $import_manager->doMigrates($configuration);
 }
