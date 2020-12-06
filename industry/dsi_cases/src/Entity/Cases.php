@@ -56,7 +56,8 @@ use Drupal\user\UserInterface;
  *     "delete-form" = "/dsi_cases/{dsi_cases}/delete",
  *     "collection" = "/dsi_cases",
  *   },
- *   field_ui_base_route = "dsi_cases.settings"
+ *   field_ui_base_route = "dsi_cases.settings",
+ *   multiple_organization_field = "person_in_charge",
  * )
  */
 class Cases extends ContentEntityBase implements CasesInterface {
@@ -303,8 +304,7 @@ class Cases extends ContentEntityBase implements CasesInterface {
     //    * 主办律师(Owner?)
     $fields['person_in_charge'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Person in Charge', [], ['context' => 'Cases']))
-      ->setSetting('target_type', 'user')
-      ->setSetting('handler', 'default')
+      ->setSetting('target_type', 'person')
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'author',

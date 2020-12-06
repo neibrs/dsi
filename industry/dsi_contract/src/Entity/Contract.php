@@ -55,7 +55,8 @@ use Drupal\user\UserInterface;
  *     "delete-form" = "/dsi_contract/{dsi_contract}/delete",
  *     "collection" = "/dsi_contract",
  *   },
- *   field_ui_base_route = "dsi_contract.settings"
+ *   field_ui_base_route = "dsi_contract.settings",
+ *   multiple_organization_field = "person",
  * )
  */
 class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInterface {
@@ -512,7 +513,6 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE);
     // 签订人
     $fields['person'] = BaseFieldDefinition::create('entity_reference')
-
       ->setLabel(t('Person', [], ['context' => 'Contract']))
       ->setSetting('target_type', 'person')
       ->setRequired(TRUE)
