@@ -78,7 +78,15 @@ process:
 #      bundle: employee
 #    -
 #      plugin: person_account_lookup
-  name: record_content
+  name:
+    -
+      plugin: callback
+      callable: stip_tags
+      source: record_content
+    -
+      plugin: callback
+      callable: mb_substr
+
   detail/value: record_content
   created:
     -

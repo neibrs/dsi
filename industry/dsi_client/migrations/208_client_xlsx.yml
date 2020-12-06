@@ -139,8 +139,8 @@ process:
   entity_id:
     -
       plugin: callback
-      callable: trim
       source: 客户名称
+      callable: trim
     -
       plugin: skip_on_empty
       method: row

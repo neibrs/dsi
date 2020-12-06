@@ -26,12 +26,12 @@ color.theme:
     node_modules/bootstrap/dist/js/bootstrap.bundle.min.js: { }
     node_modules/jquery-slimscroll/jquery.slimscroll.min.js: { }
     node_modules/jquery-ui-sortable/jquery-ui.min.js: { }
-    node_modules/js-cookie/src/js.cookie.js: { }
     assets/4.6/assets/js/app.js: { }
   dependencies:
     - core/jquery
     - core/jquery.ui
     - core/jquery.once
+    - core/jquery.cookie
     - core/drupal
     - core/sortable
 #    - core/popperjs
