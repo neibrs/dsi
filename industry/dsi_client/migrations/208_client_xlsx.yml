@@ -190,7 +190,7 @@ process:
     -
       plugin: callback
       callable: strtotime
-  uid:
+  user_id:
     -
       plugin: callback
       callable: trim
