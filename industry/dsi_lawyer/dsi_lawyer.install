@@ -23,15 +23,7 @@ function dsi_lawyer_install($is_syncing) {
   $userSettings->set('register', UserInterface::REGISTER_VISITORS);
   $userSettings->set('verify_mail', FALSE);
   $userSettings->save();
-  
-  // 修改默认业务组名称
-  $organization_storage = \Drupal::entityTypeManager()->getStorage('organization');
-  $default_business_group = $organization_storage->load(1);
-  if ($default_business_group) {
-    $default_business_group->set('name', '恩德律师事务所');
-    $default_business_group->save();
-  }
-  
+
   // Add permission to authenticated.
   user_role_grant_permissions('authenticated', [
     'add cases entities',
@@ -53,6 +45,25 @@ function dsi_lawyer_install($is_syncing) {
   $company->set('label', '律所')
     ->save();
   
+  // 修改默认业务组名称
+  $organization_storage = \Drupal::entityTypeManager()->getStorage('organization');
+  $default_business_group = $organization_storage->load(1);
+  if ($default_business_group) {
+    $default_business_group->set('name', '恩德律师事务所');
+    $default_business_group->save();
+  }
+  
+  $organization = $organization_storage->create([
+    'name' => '邦民律师事务所',
+    'type' => 'company',
+    'classifications' => [
+      'business_group',
+      'hr_organization',
+      'legal_entity',
+      'operating_unit',
+    ],
+  ]);
+  $organization->save();
   // 导入组织数据
   /** @var \Drupal\import\ImportManagerInterface $import_manager */
   $import_manager = \Drupal::service('import.manager');

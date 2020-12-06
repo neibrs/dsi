@@ -50,6 +50,7 @@ abstract class BusinessGroupEntity extends ContentEntityBase implements Business
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // 导入多业务组组织时，业务组的上级会被设置成错误的数据
     if (\Drupal::moduleHandler()->moduleExists('person')) {
       $fields['business_group']->setDefaultValueCallback(static::class . '::getCurrentBusinessGroupId');
     }
