@@ -62,22 +62,22 @@ process:
 #      delimiter: ' '
   end: record_end
 #  record_type
-  user_id:
-    -
-      plugin: callback
-      callable: trim
-      source: person #record_creator
-    -
-      plugin: skip_on_empty
-      method: process
-    -
-      plugin: entity_lookup
-      entity_type: person
-      value_key: name
-      bundle_key: type
-      bundle: employee
-    -
-      plugin: person_account_lookup
+#  user_id:
+#    -
+#      plugin: callback
+#      callable: trim
+#      source: person #record_creator
+#    -
+#      plugin: skip_on_empty
+#      method: process
+#    -
+#      plugin: entity_lookup
+#      entity_type: person
+#      value_key: name
+#      bundle_key: type
+#      bundle: employee
+#    -
+#      plugin: person_account_lookup
   name: record_content
   detail/value: record_content
   created:
