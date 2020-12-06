@@ -15,7 +15,7 @@ class PersonAccountLookup extends ProcessPluginBase {
   
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     if (empty($value)) {
-      return NULL;
+      return 0;
     }
     $user = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties([
       'person' => $value,
