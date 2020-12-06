@@ -79,13 +79,9 @@ process:
 #    -
 #      plugin: person_account_lookup
   name:
-    -
-      plugin: callback
-      callable: stip_tags
-      source: record_content
-    -
-      plugin: callback
-      callable: mb_substr
+    plugin: callback
+    callable: stip_tags
+    source: record_content
 
   detail/value: record_content
   created:
