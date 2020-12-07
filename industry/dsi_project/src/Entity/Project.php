@@ -55,6 +55,7 @@ use Drupal\user\UserInterface;
  *     "delete-form" = "/dsi_project/{dsi_project}/delete",
  *     "collection" = "/dsi_project",
  *   },
+ *   multiple_organization_field = "follow",
  *   field_ui_base_route = "dsi_project.settings"
  * )
  */
@@ -212,6 +213,28 @@ class Project extends ContentEntityBase implements ProjectInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
     //      *　主办律师
+    $fields['follow'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Follow', [], ['context' => 'Project']))
+      ->setSetting('target_type', 'person')
+      ->setDefaultValueCallback(static::getCurrentPersonId())
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  
     //      *　项目经费
     $fields['cost'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Project Cost'))
