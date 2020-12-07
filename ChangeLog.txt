@@ -1,9 +1,16 @@
 分支说明:
 分支合并方向: master->test->dev 不能逆向操作
 
-master: 只读分支
-test: 保护分支
+master: 只Bug修复
+test: 只做dev的稳定性测试
 dev: 常规分支
+
+影响版本稳定性的因素:
+1. 加字段(dev)
+2. 加实体(dev)
+3. 加模块(dev)
+4. 加配置文件(config/目录下的文件)(test)
+
 
 DEVELOPMENT(2020-12-02)
 -----------------------
