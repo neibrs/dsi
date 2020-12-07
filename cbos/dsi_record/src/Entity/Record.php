@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
 /**
@@ -58,13 +59,15 @@ use Drupal\user\UserInterface;
  *     "delete-form" = "/dsi_record/{dsi_record}/delete",
  *     "collection" = "/dsi_record",
  *   },
- *   field_ui_base_route = "dsi_record.settings"
+ *   multiple_organization_field = "person",
+ *   field_ui_base_route = "dsi_record.settings",
  * )
  */
 class Record extends ContentEntityBase implements RecordInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
+  use PersonTrait;
 
   /**
    * {@inheritdoc}
@@ -318,6 +321,13 @@ class Record extends ContentEntityBase implements RecordInterface {
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE);
+    // 跟进人
+    $fields['person'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Person', [], ['context' => 'Record']))
+      ->setSetting('target_type', 'person')
+      ->setDefaultValueCallback(static::getCurrentPersonId())
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status']->setDescription(t('A boolean indicating whether the Record is published.'))
       ->setDisplayOptions('form', [
@@ -335,7 +345,18 @@ class Record extends ContentEntityBase implements RecordInterface {
 
     return $fields;
   }
-
+  
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    $user = $this->get('uid')->entity;
+    if ($person_id = $user->get('person')->target_id) {
+      $this->set('person', $person_id);
+    }
+    parent::preSave($storage);
+  }
+  
   /**
    * {@inheritdoc}
    */

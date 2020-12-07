@@ -86,3 +86,8 @@ vendor/bin/drush ucrt lijd --mail="lijd@139.com" --password="123456"
 
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
+
+vendor/bin/drush mim 30_client_xlsx
+vendor/bin/drush mim 30_record_xlsx
+vendor/bin/drush mim 208_client_xlsx
+vendor/bin/drush mim 208_record_xlsx
