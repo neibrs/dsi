@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\layout_builder\Section;
 use Drupal\layout_builder\SectionComponent;
+use Drupal\user\UserInterface;
 
 class PersonManager implements PersonManagerInterface {
 
@@ -134,7 +135,7 @@ class PersonManager implements PersonManagerInterface {
     if (!$user) {
       $user = $this->currentUser->id();
     }
-    if (is_integer($user)) {
+    if (is_integer($user) || is_string($user)) {
       $user = $this->entityTypeManager->getStorage('user')->load($user);
     }
 
