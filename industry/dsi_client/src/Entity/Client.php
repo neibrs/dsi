@@ -76,6 +76,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     parent::preCreate($storage_controller, $values);
     $values += [
       'user_id' => \Drupal::currentUser()->id(),
+      'follow' => static::getCurrentPersonId(),
     ];
   }
 
