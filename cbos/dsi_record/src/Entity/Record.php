@@ -350,7 +350,7 @@ class Record extends ContentEntityBase implements RecordInterface {
    * {@inheritDoc}
    */
   public function preSave(EntityStorageInterface $storage) {
-    $user = $this->get('uid')->entity;
+    $user = $this->get('user_id')->entity;
     if ($person_id = $user->get('person')->target_id) {
       $this->set('person', $person_id);
     }
