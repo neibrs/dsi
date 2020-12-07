@@ -461,6 +461,13 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
       $allow_ids = $subquery->execute();
       if (!empty($allow_ids)) {
         $query->condition($alias . '.' . $multiple_organization_field, $allow_ids,'IN');
+
+        // TODO, add person owner.
+        if ($personal_owner = $entity_type->get('personal_owner')) {
+          $query->condition($query->orConditionGroup()
+            ->condition($alias. '.' . $personal_owner, \Drupal::service('person.manager')->currentPerson()->id())
+          );
+        }
       }
       // 所属业务组无数据
       else {

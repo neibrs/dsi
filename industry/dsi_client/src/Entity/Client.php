@@ -61,6 +61,7 @@ use Drupal\user\UserInterface;
  *   bundle_entity_type = "dsi_client_type",
  *   field_ui_base_route = "entity.dsi_client_type.edit_form",
  *   multiple_organization_field = "follow",
+ *   personal_owner = "follow",
  * )
  */
 class Client extends ContentEntityBase implements ClientInterface {
