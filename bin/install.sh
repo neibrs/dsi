@@ -84,7 +84,7 @@ vendor/bin/drush cset system.theme admin dsi_color -y
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
 
-#vendor/bin/drush mim 30_client_xlsx
-#vendor/bin/drush mim 30_record_xlsx
-#vendor/bin/drush mim 208_client_xlsx
-#vendor/bin/drush mim 208_record_xlsx
+vendor/bin/drush mim 30_client_xlsx
+vendor/bin/drush mim 30_record_xlsx
+vendor/bin/drush mim 208_client_xlsx
+vendor/bin/drush mim 208_record_xlsx
