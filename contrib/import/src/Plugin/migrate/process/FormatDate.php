@@ -16,7 +16,13 @@ class FormatDate extends FormatDateBase {
     if (empty($value) && $value !== '0' && $value !== 0) {
       return '';
     }
-
+    // excel 时间格式
+    if (is_float($value)) {
+      return implode('T', explode(' ', gmdate('Y-m-d H:i:s', ($value - 25569) * 86400)));
+    }
+    if (is_numeric($value)) {
+      return gmdate('Y-m-d', ($value - 25569) * 86400);
+    }
     // 2020-05-01
     $matches = [];
     if (preg_match('/(\d{4})-(\d{1,2})-(\d{1,2})/', $value, $matches)) {
@@ -45,14 +51,6 @@ class FormatDate extends FormatDateBase {
     // 2020
     if (preg_match('/^((19|20)\d{2})(\D|$)/', $value, $matches)) {
       return $matches[1] . '-01-01';
-    }
-
-    // excel 时间格式
-    if (is_float($value)) {
-      return gmdate('Y-m-dTH:i:s', ($value - 25569) * 86400);
-    }
-    if (is_numeric($value)) {
-      return gmdate('Y-m-d', ($value - 25569) * 86400);
     }
 
     $this->messenger()->addWarning($this->t('@value : Date format is incorrect.', [
