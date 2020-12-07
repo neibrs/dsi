@@ -34,6 +34,8 @@ source:
       deleted_at: deleted_at
     -
       address: address
+    -
+      person: person
 
 process:
   entity_type:
@@ -78,6 +80,29 @@ process:
 #      bundle: employee
 #    -
 #      plugin: person_account_lookup
+  person:
+    -
+      plugin: callback
+      callable: trim
+      source: person
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map
+      bypass: TRUE
+      map:
+        殷祖法: 王平
+        王晓龙: 王平
+        蹇昔君: 王平
+        李欢欢: 王平
+        林先莉: 王平
+    -
+      plugin: entity_lookup
+      entity_type: person
+      value_key: name
+      bundle_key: type
+      bundle: employee
   name:
     plugin: callback
     callable: strip_tags

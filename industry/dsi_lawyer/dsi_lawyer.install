@@ -38,6 +38,7 @@ function dsi_lawyer_install($is_syncing) {
     'add record entities',
     'edit record entities',
     'view record entities',
+    'view own profile',
   ]);
   
   // 修改组织类型公司为律所
