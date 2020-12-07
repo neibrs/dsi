@@ -48,10 +48,12 @@ class FormatDate extends FormatDateBase {
     }
 
     // excel 时间格式
+    if (is_float($value)) {
+      return gmdate('Y-m-dTH:i:s', ($value - 25569) * 86400);
+    }
     if (is_numeric($value)) {
       return gmdate('Y-m-d', ($value - 25569) * 86400);
     }
- 
 
     $this->messenger()->addWarning($this->t('@value : Date format is incorrect.', [
       '@value' => $value,
