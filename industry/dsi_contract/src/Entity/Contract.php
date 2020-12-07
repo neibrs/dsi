@@ -57,6 +57,7 @@ use Drupal\user\UserInterface;
  *   },
  *   field_ui_base_route = "dsi_contract.settings",
  *   multiple_organization_field = "person",
+ *   personal_owner = "person",
  * )
  */
 class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInterface {

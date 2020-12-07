@@ -61,6 +61,7 @@ use Drupal\user\UserInterface;
  *   },
  *   multiple_organization_field = "person",
  *   field_ui_base_route = "dsi_record.settings",
+ *   personal_owner = "person",
  * )
  */
 class Record extends ContentEntityBase implements RecordInterface {

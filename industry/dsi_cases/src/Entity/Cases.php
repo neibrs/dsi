@@ -58,6 +58,7 @@ use Drupal\user\UserInterface;
  *   },
  *   field_ui_base_route = "dsi_cases.settings",
  *   multiple_organization_field = "person_in_charge",
+ *   personal_owner = "person_in_charge",
  * )
  */
 class Cases extends ContentEntityBase implements CasesInterface {
