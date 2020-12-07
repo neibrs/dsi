@@ -41,7 +41,7 @@
 
     return html;
             }
-  $(":checkbox").click(function(){
+  $(":checkbox").off("click").on("click",function() {
     console.log(context);
     var element = $(this);
     var id = element.attr('data-id');
