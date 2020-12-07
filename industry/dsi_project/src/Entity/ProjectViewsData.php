@@ -2,12 +2,12 @@
 
 namespace Drupal\dsi_project\Entity;
 
-use Drupal\views\EntityViewsData;
+use Drupal\organization\Entity\MultipleOrganizationEntityViewsData;
 
 /**
  * Provides Views data for Project entities.
  */
-class ProjectViewsData extends EntityViewsData {
+class ProjectViewsData extends MultipleOrganizationEntityViewsData {
 
   /**
    * {@inheritdoc}

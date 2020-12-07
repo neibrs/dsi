@@ -2,12 +2,12 @@
 
 namespace Drupal\dsi_contract\Entity;
 
-use Drupal\views\EntityViewsData;
+use Drupal\organization\Entity\MultipleOrganizationEntityViewsData;
 
 /**
  * Provides Views data for Contract entities.
  */
-class ContractViewsData extends EntityViewsData {
+class ContractViewsData extends MultipleOrganizationEntityViewsData {
 
   /**
    * {@inheritdoc}

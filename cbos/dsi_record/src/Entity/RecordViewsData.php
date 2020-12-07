@@ -2,12 +2,12 @@
 
 namespace Drupal\dsi_record\Entity;
 
-use Drupal\views\EntityViewsData;
+use Drupal\organization\Entity\MultipleOrganizationEntityViewsData;
 
 /**
  * Provides Views data for Record entities.
  */
-class RecordViewsData extends EntityViewsData {
+class RecordViewsData extends MultipleOrganizationEntityViewsData {
 
   /**
    * {@inheritdoc}

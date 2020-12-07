@@ -2,12 +2,12 @@
 
 namespace Drupal\dsi_client\Entity;
 
-use Drupal\views\EntityViewsData;
+use Drupal\organization\Entity\MultipleOrganizationEntityViewsData;
 
 /**
  * Provides Views data for Client entities.
  */
-class ClientViewsData extends EntityViewsData {
+class ClientViewsData extends MultipleOrganizationEntityViewsData {
 
   /**
    * {@inheritdoc}

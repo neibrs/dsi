@@ -2,12 +2,12 @@
 
 namespace Drupal\dsi_cases\Entity;
 
-use Drupal\views\EntityViewsData;
+use Drupal\organization\Entity\MultipleOrganizationEntityViewsData;
 
 /**
  * Provides Views data for Cases entities.
  */
-class CasesViewsData extends EntityViewsData {
+class CasesViewsData extends MultipleOrganizationEntityViewsData {
 
   /**
    * {@inheritdoc}

@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
+use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
 /**
@@ -63,6 +64,7 @@ class Project extends ContentEntityBase implements ProjectInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
+  use PersonTrait;
 
   /**
    * {@inheritdoc}
