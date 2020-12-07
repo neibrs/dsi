@@ -10,3 +10,4 @@ dependencies:
   - drupal:text
   - alert
   - fullcalendar_view
+  - person
