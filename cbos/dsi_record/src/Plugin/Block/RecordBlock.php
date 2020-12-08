@@ -22,11 +22,20 @@ class RecordBlock extends BlockBase {
     $build = [];
     $build['#theme'] = 'dsi_record_block';
 
+    $current_person = \Drupal::service('person.manager')->currentPerson();
+
     $record_storage = \Drupal::entityTypeManager()->getStorage('dsi_record');
     $query = $record_storage->getQuery();
 
+    if ($current_person) {
+      $query->condition('person', $current_person->id());
+    }
+    else {
+      $query->condition('person', 0);
+    }
+
     // 1. 过期未完成事件
-    $query_expired = $query->condition('state', FALSE);
+    $query_expired = $query->condition('state', TRUE);
     $expired_ids = $query_expired->execute();
     $rows = array_map(function ($item) {
       $label = '';
