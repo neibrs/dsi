@@ -26,7 +26,7 @@ class RecordFormatDate extends FormatDateBase {
       return implode('T', explode(' ', gmdate('Y-m-d H:i:s', ($value - 25569) * 86400)));
     }
 
-    return implode('T', explode(' ', $value));
+    return implode('T', explode(' ', gmdate('Y-m-d H:i:s', strtotime($value))));
   }
 
 }
