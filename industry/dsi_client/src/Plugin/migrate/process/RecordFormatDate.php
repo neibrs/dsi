@@ -27,13 +27,6 @@ class RecordFormatDate extends FormatDateBase {
     }
 
     return implode('T', explode(' ', $value));
-
-    $this->messenger()->addWarning($this->t('@value : Date format is incorrect.', [
-      '@value' => $value,
-    ]));
-    throw new MigrateSkipProcessException($this->t('@value : Date format is incorrect.', [
-      '@value' => $value,
-    ]));
   }
 
 }
