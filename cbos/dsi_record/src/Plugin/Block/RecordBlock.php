@@ -35,7 +35,7 @@ class RecordBlock extends BlockBase {
     }
 
     // 1. 过期未完成事件
-    $query_expired = $query->condition('state', TRUE);
+    $query_expired = $query->condition('state', FALSE);
     $expired_ids = $query_expired->execute();
     $rows = array_map(function ($item) {
       $label = '';
@@ -43,13 +43,15 @@ class RecordBlock extends BlockBase {
         $entity_type = \Drupal::entityTypeManager()->getStorage($item->get('entity_type')->value)->getEntityType();
         $label .= $entity_type->getLabel() . '-';
       }
+      if (!empty($item->get('reminder')->value)){
+        $item->get('reminder')->value = implode('', explode('T', $item->get('reminder')->value));
+      }
       return [
         'id'=>$item->id(),
         'name'=>$label . $item->label(),
-        'date'=> $item->get('reminder')->getValue()[0]['value']
+        'date'=> empty($item->get('reminder')->value)?"":$item->get('reminder')->value,
       ];
     }, $record_storage->loadMultiple($expired_ids));
-
     $data = [
       'expired' => [
         'count' => count($expired_ids),
