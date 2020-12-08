@@ -56,14 +56,14 @@ process:
       bundle_key: type
       bundle: individual
   start:
-    plugin: format_date
+    plugin: record_format_date
     source: record_start
   #    -
   #      plugin: explode
   #      source: record_start
   #      delimiter: ' '
   end:
-    plugin: format_date
+    plugin: record_format_date
     source: record_end
 #  record_type
 #  user_id:
