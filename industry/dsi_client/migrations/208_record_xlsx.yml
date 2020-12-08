@@ -117,16 +117,14 @@ process:
       source: created_at
       method: row
     -
-      plugin: callback
-      callable: strtotime
+      plugin: record_format_date
   changed:
     -
       plugin: skip_on_empty
       source: updated_at
       method: process
     -
-      plugin: callback
-      callable: strtotime
+      plugin: record_format_date
 
 #  deleted_at
 #  address
