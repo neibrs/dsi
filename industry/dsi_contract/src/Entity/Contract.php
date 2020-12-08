@@ -139,7 +139,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
-    
+
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
       ->setRevisionable(TRUE)
@@ -184,7 +184,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-    
+
     // TODO, Add fields.
     // 合同编号
     $fields['number'] = BaseFieldDefinition::create('code')
@@ -202,7 +202,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 客户
     $fields['client'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Client'))
@@ -241,7 +241,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 委托人(合同委托人)
     $fields['contract_client'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Contract Client'))
@@ -261,7 +261,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    
+
     // 证件号码
     $fields['passport_number'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Passport Number'))
@@ -281,7 +281,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 是否为当事人
     $fields['is_litigant'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Is litigant'))
@@ -302,7 +302,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
         ],
       ])
       ->setDisplayConfigurable('form', TRUE);
-  
+
     // 与当事人关系
     $fields['litigant_relationship'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Litigant Relationship'))
@@ -321,7 +321,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 委托程序
     $fields['case_procedure'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Case procedure'))
@@ -341,7 +341,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 其他事项
     $fields['other_description'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Other description'))
@@ -361,7 +361,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 授权类型
     $fields['auth_type'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Auth Type'))
@@ -380,7 +380,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 合同金额
     $fields['amount'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Amount', [], ['context' => 'Contract']))
@@ -395,7 +395,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-    
+
     // 金额大写
     $fields['amount_text'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Amount Text'))
@@ -461,7 +461,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 差旅费约定
     $fields['travel_expenses_agreement'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Travel expenses agreement'))
@@ -480,7 +480,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 差旅费预收
     $fields['travel_expenses_collection'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Travel expenses collection', [], ['context' => 'Contract']))
@@ -495,7 +495,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 备注
     $fields['description'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Description'))
@@ -528,7 +528,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     // 合同正文
     // 子合同即关联合同
     // 结算情况
@@ -551,7 +551,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-  
+
     $fields['status']->setDescription(t('A boolean indicating whether the Contract is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
@@ -568,17 +568,17 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     return $fields;
   }
-  
+
   /**
    * {@inheritDoc}
    */
   public function preSave(EntityStorageInterface $storage) {
     $person = \Drupal::service('person.manager')->currentPerson();
-    if ($business_group = $person->getOrganizationByClassification('business_group')) {
+    if (!empty($person) && $business_group = $person->getOrganizationByClassification('business_group')) {
       $this->set('business_group', $business_group);
     }
-    
+
     parent::preSave($storage);
   }
-  
+
 }
