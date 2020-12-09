@@ -26,7 +26,7 @@
       {% for key,value in content.expired_data.data %}
       <div class="widget-todolist-item">
         <div class="widget-todolist-input">
-          <div class="checkbox checkbox-css pt-0"  >
+          <div class="checkbox checkbox-css pt-0" >
             <input data-id = "{{ value.id }}" type="checkbox" id="widget_todolist_{{ key+1 }}">
             <label for="widget_todolist_{{ key+1 }}" class="p-l-15">&nbsp;</label>
           </div>
@@ -35,7 +35,7 @@
           <h4 class="widget-todolist-title"> {{ value.name }}</h4>
           <p class="widget-todolist-desc">{{  value.date  }}</p>
         </div>
-        <div class="widget-todolist-icon" data-toggle="popover">
+        <div class="widget-todolist-icon">
           <a  href="#"><i class="fa fa-question-circle"></i></a>
         </div>
       </div>
