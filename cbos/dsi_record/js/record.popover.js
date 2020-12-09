@@ -1,6 +1,7 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.record_popover = {
     attach: function attach(context) {
+      console.log(context);
       $('[data-toggle="popover"]').each(function () {
         var element = $(this);
         var id = element.attr('id');
@@ -27,22 +28,52 @@
             }, 100);
         });
         });
+  
+
 
   function ContentMethod(txt) {
     var html =
-      '<div class="fc-event-icon" id="record-popover">' +
-      '<i class="fas fa-circle fa-fw f-s-9 text-grey" ></i> &emsp;' +
-      '<a style="text-decoration:none; color:#000000 ">停用</a>' +
+      '<div id="popover-001" data-attr = "record-popover-001">'+
+      '<div class="fc-event-icon" id="record-popover" data-attr = "record-popover" style="margin :20%; color:#000000 ">' +
+      '<i class="fas fa-circle fa-fw f-s-9 text-grey"  ></i> &emsp;' +
+      '核心' +
       '</div>' +
-      '<div class="fc-event-icon" id="record-popover">' +
+      '<div class="fc-event-icon" id="record-popover" data-attr = "record-popover" style="margin :20%; color:#000000">' +
       '<i class="fas fa-circle fa-fw f-s-9 text-green" ></i> &emsp;'  +
-      '<a style="text-decoration:none; color:#000000">启用</a>'+
-      '</div>' ;
+      '重要'+
+      '</div>'+
+      '<div class="fc-event-icon" id="record-popover" data-attr = "record-popover" style="margin :20%; color:#000000">' +
+      '<i class="fas fa-circle fa-fw f-s-9 text-grey"  ></i> &emsp;' +
+      '一般'+
+      '</div>'+
+      '<div class="fc-event-icon" id="record-popover" data-attr = "record-popover" style="margin :20%; color:#000000">' +
+      '<i class="fas fa-circle fa-fw f-s-9 text-green" ></i> &emsp;'  +
+      '次要'+
+      '</div>'+
+      '</div>';
 
     return html;
-            }
+  }
+  
+      //mouseover mouseout 移入 移出
+      //mouseenter mouseleave 穿过 穿出
+  $('#popover-001').on({
+    mouseenter:function(){
+      console.log('2222');
+      $(this).children().css("background-color","#9a9494");
+      // $('#record-popover').css("background-color","#9a9494");
+    },
+    mouseleave:function(){
+      console.log('333333333');
+      $(this).children().css('background-color','#fff');
+     
+    }
+  }).on("mouseout", function () {
+    //隐藏
+     $(this).hide();
+  });
+   
   $(":checkbox").off("click").on("click",function() {
-    console.log(context);
     var element = $(this);
     var id = element.attr('data-id');
     if (id != null && id != ''){
@@ -67,7 +98,7 @@
       });
     }
     console.log(id,state);
-        });
-      }
-    };
+  });
+    }
+  };
 })(jQuery, Drupal, drupalSettings);
