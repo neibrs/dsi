@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_update_N() for add record latest time.
+ */
+function dsi_record_update_20120901() {
+  // Add record latest time for target entity.
+  $storage_definition = BaseFieldDefinition::create('created')
+    ->setLabel(t('Record Latest Time'));
+
+  $target_entity_types = [
+    'dsi_client',
+    'dsi_cases',
+  ];
+  foreach ($target_entity_types as $target_entity_type) {
+    \Drupal::entityDefinitionUpdateManager()
+      ->installFieldStorageDefinition('record_latest_time', $target_entity_type, $target_entity_type, $storage_definition);
+  }
+}
