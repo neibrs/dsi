@@ -64,6 +64,8 @@ vendor/bin/drush pmu -y \
 # Enable varnish_purge
 #vendor/bin/drupal moi -y \
 #  varnish_purger
+vendor/bin/drush en -y \
+  person
 
 ## Dsi core modules
 vendor/bin/drush en -y \
