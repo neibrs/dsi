@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * @ViewsField("client_sign")
  */
-class ClientSign extends Standard {
+class ClientSign extends Standard implements ContainerFactoryPluginInterface{
 
   /**
    * The entity type manager.
@@ -37,7 +37,6 @@ class ClientSign extends Standard {
       $plugin_definition,
       $container->get('entity_type.manager')
     );
-
   }
 
   /**

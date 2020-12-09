@@ -18,6 +18,43 @@ class ClientViewsData extends MultipleOrganizationEntityViewsData {
     // Additional information for Views integration, such as table joins, can be
     // put here.
     $data['dsi_client_field_data']['entity_id']['field']['id'] = 'client_sign';
+    $data['dsi_client_field_data']['phone'] = [
+      'title' => $this->t('Client phone'),
+      'help' => $this->t('Client: person or organization contact cell number.'),
+      'field' => [
+        'id' => 'cell_phone',
+        'real field' => 'entity_id',
+      ],
+    ];
+
+    $entities_types = \Drupal::entityTypeManager()->getDefinitions();
+    foreach ($entities_types as $key => $types) {
+      if (!in_array($key, ['person', 'organization'])) {
+        unset($entities_types[$key]);
+        continue;
+      }
+    }
+    foreach ($entities_types as $type => $entity_type) {
+      $data['dsi_client_field_data'][$type] = [
+        'relationship' => [
+          'title' => $entity_type->getLabel(),
+          'help' => $this->t('The @entity_type to which the client.', ['@entity_type' => $entity_type->getLabel()]),
+          'base' => $entity_type->getDataTable() ?: $entity_type->getBaseTable(),
+          'base field' => $entity_type->getKey('id'),
+          'relationship field' => 'entity_id',
+          'id' => 'standard',
+          'label' => $entity_type->getLabel(),
+          'extra' => [
+            [
+              'field' =>'entity_type',
+              'value' => $type,
+              'table' => 'dsi_client_field_data',
+            ],
+          ],
+        ],
+      ];
+    }
+
     return $data;
   }
 

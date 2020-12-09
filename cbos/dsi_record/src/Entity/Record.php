@@ -371,6 +371,7 @@ class Record extends ContentEntityBase implements RecordInterface {
       $target_entity_type = $this->entityTypeManager()->getStorage($entity_type_id);
       $target_entity = $target_entity_type->load($entity_id);
       $target_entity->get('record')->appendItem($this);
+      $target_entity->set('record_latest_time', $this->getCreatedTime());
       $target_entity->save();
     }
     else {
