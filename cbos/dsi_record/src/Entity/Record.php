@@ -346,7 +346,7 @@ class Record extends ContentEntityBase implements RecordInterface {
 
     return $fields;
   }
-  
+
   /**
    * {@inheritDoc}
    */
@@ -357,15 +357,17 @@ class Record extends ContentEntityBase implements RecordInterface {
     }
     parent::preSave($storage);
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+
     $entity_type_id = $this->get('entity_type')->value;
     $entity_id = $this->get('entity_id')->value;
-    
-    
+
+
     if (!empty($entity_type_id) && !empty($entity_id)) {
       /** @var \Drupal\Core\Entity\EntityInterface $target_entity */
       $target_entity_type = $this->entityTypeManager()->getStorage($entity_type_id);
@@ -377,7 +379,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     else {
       return;
     }
-  
+
     // Add alert
     if ($this->isNew()) {
       $alert_type = $this->entityTypeManager()->getStorage('alert_type')->load($entity_type_id);

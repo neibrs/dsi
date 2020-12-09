@@ -222,6 +222,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
+
     // 合同类型=案件类型
     $fields['case_category'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Case Category'))
@@ -579,6 +580,18 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
     }
 
     parent::preSave($storage);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+
+    if ($this->get('client')->target_id) {
+      $this->get('client')->entity->get('contract')->appendItem($this);
+      $this->get('client')->entity->save();
+    }
   }
 
 }

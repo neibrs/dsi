@@ -35,3 +35,10 @@ a {
 .navbar-user {
   line-height: 50px;
 }
+
+/*// 临时解决方案 -- client 列表搜索*/
+form.views-exposed-form fieldset:not(.fieldgroup) {
+  margin: 0;
+  padding: 0;
+}
+
