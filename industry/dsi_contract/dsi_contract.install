@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\lookup\InstallHelper;
 
 /**
@@ -17,23 +19,34 @@ function dsi_contract_install($is_syncing) {
     '6' => '外祖母',
     '7' => '其他',
   ];
-  
+
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('litigant_relationship', $data, '与当事人关系', $lookup_storage);
   $data = [
     '1' => '特别授权',
     '2' => '一般授权',
   ];
-  
+
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('auth_type', $data, '授权类型', $lookup_storage);
   $data = [
     '1' => '包干制',
     '2' => '实报实销',
   ];
-  
+
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('travel_expenses_agreement', $data, '差旅费约定', $lookup_storage);
-  
-  
+}
+
+/**
+ * Implements hook_update_N() add contract field for client.
+ */
+function dsi_contract_update_20121001(&$sandbox) {
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Contract'))
+    ->setSetting('target_type', 'dsi_contract')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_client', 'dsi_client', $storage_definition);
 }

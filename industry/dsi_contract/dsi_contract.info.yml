@@ -8,4 +8,5 @@ interface translation server pattern: modules/dsi/industry/%project/translations
 package: 'Dsi'
 dependencies:
   - organization
+  - person
   - dsi_client
