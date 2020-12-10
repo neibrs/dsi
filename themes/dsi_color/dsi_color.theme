@@ -68,6 +68,7 @@ function dsi_color_preprocess_links__dropbutton__operations(&$variables) {
     else {
       $variables['links'][$key]['link']['#attributes']['class'][] = 'text-muted';
     }
+    $variables['links'][$key]['link']['#attributes']['class'][] = 'dropdown-item';
   }
 }
 
