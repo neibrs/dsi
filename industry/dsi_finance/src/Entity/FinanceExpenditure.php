@@ -310,8 +310,8 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('form', TRUE);
 
     //支出数据状态 1正常 2删除
-    $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Expenditure Status', [], ['context' => 'FinanceExpenditure']))
+    $fields['state'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('State', [], ['context' => 'FinanceExpenditure']))
       ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')

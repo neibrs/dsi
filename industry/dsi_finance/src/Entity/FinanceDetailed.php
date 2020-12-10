@@ -334,8 +334,8 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
 
 
     //明细状态 1正常 2删除
-    $fields['detailed_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Detail Status', [], ['context' => 'FinanceDetailed']))
+    $fields['state'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('State', [], ['context' => 'FinanceDetailed']))
       ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')
