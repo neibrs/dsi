@@ -4,6 +4,7 @@ global-styling:
       css/style.css: { }
   js:
     js/base.js: { }
+    js/popover.js: { }
   dependencies:
     - core/jquery
     - core/drupal
