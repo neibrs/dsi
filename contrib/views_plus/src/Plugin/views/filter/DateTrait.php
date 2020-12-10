@@ -42,7 +42,6 @@ trait DateTrait {
       '#type' => 'select',
       '#title' => $this->t('Date range'),
       '#options' => [
-        'this_today' => $this->t('Today'),
         'this_week' => $this->t('This week'),
         'previous_week' => $this->t('Previous week'),
         'this_month' => $this->t('This month'),
@@ -96,9 +95,6 @@ trait DateTrait {
   protected function opSimple($field) {
     if ($this->value['type'] == 'range') {
       switch ($this->value['range']) {
-        case 'this_today':
-          $this->value['value'] = date('Y-m-d', strtotime('today'));
-          break;
         case 'this_week':
           $this->value['value'] = date('Y-m-d', strtotime('first day of this week'));
           break;
@@ -141,10 +137,6 @@ trait DateTrait {
   protected function opBetween($field) {
     if ($this->value['type'] == 'range') {
       switch ($this->value['range']) {
-        case 'this_today':
-          $this->value['min'] = date('Y-m-d', strtotime('today'));
-          $this->value['max'] = date('Y-m-d', strtotime('tomorrow'));
-          break;
         case 'this_week':
           $this->value['min'] = date('Y-m-d', strtotime('first day of this week'));
           $this->value['max'] = date('Y-m-d', strtotime('this Sunday'));
@@ -200,7 +192,6 @@ trait DateTrait {
       }
 
       $options = [
-        'this_today' => $this->t('Today'),
         'this_week' => $this->t('This week'),
         'previous_week' => $this->t('Previous week'),
         'this_month' => $this->t('This month'),
