@@ -91,3 +91,6 @@ vendor/bin/drush mim 30_record_xlsx
 vendor/bin/drush mim 208_client_xlsx
 vendor/bin/drush mim 208_record_xlsx
 vendor/bin/drush mim contract_xlsx
+
+# Fixed, 翻译文件导入时不能移动.
+chmod -R a+rw sites/default/files
