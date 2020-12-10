@@ -50,6 +50,12 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.page-sidebar-fixed .sidebar .block-role-menu-block li.active a {
+  background-color: #00acac;
+}
+.page-sidebar-fixed .sidebar .block-role-menu-block li.active a i.iconfont {
+  color: white;
+}
 .page-sidebar-fixed .sidebar .block-role-menu-block li.active a span {
   color: white;
 }
