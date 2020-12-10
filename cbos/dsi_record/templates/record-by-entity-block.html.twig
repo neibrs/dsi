@@ -12,7 +12,7 @@
     'clear-both',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  <h5><b>回访记录:</b>{{ content.add_link }}</h5>
+  <span><b>回访记录:</b><h6>[{{ content.add_link }}]</h6></span>
   <ul>
     {% for value in content.data %}
       <li><p>{{ value.name }}</p> [{{ value.created }}]</li>
