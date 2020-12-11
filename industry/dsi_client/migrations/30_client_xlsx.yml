@@ -118,6 +118,14 @@ process:
       plugin: skip_on_empty
       method: process
     -
+      plugin: static_map
+      default_value: 次要
+      map:
+        潜在客户: 一般
+        无效客户: 无效
+        紧急客户: 核心
+        重点客户: 重要
+    -
       plugin: entity_generate_plus
       entity_type: lookup
       value_key: name
