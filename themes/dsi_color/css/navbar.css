@@ -1,12 +1,12 @@
 .page-sidebar-fixed .sidebar {
-  width: 100px;
+  width: 80px;
 }
 
 .sidebar-bg {
-  width: 100px;
+  width: 80px;
 }
 .content {
-  margin-left: 100px;
+  margin-left: 80px;
 }
 @media screen and (max-width: 767.98px){
   .content {
