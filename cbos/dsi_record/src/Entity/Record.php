@@ -209,6 +209,22 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // 提醒时间
+    $fields['reminder'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Reminder time', [], ['context' => 'Record']))
+      ->setDisplayOptions('view', [
+        'type' => 'timestamp',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 0,
+      ])
+      ->setDefaultValue(REQUEST_TIME)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     // 开始时间 - 结束时间
     $fields['start'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Start', [], ['context' => 'Record']))
@@ -233,21 +249,6 @@ class Record extends ContentEntityBase implements RecordInterface {
       ])
       ->setDisplayOptions('form', [
         'type' => 'datetime_default',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-    // 提醒时间
-    $fields['reminder'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Reminder time', [], ['context' => 'Record']))
-      ->setDisplayOptions('view', [
-        'type' => 'timestamp',
-        'weight' => 0,
-        'label' => 'inline',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_timestamp',
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
@@ -309,13 +310,6 @@ class Record extends ContentEntityBase implements RecordInterface {
     $fields['state'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('State', [], ['context' => 'Record state']))
       ->setDefaultValue(FALSE)
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'settings' => [
-          'display_label' => TRUE,
-        ],
-        'weight' => 0,
-      ])
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'type' => 'boolean',
@@ -329,12 +323,6 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
-    $fields['status']->setDescription(t('A boolean indicating whether the Record is published.'))
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

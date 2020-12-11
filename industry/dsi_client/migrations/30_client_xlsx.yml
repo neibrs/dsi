@@ -96,6 +96,13 @@ process:
       plugin: skip_on_empty
       method: process
     -
+      plugin: static_map
+      bypass: TRUE
+      map:
+        已签约: 签约
+        待跟进: 潜在
+        跟进中: 意向
+    -
       plugin: entity_generate_plus
       entity_type: lookup
       value_key: name
