@@ -12,4 +12,4 @@ ajax.entity.popover:
     _form: '\Drupal\entity_plus\Form\EntityPopoverForm'
     _title: 'Popover'
   requirements:
-    _entity_access: '{entity_type}.update'
+    _user_is_logged_in: 'TRUE'
