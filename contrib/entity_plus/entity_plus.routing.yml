@@ -13,4 +13,4 @@ ajax.entity.popover:
     _title: 'Popover'
   requirements:
     _user_is_logged_in: 'TRUE'
-#    _entity_access: '{entity_type}.update'
+    _entity_access: '{entity_type}.update'

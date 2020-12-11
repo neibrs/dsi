@@ -20,7 +20,7 @@ class EntityPopoverForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state, $entity_type = NULL, $entity_id = NULL, $target_entity_type_id = NULL, $target_bundle = NULL) {
 
     // 忽略所有
-    if (empty($entity_type) || empty($entity_id) || $target_entity_type_id || $target_bundle) {
+    if (empty($entity_type) || empty($entity_id) || empty($target_entity_type_id) || empty($target_bundle)) {
       return $form;
     }
 
@@ -33,9 +33,8 @@ class EntityPopoverForm extends FormBase {
     }, $target_bundles);
 
     $form['items'] = [
-      '#type' => 'options',
+      '#type' => 'selecte',
       '#options' => $options,
-      '#default_value' => '',
     ];
 
     return $form;
