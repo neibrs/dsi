@@ -46,13 +46,13 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: ajax
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: 1
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: 1
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -1134,14 +1134,7 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value:
-            146: '146'
-            147: '147'
-            149: '149'
-            150: '150'
-            151: '151'
-            152: '152'
-            153: '153'
+          value: {  }
           group: 1
           exposed: true
           expose:
