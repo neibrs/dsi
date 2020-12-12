@@ -77,7 +77,6 @@ class Client extends ContentEntityBase implements ClientInterface {
     parent::preCreate($storage_controller, $values);
     $values += [
       'user_id' => \Drupal::currentUser()->id(),
-      'follow' => static::getCurrentPersonId(),
     ];
   }
 
@@ -171,27 +170,11 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setTranslatable(TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name', [], ['context' => 'Client name']))
-      ->setDescription(t('The name of the Client entity.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -210,46 +193,33 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('view', TRUE);
 
     // TODO, Add fields.
-
     // 案件类型, 注入字段
     // 跟进人
     $fields['follow'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Follow', [], ['context' => 'Client']))
       ->setSetting('target_type', 'person')
-      ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
         'weight' => 0,
         'label' => 'inline',
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     // 客户简述
-    $fields['summary'] = BaseFieldDefinition::create('string')
+    $fields['summary'] = BaseFieldDefinition::create('text_with_summary')
       ->setLabel(t('Summary', [], ['context' => 'Client']))
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -10,
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
       ])
+      ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -10,
+        'type' => 'text_textarea_with_summary',
       ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('form', TRUE);
 
     // 工作摘要/客户介绍: TODO, 摘要信息不出来
     $fields['description'] = BaseFieldDefinition::create('text_with_summary')
@@ -383,12 +353,6 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
-    $fields['status']
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
