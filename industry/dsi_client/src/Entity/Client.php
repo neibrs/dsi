@@ -192,6 +192,21 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // 客户简述
+    $fields['summary'] = BaseFieldDefinition::create('text_with_summary')
+      ->setLabel(t('Summary', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => -1,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'text_textarea_with_summary',
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     // TODO, Add fields.
     // 案件类型, 注入字段
     // 跟进人
@@ -205,21 +220,6 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
-    // 客户简述
-    $fields['summary'] = BaseFieldDefinition::create('text_with_summary')
-      ->setLabel(t('Summary', [], ['context' => 'Client']))
-      ->setRequired(TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('view', TRUE)
-      ->setDisplayOptions('form', [
-        'type' => 'text_textarea_with_summary',
-      ])
-      ->setDisplayConfigurable('form', TRUE);
 
     // 工作摘要/客户介绍: TODO, 摘要信息不出来
     $fields['description'] = BaseFieldDefinition::create('text_with_summary')

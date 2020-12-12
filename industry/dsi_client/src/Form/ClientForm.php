@@ -47,7 +47,7 @@ class ClientForm extends ContentEntityForm {
       }
     else {
       $form['client_type'] = [
-         '#id' => 'client-type-wrapper',
+        '#id' => 'client-type-wrapper',
         '#type' => 'inline_entity_form',
         '#entity_type' => $target_entity_type_id,
         '#bundle' => $this->entity->bundle(),
@@ -58,10 +58,10 @@ class ClientForm extends ContentEntityForm {
 
     return $form;
   }
-  
+
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
-  
+
     $values = $form_state->getValue('client_type');
     $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values, $this->entity->get('entity_id')->target_id);
 
@@ -69,14 +69,14 @@ class ClientForm extends ContentEntityForm {
     $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
     $this->entity->save();
   }
-  
+
   /**
    * Handles switching the available regions based on the selected theme.
    */
   public function clientTypeSwitch($form, FormStateInterface $form_state) {
     return $form['client_type'];
   }
-  
+
   /**
    */
   protected function updateRelatedEntity($type, $values, $entity_id = NULL) {
@@ -105,7 +105,7 @@ class ClientForm extends ContentEntityForm {
     }
     return $entity;
   }
-  
+
   /**
    * {@inheritdoc}
    */
