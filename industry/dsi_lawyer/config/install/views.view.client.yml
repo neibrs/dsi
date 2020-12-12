@@ -13,6 +13,7 @@ dependencies:
     - rest
     - serialization
     - telephone
+    - text
     - user
     - views_plus
 id: client
@@ -408,10 +409,10 @@ display:
           entity_type: dsi_client
           entity_field: cooperating_state
           plugin_id: field
-        summary:
-          id: summary
+        summary__value:
+          id: summary__value
           table: dsi_client_field_data
-          field: summary
+          field: summary__value
           relationship: none
           group_type: group
           admin_label: ''
@@ -426,21 +427,21 @@ display:
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: false
+            trim_whitespace: true
             alt: ''
             rel: ''
             link_class: ''
             prefix: ''
             suffix: ''
             target: ''
-            nl2br: false
-            max_length: 20
+            nl2br: true
+            max_length: 30
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: true
             preserve_tags: ''
             html: false
@@ -457,9 +458,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1073,7 +1073,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           fields:
-            summary: summary
+            summary__value: summary__value
             phone_1: phone_1
             field_phone: field_phone
             name: name
@@ -1180,56 +1180,63 @@ display:
           entity_type: dsi_client
           entity_field: cooperating_state
           plugin_id: entity_reference_in_operator
-        created_1:
-          id: created_1
+        created:
+          id: created
           table: dsi_client_field_data
           field: created
           relationship: none
           group_type: group
           admin_label: ''
-          operator: between
+          operator: '>='
           value:
             min: ''
             max: ''
-            value: ''
-            type: date
-            range: this_week
+            value: '-1 day'
+            type: offset
           group: 1
           exposed: true
           expose:
-            operator_id: created_1_op
-            label: ''
+            operator_id: created_op
+            label: Created
             description: ''
             use_operator: false
-            operator: created_1_op
+            operator: created_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: created_1
+            identifier: created
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              administrator: '0'
               contingent_worker: '0'
               employee: '0'
-              administrator: '0'
               implementor: '0'
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-          is_grouped: false
+          is_grouped: true
           group_info:
             label: ''
             description: ''
-            identifier: ''
+            identifier: created
             optional: true
-            widget: select
+            widget: radios
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1:
+                title: 今日新量
+                operator: '>='
+                value:
+                  type: offset
+                  value: '-1 day'
+                  min: ''
+                  max: ''
           entity_type: dsi_client
           entity_field: created
           plugin_id: date
