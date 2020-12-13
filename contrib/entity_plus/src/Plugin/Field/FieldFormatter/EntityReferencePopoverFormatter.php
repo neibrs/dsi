@@ -62,17 +62,12 @@ class EntityReferencePopoverFormatter extends EntityReferenceLabelFormatter {
       else {
         $elements[$delta] = [
           '#type' => 'markup',
-          '#prefix' => "<span class=$name>",
+          '#prefix' => "<span class=entity-popover " . $name . " data-bundle-type= " . $entity->getEntityTypeId() . " data-bundle=" . $name . " >",
           '#plain_text' => $label,
           '#suffix' => '</span>',
         ];
       }
 
-      $elements[$delta]['#attached']['drupalSettings'] = [
-        'popover_id' => $name,
-        'entity_type' => $entity->getEntityTypeId(),
-        'entity_bundle' => $name,
-      ];
       $elements[$delta]['#attached']['library'][] = 'entity_plus/popover';
       $elements[$delta]['#cache']['tags'] = $entity->getCacheTags();
     }
