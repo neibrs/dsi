@@ -36,16 +36,37 @@
         let entity_id = $(this).parent().attr('entity-id');
         let bundle = $(this).find('.entity-popover').data('bundle');
         let bundle_type = $(this).find('.entity-popover').data('bundle-type');
+        let entity_field = $(this).find('.entity-popover').data('entity-field');
+
         let url = Drupal.url('ajax/popover/'+ entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle);
         $.getJSON(url, function(data){
           let _content = '<div class="btn-group-vertical">';
           for (let i in data) {
-            _content = _content + '<button class="btn">' + data[i] + '</button>';
+            _content = _content + '<button class="btn entity-popover-button" data-entity-field="' + entity_field + '" data-entity-type="' + entity_type + '" data-entity-id="'+ entity_id +'" data-bundle-type="' + bundle_type +'" bundle="'+ bundle + '" data-id='+ i +'>' + data[i] + '</button>';
           }
           _content = _content + '</div>';
-          $("#" + entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle).replaceWith(_content);
+          let $xid = "#" + entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle;
+          $($xid).replaceWith(_content);
+          Drupal.attachBehaviors($xid);
         });
       });
+      $('.entity-popover-button').once('entity-popover-button').on('click', function () {
+        let entity_type = $(this).data('entity-type'),
+          entity_id = $(this).data('entity-id'),
+          entity_field = $(this).data('entity-field'),
+          bundle_type = $(this).data('bundle-type'),
+          bundle = $(this).data('bundle'),
+          id = $(this).data('id');
+
+        $.ajax({
+          type: "POST",
+          url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
+          data: "entity_field=" + entity_field + "&id=" + id,
+          success: function success(response) {
+            alert(response);
+          }
+        });
+      })
     }
   };
 })(jQuery, Drupal, drupalSettings);

@@ -62,7 +62,7 @@ class EntityReferencePopoverFormatter extends EntityReferenceLabelFormatter {
       else {
         $elements[$delta] = [
           '#type' => 'markup',
-          '#prefix' => "<span class=entity-popover " . $name . " data-bundle-type= " . $entity->getEntityTypeId() . " data-bundle=" . $name . " >",
+          '#prefix' => "<span class=entity-popover data-entity-field=" . $name . " data-bundle-type= " . $entity->getEntityTypeId() . " data-bundle=" . $name . " >",
           '#plain_text' => $label,
           '#suffix' => '</span>',
         ];
