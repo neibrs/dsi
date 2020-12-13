@@ -16,7 +16,6 @@
             var _this = this;
             $(this).popover("show");
 
-
             $(this).siblings(".popover").on("mouseleave", function () {
               $(_this).popover('hide');
             });
@@ -29,21 +28,21 @@
             }, 100);
           });
         });
-      });
-      $(context).find('.'+settings.popover_id).once('popover-id').hover(function() {
 
-        let entity_type = $(this).parent().parent().attr('entity-type');
-        let entity_id = $(this).parent().parent().attr('entity-id');
-        let url = Drupal.url('ajax/popover/'+ entity_type + '/' + entity_id + '/' + settings.entity_type + '/' + settings.entity_bundle);
-        $.getJSON(url, function(data){
-          let _content = '';
-          for (let i in data) {
-            _content = _content + '<div>' + data[i] + '</div>';
-          }
-          $("#" + entity_type + '-' + entity_id + '-' + settings.popover_id).replaceWith(_content);
+        $(this).once('popover-id').mouseenter(function() {
+          let entity_type = $(this).parent().parent().attr('entity-type');
+          let entity_id = $(this).parent().parent().attr('entity-id');
+          let url = Drupal.url('ajax/popover/'+ entity_type + '/' + entity_id + '/' + settings.entity_type + '/' + settings.entity_bundle);
+          $.getJSON(url, function(data){
+            let _content = '<div class="btn-group-vertical">';
+            for (let i in data) {
+              _content = _content + '<button class="btn">' + data[i] + '</button>';
+            }
+            _content = _content + '</div>';
+            $("#" + entity_type + '-' + entity_id + '-' + settings.popover_id).replaceWith(_content);
+          });
         });
       });
-
     }
   };
 })(jQuery, Drupal, drupalSettings);
