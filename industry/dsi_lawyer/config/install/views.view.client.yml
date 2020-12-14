@@ -48,9 +48,9 @@ display:
       exposed_form:
         type: ajax
         options:
-          submit_button: Apply
+          submit_button: 搜索
           reset_button: 1
-          reset_button_label: Reset
+          reset_button_label: 重置
           exposed_sorts_label: 'Sort by'
           expose_sort_order: 1
           sort_asc_label: Asc
