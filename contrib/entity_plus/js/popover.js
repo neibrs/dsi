@@ -64,6 +64,7 @@
           bundle = $(this).data('bundle'),
           id = $(this).data('id');
           text = $(this).text();
+          
           $.ajax({
           type: "POST",
           url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
@@ -71,13 +72,16 @@
           success: function success(response) {
             if(response[0] == 'success'){
               // alert('操作成功');
-              
               var trList = $('.table-striped tr');
-              console.log(trList);
+              if (entity_field == 'cooperating_state'){
+                var eq = 3;
+              }else if(entity_field == 'client_importance'){
+                var eq = 2;
+              }
               for (var i=0;i<trList.length;i++) {
                 var tr_entity_id = trList.eq(i).attr('entity-id');
                 if (entity_id == tr_entity_id){
-                  trList.eq(i).find('td').eq(3).find('span').text(text);
+                  trList.eq(i).find('td').eq(eq).find('span').text(text);
                   console.log(tr_entity_id,text);
                 }
               }
