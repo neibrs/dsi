@@ -17,6 +17,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\organization\Entity\BusinessGroupEntityInterface;
 use Drupal\person\Entity\PersonType;
 
 /**
@@ -461,6 +462,13 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
       $allow_ids = $subquery->execute();
       if (!empty($allow_ids)) {
         $query->condition($alias . '.' . $multiple_organization_field, $allow_ids,'IN');
+
+        // 用于过滤没有设置multiple_organization_classification,
+        // 但设置了multiple_organization_field的实体数据，应用于多组织数据筛选
+        if ($entity_type instanceof BusinessGroupEntityInterface) {
+          // 不能筛选多重业务组,@see $parent_organizations
+          $query->condition('business_group', $organization->id());
+        }
 
         // 1. 如果当前组织负责人存在，并且等于当前人员，找出所有属于当前组织的子级内的人员，并为当前负责人显示所有子级人员的数据。
         if ($organization->get('manager')->target_id == \Drupal::currentPerson()->id()) {
