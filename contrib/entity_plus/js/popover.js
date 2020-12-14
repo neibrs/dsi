@@ -57,13 +57,24 @@
           bundle_type = $(this).data('bundle-type'),
           bundle = $(this).data('bundle'),
           id = $(this).data('id');
-
-        $.ajax({
+          text = $(this).text();
+        var trList = $('.table-striped tr');
+        console.log(trList);
+        for (var i=0;i<trList.length;i++) {
+          var tr_entity_id = trList.eq(i).attr('entity-id');
+          if (entity_id == tr_entity_id){
+            trList.eq(i).find('td').eq(3).find('span').text(text);
+            console.log(tr_entity_id,text);
+          }
+        }
+          $.ajax({
           type: "POST",
           url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
           data: "entity_field=" + entity_field + "&id=" + id,
           success: function success(response) {
-            alert(response);
+            if(response[0] == 'success'){
+              alert('操作成功');
+            }
           }
         });
       })
