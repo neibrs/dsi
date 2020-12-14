@@ -62,20 +62,6 @@ class ClientSign extends Standard implements ContainerFactoryPluginInterface{
       $label .= $target_entity->label();
     }
 
-    $field_definitions = $target_entity->getFieldDefinitions();
-    // Person
-    if (isset($field_definitions['phone'])) {
-      if ($phone = $target_entity->get('phone')->value) {
-        $label .= '-' . $phone;
-      }
-    }
-    // Organization
-    if (isset($field_definitions['field_phone'])) {
-      if ($phone = $target_entity->get('field_phone')->value) {
-        $label .= '-' . $phone;
-      }
-    }
-
     return $label;
   }
 }

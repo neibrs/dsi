@@ -149,8 +149,6 @@ function views_plus_views_plugins_display_alter(array &$plugins) {
 function views_plus_views_plugins_field_alter(array &$plugins) {
   // 提供批量更新功能.
   $plugins['bulk_form']['class'] = '\Drupal\views_plus\Plugin\views\field\BulkForm';
-
-  $plugins['date']['class'] = '\Drupal\views_plus\Plugin\views\field\Date';
 }
 
 /**
@@ -158,7 +156,6 @@ function views_plus_views_plugins_field_alter(array &$plugins) {
  */
 function views_plus_views_plugins_filter_alter(array &$plugins) {
   // Support date range select.
-  $plugins['date']['class'] = '\Drupal\views_plus\Plugin\views\filter\Date';
   $plugins['datetime']['class'] = '\Drupal\views_plus\Plugin\views\filter\DateTime';
 }
 

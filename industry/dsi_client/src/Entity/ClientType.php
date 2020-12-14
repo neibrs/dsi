@@ -41,6 +41,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "id",
  *     "label",
  *     "target_entity_type_id",
+ *     "target_bundle",
  *   }
  * )
  */
@@ -66,21 +67,21 @@ class ClientType extends ConfigEntityBundleBase implements ClientTypeInterface {
    * @var string
    */
   protected $target_entity_type_id;
-  
+
   /**
    * The target entity bundle.
    *
    * @var string
    */
   protected $target_bundle;
-  
+
   /**
    * {@inheritdoc}
    */
   public function getTargetEntityTypeId() {
     return $this->target_entity_type_id;
   }
-  
+
   /**
    * {@inheritdoc}
    */

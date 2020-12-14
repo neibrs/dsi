@@ -34,25 +34,32 @@ class ClientViewsData extends MultipleOrganizationEntityViewsData {
         continue;
       }
     }
+    $client_types = \Drupal::entityTypeManager()->getStorage('dsi_client_type')->loadMultiple();
+
     foreach ($entities_types as $type => $entity_type) {
-      $data['dsi_client_field_data'][$type] = [
-        'relationship' => [
-          'title' => $entity_type->getLabel(),
-          'help' => $this->t('The @entity_type to which the client.', ['@entity_type' => $entity_type->getLabel()]),
-          'base' => $entity_type->getDataTable() ?: $entity_type->getBaseTable(),
-          'base field' => $entity_type->getKey('id'),
-          'relationship field' => 'entity_id',
-          'id' => 'standard',
-          'label' => $entity_type->getLabel(),
-          'extra' => [
-            [
-              'field' =>'entity_type',
-              'value' => $type,
-              'table' => 'dsi_client_field_data',
+      foreach ($client_types as $key => $client_type) {
+        if (empty($client_type->getTargetEntityTypeId())) {
+          continue;
+        }
+        $data['dsi_client_field_data'][$type] = [
+          'relationship' => [
+            'title' => $entity_type->getLabel(),
+            'help' => $this->t('The @entity_type to which the client.', ['@entity_type' => $entity_type->getLabel()]),
+            'base' => $entity_type->getDataTable() ?: $entity_type->getBaseTable(),
+            'base field' => $entity_type->getKey('id'),
+            'relationship field' => 'entity_id',
+            'id' => 'standard',
+            'label' => $entity_type->getLabel(),
+            'extra' => [
+              [
+                'field' =>'entity_type',
+                'value' => $client_type->getTargetEntityBundle(),
+                'table' => 'dsi_client_field_data',
+              ],
             ],
           ],
-        ],
-      ];
+        ];
+      }
     }
 
     return $data;

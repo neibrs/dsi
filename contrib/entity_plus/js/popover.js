@@ -2,69 +2,71 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.popover = {
     attach: function attach(context, settings) {
-      $(context).find('.'+settings.popover_id).once('popover').each(function() {
+      $('.entity-popover').once('entity-popover').each(function() {
         $(this).parent().attr('data-toggle', 'popover');
-        $(this).parent().attr('data-html', true);
-        $(this).parent().attr('data-container', 'body');
-        $(this).attr('data-html', true);
-        
-        // todo， add popover event.
-        $('[data-toggle="popover"]').once('popover-top').each(function () {
-          let entity_type = $(this).parent().attr('entity-type');
-          let entity_id = $(this).parent().attr('entity-id');
-          // console.log(entity_type,entity_id);
-          let url = Drupal.url('ajax/popover/'+ entity_type + '/' + entity_id + '/' + settings.entity_type + '/' + settings.entity_bundle);
-          $(this).popover({
-            trigger: 'manual',
-            placement: 'right', //top, bottom, left or right
-            // title: txt,
-            html: true,
-            content: function() {
-              // return '<div>aaaaaaa</div>';
-              // return '<h1>ccc</h1>';
-              // var entityElementSelector = "[data-quickedit-entity-id=\"".concat(entityID, "\"]");
-              // return '<div>ccccccccccccccc</div>';
-  
-              // return '<form><input type="text" value="值啊"><input type="submit" value="T" ></form>';
-              return '<h1>aaa</h1><form><input type="text" value="值啊"><input type="submit" value="T" ></form><h1>bbb</h1>';
-              $.get(url, { name: "John", time: "2pm" } ,function(data){
-                let form = $(data).find('form.entity-popover-form').parent().html();
-                console.log(form);
-              });
-              console.log('end');
-              return;
-              return form;
-  
-              $.ajax({
-                type: 'GET',
-                url: url,
-                dataType: "html",
-                success: function (data) {
-                  return '<div>Ajax</div>';
-                  let form = $(data).find('form.entity-popover-form').parent().html();
-                  console.log('<form><input type="checkbox"><input type="text"></form>');
-                  // console.log($(data).find("#block-dsi-color-content").html());
-                  // let xx = '<div>xxxxx</div>';
-                  return data;
-                },
-              });
-            }
-          }).on("mouseenter", function () {
-            var _this = this;
-            $(this).popover("show");
-            $(this).siblings(".popover").on("mouseleave", function () {
-              $(_this).popover('hide');
-            });
-          }).on("mouseleave", function () {
-            var _this = this;
-            setTimeout(function () {
-              if (!$(".popover:hover").length) {
-                $(_this).popover("hide")
-              }
-            }, 100);
+      });
+      $('[data-toggle="popover"]').once('popover-top').each(function () {
+        let entity_type = $(this).parent().attr('entity-type');
+        let entity_id = $(this).parent().attr('entity-id');
+        let bundle = $(this).find('.entity-popover').data('bundle');
+        let bundle_type = $(this).find('.entity-popover').data('bundle-type');
+        $(this).popover({
+          trigger: 'manual',
+          placement: 'right',
+          html: true,
+          content: '<div id='+ entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle + '></div>'
+        }).on("mouseenter", function () {
+          var _this = this;
+          $(this).popover("show");
+
+          $(this).siblings(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
           });
+        }).on("mouseleave", function () {
+          var _this = this;
+          setTimeout(function () {
+            if (!$(".popover:hover").length) {
+              $(_this).popover("hide")
+            }
+          }, 100);
         });
       });
+      $('[data-toggle="popover"]').once('popover-id').mouseenter(function() {
+        let entity_type = $(this).parent().attr('entity-type');
+        let entity_id = $(this).parent().attr('entity-id');
+        let bundle = $(this).find('.entity-popover').data('bundle');
+        let bundle_type = $(this).find('.entity-popover').data('bundle-type');
+        let entity_field = $(this).find('.entity-popover').data('entity-field');
+
+        let url = Drupal.url('ajax/popover/'+ entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle);
+        $.getJSON(url, function(data){
+          let _content = '<div class="btn-group-vertical">';
+          for (let i in data) {
+            _content = _content + '<button class="btn entity-popover-button" data-entity-field="' + entity_field + '" data-entity-type="' + entity_type + '" data-entity-id="'+ entity_id +'" data-bundle-type="' + bundle_type +'" bundle="'+ bundle + '" data-id='+ i +'>' + data[i] + '</button>';
+          }
+          _content = _content + '</div>';
+          let $xid = "#" + entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle;
+          $($xid).replaceWith(_content);
+          Drupal.attachBehaviors($xid);
+        });
+      });
+      $('.entity-popover-button').once('entity-popover-button').on('click', function () {
+        let entity_type = $(this).data('entity-type'),
+          entity_id = $(this).data('entity-id'),
+          entity_field = $(this).data('entity-field'),
+          bundle_type = $(this).data('bundle-type'),
+          bundle = $(this).data('bundle'),
+          id = $(this).data('id');
+
+        $.ajax({
+          type: "POST",
+          url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
+          data: "entity_field=" + entity_field + "&id=" + id,
+          success: function success(response) {
+            alert(response);
+          }
+        });
+      })
     }
   };
 })(jQuery, Drupal, drupalSettings);

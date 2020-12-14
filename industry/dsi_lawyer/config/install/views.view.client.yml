@@ -13,6 +13,7 @@ dependencies:
     - rest
     - serialization
     - telephone
+    - text
     - user
     - views_plus
 id: client
@@ -45,13 +46,13 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: ajax
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: 1
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: 1
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -315,7 +316,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: importance-popover
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -327,7 +328,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_popover
           settings:
             link: false
           group_column: target_id
@@ -380,7 +381,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: cooperating-popover
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -392,7 +393,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_popover
           settings:
             link: false
           group_column: target_id
@@ -408,14 +409,14 @@ display:
           entity_type: dsi_client
           entity_field: cooperating_state
           plugin_id: field
-        summary:
-          id: summary
+        case_category:
+          id: case_category
           table: dsi_client_field_data
-          field: summary
+          field: case_category
           relationship: none
           group_type: group
           admin_label: ''
-          label: 简述
+          label: 案件类型
           exclude: false
           alter:
             alter_text: false
@@ -434,13 +435,78 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 20
+            max_length: 0
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_popover
+          settings:
+            link: 0
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: dsi_client
+          entity_field: case_category
+          plugin_id: field
+        summary__value:
+          id: summary__value
+          table: dsi_client_field_data
+          field: summary__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 简述
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: true
+            max_length: 30
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
             trim: true
             preserve_tags: ''
             html: false
@@ -457,9 +523,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1073,7 +1138,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           fields:
-            summary: summary
+            summary__value: summary__value
             phone_1: phone_1
             field_phone: field_phone
             name: name
@@ -1134,14 +1199,7 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value:
-            146: '146'
-            147: '147'
-            149: '149'
-            150: '150'
-            151: '151'
-            152: '152'
-            153: '153'
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -1180,56 +1238,63 @@ display:
           entity_type: dsi_client
           entity_field: cooperating_state
           plugin_id: entity_reference_in_operator
-        created_1:
-          id: created_1
+        created:
+          id: created
           table: dsi_client_field_data
           field: created
           relationship: none
           group_type: group
           admin_label: ''
-          operator: between
+          operator: '>='
           value:
             min: ''
             max: ''
-            value: ''
-            type: date
-            range: this_week
+            value: '-1 day'
+            type: offset
           group: 1
           exposed: true
           expose:
-            operator_id: created_1_op
-            label: ''
+            operator_id: created_op
+            label: Created
             description: ''
             use_operator: false
-            operator: created_1_op
+            operator: created_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: created_1
+            identifier: created
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              administrator: '0'
               contingent_worker: '0'
               employee: '0'
-              administrator: '0'
               implementor: '0'
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-          is_grouped: false
+          is_grouped: true
           group_info:
             label: ''
             description: ''
-            identifier: ''
+            identifier: created
             optional: true
-            widget: select
+            widget: radios
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1:
+                title: 今日新量
+                operator: '>='
+                value:
+                  type: offset
+                  value: '-1 day'
+                  min: ''
+                  max: ''
           entity_type: dsi_client
           entity_field: created
           plugin_id: date
