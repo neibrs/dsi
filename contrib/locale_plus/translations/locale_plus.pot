@@ -2,9 +2,7 @@
 #
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from files:
-#  modules/dsi/contrib/role_menu/role_menu.module: n/a
-#  modules/dsi/contrib/role_menu/src/Plugin/Block/RoleMenuBlock.php: n/a
+# Generated from file: modules/dsi/contrib/locale_plus/src/Controller/LocalePlusController.php: n/a
 #
 #, fuzzy
 msgid ""
@@ -19,15 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/contrib/role_menu/role_menu.module:26
-msgid "Role menu"
-msgstr ""
-
-#: modules/dsi/contrib/role_menu/role_menu.module:55
-msgid "Edit role menu"
-msgstr ""
-
-#: modules/dsi/contrib/role_menu/src/Plugin/Block/RoleMenuBlock.php:79
-msgid "@role navigation"
+#: modules/dsi/contrib/locale_plus/src/Controller/LocalePlusController.php:13
+msgid "@number of configuration updated."
 msgstr ""
 

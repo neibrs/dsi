@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:08+0000\n"
+"POT-Creation-Date: 2020-12-14 06:15+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -100,11 +100,11 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:81 modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:97 modules/dsi/contrib/import/src/Form/ImportForm.php:132 modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:145
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:81 modules/dsi/contrib/import/src/Form/ExcelImportSelectSheetForm.php:97 modules/dsi/contrib/import/src/Form/ImportForm.php:133 modules/dsi/contrib/import/src/Form/ImportFormSelectSheet.php:145
 msgid "Import"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:96 modules/dsi/contrib/import/src/Form/ImportForm.php:212
+#: modules/dsi/contrib/import/src/Form/ExcelImportForm.php:96 modules/dsi/contrib/import/src/Form/ImportForm.php:213
 msgid "File to import not found."
 msgstr ""
 
@@ -144,27 +144,27 @@ msgstr ""
 msgid "Install demo data"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:45
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:46
 msgid "Import template not found."
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:50
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:51
 msgid "Template"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:88
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:89
 msgid "Data file"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:91
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:92
 msgid "A import file."
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:124
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:125
 msgid "Update existing data"
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Form/ImportForm.php:154
+#: modules/dsi/contrib/import/src/Form/ImportForm.php:155
 msgid "Default value"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "The allowed options for @field are: @allowed_options. @value is not allowed."
 msgstr ""
 
-#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:174 modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php:57;60
+#: modules/dsi/contrib/import/src/Plugin/migrate/destination/EntityContentBase.php:174 modules/dsi/contrib/import/src/Plugin/migrate/process/FormatDate.php:56;59
 msgid "@value : Date format is incorrect."
 msgstr ""
 

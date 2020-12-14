@@ -4,6 +4,7 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/dsi/cbos/dsi_record/dsi_record.module: n/a
+#  modules/dsi/cbos/dsi_record/dsi_record.install: n/a
 #  modules/dsi/cbos/dsi_record/src/RecordListBuilder.php: n/a
 #  modules/dsi/cbos/dsi_record/src/Entity/Record.php: n/a
 #  modules/dsi/cbos/dsi_record/src/Form/RecordForm.php: n/a
@@ -13,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:06+0000\n"
+"POT-Creation-Date: 2020-12-14 06:13+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -39,79 +40,84 @@ msgstr ""
 msgid "Record"
 msgstr ""
 
+#: modules/dsi/cbos/dsi_record/dsi_record.module:104 modules/dsi/cbos/dsi_record/dsi_record.install:11
+msgid "Record Latest Time"
+msgstr ""
+
 #: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:20
 msgid "Record ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:21 modules/dsi/cbos/dsi_record/src/Entity/Record.php:174
+#: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:21 modules/dsi/cbos/dsi_record/src/Entity/Record.php:177
 msgctxt "Record"
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:150
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:153
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:196
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:198
 msgctxt "Record"
 msgid "Detail"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:212
-msgctxt "Record"
-msgid "Start"
-msgstr ""
-
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:230
-msgctxt "Record"
-msgid "End"
-msgstr ""
-
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:249
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:214
 msgctxt "Record"
 msgid "Reminder time"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:271
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:230
+msgctxt "Record"
+msgid "Start"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:244
+msgctxt "Record"
+msgid "End"
+msgstr ""
+
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:262
 msgctxt "Record"
 msgid "Take time"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:288
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:279
 msgctxt "Record"
 msgid "Attachments"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:307
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:298
 msgid "Entity type"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:313
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:304
 msgid "Entity ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:320
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:311
 msgctxt "Record state"
 msgid "State"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:336
-msgid "A boolean indicating whether the Record is published."
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:321
+msgctxt "Record"
+msgid "Person"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:343
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:328
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:344
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:329
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:347
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:332
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:348
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:333
 msgid "The time that the entity was last edited."
 msgstr ""
 

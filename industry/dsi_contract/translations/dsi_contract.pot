@@ -4,6 +4,7 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/dsi/industry/dsi_contract/dsi_contract.module: n/a
+#  modules/dsi/industry/dsi_contract/dsi_contract.install: n/a
 #  modules/dsi/industry/dsi_contract/src/ContractListBuilder.php: n/a
 #  modules/dsi/industry/dsi_contract/src/Entity/Contract.php: n/a
 #  modules/dsi/industry/dsi_contract/src/Form/ContractForm.php: n/a
@@ -12,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-03 07:43+0000\n"
+"POT-Creation-Date: 2020-12-14 06:15+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -21,15 +22,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/industry/dsi_contract/dsi_contract.module:21
+#: modules/dsi/industry/dsi_contract/dsi_contract.module:20
 msgid "About"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/dsi_contract.module:22
+#: modules/dsi/industry/dsi_contract/dsi_contract.module:21
 msgid "The contracts."
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/dsi_contract.module:37
+#: modules/dsi/industry/dsi_contract/dsi_contract.module:35 modules/dsi/industry/dsi_contract/dsi_contract.install:46
 msgid "Contract"
 msgstr ""
 
@@ -41,123 +42,123 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:166
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:168
 msgctxt "Contract title"
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:142
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:144
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:167
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:169
 msgid "The name of the Contract entity."
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:189
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:191
 msgctxt "Contract"
 msgid "Number"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:206
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:208
 msgid "Client"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:225
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:228
 msgid "Case Category"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:245
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:248
 msgid "Contract Client"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:265
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:268
 msgid "Passport Number"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:285
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:288
 msgid "Is litigant"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:303
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:309
 msgid "Litigant Relationship"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:322
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:328
 msgid "Case procedure"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:342
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:348
 msgid "Other description"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:362
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:368
 msgid "Auth Type"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:381
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:387
 msgctxt "Contract"
 msgid "Amount"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:396
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:402
 msgid "Amount Text"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:410
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:416
 msgctxt "Contract"
 msgid "Rate"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:424
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:430
 msgctxt "Contract"
 msgid "Address"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:443
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:449
 msgctxt "Contract"
 msgid "Signing Time"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:462
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:468
 msgid "Travel expenses agreement"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:481
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:487
 msgctxt "Contract"
 msgid "Travel expenses collection"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:496
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:502
 msgid "Description"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:513
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:518
 msgctxt "Contract"
 msgid "Person"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:536
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:541
 msgid "Attachments"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:551
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:556
 msgid "A boolean indicating whether the Contract is published."
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:558
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:563
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:559
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:564
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:562
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:567
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:563
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:568
 msgid "The time that the entity was last edited."
 msgstr ""
 

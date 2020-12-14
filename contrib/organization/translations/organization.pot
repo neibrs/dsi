@@ -29,7 +29,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:07+0000\n"
+"POT-Creation-Date: 2020-12-14 06:14+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -107,19 +107,19 @@ msgstr ""
 msgid "Views not found."
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:70 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:70 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:70
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:59 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:70 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:70
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:71 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:71 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:71
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:60 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:71 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:71
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:74 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:74 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:74
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:63 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:74 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:74
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:75 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:75 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:75
+#: modules/dsi/contrib/organization/src/Entity/BusinessGroupEntity.php:64 modules/dsi/contrib/organization/src/Entity/LegalEntityEntity.php:75 modules/dsi/contrib/organization/src/Entity/OperatingUnitEntity.php:75
 msgid "The time that the entity was last edited."
 msgstr ""
 
