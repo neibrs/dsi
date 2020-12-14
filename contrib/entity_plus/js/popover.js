@@ -75,7 +75,7 @@
               // alert('操作成功');
               var trList = $('.table-striped tr');
               if (entity_field == 'cooperating_state'){
-                var eq = 3;
+                var eq = 4;
               }else if(entity_field == 'client_importance'){
                 var eq = 2;
               }
