@@ -59,8 +59,8 @@ class ClientSettingsForm extends FormBase {
       return $business_group->label();
     }, $business_groups);
     $form['polling'] = [
-      '#type' => 'container',
-      '#collapsed' => FALSE,
+      '#type' => 'details',
+      '#title' => '轮询规则',
     ];
     $form['polling']['business_group'] = [
       '#type' => 'select',
