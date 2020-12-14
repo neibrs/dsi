@@ -36,6 +36,7 @@ function dsi_client_install($is_syncing) {
     '3' => '一般',
     '4' => '次要',
     '5' => '无效',
+    '6' => '紧急',
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);

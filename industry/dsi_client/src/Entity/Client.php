@@ -8,6 +8,7 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\organization\Entity\BusinessGroupEntity;
 use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
@@ -65,7 +66,7 @@ use Drupal\user\UserInterface;
  *   personal_owner = "follow",
  * )
  */
-class Client extends ContentEntityBase implements ClientInterface {
+class Client extends BusinessGroupEntity implements ClientInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
@@ -242,6 +243,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['cooperating_state'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Cooperating State', [], ['context' => 'Client']))
       ->setSetting('target_type', 'lookup')
+      ->setDefaultValue(7)
       ->setSetting('handler_settings', [
         'target_bundles' => ['cooperating_state' => 'cooperating_state'],
       ])
@@ -278,6 +280,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['customer_source'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Customer Source', [], ['context' => 'Client']))
       ->setSetting('target_type', 'lookup')
+      ->setDefaultValue(16)
       ->setSetting('handler_settings', [
         'target_bundles' => ['customer_source' => 'customer_source'],
         'auto_create' => TRUE,
@@ -298,6 +301,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     $fields['client_importance'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Client Importance', [], ['context' => 'Client']))
       ->setSetting('target_type', 'lookup')
+      ->setDefaultValue(3)
       ->setSetting('handler_settings', [
         'target_bundles' => ['client_importance' => 'client_importance'],
       ])
@@ -354,14 +358,6 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
-    $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Created'))
-      ->setDescription(t('The time that the entity was created.'));
-
-    $fields['changed'] = BaseFieldDefinition::create('changed')
-      ->setLabel(t('Changed'))
-      ->setDescription(t('The time that the entity was last edited.'));
 
     return $fields;
   }
