@@ -31,14 +31,11 @@
           }, 100);
         });
       });
-      // $('.popover-body').on("mouseleave", function () {
-      //   var _this = this;
-      //   setTimeout(function () {
-      //     if (!$(".popover:hover").length) {
-      //       $(_this).popover("hide")
-      //     }
-      //   }, 100);
-      // });
+      console.log($('.bs-popover-right').length);
+      $('.bs-popover-right').on("mouseleave", function () {
+        var _this = this;
+        $(_this).popover("hide");
+      });
       
       $('[data-toggle="popover"]').once('popover-id').mouseenter(function() {
         let entity_type = $(this).parent().attr('entity-type');
@@ -67,15 +64,6 @@
           bundle = $(this).data('bundle'),
           id = $(this).data('id');
           text = $(this).text();
-        var trList = $('.table-striped tr');
-        console.log(trList);
-        for (var i=0;i<trList.length;i++) {
-          var tr_entity_id = trList.eq(i).attr('entity-id');
-          if (entity_id == tr_entity_id){
-            trList.eq(i).find('td').eq(3).find('span').text(text);
-            console.log(tr_entity_id,text);
-          }
-        }
           $.ajax({
           type: "POST",
           url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
@@ -83,6 +71,16 @@
           success: function success(response) {
             if(response[0] == 'success'){
               // alert('操作成功');
+              
+              var trList = $('.table-striped tr');
+              console.log(trList);
+              for (var i=0;i<trList.length;i++) {
+                var tr_entity_id = trList.eq(i).attr('entity-id');
+                if (entity_id == tr_entity_id){
+                  trList.eq(i).find('td').eq(3).find('span').text(text);
+                  console.log(tr_entity_id,text);
+                }
+              }
             }
           }
         });
