@@ -1,0 +1,33 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/dsi/themes/dsi_color/dsi_color.theme: n/a
+#  modules/dsi/themes/dsi_color/modules/dsi_color_alert/dsi_color_alert.module: n/a
+#  modules/dsi/themes/dsi_color/modules/dsi_color_block/dsi_color_block.module: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-12-01 03:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/dsi/themes/dsi_color/dsi_color.theme:133
+msgid "Email Address"
+msgstr "邮箱"
+
+#: modules/dsi/themes/dsi_color/dsi_color.theme:138
+msgid "Password"
+msgstr "密码"
+
+#: modules/dsi/themes/dsi_color/modules/dsi_color_alert/dsi_color_alert.module:18 modules/dsi/themes/dsi_color/modules/dsi_color_block/dsi_color_block.module:21
+msgid "About"
+msgstr "关于"
