@@ -134,7 +134,7 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
   $form['pass']['#title_display'] = 'invisible';
   $form['pass']['#wrapper_attributes']['class'] = 'form-group m-b-20';
   $form['pass']['#attributes']['class'][] = 'form-control form-control-lg';
-  $form['pass']['#placeholder'] = '密码';//t('Password');
+  $form['pass']['#placeholder'] = '密码';
 
   $form['register_forgot'] = [
     '#type' => 'container',
@@ -145,7 +145,7 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
   ];
   $form['register_forgot']['register'] = [
     '#type' => 'item',
-    '#markup' => '<p class="margin medium-small">' . Link::createFromRoute('Register Now!', 'user.register')->toString() . '</p>',
+    '#markup' => '<p class="margin medium-small">' . Link::createFromRoute('注册', 'user.register')->toString() . '</p>',
     '#wrapper_attributes' => [
       'class' => [
         'input-field',
@@ -156,7 +156,7 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
   ];
   $form['register_forgot']['forgot'] = [
     '#type' => 'item',
-    '#markup' => '<p class="margin right-align medium-small">' . Link::createFromRoute('Forgot password?', 'user.pass')->toString() . '</p>',
+    '#markup' => '<p class="margin right-align medium-small pull-right">' . Link::createFromRoute('忘记密码?', 'user.pass')->toString() . '</p>',
     '#wrapper_attributes' => [
       'class' => [
         'input-field',
@@ -180,10 +180,6 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
       $classes[] = 'btn-success';
       $form['actions']['submit']['#attributes']['class'] = $classes;
   }
-}
-
-function dsi_color_preprocess_user_login_form(&$variables) {
-  $x = 'a';
 }
 
 /**
