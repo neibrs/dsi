@@ -414,4 +414,17 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     }
     return $next;
   }
+
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+
+    // TODO, 将来删除
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if ($person->label() == '张月月') {
+      $duplicate = $this->createDuplicate();
+      $duplicate->set('business_group', 2);
+      $duplicate->save();
+    }
+  }
+
 }
