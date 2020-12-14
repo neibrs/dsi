@@ -319,6 +319,7 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
 
     return $fields;
   }
+
   /**
    * {@inheritdoc}
    */

@@ -48,19 +48,22 @@ use Drupal\user\UserInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",
+ *     "bundle" = "type",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
  *   links = {
+ *     "add-page" = "/dsi_finance/add",
  *     "canonical" = "/dsi_finance/{dsi_finance}",
  *     "add-form" = "/dsi_finance/add",
  *     "edit-form" = "/dsi_finance/{dsi_finance}/edit",
  *     "delete-form" = "/dsi_finance/{dsi_finance}/delete",
  *     "collection" = "/dsi_finance",
  *   },
- *   field_ui_base_route = "dsi_finance.settings"
+ *   bundle_entity_type = "dsi_finance_type",
+ *   field_ui_base_route = "entity.dsi_finance.edit_form",
  * )
  */
 class Finance extends ContentEntityBase implements FinanceInterface{
@@ -299,4 +302,19 @@ class Finance extends ContentEntityBase implements FinanceInterface{
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($finance_type = FinanceType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $finance_type->getTargetEntityTypeId());
+      $fields['entity_id']->setDisplayOptions('view', [
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ]);
+      return $fields;
+    }
+    return [];
+  }
 }
