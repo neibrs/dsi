@@ -105,7 +105,7 @@ process:
         不用联系: 终止
         首电未接通: 未接
     -
-      plugin: entity_generate_plus
+      plugin: entity_lookup
       entity_type: lookup
       value_key: name
       bundle_key: type
@@ -128,7 +128,7 @@ process:
         紧急客户: 核心
         重点客户: 重要
     -
-      plugin: entity_generate_plus
+      plugin: entity_lookup
       entity_type: lookup
       value_key: name
       bundle_key: type
