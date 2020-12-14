@@ -4,6 +4,6 @@ dependencies:
   enforced:
     module:
       - dsi_finance
-id: finance
-label: 收款
-target_entity_type_id: dsi_finance
+id: client
+label: 客户
+target_entity_type_id: dsi_client
