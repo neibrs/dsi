@@ -21,4 +21,17 @@ class PersonStorage extends SqlContentEntityStorage implements PersonStorageInte
     return $entity;
   }
 
+  /**
+   * 只找一级人员.
+   */
+  public function loadSubordinatesIds($organizations = []) {
+    $organizations_ids = array_map(function ($organization) {
+      return $organization->id();
+    }, $organizations);
+    $query = $this->getQuery();
+    $query->condition('organization', $organizations_ids, 'IN');
+    $ids = $query->execute();
+
+    return $ids;
+  }
 }
