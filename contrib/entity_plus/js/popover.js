@@ -31,6 +31,15 @@
           }, 100);
         });
       });
+      // $('.popover-body').on("mouseleave", function () {
+      //   var _this = this;
+      //   setTimeout(function () {
+      //     if (!$(".popover:hover").length) {
+      //       $(_this).popover("hide")
+      //     }
+      //   }, 100);
+      // });
+      
       $('[data-toggle="popover"]').once('popover-id').mouseenter(function() {
         let entity_type = $(this).parent().attr('entity-type');
         let entity_id = $(this).parent().attr('entity-id');
@@ -73,7 +82,7 @@
           data: "entity_field=" + entity_field + "&id=" + id,
           success: function success(response) {
             if(response[0] == 'success'){
-              alert('操作成功');
+              // alert('操作成功');
             }
           }
         });
