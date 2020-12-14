@@ -47,20 +47,22 @@ use Drupal\user\UserInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",
+ *     "bundle" = "type",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
  *   links = {
+ *     "add-page" = "/dsi_finance_expenditure/add",
  *     "canonical" = "/dsi_finance_expenditure/{dsi_finance_expenditure}",
  *     "add-form" = "/dsi_finance_expenditure/add",
  *     "edit-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/edit",
- *     "delete-form" =
- *   "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
+ *     "delete-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
  *     "collection" = "/dsi_finance_expenditure",
  *   },
- *   field_ui_base_route = "dsi_finance_expenditure.settings"
+ *   bundle_entity_type = "dsi_finance_expenditure_type",
+ *   field_ui_base_route = "entity.dsi_finance_expenditure_type.edit_form",
  * )
  */
 class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditureInterface {
@@ -303,4 +305,19 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($expenditure_type = FinanceExpenditureType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $expenditure_type->getTargetEntityTypeId());
+      $fields['entity_id']->setDisplayOptions('view', [
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ]);
+      return $fields;
+    }
+    return [];
+  }
 }

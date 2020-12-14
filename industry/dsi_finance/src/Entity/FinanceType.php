@@ -30,11 +30,11 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "//dsi_finance_type/{dsi_finance_type}",
- *     "add-form" = "//dsi_finance_type/add",
- *     "edit-form" = "//dsi_finance_type/{dsi_finance_type}/edit",
- *     "delete-form" = "//dsi_finance_type/{dsi_finance_type}/delete",
- *     "collection" = "//dsi_finance_type"
+ *     "canonical" = "/dsi_finance_type/{dsi_finance_type}",
+ *     "add-form" = "/dsi_finance_type/add",
+ *     "edit-form" = "/dsi_finance_type/{dsi_finance_type}/edit",
+ *     "delete-form" = "/dsi_finance_type/{dsi_finance_type}/delete",
+ *     "collection" = "/dsi_finance_type"
  *   },
  *   config_export = {
  *     "id",
