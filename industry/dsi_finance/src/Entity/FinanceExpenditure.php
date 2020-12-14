@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 use Drupal\dsi_finance\Entity\FinanceExpenditureInterface;
 use Drupal\user\UserInterface;
@@ -277,6 +278,19 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['detail'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Detail', [], ['context' => 'Finance detail']))
+      ->setSetting( 'target_type', 'dsi_finance_detailed')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('form', [
+        'type' => 'inline_entity_form_complex',
+        'settings' => [
+          'form_mode' => 'inline_entity_form',
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
 
     //备注
     $fields['remarks'] = BaseFieldDefinition::create('text_long')
