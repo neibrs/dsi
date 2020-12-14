@@ -85,6 +85,9 @@ vendor/bin/drush cset system.theme admin dsi_color -y
 
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
+# 翻译问题
+vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
+vendor/bin/drush language:import:translations  modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
 
 vendor/bin/drush mim 30_client_xlsx
 vendor/bin/drush mim 30_record_xlsx
@@ -95,6 +98,3 @@ vendor/bin/drush mim contract_xlsx
 # Fixed, 翻译文件导入时不能移动.
 chmod -R a+rw sites/default/files
 
-# 翻译问题
-vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
-vendor/bin/drush language:import:translations  modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
