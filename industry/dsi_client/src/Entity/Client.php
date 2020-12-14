@@ -364,6 +364,7 @@ class Client extends ContentEntityBase implements ClientInterface {
 
     return $fields;
   }
+
   /**
    * {@inheritdoc}
    */

@@ -1,0 +1,9 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_finance
+id: expenditure
+label: 支出
+target_entity_type_id: dsi_finance_expenditure

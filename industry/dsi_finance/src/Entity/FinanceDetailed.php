@@ -11,7 +11,6 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
-use Drupal\dsi_finance\Entity\FinanceInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -46,18 +45,21 @@ use Drupal\user\UserInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",
+ *     "bundle" = "type",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
  *   links = {
+ *     "add-page" = "/dsi_finance_detailed/add",
  *     "canonical" = "/dsi_finance_detailed/{dsi_finance_detailed}",
  *     "add-form" = "/dsi_finance_detailed/add/{finance_id}/{finance_name}",
  *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/{finance_id}/edit",
  *     "collection" = "/dsi_finance_detailed",
  *   },
- *   field_ui_base_route = "dsi_finance_detailed.settings"
+ *   bundle_entity_type = "dsi_finance_detailed_type",
+ *   field_ui_base_route = "entity.dsi_finance_detailed_type.edit_form",
  * )
  */
 class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterface{
@@ -317,5 +319,19 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
 
     return $fields;
   }
-
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($detailed_type = FinanceDetailedType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $detailed_type->getTargetEntityTypeId());
+      $fields['entity_id']->setDisplayOptions('view', [
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ]);
+      return $fields;
+    }
+    return [];
+  }
 }
