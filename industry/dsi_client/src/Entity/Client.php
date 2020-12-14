@@ -19,6 +19,7 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "dsi_client",
  *   label = @Translation("Client"),
+ *   label_collection = @Translation("Client"),
  *   bundle_label = @Translation("Client type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",

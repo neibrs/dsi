@@ -7,15 +7,17 @@
 #  modules/dsi/industry/dsi_client/src/ClientListBuilder.php: n/a
 #  modules/dsi/industry/dsi_client/src/Entity/Client.php: n/a
 #  modules/dsi/industry/dsi_client/src/ClientTypeListBuilder.php: n/a
+#  modules/dsi/industry/dsi_client/src/Entity/ClientViewsData.php: n/a
 #  modules/dsi/industry/dsi_client/src/Form/ClientForm.php: n/a
 #  modules/dsi/industry/dsi_client/src/Form/ClientTypeDeleteForm.php: n/a
 #  modules/dsi/industry/dsi_client/src/Form/ClientTypeForm.php: n/a
+#  modules/dsi/industry/dsi_client/src/Plugin/Block/ClientIntroBlock.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:09+0000\n"
+"POT-Creation-Date: 2020-12-14 06:15+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -27,6 +29,12 @@ msgstr ""
 #: modules/dsi/industry/dsi_client/dsi_client.module:19
 msgid "The clients."
 msgstr "客户信息。"
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:177
+msgctxt "Client name"
+msgid "Name"
+msgstr "客户名称"
+
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:149
 msgctxt "Client"

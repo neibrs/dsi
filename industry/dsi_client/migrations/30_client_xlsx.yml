@@ -97,7 +97,7 @@ process:
       method: process
     -
       plugin: static_map
-      bypass: TRUE
+      default_value: 潜在
       map:
         已签约: 签约
         待跟进: 潜在
