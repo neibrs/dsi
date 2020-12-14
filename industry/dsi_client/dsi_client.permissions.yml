@@ -4,7 +4,6 @@ add client entities:
 administer client entities:
   title: 'Administer Client entities'
   description: 'Allow to access the administration form to configure Client entities.'
-  restrict access: true
 
 delete client entities:
   title: 'Delete Client entities'
