@@ -54,8 +54,8 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "add-page" = "/dsi_finance_detailed/add",
  *     "canonical" = "/dsi_finance_detailed/{dsi_finance_detailed}",
- *     "add-form" = "/dsi_finance_detailed/add/{finance_id}/{finance_name}",
- *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/{finance_id}/edit",
+ *     "add-form" = "/dsi_finance_detailed/add/{dsi_finance_detailed_type}",
+ *     "edit-form" = "/dsi_finance_detailed/{dsi_finance_detailed}/edit",
  *     "collection" = "/dsi_finance_detailed",
  *   },
  *   bundle_entity_type = "dsi_finance_detailed_type",

@@ -57,13 +57,13 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "add-page" = "/dsi_finance/add",
  *     "canonical" = "/dsi_finance/{dsi_finance}",
- *     "add-form" = "/dsi_finance/add",
+ *     "add-form" = "/dsi_finance/add/{dsi_finance_type}",
  *     "edit-form" = "/dsi_finance/{dsi_finance}/edit",
  *     "delete-form" = "/dsi_finance/{dsi_finance}/delete",
  *     "collection" = "/dsi_finance",
  *   },
  *   bundle_entity_type = "dsi_finance_type",
- *   field_ui_base_route = "entity.dsi_finance.edit_form",
+ *   field_ui_base_route = "entity.dsi_finance_type.edit_form",
  * )
  */
 class Finance extends ContentEntityBase implements FinanceInterface{

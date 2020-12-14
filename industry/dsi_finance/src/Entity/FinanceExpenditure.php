@@ -56,7 +56,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "add-page" = "/dsi_finance_expenditure/add",
  *     "canonical" = "/dsi_finance_expenditure/{dsi_finance_expenditure}",
- *     "add-form" = "/dsi_finance_expenditure/add",
+ *     "add-form" = "/dsi_finance_expenditure/add/{dsi_finance_expenditure_type}",
  *     "edit-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/edit",
  *     "delete-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
  *     "collection" = "/dsi_finance_expenditure",
