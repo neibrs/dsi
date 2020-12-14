@@ -120,10 +120,8 @@ function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 
 function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // 修改登录页面输入框样式.
-
   $form['#prefix'] = '<div class="login-content p-0">';
   $form['#suffix'] = '</div>';
-
   $form['#attributes']['class'][] = 'margin-bottom-0';
 
   unset($form['name']['#description']);
@@ -131,19 +129,13 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
   $form['name']['#title_display'] = 'invisible';
   $form['name']['#wrapper_attributes']['class'] = 'form-group m-b-20';
   $form['name']['#attributes']['class'][] = 'form-control form-control-lg';
-  $form['name']['#placeholder'] = t('Email Address');
+  $form['name']['#placeholder'] = '邮箱';
 
   $form['pass']['#title_display'] = 'invisible';
   $form['pass']['#wrapper_attributes']['class'] = 'form-group m-b-20';
   $form['pass']['#attributes']['class'][] = 'form-control form-control-lg';
-  $form['pass']['#placeholder'] = t('Password');
+  $form['pass']['#placeholder'] = '密码';//t('Password');
 
-//  $form['persistent_login']['#prefix'] = '<div class="row">';
-//  $form['persistent_login']['#suffix'] = '</div>';
-//  $form['persistent_login']['#wrapper_attributes']['class'][] = 'm12 l12 ml-2 mt-1 input-field col s12';
-
-//  $form['actions']['#attributes']['class'][] = 'input-field s12 col';
-//  $form['actions']['submit']['#attributes']['class'] = ['btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12'];
   $form['register_forgot'] = [
     '#type' => 'container',
     '#weight' => 900,
