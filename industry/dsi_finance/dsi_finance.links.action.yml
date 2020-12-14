@@ -1,0 +1,5 @@
+entity.dsi_finance_expenditure_type.add_form:
+  route_name: entity.dsi_finance_expenditure_type.add_form
+  title: 'Add Finance expenditure type'
+  appears_on:
+    - entity.dsi_finance_expenditure_type.collection

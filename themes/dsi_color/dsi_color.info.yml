@@ -3,6 +3,8 @@ type: theme
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: seven
+interface translation project: dsi_color
+interface translation server pattern: modules/dsi/themes/%project/translations/%project.%language.po
 
 # Stylesheets.
 #stylesheets-remove:
