@@ -159,17 +159,6 @@ class Finance extends ContentEntityBase implements FinanceInterface{
         'type' => 'author',
         'weight' => 0,
       ])
-//      ->setDisplayOptions('form', [
-//        'type' => 'entity_reference_autocomplete',
-//        'weight' => 5,
-//        'settings' => [
-//          'match_operator' => 'CONTAINS',
-//          'size' => '60',
-//          'autocomplete_type' => 'tags',
-//          'placeholder' => '',
-//        ],
-//      ])
-//      ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     //款项名称
@@ -193,11 +182,10 @@ class Finance extends ContentEntityBase implements FinanceInterface{
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    // TODO, Add fields.
-
     //应收金额
     $fields['receivable_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Receivable Price', [], ['context' => 'Finance']))
+      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
         'type' => 'number_decimal',
         'weight' => 0,
@@ -210,7 +198,6 @@ class Finance extends ContentEntityBase implements FinanceInterface{
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-
 
     //已收金额
     $fields['received_price'] = BaseFieldDefinition::create('decimal')
@@ -226,6 +213,7 @@ class Finance extends ContentEntityBase implements FinanceInterface{
     //待收金额
     $fields['wait_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Wait Price', [], ['context' => 'Finance']))
+      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
         'type' => 'number_decimal',
         'weight' => 0,
@@ -253,35 +241,22 @@ class Finance extends ContentEntityBase implements FinanceInterface{
       ->setDisplayConfigurable('view', TRUE);
 
     //关联类型
-    $fields['relation_type'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Relation Type', [], ['context' => 'Finance']))
-      ->setSetting('target_type', 'lookup')
-      ->setSetting('handler_settings', [
-        'target_bundles' => ['relation_type' => 'relation_type'],
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setRequired(TRUE);
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
-    //关联案件 || 项目 || 客户
-    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('', [], ['context' => 'Finance']))
-      ->setSetting('target_type', 'dsi_cases')
-      ->setSetting('handler', 'default')
+    // 关联客户、案件、项目
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Entity ID'))
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
+        'settings' => [
+          'label' => 'hidden',
+        ],
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDefaultValue(0);
 
     $fields['detail'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Detail', [], ['context' => 'Finance detail']))

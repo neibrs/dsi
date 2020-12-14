@@ -149,7 +149,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
 
     //支出人
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Authored by'))
+      ->setLabel(t('Expenditure Name'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -182,12 +182,10 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    // TODO, Add fields.
-
-
     //金额
     $fields['price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Price', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
         'type' => 'number_decimal',
         'weight' => 0,
@@ -202,36 +200,21 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setRequired(TRUE);
 
     //关联类型
-    $fields['relation_type'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Relation Type', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('target_type', 'lookup')
-      ->setSetting('handler_settings', [
-        'target_bundles' => ['relation_type' => 'relation_type'],
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setRequired(TRUE);
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
-    //关联案件 || 项目 || 客户
-    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('target_type', 'dsi_cases')
-      ->setSetting('handler', 'default')
-      ->setDefaultValue(0)
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Entity ID'))
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
+        'settings' => [
+          'label' => 'hidden',
+        ],
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDefaultValue(0);
 
     //费用承担者
     $fields['undertaker'] = BaseFieldDefinition::create('entity_reference')
@@ -308,11 +291,6 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ])
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
-
-    //支出数据状态 1正常 2删除
-    $fields['expenditure_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Expenditure Status', [], ['context' => 'FinanceExpenditure']))
-      ->setDefaultValue(1);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

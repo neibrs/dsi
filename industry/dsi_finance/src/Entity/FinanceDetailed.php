@@ -174,7 +174,6 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    // TODO, Add fields.
     //财务id
     $fields['finance_id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Finance Id'))
@@ -184,22 +183,12 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ])
       ->setDefaultValue(0);
 
-    //收支类型
-    $fields['type'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('type'))
-      ->setSettings([
-        'max_length' => 50,
-        'text_processing' => 0,
-      ])
-      ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -4,
-      ])
-      ->setDisplayConfigurable('view', TRUE)
-      ->setDefaultValue(0)
+    //收支类型, 收款，支出
+    $fields['finance_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Finance type', [], ['context' => 'Finance']))
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH)
       ->setRequired(TRUE);
-
 
     //金额
     $fields['price'] = BaseFieldDefinition::create('decimal')
@@ -272,6 +261,7 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
     //开票金额
     $fields['invoice_price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Invoice Price', [], ['context' => 'FinanceDetailed']))
+      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
         'type' => 'number_decimal',
         'weight' => 0,
@@ -286,10 +276,8 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setRequired(TRUE);
 
     // 开单编号
-    $fields['invoice_code'] = BaseFieldDefinition::create('code')
+    $fields['invoice_code'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Invoice Code', [], ['context' => 'FinanceDetailed']))
-      ->setSetting('max_length', 32)
-      ->setSetting('encoding_rules', \Drupal::config('dsi_finance.settings')->get('encoding_rules'))
       ->setDisplayOptions('view', [
         'type' => 'string',
         'weight' => -30,
@@ -302,41 +290,22 @@ class FinanceDetailed extends ContentEntityBase implements FinanceDetailedInterf
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    //发生人
-    $fields['happen_by'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Happen By', [], ['context' => 'FinanceDetailed']))
-      ->setSetting('target_type', 'user')
-      ->setSetting('handler', 'default')
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('view', TRUE);
     //关联类型
-    $fields['relation_type'] = BaseFieldDefinition::create('integer');
-    //关联 id
-    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Relation', [], ['context' => 'FinanceDetailed']))
-      ->setSetting('target_type', 'dsi_cases')
-      ->setSetting('handler', 'default')
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
+
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Entity ID'))
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
+        'settings' => [
+          'label' => 'hidden',
+        ],
       ])
-//      ->setDisplayOptions('form', [
-//        'type' => 'options_select',
-//        'weight' => 5,
-//      ])
-//      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-
-    //明细状态 1正常 2删除
-    $fields['detailed_status'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('Detail Status', [], ['context' => 'FinanceDetailed']))
-      ->setDefaultValue(1);
+      ->setDefaultValue(0);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
