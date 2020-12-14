@@ -102,6 +102,8 @@ process:
         已签约: 签约
         待跟进: 潜在
         跟进中: 意向
+        不用联系: 终止
+        首电未接通: 未接
     -
       plugin: entity_generate_plus
       entity_type: lookup

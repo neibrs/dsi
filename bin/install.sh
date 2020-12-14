@@ -94,3 +94,6 @@ vendor/bin/drush mim contract_xlsx
 
 # Fixed, 翻译文件导入时不能移动.
 chmod -R a+rw sites/default/files
+
+# 翻译问题
+vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
