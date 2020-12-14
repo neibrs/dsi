@@ -17,6 +17,7 @@
           content: '<div id='+ entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle + '></div>'
         }).on("mouseenter", function () {
           var _this = this;
+          $(".popover:hover").popover("hide");
           $(this).popover("show");
 
           $(this).siblings(".popover").on("mouseleave", function () {
@@ -26,7 +27,7 @@
           var _this = this;
           setTimeout(function () {
             if (!$(".popover:hover").length) {
-              $(_this).popover("hide")
+              $(_this).popover("hide");
             }
           }, 100);
         });
