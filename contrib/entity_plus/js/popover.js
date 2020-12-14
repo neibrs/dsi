@@ -34,7 +34,7 @@
       console.log($('.bs-popover-right').length);
       $('.bs-popover-right').on("mouseleave", function () {
         var _this = this;
-        // $(_this).popover("hide");
+        $(_this).popover("hide");
       });
       
       $('[data-toggle="popover"]').once('popover-id').mouseenter(function() {
