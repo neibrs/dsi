@@ -57,7 +57,7 @@ function dsi_record_entity_operation(EntityInterface $entity) {
     case 'dsi_client':
     case 'dsi_cases':
       $operations['record'] = [
-        'title' => t('Add Record', [], ['context' => 'Add todo']),
+        'title' => t('添加回访', [], ['context' => 'Add todo']),
         'url' => Url::fromRoute('entity.dsi_record.add_todo', [
             'entity_type' => $entity->getEntityTypeId(),
             'entity_id' => $entity->id(),
