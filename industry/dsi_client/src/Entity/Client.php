@@ -381,4 +381,37 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     }
     return [];
   }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    if ($this->isNew()) {
+      $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
+      $business_group = \Drupal::service('person.manager')->currentPersonOrganizationByClassification('bussiness_group');
+      $polling = $config->get('polling.' . $business_group);
+
+      $next = $this->getNextVal($polling['current'], $polling['person']);
+
+      $this->set('follow', $next);
+    }
+    parent::preSave($storage);
+  }
+
+  /**
+   * Callable.
+   */
+  public function getNextVal($current, $data) {
+    if (empty($current)) {
+      return array_shift($data);
+    }
+    $index = array_search($current, $data);
+    if($index !== false && $index < count($data)-1) {
+      $next = $data[$index+1];
+    }
+    else {
+      $next = array_shift($data);
+    }
+    return $next;
+  }
 }
