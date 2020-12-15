@@ -17,7 +17,6 @@
           content: '<div id='+ entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle + '></div>'
         }).on("mouseenter", function () {
           var _this = this;
-          $(".popover:hover").popover("hide");
           $(this).popover("show");
 
           $(this).siblings(".popover").on("mouseleave", function () {
@@ -32,7 +31,6 @@
           }, 100);
         });
       });
-      console.log($('.bs-popover-right').length);
       $('.bs-popover-right').on("mouseleave", function () {
         var _this = this;
         $(_this).popover("hide");
@@ -75,9 +73,9 @@
               // alert('操作成功');
               var trList = $('.table-striped tr');
               if (entity_field == 'cooperating_state'){
-                var eq = 4;
+                var eq = 3;
               }else if(entity_field == 'client_importance'){
-                var eq = 2;
+                var eq = 1;
               }
               for (var i=0;i<trList.length;i++) {
                 var tr_entity_id = trList.eq(i).attr('entity-id');
