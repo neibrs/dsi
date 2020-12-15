@@ -84,7 +84,8 @@ display:
             phone: phone
             client_importance: client_importance
             cooperating_state: cooperating_state
-            summary: summary
+            case_category: case_category
+            summary__value: summary__value
             follow: follow
             record_target_id: record_target_id
             record_latest_time: record_latest_time
@@ -123,7 +124,14 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            summary:
+            case_category:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            summary__value:
               sortable: false
               default_sort_order: asc
               align: ''
