@@ -37,6 +37,8 @@ class ClientSettingsForm extends FormBase {
     $config->set('polling.'. $form_state->getValue('business_group'). '.business_group', $form_state->getValue('business_group'));
     $config->set('polling.'. $form_state->getValue('business_group'). '.person', $form_state->getValue('person'));
     $config->save();
+
+    $this->messenger()->addMessage('保存成功');
     return $form;
   }
 
