@@ -243,7 +243,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     $fields['cooperating_state'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Cooperating State', [], ['context' => 'Client']))
       ->setSetting('target_type', 'lookup')
-      ->setDefaultValue(7)
+      ->setDefaultValue(147)
       ->setSetting('handler_settings', [
         'target_bundles' => ['cooperating_state' => 'cooperating_state'],
       ])
@@ -301,7 +301,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     $fields['client_importance'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Client Importance', [], ['context' => 'Client']))
       ->setSetting('target_type', 'lookup')
-      ->setDefaultValue(3)
+      ->setDefaultValue(143)
       ->setSetting('handler_settings', [
         'target_bundles' => ['client_importance' => 'client_importance'],
       ])
