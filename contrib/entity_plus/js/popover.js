@@ -60,18 +60,23 @@
           entity_id = $(this).data('entity-id'),
           entity_field = $(this).data('entity-field'),
           bundle_type = $(this).data('bundle-type'),
-          bundle = $(this).data('bundle'),
+          // bundle = $(this).data('bundle'),
           id = $(this).data('id');
+          bundle = $(this).attr('bundle');
           text = $(this).text();
-          
+          console.log(text);
           $.ajax({
           type: "POST",
           url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
           data: "entity_field=" + entity_field + "&id=" + id,
           success: function success(response) {
+            // console.log(response[0],entity_field);
             if(response[0] == 'success'){
               // alert('操作成功');
-              var trList = $('.table-striped tr');
+              var trList = $('.views-view-table tr');
+              if (trList.length == 0){
+                console.log('table tr又找不到了 , 请检查table样式是还存在');
+              }
               if (entity_field == 'cooperating_state'){
                 var eq = 3;
               }else if(entity_field == 'client_importance'){
@@ -80,8 +85,9 @@
               for (var i=0;i<trList.length;i++) {
                 var tr_entity_id = trList.eq(i).attr('entity-id');
                 if (entity_id == tr_entity_id){
+                  td_text = trList.eq(i).find('td').eq(eq).find('span').text();
                   trList.eq(i).find('td').eq(eq).find('span').text(text);
-                  console.log(tr_entity_id,text);
+                  console.log(tr_entity_id,td_text,text);
                 }
               }
             }
