@@ -49,11 +49,12 @@ class ClientIntroBlock extends BlockBase {
           'width' => 700,
         ]),
       ]]];
-    $build['#content']['intro'] = $client->get('summary')->value;
+    $build['#content']['intro']['#markup'] = $client->get('summary')->value;
+    $build['#cache']['tags'] = $client->getCacheTags();
 
     return $build;
   }
-  
+
   /**
    * {@inheritDoc}
    */
