@@ -391,9 +391,10 @@ class Client extends BusinessGroupEntity implements ClientInterface {
       $business_group = \Drupal::service('person.manager')->currentPersonOrganizationByClassification('bussiness_group');
       $polling = $config->get('polling.' . $business_group);
 
-      $next = $this->getNextVal($polling['current'], $polling['person']);
-
-      $this->set('follow', $next);
+      if (!empty($polling['person'])) {
+        $next = $this->getNextVal($polling['current'], $polling['person']);
+        $this->set('follow', $next);
+      }
     }
     parent::preSave($storage);
   }
