@@ -46,3 +46,6 @@ form.views-exposed-form fieldset:not(.fieldgroup) {
   min-width: 100px!important;
 }
 
+.ui-dialog .ui-dialog-titlebar-close {
+  background-color: red;
+}
