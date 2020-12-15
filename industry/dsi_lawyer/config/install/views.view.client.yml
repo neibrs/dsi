@@ -214,6 +214,11 @@ display:
           alter:
             alter_text: false
           element_class: record-ajax-tr
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
