@@ -47,7 +47,7 @@
         $.getJSON(url, function(data){
           let _content = '<div class="btn-group-vertical">';
           for (let i in data) {
-            _content = _content + '<button class="btn entity-popover-button" data-entity-field="' + entity_field + '" data-entity-type="' + entity_type + '" data-entity-id="'+ entity_id +'" data-bundle-type="' + bundle_type +'" bundle="'+ bundle + '" data-id='+ i +'>' + data[i] + '</button>';
+            _content = _content + '<button class="btn entity-popover-button" data-entity-field="' + entity_field + '" data-entity-type="' + entity_type + '" data-entity-id="'+ entity_id +'" data-bundle-type="' + bundle_type +'" data-bundle="'+ bundle + '" data-id='+ i +'>' + data[i] + '</button>';
           }
           _content = _content + '</div>';
           let $xid = "#" + entity_type + '-' + entity_id  + '-' + bundle_type + '-' + bundle;
@@ -60,17 +60,14 @@
           entity_id = $(this).data('entity-id'),
           entity_field = $(this).data('entity-field'),
           bundle_type = $(this).data('bundle-type'),
-          // bundle = $(this).data('bundle'),
+          bundle = $(this).data('bundle'),
           id = $(this).data('id');
-          bundle = $(this).attr('bundle');
           text = $(this).text();
-          console.log(text);
           $.ajax({
           type: "POST",
           url: Drupal.url('ajax/popover/' + entity_type + '/' + entity_id + '/' + bundle_type + '/' + bundle),
           data: "entity_field=" + entity_field + "&id=" + id,
           success: function success(response) {
-            // console.log(response[0],entity_field);
             if(response[0] == 'success'){
               // alert('操作成功');
               var trList = $('.views-view-table tr');
