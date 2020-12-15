@@ -82,20 +82,12 @@ class ClientSettingsForm extends FormBase {
       '#prefix' => '<div id="person-wrapper">',
       '#suffix' => '</div>',
     ];
-    if ($business_group = $form_state->getValue('business_group')) {
-      $organizations = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($business_group, [], TRUE);
-      $organizations = array_map(function($organization) {
-        return $organization->id();
-      }, $organizations);
-      $query = \Drupal::entityTypeManager()->getStorage('person')->getQuery();
-      $ids = $query->condition('organization', $organizations, 'IN')
-        ->execute();
-      $persons = \Drupal::entityTypeManager()->getStorage('person')->loadMultiple($ids);
-      $persons = array_map(function ($person) {
-        return $person->label();
-      }, $persons);
-      $form['polling']['person']['#options'] = $persons;
-    }
+    $business_group = $form_state->getValue('business_group') ?: 1;
+    $form['polling']['person']['#options'] = $this->getPersons($business_group);
+
+    $default_persons = \Drupal::config('dsi_client.settings')->get('polling.'. $business_group);
+
+    $form['polling']['person']['#default_value'] = $default_persons['person'];
 
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
@@ -110,5 +102,21 @@ class ClientSettingsForm extends FormBase {
    */
   public function businessGroupSwitch(array $form, FormStateInterface $form_state) {
     return $form['polling']['person'];
+  }
+
+  protected function getPersons($business_group = NULL) {
+    $organizations = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($business_group, [], TRUE);
+    $organizations = array_map(function($organization) {
+      return $organization->id();
+    }, $organizations);
+    $query = \Drupal::entityTypeManager()->getStorage('person')->getQuery();
+    $ids = $query->condition('organization', $organizations, 'IN')
+      ->execute();
+    $persons = \Drupal::entityTypeManager()->getStorage('person')->loadMultiple($ids);
+    $persons = array_map(function ($person) {
+      return $person->label();
+    }, $persons);
+
+    return $persons;
   }
 }
