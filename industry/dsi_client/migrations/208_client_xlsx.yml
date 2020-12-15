@@ -96,9 +96,6 @@ process:
       callable: trim
       source: 客户状态
     -
-      plugin: skip_on_empty
-      method: process
-    -
       plugin: static_map
       default_value: 潜在
       map:
@@ -119,9 +116,6 @@ process:
       plugin: callback
       callable: trim
       source: 客户类型
-    -
-      plugin: skip_on_empty
-      method: process
     -
       plugin: static_map
       default_value: 次要

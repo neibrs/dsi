@@ -46,6 +46,7 @@ function dsi_client_install($is_syncing) {
     '2' => '意向',
     '3' => '潜在',
     '4' => '终止',
+    '5' => '未接',
   ];
   \Drupal::classResolver(InstallHelper::class)->getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
 }
