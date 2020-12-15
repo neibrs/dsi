@@ -67,6 +67,9 @@ source:
       案件: 案件
 
 process:
+  business_group:
+    plugin: default_value
+    default_value: 2
   type:
     plugin: default_value
     default_value: individual
