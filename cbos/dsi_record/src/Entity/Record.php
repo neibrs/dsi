@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
@@ -196,7 +197,6 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 工作详情
     $fields['detail'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Detail', [], ['context' => 'Record']))
-      ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'text_default',
@@ -212,6 +212,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 提醒时间
     $fields['reminder'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Reminder time', [], ['context' => 'Record']))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
       ->setDisplayOptions('view', [
         'type' => 'timestamp',
         'weight' => 0,
@@ -220,36 +221,42 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayOptions('form', [
         'type' => 'datetime_timestamp',
         'weight' => 0,
+        'label' => 'above',
       ])
-      ->setDefaultValue(REQUEST_TIME)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     // 开始时间 - 结束时间
     $fields['start'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Start', [], ['context' => 'Record']))
+      ->setLabel(t('Start'))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
-        'weight' => 0,
+        'weight' => 60,
         'label' => 'inline',
+        'settings' => [
+          'format_type' => 'html_date',
+        ],
       ])
       ->setDisplayOptions('form', [
         'type' => 'datetime_default',
-        'weight' => 0,
+        'weight' => 60,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['end'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('End', [], ['context' => 'Record']))
+      ->setLabel(t('End'))
+      ->setSetting('datetime_type', DateTimeItem::DATETIME_TYPE_DATE)
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
         'weight' => 0,
-        'label' => 'inline',
+        'label' => 'above',
       ])
       ->setDisplayOptions('form', [
         'type' => 'datetime_default',
         'weight' => 0,
+        'label' => 'above',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
