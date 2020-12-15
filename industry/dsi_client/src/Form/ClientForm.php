@@ -67,6 +67,7 @@ class ClientForm extends ContentEntityForm {
 
     $this->entity->set('entity_id', $entity->id());
     $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
+    $this->entity->set('name', $entity->label());
     $this->entity->save();
   }
 

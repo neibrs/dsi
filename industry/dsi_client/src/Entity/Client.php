@@ -187,10 +187,6 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         'type' => 'string',
         'weight' => -4,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -4,
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -419,9 +415,15 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     // TODO, 将来删除
     $person = \Drupal::service('person.manager')->currentPerson();
     if (!empty($person) && $person->label() == '张月月') {
-      $duplicate = $this->createDuplicate();
-      $duplicate->set('business_group', 2);
-      $duplicate->save();
+      $query = $this->entityTypeManager()->getStorage('dsi_client')->getQuery();
+      $ids = $query->condition('name', $this->label())
+        ->condition('user_id', \Drupal::currentUser()->id())
+        ->execute();
+      if (count($ids) < 2) {
+        $duplicate = $this->createDuplicate();
+        $duplicate->set('business_group', 2);
+        $duplicate->save();
+      }
     }
   }
 
