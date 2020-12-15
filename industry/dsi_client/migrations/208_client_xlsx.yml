@@ -238,5 +238,7 @@ process:
 destination:
   plugin: entity:dsi_client
   keys:
-    - name
+    -
+      - name
+      - business_group
 migration_dependencies: { }

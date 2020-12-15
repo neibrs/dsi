@@ -471,7 +471,7 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
         }
 
         // 1. 如果当前组织负责人存在，并且等于当前人员，找出所有属于当前组织的子级内的人员，并为当前负责人显示所有子级人员的数据。
-        if ($organization->get('manager')->target_id == \Drupal::currentPerson()->id()) {
+        if ($organization->get('manager')->target_id == \Drupal::service('person.manager')->currentPerson()->id()) {
           // 1. 当前负责人下所有子级组织
           $children_organization = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($organization->id(), [], TRUE);
           // 2. 找出所有组织成员

@@ -5,9 +5,11 @@
  * Contains dsi_contract.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -53,4 +55,35 @@ function dsi_contract_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInter
 
     return $fields;
   }
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function dsi_contract_entity_operation(EntityInterface $entity) {
+  $operations = [];
+  switch ($entity->getEntityTypeId()) {
+    case 'dsi_client':
+      $operations['contract'] = [
+        'title' => t('+合同'),
+        'url' => Url::fromRoute('entity.dsi_contract.add_contract', [
+          'dsi_client' => $entity->id(),
+        ],
+          [
+            'attributes' => [
+              'class' => [
+                'use-ajax',
+              ],
+              'data-dialog-type' => 'modal',
+              'data-dialog-options' => '{"width": "80%"}',
+            ],
+            'query' => \Drupal::destination()->getAsArray(),
+          ]
+        ),
+        'weight' => 0,
+      ];
+      break;
+  }
+
+  return $operations;
 }

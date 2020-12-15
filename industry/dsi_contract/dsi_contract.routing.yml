@@ -1,0 +1,11 @@
+entity.dsi_contract.add_contract:
+  path: '/dsi_contract/{dsi_client}/add'
+  defaults:
+    _title: '添加合同'
+    _entity_form: 'dsi_contract.add'
+  options:
+    parameters:
+      dsi_client:
+        type: 'entity:dsi_client'
+  requirements:
+    _entity_create_access: 'dsi_contract'
