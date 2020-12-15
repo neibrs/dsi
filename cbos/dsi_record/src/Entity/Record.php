@@ -221,7 +221,7 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayOptions('form', [
         'type' => 'datetime_timestamp',
         'weight' => 0,
-        'label' => 'above',
+        'label' => 'inline',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -251,12 +251,12 @@ class Record extends ContentEntityBase implements RecordInterface {
       ->setDisplayOptions('view', [
         'type' => 'datetime_default',
         'weight' => 0,
-        'label' => 'above',
+        'label' => 'inline',
       ])
       ->setDisplayOptions('form', [
         'type' => 'datetime_default',
         'weight' => 0,
-        'label' => 'above',
+        'label' => 'inline',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
