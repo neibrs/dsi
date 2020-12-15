@@ -37,6 +37,13 @@ class ContractForm extends ContentEntityForm {
     /* @var \Drupal\dsi_contract\Entity\Contract $entity */
     $form = parent::buildForm($form, $form_state);
 
+    $client = \Drupal::routeMatch()->getParameter('dsi_client');
+    if (!empty($client)) {
+      $form['client']['widget'][0]['target_id']['#default_value'] = $client;
+    }
+
+    $form['person']['widget'][0]['target_id']['#default_value'] = \Drupal::service('person.manager')->currentPerson();
+
     return $form;
   }
 
