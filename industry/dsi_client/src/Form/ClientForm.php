@@ -125,7 +125,7 @@ class ClientForm extends ContentEntityForm {
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.dsi_client.canonical', ['dsi_client' => $entity->id()]);
+    $form_state->setRedirect('entity.dsi_client.collection');
   }
 
 }
