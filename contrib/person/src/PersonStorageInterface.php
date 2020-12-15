@@ -11,4 +11,5 @@ interface PersonStorageInterface extends ContentEntityStorageInterface {
    */
   public function loadOrCreateByName($name, $settings = []);
 
+  public function loadSubordinatesIds($organizations = []);
 }

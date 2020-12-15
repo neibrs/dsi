@@ -1,0 +1,7 @@
+dsi_client.settings:
+  path: '/dsi_client/settings'
+  defaults:
+    _title: '客户设置'
+    _form: '\Drupal\dsi_client\Form\ClientSettingsForm'
+  requirements:
+    _permission: 'administer client entities'

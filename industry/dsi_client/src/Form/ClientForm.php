@@ -43,8 +43,8 @@ class ClientForm extends ContentEntityForm {
         '#entity_type' => $target_entity_type_id,
         '#bundle' => $type->id(),
         '#form_mode' => 'client',
-        ];
-      }
+      ];
+    }
     else {
       $form['client_type'] = [
         '#id' => 'client-type-wrapper',
