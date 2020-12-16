@@ -391,12 +391,13 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     $person = \Drupal::service('person.manager')->currentPerson();
     if (!empty($person) && $person->label() == '张月月' && $this->get('business_group')->target_id == 1) {
       $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
-      $polling = $config->get('polling.1');
+      $polling = $config->get('polling.' . $person->get('business_group')->target_id);
 
+      // See ClientForm submitForm 实体保存会再次进入这里，导致轮询失败，把跟进人设回原来的person id.
       if (!empty($polling['person']) && $this->get('follow')->target_id == $person->id()) {
         $next = $this->getNextVal($polling['current'], $polling['person']);
         $this->set('follow', $next);
-        $config->set('polling.1.current', $next);
+        $config->set('polling.'. $person->get('business_group')->target_id .'.current', $next);
         $config->save();
       }
     }
