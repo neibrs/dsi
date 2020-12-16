@@ -216,6 +216,15 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         'weight' => 0,
         'label' => 'inline',
       ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 6,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'placeholder' => '',
+        ],
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -381,12 +390,14 @@ class Client extends BusinessGroupEntity implements ClientInterface {
   public function preSave(EntityStorageInterface $storage) {
     if ($this->isNew()) {
       $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
-      $business_group = \Drupal::service('person.manager')->currentPersonOrganizationByClassification('bussiness_group');
-      $polling = $config->get('polling.' . $business_group);
+      $business_group = \Drupal::service('person.manager')->currentPersonOrganizationByClassification('business_group');
+      $polling = $config->get('polling.' . $business_group->id());
 
-      if (!empty($polling['person'])) {
+      if (!empty($polling['person']) && empty($this->get('follow')->target_id)) {
         $next = $this->getNextVal($polling['current'], $polling['person']);
         $this->set('follow', $next);
+        $config->set('polling.'. $business_group->id() .'.current', $next);
+        $config->save();
       }
     }
     parent::preSave($storage);
@@ -422,6 +433,15 @@ class Client extends BusinessGroupEntity implements ClientInterface {
       if (count($ids) < 2) {
         $duplicate = $this->createDuplicate();
         $duplicate->set('business_group', 2);
+
+        $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
+        $polling = $config->get('polling.2');
+
+        $next = $this->getNextVal($polling['current'], $polling['person']);
+        $duplicate->set('follow', $next);
+        $config->set('polling.2.current', $next);
+        $config->save();
+
         $duplicate->save();
       }
     }

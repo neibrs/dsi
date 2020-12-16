@@ -4,12 +4,14 @@ polling:
   1:
     business_group: 1
     person:
-      - 10
-      - 11
-    current: 10
+      3: 3
+      5: 5
+    current: 3
   2:
     business_group: 2
     person:
-      - 12
-      - 13
+      12: 12
+      13: 13
+      14: 14
     current: 12
+

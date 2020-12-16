@@ -62,6 +62,7 @@ class ClientSettingsForm extends FormBase {
     }, $business_groups);
     $form['polling'] = [
       '#type' => 'details',
+      '#open' => true,
       '#title' => '轮询规则',
     ];
     $form['polling']['business_group'] = [
