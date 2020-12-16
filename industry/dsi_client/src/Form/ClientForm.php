@@ -103,7 +103,10 @@ class ClientForm extends ContentEntityForm {
       }else{
         $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
       }
-      }
+    }
+    if (empty($items['name'])) {
+      $items['name'] = $items['phone'];
+    }
     $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
     if ($entity_id) {
         // 批量保存$items到entity_id, TODO
