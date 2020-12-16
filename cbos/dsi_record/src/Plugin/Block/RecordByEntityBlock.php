@@ -80,10 +80,13 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
       '#url' => Url::fromRoute('entity.dsi_record.add_todo', [
         'entity_type' => $this->configuration['entity_type'],
         'entity_id' => $this->configuration['entity_id'],
-      ]
+      ],
+        [
+          'query' => ['destination' => '/dsi_client'],
+        ]
       ),
           '#options' => [
-    'attributes' => [
+          'attributes' => [
             'class' => ['use-ajax'],
             'data-dialog-type' => 'modal',
             'data-dialog-options' => Json::encode([
