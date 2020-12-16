@@ -56,6 +56,19 @@ class ClientForm extends ContentEntityForm {
       ];
     }
 
+    $cooperating_state_options = $form['cooperating_state']['widget']['#options'];
+    if (empty($cooperating_state_options['#default_value'])) {
+      // Set default value.
+      $index = array_search('潜在', $cooperating_state_options);
+      $form['cooperating_state']['widget']['#default_value'] = $index;
+    }
+
+    $client_importance = $form['client_importance']['widget']['#options'];
+    if (empty($client_importance['#default_value'])) {
+      $index = array_search('一般', $client_importance);
+      $form['client_importance']['widget']['#default_value'] = $index;
+    }
+
     return $form;
   }
 
