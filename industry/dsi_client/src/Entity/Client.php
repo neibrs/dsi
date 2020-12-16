@@ -393,7 +393,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
       $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
       $polling = $config->get('polling.1');
 
-      if (!empty($polling['person'])) {
+      if (!empty($polling['person']) && $this->get('follow')->target_id == $person->id()) {
         $next = $this->getNextVal($polling['current'], $polling['person']);
         $this->set('follow', $next);
         $config->set('polling.1.current', $next);
@@ -401,24 +401,6 @@ class Client extends BusinessGroupEntity implements ClientInterface {
       }
     }
     parent::preSave($storage);
-  }
-
-  /**
-   * Callable.
-   */
-  public function getNextVal($current, $data) {
-    $data = array_values($data);
-    if (empty($current)) {
-      return array_shift($data);
-    }
-    $index = array_search($current, $data);
-    if($index !== false && $index < count($data)-1) {
-      $next = $data[$index+1];
-    }
-    else {
-      $next = array_shift($data);
-    }
-    return $next;
   }
 
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
@@ -446,6 +428,24 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         $duplicate->save();
       }
     }
+  }
+
+  /**
+   * Callable.
+   */
+  public function getNextVal($current, $data) {
+    $data = array_values($data);
+    if (empty($current)) {
+      return array_shift($data);
+    }
+    $index = array_search($current, $data);
+    if($index !== false && $index < count($data)-1) {
+      $next = $data[$index+1];
+    }
+    else {
+      $next = array_shift($data);
+    }
+    return $next;
   }
 
 }
