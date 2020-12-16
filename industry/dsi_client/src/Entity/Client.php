@@ -407,6 +407,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
    * Callable.
    */
   public function getNextVal($current, $data) {
+    $data = array_values($data);
     if (empty($current)) {
       return array_shift($data);
     }
