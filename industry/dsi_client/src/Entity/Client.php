@@ -79,6 +79,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     parent::preCreate($storage_controller, $values);
     $values += [
       'user_id' => \Drupal::currentUser()->id(),
+      'follow' => \Drupal::service('person.manager')->currentPerson(),
     ];
   }
 
@@ -297,6 +298,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         'type' => 'options_select',
         'weight' => 0,
       ])
+      ->setRequired(TRUE)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -384,19 +386,17 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     return [];
   }
 
-  /**
-   * {@inheritDoc}
-   */
   public function preSave(EntityStorageInterface $storage) {
-    if ($this->isNew()) {
+    // TODO, 将来删除
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if (!empty($person) && $person->label() == '张月月' && $this->get('business_group')->target_id == 1) {
       $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
-      $business_group = \Drupal::service('person.manager')->currentPersonOrganizationByClassification('business_group');
-      $polling = $config->get('polling.' . $business_group->id());
+      $polling = $config->get('polling.1');
 
-      if (!empty($polling['person']) && empty($this->get('follow')->target_id)) {
+      if (!empty($polling['person'])) {
         $next = $this->getNextVal($polling['current'], $polling['person']);
         $this->set('follow', $next);
-        $config->set('polling.'. $business_group->id() .'.current', $next);
+        $config->set('polling.1.current', $next);
         $config->save();
       }
     }
@@ -427,6 +427,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
     // TODO, 将来删除
     $person = \Drupal::service('person.manager')->currentPerson();
     if (!empty($person) && $person->label() == '张月月') {
+      $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
       $query = $this->entityTypeManager()->getStorage('dsi_client')->getQuery();
       $ids = $query->condition('name', $this->label())
         ->condition('user_id', \Drupal::currentUser()->id())
@@ -435,7 +436,6 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         $duplicate = $this->createDuplicate();
         $duplicate->set('business_group', 2);
 
-        $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
         $polling = $config->get('polling.2');
 
         $next = $this->getNextVal($polling['current'], $polling['person']);
