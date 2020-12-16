@@ -83,6 +83,14 @@ vendor/bin/drush then dsi_color -y
 vendor/bin/drush cset system.theme default dsi_color -y
 vendor/bin/drush cset system.theme admin dsi_color -y
 
+# Set timezone
+vendor/bin/drush cset system.date country.default CN -y
+vendor/bin/drush cset system.date first_day 1 -y
+vendor/bin/drush cset system.date timezone.default Asia/Shanghai -y
+vendor/bin/drush cset system.date timezone.user.configurable false -y
+vendor/bin/drush cset system.date timezone.user.warning false -y
+vendor/bin/drush cset system.date timezone.user.default 0 -y
+
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
 # 翻译问题
