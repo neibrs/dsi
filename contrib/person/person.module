@@ -472,16 +472,31 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
       if (!empty($allow_ids)) {
         // 所属组织的数据
         $query->condition($alias . '.' . $multiple_organization_field, $allow_ids,'IN');
-        // 1. 如果当前组织负责人存在，并且等于当前人员，找出所有属于当前组织的子级内的人员，并为当前负责人显示所有子级人员的数据。
-        if ($organization->get('manager')->target_id == \Drupal::service('person.manager')->currentPerson()->id()) {
-          // 1. 当前负责人下所有子级组织
-          $children_organization = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($organization->id(), [], TRUE);
-          // 2. 找出所有组织成员
-          $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($children_organization);
+
+        $person_manager = \Drupal::service('person.manager');
+        $current_user = \Drupal::currentUser()->id();
+        // 2. 找出所有子组织成员
+        foreach ($organizations as $org) {
+          $children = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($org);
+          $sub_organizations[] = array_map(function ($child) {
+            return $child->id();
+          }, $children);
+        }
+        $sub_organizations = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($sub_organizations)), FALSE);
+        $sub_organizations[] = $organization->id();
+        $sub_organizations = \Drupal::entityTypeManager()->getStorage('organization')->loadMultiple($sub_organizations);
+        $subs = [];
+        foreach ($sub_organizations as $sub_organization) {
+          if ($sub_organization->get('manager')->target_id == $person_manager->currentPerson()->id()) {
+            $subs[] = $sub_organization;
+          }
+        }
+
+        if (!empty($subs) && $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($subs)) {
           // 3. 获取用户id
           $users = [];
           foreach ($persons as $id => $person) {
-            $users[] = \Drupal::service('person.manager')->getUserByPerson($person);
+            $users[] = $person_manager->getUserByPerson($person);
           }
           $user_ids = array_map(function ($user) {
             return $user->id();
@@ -497,13 +512,13 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
           //TODO, 添加跟进人为空的条件, 添加张月月自动分配功能后不存在跟进人为空的数据
           $query->condition($query->orConditionGroup()
             ->condition($alias . '.' . $personal_owner, NULL, 'IS NULL')
-            ->condition($alias . '.' . $personal_owner, \Drupal::service('person.manager')->currentPerson()->id())
+            ->condition($alias . '.' . $personal_owner, $person_manager->currentPerson()->id())
             // 只能查看自己的
-            ->condition($alias . '.user_id', \Drupal::currentUser()->id())
+            ->condition($alias . '.user_id', $current_user)
           );
         }
         else {
-          $query->condition($alias . '.user_id', \Drupal::currentUser()->id());
+          $query->condition($alias . '.user_id', $current_user);
         }
       }
       // 所属业务组无数据
