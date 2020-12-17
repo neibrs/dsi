@@ -69,6 +69,7 @@ class ClientForm extends ContentEntityForm {
       $form['client_importance']['widget']['#default_value'] = $index;
     }
 
+    $form['client_type']['phone']['widget'][0]['#disabled'] = TRUE;
     return $form;
   }
 

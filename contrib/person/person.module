@@ -17,7 +17,9 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
 use Drupal\organization\Entity\BusinessGroupEntityInterface;
+use Drupal\organization\Entity\OrganizationType;
 use Drupal\person\Entity\PersonType;
 
 /**
@@ -146,6 +148,13 @@ function person_entity_extra_field_info() {
     'weight' => 0,
   ];
 
+  foreach (OrganizationType::loadMultiple() as $bundle) {
+    $extra['organization'][$bundle->id()]['display']['organization_person'] = [
+      'label' => t('Organization persons'),
+      'description' => 'Persons in specific organization',
+      'weight' => 0,
+    ];
+  }
   return $extra;
 }
 
@@ -531,4 +540,19 @@ function buildMultipleOrganizationQueryParameter($entity_type_id, $query_field_p
   $field_storage_definition = $field_storage_definitions[$multiple_organization_field];
   $target_entity_type_id = $field_storage_definition->getSetting('target_type');
   return buildMultipleOrganizationQueryParameter($target_entity_type_id, $query_field_prefix);
+}
+
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function person_organization_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  // 如果新添加的人员无id，不显示员工分配.
+  if ($display->getComponent('organization_person') && $entity->id()) {
+    $build['organization_person'] = [
+      '#theme' => 'box',
+      '#icon' => 'fa fa-anchor',
+      '#body' => views_embed_view('organization_person', 'default', $entity->id()),
+    ];
+  }
 }

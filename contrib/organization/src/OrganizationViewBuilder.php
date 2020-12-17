@@ -47,7 +47,6 @@ class OrganizationViewBuilder extends EntityViewBuilder {
       if ($display->getComponent('children')) {
         $build[$id]['children'] = [
           '#theme' => 'box',
-          '#title' => t('Sub organizations'),
           '#icon' => 'fa fa-share-alt',
           '#tools' => [
             [
