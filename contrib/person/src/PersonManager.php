@@ -72,6 +72,9 @@ class PersonManager implements PersonManagerInterface {
    * {@inheritdoc}
    */
   public function getUserByPerson($person) {
+    if (empty($person)) {
+      return NULL;
+    }
     if (is_object($person)) {
       $person = $person->id();
     }
@@ -85,6 +88,18 @@ class PersonManager implements PersonManagerInterface {
     }
   }
 
+  public function getUserByPersonName($name = NULL) {
+    if (empty($name)) {
+      return NULL;
+    }
+
+    // TODO, 会出现同名的例外情况
+    $persons = $this->entityTypeManager->getStorage('person')->loadByProperties([
+      'name' => $name,
+    ]);
+
+    return $this->getUserByPerson(reset($persons));
+  }
   /**
    * {@inheritdoc}
    */
