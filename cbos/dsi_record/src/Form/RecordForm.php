@@ -51,7 +51,6 @@ class RecordForm extends ContentEntityForm {
     /* @var \Drupal\dsi_record\Entity\Record $entity */
     $form = parent::buildForm($form, $form_state);
 
-    $form['start']['#title'] = 'xxx';
     return $form;
   }
 

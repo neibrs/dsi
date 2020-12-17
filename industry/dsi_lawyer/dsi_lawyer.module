@@ -22,3 +22,35 @@ function dsi_lawyer_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function dsi_lawyer_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'dsi_record') {
+    $fields['name']->setRequired(FALSE);
+    $fields['detail']->setRequired(TRUE);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function dsi_lawyer_dsi_record_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  $description = $entity->get('detail')->value;
+  $entity->set('name', $description);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_record_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['name']);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_record_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['name']);
+}

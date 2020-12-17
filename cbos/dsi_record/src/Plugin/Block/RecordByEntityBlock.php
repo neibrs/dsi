@@ -69,9 +69,8 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     $data = [];
     foreach ($entities as $key => $entity) {
       $data[$key] = [
-        'name' => $entity->label(),
+        'name' => ['#markup' => $entity->label()],
         'created' => date('Y-m-d H:i', $entity->getCreatedTime()),
-        // 'detail' => $entity->get('detail')->value,
       ];
     }
     $build['#content']['add_link'] = [
@@ -96,7 +95,6 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
       ],
     ];
     $build['#content']['data'] = $data;
-
     return $build;
   }
 
