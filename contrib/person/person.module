@@ -468,7 +468,7 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
           // 1. 当前负责人下所有子级组织
           $children_organization = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($organization->id(), [], TRUE);
           // 2. 找出所有组织成员
-          $persons = \Drupal::service('person.manager')->loadSubordinatesIds($children_organization);
+          $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($children_organization);
           // 3. 获取用户id
           $users = [];
           foreach ($persons as $id => $person) {
