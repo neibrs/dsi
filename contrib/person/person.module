@@ -388,7 +388,7 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
     // 多组织字段实体类型id
     $entity_type_id = $field_storage_definition->getSetting('target_type');
 
-    list($target_entity_type_id, $field_multiple_organization_classification, $query_field_prefix) = buildMultipleOrganizationQueryParameter($entity_type_id, '');
+    [$target_entity_type_id, $field_multiple_organization_classification, $query_field_prefix] = buildMultipleOrganizationQueryParameter($entity_type_id, '');
     $target_entity_type = \Drupal::entityTypeManager()->getDefinition($target_entity_type_id);
   }
 
@@ -461,27 +461,40 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
 
       $allow_ids = $subquery->execute();
       if (!empty($allow_ids)) {
+        // 所属组织的数据
         $query->condition($alias . '.' . $multiple_organization_field, $allow_ids,'IN');
-
-        // 用于过滤没有设置multiple_organization_classification,
-        // 但设置了multiple_organization_field的实体数据，应用于多组织数据筛选
-        if ($entity_type instanceof BusinessGroupEntityInterface) {
-          // 不能筛选多重业务组,@see $parent_organizations
-          $query->condition('business_group', $organization->id());
-        }
-
         // 1. 如果当前组织负责人存在，并且等于当前人员，找出所有属于当前组织的子级内的人员，并为当前负责人显示所有子级人员的数据。
         if ($organization->get('manager')->target_id == \Drupal::service('person.manager')->currentPerson()->id()) {
           // 1. 当前负责人下所有子级组织
           $children_organization = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($organization->id(), [], TRUE);
           // 2. 找出所有组织成员
           $persons = \Drupal::service('person.manager')->loadSubordinatesIds($children_organization);
-          // 3. 过滤所有属于这些组织成员的数据
-          $query->condition($alias. '.' . $entity_type->get('personal_owner'), $persons, 'IN');
+          // 3. 获取用户id
+          $users = [];
+          foreach ($persons as $id => $person) {
+            $users[] = \Drupal::service('person.manager')->getUserByPerson($person);
+          }
+          $user_ids = array_map(function ($user) {
+            return $user->id();
+          }, $users);
+          // 4. 过滤所有属于这些组织成员的数据
+          $query->condition($query->orConditionGroup()
+            ->condition($alias. '.' . $entity_type->get('personal_owner'), $persons, 'IN')
+            ->condition($alias . '.user_id', $user_ids, 'IN')
+          );
         }
+        // 查看跟进人是自己的
         else if ($personal_owner = $entity_type->get('personal_owner')) {
-          // TODO, 添加跟进人为空的条件
-          $query->condition($alias. '.' . $personal_owner, \Drupal::service('person.manager')->currentPerson()->id());
+          //TODO, 添加跟进人为空的条件, 添加张月月自动分配功能后不存在跟进人为空的数据
+          $query->condition($query->orConditionGroup()
+            ->condition($alias . '.' . $personal_owner, NULL, 'IS NULL')
+            ->condition($alias . '.' . $personal_owner, \Drupal::service('person.manager')->currentPerson()->id())
+            // 只能查看自己的
+            ->condition($alias . '.user_id', \Drupal::currentUser()->id())
+          );
+        }
+        else {
+          $query->condition($alias . '.user_id', \Drupal::currentUser()->id());
         }
       }
       // 所属业务组无数据
