@@ -62,3 +62,10 @@ function dsi_lawyer_form_dsi_client_form_alter(&$form, \Drupal\Core\Form\FormSta
   $form['customer_source']['#disabled'] = TRUE;
   $form['client_type']['phone']['widget'][0]['value']['#disabled'] = TRUE;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_lawyer_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  \Drupal\Core\Cache\Cache::invalidateTags(['client_list']);
+}
