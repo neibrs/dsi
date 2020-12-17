@@ -488,6 +488,7 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
         $subs = [];
         foreach ($sub_organizations as $sub_organization) {
           if ($sub_organization->get('manager')->target_id == $person_manager->currentPerson()->id()) {
+            // 负责的部门
             $subs[] = $sub_organization;
           }
         }
