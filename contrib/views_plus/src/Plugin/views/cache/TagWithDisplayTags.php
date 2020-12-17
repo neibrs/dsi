@@ -30,4 +30,5 @@ class TagWithDisplayTags extends Tag {
 
     return $tags;
   }
+
 }

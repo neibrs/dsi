@@ -493,7 +493,8 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
           }
         }
 
-        if (!empty($subs) && $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($subs)) {
+        if (!empty($subs)) {
+          $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($subs);
           // 3. 获取用户id
           $users = [];
           foreach ($persons as $id => $person) {
