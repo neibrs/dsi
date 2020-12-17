@@ -29,7 +29,9 @@ class PersonStorage extends SqlContentEntityStorage implements PersonStorageInte
       return $organization->id();
     }, $organizations);
     // 负责部门的所有子部门
-    $sub_ids = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($organizations_ids);
+    $sub_ids = \Drupal::entityTypeManager()
+      ->getStorage('organization')
+      ->loadAllChildren($ids);
     $sub_ids = array_map(function ($organization) {
       return $organization->id();
     }, $sub_ids);
