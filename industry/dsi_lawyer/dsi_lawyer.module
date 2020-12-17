@@ -54,3 +54,10 @@ function dsi_lawyer_form_dsi_record_add_form_alter(&$form, \Drupal\Core\Form\For
 function dsi_lawyer_form_dsi_record_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   unset($form['name']);
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_client_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['customer_source']['#disabled'] = TRUE;
+}
