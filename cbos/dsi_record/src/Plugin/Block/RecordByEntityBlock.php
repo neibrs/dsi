@@ -69,7 +69,7 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     $data = [];
     foreach ($entities as $key => $entity) {
       $data[$key] = [
-        'name' => ['#markup' => $entity->label()],
+        'detail' => ['#markup' => $entity->get('detail')->value],
         'created' => date('Y-m-d H:i', $entity->getCreatedTime()),
       ];
     }

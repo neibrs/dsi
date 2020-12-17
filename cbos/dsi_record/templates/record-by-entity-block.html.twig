@@ -15,7 +15,7 @@
   <span><b>回访记录:</b><h6>[{{ content.add_link }}]</h6></span>
   <ul>
     {% for value in content.data %}
-      <li><p>{{ value.name }}<span class="text-red">[{{ value.created }}]</span></p></li>
+      <li><p>{{ value.detail }}<span class="text-red">[{{ value.created }}]</span></p></li>
     {% endfor %}
   </ul>
 </div>
