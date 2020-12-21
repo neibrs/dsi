@@ -25,6 +25,7 @@ class ClientForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\dsi_client\Entity\Client $entity */
     $form = parent::buildForm($form, $form_state);
+    $entity = $form_state->getFormObject()->getEntity();
     $form['type']['widget']['#ajax'] = [
       'callback' => '::clientTypeSwitch',
       'wrapper' => 'client-type-wrapper',
@@ -70,6 +71,7 @@ class ClientForm extends ContentEntityForm {
     }
 
     if (!$this->entity->isNew()) {
+      $form['customer_source']['widget'][0]['#disabled'] = TRUE;
       $form['client_type']['phone']['widget'][0]['#disabled'] = TRUE;
     }
     return $form;
