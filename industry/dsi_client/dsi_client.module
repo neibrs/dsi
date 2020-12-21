@@ -5,6 +5,7 @@
  * Contains dsi_client.module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -91,4 +92,27 @@ function dsi_client_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\E
       break;
   }
   return $fields;
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function dsi_client_inline_entity_form_entity_form_alter(array &$entity_form, FormStateInterface &$form_state) {
+  if ($entity_form['#entity_type'] == 'organization'
+    && $entity_form['#bundle'] == 'client'
+    && $entity_form['#form_mode'] == 'client') {
+    // Organization client bundle
+    if (!$form_state->getFormObject()->getEntity()->isNew()) {
+      $entity_form['field_phone']['widget'][0]['#disabled'] = TRUE;
+    }
+  }
+
+  if ($entity_form['#entity_type'] == 'person'
+    && $entity_form['#bundle'] == 'individual'
+    && $entity_form['#form_mode'] == 'client') {
+    // Person client
+    if (!$form_state->getFormObject()->getEntity()->isNew()) {
+      $entity_form['phone']['widget'][0]['#disabled'] = TRUE;
+    }
+  }
 }
