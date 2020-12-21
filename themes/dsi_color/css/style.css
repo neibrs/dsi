@@ -53,3 +53,8 @@ form.views-exposed-form fieldset:not(.fieldgroup) {
 body {
   font-size: 13px;
 }
+
+.error {
+  height: 40px;
+  text-align: left;
+}
