@@ -30,12 +30,4 @@ class TagWithDisplayTags extends Tag {
 
     return $tags;
   }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function postRender(&$output) {
-    $output['#cache']['contexts'][] = 'user';
-  }
-
 }

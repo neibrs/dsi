@@ -1285,6 +1285,7 @@ display:
         - url
         - url.query_args
         - user.permissions
+        - user
       tags:
         - 'config:field.storage.organization.field_phone'
   page_1:
@@ -1303,5 +1304,6 @@ display:
         - url
         - url.query_args
         - user.permissions
+        - user
       tags:
         - 'config:field.storage.organization.field_phone'
