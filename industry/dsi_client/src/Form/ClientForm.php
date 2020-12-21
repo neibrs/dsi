@@ -71,7 +71,6 @@ class ClientForm extends ContentEntityForm {
     }
 
     if (!$this->entity->isNew()) {
-      $form['customer_source']['widget'][0]['#disabled'] = TRUE;
       $form['client_type']['phone']['widget'][0]['#disabled'] = TRUE;
     }
     return $form;
