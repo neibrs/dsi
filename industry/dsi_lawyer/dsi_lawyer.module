@@ -61,8 +61,10 @@ function dsi_lawyer_form_dsi_record_edit_form_alter(&$form, \Drupal\Core\Form\Fo
  * Implements hook_form_FORM_ID_alter().
  */
 function dsi_lawyer_form_dsi_client_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//  if ($form_state->getFormObject()->getEntity()->isNew()) {
-//    $form['customer_source']['#disabled'] = TRUE;
-//  }
+  /** @var \Drupal\dsi_client\Entity\ClientInterface $client */
+  $client = $form_state->getFormObject()->getEntity();
+  if (!$client->isNew()) {
+    $form['customer_source']['#disabled'] = TRUE;
+  }
   $form['client_type']['phone']['widget'][0]['value']['#disabled'] = TRUE;
 }
