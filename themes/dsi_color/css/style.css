@@ -49,3 +49,7 @@ form.views-exposed-form fieldset:not(.fieldgroup) {
 .ui-dialog .ui-dialog-titlebar-close {
   background-color: red;
 }
+
+body {
+  font-size: 13px;
+}
