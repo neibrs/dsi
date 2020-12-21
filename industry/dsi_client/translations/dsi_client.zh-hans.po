@@ -35,6 +35,9 @@ msgctxt "Client name"
 msgid "Name"
 msgstr "客户名称"
 
+#: modules/dsi/industry/dsi_client/src/ClientTypeListBuilder.php:17
+msgid "Client type"
+msgstr "客户类型"
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:149
 msgctxt "Client"
@@ -52,6 +55,11 @@ msgid "Summary"
 msgstr "简述"
 
 #: modules/dsi/industry/dsi_client/src/Entity/Client.php:214
+msgctxt "Client"
+msgid "Follow"
+msgstr "跟进人"
+
+#: modules/dsi/industry/dsi_client/src/Entity/Client.php:226
 msgctxt "Client"
 msgid "Description"
 msgstr "备注"
