@@ -178,15 +178,6 @@ process:
       plugin: skip_on_empty
       method: process
     -
-      plugin: static_map
-      bypass: TRUE
-      map:
-        殷祖法: 王平
-        王晓龙: 王平
-        蹇昔君: 王平
-        李欢欢: 王平
-        林先莉: 王平
-    -
       plugin: entity_lookup
       entity_type: person
       value_key: name

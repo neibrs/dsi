@@ -36,11 +36,11 @@ function dsi_lawyer_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\E
 }
 
 /**
- * Implements hook_ENTITY_TYPE_presave().
+ * Implements hook_ENTITY_TYPE_presave() on record.
  */
 function dsi_lawyer_dsi_record_presave(Drupal\Core\Entity\EntityInterface $entity) {
   $description = $entity->get('detail')->value;
-  $entity->set('name', $description);
+  $entity->set('name', mb_substr($description, 0, 60));
 }
 
 /**
