@@ -36,13 +36,7 @@ function dsi_contract_install($is_syncing) {
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('travel_expenses_agreement', $data, '差旅费约定', $lookup_storage);
 
-  $data = [
-    '1' => '未执行',
-    '2' => '履行中',
-    '3' => '已终止',
-  ];
-  \Drupal::classResolver(InstallHelper::class)
-    ->getOrCreateLookup('contract_state', $data, '合同状态', $lookup_storage);
+
 }
 
 /**
@@ -59,32 +53,48 @@ function dsi_contract_update_20121001(&$sandbox) {
 }
 
 /**
- * Implements hook_update_N() add contract field for contact.
+ * Implements hook_update_N() add contract field for contract.
  */
-function dsi_contract_update_20122001(&$sandbox) {
+function dsi_contract_update_20122201(&$sandbox) {
+  $entityDefinitionUpdateManager = \Drupal::entityDefinitionUpdateManager();
+
   $storage_definition = BaseFieldDefinition::create('string')
     ->setLabel(t('Party B', [], ['context' => 'Contract']));
-  \Drupal::entityDefinitionUpdateManager()
-    ->installFieldStorageDefinition('party_b', 'dsi_contact', 'dsi_contact', $storage_definition);
+  $entityDefinitionUpdateManager
+    ->installFieldStorageDefinition('party_b', 'dsi_contract', 'dsi_contract', $storage_definition);
 
   $storage_definition = BaseFieldDefinition::create('integer')
     ->setLabel(t('Period', [], ['context' => 'Contract']));
-  \Drupal::entityDefinitionUpdateManager()
-    ->installFieldStorageDefinition('period', 'dsi_contact', 'dsi_contact', $storage_definition);
+  $entityDefinitionUpdateManager
+    ->installFieldStorageDefinition('period', 'dsi_contract', 'dsi_contract', $storage_definition);
 
   $storage_definition = BaseFieldDefinition::create('integer')
     ->setLabel(t('Automatic Delay', [], ['context' => 'Contract']));
-  \Drupal::entityDefinitionUpdateManager()
-    ->installFieldStorageDefinition('automatic_delay', 'dsi_contact', 'dsi_contact', $storage_definition);
+  $entityDefinitionUpdateManager
+    ->installFieldStorageDefinition('automatic_delay', 'dsi_contract', 'dsi_contract', $storage_definition);
 
   $storage_definition = BaseFieldDefinition::create('string')
     ->setLabel(t('Cooperation Content', [], ['context' => 'Contract']));
-  \Drupal::entityDefinitionUpdateManager()
-    ->installFieldStorageDefinition('cooperation_content', 'dsi_contact', 'dsi_contact', $storage_definition);
+  $entityDefinitionUpdateManager
+    ->installFieldStorageDefinition('cooperation_content', 'dsi_contract', 'dsi_contract', $storage_definition);
 
   $storage_definition = BaseFieldDefinition::create('entity_reference')
     ->setLabel(t('Contract State', [], ['context' => 'Contract']))
-    ->setSetting('target_type', 'lookup');
-  \Drupal::entityDefinitionUpdateManager()
-    ->installFieldStorageDefinition('contract_state', 'dsi_contact', 'dsi_contact', $storage_definition);
+    ->setSetting('target_type', 'lookup')
+    ->setSetting('handler_settings', [
+      'target_bundles' => ['contract_state' => 'contract_state'],
+      'auto_create' => TRUE,
+    ]);
+  $entityDefinitionUpdateManager
+    ->installFieldStorageDefinition('contract_state', 'dsi_contract', 'dsi_contract', $storage_definition);
+
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $lookup_storage */
+  $lookup_storage = \Drupal::service('entity_type.manager')->getStorage('lookup');
+  $data = [
+    '1' => '未执行',
+    '2' => '履行中',
+    '3' => '已终止',
+  ];
+  \Drupal::classResolver(InstallHelper::class)
+    ->getOrCreateLookup('contract_state', $data, '合同状态', $lookup_storage);
 }

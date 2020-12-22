@@ -20,9 +20,14 @@ function views_plus_views_data_alter(array &$data) {
       $storage = $entity_type_manager->getStorage($entity_type_id);
       if ($storage instanceof SqlEntityStorageInterface) {
         $table_mapping = $storage->getTableMapping();
+        $table_name = $table_mapping->getDataTable() ?: $table_mapping->getBaseTable();
         $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions($entity_type_id);
         foreach ($field_storage_definitions as $field_name => $field_storage_definition) {
           if ($field_storage_definition->getType() == 'entity_reference') {
+            // 升级实体新字段时，新字段还未在数据表内
+            if (!in_array($field_name, $table_mapping->getAllColumns($table_name))) {
+              continue;
+            }
             $table_name = $table_mapping->getFieldTableName($field_name);
             $column_name = $table_mapping->getFieldColumnName($field_storage_definition, 'target_id');
             if (!isset($data[$table_name][$column_name]['filter'])) {
