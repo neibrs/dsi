@@ -572,7 +572,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
 
-    // 关联项目, dsi_contract.module
+    // 关联项目, dsi_project.module
 
     // 合同期限
     $fields['period'] = BaseFieldDefinition::create('integer')
