@@ -421,6 +421,12 @@ class Client extends BusinessGroupEntity implements ClientInterface {
 
         $polling = $config->get('polling.2');
 
+        // entity_id独立
+        if (!empty($this->get('entity_id')->target_id)) {
+          $entity_id_entity = $this->get('entity_id')->entity->createDuplicate();
+          $entity_id_entity->save();
+          $duplicate->set('entity_id', $entity_id_entity->id());
+        }
         $next = $this->getNextVal($polling['current'], $polling['person']);
         $duplicate->set('follow', $next);
         $config->set('polling.2.current', $next);
