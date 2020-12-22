@@ -52,4 +52,28 @@ function dsi_cases_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterfac
 
     return $fields;
   }
+
+  if ($entity_type->id() == 'dsi_contract') {
+    $fields = [];
+    $fields['project'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Cases', [], ['context' => 'Contract']))
+      ->setSetting('target_type', 'dsi_cases')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 0,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
+  }
 }
