@@ -12,18 +12,18 @@ dev: 常规分支
 4. 加配置文件(config/目录下的文件)(test)
 
 
-DEVELOPMENT(2020-12-02)
+DEVELOPMENT(2020-12-21)
 -----------------------
 - Added modules:
-  * Contrib module: locale_plus
+  * Contrib module: dsi_office
 
-Test(2020-12-02)
+Test(2020-12-21)
 -----------------------
 
-Master(2020-12-02)
+Master(2020-12-21)
 -----------------------
 - Added modules:
-  * Core modules: entity_plus, dsi_import, dsi_media, dsi_slider_media, dsi_icons
+  * Core modules: locale_plus, entity_plus, dsi_import, dsi_media, dsi_slider_media, dsi_icons
   * Common business objects: dsi_ipa, dsi_device, dsi_lookup, dsi_classification,dsi_hardware,dsi_litigant
     dsi_device_subtype, dsi_device_other_subtype, dsi_purchased, dsi_record, dsi_contact, dsi_contract
   * Product modules: dsi_commerce, dsi_commerce_product

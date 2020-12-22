@@ -1,0 +1,7 @@
+name: 'Office'
+type: module
+description: 'The office extension.'
+core: 8.x
+package: 'Dsi'
+interface translation project: dsi_office
+interface translation server pattern: modules/dsi/cbos/%project/translations/%project.%language.po
