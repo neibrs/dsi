@@ -51,18 +51,6 @@ class RecordForm extends ContentEntityForm {
     /* @var \Drupal\dsi_record\Entity\Record $entity */
     $form = parent::buildForm($form, $form_state);
 
-    $start = \Drupal::request()->query->get('start');
-    if (isset($start)) {
-      // Set default value on date 2020-11-20 00:00:00.
-      $form['start']['widget'][0]['value']['#default_value'] = new DrupalDateTime($start . ' 00:00:00');
-    }
-
-    // Get route parameters.
-    $route_match = \Drupal::routeMatch();
-    if ($route_match->getRouteName() == 'entity.dsi_record.add_todo') {
-      // TODO, Add entity_type, entity_id form element.
-    }
-
     return $form;
   }
 

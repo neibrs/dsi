@@ -1,0 +1,9 @@
+langcode: zh-hans
+status: true
+dependencies:
+  enforced:
+    module:
+      - dsi_finance
+id: client
+label: 客户
+target_entity_type_id: dsi_client

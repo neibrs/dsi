@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:09+0000\n"
+"POT-Creation-Date: 2020-12-14 06:15+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -33,53 +33,58 @@ msgstr ""
 msgid "Project ID"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/ProjectListBuilder.php:21 modules/dsi/industry/dsi_project/src/Entity/Project.php:171
+#: modules/dsi/industry/dsi_project/src/ProjectListBuilder.php:21 modules/dsi/industry/dsi_project/src/Entity/Project.php:174
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:146
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:149
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:147
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:150
 msgid "The user ID of author of the Project entity."
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:172
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:175
 msgid "The name of the Project entity."
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:196
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:199
 msgctxt "Project"
 msgid "Effective dates"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:217
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:219
+msgctxt "Project"
+msgid "Follow"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:242
 msgid "Project Cost"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:232
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:257
 msgctxt "Project"
 msgid "Description"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:247
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:272
 msgid "A boolean indicating whether the Project is published."
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:254
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:279
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:255
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:280
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:258
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:283
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/src/Entity/Project.php:259
+#: modules/dsi/industry/dsi_project/src/Entity/Project.php:284
 msgid "The time that the entity was last edited."
 msgstr ""
 

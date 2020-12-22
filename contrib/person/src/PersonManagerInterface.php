@@ -51,6 +51,14 @@ interface PersonManagerInterface {
    */
   public function getUserByPerson($person);
 
+
+  /**
+   * @param null $name
+   *
+   * @return \Drupal\user\UserInterface
+   */
+  public function getUserByPersonName($name = NULL);
+
   /**
    * @param $person_type
    *

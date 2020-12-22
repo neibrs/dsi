@@ -10,8 +10,12 @@ dependencies:
     - dsi_client
     - organization
     - person
+    - rest
+    - serialization
     - telephone
+    - text
     - user
+    - views_plus
 id: client
 label: 客户
 module: views
@@ -42,13 +46,13 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: ajax
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: 搜索
+          reset_button: 1
+          reset_button_label: 重置
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: 1
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -80,7 +84,7 @@ display:
             phone: phone
             client_importance: client_importance
             cooperating_state: cooperating_state
-            summary: summary
+            summary__value: summary__value
             follow: follow
             record_target_id: record_target_id
             record_latest_time: record_latest_time
@@ -119,7 +123,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            summary:
+            summary__value:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -131,7 +135,7 @@ display:
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: true
               responsive: ''
             record_target_id:
               align: ''
@@ -147,7 +151,7 @@ display:
               responsive: ''
             created:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -185,7 +189,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          default: '-1'
+          default: created
           empty_table: true
       row:
         type: fields
@@ -201,7 +205,12 @@ display:
           exclude: false
           alter:
             alter_text: false
-          element_class: ''
+          element_class: record-ajax-tr
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -262,7 +271,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: record-ajax-tr
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -312,7 +321,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: record-ajax-tr
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -324,7 +333,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_popover
           settings:
             link: false
           group_column: target_id
@@ -377,7 +386,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: record-ajax-tr
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -389,7 +398,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_popover
           settings:
             link: false
           group_column: target_id
@@ -405,10 +414,10 @@ display:
           entity_type: dsi_client
           entity_field: cooperating_state
           plugin_id: field
-        summary:
-          id: summary
+        summary__value:
+          id: summary__value
           table: dsi_client_field_data
-          field: summary
+          field: summary__value
           relationship: none
           group_type: group
           admin_label: ''
@@ -416,16 +425,46 @@ display:
           exclude: false
           alter:
             alter_text: false
-          element_class: ''
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: true
+            max_length: 30
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: record-ajax-tr
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -450,7 +489,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-          element_class: ''
+          element_class: record-ajax-tr
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -483,8 +522,8 @@ display:
           label: 回访记录
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 查看
             make_link: false
             path: ''
             absolute: false
@@ -517,8 +556,8 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
-          hide_empty: false
+          empty: 查看
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
@@ -528,9 +567,9 @@ display:
           group_column: target_id
           group_columns: {  }
           group_rows: true
-          delta_limit: 0
+          delta_limit: 1
           delta_offset: 0
-          delta_reversed: false
+          delta_reversed: true
           delta_first_last: false
           multi_type: separator
           separator: ', '
@@ -575,7 +614,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: record-ajax-tr
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -642,7 +681,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: record-ajax-tr
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -683,7 +722,38 @@ display:
           exclude: false
           alter:
             alter_text: false
-          element_class: ''
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: 'p-l-20 p-r-20'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -1008,12 +1078,106 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           fields:
-            summary: summary
+            summary__value: summary__value
             phone_1: phone_1
             field_phone: field_phone
             name: name
             name_1: name_1
           plugin_id: combine
+        client_importance:
+          id: client_importance
+          table: dsi_client_field_data
+          field: client_importance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: client_importance_op
+            label: 客户类型
+            description: ''
+            use_operator: false
+            operator: client_importance_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: client_importance
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contingent_worker: '0'
+              employee: '0'
+              implementor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          properties: {  }
+          entity_type: dsi_client
+          entity_field: client_importance
+          plugin_id: entity_reference_in_operator
+        cooperating_state:
+          id: cooperating_state
+          table: dsi_client_field_data
+          field: cooperating_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: cooperating_state_op
+            label: 合作状态
+            description: ''
+            use_operator: false
+            operator: cooperating_state_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: cooperating_state
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contingent_worker: '0'
+              employee: '0'
+              implementor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          properties: {  }
+          entity_type: dsi_client
+          entity_field: cooperating_state
+          plugin_id: entity_reference_in_operator
         created:
           id: created
           table: dsi_client_field_data
@@ -1021,18 +1185,17 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: between
+          operator: '>='
           value:
             min: ''
             max: ''
-            value: ''
-            type: date
-            range: this_today
+            value: '-1 day'
+            type: offset
           group: 1
           exposed: true
           expose:
             operator_id: created_op
-            label: ''
+            label: Created
             description: ''
             use_operator: false
             operator: created_op
@@ -1050,20 +1213,28 @@ display:
               employee: '0'
               implementor: '0'
             placeholder: ''
-            min_placeholder: 开始时间
+            min_placeholder: ''
             max_placeholder: ''
-          is_grouped: false
+          is_grouped: true
           group_info:
             label: ''
             description: ''
-            identifier: ''
+            identifier: created
             optional: true
-            widget: select
+            widget: radios
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1:
+                title: 今日新量
+                operator: '>='
+                value:
+                  type: offset
+                  value: '-1 day'
+                  min: ''
+                  max: ''
           entity_type: dsi_client
           entity_field: created
           plugin_id: date
@@ -1114,6 +1285,7 @@ display:
         - url
         - url.query_args
         - user.permissions
+        - user
       tags:
         - 'config:field.storage.organization.field_phone'
   page_1:
@@ -1132,5 +1304,6 @@ display:
         - url
         - url.query_args
         - user.permissions
+        - user
       tags:
         - 'config:field.storage.organization.field_phone'

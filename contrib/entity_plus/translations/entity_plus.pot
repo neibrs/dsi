@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:07+0000\n"
+"POT-Creation-Date: 2020-12-14 06:14+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -60,27 +60,27 @@ msgstr ""
 msgid "The settings have been updated."
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:43
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:44
 msgid "Effective dates"
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:63
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:64
 msgid "Enabled"
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:80
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:81
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:81
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:82
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:84
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:85
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:85
+#: modules/dsi/contrib/entity_plus/src/Entity/EffectiveDatesEntityBase.php:86
 msgid "The time that the entity was last edited."
 msgstr ""
 

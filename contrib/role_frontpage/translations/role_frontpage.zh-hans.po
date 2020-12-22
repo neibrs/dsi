@@ -44,3 +44,6 @@ msgstr "单个角色首页设置"
 msgid "Front page"
 msgstr "首页"
 
+# 自定义翻译
+msgid "Workbench"
+msgstr "工作台"

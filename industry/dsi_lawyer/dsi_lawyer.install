@@ -17,7 +17,7 @@ function dsi_lawyer_install($is_syncing) {
   $role = $role_storage->load('administrator');
   $role->unsetThirdPartySetting('role_menu', 'menu');
   $role->save();
-  
+
   // Set user configuration.
   $userSettings = \Drupal::configFactory()->getEditable('user.settings');
   $userSettings->set('register', UserInterface::REGISTER_VISITORS);
@@ -39,13 +39,15 @@ function dsi_lawyer_install($is_syncing) {
     'edit record entities',
     'view record entities',
     'view own profile',
+    'view lookups',
+    'view persons',
   ]);
-  
+
   // 修改组织类型公司为律所
   $company = \Drupal::entityTypeManager()->getStorage('organization_type')->load('company');
   $company->set('label', '律所')
     ->save();
-  
+
   // 修改默认业务组名称
   $organization_storage = \Drupal::entityTypeManager()->getStorage('organization');
   $default_business_group = $organization_storage->load(1);
@@ -53,7 +55,7 @@ function dsi_lawyer_install($is_syncing) {
     $default_business_group->set('name', '恩德律师事务所');
     $default_business_group->save();
   }
-  
+
   $organization = $organization_storage->create([
     'name' => '邦民律师事务所',
     'type' => 'company',
@@ -68,7 +70,7 @@ function dsi_lawyer_install($is_syncing) {
   // 导入组织数据
   /** @var \Drupal\import\ImportManagerInterface $import_manager */
   $import_manager = \Drupal::service('import.manager');
-  
+
   /**
    * 组织机构数据
    * =============== 1. Organization ============
@@ -102,7 +104,7 @@ function dsi_lawyer_install($is_syncing) {
       'auto_install' => TRUE,
     ],
   ];
-  
+
 //  $configuration['30_client_xlsx'] = [
 //    'source' => [
 //      'path' => 'modules/dsi/industry/dsi_client/data/30/30clients1205.xlsx',

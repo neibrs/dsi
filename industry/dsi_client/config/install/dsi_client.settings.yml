@@ -1,2 +1,17 @@
 encoding_rules: '[code:rules:0001]'
 langcode: zh-hans
+polling:
+  1:
+    business_group: 1
+    person:
+      3: 3
+      5: 5
+    current: 3
+  2:
+    business_group: 2
+    person:
+      12: 12
+      13: 13
+      14: 14
+    current: 12
+

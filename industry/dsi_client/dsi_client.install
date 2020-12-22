@@ -36,19 +36,17 @@ function dsi_client_install($is_syncing) {
     '3' => '一般',
     '4' => '次要',
     '5' => '无效',
+    '6' => '紧急',
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('client_importance', $data, '客户重要性', $lookup_storage);
 
   $data = [
-    '1' => '待跟进',
-    '2' => '跟进中',
-    '3' => '签约',
-    '4' => '不用联系',
-    '5' => '首电未接通',
-    '6' => '意向',
-    '7' => '潜在',
-    '8' => '终止',
+    '1' => '签约',
+    '2' => '意向',
+    '3' => '潜在',
+    '4' => '终止',
+    '5' => '未接',
   ];
   \Drupal::classResolver(InstallHelper::class)->getOrCreateLookup('cooperating_state', $data, ' 合作状态', $lookup_storage);
 }

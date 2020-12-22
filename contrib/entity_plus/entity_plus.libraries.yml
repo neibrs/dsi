@@ -1,0 +1,7 @@
+popover:
+  version: VERSION
+  js:
+    js/popover.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery

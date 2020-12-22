@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a dropbutton wrapper.
+ *
+ * Available variables:
+ * - children: Contains the child elements of the dropbutton menu.
+ *
+ * @see template_preprocess()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if children %}
+  {% apply spaceless %}
+      <a href="#" data-toggle="dropdown" class="text-muted" aria-expanded="false"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+      {{ children }}
+  {% endapply %}
+{% endif %}

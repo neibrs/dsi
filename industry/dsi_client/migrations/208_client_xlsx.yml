@@ -67,6 +67,9 @@ source:
       案件: 案件
 
 process:
+  business_group:
+    plugin: default_value
+    default_value: 1
   type:
     plugin: default_value
     default_value: individual
@@ -93,10 +96,16 @@ process:
       callable: trim
       source: 客户状态
     -
-      plugin: skip_on_empty
-      method: process
+      plugin: static_map
+      default_value: 潜在
+      map:
+        已签约: 签约
+        待跟进: 潜在
+        跟进中: 意向
+        不用联系: 终止
+        首电未接通: 未接
     -
-      plugin: entity_generate_plus
+      plugin: entity_lookup
       entity_type: lookup
       value_key: name
       bundle_key: type
@@ -108,10 +117,15 @@ process:
       callable: trim
       source: 客户类型
     -
-      plugin: skip_on_empty
-      method: process
+      plugin: static_map
+      default_value: 次要
+      map:
+        潜在客户: 一般
+        无效客户: 无效
+        紧急客户: 核心
+        重点客户: 重要
     -
-      plugin: entity_generate_plus
+      plugin: entity_lookup
       entity_type: lookup
       value_key: name
       bundle_key: type
@@ -216,7 +230,7 @@ process:
     -
       plugin: person_account_lookup
 
-  summary: 简述
+  summary/value: 简述
 #  公海分组
 #  未联系
 #  合同
@@ -224,5 +238,7 @@ process:
 destination:
   plugin: entity:dsi_client
   keys:
-    - name
+    -
+      - name
+      - business_group
 migration_dependencies: { }

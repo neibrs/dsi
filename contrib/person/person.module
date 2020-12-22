@@ -17,6 +17,9 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Drupal\organization\Entity\BusinessGroupEntityInterface;
+use Drupal\organization\Entity\OrganizationType;
 use Drupal\person\Entity\PersonType;
 
 /**
@@ -145,6 +148,13 @@ function person_entity_extra_field_info() {
     'weight' => 0,
   ];
 
+  foreach (OrganizationType::loadMultiple() as $bundle) {
+    $extra['organization'][$bundle->id()]['display']['organization_person'] = [
+      'label' => t('Organization persons'),
+      'description' => 'Persons in specific organization',
+      'weight' => 0,
+    ];
+  }
   return $extra;
 }
 
@@ -320,15 +330,15 @@ function person_query_multiple_organization_access_alter(AlterableInterface $que
   if ($user->hasPermission('bypass multiple organization access')) {
     return;
   }
-  
+
   /** @var \Drupal\Core\Entity\EntityTypeInterface $entity_type */
   $entity_type = $query->getMetaData('multiple_organization_entity');
   if (!$entity_type) {
     return;
   }
-  
+
   $base_table = $entity_type->getDataTable() ?: $entity_type->getBaseTable();
-  
+
   $tables = $query->getTables();
   $alias = NULL;
   foreach ($tables as $table) {
@@ -337,7 +347,7 @@ function person_query_multiple_organization_access_alter(AlterableInterface $que
       break;
     }
   }
-  
+
   if ($entity_type->get('multiple_organization_by_bundle')) {
     $types = \Drupal::entityTypeManager()
       ->getStorage($entity_type->getBundleEntityType())
@@ -349,7 +359,7 @@ function person_query_multiple_organization_access_alter(AlterableInterface $que
       $subquery = \Drupal::database()->select($table);
       $subquery->addField($table, 'id');
       employee_assignment_add_multiple_organization_conditions($subquery, $target_entity_type);
-      
+
       $and = $query->andConditionGroup();
       $and->condition("${alias}." . $entity_type->getKey('bundle'), $id)
         ->condition("${alias}.entity_id", $subquery, 'IN');
@@ -363,10 +373,10 @@ function person_query_multiple_organization_access_alter(AlterableInterface $que
 }
 
 function employee_assignment_add_multiple_organization_conditions(AlterableInterface $query, EntityTypeInterface $entity_type) {
-  
+
   if ($query instanceof SelectInterface) {
     $base_table = $entity_type->getDataTable() ?: $entity_type->getBaseTable();
-    
+
     $tables = $query->getTables();
     foreach ($tables as $table) {
       if ($table['table'] == $base_table) {
@@ -375,7 +385,7 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
       }
     }
   }
-  
+
   $multiple_organization_classification = $entity_type->get('multiple_organization_classification');
   if (!$multiple_organization_classification) {
     $multiple_organization_field = $entity_type->get('multiple_organization_field');
@@ -386,18 +396,18 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
     $field_storage_definition = $field_storage_definitions[$multiple_organization_field];
     // 多组织字段实体类型id
     $entity_type_id = $field_storage_definition->getSetting('target_type');
-    
-    list($target_entity_type_id, $field_multiple_organization_classification, $query_field_prefix) = buildMultipleOrganizationQueryParameter($entity_type_id, '');
+
+    [$target_entity_type_id, $field_multiple_organization_classification, $query_field_prefix] = buildMultipleOrganizationQueryParameter($entity_type_id, '');
     $target_entity_type = \Drupal::entityTypeManager()->getDefinition($target_entity_type_id);
   }
-  
+
   /** @var \Drupal\person\Entity\PersonInterface $person */
   $classification = $multiple_organization_classification ? : $field_multiple_organization_classification;
   $organization = \Drupal::service('person.manager')->currentPersonOrganizationByClassification($classification);
   if (isset($organization)) {
     $organizations = \Drupal::service('person.manager')->currentPersonAccessibleOrganizationByClassification($multiple_organization_classification? : $field_multiple_organization_classification);
     $organizations = array_keys($organizations);
-    
+
     // 实体本身拥有multiple_organization_classification
     if (!isset($multiple_organization_field)) {
       if ($entity_type->id() == 'organization' && $multiple_organization_classification == 'business_group') {
@@ -457,16 +467,61 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
           $subquery->condition(empty($query_field_prefix) ? $field_multiple_organization_classification : "${query_field_prefix}.entity.${field_multiple_organization_classification}", $organizations, 'IN');
         }
       }
-      
+
       $allow_ids = $subquery->execute();
       if (!empty($allow_ids)) {
+        // 所属组织的数据
         $query->condition($alias . '.' . $multiple_organization_field, $allow_ids,'IN');
 
-        // TODO, add person owner.
-        if ($personal_owner = $entity_type->get('personal_owner')) {
+        $person_manager = \Drupal::service('person.manager');
+        $current_user = \Drupal::currentUser()->id();
+
+        // 2. 找出所有子组织成员
+        foreach ($organizations as $org) {
+          $children = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($org);
+          $sub_organizations[] = array_map(function ($child) {
+            return $child->id();
+          }, $children);
+        }
+        $sub_organizations = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($sub_organizations)), FALSE);
+        $sub_organizations[] = $organization->id();
+        $sub_organizations = \Drupal::entityTypeManager()->getStorage('organization')->loadMultiple($sub_organizations);
+        $subs = [];
+        foreach ($sub_organizations as $sub_organization) {
+          if ($sub_organization->get('manager')->target_id == $person_manager->currentPerson()->id()) {
+            // 负责的部门
+            $subs[] = $sub_organization;
+          }
+        }
+
+        if (!empty($subs)) {
+          $persons = \Drupal::entityTypeManager()->getStorage('person')->loadSubordinatesIds($subs);
+          // 3. 获取用户id
+          $users = [];
+          foreach ($persons as $id => $person) {
+            $users[] = $person_manager->getUserByPerson($person);
+          }
+          $user_ids = array_map(function ($user) {
+            return $user->id();
+          }, $users);
+          // 4. 过滤所有属于这些组织成员的数据
           $query->condition($query->orConditionGroup()
-            ->condition($alias. '.' . $personal_owner, \Drupal::service('person.manager')->currentPerson()->id())
+            ->condition($alias. '.' . $entity_type->get('personal_owner'), $persons, 'IN')
+            ->condition($alias . '.user_id', $user_ids, 'IN')
           );
+        }
+        // 查看跟进人是自己的
+        else if ($personal_owner = $entity_type->get('personal_owner')) {
+          //TODO, 添加跟进人为空的条件, 添加张月月自动分配功能后不存在跟进人为空的数据
+          $query->condition($query->orConditionGroup()
+            ->condition($alias . '.' . $personal_owner, NULL, 'IS NULL')
+            ->condition($alias . '.' . $personal_owner, $person_manager->currentPerson()->id())
+            // 只能查看自己的
+            ->condition($alias . '.user_id', $current_user)
+          );
+        }
+        else {
+          $query->condition($alias . '.user_id', $current_user);
         }
       }
       // 所属业务组无数据
@@ -478,29 +533,44 @@ function employee_assignment_add_multiple_organization_conditions(AlterableInter
   else {
     $query->where('1 = 0');
   }
-  
+
 }
 
 function buildMultipleOrganizationQueryParameter($entity_type_id, $query_field_prefix) {
   $target_entity_type_id = $entity_type_id;
-  
+
   $entity_type = \Drupal::entityTypeManager()->getDefinition($entity_type_id);
   if ($multiple_organization_classification = $entity_type->get('multiple_organization_classification')) {
     return [$target_entity_type_id, $multiple_organization_classification, $query_field_prefix];
   }
-  
+
   $multiple_organization_field = $entity_type->get('multiple_organization_field');
   if (!$multiple_organization_field) {
     throw new \Exception(sprintf('%entity must have multiple_organization_classification or multiple_organization_field defined.', ['%entity' => $entity_type_id]));
   }
-  
+
   if (!empty($query_field_previx)) {
     $query_field_prefix .= '.entity.';
   }
   $query_field_prefix .= $multiple_organization_field;
-  
+
   $field_storage_definitions = \Drupal::service('entity_field.manager')->getFieldStorageDefinitions($entity_type_id);
   $field_storage_definition = $field_storage_definitions[$multiple_organization_field];
   $target_entity_type_id = $field_storage_definition->getSetting('target_type');
   return buildMultipleOrganizationQueryParameter($target_entity_type_id, $query_field_prefix);
+}
+
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function person_organization_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  // 如果新添加的人员无id，不显示员工分配.
+  if ($display->getComponent('organization_person') && $entity->id()) {
+    $build['organization_person'] = [
+      '#theme' => 'box',
+      '#icon' => 'fa fa-anchor',
+      '#body' => views_embed_view('organization_person', 'default', $entity->id()),
+    ];
+  }
 }

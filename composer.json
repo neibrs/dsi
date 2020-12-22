@@ -69,10 +69,11 @@
         "drupal/entity": "^1.1",
         "drupal/diff": "^1.0",
         "drupal/feeds": "^3.0@alpha",
-        "drupal/name": "1.x-dev",
         "phpspec/prophecy-phpunit": "^2",
         "drupal/features": "^3.11",
-        "drupal/bootstrapper": "5.x-dev"
+        "drupal/bootstrapper": "5.x-dev",
+        "drupal/varnish_purge": "^2.0",
+        "drupal/purge": "^3.0"
     },
     "extra": {
         "branch-alias": {

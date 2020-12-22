@@ -42,3 +42,10 @@ form.views-exposed-form fieldset:not(.fieldgroup) {
   padding: 0;
 }
 
+.view-content .dropdown-menu.dropdown-menu-right {
+  min-width: 100px!important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  background-color: red;
+}

@@ -6,3 +6,22 @@ dsi_client.settings:
     encoding_rules:
       type: string
       label: 'Encoding rules'
+    polling:
+      type: sequence
+      label: 'Polling'
+      sequence:
+        type: mapping
+        label: 'Polling'
+        mapping:
+          current:
+            type: integer
+            label: 'Current'
+          business_group:
+            type: integer
+            label: 'Business group'
+          person:
+            type: sequence
+            label: 'Person'
+            sequence:
+              type: integer
+              label: 'Person'

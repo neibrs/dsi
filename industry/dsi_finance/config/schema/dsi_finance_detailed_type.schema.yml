@@ -1,0 +1,15 @@
+dsi_finance.dsi_finance_detailed_type.*:
+  type: config_entity
+  label: 'Finance detailed type'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    target_entity_type_id:
+      type: string
+      label: 'Target entity type'

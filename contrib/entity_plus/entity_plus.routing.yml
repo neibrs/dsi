@@ -5,3 +5,11 @@ entity_plus.settings_form:
     _title: 'Entity plus settings'
   requirements:
     _permission: 'administer site configuration'
+
+ajax.entity.popover:
+  path: '/ajax/popover/{entity_type}/{entity_id}/{target_entity_type_id}/{target_bundle}'
+  defaults:
+    _controller: '\Drupal\entity_plus\Controller\EntityPopoverController::getPopoverOptions'
+    _title: 'Popover'
+  requirements:
+    _user_is_logged_in: 'TRUE'

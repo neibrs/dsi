@@ -8,6 +8,7 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\organization\Entity\BusinessGroupEntity;
 use Drupal\person\Entity\PersonTrait;
 use Drupal\user\UserInterface;
 
@@ -19,6 +20,7 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "dsi_client",
  *   label = @Translation("Client"),
+ *   label_collection = @Translation("Client"),
  *   bundle_label = @Translation("Client type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
@@ -64,7 +66,7 @@ use Drupal\user\UserInterface;
  *   personal_owner = "follow",
  * )
  */
-class Client extends ContentEntityBase implements ClientInterface {
+class Client extends BusinessGroupEntity implements ClientInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
@@ -77,7 +79,7 @@ class Client extends ContentEntityBase implements ClientInterface {
     parent::preCreate($storage_controller, $values);
     $values += [
       'user_id' => \Drupal::currentUser()->id(),
-      'follow' => static::getCurrentPersonId(),
+      'follow' => \Drupal::service('person.manager')->currentPerson(),
     ];
   }
 
@@ -171,27 +173,11 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setTranslatable(TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => [
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ],
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name', [], ['context' => 'Client name']))
-      ->setDescription(t('The name of the Client entity.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -202,21 +188,30 @@ class Client extends ContentEntityBase implements ClientInterface {
         'type' => 'string',
         'weight' => -4,
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -4,
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    // TODO, Add fields.
+    // 客户简述
+    $fields['summary'] = BaseFieldDefinition::create('text_with_summary')
+      ->setLabel(t('Summary', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => -1,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'text_textarea_with_summary',
+      ])
+      ->setDisplayConfigurable('form', TRUE);
 
+    // TODO, Add fields.
     // 案件类型, 注入字段
     // 跟进人
     $fields['follow'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Follow', [], ['context' => 'Client']))
       ->setSetting('target_type', 'person')
-      ->setDefaultValueCallback(static::getCurrentPersonId())
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
         'weight' => 0,
@@ -224,29 +219,12 @@ class Client extends ContentEntityBase implements ClientInterface {
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
+        'weight' => 6,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
-          'autocomplete_type' => 'tags',
           'placeholder' => '',
         ],
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-    // 客户简述
-    $fields['summary'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Summary', [], ['context' => 'Client']))
-      ->setRequired(TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'inline',
-        'type' => 'string',
-        'weight' => -10,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -10,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -320,6 +298,7 @@ class Client extends ContentEntityBase implements ClientInterface {
         'type' => 'options_select',
         'weight' => 0,
       ])
+      ->setRequired(TRUE)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -384,22 +363,9 @@ class Client extends ContentEntityBase implements ClientInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['status']
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
-
-    $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Created'))
-      ->setDescription(t('The time that the entity was created.'));
-
-    $fields['changed'] = BaseFieldDefinition::create('changed')
-      ->setLabel(t('Changed'))
-      ->setDescription(t('The time that the entity was last edited.'));
-
     return $fields;
   }
+
   /**
    * {@inheritdoc}
    */
@@ -419,4 +385,68 @@ class Client extends ContentEntityBase implements ClientInterface {
     }
     return [];
   }
+
+  public function preSave(EntityStorageInterface $storage) {
+    // TODO, 将来删除
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if (!empty($person) && $person->label() == '张月月' && $this->get('business_group')->target_id == 1) {
+      $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
+      $polling = $config->get('polling.' . $person->get('business_group')->target_id);
+
+      // See ClientForm submitForm 实体保存会再次进入这里，导致轮询失败，把跟进人设回原来的person id.
+      if (!empty($polling['person']) && $this->get('follow')->target_id == $person->id()) {
+        $next = $this->getNextVal($polling['current'], $polling['person']);
+        $this->set('follow', $next);
+        $config->set('polling.'. $person->get('business_group')->target_id .'.current', $next);
+        $config->save();
+      }
+    }
+    parent::preSave($storage);
+  }
+
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    parent::postSave($storage, $update);
+
+    // TODO, 将来删除
+    $person = \Drupal::service('person.manager')->currentPerson();
+    if (!empty($person) && $person->label() == '张月月') {
+      $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
+      $query = $this->entityTypeManager()->getStorage('dsi_client')->getQuery();
+      $ids = $query->condition('name', $this->label())
+        ->condition('user_id', \Drupal::currentUser()->id())
+        ->execute();
+      if (count($ids) < 2) {
+        $duplicate = $this->createDuplicate();
+        $duplicate->set('business_group', 2);
+
+        $polling = $config->get('polling.2');
+
+        $next = $this->getNextVal($polling['current'], $polling['person']);
+        $duplicate->set('follow', $next);
+        $config->set('polling.2.current', $next);
+        $config->save();
+
+        $duplicate->save();
+      }
+    }
+  }
+
+  /**
+   * Callable.
+   */
+  public function getNextVal($current, $data) {
+    $data = array_values($data);
+    if (empty($current)) {
+      return array_shift($data);
+    }
+    $index = array_search($current, $data);
+    if($index !== false && $index < count($data)-1) {
+      $next = $data[$index+1];
+    }
+    else {
+      $next = array_shift($data);
+    }
+    return $next;
+  }
+
 }

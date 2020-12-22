@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-01 03:09+0000\n"
+"POT-Creation-Date: 2020-12-14 06:15+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/themes/dsi_color/dsi_color.theme:133
+#: modules/dsi/themes/dsi_color/dsi_color.theme:134
 msgid "Email Address"
 msgstr ""
 
-#: modules/dsi/themes/dsi_color/dsi_color.theme:138
+#: modules/dsi/themes/dsi_color/dsi_color.theme:139
 msgid "Password"
 msgstr ""
 

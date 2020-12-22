@@ -25,14 +25,23 @@ msgstr ""
 msgid "待办事项。"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:20
-msgid "Record ID"
-msgstr ""
+#: modules/dsi/cbos/dsi_record/dsi_record.module:60
+msgctxt "Add todo"
+msgid "Add Record"
+msgstr "添加待办事项"
+
+#: modules/dsi/cbos/dsi_record/dsi_record.module:93
+msgid "Record"
+msgstr "待办事项"
+
+#: modules/dsi/cbos/dsi_record/dsi_record.module:104 modules/dsi/cbos/dsi_record/dsi_record.install:11
+msgid "Record Latest Time"
+msgstr "最新待办事项"
 
 #: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:21 modules/dsi/cbos/dsi_record/src/Entity/Record.php:172
 msgctxt "Record"
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: modules/dsi/cbos/dsi_record/src/Entity/Record.php:173
 msgctxt "Record"
@@ -44,11 +53,17 @@ msgctxt "Record"
 msgid "Detail"
 msgstr "工作详情"
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:211
-msgid "Effective dates"
-msgstr "有效时间"
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:230
+msgctxt "Record"
+msgid "Start"
+msgstr "开始时间"
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:232
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:244
+msgctxt "Record"
+msgid "End"
+msgstr "结束时间"
+
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:244
 msgctxt "Record"
 msgid "Reminder time"
 msgstr "提醒"

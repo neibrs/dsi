@@ -24,14 +24,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_beizu:
-    weight: 5
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_phone:
     weight: 3
     settings:
@@ -77,3 +69,4 @@ hidden:
   location: true
   parent: true
   type: true
+  field_beizu: true

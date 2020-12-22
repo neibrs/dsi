@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_help().
@@ -21,4 +23,48 @@ function dsi_lawyer_help($route_name, RouteMatchInterface $route_match) {
 
     default:
   }
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function dsi_lawyer_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'dsi_record') {
+    $fields['name']->setRequired(FALSE);
+    $fields['detail']->setRequired(TRUE);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() on record.
+ */
+function dsi_lawyer_dsi_record_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  $description = $entity->get('detail')->value;
+  $entity->set('name', mb_substr($description, 0, 60));
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_record_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['name']);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_record_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['name']);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_lawyer_form_dsi_client_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\dsi_client\Entity\ClientInterface $client */
+  $client = $form_state->getFormObject()->getEntity();
+  if (!$client->isNew()) {
+    $form['customer_source']['#disabled'] = TRUE;
+  }
+  $form['client_type']['phone']['widget'][0]['value']['#disabled'] = TRUE;
 }

@@ -52,11 +52,31 @@ class CellPhone extends Standard {
     $target_entity = $this->entityTypeManager->getStorage($target_type)->load($data);
 
     if ($target_type == 'person') {
-      return $target_entity->get('phone')->value;
+      if (!empty($target_entity)) {
+        if ($target_entity->get('phone')->isEmpty()) {
+          return '无号码';
+        }
+        else {
+          return $target_entity->get('phone')->value;
+        }
+      }
+      else {
+        return '无客户';
+      }
     }
 
     if ($target_type == 'organization') {
-      return $target_entity->get('field_phone')->value;
+      if (!empty($target_entity)) {
+        if ($target_entity->get('field_phone')->isEmpty()) {
+          return '无号码';
+        }
+        else {
+          return $target_entity->get('field_phone')->value;
+        }
+      }
+      else {
+        return '无客户';
+      }
     }
 
     return $data;

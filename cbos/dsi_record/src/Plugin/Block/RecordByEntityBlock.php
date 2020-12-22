@@ -69,9 +69,8 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
     $data = [];
     foreach ($entities as $key => $entity) {
       $data[$key] = [
-        'name' => $entity->label(),
+        'detail' => ['#markup' => strip_tags($entity->get('detail')->value)],
         'created' => date('Y-m-d H:i', $entity->getCreatedTime()),
-        // 'detail' => $entity->get('detail')->value,
       ];
     }
     $build['#content']['add_link'] = [
@@ -80,10 +79,13 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
       '#url' => Url::fromRoute('entity.dsi_record.add_todo', [
         'entity_type' => $this->configuration['entity_type'],
         'entity_id' => $this->configuration['entity_id'],
-      ]
+      ],
+        [
+          'query' => ['destination' => '/dsi_client'],
+        ]
       ),
           '#options' => [
-    'attributes' => [
+          'attributes' => [
             'class' => ['use-ajax'],
             'data-dialog-type' => 'modal',
             'data-dialog-options' => Json::encode([
@@ -93,7 +95,6 @@ class RecordByEntityBlock extends BlockBase implements ContainerFactoryPluginInt
       ],
     ];
     $build['#content']['data'] = $data;
-
     return $build;
   }
 

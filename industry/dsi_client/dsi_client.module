@@ -15,7 +15,7 @@ function dsi_client_help($route_name, RouteMatchInterface $route_match) {
     // Main module help for the dsi_client module.
     case 'help.page.dsi_client':
       $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<h3>' . t('Client') . '</h3>';
       $output .= '<p>' . t('The clients.') . '</p>';
       return $output;
 
@@ -75,4 +75,20 @@ function dsi_client_crm_core_individual_label_alter(&$data, &$context1) {
  */
 function dsi_client_record_entity_list_alter(&$build = [], &$context1 = []) {
   $build['first']['client_intro'] = \Drupal::service('plugin.manager.block')->createInstance('client_intro_block', $context1)->build();
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function dsi_client_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  switch ($entity_type->id()) {
+    case 'person':
+      $fields['name']->setRequired(FALSE);
+      $fields['phone']->setRequired(TRUE);
+      break;
+    case 'organization':
+      $fields['name']->setRequired(FALSE);
+      break;
+  }
+  return $fields;
 }

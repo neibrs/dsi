@@ -1,0 +1,8 @@
+
+# Finance expenditure type menu items definition
+entity.dsi_finance_expenditure_type.collection:
+  title: 'Finance expenditure type'
+  route_name: entity.dsi_finance_expenditure_type.collection
+  description: 'List Finance expenditure type (bundles)'
+  parent: system.admin_structure
+  weight: 99

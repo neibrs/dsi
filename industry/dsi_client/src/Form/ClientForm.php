@@ -25,6 +25,7 @@ class ClientForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\dsi_client\Entity\Client $entity */
     $form = parent::buildForm($form, $form_state);
+    $entity = $form_state->getFormObject()->getEntity();
     $form['type']['widget']['#ajax'] = [
       'callback' => '::clientTypeSwitch',
       'wrapper' => 'client-type-wrapper',
@@ -43,11 +44,11 @@ class ClientForm extends ContentEntityForm {
         '#entity_type' => $target_entity_type_id,
         '#bundle' => $type->id(),
         '#form_mode' => 'client',
-        ];
-      }
+      ];
+    }
     else {
       $form['client_type'] = [
-         '#id' => 'client-type-wrapper',
+        '#id' => 'client-type-wrapper',
         '#type' => 'inline_entity_form',
         '#entity_type' => $target_entity_type_id,
         '#bundle' => $this->entity->bundle(),
@@ -56,27 +57,44 @@ class ClientForm extends ContentEntityForm {
       ];
     }
 
+    $cooperating_state_options = $form['cooperating_state']['widget']['#options'];
+    if (empty($cooperating_state_options['#default_value'])) {
+      // Set default value.
+      $index = array_search('潜在', $cooperating_state_options);
+      $form['cooperating_state']['widget']['#default_value'] = $index;
+    }
+
+    $client_importance = $form['client_importance']['widget']['#options'];
+    if (empty($client_importance['#default_value'])) {
+      $index = array_search('一般', $client_importance);
+      $form['client_importance']['widget']['#default_value'] = $index;
+    }
+
+    if (!$this->entity->isNew()) {
+      $form['client_type']['phone']['widget'][0]['#disabled'] = TRUE;
+    }
     return $form;
   }
-  
+
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
-  
+
     $values = $form_state->getValue('client_type');
     $entity = $this->updateRelatedEntity($form_state->getValue('type')[0]['target_id'], $values, $this->entity->get('entity_id')->target_id);
 
     $this->entity->set('entity_id', $entity->id());
     $this->entity->set('entity_type', $form_state->getValue('type')[0]['target_id']);
+    $this->entity->set('name', $entity->label());
     $this->entity->save();
   }
-  
+
   /**
    * Handles switching the available regions based on the selected theme.
    */
   public function clientTypeSwitch($form, FormStateInterface $form_state) {
     return $form['client_type'];
   }
-  
+
   /**
    */
   protected function updateRelatedEntity($type, $values, $entity_id = NULL) {
@@ -89,7 +107,10 @@ class ClientForm extends ContentEntityForm {
       }else{
         $items[$key] = isset($value[0]['value']) ? $value[0]['value'] : '';
       }
-      }
+    }
+    if (empty($items['name'])) {
+      $items['name'] = $items['phone'];
+    }
     $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
     if ($entity_id) {
         // 批量保存$items到entity_id, TODO
@@ -105,7 +126,7 @@ class ClientForm extends ContentEntityForm {
     }
     return $entity;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -125,7 +146,7 @@ class ClientForm extends ContentEntityForm {
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.dsi_client.canonical', ['dsi_client' => $entity->id()]);
+    $form_state->setRedirect('entity.dsi_client.collection');
   }
 
 }

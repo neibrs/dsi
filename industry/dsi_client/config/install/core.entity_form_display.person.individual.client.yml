@@ -14,14 +14,6 @@ targetEntityType: person
 bundle: individual
 mode: client
 content:
-  field_beizhu:
-    weight: 6
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_location:
     weight: 5
     settings:
@@ -88,3 +80,4 @@ hidden:
   probation_period: true
   rehire_date: true
   type: true
+  field_beizhu: true

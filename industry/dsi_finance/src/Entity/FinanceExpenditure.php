@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
 use Drupal\dsi_finance\Entity\FinanceExpenditureInterface;
 use Drupal\user\UserInterface;
@@ -47,20 +48,22 @@ use Drupal\user\UserInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",
+ *     "bundle" = "type",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
  *   links = {
+ *     "add-page" = "/dsi_finance_expenditure/add",
  *     "canonical" = "/dsi_finance_expenditure/{dsi_finance_expenditure}",
- *     "add-form" = "/dsi_finance_expenditure/add",
+ *     "add-form" = "/dsi_finance_expenditure/add/{dsi_finance_expenditure_type}",
  *     "edit-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/edit",
- *     "delete-form" =
- *   "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
+ *     "delete-form" = "/dsi_finance_expenditure/{dsi_finance_expenditure}/delete",
  *     "collection" = "/dsi_finance_expenditure",
  *   },
- *   field_ui_base_route = "dsi_finance_expenditure.settings"
+ *   bundle_entity_type = "dsi_finance_expenditure_type",
+ *   field_ui_base_route = "entity.dsi_finance_expenditure_type.edit_form",
  * )
  */
 class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditureInterface {
@@ -149,7 +152,7 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
 
     //支出人
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Authored by'))
+      ->setLabel(t('Expenditure Name'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -182,12 +185,10 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    // TODO, Add fields.
-
-
     //金额
     $fields['price'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t('Price', [], ['context' => 'FinanceExpenditure']))
+      ->setSetting('size', 'big')
       ->setDisplayOptions('view', [
         'type' => 'number_decimal',
         'weight' => 0,
@@ -202,36 +203,21 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setRequired(TRUE);
 
     //关联类型
-    $fields['relation_type'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Relation Type', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('target_type', 'lookup')
-      ->setSetting('handler_settings', [
-        'target_bundles' => ['relation_type' => 'relation_type'],
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setRequired(TRUE);
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
+      ->setRequired(TRUE)
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
-    //关联案件 || 项目 || 客户
-    $fields['relation'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('', [], ['context' => 'FinanceExpenditure']))
-      ->setSetting('target_type', 'dsi_cases')
-      ->setSetting('handler', 'default')
-      ->setDefaultValue(0)
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Entity ID'))
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
+        'settings' => [
+          'label' => 'hidden',
+        ],
       ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDefaultValue(0);
 
     //费用承担者
     $fields['undertaker'] = BaseFieldDefinition::create('entity_reference')
@@ -293,6 +279,19 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    $fields['detail'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Detail', [], ['context' => 'Finance detail']))
+      ->setSetting( 'target_type', 'dsi_finance_detailed')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('form', [
+        'type' => 'inline_entity_form_complex',
+        'settings' => [
+          'form_mode' => 'inline_entity_form',
+        ],
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
     //备注
     $fields['remarks'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Remarks', [], ['context' => 'FinanceExpenditure']))
@@ -309,11 +308,6 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
 
-    //支出数据状态 1正常 2删除
-    $fields['state'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('State', [], ['context' => 'FinanceExpenditure']))
-      ->setDefaultValue(1);
-
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));
@@ -325,4 +319,19 @@ class FinanceExpenditure extends ContentEntityBase implements FinanceExpenditure
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    if ($expenditure_type = FinanceExpenditureType::load($bundle)) {
+      $fields['entity_id'] = clone $base_field_definitions['entity_id'];
+      $fields['entity_id']->setSetting('target_type', $expenditure_type->getTargetEntityTypeId());
+      $fields['entity_id']->setDisplayOptions('view', [
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ]);
+      return $fields;
+    }
+    return [];
+  }
 }

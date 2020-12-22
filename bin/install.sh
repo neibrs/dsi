@@ -9,6 +9,9 @@ rm -rf sites/default/settings.php
 rm -rf sites/default/private
 rm -rf sites/default/files
 
+# for docker
+#vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:@localhost:3306/oas
+# for mac
 vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/oas
 
 chmod -R a+rw sites/default
@@ -83,11 +86,26 @@ vendor/bin/drush then dsi_color -y
 vendor/bin/drush cset system.theme default dsi_color -y
 vendor/bin/drush cset system.theme admin dsi_color -y
 
+# Set timezone
+vendor/bin/drush cset system.date country.default CN -y
+vendor/bin/drush cset system.date first_day 1 -y
+vendor/bin/drush cset system.date timezone.default Asia/Shanghai -y
+vendor/bin/drush cset system.date timezone.user.configurable false -y
+vendor/bin/drush cset system.date timezone.user.warning false -y
+vendor/bin/drush cset system.date timezone.user.default 0 -y
+
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
+# 翻译问题
+vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
+vendor/bin/drush language:import:translations  modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
 
 vendor/bin/drush mim 30_client_xlsx
 vendor/bin/drush mim 30_record_xlsx
 vendor/bin/drush mim 208_client_xlsx
 vendor/bin/drush mim 208_record_xlsx
 vendor/bin/drush mim contract_xlsx
+
+# Fixed, 翻译文件导入时不能移动.
+chmod -R a+rw sites/default/files
+

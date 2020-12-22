@@ -1,5 +1,0 @@
-name: Materialize theme helper
-type: module
-description: Helper functions for Materialize theme
-package: Materialize
-core: 8.x

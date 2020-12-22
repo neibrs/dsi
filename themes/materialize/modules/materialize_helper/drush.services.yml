@@ -1,5 +1,0 @@
-services:
-  materialize_helper.commands:
-    class: \Drupal\materialize_helper\Commands\MaterializeCommands
-    tags:
-      - { name: drush.command }

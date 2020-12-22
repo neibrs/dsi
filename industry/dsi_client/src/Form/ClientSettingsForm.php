@@ -2,6 +2,8 @@
 
 namespace Drupal\dsi_client\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -31,7 +33,13 @@ class ClientSettingsForm extends FormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Empty implementation of the abstract submit class.
+    $config = \Drupal::configFactory()->getEditable('dsi_client.settings');
+    $config->set('polling.'. $form_state->getValue('business_group'). '.business_group', $form_state->getValue('business_group'));
+    $config->set('polling.'. $form_state->getValue('business_group'). '.person', $form_state->getValue('person'));
+    $config->save();
+
+    $this->messenger()->addMessage('保存成功');
+    return $form;
   }
 
   /**
@@ -46,8 +54,70 @@ class ClientSettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['client_settings']['#markup'] = 'Settings form for Client entities. Manage field settings here.';
+    $business_groups = \Drupal::entityTypeManager()->getStorage('organization')->loadByProperties([
+      'classifications' => 'business_group',
+    ]);
+    $options = array_map(function ($business_group) {
+      return $business_group->label();
+    }, $business_groups);
+    $form['polling'] = [
+      '#type' => 'details',
+      '#open' => true,
+      '#title' => '轮询规则',
+    ];
+    $form['polling']['business_group'] = [
+      '#type' => 'select',
+      '#title' => '律所',
+      '#options' => $options,
+      '#ajax' => [
+        'event' => 'change',
+        'callback' => '::businessGroupSwitch',
+        'wrapper' => 'person-wrapper',
+      ],
+    ];
+
+    $form['polling']['person'] = [
+      '#title' => $this->t('Persons'),
+      '#type' => 'select',
+      '#multiple' => TRUE,
+      '#prefix' => '<div id="person-wrapper">',
+      '#suffix' => '</div>',
+    ];
+    $business_group = $form_state->getValue('business_group') ?: 1;
+    $form['polling']['person']['#options'] = $this->getPersons($business_group);
+
+    $default_persons = \Drupal::config('dsi_client.settings')->get('polling.'. $business_group);
+
+    $form['polling']['person']['#default_value'] = $default_persons['person'];
+
+    $form['actions']['#type'] = 'actions';
+    $form['actions']['submit'] = [
+      '#type' => 'submit',
+      '#value' => t('Save'),
+      '#button_type' => 'primary',
+    ];
     return $form;
   }
+  /**
+   * AJAX callback.
+   */
+  public function businessGroupSwitch(array $form, FormStateInterface $form_state) {
+    return $form['polling']['person'];
+  }
 
+  protected function getPersons($business_group = NULL) {
+    $organizations = \Drupal::entityTypeManager()->getStorage('organization')->loadAllChildren($business_group, [], TRUE);
+    $organizations = array_map(function($organization) {
+      return $organization->id();
+    }, $organizations);
+    $query = \Drupal::entityTypeManager()->getStorage('person')->getQuery();
+    $ids = $query->condition('organization', $organizations, 'IN')
+      ->execute();
+    $persons = \Drupal::entityTypeManager()->getStorage('person')->loadMultiple($ids);
+    $persons = array_map(function ($person) {
+      return $person->label();
+    }, $persons);
+
+    return $persons;
+  }
 }
