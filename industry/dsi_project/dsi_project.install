@@ -9,7 +9,7 @@ function dsi_project_update_2020122201(&$sandbox) {
 
   // Add project field for contract
   $storage_definition = BaseFieldDefinition::create('entity_reference')
-    ->setLabel(t('Person', [], ['context' => 'Contract']))
+    ->setLabel(t('Project', [], ['context' => 'Contract']))
     ->setSetting('target_type', 'dsi_project');
 
   \Drupal::entityDefinitionUpdateManager()

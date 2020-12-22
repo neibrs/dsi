@@ -4,6 +4,7 @@
  * @file
  */
 
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\lookup\InstallHelper;
 
 /**
@@ -56,4 +57,18 @@ function dsi_cases_install($is_syncing) {
   ];
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('case_source', $data, '案件来源', $lookup_storage);
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function dsi_cases_update_2020122201(&$sandbox) {
+
+  // Add cases field for contract
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Cases', [], ['context' => 'Contract']))
+    ->setSetting('target_type', 'dsi_cases');
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('cases', 'dsi_contract', 'dsi_cases', $storage_definition);
 }

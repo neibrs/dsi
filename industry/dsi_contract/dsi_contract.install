@@ -57,3 +57,40 @@ function dsi_contract_update_20121001(&$sandbox) {
   \Drupal::entityDefinitionUpdateManager()
     ->installFieldStorageDefinition('contract', 'dsi_client', 'dsi_client', $storage_definition);
 }
+
+/**
+ * Implements hook_update_N() add contract field for contact.
+ */
+function dsi_contract_update_20122001(&$sandbox) {
+  $storage_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Party B', [], ['context' => 'Contract']));
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_contact', 'dsi_contact', $storage_definition);
+
+  $storage_definition = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Period', [], ['context' => 'Contract']));
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_contact', 'dsi_contact', $storage_definition);
+
+  $storage_definition = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Automatic Delay', [], ['context' => 'Contract']));
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_contact', 'dsi_contact', $storage_definition);
+
+  $storage_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Cooperation Content', [], ['context' => 'Contract']));
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_contact', 'dsi_contact', $storage_definition);
+
+  // Contract state, TODO
+//  \Drupal::entityTypeManager()->getStorage('lookup_type')->create([
+//    'id' => 'contract_state',
+//    'label' => '合作状态',
+//  ])->save();
+
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Contract State', [], ['context' => 'Contract']))
+    ->setSetting('target_type', 'lookup');
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('contract', 'dsi_contact', 'dsi_contact', $storage_definition);
+}
