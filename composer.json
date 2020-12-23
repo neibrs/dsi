@@ -73,7 +73,8 @@
         "drupal/features": "^3.11",
         "drupal/bootstrapper": "5.x-dev",
         "drupal/varnish_purge": "^2.0",
-        "drupal/purge": "^3.0"
+        "drupal/purge": "^3.0",
+        "drupal/phpword": "^3.0"
     },
     "extra": {
         "branch-alias": {
