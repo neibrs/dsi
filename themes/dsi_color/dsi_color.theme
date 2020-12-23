@@ -123,6 +123,7 @@ function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 }
 
 function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  unset($form['#theme_wrappers']);
   // 修改登录页面输入框样式.
   $form['#prefix'] = '<div class="login-content p-0">';
   $form['#suffix'] = '</div>';
@@ -191,6 +192,7 @@ function dsi_color_form_user_login_form_alter(&$form, FormStateInterface $form_s
  * TODO, 注册表单，中屏时，排版异常.
  */
 function dsi_color_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  unset($form['#theme_wrappers']);
   // Unset description.
   foreach($form['account'] as $key => $item ) {
     if (strpos($key, '#') !== 0) {
@@ -283,4 +285,11 @@ function dsi_color_preprocess_input__date(&$variables) {
  */
 function dsi_color_preprocess_datetime_wrapper(&$variables) {
   $variables['#attached']['library'][] = 'dsi_color/color.page.datepicker';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dsi_color_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['#theme_wrappers']);
 }
