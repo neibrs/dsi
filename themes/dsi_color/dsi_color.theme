@@ -261,5 +261,12 @@ function dsi_color_preprocess_input__submit(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function dsi_color_preprocess_select(&$variables) {
-  $variables['attributes']['class'] = 'form-control';
+//  $variables['attributes']['class'] = 'form-control';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dsi_color_preprocess_file_managed_file(&$variables) {
+  $variables['#attached']['library'][] = 'dsi_color/color.page.multiple_file_upload';
 }
