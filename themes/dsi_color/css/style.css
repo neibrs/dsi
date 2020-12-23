@@ -58,3 +58,14 @@ body {
   height: 40px;
   text-align: left;
 }
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  float:right;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  display: none;
+  float:right;
+  margin-top:2%;
+}
