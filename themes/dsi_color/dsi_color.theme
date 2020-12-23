@@ -270,3 +270,17 @@ function dsi_color_preprocess_select(&$variables) {
 function dsi_color_preprocess_file_managed_file(&$variables) {
   $variables['#attached']['library'][] = 'dsi_color/color.page.multiple_file_upload';
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dsi_color_preprocess_input__date(&$variables) {
+  $variables['#attached']['library'][] = 'dsi_color/color.page.datepicker';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dsi_color_preprocess_datetime_wrapper(&$variables) {
+  $variables['#attached']['library'][] = 'dsi_color/color.page.datepicker';
+}
