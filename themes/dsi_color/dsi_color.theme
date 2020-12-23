@@ -263,10 +263,3 @@ function dsi_color_preprocess_input__submit(&$variables) {
 function dsi_color_preprocess_select(&$variables) {
   $variables['attributes']['class'] = 'form-control';
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function dsi_color_preprocess_radios(&$variables) {
-  $variables['attributes']['class'] = 'radio radio-css';
-}
