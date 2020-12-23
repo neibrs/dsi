@@ -5,6 +5,8 @@
  * Contains dsi_project.module.
  */
 
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -20,5 +22,35 @@ function dsi_project_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function dsi_project_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'dsi_contract') {
+    $fields = [];
+    $fields['project'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Person', [], ['context' => 'Contract']))
+      ->setSetting('target_type', 'dsi_project')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 0,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
   }
 }

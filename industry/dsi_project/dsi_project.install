@@ -1,0 +1,17 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_update_N().
+ */
+function dsi_project_update_2020122201(&$sandbox) {
+
+  // Add project field for contract
+  $storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Project', [], ['context' => 'Contract']))
+    ->setSetting('target_type', 'dsi_project');
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('project', 'dsi_contract', 'dsi_project', $storage_definition);
+}
