@@ -77,7 +77,9 @@ function dsi_color_preprocess_links__dropbutton__operations(&$variables) {
  */
 function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
+  // TODO, 添加表单标题到panel.
   $form['#theme_wrappers'] = ['form__panel'];
+  $form['#attributes']['class'][] = 'p-0';
 
   if (isset($form['actions']['delete'])) {
     $form['actions']['delete']['#attributes']['class'] = [
@@ -253,4 +255,18 @@ function dsi_color_preprocess_input__submit(&$variables) {
     'btn-primary'
   ]);
   $variables['attributes']['class'] = $class;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dsi_color_preprocess_select(&$variables) {
+  $variables['attributes']['class'] = 'form-control';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dsi_color_preprocess_radios(&$variables) {
+  $variables['attributes']['class'] = 'radio radio-css';
 }
