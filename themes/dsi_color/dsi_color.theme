@@ -77,6 +77,8 @@ function dsi_color_preprocess_links__dropbutton__operations(&$variables) {
  */
 function dsi_color_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
+  $form['#theme_wrappers'] = ['form__panel'];
+
   if (isset($form['actions']['delete'])) {
     $form['actions']['delete']['#attributes']['class'] = [
       'btn',
