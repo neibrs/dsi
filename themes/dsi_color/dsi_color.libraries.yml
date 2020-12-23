@@ -46,6 +46,26 @@ color.default:
   dependencies:
     - dsi_color/color.theme
 
+color.page.multiple_file_upload:
+  css:
+    theme:
+      assets/4.6/assets/plugins/blueimp-gallery/css/blueimp-gallery.min.css: { }
+      assets/4.6/assets/plugins/blueimp-file-upload/css/jquery.fileupload.css: { }
+      assets/4.6/assets/plugins/blueimp-file-upload/css/jquery.fileupload-ui.css: { }
+  js:
+    assets/4.6/assets/plugins/blueimp-file-upload/js/vendor/jquery.ui.widget.js: { }
+    assets/4.6/assets/plugins/blueimp-tmpl/js/tmpl.js: { }
+    assets/4.6/assets/plugins/blueimp-load-image/js/load-image.all.min.js: { }
+    assets/4.6/assets/plugins/blueimp-canvas-to-blob/js/canvas-to-blob.js: { }
+    assets/4.6/assets/plugins/blueimp-gallery/js/jquery.blueimp-gallery.min.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.iframe-transport.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-process.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-image.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-audio.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-video.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-validate.js: { }
+    assets/4.6/assets/plugins/blueimp-file-upload/js/jquery.fileupload-ui.js: { }
 color.page.table:
   css:
     theme:
