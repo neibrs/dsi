@@ -46,6 +46,38 @@ color.default:
   dependencies:
     - dsi_color/color.theme
 
+color.page.datepicker:
+  css:
+    theme:
+      assets/4.6/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css: { }
+      assets/4.6/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css: { }
+      assets/4.6/assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css: { }
+#      assets/4.6/assets/plugins/@danielfarrell/bootstrap-combobox/css/bootstrap-combobox.css: { } for autocomplete
+      assets/4.6/assets/plugins/bootstrap-select/dist/css/bootstrap-select.min.css: { }
+      assets/4.6/assets/plugins/bootstrap-daterangepicker/daterangepicker.css: { }
+      assets/4.6/assets/plugins/select2/dist/css/select2.min.css: { }
+      assets/4.6/assets/plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css: { }
+      assets/4.6/assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.css: { }
+      assets/4.6/assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-fontawesome.css: { }
+      assets/4.6/assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-glyphicons.css: { }
+  js:
+    assets/4.6/assets/plugins/jquery-migrate/dist/jquery-migrate.min.js: { }
+    assets/4.6/assets/plugins/moment/min/moment.min.js: { }
+    assets/4.6/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js: { }
+    assets/4.6/assets/plugins/jquery.maskedinput/src/jquery.maskedinput.js: { }
+    assets/4.6/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js: { }
+#    assets/4.6/assets/plugins/@danielfarrell/bootstrap-combobox/js/bootstrap-combobox.js: { }
+    assets/4.6/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js: { }
+    assets/4.6/assets/plugins/bootstrap-daterangepicker/daterangepicker.js: { }
+    assets/4.6/assets/plugins/select2/dist/js/select2.min.js: { }
+    assets/4.6/assets/plugins/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js: { }
+    assets/4.6/assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.js: { }
+    js/form/form.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
 color.page.multiple_file_upload:
   css:
     theme:
