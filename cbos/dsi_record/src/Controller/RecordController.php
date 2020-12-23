@@ -51,8 +51,7 @@ class RecordController extends ControllerBase {
    * @return false|string
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function setStatus($entity_id,$state)
-  {
+  public function setStatus($entity_id,$state) {
     if (!empty($entity_id) and isset($state)){
       $record = Record::load($entity_id);
       $record->state = $state==0 ? FALSE : TRUE;

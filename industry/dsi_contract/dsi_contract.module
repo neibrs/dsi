@@ -12,6 +12,17 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 
 /**
+ * Implements hook_theme().
+ */
+function dsi_contract_theme() {
+  $theme = [];
+  $theme['dsi_contract_form'] = [
+    'render element' => 'form',
+  ];
+  return $theme;
+}
+
+/**
  * Implements hook_help().
  */
 function dsi_contract_help($route_name, RouteMatchInterface $route_match) {

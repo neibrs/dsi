@@ -303,7 +303,7 @@ class Record extends ContentEntityBase implements RecordInterface {
     // 所属律所
     $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type'))
-      ->setRequired(TRUE)
+//      ->setRequired(TRUE)
       ->setSetting('is_ascii', TRUE)
       ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 

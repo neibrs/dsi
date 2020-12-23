@@ -70,9 +70,6 @@ class ClientForm extends ContentEntityForm {
       $form['client_importance']['widget']['#default_value'] = $index;
     }
 
-    if (!$this->entity->isNew()) {
-      $form['client_type']['phone']['widget'][0]['#disabled'] = TRUE;
-    }
     return $form;
   }
 
@@ -109,20 +106,20 @@ class ClientForm extends ContentEntityForm {
       }
     }
     if (empty($items['name'])) {
-      $items['name'] = $items['phone'];
+      $items['name'] = $items['phone'] ?: $items['field_phone'];
     }
     $entity_storage = $this->entityTypeManager->getStorage($target_entity_type_id);
     if ($entity_id) {
-        // 批量保存$items到entity_id, TODO
-        $entity = $entity_storage->load($entity_id);
-        foreach ($items as $key => $val) {
-            $entity->set($key, $val);
-          }
+      // 批量保存$items到entity_id, TODO
+      $entity = $entity_storage->load($entity_id);
+      foreach ($items as $key => $val) {
+        $entity->set($key, $val);
+      }
       $entity->save();
     }
     else {
-        $entity = $entity_storage->create($items + ['type' => $type]);
-        $entity->save();
+      $entity = $entity_storage->create($items + ['type' => $type]);
+      $entity->save();
     }
     return $entity;
   }
