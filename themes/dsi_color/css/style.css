@@ -69,3 +69,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   float:right;
   margin-top:2%;
 }
+
+.datepicker-days thead th {
+  background-color: unset;
+}
+
+.datepicker-days table tr {
+  border-bottom: unset;
+}
