@@ -77,3 +77,18 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 .datepicker-days table tr {
   border-bottom: unset;
 }
+
+input.form-autocomplete{
+  background-color: unset;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	select {
+    background: -webkit-linear-gradient(top, #fff, #fff);
+    -webkit-appearance: auto;
+	}
+	select:focus,
+	select:hover {
+		background-image: -webkit-linear-gradient(top, #fff, #fff);
+	}
+}
