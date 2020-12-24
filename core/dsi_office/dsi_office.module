@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_office.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_office_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_office module.
+    case 'help.page.dsi_office':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The office extension.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
