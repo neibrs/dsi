@@ -82,7 +82,7 @@
   .container-2cols-inline .form-item label,
   .container-3cols-inline .form-item label {
     width: 20%;
-    text-align: right;
+    /*text-align: right;*/
     white-space: nowrap;
   }
 
