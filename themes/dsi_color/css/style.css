@@ -92,3 +92,10 @@ input.form-autocomplete{
 		background-image: -webkit-linear-gradient(top, #fff, #fff);
 	}
 }
+
+/* TODO */
+.form--inline .form-item {
+  display: inline-flex;
+  margin-right: 0.5em;
+  float: left;
+}
