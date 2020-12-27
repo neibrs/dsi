@@ -557,7 +557,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
         'weight' => -3,
-      ]);
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
