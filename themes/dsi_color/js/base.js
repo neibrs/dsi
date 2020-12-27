@@ -30,6 +30,10 @@
         }
 
       });
+
+      $(document).ready(function() {
+        $('#drupal-modal .panel-heading').once('ui-dialog-panel-heading').remove();
+      });
     }
   };
 })(jQuery, Drupal, drupalSettings);

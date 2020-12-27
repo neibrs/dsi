@@ -556,7 +556,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
         'weight' => -3,
-      ]);
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     // 签约乙方
     $fields['party_b'] = BaseFieldDefinition::create('string')

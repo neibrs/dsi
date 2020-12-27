@@ -3,23 +3,22 @@
 DRUPAL="$(pwd)"
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-chmod -R a+rw sites/default
-rm -rf sites/default/settings.memcache.php
-rm -rf sites/default/settings.php
-rm -rf sites/default/private
-rm -rf sites/default/files
+chmod -R a+rw web/sites/default
+rm -rf web/sites/default/settings.memcache.php
+rm -rf web/sites/default/settings.php
+rm -rf web/sites/default/private
+rm -rf web/sites/default/files
 
 # for docker
 #vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:@localhost:3306/oas
 # for mac
-vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/oas
+vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/prod
+chmod -R a+rw web/sites/default
+mkdir web/sites/default/private;
+echo "\$settings['file_private_path'] = 'web/sites/default/private';" >> web/sites/default/settings.php
 
-chmod -R a+rw sites/default
-mkdir sites/default/private;
-echo "\$settings['file_private_path'] = 'sites/default/private';" >> sites/default/settings.php
-
-echo "ini_set('memory_limit', -1);" >> sites/default/settings.php
-echo "ini_set('max_execution_time', 0);" >> sites/default/settings.php
+echo "ini_set('memory_limit', -1);" >> web/sites/default/settings.php
+echo "ini_set('max_execution_time', 0);" >> web/sites/default/settings.php
 
 # Enable modules
 vendor/bin/drush en -y \
@@ -58,8 +57,8 @@ vendor/bin/drush pmu -y \
 # Enable memcache modules
 #vendor/bin/drush en -y \
 #  memcache
-#cp modules/dsi/settings.memcache.php sites/default/
-#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
+#cp web/modules/dsi/settings.memcache.php web/sites/default/
+#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> web/sites/default/settings.php
 
 # drupal console issue: https://github.com/hechoendrupal/drupal-console/issues/4005
 #vendor/bin/drush cr
@@ -97,8 +96,8 @@ vendor/bin/drush cset system.date timezone.user.default 0 -y
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
 # 翻译问题
-vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
-vendor/bin/drush language:import:translations  modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
+vendor/bin/drush language:import:translations  web/modules/dsi/contrib/translation/translations/drupal.zh-hans.po
+vendor/bin/drush language:import:translations  web/modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
 
 vendor/bin/drush mim 30_client_xlsx
 vendor/bin/drush mim 30_record_xlsx
@@ -107,5 +106,5 @@ vendor/bin/drush mim 208_record_xlsx
 vendor/bin/drush mim contract_xlsx
 
 # Fixed, 翻译文件导入时不能移动.
-chmod -R a+rw sites/default/files
+chmod -R a+rw web/sites/default/files
 
