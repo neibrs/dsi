@@ -29,7 +29,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:14+0000\n"
+"POT-Creation-Date: 2020-12-27 05:43+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -95,15 +95,11 @@ msgstr ""
 msgid "Organization type"
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:50
-msgid "Sub organizations"
-msgstr ""
-
-#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:55 modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php:56
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:54 modules/dsi/contrib/organization/src/Plugin/Block/ChildrenOrganizationBlock.php:56
 msgid "Add"
 msgstr ""
 
-#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:69
+#: modules/dsi/contrib/organization/src/OrganizationViewBuilder.php:68
 msgid "Views not found."
 msgstr ""
 

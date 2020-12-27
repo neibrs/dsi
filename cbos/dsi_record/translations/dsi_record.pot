@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:13+0000\n"
+"POT-Creation-Date: 2020-12-27 05:43+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: modules/dsi/cbos/dsi_record/dsi_record.module:60
 msgctxt "Add todo"
-msgid "Add Record"
+msgid "+回访"
 msgstr ""
 
 #: modules/dsi/cbos/dsi_record/dsi_record.module:93
@@ -48,16 +48,16 @@ msgstr ""
 msgid "Record ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:21 modules/dsi/cbos/dsi_record/src/Entity/Record.php:177
+#: modules/dsi/cbos/dsi_record/src/RecordListBuilder.php:21 modules/dsi/cbos/dsi_record/src/Entity/Record.php:178
 msgctxt "Record"
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:153
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:154
 msgid "Authored by"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:198
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:199
 msgctxt "Record"
 msgid "Detail"
 msgstr ""
@@ -67,69 +67,67 @@ msgctxt "Record"
 msgid "Reminder time"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:230
-msgctxt "Record"
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:231
 msgid "Start"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:244
-msgctxt "Record"
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:249
 msgid "End"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:262
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:269
 msgctxt "Record"
 msgid "Take time"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:279
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:286
 msgctxt "Record"
 msgid "Attachments"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:298
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:305
 msgid "Entity type"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:304
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:311
 msgid "Entity ID"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:311
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:318
 msgctxt "Record state"
 msgid "State"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:321
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:328
 msgctxt "Record"
 msgid "Person"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:328
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:335
 msgid "Created"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:329
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:336
 msgid "The time that the entity was created."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:332
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:339
 msgid "Changed"
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:333
+#: modules/dsi/cbos/dsi_record/src/Entity/Record.php:340
 msgid "The time that the entity was last edited."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Form/RecordForm.php:86
+#: modules/dsi/cbos/dsi_record/src/Form/RecordForm.php:74
 msgid "Created the %label Record."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Form/RecordForm.php:92
+#: modules/dsi/cbos/dsi_record/src/Form/RecordForm.php:80
 msgid "Saved the %label Record."
 msgstr ""
 
-#: modules/dsi/cbos/dsi_record/src/Plugin/Block/RecordByEntityBlock.php:79
+#: modules/dsi/cbos/dsi_record/src/Plugin/Block/RecordByEntityBlock.php:78
 msgid "Add"
 msgstr ""
 

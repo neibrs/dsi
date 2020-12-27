@@ -2,7 +2,7 @@
 #
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: modules/dsi/core/dsi_icons/dsi_icons.module: n/a
+# Generated from file: modules/dsi/core/dsi_office/dsi_office.module: n/a
 #
 #, fuzzy
 msgid ""
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/core/dsi_icons/dsi_icons.module:19
+#: modules/dsi/core/dsi_office/dsi_office.module:18
 msgid "About"
 msgstr ""
 
-#: modules/dsi/core/dsi_icons/dsi_icons.module:20
-msgid "The icons."
+#: modules/dsi/core/dsi_office/dsi_office.module:19
+msgid "The office extension."
 msgstr ""
 

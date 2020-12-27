@@ -3,7 +3,6 @@
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
-#  modules/dsi/industry/dsi_finance/dsi_finance.module: n/a
 #  modules/dsi/industry/dsi_finance/src/FinanceDetailedListBuilder.php: n/a
 #  modules/dsi/industry/dsi_finance/src/FinanceExpenditureListBuilder.php: n/a
 #  modules/dsi/industry/dsi_finance/src/FinanceListBuilder.php: n/a
@@ -27,7 +26,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:15+0000\n"
+"POT-Creation-Date: 2020-12-27 05:44+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -35,14 +34,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#: modules/dsi/industry/dsi_finance/dsi_finance.module:18
-msgid "About"
-msgstr ""
-
-#: modules/dsi/industry/dsi_finance/dsi_finance.module:19
-msgid "The finances."
-msgstr ""
 
 #: modules/dsi/industry/dsi_finance/src/FinanceDetailedListBuilder.php:15
 msgid "FinanceDetailed ID"
@@ -239,11 +230,11 @@ msgctxt "FinanceExpenditure"
 msgid "Reimbursement Status"
 msgstr ""
 
-#: modules/dsi/industry/dsi_finance/src/Form/FinanceDetailedForm.php:144
+#: modules/dsi/industry/dsi_finance/src/Form/FinanceDetailedForm.php:105
 msgid "Created the %label FinanceDetailed."
 msgstr ""
 
-#: modules/dsi/industry/dsi_finance/src/Form/FinanceDetailedForm.php:150
+#: modules/dsi/industry/dsi_finance/src/Form/FinanceDetailedForm.php:111
 msgid "Saved the %label FinanceDetailed."
 msgstr ""
 
@@ -275,11 +266,11 @@ msgstr ""
 msgid "Saved the %label Finance detailed type."
 msgstr ""
 
-#: modules/dsi/industry/dsi_finance/src/Form/FinanceExpenditureForm.php:147 modules/dsi/industry/dsi_finance/src/Form/FinanceForm.php:156
+#: modules/dsi/industry/dsi_finance/src/Form/FinanceExpenditureForm.php:152 modules/dsi/industry/dsi_finance/src/Form/FinanceForm.php:179
 msgid "Created the %label Finance."
 msgstr ""
 
-#: modules/dsi/industry/dsi_finance/src/Form/FinanceExpenditureForm.php:153 modules/dsi/industry/dsi_finance/src/Form/FinanceForm.php:163
+#: modules/dsi/industry/dsi_finance/src/Form/FinanceExpenditureForm.php:158 modules/dsi/industry/dsi_finance/src/Form/FinanceForm.php:186
 msgid "Saved the %label Finance."
 msgstr ""
 

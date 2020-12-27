@@ -37,7 +37,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:14+0000\n"
+"POT-Creation-Date: 2020-12-27 05:43+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -63,19 +63,19 @@ msgstr ""
 msgid "Nationality field has been converted to string type."
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:85;176 modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php:29 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:60
+#: modules/dsi/contrib/person/person.module:88;186 modules/dsi/contrib/person/src/PersonBreadcrumbBuilder.php:29 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:60
 msgid "Person"
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:108
+#: modules/dsi/contrib/person/person.module:111
 msgid "Manager"
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:137
+#: modules/dsi/contrib/person/person.module:140
 msgid "User roles"
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:144 modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php:21 modules/dsi/contrib/person/src/PersonAddressListBuilder.php:21 modules/dsi/contrib/person/src/PersonEmailListBuilder.php:21 modules/dsi/contrib/person/src/PersonListBuilder.php:20 modules/dsi/contrib/person/src/PersonPhoneListBuilder.php:21 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:91 modules/dsi/contrib/person/src/Form/PersonInlineForm.php:14
+#: modules/dsi/contrib/person/person.module:147 modules/dsi/contrib/person/src/IdentificationInformationListBuilder.php:21 modules/dsi/contrib/person/src/PersonAddressListBuilder.php:21 modules/dsi/contrib/person/src/PersonEmailListBuilder.php:21 modules/dsi/contrib/person/src/PersonListBuilder.php:20 modules/dsi/contrib/person/src/PersonPhoneListBuilder.php:21 modules/dsi/contrib/person/src/Entity/PersonalInformationBase.php:91 modules/dsi/contrib/person/src/Form/PersonInlineForm.php:14
 msgid "Name"
 msgstr ""
 
@@ -84,11 +84,15 @@ msgctxt "Person"
 msgid "Name"
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:174
+#: modules/dsi/contrib/person/person.module:153
+msgid "Organization persons"
+msgstr ""
+
+#: modules/dsi/contrib/person/person.module:184
 msgid "%type is used by @count of %entity. You may not remove %type until you have removed all of the %type %entity."
 msgstr ""
 
-#: modules/dsi/contrib/person/person.module:175 modules/dsi/contrib/person/src/Entity/Person.php:334
+#: modules/dsi/contrib/person/person.module:185 modules/dsi/contrib/person/src/Entity/Person.php:334
 msgid "Organization"
 msgstr ""
 

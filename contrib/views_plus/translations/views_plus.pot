@@ -8,7 +8,6 @@
 #  modules/dsi/contrib/views_plus/src/Form/EntityBulkUpdateForm.php: n/a
 #  modules/dsi/contrib/views_plus/src/Plugin/views/field/BulkForm.php: n/a
 #  modules/dsi/contrib/views_plus/src/Plugin/views/field/Date.php: n/a
-#  modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php: n/a
 #  modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php: n/a
 #  modules/dsi/contrib/views_plus/src/Plugin/views/filter/MonthFilter.php: n/a
 #  modules/dsi/contrib/views_plus/src/Plugin/views/style/TableTree.php: n/a
@@ -17,7 +16,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:14+0000\n"
+"POT-Creation-Date: 2020-12-27 05:43+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -118,56 +117,12 @@ msgstr ""
 msgid "%time hence"
 msgstr ""
 
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:39
-msgid "Select date range."
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:43
-msgid "Date range"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:45;195
-msgid "This week"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:46;196
-msgid "Previous week"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:47;197
-msgid "This month"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:48;198
-msgid "Previous month"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:51;201
-msgid "This year"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:52;202
-msgid "Previous year"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:188
-msgid "grouped"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:191
-msgid "exposed"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:206 modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:28
-msgid "in"
-msgstr ""
-
-#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/DateTrait.php:206 modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:35
-msgid "not in"
-msgstr ""
-
 #: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:27
 msgid "Is one of"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:28
+msgid "in"
 msgstr ""
 
 #: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:29
@@ -176,6 +131,10 @@ msgstr ""
 
 #: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:34
 msgid "Is not one of"
+msgstr ""
+
+#: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:35
+msgid "not in"
 msgstr ""
 
 #: modules/dsi/contrib/views_plus/src/Plugin/views/filter/EntityReferenceBrowser.php:36

@@ -4,6 +4,7 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/dsi/industry/dsi_project/dsi_project.module: n/a
+#  modules/dsi/industry/dsi_project/dsi_project.install: n/a
 #  modules/dsi/industry/dsi_project/src/ProjectListBuilder.php: n/a
 #  modules/dsi/industry/dsi_project/src/Entity/Project.php: n/a
 #  modules/dsi/industry/dsi_project/src/Form/ProjectForm.php: n/a
@@ -12,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-12-14 06:15+0000\n"
+"POT-Creation-Date: 2020-12-27 05:44+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -21,12 +22,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: modules/dsi/industry/dsi_project/dsi_project.module:18
+#: modules/dsi/industry/dsi_project/dsi_project.module:20
 msgid "About"
 msgstr ""
 
-#: modules/dsi/industry/dsi_project/dsi_project.module:19
+#: modules/dsi/industry/dsi_project/dsi_project.module:21
 msgid "The project of lawyer."
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/dsi_project.module:35
+msgctxt "Contract"
+msgid "Person"
+msgstr ""
+
+#: modules/dsi/industry/dsi_project/dsi_project.install:12
+msgctxt "Contract"
+msgid "Project"
 msgstr ""
 
 #: modules/dsi/industry/dsi_project/src/ProjectListBuilder.php:20
