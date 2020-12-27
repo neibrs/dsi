@@ -25,6 +25,40 @@ msgstr ""
 msgid "Contract"
 msgstr "合同"
 
+#: modules/dsi/industry/dsi_contract/dsi_contract.install:62 modules/dsi/industry/dsi_contract/src/Entity/Contract.php:565
+msgctxt "Contract"
+msgid "Party B"
+msgstr "签约乙方"
+
+#: modules/dsi/industry/dsi_contract/dsi_contract.install:67 modules/dsi/industry/dsi_contract/src/Entity/Contract.php:582
+msgctxt "Contract"
+msgid "Period"
+msgstr "合同期限"
+
+#: modules/dsi/industry/dsi_contract/dsi_contract.install:72 modules/dsi/industry/dsi_contract/src/Entity/Contract.php:620
+msgctxt "Contract"
+msgid "Automatic Delay"
+msgstr "自动延期"
+
+#: modules/dsi/industry/dsi_contract/dsi_contract.install:77 modules/dsi/industry/dsi_contract/src/Entity/Contract.php:636
+msgctxt "Contract"
+msgid "Cooperation Content"
+msgstr "合作内容"
+
+#: modules/dsi/industry/dsi_contract/dsi_contract.install:82
+msgctxt "Contract"
+msgid "Contract State"
+msgstr "合同状态"
+
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:600
+msgid "Contract State"
+msgstr "合同状态"
+
+#: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:168
+msgctxt "Contract title"
+msgid "Name"
+msgstr "合同名称"
+
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:190
 msgctxt "Contract"
 msgid "Number"
@@ -32,7 +66,7 @@ msgstr "合同编号"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:207
 msgid "Client"
-msgstr "客户"
+msgstr "签约甲方"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:225
 msgid "Case Category"
@@ -101,10 +135,9 @@ msgstr "差旅费预收"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:498
 msgid "Description"
-msgstr "备注"
+msgstr "重要条款"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:514
-
 msgctxt "Contract"
 msgid "Person"
 msgstr "签订人"
