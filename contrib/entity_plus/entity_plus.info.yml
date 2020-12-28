@@ -10,3 +10,4 @@ dependencies:
   - drupal:block
   - drupal:config
   - drupal:layout_builder
+  - reference_table_formatter
