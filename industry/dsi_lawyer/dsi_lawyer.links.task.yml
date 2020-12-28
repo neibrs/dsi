@@ -1,0 +1,9 @@
+entity.dsi_client.canonical:
+  route_name: entity.dsi_client.canonical
+  base_route: entity.dsi_client.canonical
+  title: '客户记录'
+#  Symfony\Component\Routing\Exception\MissingMandatoryParametersException: Some mandatory parameters are missing ("dsi_client") to generate a URL for route "entity.dsi_client.display". in Drupal\Core\Routing\UrlGenerator->doGenerate() (line 182 of core/lib/Drupal/Core/Routing/UrlGenerator.php).
+#dsi_client.settings:
+#  route_name: dsi_client.settings
+#  base_route: entity.dsi_client.canonical
+#  title: '客户设置'
