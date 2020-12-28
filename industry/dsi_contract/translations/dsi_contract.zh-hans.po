@@ -65,6 +65,7 @@ msgid "Number"
 msgstr "合同编号"
 
 #: modules/dsi/industry/dsi_contract/src/Entity/Contract.php:207
+msgctxt "Contract client"
 msgid "Client"
 msgstr "签约甲方"
 

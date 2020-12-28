@@ -204,7 +204,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     // 客户
     $fields['client'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Client'))
+      ->setLabel(t('Client', [], ['context' => 'Contract client']))
       ->setSetting('target_type', 'dsi_client')
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
