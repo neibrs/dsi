@@ -4,7 +4,6 @@ namespace Drupal\dsi_client\Entity;
 
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -23,7 +22,7 @@ use Drupal\user\UserInterface;
  *   label_collection = @Translation("Client"),
  *   bundle_label = @Translation("Client type"),
  *   handlers = {
- *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "view_builder" = "Drupal\dsi_client\ClientViewBuilder",
  *     "list_builder" = "Drupal\dsi_client\ClientListBuilder",
  *     "views_data" = "Drupal\dsi_client\Entity\ClientViewsData",
  *     "translation" = "Drupal\dsi_client\ClientTranslationHandler",
@@ -336,7 +335,8 @@ class Client extends BusinessGroupEntity implements ClientInterface {
           'label' => 'hidden',
         ],
       ])
-      ->setDefaultValue(0);
+      ->setDefaultValue(0)
+      ->setDisplayConfigurable('view', TRUE);
 
     // 所属行业
     $fields['sector'] = BaseFieldDefinition::create('entity_reference')
@@ -377,7 +377,7 @@ class Client extends BusinessGroupEntity implements ClientInterface {
         'type' => 'entity_reference_entity_view',
         'weight' => 0,
         'settings' => [
-          'view_mode' => 'normal',
+          'view_mode' => 'client',
           'label' => 'hidden',
         ],
       ]);
