@@ -18,33 +18,11 @@ class ClientViewBuilder extends EntityViewBuilder {
     $build = parent::view($entity, $view_mode, $langcode);
 
     if ($view_mode == 'full') {
-      $section = new Section('layout_onecol', [], []);
+      $section = new Section('layout_twocol_bricks', [], []);
       $section = $section->toRenderArray();
-      $section['content']['client'] = $build;
+      $section['top']['client'] = $build;
       return $section;
     }
     return $build;
   }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function buildComponents(array &$build, array $entities, array $displays, $view_mode) {
-    if (empty($entities)) {
-      return;
-    }
-    parent::buildComponents($build, $entities, $displays, $view_mode);
-
-    foreach ($entities as $id => $entity) {
-      $bundle = $entity->bundle();
-      $display = $displays[$bundle];
-
-      if ($display->getComponent('client')) {
-        $x = 'a';
-      }
-
-    }
-
-  }
-
 }
