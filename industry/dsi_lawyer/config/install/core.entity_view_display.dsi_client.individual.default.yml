@@ -1,0 +1,129 @@
+langcode: zh-hans
+status: true
+dependencies:
+  config:
+    - dsi_client.dsi_client_type.individual
+  module:
+    - field_group
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  field_group:
+    group_kehuxiangqing:
+      children:
+        - group_sanlietongxing
+        - entity_id
+        - summary
+        - description
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      region: content
+      format_settings:
+        description: ''
+        id: ''
+        classes: ''
+      label: 客户详情
+    group_sanlietongxing:
+      children:
+        - number
+        - cooperating_state
+        - customer_source
+        - name
+        - sector
+      parent_name: group_kehuxiangqing
+      weight: 7
+      format_type: html_element
+      region: content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: container-3cols-inline
+      label: 三列同行
+id: dsi_client.individual.default
+targetEntityType: dsi_client
+bundle: individual
+mode: default
+content:
+  cooperating_state:
+    type: entity_reference_label
+    weight: 9
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  customer_source:
+    type: entity_reference_label
+    weight: 10
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  description:
+    label: hidden
+    type: text_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  entity_id:
+    type: entity_reference_entity_view
+    weight: 8
+    settings:
+      view_mode: client
+      link: false
+    region: content
+    label: hidden
+    third_party_settings: {  }
+  name:
+    label: inline
+    type: string
+    weight: 11
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  number:
+    type: string
+    weight: 8
+    label: inline
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  sector:
+    type: entity_reference_label
+    weight: 12
+    label: inline
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  summary:
+    label: hidden
+    type: text_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  business_group: true
+  case_category: true
+  client_importance: true
+  contract: true
+  follow: true
+  langcode: true
+  record: true
+  type: true
+  user_id: true
