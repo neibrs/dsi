@@ -49,6 +49,31 @@ third_party_settings:
         id: ''
         classes: container-3cols-inline
       label: 三列同行
+    group_kehujilu:
+      children:
+        - group_kehu_jilu
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 客户记录
+    group_kehu_jilu:
+      children:
+        - entity_record
+      parent_name: group_kehujilu
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: open
+        id: ''
+        classes: ''
+      label: 客户记录
 id: dsi_client.individual.default
 targetEntityType: dsi_client
 bundle: individual
@@ -86,6 +111,19 @@ content:
     region: content
     label: hidden
     third_party_settings: {  }
+  entity_record:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  follow:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   name:
     label: inline
     type: string
@@ -122,7 +160,6 @@ hidden:
   case_category: true
   client_importance: true
   contract: true
-  follow: true
   langcode: true
   record: true
   type: true

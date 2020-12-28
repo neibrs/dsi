@@ -5,7 +5,10 @@
  * Contains dsi_lawyer.module.
  */
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\dsi_client\Entity\ClientType;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -67,4 +70,30 @@ function dsi_lawyer_form_dsi_client_form_alter(&$form, \Drupal\Core\Form\FormSta
     $form['customer_source']['#disabled'] = TRUE;
   }
   $form['client_type']['phone']['widget'][0]['value']['#disabled'] = TRUE;
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function dsi_lawyer_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (ClientType::loadMultiple() as $bundle) {
+    $extra['dsi_client'][$bundle->id()]['display']['entity_record'] = [
+      'label' => t('Entity record'),
+      'description' => 'Record by entity type and entity id',
+      'weight' => 10,
+    ];
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for dsi_client.
+ */
+function dsi_lawyer_dsi_client_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('entity_record')) {
+    $build['entity_record'] = views_embed_view('entity_record', 'default', $entity->getEntityTypeId(), $entity->id());
+  }
 }
