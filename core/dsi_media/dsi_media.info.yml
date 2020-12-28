@@ -3,6 +3,8 @@ description: 'Manages type of media contents and entity browsers in the site.'
 type: module
 package: Dsi
 core_version_requirement: ^8 || ^9
+interface translation project: dsi_media
+interface translation server pattern: modules/dsi/core/%project/translations/%project.%language.po
 configure: dsi_media.settings
 components:
   - entity_browser_generic_embed

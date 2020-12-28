@@ -2,4 +2,6 @@ name: 'Icons(dsi)'
 type: module
 description: 'The icons.'
 core_version_requirement: ^8 || ^9
+interface translation project: dsi_icons
+interface translation server pattern: modules/dsi/core/%project/translations/%project.%language.po
 package: 'Dsi'

@@ -3,6 +3,8 @@ description: 'This app will populate the universal implementation of a "Hero Sli
 type: module
 package: 'Dsi'
 core_version_requirement: ^8 || ^9
+interface translation project: dsi_slider_media
+interface translation server pattern: modules/dsi/core/%project/translations/%project.%language.po
 dependencies:
   - drupal:content_translation
   - dsi_media:dsi_media
