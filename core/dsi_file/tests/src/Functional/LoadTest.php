@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\dsi_files\Functional;
+namespace Drupal\Tests\dsi_file\Functional;
 
 use Drupal\Core\Url;
 use Drupal\Tests\BrowserTestBase;
@@ -8,7 +8,7 @@ use Drupal\Tests\BrowserTestBase;
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
- * @group dsi_files
+ * @group dsi_file
  */
 class LoadTest extends BrowserTestBase {
 
@@ -17,7 +17,7 @@ class LoadTest extends BrowserTestBase {
    *
    * @var array
    */
-  public static $modules = ['dsi_files'];
+  public static $modules = ['dsi_file'];
 
   /**
    * A user with permission to administer site configuration.
