@@ -9,3 +9,8 @@ entity.dsi_contract.add_contract:
         type: 'entity:dsi_client'
   requirements:
     _entity_create_access: 'dsi_contract'
+
+entity.dsi_contract.entity_by_entity:
+  path: '/contract/{client}/client'
+  requirements:
+    _permission: 'view Contract entities'

@@ -84,6 +84,11 @@ function dsi_lawyer_entity_extra_field_info() {
       'description' => 'Record by entity type and entity id',
       'weight' => 10,
     ];
+    $extra['dsi_client'][$bundle->id()]['display']['entity_contract'] = [
+      'label' => t('Entity contract'),
+      'description' => 'Contract by entity type and entity id',
+      'weight' => 10,
+    ];
   }
 
   return $extra;
@@ -95,5 +100,8 @@ function dsi_lawyer_entity_extra_field_info() {
 function dsi_lawyer_dsi_client_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if ($display->getComponent('entity_record')) {
     $build['entity_record'] = views_embed_view('entity_record', 'default', $entity->getEntityTypeId(), $entity->id());
+  }
+  if ($display->getComponent('entity_contract')) {
+    $build['entity_contract'] = views_embed_view('entity_contract', 'default',$entity->id());
   }
 }
