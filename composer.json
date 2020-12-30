@@ -31,7 +31,7 @@
         "drupal/charts": "5.0.x",
         "drupal/calendar": "^1.0@alpha",
         "bower-asset/fullcalendar": "^5.3",
-        "drupal/bootstrapper": "5.x-dev",
+        "drupal/bootstrapper": "5.x-dev"
     },
     "extra": {
         "branch-alias": {
