@@ -5,3 +5,4 @@
 .idea
 node_modules
 modules/dsi/industry/dsi_test
+themes/dsi_color/yarn.lock
