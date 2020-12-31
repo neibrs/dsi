@@ -48,11 +48,11 @@ use Drupal\user\UserInterface;
  *     "published" = "status",
  *   },
  *   links = {
- *     "canonical" = "//dsi_attachment_directory/{dsi_attachment_directory}",
- *     "add-form" = "//dsi_attachment_directory/add",
- *     "edit-form" = "//dsi_attachment_directory/{dsi_attachment_directory}/edit",
- *     "delete-form" = "//dsi_attachment_directory/{dsi_attachment_directory}/delete",
- *     "collection" = "//dsi_attachment_directory",
+ *     "canonical" = "/dsi_attachment_directory/{dsi_attachment_directory}",
+ *     "add-form" = "/dsi_attachment_directory/add",
+ *     "edit-form" = "/dsi_attachment_directory/{dsi_attachment_directory}/edit",
+ *     "delete-form" = "/dsi_attachment_directory/{dsi_attachment_directory}/delete",
+ *     "collection" = "/dsi_attachment_directory",
  *   },
  *   field_ui_base_route = "dsi_attachment_directory.settings"
  * )
