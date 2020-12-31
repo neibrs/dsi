@@ -1,0 +1,20 @@
+add attachment entities:
+  title: 'Create new Attachment entities'
+
+administer attachment entities:
+  title: 'Administer Attachment entities'
+  description: 'Allow to access the administration form to configure Attachment entities.'
+  restrict access: true
+
+delete attachment entities:
+  title: 'Delete Attachment entities'
+
+edit attachment entities:
+  title: 'Edit Attachment entities'
+
+view published attachment entities:
+  title: 'View published Attachment entities'
+
+view unpublished attachment entities:
+  title: 'View unpublished Attachment entities'
+
