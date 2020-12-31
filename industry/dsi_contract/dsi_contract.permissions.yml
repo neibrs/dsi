@@ -17,3 +17,6 @@ view published contract entities:
 
 view unpublished contract entities:
   title: 'View unpublished Contract entities'
+
+view contract entities:
+  title: 'View Contract entities'
