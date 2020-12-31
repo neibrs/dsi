@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\entity_plus\Entity\EntityMasterTrait;
 use Drupal\user\UserInterface;
 
 /**
@@ -35,6 +36,7 @@ use Drupal\user\UserInterface;
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
+ *     "master" = "master",
  *   },
  * )
  */
@@ -42,6 +44,7 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
+  use EntityMasterTrait;
 
   /**
    * {@inheritdoc}
@@ -125,6 +128,42 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
       ->setLabel(t('Entity ID'))
       ->setDefaultValue(0);
 
+    $fields['category'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Category', [], ['context' => 'Attachment']))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['attachment_category' => 'attachment_category'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    // 文档目录
+    $fields['directory'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Directory', [], ['context' => 'Attachment']))
+      ->setSetting('target_type', 'person')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    // 附件
     $fields['attachments'] = BaseFieldDefinition::create('file')
       ->setLabel(t('Attachments'))
       ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
