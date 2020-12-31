@@ -362,7 +362,6 @@ class Record extends ContentEntityBase implements RecordInterface {
     $entity_type_id = $this->get('entity_type')->value;
     $entity_id = $this->get('entity_id')->value;
 
-
     if (!empty($entity_type_id) && !empty($entity_id)) {
       /** @var \Drupal\Core\Entity\EntityInterface $target_entity */
       $target_entity_type = $this->entityTypeManager()->getStorage($entity_type_id);

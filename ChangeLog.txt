@@ -15,7 +15,7 @@ dev: 常规分支
 DEVELOPMENT(2020-12-21)
 -----------------------
 - Added modules:
-  * Contrib module: dsi_office, dsi_files
+  * Contrib module: dsi_office, dsi_attachment
 
 Test(2020-12-21)
 -----------------------

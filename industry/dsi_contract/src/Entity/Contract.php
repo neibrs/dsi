@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
+use Drupal\dsi_attachment\Entity\AttachmentTrait;
 use Drupal\organization\Entity\EffectiveDatesBusinessGroupEntity;
 use Drupal\user\UserInterface;
 
@@ -47,6 +48,7 @@ use Drupal\user\UserInterface;
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
+ *     "attachments" = "attachments",
  *   },
  *   links = {
  *     "canonical" = "/dsi_contract/{dsi_contract}",
@@ -63,6 +65,7 @@ use Drupal\user\UserInterface;
 class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInterface {
 
   use EntityChangedTrait;
+  use AttachmentTrait;
 
   /**
    * {@inheritdoc}
@@ -139,6 +142,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
+    $fields += static::attachmentBaseFieldDefinitions($entity_type);
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
@@ -536,21 +540,6 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
     // 相关流程
     // 提醒计划
     // 附件
-    $fields['attachments'] = BaseFieldDefinition::create('file')
-      ->setLabel(t('Attachments'))
-      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setSetting('file_extensions', 'doc docx xls xlsx jpeg png txt')
-      ->setDisplayOptions('view', [
-        'type' => 'file_default',
-        'weight' => 110,
-        'label' => 'inline',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'file_generic',
-        'weight' => 110,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status']->setDescription(t('A boolean indicating whether the Contract is published.'))
       ->setDisplayOptions('form', [
@@ -678,6 +667,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
     parent::postSave($storage, $update);
+
+    // 转存附件.
+    $this->setAttachmentByEntity();
 
     if ($this->get('client')->target_id) {
       $this->get('client')->entity->get('contract')->appendItem($this);
