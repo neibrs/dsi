@@ -7,12 +7,12 @@ use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;
 use Symfony\Component\Routing\Route;
 
 /**
- * Provides routes for Attachment directory entities.
+ * Provides routes for Attachment entities.
  *
  * @see \Drupal\Core\Entity\Routing\AdminHtmlRouteProvider
  * @see \Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider
  */
-class AttachmentDirectoryHtmlRouteProvider extends AdminHtmlRouteProvider {
+class AttachmentHtmlRouteProvider extends AdminHtmlRouteProvider {
 
   /**
    * {@inheritdoc}
@@ -43,7 +43,7 @@ class AttachmentDirectoryHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route("/{$entity_type->id()}/settings");
       $route
         ->setDefaults([
-          '_form' => 'Drupal\dsi_attachment\Form\AttachmentDirectorySettingsForm',
+          '_form' => 'Drupal\dsi_attachment\Form\AttachmentSettingsForm',
           '_title' => "{$entity_type->getLabel()} settings",
         ])
         ->setRequirement('_permission', $entity_type->getAdminPermission())

@@ -25,6 +25,15 @@ use Drupal\user\UserInterface;
  *     "list_builder" = "Drupal\dsi_attachment\AttachmentListBuilder",
  *     "views_data" = "Drupal\dsi_attachment\Entity\AttachmentViewsData",
  *
+ *     "form" = {
+ *       "default" = "Drupal\dsi_attachment\Form\AttachmentForm",
+ *       "add" = "Drupal\dsi_attachment\Form\AttachmentForm",
+ *       "edit" = "Drupal\dsi_attachment\Form\AttachmentForm",
+ *       "delete" = "Drupal\dsi_attachment\Form\AttachmentDeleteForm",
+ *     },
+ *     "route_provider" = {
+ *       "html" = "Drupal\dsi_attachment\AttachmentHtmlRouteProvider",
+ *     },
  *     "access" = "Drupal\dsi_attachment\AttachmentAccessControlHandler",
  *   },
  *   base_table = "dsi_attachment",
@@ -38,6 +47,14 @@ use Drupal\user\UserInterface;
  *     "published" = "status",
  *     "master" = "master",
  *   },
+ *   links = {
+ *     "canonical" = "/dsi_attachment/{dsi_attachment}",
+ *     "add-form" = "/dsi_attachment/add",
+ *     "edit-form" = "/dsi_attachment/{dsi_attachment}/edit",
+ *     "delete-form" = "/dsi_attachment/{dsi_attachment}/delete",
+ *     "collection" = "/dsi_attachment",
+ *   },
+ *   field_ui_base_route = "dsi_attachment.settings",
  * )
  */
 class Attachment extends ContentEntityBase implements AttachmentInterface {
