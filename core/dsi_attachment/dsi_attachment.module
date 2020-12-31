@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dsi_attachment.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dsi_attachment_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dsi_attachment module.
+    case 'help.page.dsi_attachment':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The attachments for global management.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

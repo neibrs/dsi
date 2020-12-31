@@ -1,7 +1,0 @@
-name: 'Files Plus'
-type: module
-description: 'The file plus for dsi.'
-core_version_requirement: ^8 || ^9
-interface translation project: dsi_files
-interface translation server pattern: modules/dsi/core/%project/translations/%project.%language.po
-package: 'Dsi core'
