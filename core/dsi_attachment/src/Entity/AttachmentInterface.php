@@ -19,25 +19,6 @@ interface AttachmentInterface extends ContentEntityInterface, EntityChangedInter
    */
 
   /**
-   * Gets the Attachment name.
-   *
-   * @return string
-   *   Name of the Attachment.
-   */
-  public function getName();
-
-  /**
-   * Sets the Attachment name.
-   *
-   * @param string $name
-   *   The Attachment name.
-   *
-   * @return \Drupal\dsi_attachment\Entity\AttachmentInterface
-   *   The called Attachment entity.
-   */
-  public function setName($name);
-
-  /**
    * Gets the Attachment creation timestamp.
    *
    * @return int

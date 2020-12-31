@@ -9,4 +9,5 @@ package: 'Dsi'
 dependencies:
   - organization
   - person
+  - dsi_attachment
   - dsi_client
