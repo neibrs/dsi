@@ -187,11 +187,14 @@ class AttachmentDirectory extends ContentEntityBase implements AttachmentDirecto
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['status']->setDescription(t('A boolean indicating whether the Attachment directory is published.'))
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type', [], ['context' => 'Client']))
+      ->setSetting('is_ascii', TRUE)
+      ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
+
+    $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Entity ID'))
+      ->setDefaultValue(0);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
