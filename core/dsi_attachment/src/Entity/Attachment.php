@@ -135,31 +135,13 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
         'target_bundles' => ['attachment_category' => 'attachment_category'],
         'auto_create' => TRUE,
       ])
-      ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
-        'weight' => 0,
-        'label' => 'inline',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'options_select',
-        'weight' => 0,
-      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     // 文档目录
     $fields['directory'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Directory', [], ['context' => 'Attachment']))
-      ->setSetting('target_type', 'person')
-      ->setDisplayOptions('view', [
-        'type' => 'entity_reference_label',
-        'weight' => 0,
-        'label' => 'inline',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 0,
-      ])
+      ->setSetting('target_type', 'dsi_attachment_directory')
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
