@@ -98,3 +98,10 @@ function dsi_contract_update_20122201(&$sandbox) {
   \Drupal::classResolver(InstallHelper::class)
     ->getOrCreateLookup('contract_state', $data, '合同状态', $lookup_storage);
 }
+
+/**
+ * Implements hook_update_N() for add dependencies dsi_attachment.
+ */
+function dsi_contract_update_20123101(&$sandbox) {
+  \Drupal::service('module_installer')->install(['dsi_attachment']);
+}
