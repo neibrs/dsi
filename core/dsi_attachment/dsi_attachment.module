@@ -22,3 +22,15 @@ function dsi_attachment_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function dsi_attachment_theme() {
+  $theme = [];
+  $theme['attachment_entity'] = [
+    'variables' => [ 'content' => NULL ],
+    'render element' => 'children',
+  ];
+  return $theme;
+}
