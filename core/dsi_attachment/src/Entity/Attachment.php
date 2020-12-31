@@ -118,13 +118,11 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
 
     $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity type', [], ['context' => 'Client']))
-      ->setRequired(TRUE)
       ->setSetting('is_ascii', TRUE)
       ->setSetting('max_length', EntityTypeInterface::ID_MAX_LENGTH);
 
     $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Entity ID'))
-      ->setRequired(TRUE)
       ->setDefaultValue(0);
 
     $fields['attachments'] = BaseFieldDefinition::create('file')
