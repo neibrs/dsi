@@ -86,8 +86,8 @@ vendor/bin/drush cset system.date timezone.user.default 0 -y
 # Enable lawyer industry
 vendor/bin/drush en -y dsi_lawyer
 # 翻译问题
-vendor/bin/drush language:import:translations  web/modules/dsi/contrib/translation/translations/drupal.zh-hans.po
-vendor/bin/drush language:import:translations  web/modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
+vendor/bin/drush language:import:translations  modules/dsi/contrib/translation/translations/drupal.zh-hans.po
+vendor/bin/drush language:import:translations  modules/dsi/industry/dsi_client/translations/dsi_client.zh-hans.po
 
 vendor/bin/drush mim 30_client_xlsx
 vendor/bin/drush mim 30_record_xlsx
