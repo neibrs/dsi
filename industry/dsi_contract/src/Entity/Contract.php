@@ -247,8 +247,8 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('view', TRUE);
 
     // 委托人(合同委托人)
-    $fields['contract_client'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Contract Client'))
+    $fields['consignor'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Consignor'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
