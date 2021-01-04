@@ -99,3 +99,11 @@ input.form-autocomplete{
   margin-right: 0.5em;
   float: left;
 }
+
+.horizontal-tabs-panes .horizontal-tabs-pane{
+	padding: 0 0em;
+}
+
+.seven-details {
+	margin-top: 0em;
+}
