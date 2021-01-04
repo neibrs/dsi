@@ -32,7 +32,8 @@ vendor/bin/drush en -y \
   ludwig \
   views_plus \
   pinyin \
-  tb_megamenu
+  tb_megamenu \
+  config_update_ui
 
 # 重新检查使用pinyin模块的依赖性，删除这里的模块单独启用
 
