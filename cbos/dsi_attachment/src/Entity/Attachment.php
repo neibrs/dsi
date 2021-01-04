@@ -125,6 +125,7 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
 
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields += static::masterBaseFieldDefinitions($entity_type);
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
