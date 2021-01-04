@@ -45,7 +45,6 @@ use Drupal\user\UserInterface;
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
- *     "master" = "master",
  *   },
  *   links = {
  *     "canonical" = "/dsi_attachment/{dsi_attachment}",
