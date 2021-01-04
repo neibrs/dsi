@@ -247,8 +247,8 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('view', TRUE);
 
     // 委托人(合同委托人)
-    $fields['consignor'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Consignor'))
+    $fields['contract_client'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Contract Client'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -540,6 +540,21 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
     // 相关流程
     // 提醒计划
     // 附件
+    $fields['attachments'] = BaseFieldDefinition::create('file')
+      ->setLabel(t('Attachments'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSetting('file_extensions', 'doc docx xls xlsx jpeg png txt')
+      ->setDisplayOptions('view', [
+        'type' => 'file_default',
+        'weight' => 110,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'file_generic',
+        'weight' => 110,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status']->setDescription(t('A boolean indicating whether the Contract is published.'))
       ->setDisplayOptions('form', [
