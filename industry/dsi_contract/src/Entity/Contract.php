@@ -48,6 +48,7 @@ use Drupal\user\UserInterface;
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "published" = "status",
+ *     "attachments" = "attachments",
  *   },
  *   links = {
  *     "canonical" = "/dsi_contract/{dsi_contract}",
@@ -65,6 +66,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
   use EntityChangedTrait;
   use AttachmentTrait;
+
   /**
    * {@inheritdoc}
    */
@@ -140,6 +142,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
+    $fields += static::attachmentBaseFieldDefinitions($entity_type);
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
@@ -172,7 +175,6 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
         'max_length' => 50,
         'text_processing' => 0,
       ])
-      ->setDefaultValue('')
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'type' => 'string',
@@ -206,7 +208,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
 
     // 客户
     $fields['client'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Client'))
+      ->setLabel(t('Client', [], ['context' => 'Contract client']))
       ->setSetting('target_type', 'dsi_client')
       ->setDisplayOptions('view', [
         'type' => 'entity_reference_label',
@@ -498,7 +500,7 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    // 备注
+    // 备注 || 合作内容
     $fields['description'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Description'))
       ->setTranslatable(TRUE)
@@ -562,6 +564,96 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // 签约乙方
+    $fields['party_b'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Party B', [], ['context' => 'Contract']))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    // 关联项目, dsi_contract.module
+    // 关联项目, dsi_project.module
+
+    // 合同期限
+    $fields['period'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Period', [], ['context' => 'Contract']))
+      ->setSetting('unsigned', TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'number',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    // 关联案件, dsi_cases.module
+
+    // 合同状态
+    $fields['contract_state'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Contract State'))
+      ->setSetting('target_type', 'lookup')
+      ->setSetting('handler_settings', [
+        'target_bundles' => ['contract_state' => 'contract_state'],
+        'auto_create' => TRUE,
+      ])
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    // 自动延期
+    $fields['automatic_delay'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Automatic Delay', [], ['context' => 'Contract']))
+      ->setSetting('unsigned', TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'number',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    // 合作内容
+    $fields['cooperation_content'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Cooperation Content', [], ['context' => 'Contract']))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));
@@ -590,6 +682,9 @@ class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInte
    */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
     parent::postSave($storage, $update);
+
+    // 转存附件.
+    $this->setAttachmentByEntity();
 
     if ($this->get('client')->target_id) {
       $this->get('client')->entity->get('contract')->appendItem($this);
