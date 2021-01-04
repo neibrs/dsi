@@ -1,0 +1,5 @@
+entity.dsi_attachment_directory.add_form:
+  route_name: entity.dsi_attachment_directory.add_form
+  title: 'Add Attachment directory'
+  appears_on:
+    - entity.dsi_attachment_directory.collection
