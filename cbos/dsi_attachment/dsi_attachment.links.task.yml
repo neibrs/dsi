@@ -1,0 +1,21 @@
+# Attachment directory routing definition
+dsi_attachment_directory.settings_tab:
+  route_name: dsi_attachment_directory.settings
+  title: 'Settings'
+  base_route: dsi_attachment_directory.settings
+
+entity.dsi_attachment_directory.canonical:
+  route_name: entity.dsi_attachment_directory.canonical
+  base_route: entity.dsi_attachment_directory.canonical
+  title: 'View'
+
+entity.dsi_attachment_directory.edit_form:
+  route_name: entity.dsi_attachment_directory.edit_form
+  base_route: entity.dsi_attachment_directory.canonical
+  title: 'Edit'
+
+entity.dsi_attachment_directory.delete_form:
+  route_name:  entity.dsi_attachment_directory.delete_form
+  base_route:  entity.dsi_attachment_directory.canonical
+  title: Delete
+  weight: 10

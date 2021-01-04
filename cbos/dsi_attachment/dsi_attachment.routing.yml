@@ -1,0 +1,7 @@
+dsi_attachment.entity.collection:
+  path: '/dsi_attachment/collection'
+  defaults:
+    _title: '附件列表'
+    _controller: '\Drupal\dsi_attachment\Controller\AttachmentController::getAttachments'
+  requirements:
+    _permission: 'view published attachment entities'
