@@ -1,4 +1,3 @@
-uuid: 84d7bb92-39a6-4d91-991a-7e9ab657071d
 langcode: zh-hans
 status: true
 dependencies:
@@ -268,26 +267,6 @@ display:
     display_options:
       display_extenders: {  }
       path: contract/%dsi_client/client
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-      tags: {  }
-  rest_export_1:
-    display_plugin: rest_export
-    id: rest_export_1
-    display_title: 'REST export'
-    position: 2
-    display_options:
-      row:
-        type: data_field
-      pager:
-        type: none
-        options:
-          offset: 0
-      path: contract/%dsi_client/client/export.csv
     cache_metadata:
       max-age: -1
       contexts:
