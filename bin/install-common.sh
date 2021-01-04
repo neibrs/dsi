@@ -5,7 +5,7 @@
 #vendor/bin/drush site:install -y --site-name="OAms" --account-pass=admin --db-url=mysql://root:root@127.0.0.1:3306/prod
 chmod -R a+rw web/sites/default
 mkdir web/sites/default/private;
-echo "\$settings['file_private_path'] = 'web/sites/default/private';" >> web/sites/default/settings.php
+echo "\$settings['file_private_path'] = 'sites/default/private';" >> web/sites/default/settings.php
 
 echo "ini_set('memory_limit', -1);" >> web/sites/default/settings.php
 echo "ini_set('max_execution_time', 0);" >> web/sites/default/settings.php
@@ -47,8 +47,8 @@ vendor/bin/drush pmu -y \
 # Enable memcache modules
 #vendor/bin/drush en -y \
 #  memcache
-#cp web/modules/dsi/settings.memcache.php web/sites/default/
-#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> web/sites/default/settings.php
+#cp modules/dsi/settings.memcache.php sites/default/
+#echo "include \$app_root . '/' . \$site_path . '/settings.memcache.php';" >> sites/default/settings.php
 
 # drupal console issue: https://github.com/hechoendrupal/drupal-console/issues/4005
 #vendor/bin/drush cr
