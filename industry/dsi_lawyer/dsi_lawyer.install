@@ -132,3 +132,13 @@ function dsi_laywer_uninstall($is_syncing) {
   $role = \Drupal::service('entity_type.manager')->getStorage('user_role')->load('authenticated');
   $role->unsetThirdPartySetting('role_menu', 'menu');
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function dsi_lawyer_update_8001(&$sandbox) {
+  /** @var \Drupal\config_update\ConfigRevertInterface $config_update */
+  $config_update = \Drupal::service('config_update.config_update');
+  $config_update->import('view', 'entity_contract');
+
+}
