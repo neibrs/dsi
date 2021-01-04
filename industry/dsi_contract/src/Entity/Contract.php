@@ -65,7 +65,7 @@ use Drupal\user\UserInterface;
 class Contract extends EffectiveDatesBusinessGroupEntity implements ContractInterface {
 
   use EntityChangedTrait;
-  use AttachmentTrait;
+//  use AttachmentTrait;
 
   /**
    * {@inheritdoc}
