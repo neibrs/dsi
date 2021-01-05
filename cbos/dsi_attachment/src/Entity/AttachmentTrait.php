@@ -14,7 +14,7 @@ trait AttachmentTrait {
    */
   public static function attachmentBaseFieldDefinitions(EntityTypeInterface $entity_type) {
     if (!$entity_type->hasKey('attachments')) {
-      throw new UnsupportedEntityTypeDefinitionException('The entity type ' . $entity_type->id() . ' does not have a "master" entity key.');
+      throw new UnsupportedEntityTypeDefinitionException('The entity type ' . $entity_type->id() . ' does not have a "attachments" entity key.');
     }
 
     return [

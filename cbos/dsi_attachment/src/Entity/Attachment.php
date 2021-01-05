@@ -160,6 +160,15 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
     $fields['directory'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Directory', [], ['context' => 'Attachment']))
       ->setSetting('target_type', 'dsi_attachment_directory')
+      ->setDisplayOptions('view', [
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+        'label' => 'inline',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 0,
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -171,7 +180,7 @@ class Attachment extends ContentEntityBase implements AttachmentInterface {
       ->setDisplayOptions('view', [
         'type' => 'file_default',
         'weight' => 110,
-        'label' => 'inline',
+        'label' => 'hidden',
       ])
       ->setDisplayOptions('form', [
         'type' => 'file_generic',
